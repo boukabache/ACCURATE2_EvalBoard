@@ -337,7 +337,15 @@
     ],
     [
       "cc002e27-f5d6-41c3-915c-2eb2060780b1",
-      "ACCURATE  Control"
+      "FPGA"
+    ],
+    [
+      "59667e70-bb75-464b-9655-2a4f5dbb3db0",
+      "Peripherals"
+    ],
+    [
+      "c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5",
+      "MCU"
     ]
   ],
   "text_variables": {}

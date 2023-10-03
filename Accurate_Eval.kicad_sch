@@ -1044,6 +1044,23 @@
     )
   )
 
+  (sheet (at 173.99 138.43) (size 62.23 49.53) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 59667e70-bb75-464b-9655-2a4f5dbb3db0)
+    (property "Sheetname" "Peripherals" (at 173.99 137.7184 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Peripherals.kicad_sch" (at 173.99 188.5446 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "Accurate_Eval"
+        (path "/d3b6a045-fd77-42ad-b330-1b1925488537" (page "5"))
+      )
+    )
+  )
+
   (sheet (at 107.95 36.83) (size 73.66 71.12) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
@@ -1061,14 +1078,31 @@
     )
   )
 
+  (sheet (at 248.92 130.81) (size 63.5 49.53) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5)
+    (property "Sheetname" "MCU" (at 248.92 130.0984 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "MCU.kicad_sch" (at 248.92 180.9246 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "Accurate_Eval"
+        (path "/d3b6a045-fd77-42ad-b330-1b1925488537" (page "6"))
+      )
+    )
+  )
+
   (sheet (at 204.47 36.83) (size 81.28 73.66) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid cc002e27-f5d6-41c3-915c-2eb2060780b1)
-    (property "Sheetname" "ACCURATE  Control" (at 204.47 36.1184 0)
+    (property "Sheetname" "FPGA" (at 204.47 36.1184 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "ACCURATE Control.kicad_sch" (at 204.47 111.0746 0)
+    (property "Sheetfile" "FPGA.kicad_sch" (at 204.47 111.0746 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
