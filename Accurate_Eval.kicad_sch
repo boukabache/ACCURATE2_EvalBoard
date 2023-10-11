@@ -2773,8 +2773,8 @@
     (uuid fb9a6fe8-ace2-4c0f-b718-8b14d344b916)
   )
 
-  (text_box "Routing note:\nAdd Vcm shield around Current_In"
-    (at 48.26 137.16 0) (size 35.56 5.08)
+  (text_box "Routing note:\nAdd Vcm_Buf shield around Current_In as well as a Vcm_Buf plane below it"
+    (at 48.26 137.16 0) (size 39.37 7.62)
     (stroke (width 0) (type default) (color 255 109 0 1))
     (fill (type none))
     (effects (font (size 1.27 1.27) (color 255 109 0 1)) (justify left top))
