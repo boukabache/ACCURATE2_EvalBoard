@@ -15,9 +15,9 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 void ssd1306_init(uint8_t addr) {
-  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F("SSD1306 allocation failed"));
-    for(;;);
+    for (;;);
   }
   delay(2000);
   display.clearDisplay();
@@ -27,15 +27,15 @@ void ssd1306_init(uint8_t addr) {
 void ssd1306_print_currentmA_temp_humidity(float current, String current_range, float temp, float humidity) {
   display.clearDisplay();
   display.setTextSize(1);
-  display.setCursor(0,0);
+  display.setCursor(0, 0);
   display.print("Current: ");
   display.print(current);
   display.print(" " + current_range);
-  display.setCursor(0,10);
+  display.setCursor(0, 10);
   display.print("Temp: ");
   display.print(temp);
   display.print(" C");
-  display.setCursor(0,20);
+  display.setCursor(0, 20);
   display.print("Humidity: ");
   display.print(humidity);
   display.print(" %");

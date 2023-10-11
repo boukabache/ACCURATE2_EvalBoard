@@ -19,7 +19,7 @@
 #define VTH1_CH			2
 #define VCHARGEP_CH		3
 #define VTH2_CH			4
-#define VTH4_CH			5
+#define VTH4_CH		 	5
 #define VTH3_CH			6
 #define VBIAS3_CH		7
 

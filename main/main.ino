@@ -24,7 +24,7 @@ void setup() {
     sht41_start_t = true;
     sht41_start_rh = true;
     sht41_i2c_read_temp();
-	sht41_i2c_read_rh();
+    sht41_i2c_read_rh();
 
     ssd1306_init(SSD1306_ADDR);
 }
