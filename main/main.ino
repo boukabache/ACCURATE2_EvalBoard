@@ -5,6 +5,7 @@
 #include "config.h"
 #include "sht41.h"
 #include "dac7578.h"
+#include "ssd1306.h"
 
 void setup() {
     pinMode(LED_ALIVE_PIN, OUTPUT);
@@ -24,6 +25,8 @@ void setup() {
     sht41_start_rh = true;
     sht41_i2c_read_temp();
 	sht41_i2c_read_rh();
+
+    ssd1306_init(SSD1306_ADDR);
 }
 
 void loop() {

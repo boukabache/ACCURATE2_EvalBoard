@@ -2,7 +2,7 @@
  * dac7578.h
  *
  * Created: 2/22/2021 10:42:28 AM
- *  Author: vcruchet
+ *  Author: vcruchet, hliverud
  */
 #ifndef DAC7578_H_
 #define DAC7578_H_
@@ -11,7 +11,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define DAC_ADDRESS		0b1001000
+#define DAC_ADDRESS		0x0048
 
 #define DAC7578_NCH		8
 #define VBIAS1_CH		0
