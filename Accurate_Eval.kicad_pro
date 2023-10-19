@@ -316,7 +316,7 @@
       "version": 1
     },
     "net_format_name": "",
-    "page_layout_descr_file": "G:\\Applications\\KiCad\\Templates\\CERN_OHL_left.kicad_wks",
+    "page_layout_descr_file": "CERN_OHL_left.kicad_wks",
     "plot_directory": "PDF/",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
@@ -336,20 +336,20 @@
       "Power Supply"
     ],
     [
-      "929e0cdf-f54c-4a28-a6d4-8b706822a456",
-      "ACCURATE ASIC"
+      "c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5",
+      "MCU"
     ],
     [
       "cc002e27-f5d6-41c3-915c-2eb2060780b1",
       "FPGA"
     ],
     [
-      "59667e70-bb75-464b-9655-2a4f5dbb3db0",
-      "Peripherals"
+      "929e0cdf-f54c-4a28-a6d4-8b706822a456",
+      "ACCURATE ASIC"
     ],
     [
-      "c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5",
-      "MCU"
+      "59667e70-bb75-464b-9655-2a4f5dbb3db0",
+      "Display"
     ]
   ],
   "text_variables": {}
