@@ -1155,6 +1155,197 @@
         )
       )
     )
+    (symbol "Inductors SMD:IND0603_MURATA_BLM18SG221TN1" (pin_names (offset 1.27)) (in_bom yes) (on_board yes)
+      (property "Reference" "L" (at 3.81 1.778 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "IND0603_MURATA_BLM18SG221TN1" (at 0 -4.953 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Footprint" "Inductors SMD:INDC1608X95N" (at 0 -6.858 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\IND0603_MURATA_BLM18S.pdf" (at 0 -8.763 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Val" "220R@100MHz" (at 3.81 -1.778 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Part Number" "IND0603_MURATA_BLM18SG221TN1" (at 0 -10.668 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Library Ref" "Ferrite Bead" (at 0 -12.573 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Library Path" "SchLib\\Inductors & Transformers.SchLib" (at 0 -14.478 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Comment" "220R@100MHz" (at 0 -16.383 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Component Kind" "Standard" (at 0 -18.288 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Component Type" "Standard" (at 0 -20.193 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "PackageDescription" " " (at 0 -22.098 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Pin Count" "2" (at 0 -24.003 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Footprint Path" "PcbLib\\Inductors SMD.PcbLib" (at 0 -25.908 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Footprint Ref" "INDC1608X95N" (at 0 -27.813 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Status" " " (at 0 -29.718 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Power" "2.5A" (at 0 -31.623 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Resistance" "0.04R" (at 0 -33.528 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Tolerance" "±25%" (at 0 -35.433 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Part Description" "SMD EMIFIL Suppression Chip Ferrite Bead" (at 0 -37.338 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Manufacturer" "MURATA" (at 0 -39.243 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Manufacturer Part Number" "BLM18SG221TN1" (at 0 -41.148 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Case" "0603" (at 0 -43.053 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Mounted" "Yes" (at 0 -44.958 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Socket" "No" (at 0 -46.863 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "SMD" "Yes" (at 0 -48.768 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Sense Comment" " " (at 0 -50.673 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Sense" "No" (at 0 -52.578 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Status Comment" " " (at 0 -54.483 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "ComponentHeight" "0.95mm" (at 0 -56.388 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\IND0603_MURATA_BLM18S.pdf" (at 0 -58.293 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Author" "CERN DEM MR" (at 0 -60.198 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "CreateDate" "01/08/16 00:00:00" (at 0 -62.103 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "LatestRevisionDate" "10/25/18 00:00:00" (at 0 -64.008 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Database Table Name" "Inductors & Transformers" (at 0 -65.913 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Library Name" "Inductors SMD" (at 0 -67.818 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "Footprint Library" "Inductors SMD" (at 0 -69.723 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 0 -71.628 0)
+        (effects (font (size 1.27 1.27)) (justify left) hide)
+      )
+      (property "ki_locked" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (symbol "IND0603_MURATA_BLM18SG221TN1_0_1"
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy 6.35 0)
+          )
+          (stroke (width 0.254) (type solid))
+          (fill (type none))
+        )
+        (rectangle (start 2.286 -0.889) (end 5.334 -0.635)
+          (stroke (width 0) (type solid))
+          (fill (type outline))
+        )
+        (rectangle (start 2.286 0.635) (end 5.334 0.889)
+          (stroke (width 0) (type solid))
+          (fill (type outline))
+        )
+        (pin passive line (at 0 0 0) (length 1.27)
+          (name "1" (effects (font (size 0 0))))
+          (number "1" (effects (font (size 0 0))))
+        )
+        (pin passive line (at 7.62 0 180) (length 1.27)
+          (name "2" (effects (font (size 0 0))))
+          (number "2" (effects (font (size 0 0))))
+        )
+      )
+      (symbol "IND0603_MURATA_BLM18SG221TN1_0_2"
+        (polyline
+          (pts
+            (xy 1.524 -0.762)
+            (xy 6.096 -0.762)
+          )
+          (stroke (width 0.254) (type solid))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.524 0.762)
+            (xy 1.524 -0.762)
+          )
+          (stroke (width 0.254) (type solid))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 6.096 -0.762)
+            (xy 6.096 0.762)
+          )
+          (stroke (width 0.254) (type solid))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 6.096 0.762)
+            (xy 1.524 0.762)
+          )
+          (stroke (width 0.254) (type solid))
+          (fill (type none))
+        )
+        (rectangle (start 2.286 -0.127) (end 5.334 0.127)
+          (stroke (width 0) (type solid))
+          (fill (type outline))
+        )
+        (pin passive line (at 0 0 0) (length 1.524)
+          (name "1" (effects (font (size 0 0))))
+          (number "1" (effects (font (size 0 0))))
+        )
+        (pin passive line (at 7.62 0 180) (length 1.524)
+          (name "2" (effects (font (size 0 0))))
+          (number "2" (effects (font (size 0 0))))
+        )
+      )
+    )
     (symbol "LEDs & Displays:LED_LITEON_LTST-C193KGKT-5A" (pin_names (offset 1.27)) (in_bom yes) (on_board yes)
       (property "Reference" "LD" (at -1.27 2.54 0)
         (effects (font (size 1.27 1.27)) (justify right))
@@ -4449,7 +4640,7 @@
     (stroke (width 0) (type default))
     (uuid 29409f88-9a33-4056-85bc-2fadfae58bff)
   )
-  (wire (pts (xy 25.4 85.09) (xy 49.53 85.09))
+  (wire (pts (xy 26.67 85.09) (xy 50.8 85.09))
     (stroke (width 0) (type default))
     (uuid 2aacd69c-7c4d-4668-8d33-d6c123355284)
   )
@@ -4655,7 +4846,7 @@
     (stroke (width 0) (type default))
     (uuid 5e316144-ff68-4856-b916-02da135ed725)
   )
-  (wire (pts (xy 25.4 100.33) (xy 49.53 100.33))
+  (wire (pts (xy 26.67 100.33) (xy 50.8 100.33))
     (stroke (width 0) (type default))
     (uuid 5e323a45-1935-49d8-8c9a-c3d661a9493b)
   )
@@ -4884,7 +5075,7 @@
     (uuid 97413244-9e39-4f01-bc17-70595db8cbd2)
   )
 
-  (wire (pts (xy 25.4 92.71) (xy 49.53 92.71))
+  (wire (pts (xy 26.67 92.71) (xy 50.8 92.71))
     (stroke (width 0) (type default))
     (uuid 97451a04-6644-4d2c-849e-a3c0cfa40fb8)
   )
@@ -5170,7 +5361,7 @@
     (stroke (width 0) (type default))
     (uuid d75133e6-dfac-4285-b98a-796b9bd81e0a)
   )
-  (wire (pts (xy 25.4 88.9) (xy 49.53 88.9))
+  (wire (pts (xy 26.67 88.9) (xy 50.8 88.9))
     (stroke (width 0) (type default))
     (uuid d812fd2f-54c9-448b-bb9a-d60dcbe20968)
   )
@@ -5233,7 +5424,7 @@
     (stroke (width 0) (type default))
     (uuid e10bef24-052f-486e-85a1-031e0ded84e7)
   )
-  (wire (pts (xy 25.4 96.52) (xy 49.53 96.52))
+  (wire (pts (xy 26.67 96.52) (xy 50.8 96.52))
     (stroke (width 0) (type default))
     (uuid e166f696-2755-4c53-b110-2190a402a490)
   )
@@ -5445,7 +5636,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0bff770f-db7b-4ade-bb5a-ff42873b95cb)
   )
-  (label "F2M_PA12" (at 49.53 96.52 180) (fields_autoplaced)
+  (label "F2M_PA12" (at 50.8 96.52 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 0c64f2f0-9d9b-4cf9-8f4c-a2922a0750e6)
   )
@@ -5457,7 +5648,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 12bf85e2-98c6-4583-8cca-77b331b3fef6)
   )
-  (label "RESET" (at 49.53 92.71 180) (fields_autoplaced)
+  (label "RESET" (at 50.8 92.71 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 1326d4a7-1ada-4de4-a6f6-86c05f37000a)
   )
@@ -5505,7 +5696,7 @@
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 37b5b482-d4c8-4141-81ed-00aeb903e68a)
   )
-  (label "MCU_SWDIO" (at 49.53 88.9 180) (fields_autoplaced)
+  (label "MCU_SWDIO" (at 50.8 88.9 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 39c26f4b-6279-456e-971e-c8634f9e9118)
   )
@@ -5605,7 +5796,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 7578007c-6205-408f-9e40-447ce3ed3a1e)
   )
-  (label "F2M_PA13" (at 49.53 100.33 180) (fields_autoplaced)
+  (label "F2M_PA13" (at 50.8 100.33 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 780ec166-b89a-4600-a668-8a276e68eca1)
   )
@@ -5797,7 +5988,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e55444fb-af51-43c4-8ba4-c9c0ab617f1b)
   )
-  (label "MCU_SWCLK" (at 49.53 85.09 180) (fields_autoplaced)
+  (label "MCU_SWCLK" (at 50.8 85.09 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid e774ec83-20a1-4c11-8d56-358fcd03b775)
   )
@@ -5838,7 +6029,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 202c252b-b89a-42a3-9c5a-9b2350eb246d)
   )
-  (hierarchical_label "MCU_SWDIO" (shape input) (at 25.4 88.9 180) (fields_autoplaced)
+  (hierarchical_label "MCU_SWDIO" (shape input) (at 26.67 88.9 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 37984bda-19ef-4568-acfa-114c218ade3a)
   )
@@ -5854,19 +6045,19 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 51971d27-a8b3-4dfc-bac6-771085010817)
   )
-  (hierarchical_label "F2M_PA13" (shape bidirectional) (at 25.4 100.33 180) (fields_autoplaced)
+  (hierarchical_label "F2M_PA13" (shape bidirectional) (at 26.67 100.33 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 51a839e0-20c5-4b26-9689-bdec2698b601)
   )
-  (hierarchical_label "RESET" (shape input) (at 25.4 92.71 180) (fields_autoplaced)
+  (hierarchical_label "RESET" (shape input) (at 26.67 92.71 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid aeeb9e5f-2b78-43b5-bf01-518802be0a07)
   )
-  (hierarchical_label "F2M_PA12" (shape bidirectional) (at 25.4 96.52 180) (fields_autoplaced)
+  (hierarchical_label "F2M_PA12" (shape bidirectional) (at 26.67 96.52 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid be59ca78-5e49-4972-b10d-4a8597111279)
   )
-  (hierarchical_label "MCU_SWCLK" (shape input) (at 25.4 85.09 180) (fields_autoplaced)
+  (hierarchical_label "MCU_SWCLK" (shape input) (at 26.67 85.09 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid ca351111-fead-4a35-b1f2-c1c0b9cfbbe3)
   )
@@ -5878,7 +6069,7 @@
   (symbol (lib_name "R0603_1K_1%_0.1W_100PPM_2") (lib_id "Resistors SMD:R0603_1K_1%_0.1W_100PPM") (at 369.57 77.47 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 011e0057-a8f2-4409-8dcb-1b68d57faf67)
-    (property "Reference" "R37" (at 372.11 80.01 90)
+    (property "Reference" "R?" (at 372.11 80.01 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R0603_1K_1%_0.1W_100PPM" (at 364.617 77.47 0)
@@ -6012,10 +6203,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "R37") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R19") (unit 1)
+          (reference "R26") (unit 1)
         )
       )
     )
@@ -6024,7 +6215,7 @@
   (symbol (lib_id "LEDs & Displays:LED_LITEON_LTST-C193KSKT-5A") (at 360.68 171.45 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 0cbebe6f-f754-40d9-8a04-051b826aaaac)
-    (property "Reference" "LD2" (at 360.68 166.37 0)
+    (property "Reference" "LD?" (at 360.68 166.37 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LED_LITEON_LTST-C193KSKT-5A" (at 360.68 176.911 0)
@@ -6155,10 +6346,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "LD2") (unit 1)
+          (reference "LD?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "LD2") (unit 1)
+          (reference "LD9") (unit 1)
         )
       )
     )
@@ -6167,7 +6358,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 218.44 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0cfb6be9-cafe-47f9-9cbd-647c1dd88d72)
-    (property "Reference" "#PWR0175" (at 218.44 46.99 0)
+    (property "Reference" "#PWR0217" (at 218.44 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 218.44 38.1 0)
@@ -6183,7 +6374,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0175") (unit 1)
+          (reference "#PWR0217") (unit 1)
         )
       )
     )
@@ -6192,7 +6383,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_22PF_50V_5%_NP0") (at 78.74 48.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0d852d4a-ba44-4d18-8d15-6eaa6cc87998)
-    (property "Reference" "C82" (at 82.55 41.91 0)
+    (property "Reference" "C32" (at 82.55 41.91 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "CC0603_22PF_50V_5%_NP0" (at 78.74 54.483 0)
@@ -6323,7 +6514,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "C82") (unit 1)
+          (reference "C32") (unit 1)
         )
       )
     )
@@ -6332,7 +6523,7 @@
   (symbol (lib_id "power:GND") (at 379.73 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1292f05f-9567-4a0e-9843-2e41f77e4d96)
-    (property "Reference" "#PWR0160" (at 379.73 125.73 0)
+    (property "Reference" "#PWR?" (at 379.73 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 379.73 124.46 0)
@@ -6348,10 +6539,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0160") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0158") (unit 1)
+          (reference "#PWR0197") (unit 1)
         )
       )
     )
@@ -6360,7 +6551,7 @@
   (symbol (lib_id "power:GND") (at 133.35 224.79 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 150fa27d-8454-48af-abbc-ccc006be46a1)
-    (property "Reference" "#PWR045" (at 133.35 231.14 0)
+    (property "Reference" "#PWR?" (at 133.35 231.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 133.35 229.87 0)
@@ -6376,10 +6567,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0165") (unit 1)
+          (reference "#PWR0212") (unit 1)
         )
       )
     )
@@ -6388,7 +6579,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_22PF_50V_5%_NP0") (at 78.74 55.88 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 1a6ba663-b803-4f1e-b761-eca53aebecfe)
-    (property "Reference" "C83" (at 82.55 59.69 0)
+    (property "Reference" "C33" (at 82.55 59.69 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "CC0603_22PF_50V_5%_NP0" (at 78.74 62.103 0)
@@ -6519,7 +6710,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "C83") (unit 1)
+          (reference "C33") (unit 1)
         )
       )
     )
@@ -6528,7 +6719,7 @@
   (symbol (lib_id "Resistors SMD:R0603_1K0_0.1%_0.063W_10PPM") (at 207.01 86.36 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 23098567-0731-4452-be7c-9a7a4f5adc62)
-    (property "Reference" "R32" (at 209.55 88.9 90)
+    (property "Reference" "R?" (at 209.55 88.9 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R0603_1K0_0.1%_0.063W_10PPM" (at 202.057 86.36 0)
@@ -6662,10 +6853,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "R32") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R30") (unit 1)
+          (reference "R22") (unit 1)
         )
       )
     )
@@ -6674,7 +6865,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 353.06 167.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 238c71f2-826a-4257-9df2-1d22aca2da25)
-    (property "Reference" "#PWR0151" (at 353.06 171.45 0)
+    (property "Reference" "#PWR?" (at 353.06 171.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 353.06 162.56 0)
@@ -6690,10 +6881,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0151") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0159") (unit 1)
+          (reference "#PWR0196") (unit 1)
         )
       )
     )
@@ -6702,7 +6893,7 @@
   (symbol (lib_id "Resistors SMD:R0603_1K0_0.1%_0.063W_10PPM") (at 374.65 186.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 250b9db3-fb67-46c1-b809-87287315d507)
-    (property "Reference" "R32" (at 378.46 181.61 0)
+    (property "Reference" "R?" (at 378.46 181.61 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "R0603_1K0_0.1%_0.063W_10PPM" (at 374.65 191.643 0)
@@ -6836,10 +7027,141 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "R32") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R38") (unit 1)
+          (reference "R28") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Inductors SMD:IND0603_MURATA_BLM18SG221TN1") (at 99.06 214.63 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 26904b14-dd54-4c8a-b8c8-acb83ae530c9)
+    (property "Reference" "L2" (at 102.87 209.55 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "IND0603_MURATA_BLM18SG221TN1" (at 99.06 219.583 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint" "Inductors SMD:INDC1608X95N" (at 99.06 221.488 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\IND0603_MURATA_BLM18S.pdf" (at 99.06 223.393 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Val" "220R@100MHz" (at 102.87 212.09 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Part Number" "IND0603_MURATA_BLM18SG221TN1" (at 99.06 225.298 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Library Ref" "Ferrite Bead" (at 99.06 227.203 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Library Path" "SchLib\\Inductors & Transformers.SchLib" (at 99.06 229.108 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Comment" "220R@100MHz" (at 99.06 231.013 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Component Kind" "Standard" (at 99.06 232.918 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Component Type" "Standard" (at 99.06 234.823 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "PackageDescription" " " (at 99.06 236.728 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Pin Count" "2" (at 99.06 238.633 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint Path" "PcbLib\\Inductors SMD.PcbLib" (at 99.06 240.538 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint Ref" "INDC1608X95N" (at 99.06 242.443 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Status" " " (at 99.06 244.348 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Power" "2.5A" (at 99.06 246.253 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Resistance" "0.04R" (at 99.06 248.158 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Tolerance" "±25%" (at 99.06 250.063 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Part Description" "SMD EMIFIL Suppression Chip Ferrite Bead" (at 99.06 251.968 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Manufacturer" "MURATA" (at 99.06 253.873 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Manufacturer Part Number" "BLM18SG221TN1" (at 99.06 255.778 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Case" "0603" (at 99.06 257.683 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Mounted" "Yes" (at 99.06 259.588 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Socket" "No" (at 99.06 261.493 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "SMD" "Yes" (at 99.06 263.398 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Sense Comment" " " (at 99.06 265.303 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Sense" "No" (at 99.06 267.208 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Status Comment" " " (at 99.06 269.113 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "ComponentHeight" "0.95mm" (at 99.06 271.018 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\IND0603_MURATA_BLM18S.pdf" (at 99.06 272.923 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Author" "CERN DEM MR" (at 99.06 274.828 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "CreateDate" "01/08/16 00:00:00" (at 99.06 276.733 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "LatestRevisionDate" "10/25/18 00:00:00" (at 99.06 278.638 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Database Table Name" "Inductors & Transformers" (at 99.06 280.543 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Library Name" "Inductors SMD" (at 99.06 282.448 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "Footprint Library" "Inductors SMD" (at 99.06 284.353 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 99.06 286.258 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+    (pin "1" (uuid 713a0d04-9c17-42cb-be4d-1304558d0826))
+    (pin "2" (uuid b243ba69-a179-43b9-818f-18662aa86994))
+    (instances
+      (project "Accurate_Eval"
+        (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
+          (reference "L2") (unit 1)
+        )
+        (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
+          (reference "L?") (unit 1)
         )
       )
     )
@@ -6848,7 +7170,7 @@
   (symbol (lib_id "LEDs & Displays:LED_LITEON_LTST-C193KSKT-5A") (at 218.44 59.69 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 2afe94d0-5bff-49bf-af23-cbcdba793dc6)
-    (property "Reference" "LD3" (at 213.36 60.96 0)
+    (property "Reference" "LD?" (at 213.36 60.96 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LED_LITEON_LTST-C193KSKT-5A" (at 223.901 59.69 0)
@@ -6979,10 +7301,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "LD3") (unit 1)
+          (reference "LD?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "LD11") (unit 1)
+          (reference "LD7") (unit 1)
         )
       )
     )
@@ -6991,7 +7313,7 @@
   (symbol (lib_id "Switches:PB_C&K_KSC321JLFS") (at 359.41 101.6 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2b6dab6f-9b93-42ab-908b-2d7433721fc1)
-    (property "Reference" "PB1" (at 364.49 109.6294 90)
+    (property "Reference" "PB?" (at 364.49 109.6294 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "PB_C&K_KSC321JLFS" (at 355.473 101.6 0)
@@ -7130,13 +7452,13 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "PB1") (unit 1)
+          (reference "PB?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "PB4") (unit 1)
+          (reference "PB?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "PB3") (unit 1)
+          (reference "PB2") (unit 1)
         )
       )
     )
@@ -7145,7 +7467,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 353.06 198.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2dfa44a2-900c-43d1-b812-69ccf5b1dd1d)
-    (property "Reference" "#PWR0180" (at 353.06 201.93 0)
+    (property "Reference" "#PWR?" (at 353.06 201.93 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 353.06 193.04 0)
@@ -7161,10 +7483,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0180") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0180") (unit 1)
+          (reference "#PWR0194") (unit 1)
         )
       )
     )
@@ -7173,7 +7495,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 295.91 163.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 348c5672-8055-4f3a-8b70-31e0a5a3f944)
-    (property "Reference" "#PWR0172" (at 295.91 167.64 0)
+    (property "Reference" "#PWR0203" (at 295.91 167.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 295.91 157.48 90)
@@ -7189,7 +7511,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0172") (unit 1)
+          (reference "#PWR0203") (unit 1)
         )
       )
     )
@@ -7198,7 +7520,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 353.06 184.15 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3ebf5424-4e44-4b34-af64-10d3a1111f79)
-    (property "Reference" "#PWR0152" (at 353.06 187.96 0)
+    (property "Reference" "#PWR?" (at 353.06 187.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 353.06 179.07 0)
@@ -7214,10 +7536,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0152") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0160") (unit 1)
+          (reference "#PWR0195") (unit 1)
         )
       )
     )
@@ -7226,7 +7548,7 @@
   (symbol (lib_id "LEDs & Displays:LED_LITEON_LTST-C193KGKT-5A") (at 207.01 80.01 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 43227a43-b219-4360-8acc-bce8f250d206)
-    (property "Reference" "LD5" (at 203.2 78.74 0)
+    (property "Reference" "LD?" (at 203.2 78.74 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "LED_LITEON_LTST-C193KGKT-5A" (at 201.549 80.01 0)
@@ -7357,7 +7679,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "LD5") (unit 1)
+          (reference "LD?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
           (reference "LD6") (unit 1)
@@ -7369,7 +7691,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 80.01 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 48a2c3d9-6e9f-47a4-a4ac-e0c1b79ada3c)
-    (property "Reference" "#PWR0177" (at 80.01 102.87 0)
+    (property "Reference" "#PWR0224" (at 80.01 102.87 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 80.01 93.98 0)
@@ -7385,7 +7707,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0177") (unit 1)
+          (reference "#PWR0224") (unit 1)
         )
       )
     )
@@ -7394,7 +7716,7 @@
   (symbol (lib_id "Logic:ATSAMD21G18A-MF") (at 143.51 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4dfee9a4-0f9b-4601-b6a6-2c3a68ddcca9)
-    (property "Reference" "IC6" (at 158.75 50.8 0)
+    (property "Reference" "IC8" (at 158.75 50.8 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "ATSAMD21G18A-MF" (at 143.51 133.985 0)
@@ -7572,7 +7894,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "IC6") (unit 1)
+          (reference "IC8") (unit 1)
         )
       )
     )
@@ -7581,7 +7903,7 @@
   (symbol (lib_id "power:GND") (at 181.61 224.79 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 53e3a3c1-878b-4249-9031-f2263fc53971)
-    (property "Reference" "#PWR045" (at 181.61 231.14 0)
+    (property "Reference" "#PWR?" (at 181.61 231.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 181.61 229.87 0)
@@ -7597,10 +7919,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0166") (unit 1)
+          (reference "#PWR0213") (unit 1)
         )
       )
     )
@@ -7609,7 +7931,7 @@
   (symbol (lib_id "power:+5V") (at 298.45 163.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 5613d8ed-0130-452d-bbd4-1759cd063d54)
-    (property "Reference" "#PWR0132" (at 298.45 167.64 0)
+    (property "Reference" "#PWR0204" (at 298.45 167.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 298.45 158.75 90)
@@ -7625,7 +7947,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0132") (unit 1)
+          (reference "#PWR0204") (unit 1)
         )
       )
     )
@@ -7634,7 +7956,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 87.63 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5a95367e-b996-4522-a2cf-07575372a896)
-    (property "Reference" "#PWR0178" (at 87.63 102.87 0)
+    (property "Reference" "#PWR0219" (at 87.63 102.87 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 87.63 93.98 0)
@@ -7650,7 +7972,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0178") (unit 1)
+          (reference "#PWR0219") (unit 1)
         )
       )
     )
@@ -7659,7 +7981,7 @@
   (symbol (lib_id "Resistors SMD:R0603_470R_1%_0.1W_100PPM") (at 218.44 45.72 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5bcd2302-f5b0-47c9-974a-85be074fa021)
-    (property "Reference" "R42" (at 220.98 48.26 90)
+    (property "Reference" "R23" (at 220.98 48.26 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R0603_470R_1%_0.1W_100PPM" (at 213.487 45.72 0)
@@ -7793,7 +8115,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R42") (unit 1)
+          (reference "R23") (unit 1)
         )
       )
     )
@@ -7802,7 +8124,7 @@
   (symbol (lib_id "Resistors SMD:R0603_1K0_0.1%_0.063W_10PPM") (at 374.65 201.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 605f14f7-888c-4f1c-a0b4-f571c148fbef)
-    (property "Reference" "R32" (at 378.46 196.85 0)
+    (property "Reference" "R?" (at 378.46 196.85 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "R0603_1K0_0.1%_0.063W_10PPM" (at 374.65 206.883 0)
@@ -7936,10 +8258,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "R32") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R46") (unit 1)
+          (reference "R29") (unit 1)
         )
       )
     )
@@ -7948,7 +8270,7 @@
   (symbol (lib_id "Pads:SMD_PAD_1.27X1.27MM") (at 76.2 114.3 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 62b0b7ac-c905-4409-b362-04f2b3351dbd)
-    (property "Reference" "TP4" (at 72.39 114.3 0)
+    (property "Reference" "TP?" (at 72.39 114.3 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SMD_PAD_1.27X1.27MM" (at 76.2 118.237 0)
@@ -8081,10 +8403,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "TP4") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "TP22") (unit 1)
+          (reference "TP15") (unit 1)
         )
       )
     )
@@ -8093,7 +8415,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 369.57 74.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6855a121-34d0-48cd-9c6e-490dc25e3525)
-    (property "Reference" "#PWR0154" (at 369.57 78.74 0)
+    (property "Reference" "#PWR?" (at 369.57 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 369.57 69.85 0)
@@ -8109,10 +8431,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0154") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0155") (unit 1)
+          (reference "#PWR0205") (unit 1)
         )
       )
     )
@@ -8121,7 +8443,7 @@
   (symbol (lib_name "R0603_4K7_1%_0.1W_100PPM_1") (lib_id "Resistors SMD:R0603_4K7_1%_0.1W_100PPM") (at 87.63 83.82 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp yes)
     (uuid 689ecec8-c08b-4fe7-a071-ff5ee63c9cef)
-    (property "Reference" "R50" (at 88.9 78.74 90)
+    (property "Reference" "R20" (at 88.9 78.74 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "R0603_4K7_1%_0.1W_100PPM" (at 92.583 83.82 0)
@@ -8255,7 +8577,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R50") (unit 1)
+          (reference "R20") (unit 1)
         )
       )
     )
@@ -8264,7 +8586,7 @@
   (symbol (lib_id "power:GND") (at 303.53 165.1 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6a03cd54-2be2-41d2-9c4f-12a40fdf8d10)
-    (property "Reference" "#PWR084" (at 303.53 171.45 0)
+    (property "Reference" "#PWR0202" (at 303.53 171.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 303.53 170.18 0)
@@ -8280,7 +8602,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR084") (unit 1)
+          (reference "#PWR0202") (unit 1)
         )
       )
     )
@@ -8289,7 +8611,7 @@
   (symbol (lib_id "power:GND") (at 95.25 237.49 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 6a19632e-ae86-4241-951d-435a74c6492f)
-    (property "Reference" "#PWR045" (at 95.25 243.84 0)
+    (property "Reference" "#PWR?" (at 95.25 243.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 95.25 242.57 0)
@@ -8305,10 +8627,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR013") (unit 1)
+          (reference "#PWR0211") (unit 1)
         )
       )
     )
@@ -8317,7 +8639,7 @@
   (symbol (lib_id "Logic:ATSAMD21G18A-MF") (at 143.51 194.31 0) (unit 2)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6ba35b41-44c9-4a48-b09f-b17a932867d8)
-    (property "Reference" "IC6" (at 158.75 191.77 0)
+    (property "Reference" "IC8" (at 158.75 191.77 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "ATSAMD21G18A-MF" (at 143.51 274.955 0)
@@ -8495,7 +8817,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "IC6") (unit 2)
+          (reference "IC8") (unit 2)
         )
       )
     )
@@ -8504,7 +8826,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 80.01 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6c08e54a-5257-4784-b150-56d2c5322277)
-    (property "Reference" "#PWR0150" (at 80.01 77.47 0)
+    (property "Reference" "#PWR0215" (at 80.01 77.47 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 80.01 68.58 0)
@@ -8520,7 +8842,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0150") (unit 1)
+          (reference "#PWR0215") (unit 1)
         )
       )
     )
@@ -8529,7 +8851,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_1UF_16V_10%_X7R") (at 181.61 200.66 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6dc574eb-1def-4c2c-9d66-8c1462525f85)
-    (property "Reference" "C77" (at 185.42 203.2 90)
+    (property "Reference" "C39" (at 185.42 203.2 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CC0603_1UF_16V_10%_X7R" (at 175.387 200.66 0)
@@ -8660,7 +8982,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "C77") (unit 1)
+          (reference "C39") (unit 1)
         )
       )
     )
@@ -8669,7 +8991,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 228.6 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7031575f-6d4d-414f-b17d-e5b8ab76a9ec)
-    (property "Reference" "#PWR0176" (at 228.6 46.99 0)
+    (property "Reference" "#PWR0218" (at 228.6 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 228.6 38.1 0)
@@ -8685,7 +9007,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0176") (unit 1)
+          (reference "#PWR0218") (unit 1)
         )
       )
     )
@@ -8694,7 +9016,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x08") (at 295.91 181.61 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 71f3bc88-54fc-44d5-be31-5131e022a048)
-    (property "Reference" "J9" (at 297.18 185.42 90)
+    (property "Reference" "J6" (at 297.18 185.42 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x08" (at 297.18 187.96 90)
@@ -8717,7 +9039,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "J9") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
@@ -8726,7 +9048,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x08") (at 327.66 67.31 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 79336f23-e84e-43a3-867e-c1235aef042a)
-    (property "Reference" "J7" (at 326.39 60.96 90)
+    (property "Reference" "J8" (at 326.39 60.96 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x08" (at 326.39 63.5 90)
@@ -8749,7 +9071,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "J7") (unit 1)
+          (reference "J8") (unit 1)
         )
       )
     )
@@ -8758,7 +9080,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R") (at 133.35 214.63 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7d108c8d-513b-4f6d-a3ff-df5b5287b254)
-    (property "Reference" "C21" (at 133.35 215.9 90)
+    (property "Reference" "C?" (at 133.35 215.9 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CC0603_100NF_50V_10%_X7R" (at 127.127 214.63 0)
@@ -8889,13 +9211,13 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "C21") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "C44") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "C78") (unit 1)
+          (reference "C38") (unit 1)
         )
       )
     )
@@ -8904,7 +9226,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_10UF_25V_20%_X5R") (at 95.25 227.33 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 7f630bf8-c718-4d4d-aa4a-668ccf0cf7c0)
-    (property "Reference" "C20" (at 95.25 228.6 90)
+    (property "Reference" "C?" (at 95.25 228.6 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CC0603_10UF_25V_20%_X5R" (at 89.027 227.33 0)
@@ -9035,10 +9357,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "C20") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "C87") (unit 1)
+          (reference "C34") (unit 1)
         )
       )
     )
@@ -9047,7 +9369,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x06") (at 327.66 181.61 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 838b5d88-c473-4796-8383-b24df14fc86d)
-    (property "Reference" "J11" (at 328.93 185.42 90)
+    (property "Reference" "J9" (at 328.93 185.42 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x06" (at 328.93 187.96 90)
@@ -9068,7 +9390,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "J11") (unit 1)
+          (reference "J9") (unit 1)
         )
       )
     )
@@ -9077,7 +9399,7 @@
   (symbol (lib_id "power:+5V") (at 306.07 163.83 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 84ef4e2e-6bb2-4145-b557-2f974b783355)
-    (property "Reference" "#PWR0174" (at 306.07 167.64 0)
+    (property "Reference" "#PWR0201" (at 306.07 167.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 306.07 158.75 90)
@@ -9093,7 +9415,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0174") (unit 1)
+          (reference "#PWR0201") (unit 1)
         )
       )
     )
@@ -9102,7 +9424,7 @@
   (symbol (lib_id "Switches:PB_C&K_KSC321JLFS") (at 369.57 101.6 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 85e2c515-213e-4035-8af0-fc3d77e790db)
-    (property "Reference" "PB1" (at 374.65 109.6294 90)
+    (property "Reference" "PB?" (at 374.65 109.6294 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "PB_C&K_KSC321JLFS" (at 365.633 101.6 0)
@@ -9241,13 +9563,13 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "PB1") (unit 1)
+          (reference "PB?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "PB3") (unit 1)
+          (reference "PB?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "PB4") (unit 1)
+          (reference "PB3") (unit 1)
         )
       )
     )
@@ -9256,7 +9578,7 @@
   (symbol (lib_id "LEDs & Displays:LED_LITEON_LTST-C193KSKT-5A") (at 360.68 186.69 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 86b03454-0db2-4b79-bfd6-c479bfc599bb)
-    (property "Reference" "LD3" (at 360.68 181.61 0)
+    (property "Reference" "LD?" (at 360.68 181.61 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LED_LITEON_LTST-C193KSKT-5A" (at 360.68 192.151 0)
@@ -9387,10 +9709,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "LD3") (unit 1)
+          (reference "LD?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "LD3") (unit 1)
+          (reference "LD10") (unit 1)
         )
       )
     )
@@ -9399,7 +9721,7 @@
   (symbol (lib_id "power:GND") (at 76.2 58.42 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 876879dc-bbda-468c-9fe1-11f2e55fcbd1)
-    (property "Reference" "#PWR0171" (at 76.2 64.77 0)
+    (property "Reference" "#PWR0216" (at 76.2 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 76.2 63.5 0)
@@ -9415,7 +9737,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0171") (unit 1)
+          (reference "#PWR0216") (unit 1)
         )
       )
     )
@@ -9424,7 +9746,7 @@
   (symbol (lib_id "power:GND") (at 207.01 96.52 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9003c61d-46d8-4426-ab42-3a69757eca4a)
-    (property "Reference" "#PWR065" (at 207.01 102.87 0)
+    (property "Reference" "#PWR?" (at 207.01 102.87 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 207.01 101.6 0)
@@ -9440,10 +9762,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "#PWR065") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR083") (unit 1)
+          (reference "#PWR0220") (unit 1)
         )
       )
     )
@@ -9452,7 +9774,7 @@
   (symbol (lib_id "Switches:PB_C&K_KSC321JLFS") (at 379.73 101.6 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 92133d55-1a36-45da-98ed-2098b1d16fa4)
-    (property "Reference" "PB1" (at 384.81 109.6294 90)
+    (property "Reference" "PB?" (at 384.81 109.6294 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "PB_C&K_KSC321JLFS" (at 375.793 101.6 0)
@@ -9591,13 +9913,13 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "PB1") (unit 1)
+          (reference "PB?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "PB2") (unit 1)
+          (reference "PB?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "PB5") (unit 1)
+          (reference "PB4") (unit 1)
         )
       )
     )
@@ -9606,7 +9928,7 @@
   (symbol (lib_id "power:GND") (at 110.49 237.49 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 95ac7c41-fd34-4087-834e-9f08099a20fd)
-    (property "Reference" "#PWR045" (at 110.49 243.84 0)
+    (property "Reference" "#PWR?" (at 110.49 243.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 110.49 242.57 0)
@@ -9622,10 +9944,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0163") (unit 1)
+          (reference "#PWR0208") (unit 1)
         )
       )
     )
@@ -9634,7 +9956,7 @@
   (symbol (lib_id "power:GND") (at 295.91 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 961a1028-9e4e-43f0-aa17-ad2580a4410e)
-    (property "Reference" "#PWR0173" (at 295.91 80.01 0)
+    (property "Reference" "#PWR0200" (at 295.91 80.01 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 295.91 77.47 0)
@@ -9650,7 +9972,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0173") (unit 1)
+          (reference "#PWR0200") (unit 1)
         )
       )
     )
@@ -9659,7 +9981,7 @@
   (symbol (lib_id "power:GND") (at 119.38 237.49 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 9bd1347f-5129-4777-ab98-b09e4020752c)
-    (property "Reference" "#PWR045" (at 119.38 243.84 0)
+    (property "Reference" "#PWR?" (at 119.38 243.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 119.38 242.57 0)
@@ -9675,10 +9997,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "#PWR045") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0164") (unit 1)
+          (reference "#PWR0209") (unit 1)
         )
       )
     )
@@ -9687,7 +10009,7 @@
   (symbol (lib_id "power:GND") (at 359.41 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9f1007f4-9b69-457b-8352-1f86e38623e5)
-    (property "Reference" "#PWR0158" (at 359.41 125.73 0)
+    (property "Reference" "#PWR?" (at 359.41 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 359.41 124.46 0)
@@ -9703,10 +10025,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0158") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0154") (unit 1)
+          (reference "#PWR0198") (unit 1)
         )
       )
     )
@@ -9715,7 +10037,7 @@
   (symbol (lib_id "Resistors SMD:R0603_1K0_0.1%_0.063W_10PPM") (at 374.65 171.45 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a5bf006a-408f-4876-8148-6ed8e383454f)
-    (property "Reference" "R32" (at 378.46 166.37 0)
+    (property "Reference" "R?" (at 378.46 166.37 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "R0603_1K0_0.1%_0.063W_10PPM" (at 374.65 176.403 0)
@@ -9849,10 +10171,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "R32") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R37") (unit 1)
+          (reference "R27") (unit 1)
         )
       )
     )
@@ -9861,7 +10183,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 95.25 194.31 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a7bcc6d9-95bd-4f94-8a26-d1cd335a670b)
-    (property "Reference" "#PWR0167" (at 95.25 198.12 0)
+    (property "Reference" "#PWR0210" (at 95.25 198.12 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 95.25 189.23 0)
@@ -9877,7 +10199,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0167") (unit 1)
+          (reference "#PWR0210") (unit 1)
         )
       )
     )
@@ -9886,7 +10208,7 @@
   (symbol (lib_name "R0603_1K_1%_0.1W_100PPM_3") (lib_id "Resistors SMD:R0603_1K_1%_0.1W_100PPM") (at 379.73 77.47 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b25d8c23-4bfc-4d07-b3dd-ae144701e666)
-    (property "Reference" "R38" (at 382.27 80.01 90)
+    (property "Reference" "R?" (at 382.27 80.01 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R0603_1K_1%_0.1W_100PPM" (at 374.777 77.47 0)
@@ -10020,10 +10342,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "R38") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R20") (unit 1)
+          (reference "R30") (unit 1)
         )
       )
     )
@@ -10032,7 +10354,7 @@
   (symbol (lib_name "R0603_4K7_1%_0.1W_100PPM_1") (lib_id "Resistors SMD:R0603_4K7_1%_0.1W_100PPM") (at 87.63 109.22 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b8ec40ac-4c56-450f-bfaa-c86a98ae1352)
-    (property "Reference" "R45" (at 88.9 104.14 90)
+    (property "Reference" "R21" (at 88.9 104.14 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "R0603_4K7_1%_0.1W_100PPM" (at 92.583 109.22 0)
@@ -10166,7 +10488,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R45") (unit 1)
+          (reference "R21") (unit 1)
         )
       )
     )
@@ -10175,7 +10497,7 @@
   (symbol (lib_id "Pads:SMD_PAD_1.27X1.27MM") (at 76.2 111.76 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b90a4a1c-f7b4-4819-b5e5-48f77116801c)
-    (property "Reference" "TP4" (at 72.39 111.76 0)
+    (property "Reference" "TP?" (at 72.39 111.76 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SMD_PAD_1.27X1.27MM" (at 76.2 115.697 0)
@@ -10308,10 +10630,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "TP4") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "TP23") (unit 1)
+          (reference "TP14") (unit 1)
         )
       )
     )
@@ -10320,7 +10642,7 @@
   (symbol (lib_id "Pads:SMD_PAD_1.27X1.27MM") (at 76.2 85.09 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid bd233188-d227-4be5-a2d7-0f42a7d4d71f)
-    (property "Reference" "TP4" (at 72.39 85.09 0)
+    (property "Reference" "TP?" (at 72.39 85.09 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SMD_PAD_1.27X1.27MM" (at 76.2 89.027 0)
@@ -10453,10 +10775,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "TP4") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "TP29") (unit 1)
+          (reference "TP12") (unit 1)
         )
       )
     )
@@ -10465,7 +10787,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R") (at 110.49 227.33 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c74aa3ae-b449-4865-9f99-0847bf1dcc08)
-    (property "Reference" "C21" (at 110.49 228.6 90)
+    (property "Reference" "C?" (at 110.49 228.6 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CC0603_100NF_50V_10%_X7R" (at 104.267 227.33 0)
@@ -10596,13 +10918,13 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "C21") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "C44") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "C80") (unit 1)
+          (reference "C35") (unit 1)
         )
       )
     )
@@ -10611,7 +10933,7 @@
   (symbol (lib_id "Pads:SMD_PAD_1.27X1.27MM") (at 76.2 87.63 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid c9f3825c-4d19-445c-a291-8e7a991914a1)
-    (property "Reference" "TP4" (at 72.39 87.63 0)
+    (property "Reference" "TP?" (at 72.39 87.63 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SMD_PAD_1.27X1.27MM" (at 76.2 91.567 0)
@@ -10744,10 +11066,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "TP4") (unit 1)
+          (reference "TP?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "TP30") (unit 1)
+          (reference "TP13") (unit 1)
         )
       )
     )
@@ -10756,7 +11078,7 @@
   (symbol (lib_name "R0603_470R_1%_0.1W_100PPM_1") (lib_id "Resistors SMD:R0603_470R_1%_0.1W_100PPM") (at 228.6 45.72 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cd335f6e-13d7-44cc-a434-1c6f272e1030)
-    (property "Reference" "R43" (at 231.14 48.26 90)
+    (property "Reference" "R24" (at 231.14 48.26 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R0603_470R_1%_0.1W_100PPM" (at 223.647 45.72 0)
@@ -10890,7 +11212,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R43") (unit 1)
+          (reference "R24") (unit 1)
         )
       )
     )
@@ -10899,7 +11221,7 @@
   (symbol (lib_id "Resistors SMD:R0603_4K7_1%_0.1W_100PPM") (at 80.01 109.22 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid cfe6ebb0-a006-480f-bc91-2c2876ea33f5)
-    (property "Reference" "R44" (at 81.28 104.14 90)
+    (property "Reference" "R19" (at 81.28 104.14 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "R0603_4K7_1%_0.1W_100PPM" (at 84.963 109.22 0)
@@ -11033,7 +11355,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R44") (unit 1)
+          (reference "R19") (unit 1)
         )
       )
     )
@@ -11042,7 +11364,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 29.21 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d0d324fa-5b2c-43e1-a8b9-0c1c2786e320)
-    (property "Reference" "#PWR032" (at 29.21 33.02 0)
+    (property "Reference" "#PWR?" (at 29.21 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 29.21 24.13 0)
@@ -11058,10 +11380,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "#PWR032") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0120") (unit 1)
+          (reference "#PWR0223") (unit 1)
         )
       )
     )
@@ -11070,7 +11392,7 @@
   (symbol (lib_id "LEDs & Displays:LED_LITEON_LTST-C193KSKT-5A") (at 360.68 201.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d24350d2-5532-4ec8-a525-557b7b14cc8f)
-    (property "Reference" "LD13" (at 360.68 196.85 0)
+    (property "Reference" "LD?" (at 360.68 196.85 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LED_LITEON_LTST-C193KSKT-5A" (at 360.68 207.391 0)
@@ -11201,10 +11523,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "LD13") (unit 1)
+          (reference "LD?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "LD13") (unit 1)
+          (reference "LD11") (unit 1)
         )
       )
     )
@@ -11213,7 +11535,7 @@
   (symbol (lib_id "power:GND") (at 29.21 43.18 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d3f6019f-8ac5-471a-8cb8-820a763ba2e2)
-    (property "Reference" "#PWR031" (at 29.21 49.53 0)
+    (property "Reference" "#PWR?" (at 29.21 49.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 29.21 48.26 0)
@@ -11229,10 +11551,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "#PWR031") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0121") (unit 1)
+          (reference "#PWR0221") (unit 1)
         )
       )
     )
@@ -11241,7 +11563,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_10UF_25V_20%_X5R") (at 125.73 214.63 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid d93595b9-ddd6-47ab-b89c-1388bd0604c8)
-    (property "Reference" "C20" (at 125.73 215.9 90)
+    (property "Reference" "C?" (at 125.73 215.9 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CC0603_10UF_25V_20%_X5R" (at 119.507 214.63 0)
@@ -11372,10 +11694,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "C20") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "C88") (unit 1)
+          (reference "C37") (unit 1)
         )
       )
     )
@@ -11384,7 +11706,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x10") (at 300.99 67.31 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dbc0be3b-458f-4474-b4e6-038f68a56dff)
-    (property "Reference" "J10" (at 299.72 60.96 90)
+    (property "Reference" "J7" (at 299.72 60.96 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x10" (at 299.72 63.5 90)
@@ -11409,7 +11731,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "J10") (unit 1)
+          (reference "J7") (unit 1)
         )
       )
     )
@@ -11418,7 +11740,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 359.41 74.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid dc819c2c-fb87-4eb0-bf83-502a581f2984)
-    (property "Reference" "#PWR0155" (at 359.41 78.74 0)
+    (property "Reference" "#PWR?" (at 359.41 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 359.41 69.85 0)
@@ -11434,10 +11756,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0155") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0153") (unit 1)
+          (reference "#PWR0207") (unit 1)
         )
       )
     )
@@ -11446,7 +11768,7 @@
   (symbol (lib_id "LEDs & Displays:LED_LITEON_LTST-C193KSKT-5A") (at 228.6 59.69 90) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid dff0280a-841a-41c4-8e35-5e8268484fbd)
-    (property "Reference" "LD3" (at 223.52 60.96 0)
+    (property "Reference" "LD?" (at 223.52 60.96 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "LED_LITEON_LTST-C193KSKT-5A" (at 234.061 59.69 0)
@@ -11577,10 +11899,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "LD3") (unit 1)
+          (reference "LD?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "LD12") (unit 1)
+          (reference "LD8") (unit 1)
         )
       )
     )
@@ -11729,7 +12051,7 @@
   (symbol (lib_id "power:+5V") (at 36.83 29.21 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e5037109-f9b4-442b-84b4-df523426f1db)
-    (property "Reference" "#PWR0179" (at 36.83 33.02 0)
+    (property "Reference" "#PWR0222" (at 36.83 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 36.83 24.13 0)
@@ -11745,7 +12067,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0179") (unit 1)
+          (reference "#PWR0222") (unit 1)
         )
       )
     )
@@ -11754,7 +12076,7 @@
   (symbol (lib_id "Resistors SMD:R0603_4K7_1%_0.1W_100PPM") (at 80.01 83.82 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp yes)
     (uuid e54dafb9-ebf9-47ab-94c8-4c25ef25ef54)
-    (property "Reference" "R47" (at 81.28 78.74 90)
+    (property "Reference" "R18" (at 81.28 78.74 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "R0603_4K7_1%_0.1W_100PPM" (at 84.963 83.82 0)
@@ -11888,7 +12210,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R47") (unit 1)
+          (reference "R18") (unit 1)
         )
       )
     )
@@ -11897,7 +12219,7 @@
   (symbol (lib_id "power:GND") (at 369.57 119.38 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e76347a0-7119-4366-9d7e-7cddf244176a)
-    (property "Reference" "#PWR0159" (at 369.57 125.73 0)
+    (property "Reference" "#PWR?" (at 369.57 125.73 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 369.57 124.46 0)
@@ -11913,10 +12235,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0159") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0156") (unit 1)
+          (reference "#PWR0199") (unit 1)
         )
       )
     )
@@ -11925,7 +12247,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 379.73 74.93 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ee7824c0-ddf8-48c4-b751-fa25d5905872)
-    (property "Reference" "#PWR0153" (at 379.73 78.74 0)
+    (property "Reference" "#PWR?" (at 379.73 78.74 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 379.73 69.85 0)
@@ -11941,10 +12263,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0153") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0157") (unit 1)
+          (reference "#PWR0206") (unit 1)
         )
       )
     )
@@ -11953,7 +12275,7 @@
   (symbol (lib_name "R0603_1K_1%_0.1W_100PPM_1") (lib_id "Resistors SMD:R0603_1K_1%_0.1W_100PPM") (at 359.41 77.47 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f2edf2ae-1a8a-4589-aef7-dd82aa3ff395)
-    (property "Reference" "R20" (at 361.95 80.01 90)
+    (property "Reference" "R?" (at 361.95 80.01 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R0603_1K_1%_0.1W_100PPM" (at 354.457 77.47 0)
@@ -12087,10 +12409,10 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "R20") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "R18") (unit 1)
+          (reference "R25") (unit 1)
         )
       )
     )
@@ -12099,7 +12421,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 87.63 73.66 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f9272b57-05b9-46ae-9da7-ccd4628e59b4)
-    (property "Reference" "#PWR0162" (at 87.63 77.47 0)
+    (property "Reference" "#PWR0214" (at 87.63 77.47 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 87.63 68.58 0)
@@ -12115,7 +12437,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "#PWR0162") (unit 1)
+          (reference "#PWR0214") (unit 1)
         )
       )
     )
@@ -12124,7 +12446,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R") (at 119.38 227.33 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid fcd59278-8884-4313-9b47-000ca2fbdbae)
-    (property "Reference" "C21" (at 119.38 228.6 90)
+    (property "Reference" "C?" (at 119.38 228.6 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CC0603_100NF_50V_10%_X7R" (at 113.157 227.33 0)
@@ -12255,13 +12577,13 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "C21") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "C44") (unit 1)
+          (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "C79") (unit 1)
+          (reference "C36") (unit 1)
         )
       )
     )
