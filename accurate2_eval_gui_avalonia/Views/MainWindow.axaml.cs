@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System;
 using Avalonia.Threading;
 using accurate2_eval_gui_avalonia.ViewModels;
-using MsBox.Avalonia.Enums;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Dto;
 using MsBox.Avalonia.Models;
@@ -29,6 +28,8 @@ public partial class MainWindow : Window
 
         // Countdown timer init
         time = TimeSpan.FromSeconds(1);
+        serialPorts = SerialPort.GetPortNames();
+        arduinoPort = new SerialPort();
         dispatcherTimer = new DispatcherTimer
         {
             Interval = TimeSpan.FromSeconds(1)
