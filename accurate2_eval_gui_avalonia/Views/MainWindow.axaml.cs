@@ -19,11 +19,23 @@ public partial class MainWindow : Window
     string[] serialPorts = SerialPort.GetPortNames();
     int clickCount1;
     readonly SerialPort arduinoPort = new();
+    readonly DispatcherTimer dispatcherTimer;
+    TimeSpan time;
 
 
     public MainWindow()
     {
         InitializeComponent();
+
+        // Countdown timer init
+        time = TimeSpan.FromSeconds(1);
+        dispatcherTimer = new DispatcherTimer
+        {
+            Interval = TimeSpan.FromSeconds(1)
+        };
+        // Check that dispatcherTimer_Tick is not null and subscribe to it
+        dispatcherTimer.Tick += DispatcherTimer_Tick;
+
 
         arduinoPort.ReadTimeout = 1000;
         arduinoPort.WriteTimeout = 1000;
@@ -32,8 +44,7 @@ public partial class MainWindow : Window
             if (DataContext is MainViewModel)
             {
                 var viewModel = DataContext;
-                var context = DataContext as MainViewModel;
-                if (context != null)
+                if (DataContext is MainViewModel context)
                 {
                     context.OnConnectButtonClicked += ConnectUSB;
                 }
@@ -41,7 +52,7 @@ public partial class MainWindow : Window
         };
 
         Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
-        UsbEventWatcher usbEventWatcher = new UsbEventWatcher();
+        UsbEventWatcher usbEventWatcher = new();
         usbEventWatcher.UsbDeviceAdded += (sender, args) =>
         {
             Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
@@ -95,7 +106,7 @@ public partial class MainWindow : Window
                     MessageBoxError("Failed to disconnect device.", "Connection Error");
                 }
 
-                //dispatcherTimer.Stop();
+                dispatcherTimer.Stop();
                 connectedTime.Content = "Disconnected";
                 ConnectButton.Content = "Connect";
 
@@ -104,7 +115,7 @@ public partial class MainWindow : Window
             case 1:
                 onButton.IsEnabled = true;
                 offButton.IsEnabled = false;
-                if (portComboBox.SelectedValue != null)
+                if (portComboBox.SelectedValue is not null)
                 {
                     string portName = portComboBox.SelectedValue.ToString() ?? throw new ArgumentException();
                     arduinoPort.PortName = portName;
@@ -129,7 +140,7 @@ public partial class MainWindow : Window
                                 ConnectButton.Content = "Disconnect";
                                 onButton.IsEnabled = true;
                                 offButton.IsEnabled = true;
-                                //dispatcherTimer.Start();
+                                dispatcherTimer.Start();
                             }
                             else
                             {
@@ -154,7 +165,19 @@ public partial class MainWindow : Window
         }
     }
 
-    public static async void MessageBoxError(string message, string title, ButtonEnum buttons = ButtonEnum.Ok)
+    // Device connection timekeeping
+    private void DispatcherTimer_Tick(object? sender, EventArgs e)
+    {
+        if (time == TimeSpan.Zero) dispatcherTimer.Stop();
+        else
+        {
+            time = time.Add(TimeSpan.FromSeconds(+1));
+            string timeString = "Connected for " + time.ToString("c");
+            connectedTime.Content = timeString;
+        }
+    }
+
+    public static async void MessageBoxError(string message, string title)
     {
         var messageBox = MessageBoxManager.GetMessageBoxCustom(
             new MessageBoxCustomParams
@@ -175,7 +198,7 @@ public partial class MainWindow : Window
                 Topmost = false,
             });
 
-        var result = await messageBox.ShowAsync();
-
+        await messageBox.ShowAsync();
+        return;
     }
 }
