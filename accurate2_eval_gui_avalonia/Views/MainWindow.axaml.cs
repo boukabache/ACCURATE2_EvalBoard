@@ -8,12 +8,8 @@ using Avalonia.Threading;
 using accurate2_eval_gui_avalonia.ViewModels;
 using MsBox.Avalonia.Enums;
 using MsBox.Avalonia;
-using Avalonia.Styling;
 using MsBox.Avalonia.Dto;
-using System.Threading.Tasks;
 using MsBox.Avalonia.Models;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 namespace accurate2_eval_gui_avalonia.Views;
 
@@ -22,12 +18,15 @@ public partial class MainWindow : Window
 
     string[] serialPorts = SerialPort.GetPortNames();
     int clickCount1;
-    readonly SerialPort arduinoPort = new SerialPort();
+    readonly SerialPort arduinoPort = new();
 
 
     public MainWindow()
     {
         InitializeComponent();
+
+        arduinoPort.ReadTimeout = 1000;
+        arduinoPort.WriteTimeout = 1000;
 
         DataContextChanged += (o, e) => {
             if (DataContext is MainViewModel)
@@ -67,7 +66,7 @@ public partial class MainWindow : Window
     }
 
     // This method is called when the ConnectButton is clicked and handles the connection and disconnection
-    private async void ConnectUSB(object? sender, EventArgs e)
+    private void ConnectUSB(object? sender, EventArgs e)
     {
 
         if (!(clickCount1 == 1))
@@ -120,6 +119,29 @@ public partial class MainWindow : Window
                     if (arduinoPort.IsOpen == false)
                     {
                         arduinoPort.Open();
+                        try
+                        {
+                            // Check if Arduino is sending data by sending a command and waiting for a response and test WriteTimeout
+                            arduinoPort.WriteLine("Hello");
+                            if (arduinoPort.ReadLine() == "Hello")
+                            {
+                                connectedTime.Content = "Connected";
+                                ConnectButton.Content = "Disconnect";
+                                onButton.IsEnabled = true;
+                                offButton.IsEnabled = true;
+                                //dispatcherTimer.Start();
+                            }
+                            else
+                            {
+                                MessageBoxError("Failed to connect to device, wrong response received.", "Connection Error");
+                                arduinoPort.Close();
+                            }   
+                        }
+                        catch
+                        {
+                            MessageBoxError("Failed to connect to device, no response received.", "Connection Error");
+                            arduinoPort.Close();
+                        }
                     }
                 }
 
@@ -127,14 +149,12 @@ public partial class MainWindow : Window
                 {
                     MessageBoxError("Failed to connect to device.", "Connection Error");
                 }
-                //dispatcherTimer.Start();
-                ConnectButton.Content = "Disconnect";
 
                 break;
         }
     }
 
-    public async void MessageBoxError(string message, string title, ButtonEnum buttons = ButtonEnum.Ok)
+    public static async void MessageBoxError(string message, string title, ButtonEnum buttons = ButtonEnum.Ok)
     {
         var messageBox = MessageBoxManager.GetMessageBoxCustom(
             new MessageBoxCustomParams
