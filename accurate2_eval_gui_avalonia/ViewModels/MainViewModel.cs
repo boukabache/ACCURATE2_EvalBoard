@@ -6,7 +6,7 @@ public partial class MainViewModel : ViewModelBase
 {
 
     // Make an EventHandler OnConnectButtonClicked that MainWindow.axaml.cs can subscribe to
-    public event EventHandler OnConnectButtonClicked;
+    public event EventHandler ?OnConnectButtonClicked;
 
     public void OnClickCommand()
     {

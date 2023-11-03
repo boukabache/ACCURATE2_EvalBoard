@@ -6,6 +6,14 @@ using System.Collections.Generic;
 using System;
 using Avalonia.Threading;
 using accurate2_eval_gui_avalonia.ViewModels;
+using MsBox.Avalonia.Enums;
+using MsBox.Avalonia;
+using Avalonia.Styling;
+using MsBox.Avalonia.Dto;
+using System.Threading.Tasks;
+using MsBox.Avalonia.Models;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace accurate2_eval_gui_avalonia.Views;
 
@@ -21,19 +29,17 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-
-        // Check if the DataContext is the correct ViewModel type and subscribe to the OnConnectButtonClicked event
         DataContextChanged += (o, e) => {
             if (DataContext is MainViewModel)
             {
                 var viewModel = DataContext;
-                (DataContext as MainViewModel).OnConnectButtonClicked += ConnectUSB;
+                var context = DataContext as MainViewModel;
+                if (context != null)
+                {
+                    context.OnConnectButtonClicked += ConnectUSB;
+                }
             }
         };
-
-        // Subscribe to OnConnectButtonClicked event from MainViewModel and call ConnectMe method when event is raised
-        // Select the already made instance of MainViewModel
-
 
         Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
         UsbEventWatcher usbEventWatcher = new UsbEventWatcher();
@@ -41,6 +47,7 @@ public partial class MainWindow : Window
         {
             Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
         };
+
         usbEventWatcher.UsbDeviceRemoved += (sender, args) =>
         {
             Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
@@ -48,24 +55,20 @@ public partial class MainWindow : Window
 
     }
 
+    // This method is called when the USBEventWatcher detects a USB device has been added or removed
+    // from the system and updates the portComboBox with the new list of available ports
     public void USBEventArrived()
     {
         serialPorts = SerialPort.GetPortNames();
-        // USe Dispatcher.UIThread.Invoke to update UI
-
-
         ComboBox portComboBox = this.Find<ComboBox>("portComboBox") ?? throw new ArgumentException();
         List<string> serialPortsList = serialPorts.ToList();
         portComboBox.ItemsSource = serialPortsList;
         portComboBox.SelectedIndex = 0;
-
-
     }
 
-    private void ConnectUSB(object? sender, EventArgs e)
+    // This method is called when the ConnectButton is clicked and handles the connection and disconnection
+    private async void ConnectUSB(object? sender, EventArgs e)
     {
-        ComboBox portComboBox = this.Find<ComboBox>("portComboBox") ?? throw new ArgumentException();
-
 
         if (!(clickCount1 == 1))
         {
@@ -90,7 +93,7 @@ public partial class MainWindow : Window
                 }
                 catch
                 {
-                    //MessageBox.Show("Failed to disconnect device.", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBoxError("Failed to disconnect device.", "Connection Error");
                 }
 
                 //dispatcherTimer.Stop();
@@ -102,14 +105,14 @@ public partial class MainWindow : Window
             case 1:
                 onButton.IsEnabled = true;
                 offButton.IsEnabled = false;
-                /*if (portComboBox.SelectedValue != null)
+                if (portComboBox.SelectedValue != null)
                 {
                     string portName = portComboBox.SelectedValue.ToString() ?? throw new ArgumentException();
                     arduinoPort.PortName = portName;
                 }
                 else
                 {
-                    //MessageBox.Show("Please select a valid port.", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBoxError("Please select a valid port.", "Connection Error");
                 }
 
                 try
@@ -122,13 +125,37 @@ public partial class MainWindow : Window
 
                 catch
                 {
-                    //MessageBox.Show("Failed to connect to device.", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }*/
-
+                    MessageBoxError("Failed to connect to device.", "Connection Error");
+                }
                 //dispatcherTimer.Start();
                 ConnectButton.Content = "Disconnect";
 
                 break;
         }
+    }
+
+    public async void MessageBoxError(string message, string title, ButtonEnum buttons = ButtonEnum.Ok)
+    {
+        var messageBox = MessageBoxManager.GetMessageBoxCustom(
+            new MessageBoxCustomParams
+            {
+                ButtonDefinitions = new List<ButtonDefinition>
+                {
+            new ButtonDefinition { Name = "Ok", },
+                },
+                ContentTitle = title,
+                ContentMessage = message,
+                Icon = MsBox.Avalonia.Enums.Icon.Error,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                CanResize = false,
+                MaxWidth = 500,
+                MaxHeight = 800,
+                SizeToContent = SizeToContent.WidthAndHeight,
+                ShowInCenter = true,
+                Topmost = false,
+            });
+
+        var result = await messageBox.ShowAsync();
+
     }
 }
