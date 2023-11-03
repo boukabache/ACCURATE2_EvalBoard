@@ -21,11 +21,21 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        // Subscribe to OnConnectButtonClicked event from MainViewModel and call ConnectMe method when event is raised
-        // Select the already made instance of MainViewModel from the DataContext of the MainWindow
-        
 
-        /*Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
+        // Check if the DataContext is the correct ViewModel type and subscribe to the OnConnectButtonClicked event
+        DataContextChanged += (o, e) => {
+            if (DataContext is MainViewModel)
+            {
+                var viewModel = DataContext;
+                (DataContext as MainViewModel).OnConnectButtonClicked += ConnectUSB;
+            }
+        };
+
+        // Subscribe to OnConnectButtonClicked event from MainViewModel and call ConnectMe method when event is raised
+        // Select the already made instance of MainViewModel
+
+
+        Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
         UsbEventWatcher usbEventWatcher = new UsbEventWatcher();
         usbEventWatcher.UsbDeviceAdded += (sender, args) =>
         {
@@ -34,15 +44,8 @@ public partial class MainWindow : Window
         usbEventWatcher.UsbDeviceRemoved += (sender, args) =>
         {
             Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
-        };*/
+        };
 
-    }
-
-    private void ConnectMe(object? sender, EventArgs e)
-    {
-        // Handle the event here
-        Label test = this.Find<Label>("test") ?? throw new ArgumentException();
-        test.Content = "Hello World!";
     }
 
     public void USBEventArrived()
@@ -59,7 +62,7 @@ public partial class MainWindow : Window
 
     }
 
-    public void ConnectUSB()
+    private void ConnectUSB(object? sender, EventArgs e)
     {
         ComboBox portComboBox = this.Find<ComboBox>("portComboBox") ?? throw new ArgumentException();
 

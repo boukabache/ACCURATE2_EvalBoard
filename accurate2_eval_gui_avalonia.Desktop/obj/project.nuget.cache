@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YtwyEvkfqB4X0ihbELpvCasYjqX4fjYp+Kj9rYGVRvFsbFop2CKHwxdFd0c4FuSm65ILQ1WJNRf7r7knJIMEDQ==",
+  "dgSpecHash": "BDroyKse8hngSkrjev8nTS4AcYftsrf6gAiloKIV7xhoKrbghN5+YL/piiRSotpRtS2As7Wl2G3QFjcr4ezqWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hliverud\\Documents\\Software\\accurate2_eval_gui_avalonia.Desktop\\accurate2_eval_gui_avalonia.Desktop.csproj",
+  "projectFilePath": "C:\\Users\\hliverud\\Documents\\Software\\accurate2_eval_gui_avalonia\\accurate2_eval_gui_avalonia.Desktop\\accurate2_eval_gui_avalonia.Desktop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hliverud\\.nuget\\packages\\avalonia\\11.0.5\\avalonia.11.0.5.nupkg.sha512",
     "C:\\Users\\hliverud\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2023020321\\avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",
