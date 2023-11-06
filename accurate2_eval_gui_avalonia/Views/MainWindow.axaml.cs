@@ -109,7 +109,7 @@ public partial class MainWindow : Window
 
                 dispatcherTimer.Stop();
                 connectedTime.Content = "Disconnected";
-                ConnectButton.Content = "Connect";
+                ConnectButtonLabel.Content = "Connect";
 
                 break;
 
@@ -138,7 +138,7 @@ public partial class MainWindow : Window
                             if (arduinoPort.ReadLine() == "Hello")
                             {
                                 connectedTime.Content = "Connected";
-                                ConnectButton.Content = "Disconnect";
+                                ConnectButtonLabel.Content = "Disconnect";
                                 onButton.IsEnabled = true;
                                 offButton.IsEnabled = true;
                                 dispatcherTimer.Start();
