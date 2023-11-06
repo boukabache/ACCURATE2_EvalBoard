@@ -10,7 +10,8 @@
         x:Class="accurate2_eval_gui_avalonia.Views.MainWindow"
         Icon="/Assets/CERN-logo.ico"
         Title="accurate2_eval_gui_avalonia"
-        FontSize="20">
+        FontSize="20"
+        xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia">
 
   <Window.Styles>
 
@@ -19,6 +20,7 @@
       <Setter Property="BorderThickness" Value="1"></Setter>
       <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
       <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+      <Setter Property="CornerRadius" Value="4"></Setter>
     </Style>
 
     <Style Selector="Button:pointerover /template/ ContentPresenter">
@@ -30,16 +32,16 @@
   </Window.Styles>
 
   
-    <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.1*, 0.3*, 0.1*, 0.3*, 0.2*" Background="#FFF0F3FA">
+    <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.09*, 0.3*, 0.1*, 0.3*, 0.21*" Background="#FFF0F3FA">
       
       <Grid Grid.Row="0" Grid.ColumnSpan="2">
         <Viewbox HorizontalAlignment="Left" Margin="24, 16, 24, 16">
-          <Label FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Foreground="Black"  VerticalAlignment="Center" Grid.ColumnSpan="1" FontSize="36">Accurate 2A evaluation software</Label>
+          <Label FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Foreground="Black"  VerticalAlignment="Center" Grid.ColumnSpan="1">Accurate 2A evaluation software</Label>
         </Viewbox>
       </Grid>
 
       
-      <Border Grid.Row="1" BorderThickness="0" CornerRadius="8" Margin="23, 4, 24, 24" Background="White">
+      <Border Grid.Row="1" BorderThickness="0" CornerRadius="8" Margin="24, 4, 12, 4" Background="White">
         <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.15*, 0.283*, 0.283*, 0.283*">
           <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" x:Name="Connection" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 4, 4, 4">Connection</Label>
 
@@ -58,6 +60,7 @@
             Margin="12, 4, 12, 4"
             BorderThickness="1"
             BorderBrush="DarkGray"
+            CornerRadius="4"
             FontSize="20"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Center"
@@ -88,7 +91,7 @@
       </Border>
 
       
-      <Border Grid.Row="2" BorderThickness="0" CornerRadius="8" Margin="24, 4, 24, 24" Background="White">
+      <Border Grid.Row="2" BorderThickness="0" CornerRadius="8" Margin="24, 4, 12, 4" Background="White">
         <Grid ColumnDefinitions="0.3*, 0.7*">
           <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="12, 4, 0, 4">
             <Label FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Foreground="Black" BorderThickness="0" Background="{x:Null}">Live current:</Label>
@@ -103,7 +106,7 @@
       </Border>
 
       
-      <Border Grid.Row="3" BorderThickness="0" CornerRadius="8" Margin="24, 4, 24, 24" Background="White">
+      <Border Grid.Row="3" BorderThickness="0" CornerRadius="8" Margin="24, 4, 12, 4" Background="White">
         <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.15*, 0.283*, 0.283*, 0.283*">
           <Label Grid.Row="0" FontFamily="Segoe UI Variable Display" Foreground="Black" FontWeight="SemiBold" Grid.ColumnSpan="2" Margin="12, 0, 12, 0">Buttons and LEDs status</Label>
 
@@ -156,27 +159,36 @@
       </Grid>
 
       
-      <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" BorderThickness="0" CornerRadius="8" Margin="12, 4, 24, 24" Background="White">
-        <Grid Grid.RowSpan="3" ColumnDefinitions="0.25*, 0.25*, 0.5*" RowDefinitions="0.1*, 0.75*, 0.15*">
-          <Label HorizontalAlignment="Left" FontFamily="Segoe UI Variable Display" Foreground="Black" FontWeight="SemiBold" Grid.ColumnSpan="3" Margin="12, 4, 4, 4">Live Current</Label>
+      <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" BorderThickness="0" CornerRadius="8" Margin="12, 4, 24, 4" Background="White">
+        <Grid Grid.RowSpan="3" ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.1*, 0.75*, 0.15*">
+          <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" FontFamily="Segoe UI Variable Display" Foreground="Black" FontWeight="SemiBold" Margin="12, 4, 4, 4">Live Current</Label>
 
+          <lvc:CartesianChart Grid.Row="1" Grid.ColumnSpan="2" Margin="12"
+            Series="{Binding CurrentSeries}"
+            YAxes="{Binding CurrentYAxis}"
+            ZoomMode="Both">
+          </lvc:CartesianChart>
+          
           <Button x:Name="exportButton" Grid.Row="3" Grid.Column="0" Margin="12" Foreground="Black" Background="White" BorderThickness="1">
-
             <Label Grid.ColumnSpan="2" FontFamily="Segoe UI Variable Text" Foreground="Black">Export as...</Label>
           </Button>
 
-          <Button x:Name="saveButton" Grid.Row="3" Grid.Column="1" Margin="12" Background="White" BorderThickness="1">
-            <Label Grid.ColumnSpan="2" FontFamily="Segoe UI Variable Text" Foreground="Black">Save picture</Label>
-          </Button>
-
-          <Label Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Segoe UI Variable Text" Foreground="Black" Margin="0, 4, 12, 4">Samples since connection</Label>
+          <Label Name="SamplesText" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Segoe UI Variable Text" Foreground="Black" Margin="0, 4, 12, 4">N/A Samples since connection</Label>
         </Grid>
       </Border>
 
       
       <Border Grid.Row="4" Grid.Column="1" BorderThickness="0" CornerRadius="8" Margin="12, 4, 24, 24" Background="White">
-        <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.25*, 0.75*">
-          <Label Grid.ColumnSpan="2" HorizontalAlignment="Left" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 4, 4, 0" Foreground="Black">Temperature and humidity</Label>
+        <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.2*, 0.8*">
+          
+          <Label Grid.ColumnSpan="2" HorizontalAlignment="Left" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 0, 0, 0" Foreground="Black">Temperature and humidity</Label>
+
+          <lvc:CartesianChart Grid.Row="1" Grid.ColumnSpan="3" Margin="12, 0, 12, 0"
+            Series="{Binding TemperatureAndHumiditySeries}"
+            YAxes="{Binding TemperatureAndHumidityYAxis}"
+            ZoomMode="Both">
+          </lvc:CartesianChart>
+          
         </Grid>
       </Border>
     </Grid>
