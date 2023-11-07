@@ -6,7 +6,7 @@
         xmlns:views="clr-namespace:accurate2_eval_gui_avalonia.Views"
         mc:Ignorable="d" d:DesignWidth="1600" d:DesignHeight="1000"
         MinWidth="600"
-        MinHeight="800"
+        MinHeight="600"
         x:Class="accurate2_eval_gui_avalonia.Views.MainWindow"
         Icon="/Assets/CERN-logo.ico"
         Title="accurate2_eval_gui_avalonia"
@@ -14,6 +14,10 @@
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia">
 
   <Window.Styles>
+
+    <Style Selector="Label">
+      <Setter Property="Foreground" Value="Black"></Setter>
+    </Style>
 
     <Style Selector="Button">
       <Setter Property="BorderBrush" Value="DarkGray"></Setter>
@@ -27,12 +31,14 @@
       <Setter Property="Background" Value="WhiteSmoke"></Setter>
       <Setter Property="BorderBrush" Value="DarkGray"></Setter>
       <Setter Property="BorderThickness" Value="1"></Setter>
+      <Setter Property="Foreground" Value="Black"></Setter>
     </Style>
+    
     
   </Window.Styles>
 
   
-    <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.09*, 0.3*, 0.1*, 0.3*, 0.21*" Background="#FFF0F3FA">
+    <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.1*, 0.3*, 0.1*, 0.25*, 0.25*" Background="#FFF0F3FA">
       
       <Grid Grid.Row="0" Grid.ColumnSpan="2">
         <Viewbox HorizontalAlignment="Left" Margin="24, 16, 24, 16">
@@ -43,8 +49,9 @@
       
       <Border Grid.Row="1" BorderThickness="0" CornerRadius="8" Margin="24, 4, 12, 4" Background="White">
         <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.15*, 0.283*, 0.283*, 0.283*">
-          <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" x:Name="Connection" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 4, 4, 4">Connection</Label>
-
+          
+          <Label MinHeight="35" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" x:Name="Connection" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 4, 4, 4">Connection</Label>
+          
           <Button x:Name="onButton" Grid.Row="1" Margin="12,  4, 12, 4" Background="LightGreen" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Label FontFamily="Segoe UI Variable Text" FontSize="20" Foreground="Black">On</Label>
           </Button>
@@ -81,35 +88,40 @@
             VerticalAlignment="Stretch">
             <Label Name="ConnectButtonLabel" FontFamily="Segoe UI Variable Text" FontSize="20" Foreground="Black">Connect</Label>
           </Button>
-          
-          <StackPanel Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12, 0, 12, 12">
-            <Label Name="test" FontFamily="Segoe UI Variable Text" FontWeight="SemiBold" Foreground="Black" BorderThickness="0" Padding="5, 0">ACCURATE 2A evaluation board</Label>
-            <Label FontFamily="Segoe UI Variable Text" BorderThickness="0" Foreground="Black" Padding="5, 0">Microchip SAMD21G18, Lattice iCE5LP4K</Label>
-            <Label x:Name="connectedTime" FontFamily="Segoe UI Variable Text" Foreground="Black" BorderThickness="0" Padding="5, 0">Disconnected</Label>
-          </StackPanel>
+
+          <Viewbox Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="12, 0, 12, 12" VerticalAlignment="Center">
+            <StackPanel>
+              <Label Name="test" FontFamily="Segoe UI Variable Text" FontWeight="SemiBold" Foreground="Black" BorderThickness="0" Padding="5, 0">ACCURATE 2A evaluation board</Label>
+              <Label FontFamily="Segoe UI Variable Text" BorderThickness="0" Foreground="Black" Padding="5, 0">Microchip SAMD21G18, Lattice iCE5LP4K</Label>
+              <Label x:Name="connectedTime" FontFamily="Segoe UI Variable Text" Foreground="Black" BorderThickness="0" Padding="5, 0">Disconnected</Label>
+            </StackPanel>
+          </Viewbox>
         </Grid>
       </Border>
 
       
-      <Border Grid.Row="2" BorderThickness="0" CornerRadius="8" Margin="24, 4, 12, 4" Background="White">
-        <Grid ColumnDefinitions="0.3*, 0.7*">
-          <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="12, 4, 0, 4">
-            <Label FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Foreground="Black" BorderThickness="0" Background="{x:Null}">Live current:</Label>
-            <Label FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Foreground="Black" BorderThickness="0" Background="{x:Null}">Average current:</Label>
-          </StackPanel>
+      <Border Grid.Row="2" MinHeight="70" BorderThickness="0" CornerRadius="8" Margin="24, 4, 12, 4" Background="White">
+        <Grid ColumnDefinitions="0.5*, 0.5*">
+          
+            <StackPanel Grid.Column="0" MinWidth="150" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12, 4, 0, 4">
+              <Label FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Foreground="Black" BorderThickness="0" Background="{x:Null}">Live current:</Label>
+              <Label FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Foreground="Black" BorderThickness="0" Background="{x:Null}">Average current:</Label>
+            </StackPanel>
 
-          <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="12, 4, 0, 4">
-            <Label FontFamily="Segoe UI Variable Text" BorderThickness="0" Foreground="Black" Background="{x:Null}">N/A fA</Label>
-            <Label FontFamily="Segoe UI Variable Text" BorderThickness="0" Foreground="Black" Background="{x:Null}">N/A fA</Label>
-          </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0, 4, 12, 4">
+              <Label FontFamily="Segoe UI Variable Text" BorderThickness="0" Foreground="Black" Background="{x:Null}">N/A fA</Label>
+              <Label FontFamily="Segoe UI Variable Text" BorderThickness="0" Foreground="Black" Background="{x:Null}">N/A fA</Label>
+            </StackPanel>
+          
         </Grid>
       </Border>
 
       
       <Border Grid.Row="3" BorderThickness="0" CornerRadius="8" Margin="24, 4, 12, 4" Background="White">
         <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.15*, 0.283*, 0.283*, 0.283*">
-          <Label Grid.Row="0" FontFamily="Segoe UI Variable Display" Foreground="Black" FontWeight="SemiBold" Grid.ColumnSpan="2" Margin="12, 0, 12, 0">Buttons and LEDs status</Label>
-
+          
+          <Label Grid.Row="0" Grid.ColumnSpan="2" MinHeight="35" Margin="12, 0, 12, 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI Variable Display" Foreground="Black" FontWeight="SemiBold" >Buttons and LEDs status</Label>
+          
           <Viewbox Grid.Row="1" Grid.Column="0">
             <Border  Margin="10" Width="50" Height="50" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="12"/>
           </Viewbox>
@@ -155,13 +167,14 @@
       </Border>
 
       <Grid Grid.Row="4">
-        <Image Source="/Assets/CERN-logo-outline.png" Margin="24" Grid.Row="4" HorizontalAlignment="Left"  RenderOptions.BitmapInterpolationMode="HighQuality"/>
+        <Image Source="/Assets/CERN-logo-outline.png" Margin="36" Grid.Row="4" HorizontalAlignment="Left"  RenderOptions.BitmapInterpolationMode="HighQuality"/>
       </Grid>
 
       
       <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" BorderThickness="0" CornerRadius="8" Margin="12, 4, 24, 4" Background="White">
-        <Grid Grid.RowSpan="3" ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.1*, 0.75*, 0.15*">
-          <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" FontFamily="Segoe UI Variable Display" Foreground="Black" FontWeight="SemiBold" Margin="12, 4, 4, 4">Live Current</Label>
+        <Grid Grid.RowSpan="3" ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.05*, 0.85*, 0.1*">
+
+          <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="35" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 4, 4, 4">Live Current</Label>
 
           <lvc:CartesianChart Grid.Row="1" Grid.ColumnSpan="2" Margin="12"
             Series="{Binding CurrentSeries}"
@@ -169,9 +182,7 @@
             ZoomMode="Both">
           </lvc:CartesianChart>
           
-          <Button x:Name="exportButton" Grid.Row="3" Grid.Column="0" Margin="12" Foreground="Black" Background="White" BorderThickness="1">
-            <Label Grid.ColumnSpan="2" FontFamily="Segoe UI Variable Text" Foreground="Black">Export as...</Label>
-          </Button>
+          <Button x:Name="exportButton" MinHeight="45" Grid.Row="3" Grid.Column="0" Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Export as..."></Button>
 
           <Label Name="SamplesText" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Segoe UI Variable Text" Foreground="Black" Margin="0, 4, 12, 4">N/A Samples since connection</Label>
         </Grid>
@@ -180,9 +191,9 @@
       
       <Border Grid.Row="4" Grid.Column="1" BorderThickness="0" CornerRadius="8" Margin="12, 4, 24, 24" Background="White">
         <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.2*, 0.8*">
-          
-          <Label Grid.ColumnSpan="2" HorizontalAlignment="Left" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 0, 0, 0" Foreground="Black">Temperature and humidity</Label>
 
+          <Label Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="35" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 0, 0, 0">Temperature and humidity</Label>
+          
           <lvc:CartesianChart Grid.Row="1" Grid.ColumnSpan="3" Margin="12, 0, 12, 0"
             Series="{Binding TemperatureAndHumiditySeries}"
             YAxes="{Binding TemperatureAndHumidityYAxis}"
