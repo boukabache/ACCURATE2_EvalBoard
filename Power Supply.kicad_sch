@@ -11713,7 +11713,7 @@
           (reference "D?") (unit 4)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "D11") (unit 4)
+          (reference "D?") (unit 4)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "D5") (unit 4)
@@ -11853,7 +11853,7 @@
   (symbol (lib_name "R0603_10K_1%_0.1W_100PPM_2") (lib_id "Resistors SMD:R0603_10K_1%_0.1W_100PPM") (at 231.14 132.08 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 17eeacdf-4b06-4143-9f9c-60b4d6aab167)
-    (property "Reference" "R33" (at 226.06 127 90)
+    (property "Reference" "R?" (at 226.06 127 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R0603_10K_1%_0.1W_100PPM" (at 226.187 132.08 0)
@@ -11987,7 +11987,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "R33") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "R16") (unit 1)
@@ -12672,7 +12672,7 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "#PWR0296") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "#PWR095") (unit 1)
@@ -14638,7 +14638,7 @@
           (reference "D?") (unit 5)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "D11") (unit 5)
+          (reference "D?") (unit 5)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "D5") (unit 5)
@@ -14669,7 +14669,7 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "#PWR0297") (unit 1)
+          (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "#PWR093") (unit 1)
@@ -16935,7 +16935,7 @@
   (symbol (lib_name "R0603_10K_1%_0.1W_100PPM_2") (lib_id "Resistors SMD:R0603_10K_1%_0.1W_100PPM") (at 237.49 132.08 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 83d9cdff-ec5b-4890-8fc5-01181b48471a)
-    (property "Reference" "R33" (at 232.41 127 90)
+    (property "Reference" "R?" (at 232.41 127 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R0603_10K_1%_0.1W_100PPM" (at 232.537 132.08 0)
@@ -17069,7 +17069,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "R33") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "R20") (unit 1)
@@ -19267,7 +19267,7 @@
           (reference "D?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "D11") (unit 1)
+          (reference "D?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "D5") (unit 1)
@@ -19279,7 +19279,7 @@
   (symbol (lib_name "R0603_10K_1%_0.1W_100PPM_2") (lib_id "Resistors SMD:R0603_10K_1%_0.1W_100PPM") (at 243.84 132.08 270) (mirror x) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid a1936bb1-798c-4e47-aa6d-83608e071c7c)
-    (property "Reference" "R33" (at 238.76 127 90)
+    (property "Reference" "R?" (at 238.76 127 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "R0603_10K_1%_0.1W_100PPM" (at 238.887 132.08 0)
@@ -19413,7 +19413,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "R33") (unit 1)
+          (reference "R?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "R21") (unit 1)
@@ -19930,7 +19930,7 @@
           (reference "D?") (unit 3)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "D11") (unit 3)
+          (reference "D?") (unit 3)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "D5") (unit 3)
@@ -20800,7 +20800,7 @@
           (reference "D?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "D12") (unit 1)
+          (reference "D?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "D6") (unit 1)
@@ -20839,7 +20839,7 @@
           (reference "D?") (unit 2)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
-          (reference "D11") (unit 2)
+          (reference "D?") (unit 2)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
           (reference "D5") (unit 2)

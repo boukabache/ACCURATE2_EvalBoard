@@ -8145,7 +8145,7 @@
   (symbol (lib_id "Crystals & Oscillators:OSC_100MHZ_IQD_LFSPXO022731") (at 95.25 218.44 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1f9daa9c-621a-4e31-9919-fa1d32220342)
-    (property "Reference" "OSC3" (at 102.87 213.36 0)
+    (property "Reference" "OSC?" (at 102.87 213.36 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "OSC_100MHZ_IQD_LFSPXO022731" (at 95.25 233.045 0)
@@ -8278,7 +8278,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "OSC3") (unit 1)
+          (reference "OSC?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
           (reference "OSC2") (unit 1)
