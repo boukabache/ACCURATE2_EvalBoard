@@ -5,6 +5,9 @@
  *  Author: vcruchet, hliverud
  */
 #include "dac7578.h"
+#include <Arduino.h>
+#include <Time.h>
+
 
  /************************************************************************/
  /* GLobal variables definition                                          */
@@ -19,9 +22,9 @@ static DAC7578 ACCURATE_DAC;
 void dac7578_init(uint8_t addr) {
     ACCURATE_DAC.address = addr;
     ACCURATE_DAC.channel_val[VBIAS1_CH] = VBIAS1_REG;		// default :  1.68 V
-    ACCURATE_DAC.channel_val[VCM_CH] = VCM_REG;			// default :  1.5 V
+    ACCURATE_DAC.channel_val[VCM_CH] = VCM_REG;			    // default :  1.5 V
     ACCURATE_DAC.channel_val[VTH1_CH] = VTH1_REG;			// default :  2.3 V
-    ACCURATE_DAC.channel_val[VCHARGEP_CH] = VCHARGEP_REG;		// default :  2.5 V
+    ACCURATE_DAC.channel_val[VCHARGEP_CH] = VCHARGEP_REG;	// default :  2.5 V
     ACCURATE_DAC.channel_val[VTH2_CH] = VTH2_REG;			// default :  2.4 V
     ACCURATE_DAC.channel_val[VTH4_CH] = VTH4_REG;			// default :  2.5 V
     ACCURATE_DAC.channel_val[VTH3_CH] = VTH3_REG;			// default :  2.5 V
@@ -67,12 +70,16 @@ uint16_t dac7578_get_ch_val(uint8_t ch_idx) {
 // send all channel parameters contained in the structure via i2c 
 void dac7578_i2c_send_all_param() {
     uint8_t i = 0;
+    uint8_t i2c_glob_wr_buffer[2];
 
     for (i = 0; i < DAC7578_NCH - 1; i++) {
         Wire.beginTransmission(ACCURATE_DAC.address);
-        Wire.write((DAC7578_WRU_CMD << 4) | i);
-        Wire.write(ACCURATE_DAC.channel_val[i] >> 4);
-        Wire.write(ACCURATE_DAC.channel_val[i] << 4);
+        i2c_glob_wr_buffer[0] = (uint8_t)(DAC7578_WRU_CMD << 4 | i);
+        i2c_glob_wr_buffer[1] = (uint8_t)(ACCURATE_DAC.channel_val[i] >> 4); // data msb
+        i2c_glob_wr_buffer[2] = (uint8_t)(ACCURATE_DAC.channel_val[i] << 4); // data lsb
+        Wire.write(i2c_glob_wr_buffer, DAC_I2C_WR_PCKT_LEN);
+        delay(0.1);
         Wire.endTransmission();
+
     }
 }

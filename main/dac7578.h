@@ -7,33 +7,17 @@
 #ifndef DAC7578_H_
 #define DAC7578_H_
 
+#include "config.h"
 #include <Wire.h>
 #include <stdint.h>
 #include <stdbool.h>
 
-#define DAC_ADDRESS		0x0048
-
-#define DAC7578_NCH		8
-#define VBIAS1_CH		0
-#define VCM_CH			1
-#define VTH1_CH			2
-#define VCHARGEP_CH		3
-#define VTH2_CH			4
-#define VTH4_CH		 	5
-#define VTH3_CH			6
-#define VBIAS3_CH		7
-
-#define VBIAS1_REG		0x0D00
-#define VCM_REG			0x0A00
-#define VTH1_REG		0x0F00
-#define VCHARGEP_REG	0x1000
-#define VTH2_REG		0x0E00
-#define VTH4_REG		0x1000
-#define VTH3_REG		0x1000
-#define VBIAS3_REG		0x0700
-
 #define DAC7578_WRU_CMD	0x0
 #define DAC7578_RD_CMD	0x1
+#define DAC7578_RST_CMD 0b0111 // software reset
+
+#define DAC_I2C_WR_PCKT_LEN     3 // command, MSB, LSB
+#define DAC_I2C_RD_PCKT_LEN     2 // MSB, LSB
 
 class DAC7578 {
 public:
