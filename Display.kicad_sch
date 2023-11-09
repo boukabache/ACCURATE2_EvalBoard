@@ -669,7 +669,7 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0219") (unit 1)
+          (reference "#PWR0213") (unit 1)
         )
       )
     )
@@ -823,7 +823,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 109.22 48.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9a63607d-d8f7-4614-bc55-63c1ad3be564)
-    (property "Reference" "#PWR0221" (at 109.22 52.07 0)
+    (property "Reference" "#PWR0215" (at 109.22 52.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 109.22 43.18 0)
@@ -839,7 +839,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0221") (unit 1)
+          (reference "#PWR0215") (unit 1)
         )
       )
     )
@@ -848,7 +848,7 @@
   (symbol (lib_id "power:GND") (at 109.22 71.12 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d1dfb56c-fee2-4e41-9c38-ec85a2dbc2f5)
-    (property "Reference" "#PWR0222" (at 109.22 77.47 0)
+    (property "Reference" "#PWR0216" (at 109.22 77.47 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 109.22 76.2 0)
@@ -864,7 +864,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0222") (unit 1)
+          (reference "#PWR0216") (unit 1)
         )
       )
     )
@@ -1035,7 +1035,7 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "#PWR0220") (unit 1)
+          (reference "#PWR0214") (unit 1)
         )
       )
     )

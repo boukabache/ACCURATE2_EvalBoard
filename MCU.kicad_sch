@@ -7720,7 +7720,7 @@
   (symbol (lib_id "Logic:ATSAMD21G18A-MF") (at 143.51 53.34 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4dfee9a4-0f9b-4601-b6a6-2c3a68ddcca9)
-    (property "Reference" "IC8" (at 158.75 50.8 0)
+    (property "Reference" "IC9" (at 158.75 50.8 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "ATSAMD21G18A-MF" (at 143.51 133.985 0)
@@ -7898,7 +7898,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "IC8") (unit 1)
+          (reference "IC9") (unit 1)
         )
       )
     )
@@ -8643,7 +8643,7 @@
   (symbol (lib_id "Logic:ATSAMD21G18A-MF") (at 143.51 194.31 0) (unit 2)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6ba35b41-44c9-4a48-b09f-b17a932867d8)
-    (property "Reference" "IC8" (at 158.75 191.77 0)
+    (property "Reference" "IC9" (at 158.75 191.77 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "ATSAMD21G18A-MF" (at 143.51 274.955 0)
@@ -8821,7 +8821,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/c6a8b2ea-c0f0-4c02-aeaa-57ac874f0dd5"
-          (reference "IC8") (unit 2)
+          (reference "IC9") (unit 2)
         )
       )
     )
