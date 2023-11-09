@@ -8070,7 +8070,7 @@
       (property "PackageDescription" "Body 6.6x12.7mm, Vertical PCB Mounting, SPDT ON-NONE-ON Switch, NKK MS Series" (at 0 -31.242 0)
         (effects (font (size 1.27 1.27)) (justify left) hide)
       )
-      (property "Family" "Switch" (at 0 -33.147 0)
+      (property "Family_1" "Switch" (at 0 -33.147 0)
         (effects (font (size 1.27 1.27)) (justify left) hide)
       )
       (property "Mounted" "Yes" (at 0 -35.052 0)
@@ -11358,7 +11358,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 2dd1ed94-6a2d-4ade-85fa-3b8d38284d9a)
   )
-  (label "USB_CONN_P" (at 110.49 25.4 0) (fields_autoplaced)
+  (label "USB_CONN_DP" (at 110.49 25.4 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 38dd3a02-f333-47c2-bbd0-4fa5b7cc2e80)
   )
@@ -11498,7 +11498,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid d3f27bc6-9a6e-4021-994d-da7d13b01401)
   )
-  (label "USB_CONN_M" (at 110.49 50.8 0) (fields_autoplaced)
+  (label "USB_CONN_DM" (at 110.49 50.8 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e2970502-4222-4f76-a90b-e876fb8c45e9)
   )
@@ -16506,7 +16506,7 @@
     (property "Datasheet" "" (at 384.81 58.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid ebf50a1d-d33d-4f1f-8513-153ca33f67a7))
+    (pin "1" (uuid 295b68b9-f4e1-4b11-b94a-8eaa1eae6f71))
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/929e0cdf-f54c-4a28-a6d4-8b706822a456"
