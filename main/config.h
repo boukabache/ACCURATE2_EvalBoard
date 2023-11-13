@@ -42,3 +42,6 @@
 #define SHT41_CMD_RH_H		    0b11100101 // measurement command for relative humidity, hold master
 #define SHT41_CMD_RH_NH		    0b11110101 // measurement command for relative humidity, no-hold master
 #define SHT41_RD_PERIOD		    1 // periodic read interval [s]
+
+// SSD1306 Settings
+#define SSD1306_ADDR			0b0111100

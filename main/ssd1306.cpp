@@ -34,7 +34,7 @@ void ssd1306_print_currentmA_temp_humidity(float current, String current_range, 
   display.setCursor(0, 10);
   display.print("Temp: ");
   display.print(temp);
-  display.print(" C");
+  display.print("C");
   display.setCursor(0, 20);
   display.print("Humidity: ");
   display.print(humidity);
