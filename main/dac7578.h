@@ -7,14 +7,29 @@
 #ifndef DAC7578_H_
 #define DAC7578_H_
 
-#include "config.h"
 #include <Wire.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "config.h"
+
+#define DAC7578_NCH		        8 // number of channels per DAC. Must not exceed 2^8-1 = 255
+#define DAC_ADDRESS 	        0b1001011
+
+ // DACs channels
+#define VBIAS1_CH		0
+#define VCM_CH			1
+#define VTH1_CH			2
+#define VCHARGEP_CH		3
+#define VTH2_CH			4
+#define VTH4_CH		 	5
+#define VTH3_CH			6
+#define VBIAS3_CH		7
 
 #define DAC7578_WRU_CMD	0x0
 #define DAC7578_RD_CMD	0x1
 #define DAC7578_RST_CMD 0b0111 // software reset
+
+#define DAC7578_CONV_VOLT(V)    ( (uint16_t)(4096/3 * V) )
 
 #define DAC_I2C_WR_PCKT_LEN     3 // command, MSB, LSB
 #define DAC_I2C_RD_PCKT_LEN     2 // MSB, LSB
@@ -26,10 +41,7 @@ public:
 };
 
 // Initializes ACCURATE_DAC fields with given address and default channel values
-void dac7578_init(uint8_t addr);
-
-// set ACCURATE_DAC address
-void dac7578_set_addr(uint8_t addr);
+void dac7578_init();
 
 // set ACCURATE_DAC's channel(ch_idx) value
 void dac7578_set_ch_val(uint8_t ch_idx, uint16_t ch_val, bool update);

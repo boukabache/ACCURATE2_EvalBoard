@@ -6,11 +6,13 @@
 #include "sht41.h"
 #include "dac7578.h"
 #include "ssd1306.h"
+#include "fpga.h"
 
 void setup() {
     Wire.begin();
-    ssd1306_init(SSD1306_ADDR);
-    dac7578_init(DAC_ADDRESS);
+    ssd1306_init();
+    dac7578_init();
+    fpga_init();
 
     pinMode(PIN_LED_13, OUTPUT);
 
@@ -27,6 +29,5 @@ void loop() {
     int ranPercent = random(0, 100);
     int ranTemp = random(0, 100);
     int ranCurrentFemto = random(0, 100);
-    // Show on display
     ssd1306_print_currentmA_temp_humidity(ranCurrentFemto, "fA", ranTemp, ranPercent);
 }

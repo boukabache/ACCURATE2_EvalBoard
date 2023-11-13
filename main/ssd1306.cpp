@@ -1,7 +1,7 @@
 /*
  * ssd1306.cpp
  *
- * Created: 10/11/2023 15:08:51 AM
+ * Created: 10/11/2023 15:08
  *  Author: hliverud
  */
 
@@ -14,8 +14,8 @@
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
-void ssd1306_init(uint8_t addr) {
-  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+void ssd1306_init() {
+  if (!display.begin(SSD1306_SWITCHCAPVCC, SSD1306_ADDR)) {
     Serial.println(F("SSD1306 allocation failed"));
     for (;;);
   }

@@ -19,8 +19,8 @@ static DAC7578 ACCURATE_DAC;
 /* Functions definition                                                 */
 
 // Initializes ACCURATE_DAC fields with given address and default channel values
-void dac7578_init(uint8_t addr) {
-    ACCURATE_DAC.address = addr;
+void dac7578_init() {
+    ACCURATE_DAC.address = DAC_ADDRESS;
     ACCURATE_DAC.channel_val[VBIAS1_CH] = VBIAS1_REG;		// default :  1.68 V
     ACCURATE_DAC.channel_val[VCM_CH] = VCM_REG;			    // default :  1.5 V
     ACCURATE_DAC.channel_val[VTH1_CH] = VTH1_REG;			// default :  2.3 V
@@ -29,11 +29,6 @@ void dac7578_init(uint8_t addr) {
     ACCURATE_DAC.channel_val[VTH4_CH] = VTH4_REG;			// default :  2.5 V
     ACCURATE_DAC.channel_val[VTH3_CH] = VTH3_REG;			// default :  2.5 V
     ACCURATE_DAC.channel_val[VBIAS3_CH] = VBIAS3_REG;		// default :  1.18 V
-}
-
-// set DAC address
-void dac7578_set_addr(uint8_t addr) {
-    ACCURATE_DAC.address = addr;
 }
 
 // set DAC's channel(ch_idx) value

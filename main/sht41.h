@@ -22,6 +22,11 @@
 #define SHT41_CMD_RH_NH		0b11110101 // measurement command for relative humidity, no-hold master
 #define SHT41_RD_PERIOD		1           // periodic read interval [s]
 
+#define SHT41_CMD_TEMP_H	    0b11100011 // measurement command for temperature, hold master
+#define SHT41_CMD_TEMP_NH	    0b11110011 // measurement command for temperature, no-hold master
+#define SHT41_CMD_RH_H		    0b11100101 // measurement command for relative humidity, hold master
+#define SHT41_CMD_RH_NH		    0b11110101 // measurement command for relative humidity, no-hold master
+
  // global flag to notify a temperature read request
 extern bool sht41_rh_rq;
 extern bool sht41_temp_rq;
