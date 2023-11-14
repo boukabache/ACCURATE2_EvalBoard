@@ -6694,7 +6694,7 @@
     (effects (font (size 1.27 1.27)) (justify left top))
     (uuid 59d01abe-f5b2-41bb-a7c0-a24bdd447f4c)
   )
-  (text_box "J3:  Remove shunt only for Programming iCE.\nReplace shunt for programming Flash and for normal operation."
+  (text_box "J3: Remove shunt only for Programming iCE.\nReplace shunt for programming Flash and for normal operation."
     (at 124.46 158.75 0) (size 46.99 7.62)
     (stroke (width 0) (type default))
     (fill (type none))

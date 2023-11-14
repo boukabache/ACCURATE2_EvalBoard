@@ -6195,7 +6195,7 @@
     (effects (font (size 2.5 2.5)) (justify left bottom))
     (uuid b92746b8-b20a-46bc-a38d-85b44f016776)
   )
-  (text "Shielding" (at 327.66 58.42 0)
+  (text "Shielding box" (at 327.66 58.42 0)
     (effects (font (size 2.5 2.5)) (justify left bottom))
     (uuid bf283be2-2bdd-429b-a354-12510dbf29c2)
   )
