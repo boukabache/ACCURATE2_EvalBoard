@@ -11271,7 +11271,7 @@
     (uuid 859ef1cd-fa8d-4b9c-97c9-d39e572ea31f)
   )
   (text_box "ACCURATE typically consumes 1mA -> Voltage ref usage is OK"
-    (at 190.5 218.44 0) (size 40.64 5.08)
+    (at 201.93 251.46 0) (size 40.64 5.08)
     (stroke (width 0) (type default))
     (fill (type none))
     (effects (font (size 1.27 1.27)) (justify left top))
@@ -11316,7 +11316,7 @@
     (effects (font (size 2.5 2.5)) (justify left bottom))
     (uuid 8f7aa241-5013-49ae-a000-87d17c3195ea)
   )
-  (text "Voltage References" (at 186.69 215.9 0)
+  (text "Voltage References" (at 185.42 214.63 0)
     (effects (font (size 2.5 2.5)) (justify left bottom))
     (uuid 94e469f0-8c94-4924-bede-ba149dc1ab11)
   )
@@ -12500,7 +12500,7 @@
           (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "C13") (unit 1)
+          (reference "C14") (unit 1)
         )
       )
     )
@@ -13187,7 +13187,7 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "#PWR095") (unit 1)
+          (reference "#PWR096") (unit 1)
         )
       )
     )
@@ -15327,7 +15327,7 @@
           (reference "C?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "C14") (unit 1)
+          (reference "C15") (unit 1)
         )
       )
     )
@@ -15696,7 +15696,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_10NF_50V_10%_X7R") (at 191.77 181.61 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 610bd89b-430c-4579-86db-10aefa7cb7d2)
-    (property "Reference" "C15" (at 195.58 184.15 90)
+    (property "Reference" "C13" (at 195.58 184.15 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CC0603_10NF_50V_10%_X7R" (at 185.547 181.61 0)
@@ -15827,7 +15827,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "C15") (unit 1)
+          (reference "C13") (unit 1)
         )
       )
     )
@@ -15836,7 +15836,7 @@
   (symbol (lib_id "power:GND") (at 191.77 193.04 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 61c74239-bc75-407a-86c8-35cc3e15cac0)
-    (property "Reference" "#PWR076" (at 191.77 199.39 0)
+    (property "Reference" "#PWR074" (at 191.77 199.39 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (at 191.77 198.12 0)
@@ -15852,7 +15852,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "#PWR076") (unit 1)
+          (reference "#PWR074") (unit 1)
         )
       )
     )
@@ -16414,7 +16414,7 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "#PWR074") (unit 1)
+          (reference "#PWR076") (unit 1)
         )
       )
     )
@@ -20104,7 +20104,7 @@
   (symbol (lib_id "power:+5V") (at 191.77 229.87 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid a5dfd229-9846-44e1-ba27-6de9a6782a3b)
-    (property "Reference" "#PWR073" (at 191.77 233.68 0)
+    (property "Reference" "#PWR075" (at 191.77 233.68 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (at 191.77 224.79 0)
@@ -20120,7 +20120,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "#PWR073") (unit 1)
+          (reference "#PWR075") (unit 1)
         )
       )
     )
@@ -21365,7 +21365,7 @@
   (symbol (lib_id "symbol_lib:+3V3D") (at 191.77 172.72 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid b913f53a-45d4-467f-8f39-89e3467ebaa7)
-    (property "Reference" "#PWR075" (at 191.77 176.53 0)
+    (property "Reference" "#PWR073" (at 191.77 176.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3V3D" (at 191.77 166.37 0)
@@ -21381,7 +21381,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "#PWR075") (unit 1)
+          (reference "#PWR073") (unit 1)
         )
       )
     )
@@ -21409,7 +21409,7 @@
           (reference "#PWR?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
-          (reference "#PWR096") (unit 1)
+          (reference "#PWR095") (unit 1)
         )
       )
     )

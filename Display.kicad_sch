@@ -873,7 +873,7 @@
   (symbol (lib_id "Capacitors SMD:CC0603_1UF_16V_10%_X7R") (at 109.22 60.96 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d298beda-f7dc-4028-b178-ba4a0da7f092)
-    (property "Reference" "C90" (at 113.03 63.5 90)
+    (property "Reference" "C89" (at 113.03 63.5 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "CC0603_1UF_16V_10%_X7R" (at 102.997 60.96 0)
@@ -1004,7 +1004,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/59667e70-bb75-464b-9655-2a4f5dbb3db0"
-          (reference "C90") (unit 1)
+          (reference "C89") (unit 1)
         )
       )
     )

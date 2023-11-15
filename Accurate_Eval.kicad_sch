@@ -7377,7 +7377,7 @@
   (symbol (lib_id "Diodes:SMF5.0A") (at 68.58 46.99 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d5eb381d-0cf8-4490-a07f-6327e44275e5)
-    (property "Reference" "D1" (at 71.12 43.18 90)
+    (property "Reference" "D?" (at 71.12 43.18 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "SMF5.0A" (at 74.295 46.99 0)
@@ -7514,7 +7514,7 @@
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/cc002e27-f5d6-41c3-915c-2eb2060780b1"
-          (reference "D1") (unit 1)
+          (reference "D?") (unit 1)
         )
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537"
           (reference "D1") (unit 1)
