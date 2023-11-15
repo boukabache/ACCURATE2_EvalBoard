@@ -605,7 +605,7 @@
     (effects (font (size 2.5 2.5)) (justify left bottom))
     (uuid 525380b9-3853-48d9-ae52-97a9691c8ce1)
   )
-  (text "OLED Display" (at 97.79 36.83 0)
+  (text "OLED Display" (at 97.79 38.1 0)
     (effects (font (size 2.5 2.5)) (justify left bottom))
     (uuid aa773911-7749-4aa8-8a25-ffb5c4f33525)
   )
