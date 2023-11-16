@@ -12,7 +12,6 @@ void setup() {
     Wire.begin();
     ssd1306_init();
     dac7578_init();
-    fpga_init();
 
     pinMode(PIN_LED_13, OUTPUT);
 
