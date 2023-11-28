@@ -8,7 +8,6 @@ entity top is
     led_blue : out std_logic;
     scl : inout std_logic;
     sda : inout std_logic;
-    sdaFeedback : out std_logic;
     clk : in std_logic;
     sw1 : in std_logic
   );
@@ -95,7 +94,6 @@ begin
 
   sda <= sda;
   scl <= scl;
-  sdaFeedback <= scl;
 
   led_green <= data_received;
 end architecture arch;
