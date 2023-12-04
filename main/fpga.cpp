@@ -8,85 +8,60 @@
 #include "fpga.h"
 #include <Wire.h>
 
-FPGAData fpga_read_all() {
-    FPGAData data;
-    uint8_t buffer[24]; // Adjust the size of the buffer according to the size of the data you want to read
+FPGAData set_FPGAData() {
+    FPGAData fpgaData;
 
-    Wire.beginTransmission(FPGA_ADDR);
-    Wire.write(0); // Replace with the register address
+    fpgaData.accurate.tCharge = AccurateTCharge;
+    fpgaData.accurate.tInjection = AccurateTInjection;
+    fpgaData.accurate.disableCP1 = AccurateDisableCP1;
+    fpgaData.accurate.disableCP2 = AccurateDisableCP2;
+    fpgaData.accurate.disableCP3 = AccurateDisableCP3;
+
+    fpgaData.accurate.singlyCPActivation = AccurateSinglyCPActivation;
+    fpgaData.accurate.cooldownMinCP1 = AccurateCooldownMin_vTh2;
+    fpgaData.accurate.cooldownMaxCP1 = AccurateCooldownMax_vTh2;
+    fpgaData.accurate.cooldownMinCP2 = AccurateCooldownMin_vTh3;
+    fpgaData.accurate.cooldownMaxCP2 = AccurateCooldownMax_vTh3;
+    fpgaData.accurate.cooldownMinCP3 = AccurateCooldownMin_vTh4;
+    fpgaData.accurate.cooldownMaxCP3 = AccurateCooldownMax_vTh4;
+
+    double CCrome = CInt;
+    double C1 = AccurateCcp1;
+    double C2 = AccurateCcp2;
+    double C3 = AccurateCcp3;
+
+    fpgaData.accurate.chargeQuantaCP1 = (int)(C1 * (VP - VM) / CCrome * pow(2, 24) / (2 * VRANGE));
+    fpgaData.accurate.chargeQuantaCP2 = (int)(C2 * (VP - VM) / CCrome * pow(2, 24) / (2 * VRANGE));
+    fpgaData.accurate.chargeQuantaCP3 = (int)(C3 * (VP - VM) / CCrome * pow(2, 24) / (2 * VRANGE));
+
+    fpgaData.accurateCapEnable = AccurateCapEnable;
+    fpgaData.accurateVCm = (int)ACCURATE_V_CM;
+    fpgaData.accurateVTh1 = (int)ACCURATE_V_TH1;
+    fpgaData.accurateVTh2 = (int)ACCURATE_V_TH2;
+    fpgaData.accurateVTh3 = (int)ACCURATE_V_TH3;
+    fpgaData.accurateVTh4 = (int)ACCURATE_V_TH4;
+    fpgaData.accurateVBias1 = (int)ACCURATE_V_BIAS1;
+    fpgaData.accurateVBias3 = (int)ACCURATE_V_BIAS3;
+    fpgaData.accurateVChargeP = (int)ACCURATE_V_CHARGE_P;
+
+    return fpgaData;
+}
+
+void write_FPGAData(FPGAData fpgaData) {
+    Wire.beginTransmission(FPGA_I2C_ADDRESS);
+    Wire.write((uint8_t*)&fpgaData, sizeof(FPGAData));
     Wire.endTransmission();
-    Wire.requestFrom(FPGA_ADDR, sizeof(buffer));
+}
 
-    for (uint8_t i = 0; i < sizeof(buffer); i++) {
-        buffer[i] = Wire.read();
-    }
+// Function to receive data from the FPGA
+FPGAData receive_data() {
+    FPGAData data;
 
-    // Separate the data into their own variables extract timer
-    data.timer = ((uint32_t)buffer[0] << 24) |
-        ((uint32_t)buffer[1] << 16) |
-        ((uint32_t)buffer[2] << 8) |
-        buffer[3];
+    // Request data from the FPGA
+    Wire.requestFrom(FPGA_I2C_ADDRESS, sizeof(FPGAData));
 
-    // Extract amount_of_charge
-    data.amount_of_charge = ((uint64_t)buffer[4] << 44) |
-        ((uint64_t)buffer[5] << 36) |
-        ((uint64_t)buffer[6] << 28) |
-        ((uint64_t)buffer[7] << 20) |
-        ((uint32_t)buffer[8] << 12) |
-        ((uint32_t)buffer[9] << 4) |
-        (buffer[10] >> 4);
-
-    // Extract cp
-    for (int i = 0; i < 3; i++) {
-        data.cp[i] = ((uint64_t)buffer[11 + i * 6] << 44) |
-            ((uint64_t)buffer[12 + i * 6] << 36) |
-            ((uint64_t)buffer[13 + i * 6] << 28) |
-            ((uint64_t)buffer[14 + i * 6] << 20) |
-            ((uint32_t)buffer[15 + i * 6] << 12) |
-            ((uint32_t)buffer[16 + i * 6] << 4) |
-            (buffer[17 + i * 6] >> 4);
-    }
+    // Read the data into the FPGAData struct
+    Wire.readBytes((char*)&data, sizeof(FPGAData));
 
     return data;
-}
-
-void send_measurement_time(uint8_t measurement_time) {
-    Wire.beginTransmission(FPGA_ADDR);
-    Wire.write(CMD_MEASUREMENT_TIME);
-    Wire.write(measurement_time);
-    Wire.endTransmission();
-}
-
-void send_timings(uint8_t* timings, uint8_t len) {
-    Wire.beginTransmission(FPGA_ADDR);
-    Wire.write(CMD_TIMINGS);
-    for (uint8_t i = 0; i < len; i++) {
-        Wire.write(timings[i]);
-    }
-    Wire.endTransmission();
-}
-
-void send_cpCharge(uint8_t* cpCharge, uint8_t len) {
-    Wire.beginTransmission(FPGA_ADDR);
-    Wire.write(CMD_CPCHARGE);
-    for (uint8_t i = 0; i < len; i++) {
-        Wire.write(cpCharge[i]);
-    }
-    Wire.endTransmission();
-}
-
-void send_extraConfig(uint8_t* extraConfig, uint8_t len) {
-    Wire.beginTransmission(FPGA_ADDR);
-    Wire.write(CMD_EXTRACONFIG);
-    for (uint8_t i = 0; i < len; i++) {
-        Wire.write(extraConfig[i]);
-    }
-    Wire.endTransmission();
-}
-
-void send_register_signal(uint8_t register_signal) {
-    Wire.beginTransmission(FPGA_ADDR);
-    Wire.write(CMD_REGISTER_SIGNAL);
-    Wire.write(register_signal);
-    Wire.endTransmission();
 }
