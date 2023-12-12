@@ -23,7 +23,7 @@ public partial class MainViewModel : ViewModelBase
     {
                 new LineSeries<double>
                 {
-                     Values = new double[] { 1e-6, 1e-9, 1e-12, 1e-15, 1e-18},
+                     Values = new double[] { 5e-15, 6e-15, 7e-15, 6e-15, 5e-15, 6e-15},
                      GeometrySize = 0,
                      GeometryStroke = null,
                      Stroke = new SolidColorPaint(new SkiaSharp.SKColor(0, 51, 160)) {StrokeThickness = 3},
@@ -37,7 +37,7 @@ public partial class MainViewModel : ViewModelBase
         {
             new LineSeries<double>
             {
-                Values = new double[] { 20, 22, 24, 22, 26},
+                Values = new double[] { 21, 22, 23, 22, 22},
                 GeometrySize = 0,
                 GeometryStroke = null,
                 Stroke = new SolidColorPaint(new SkiaSharp.SKColor(0, 51, 160)) {StrokeThickness = 3},
@@ -47,7 +47,7 @@ public partial class MainViewModel : ViewModelBase
             },
             new LineSeries<double>
             {
-                Values = new double[] { 0, 25, 50, 75, 100 },
+                Values = new double[] { 25, 27, 23, 23, 24 },
                 GeometrySize = 0,
                 GeometryStroke = null,
                 Fill = null,
@@ -109,6 +109,43 @@ public partial class MainViewModel : ViewModelBase
                 Labeler = (val) => val.ToString() + "%",
             }
     };
+
+    public void UpdateGraphs(double current, double temperature, double humidity)
+    {
+        // Update CurrentSeries
+        if (CurrentSeries[0] is LineSeries<double> currentSeries)
+        {
+            if (currentSeries.Values == null)
+                currentSeries.Values = new List<double>();
+
+            var currentValues = currentSeries.Values as List<double>;
+            if (currentValues != null)
+                currentValues.Add(current);
+        }
+
+        // Update TemperatureAndHumiditySeries
+        if (TemperatureAndHumiditySeries[0] is LineSeries<double> temperatureSeries &&
+            TemperatureAndHumiditySeries[1] is LineSeries<double> humiditySeries)
+        {
+            if (temperatureSeries.Values == null)
+                temperatureSeries.Values = new List<double>();
+            if (humiditySeries.Values == null)
+                humiditySeries.Values = new List<double>();
+
+            var temperatureValues = temperatureSeries.Values as List<double>;
+            var humidityValues = humiditySeries.Values as List<double>;
+
+            if (temperatureValues != null)
+                temperatureValues.Add(temperature);
+            if (humidityValues != null)
+                humidityValues.Add(humidity);
+        }
+
+        // Notify UI to refresh
+        this.OnPropertyChanged(nameof(CurrentSeries));
+        this.OnPropertyChanged(nameof(TemperatureAndHumiditySeries));
+    }
+
 }
 
 

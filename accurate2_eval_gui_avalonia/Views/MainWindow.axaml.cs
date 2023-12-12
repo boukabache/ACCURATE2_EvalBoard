@@ -9,6 +9,8 @@ using accurate2_eval_gui_avalonia.ViewModels;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Dto;
 using MsBox.Avalonia.Models;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace accurate2_eval_gui_avalonia.Views;
 
@@ -20,7 +22,7 @@ public partial class MainWindow : Window
     readonly SerialPort arduinoPort = new();
     readonly DispatcherTimer dispatcherTimer;
     TimeSpan time;
-
+    private UsbEventWatcher usbEventWatcher;
 
     public MainWindow()
     {
@@ -53,7 +55,7 @@ public partial class MainWindow : Window
         };
 
         Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
-        UsbEventWatcher usbEventWatcher = new();
+        usbEventWatcher = new UsbEventWatcher();
         usbEventWatcher.UsbDeviceAdded += (sender, args) =>
         {
             Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
@@ -63,7 +65,6 @@ public partial class MainWindow : Window
         {
             Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
         };
-
     }
 
     // This method is called when the USBEventWatcher detects a USB device has been added or removed
@@ -124,6 +125,7 @@ public partial class MainWindow : Window
                 else
                 {
                     MessageBoxError("Please select a valid port.", "Connection Error");
+                    return;
                 }
 
                 try
@@ -131,6 +133,7 @@ public partial class MainWindow : Window
                     if (arduinoPort.IsOpen == false)
                     {
                         arduinoPort.Open();
+                        Task.Run(() => ReadDataFromUSB());
                         try
                         {
                             // Check if Arduino is sending data by sending a command and waiting for a response and test WriteTimeout
@@ -163,8 +166,58 @@ public partial class MainWindow : Window
                 }
 
                 break;
+
         }
     }
+
+    private async void ReadDataFromUSB()
+    {
+        while (arduinoPort.IsOpen)
+        {
+            try
+            {
+                while (arduinoPort.IsOpen)
+                {
+                    string data = await Task.Run(() => arduinoPort.ReadLine());
+                    await Dispatcher.UIThread.InvokeAsync(() => ParseAndSendDataToViewModel(data));
+                }
+            }
+            catch (TimeoutException ex)
+            {
+                await Dispatcher.UIThread.InvokeAsync(() => MessageBoxError("Device timed out: " + ex.Message, "Connection Error"));
+                arduinoPort.Close();
+            }
+            catch (IOException ex)
+            {
+                await Dispatcher.UIThread.InvokeAsync(() => MessageBoxError("Device disconnected: " + ex.Message, "Connection Error"));
+                arduinoPort.Close();
+            }
+            catch (Exception ex)
+            {
+                await Dispatcher.UIThread.InvokeAsync(() => MessageBoxError("An error occurred: " + ex.Message, "Error"));
+                arduinoPort.Close();
+            }
+        }
+    }
+
+
+    private void ParseAndSendDataToViewModel(string data)
+    {
+        var parts = data.Split(',');
+        if (parts.Length == 3)
+        {
+            if (double.TryParse(parts[0], out double current) &&
+                double.TryParse(parts[1], out double temperature) &&
+                double.TryParse(parts[2], out double humidity))
+            {
+                if (DataContext is MainViewModel viewModel)
+                {
+                    viewModel.UpdateGraphs(current, temperature, humidity);
+                }
+            }
+        }
+    }
+
 
     // Device connection timekeeping
     private void DispatcherTimer_Tick(object? sender, EventArgs e)
@@ -201,5 +254,22 @@ public partial class MainWindow : Window
 
         await messageBox.ShowAsync();
         return;
+    }
+
+    public void Dispose()
+    {
+        if (arduinoPort != null)
+        {
+            if (arduinoPort.IsOpen)
+            {
+                arduinoPort.Close();
+            }
+            arduinoPort.Dispose();
+        }
+
+        if (usbEventWatcher != null)
+        {
+            usbEventWatcher.Dispose();
+        }
     }
 }
