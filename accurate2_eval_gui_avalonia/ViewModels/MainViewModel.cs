@@ -6,10 +6,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using LiveChartsCore.Defaults;
 using Avalonia.Threading;
-using System.Formats.Asn1;
-using System.Globalization;
-using System.IO;
-using System.Linq;
 
 namespace accurate2_eval_gui_avalonia.ViewModels;
 
@@ -115,9 +111,9 @@ public partial class MainViewModel : ViewModelBase
 
 
 
-    public ISeries[] CurrentSeries { get; set; }
+    public ISeries[]? CurrentSeries { get; set; }
 
-    public ISeries[] TemperatureAndHumiditySeries { get; set; }
+    public ISeries[]? TemperatureAndHumiditySeries { get; set; }
 
     private static string FormatLabel(double val)
     {

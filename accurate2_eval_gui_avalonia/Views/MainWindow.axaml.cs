@@ -11,10 +11,7 @@ using MsBox.Avalonia.Dto;
 using MsBox.Avalonia.Models;
 using System.IO;
 using System.Threading.Tasks;
-using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
-using Avalonia.VisualTree;
-using System.Formats.Asn1;
 using System.Globalization;
 using CsvHelper;
 
