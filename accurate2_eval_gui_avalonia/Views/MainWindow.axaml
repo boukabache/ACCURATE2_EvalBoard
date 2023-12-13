@@ -185,7 +185,7 @@
 
           <WrapPanel Grid.Row="3" Grid.Column="0">
             <Button x:Name="resetButton" Command="{Binding OnResetClickCommand}" MinHeight="45"  Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Reset View"></Button>
-            <Button x:Name="exportButton" MinHeight="45" Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Export as..."></Button>
+            <Button x:Name="exportButton" Command="{Binding OnExportClickCommand}" MinHeight="45" Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Export CSV"></Button>
           </WrapPanel>
 
           <Label Name="SamplesText" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Segoe UI Variable Text" Foreground="Black" Margin="0, 4, 12, 4">N/A samples since first connection</Label>

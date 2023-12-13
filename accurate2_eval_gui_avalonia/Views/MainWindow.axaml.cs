@@ -11,6 +11,12 @@ using MsBox.Avalonia.Dto;
 using MsBox.Avalonia.Models;
 using System.IO;
 using System.Threading.Tasks;
+using Avalonia.Interactivity;
+using Avalonia.Platform.Storage;
+using Avalonia.VisualTree;
+using System.Formats.Asn1;
+using System.Globalization;
+using CsvHelper;
 
 namespace accurate2_eval_gui_avalonia.Views;
 
@@ -54,6 +60,7 @@ public partial class MainWindow : Window
                 if (DataContext is MainViewModel context)
                 {
                     context.OnConnectButtonClicked += ConnectUSB;
+                    context.OnExportButtonClicked += ExportData;
                 }
             }
         };
@@ -221,6 +228,51 @@ public partial class MainWindow : Window
                     viewModel.UpdateGraphs(current, temperature, humidity);
                     liveCurrent.Content = current.ToString("N2") + " A";
                     averageCurrent.Content = calculatedAverageCurrent.ToString("N2") + " A";
+                }
+            }
+        }
+    }
+
+    private async void ExportData(object? sender, EventArgs e)
+    {
+        var topLevel = TopLevel.GetTopLevel(this);
+        if (topLevel != null)
+        {
+            var file = await topLevel.StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
+            {
+                Title = "Save CSV File",
+                SuggestedFileName = "Accurate2A_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"),
+                DefaultExtension = "csv",
+                FileTypeChoices = new List<FilePickerFileType>()
+                {
+                    new("Comma-separated values (CSV)")
+                    {
+                        Patterns = new List<string>() { "*.csv" }
+                    }
+                }
+            });
+
+            if (file is not null)
+            {
+                await using var stream = await file.OpenWriteAsync();
+                using var streamWriter = new StreamWriter(stream);
+                using var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
+
+                if (DataContext != null)
+                {
+                    var viewModel = (MainViewModel)DataContext;
+
+                    // Chain two Zip calls to combine three sequences
+                    var combinedData = viewModel.CurrentValues
+                        .Zip(viewModel.TemperatureValues, (current, temperature) => new { current, temperature })
+                        .Zip(viewModel.HumidityValues, (ct, humidity) => new
+                        {
+                            Current = ct.current.Value,
+                            Temperature = ct.temperature.Value,
+                            Humidity = humidity.Value
+                        });
+
+                    csvWriter.WriteRecords(combinedData);
                 }
             }
         }
