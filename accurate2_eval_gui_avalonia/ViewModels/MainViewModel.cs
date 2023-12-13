@@ -3,6 +3,9 @@ using LiveChartsCore;
 using System;
 using LiveChartsCore.SkiaSharpView.Painting;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using LiveChartsCore.Defaults;
+using Avalonia.Threading;
 
 namespace accurate2_eval_gui_avalonia.ViewModels;
 
@@ -11,33 +14,35 @@ public partial class MainViewModel : ViewModelBase
 
     // Make an EventHandler OnConnectButtonClicked that MainWindow.axaml.cs can subscribe to
     public event EventHandler ?OnConnectButtonClicked;
+    public ObservableCollection<ObservableValue> CurrentValues = new ObservableCollection<ObservableValue>();
+    public ObservableCollection<ObservableValue> TemperatureValues = new ObservableCollection<ObservableValue>();
+    public ObservableCollection<ObservableValue> HumidityValues = new ObservableCollection<ObservableValue>();
 
-    public void OnClickCommand()
+    public MainViewModel()
     {
-        // Trigger the event so that OnConnectButtonClicked in MainWindow.axaml.cs is called
-        OnConnectButtonClicked?.Invoke(this, EventArgs.Empty);
+        Initialize();
     }
 
-    public ISeries[] CurrentSeries { get; set; }
-    = new ISeries[]
+    private void Initialize()
     {
-                new LineSeries<double>
-                {
-                     Values = new double[] { 5e-15, 6e-15, 7e-15, 6e-15, 5e-15, 6e-15},
-                     GeometrySize = 0,
-                     GeometryStroke = null,
-                     Stroke = new SolidColorPaint(new SkiaSharp.SKColor(0, 51, 160)) {StrokeThickness = 3},
-                     Fill = null,
-                     LineSmoothness = 0,
-                }
-    };
-
-    public ISeries[] TemperatureAndHumiditySeries { get; set; }
-        = new ISeries[]
+        CurrentSeries = new ISeries[]
         {
-            new LineSeries<double>
+            new LineSeries<ObservableValue>
             {
-                Values = new double[] { 21, 22, 23, 22, 22},
+                Values = CurrentValues,
+                GeometrySize = 0,
+                GeometryStroke = null,
+                Stroke = new SolidColorPaint(new SkiaSharp.SKColor(0, 51, 160)) { StrokeThickness = 3 },
+                Fill = null,
+                LineSmoothness = 0,
+            }
+        };
+
+        TemperatureAndHumiditySeries = new ISeries[]
+        {
+            new LineSeries<ObservableValue>
+            {
+                Values = TemperatureValues,
                 GeometrySize = 0,
                 GeometryStroke = null,
                 Stroke = new SolidColorPaint(new SkiaSharp.SKColor(0, 51, 160)) {StrokeThickness = 3},
@@ -45,16 +50,68 @@ public partial class MainViewModel : ViewModelBase
                 LineSmoothness = 0,
                 ScalesYAt = 0,
             },
-            new LineSeries<double>
+            new LineSeries<ObservableValue>
             {
-                Values = new double[] { 25, 27, 23, 23, 24 },
+                Values = HumidityValues,
                 GeometrySize = 0,
                 GeometryStroke = null,
                 Fill = null,
                 LineSmoothness = 0,
                 ScalesYAt = 1,
             }
-};
+        };
+    }
+
+    public void OnConnectClickCommand()
+    {
+        // Trigger the event so that OnConnectButtonClicked in MainWindow.axaml.cs is called
+        OnConnectButtonClicked?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void OnResetClickCommand()
+    {
+        ResetView();
+    }
+
+    private void ResetView()
+    {
+        // Reset Current Chart X and Y Axes
+        foreach (var axis in CurrentXAxis)
+        {
+            axis.MinLimit = null; // Reset to default or initial value
+            axis.MaxLimit = null; // Reset to default or initial value
+        }
+
+        foreach (var axis in CurrentYAxis)
+        {
+            axis.MinLimit = null; // Reset to default or initial value
+            axis.MaxLimit = null; // Reset to default or initial value
+        }
+
+        // Reset Temperature and Humidity Chart X and Y Axes
+        foreach (var axis in TemperatureAndHumidityXAxis)
+        {
+            axis.MinLimit = null; // Reset to default or initial value
+            axis.MaxLimit = null; // Reset to default or initial value
+        }
+
+        foreach (var axis in TemperatureAndHumidityYAxis)
+        {
+            axis.MinLimit = null; // Reset to default or initial value
+            axis.MaxLimit = null; // Reset to default or initial value
+        }
+
+        // Notify the view to update the axes
+        OnPropertyChanged(nameof(CurrentXAxis));
+        OnPropertyChanged(nameof(CurrentYAxis));
+        OnPropertyChanged(nameof(TemperatureAndHumidityXAxis));
+        OnPropertyChanged(nameof(TemperatureAndHumidityYAxis));
+    }
+
+
+    public ISeries[] CurrentSeries { get; set; }
+
+    public ISeries[] TemperatureAndHumiditySeries { get; set; }
 
     private static string FormatLabel(double val)
     {
@@ -84,6 +141,24 @@ public partial class MainViewModel : ViewModelBase
         }
     }
 
+    public List<Axis> CurrentXAxis { get; set; } =
+    new List<Axis>
+    {
+            new Axis
+            {
+                CrosshairPaint = new SolidColorPaint(new SkiaSharp.SKColor(0, 51, 160)) { StrokeThickness = 1 },
+            }
+    };
+
+    public List<Axis> TemperatureAndHumidityXAxis { get; set; } =
+    new List<Axis>
+    {
+            new Axis
+            {
+                CrosshairPaint = new SolidColorPaint(new SkiaSharp.SKColor(0, 51, 160)) { StrokeThickness = 1 },
+            }
+    };
+
     public List<Axis> CurrentYAxis { get; set; } =
         new List<Axis>
         {
@@ -112,42 +187,11 @@ public partial class MainViewModel : ViewModelBase
 
     public void UpdateGraphs(double current, double temperature, double humidity)
     {
-        // Update CurrentSeries
-        if (CurrentSeries[0] is LineSeries<double> currentSeries)
+        Dispatcher.UIThread.Invoke(() =>
         {
-            if (currentSeries.Values == null)
-                currentSeries.Values = new List<double>();
-
-            var currentValues = currentSeries.Values as List<double>;
-            if (currentValues != null)
-                currentValues.Add(current);
-        }
-
-        // Update TemperatureAndHumiditySeries
-        if (TemperatureAndHumiditySeries[0] is LineSeries<double> temperatureSeries &&
-            TemperatureAndHumiditySeries[1] is LineSeries<double> humiditySeries)
-        {
-            if (temperatureSeries.Values == null)
-                temperatureSeries.Values = new List<double>();
-            if (humiditySeries.Values == null)
-                humiditySeries.Values = new List<double>();
-
-            var temperatureValues = temperatureSeries.Values as List<double>;
-            var humidityValues = humiditySeries.Values as List<double>;
-
-            if (temperatureValues != null)
-                temperatureValues.Add(temperature);
-            if (humidityValues != null)
-                humidityValues.Add(humidity);
-        }
-
-        // Notify UI to refresh
-        this.OnPropertyChanged(nameof(CurrentSeries));
-        this.OnPropertyChanged(nameof(TemperatureAndHumiditySeries));
+            CurrentValues.Add(new(current));
+            TemperatureValues.Add(new(temperature));
+            HumidityValues.Add(new(humidity));
+        });
     }
-
 }
-
-
-
-

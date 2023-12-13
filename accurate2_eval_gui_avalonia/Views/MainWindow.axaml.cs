@@ -23,6 +23,8 @@ public partial class MainWindow : Window
     readonly DispatcherTimer dispatcherTimer;
     TimeSpan time;
     private UsbEventWatcher usbEventWatcher;
+    private double totalCurrent = 0;
+    private int currentReadingsCount = 0;
 
     public MainWindow()
     {
@@ -40,8 +42,10 @@ public partial class MainWindow : Window
         dispatcherTimer.Tick += DispatcherTimer_Tick;
 
 
-        arduinoPort.ReadTimeout = 1000;
-        arduinoPort.WriteTimeout = 1000;
+        arduinoPort.ReadTimeout = 5000;
+        arduinoPort.WriteTimeout = 5000;
+        arduinoPort.BaudRate = 9600;
+        arduinoPort.DtrEnable = true;
 
         DataContextChanged += (o, e) => {
             if (DataContext is MainViewModel)
@@ -110,13 +114,12 @@ public partial class MainWindow : Window
 
                 dispatcherTimer.Stop();
                 connectedTime.Content = "Disconnected";
+                liveCurrent.Content = "N/A fA";
                 ConnectButtonLabel.Content = "Connect";
 
                 break;
 
             case 1:
-                onButton.IsEnabled = true;
-                offButton.IsEnabled = false;
                 if (portComboBox.SelectedValue is not null)
                 {
                     string portName = portComboBox.SelectedValue.ToString() ?? throw new ArgumentException();
@@ -133,36 +136,32 @@ public partial class MainWindow : Window
                     if (arduinoPort.IsOpen == false)
                     {
                         arduinoPort.Open();
-                        Task.Run(() => ReadDataFromUSB());
                         try
                         {
                             // Check if Arduino is sending data by sending a command and waiting for a response and test WriteTimeout
                             arduinoPort.WriteLine("Hello");
-                            if (arduinoPort.ReadLine() == "Hello")
+                            if (arduinoPort.ReadLine() != "")
                             {
                                 connectedTime.Content = "Connected";
                                 ConnectButtonLabel.Content = "Disconnect";
                                 onButton.IsEnabled = true;
                                 offButton.IsEnabled = true;
                                 dispatcherTimer.Start();
-                            }
-                            else
-                            {
-                                MessageBoxError("Failed to connect to device, wrong response received.", "Connection Error");
-                                arduinoPort.Close();
-                            }   
+                                time = TimeSpan.FromSeconds(1);
+                                Task.Run(() => ReadDataFromUSB());
+                            } 
                         }
-                        catch
+                        catch (Exception ex)
                         {
-                            MessageBoxError("Failed to connect to device, no response received.", "Connection Error");
+                            Dispatcher.UIThread.InvokeAsync(() => MessageBoxError("Failed to connect to device: " + ex.Message, "Connection Error"));
                             arduinoPort.Close();
                         }
                     }
                 }
 
-                catch
+                catch (Exception ex)
                 {
-                    MessageBoxError("Failed to connect to device.", "Connection Error");
+                    Dispatcher.UIThread.InvokeAsync(() => MessageBoxError("Failed to connect to device: " + ex.Message, "Connection Error"));
                 }
 
                 break;
@@ -176,11 +175,8 @@ public partial class MainWindow : Window
         {
             try
             {
-                while (arduinoPort.IsOpen)
-                {
-                    string data = await Task.Run(() => arduinoPort.ReadLine());
-                    await Dispatcher.UIThread.InvokeAsync(() => ParseAndSendDataToViewModel(data));
-                }
+                string data = await Task.Run(() => arduinoPort.ReadLine());
+                await Dispatcher.UIThread.InvokeAsync(() => ParseAndSendDataToViewModel(data));
             }
             catch (TimeoutException ex)
             {
@@ -191,6 +187,10 @@ public partial class MainWindow : Window
             {
                 await Dispatcher.UIThread.InvokeAsync(() => MessageBoxError("Device disconnected: " + ex.Message, "Connection Error"));
                 arduinoPort.Close();
+            }
+            catch (OperationCanceledException)
+            {
+                break;
             }
             catch (Exception ex)
             {
@@ -210,9 +210,17 @@ public partial class MainWindow : Window
                 double.TryParse(parts[1], out double temperature) &&
                 double.TryParse(parts[2], out double humidity))
             {
+                totalCurrent += current;
+                currentReadingsCount++;
+                SamplesText.Content = currentReadingsCount.ToString() + " samples since first connection";
+
+                double calculatedAverageCurrent = totalCurrent / currentReadingsCount;
+
                 if (DataContext is MainViewModel viewModel)
                 {
                     viewModel.UpdateGraphs(current, temperature, humidity);
+                    liveCurrent.Content = current.ToString("N2") + " A";
+                    averageCurrent.Content = calculatedAverageCurrent.ToString("N2") + " A";
                 }
             }
         }
