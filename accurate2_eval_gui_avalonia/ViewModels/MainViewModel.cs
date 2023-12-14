@@ -12,9 +12,10 @@ namespace accurate2_eval_gui_avalonia.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
 
-    // Make an EventHandler OnConnectButtonClicked that MainWindow.axaml.cs can subscribe to
+    // Events to enable communication with the View for specific button actions.
     public event EventHandler ?OnConnectButtonClicked;
     public event EventHandler ?OnExportButtonClicked;
+    // Collections to dynamically store and update measurement data.
     public ObservableCollection<ObservableValue> CurrentValues = new ObservableCollection<ObservableValue>();
     public ObservableCollection<ObservableValue> TemperatureValues = new ObservableCollection<ObservableValue>();
     public ObservableCollection<ObservableValue> HumidityValues = new ObservableCollection<ObservableValue>();
@@ -24,8 +25,10 @@ public partial class MainViewModel : ViewModelBase
         Initialize();
     }
 
+    // Initializes chart series with specific visual configurations.
     private void Initialize()
     {
+        // Setup for Current Series - defining visual aspects like color, thickness, etc.
         CurrentSeries = new ISeries[]
         {
             new LineSeries<ObservableValue>
@@ -39,6 +42,7 @@ public partial class MainViewModel : ViewModelBase
             }
         };
 
+        // Setup for Temperature and Humidity Series - similar setup, but for two different data sets.
         TemperatureAndHumiditySeries = new ISeries[]
         {
             new LineSeries<ObservableValue>
@@ -63,6 +67,7 @@ public partial class MainViewModel : ViewModelBase
         };
     }
 
+    // Resetting chart axes to default values, useful for recalibrating the view.
     public void OnConnectClickCommand()
     {
         // Trigger the event so that OnConnectButtonClicked in MainWindow.axaml.cs is called
@@ -79,27 +84,27 @@ public partial class MainViewModel : ViewModelBase
         // Reset Current Chart X and Y Axes
         foreach (var axis in CurrentXAxis)
         {
-            axis.MinLimit = null; // Reset to default or initial value
-            axis.MaxLimit = null; // Reset to default or initial value
+            axis.MinLimit = null;
+            axis.MaxLimit = null;
         }
 
         foreach (var axis in CurrentYAxis)
         {
-            axis.MinLimit = null; // Reset to default or initial value
-            axis.MaxLimit = null; // Reset to default or initial value
+            axis.MinLimit = null;
+            axis.MaxLimit = null;
         }
 
         // Reset Temperature and Humidity Chart X and Y Axes
         foreach (var axis in TemperatureAndHumidityXAxis)
         {
-            axis.MinLimit = null; // Reset to default or initial value
-            axis.MaxLimit = null; // Reset to default or initial value
+            axis.MinLimit = null;
+            axis.MaxLimit = null;
         }
 
         foreach (var axis in TemperatureAndHumidityYAxis)
         {
-            axis.MinLimit = null; // Reset to default or initial value
-            axis.MaxLimit = null; // Reset to default or initial value
+            axis.MinLimit = null;
+            axis.MaxLimit = null;
         }
 
         // Notify the view to update the axes
@@ -187,6 +192,7 @@ public partial class MainViewModel : ViewModelBase
             }
     };
 
+    // Method to update graphs with new measurements, ensuring thread safety with UI thread.
     public void UpdateGraphs(double current, double temperature, double humidity)
     {
         Dispatcher.UIThread.Invoke(() =>

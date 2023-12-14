@@ -19,16 +19,23 @@ namespace accurate2_eval_gui_avalonia.Views;
 
 public partial class MainWindow : Window
 {
-
     string[] serialPorts = SerialPort.GetPortNames();
     int clickCount1;
     readonly SerialPort arduinoPort = new();
     readonly DispatcherTimer dispatcherTimer;
     TimeSpan time;
     private UsbEventWatcher usbEventWatcher;
-    private double totalCurrent = 0;
-    private int currentReadingsCount = 0;
 
+    // Class variables for device communication and tracking.
+    private double totalCurrent = 0; // Accumulates current measurements for averaging.
+    private int currentReadingsCount = 0; // Tracks the number of readings received.
+
+    // Constants for device communication.
+    private const int ReadTimeout = 5000;
+    private const int WriteTimeout = 5000;
+    private const int BaudRate = 9600;
+
+    // Initializes the main components and sets up event listeners.
     public MainWindow()
     {
         InitializeComponent();
@@ -45,9 +52,9 @@ public partial class MainWindow : Window
         dispatcherTimer.Tick += DispatcherTimer_Tick;
 
 
-        arduinoPort.ReadTimeout = 5000;
-        arduinoPort.WriteTimeout = 5000;
-        arduinoPort.BaudRate = 9600;
+        arduinoPort.ReadTimeout = ReadTimeout;
+        arduinoPort.WriteTimeout = WriteTimeout;
+        arduinoPort.BaudRate = BaudRate;
         arduinoPort.DtrEnable = true;
 
         DataContextChanged += (o, e) => {
@@ -77,6 +84,7 @@ public partial class MainWindow : Window
 
     // This method is called when the USBEventWatcher detects a USB device has been added or removed
     // from the system and updates the portComboBox with the new list of available ports
+    // Logic to handle USB device connection changes, updating available serial ports.
     public void USBEventArrived()
     {
         serialPorts = SerialPort.GetPortNames();
@@ -87,6 +95,7 @@ public partial class MainWindow : Window
     }
 
     // This method is called when the ConnectButton is clicked and handles the connection and disconnection
+    // Manages the state and actions of USB connection.
     private void ConnectUSB(object? sender, EventArgs e)
     {
 
@@ -173,6 +182,7 @@ public partial class MainWindow : Window
         }
     }
 
+    // Asynchronously reads data from USB, handling potential errors and disconnections.
     private async void ReadDataFromUSB()
     {
         while (arduinoPort.IsOpen)
@@ -204,9 +214,10 @@ public partial class MainWindow : Window
         }
     }
 
-
+    // Parses incoming data strings and updates ViewModel with new values.
     private void ParseAndSendDataToViewModel(string data)
     {
+        // Extracting and converting data from the received string format.
         var parts = data.Split(',');
         if (parts.Length == 3)
         {
@@ -230,6 +241,7 @@ public partial class MainWindow : Window
         }
     }
 
+    // Provides functionality for exporting data to a CSV file, with file saving dialog.
     private async void ExportData(object? sender, EventArgs e)
     {
         var topLevel = TopLevel.GetTopLevel(this);
