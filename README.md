@@ -5,17 +5,12 @@ This project is developed for the ACCURATE 2 ASIC evaluation board, designed to 
 
 ## Features
 - **Microcontroller Communication**: Utilizes an Arduino microcontroller for orchestrating the overall operation.
-- **FPGA Integration**: Includes an iCE5LP FPGA for advanced control and processing capabilities.
+- **FPGA Integration**: Includes an iCE5LP FPGA for controlling the ACCURATE 2A ASIC.
 - **Sensor Integration**: Incorporates sensors like DAC7578, SSD1306, and SHT41 for diverse functionality ranging from temperature and humidity sensing to display control.
 - **Data Visualization**: Employs an OLED display for real-time data monitoring.
 
 ## Hardware Requirements
 - ACCURATE 2 ASIC Evaluation Board
-- Arduino Microcontroller
-- iCE5LP FPGA
-- DAC7578 Digital-to-Analog Converter
-- SSD1306 OLED Display
-- SHT41 Temperature and Humidity Sensor
 
 ## Software Requirements
 - Arduino IDE
@@ -24,7 +19,6 @@ This project is developed for the ACCURATE 2 ASIC evaluation board, designed to 
 ## Setup and Configuration
 1. **Arduino Setup**: Install the Arduino IDE and configure it for the specific microcontroller used in the project.
 2. **Library Installation**: Install all required libraries through the Arduino IDE's Library Manager.
-3. **Wiring**: Connect all hardware components as per the schematic provided in the `schematics` folder.
 4. **Firmware Upload**: Compile and upload the `main.ino` file to the Arduino microcontroller.
 
 ## File Structure
