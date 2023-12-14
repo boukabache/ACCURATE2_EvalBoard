@@ -21,12 +21,23 @@ void setup() {
 
 void loop() {
     digitalWrite(PIN_LED_13, HIGH);
-    delay(1000);
+    delay(10);
     digitalWrite(PIN_LED_13, LOW);
-    delay(1000);
+    delay(10);
+
+    if (Serial.readString() == "Hello") {
+        Serial.println("Hello");
+    }
 
     int ranPercent = random(0, 100);
     int ranTemp = random(0, 100);
     int ranCurrentFemto = random(0, 100);
     ssd1306_print_currentmA_temp_humidity(ranCurrentFemto, "fA", ranTemp, ranPercent);
+
+    // Send message over USB
+    Serial.print(ranCurrentFemto);
+    Serial.print(",");
+    Serial.print(ranTemp);
+    Serial.print(",");
+    Serial.println(ranPercent);
 }

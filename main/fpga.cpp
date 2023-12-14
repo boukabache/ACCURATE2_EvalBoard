@@ -7,6 +7,7 @@
 
 #include "fpga.h"
 #include <Wire.h>
+#include <Math.h>
 
 FPGAData set_FPGAData() {
     FPGAData fpgaData;
