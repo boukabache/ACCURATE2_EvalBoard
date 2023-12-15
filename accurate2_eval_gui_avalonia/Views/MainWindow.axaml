@@ -42,7 +42,7 @@
       
       <Grid Grid.Row="0" Grid.ColumnSpan="2">
         <Viewbox HorizontalAlignment="Left" Margin="24, 16, 24, 16">
-          <Label FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Foreground="Black"  VerticalAlignment="Center" Grid.ColumnSpan="1">Accurate 2A evaluation software</Label>
+          <Label FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Foreground="Black"  VerticalAlignment="Center" Grid.ColumnSpan="1">Accurate 2A Evaluation Software</Label>
         </Viewbox>
       </Grid>
 

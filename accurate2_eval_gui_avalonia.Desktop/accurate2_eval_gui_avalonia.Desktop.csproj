@@ -7,7 +7,12 @@
     <Nullable>enable</Nullable>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>CERN-logo.ico</ApplicationIcon>
+    <AssemblyName>ACCURATE 2A Evaluation Software</AssemblyName>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="CERN-logo.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" Version="11.0.5" />
