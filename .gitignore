@@ -29,6 +29,7 @@ auto_saved_files
 # Exported BOM files
 *.xml
 *.csv
+*.xlsx
 
 #Folders
 PDF
