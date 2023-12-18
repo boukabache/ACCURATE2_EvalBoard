@@ -10,13 +10,16 @@
 
 void setup() {
     Wire.begin();
+
+    Serial.begin(9600);
+    while (!Serial);
+
     ssd1306_init();
     dac7578_init();
 
     pinMode(PIN_LED_13, OUTPUT);
 
-    Serial.begin(9600);
-    while (!Serial);
+    //dac7578_i2c_send_all_param();
 }
 
 void loop() {
@@ -25,9 +28,11 @@ void loop() {
     digitalWrite(PIN_LED_13, LOW);
     delay(10);
 
-    if (Serial.readString() == "Hello") {
-        Serial.println("Hello");
-    }
+    // Read SHT41
+    // float temp = sht41_i2c_read_temp();
+    // delay(10);
+    // float hum = sht41_i2c_read_rh();
+    // delay(10);
 
     int ranPercent = random(0, 100);
     int ranTemp = random(0, 100);

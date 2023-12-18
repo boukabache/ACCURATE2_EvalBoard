@@ -9,15 +9,18 @@
 #include <Wire.h>
 #include <Math.h>
 
+ // Function to initialize and set the FPGA data structure
 FPGAData set_FPGAData() {
     FPGAData fpgaData;
 
+    // Setting various parameters related to charge and injection timing
     fpgaData.accurate.tCharge = AccurateTCharge;
     fpgaData.accurate.tInjection = AccurateTInjection;
     fpgaData.accurate.disableCP1 = AccurateDisableCP1;
     fpgaData.accurate.disableCP2 = AccurateDisableCP2;
     fpgaData.accurate.disableCP3 = AccurateDisableCP3;
 
+    // Configuring control parameters for charge pumps
     fpgaData.accurate.singlyCPActivation = AccurateSinglyCPActivation;
     fpgaData.accurate.cooldownMinCP1 = AccurateCooldownMin_vTh2;
     fpgaData.accurate.cooldownMaxCP1 = AccurateCooldownMax_vTh2;
@@ -26,15 +29,18 @@ FPGAData set_FPGAData() {
     fpgaData.accurate.cooldownMinCP3 = AccurateCooldownMin_vTh4;
     fpgaData.accurate.cooldownMaxCP3 = AccurateCooldownMax_vTh4;
 
+    // Calculations for charge quantization in charge pumps
     double CCrome = CInt;
     double C1 = AccurateCcp1;
     double C2 = AccurateCcp2;
     double C3 = AccurateCcp3;
 
+    // Converting the charge pump capacities to quantized charges
     fpgaData.accurate.chargeQuantaCP1 = (int)(C1 * (VP - VM) / CCrome * pow(2, 24) / (2 * VRANGE));
     fpgaData.accurate.chargeQuantaCP2 = (int)(C2 * (VP - VM) / CCrome * pow(2, 24) / (2 * VRANGE));
     fpgaData.accurate.chargeQuantaCP3 = (int)(C3 * (VP - VM) / CCrome * pow(2, 24) / (2 * VRANGE));
 
+    // Setting threshold and bias voltages for the FPGA
     fpgaData.accurateCapEnable = AccurateCapEnable;
     fpgaData.accurateVCm = (int)ACCURATE_V_CM;
     fpgaData.accurateVTh1 = (int)ACCURATE_V_TH1;
@@ -48,6 +54,7 @@ FPGAData set_FPGAData() {
     return fpgaData;
 }
 
+// Function to write data to the FPGA via I2C
 void write_FPGAData(FPGAData fpgaData) {
     Wire.beginTransmission(FPGA_I2C_ADDRESS);
     Wire.write((uint8_t*)&fpgaData, sizeof(FPGAData));

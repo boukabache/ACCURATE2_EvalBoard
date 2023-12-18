@@ -35,16 +35,12 @@ extern bool sht41_start_rh;
 extern bool sht41_updated;
 
 // request read temperature sensor via i2c
-void sht41_i2c_read_temp(void);
-// update temperature register
-void sht41_update_temp(void);
+float sht41_i2c_read_temp(void);
 // get the latest temperature reading
 uint16_t sht41_get_temp(void);
 
 // request read humidity (RH) sensor via i2c
-void sht41_i2c_read_rh(void);
-// update humidity register
-void sht41_update_rh(void);
+float sht41_i2c_read_rh(void);
 // get the latest humidity reading
 uint16_t sht41_get_rh(void);
 

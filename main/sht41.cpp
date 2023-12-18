@@ -29,7 +29,7 @@ uint16_t sht41_get_rh(void) {
 }
 
 // request read temperature sensor via i2c
-void sht41_i2c_read_temp(void) {
+float sht41_i2c_read_temp(void) {
     sht41_updated = false;
     sht41_start_t = false;
 
@@ -51,19 +51,14 @@ void sht41_i2c_read_temp(void) {
 
     sht41_temp_rq = true;
 
-    //sht41_update_temp();
-}
-
-// update temperature from i2c received data
-void sht41_update_temp(void) {
     sht41_updated = true;
 
     // conversion formula from SHT41 datasheet
-    //sht41_temp_celsius = -46.85 + 175.72 * sht41_temp_u16 / 65536; // in �C
+    return -46.85 + 175.72 * sht41_temp_u16 / 65536; // in �C}
 }
 
 // request read humidity (RH) sensor via i2c
-void sht41_i2c_read_rh(void) {
+float sht41_i2c_read_rh(void) {
     sht41_updated = false;
     sht41_start_rh = false;
 
@@ -85,13 +80,8 @@ void sht41_i2c_read_rh(void) {
 
     sht41_rh_rq = true;
 
-    //sht41_update_rh();
-}
-
-// update rh from i2c received data
-void sht41_update_rh(void) {
     sht41_updated = true;
 
     // conversion formula from SHT41 datasheet
-    //sht41_rh_percent = -6 + 125 * sht41_rh_u16 / 65536; // in %RH
+    return -6 + 125 * sht41_rh_u16 / 65536; // in %RH
 }
