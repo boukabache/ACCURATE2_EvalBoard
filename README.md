@@ -8,7 +8,7 @@ This repository contains the KiCad design files for the ACCURATE 2A Evaluation B
 ## Project Features
 - **Schematics**: Detailed schematics for the ACCURATE2 ASIC evaluation board, FPGA, MCU, and peripheral components.
 
-## Hardware Requirements
+## Requirements
 - KiCad 7 or above
 
 ## Getting Started
