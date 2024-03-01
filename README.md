@@ -5,11 +5,14 @@ This repository contains the KiCad design files for the ACCURATE 2A Evaluation B
 
 ![Block Design](./assets/BlockDesign.png)
 
+## Documentation
+Read the wiki page (in the sidebar) for documentation of the functionality of the board.
+
 ## Project Features
 - **Schematics**: Detailed schematics for the ACCURATE2 ASIC evaluation board, FPGA, MCU, and peripheral components.
 
 ## Requirements
-- KiCad 7 or above
+- KiCad 8.0.0 or above
 
 ## Getting Started
 1. **Install KiCad**: Download and install the latest version of KiCad from [KiCad's official website](https://www.kicad.org/).
@@ -24,4 +27,4 @@ Contributions to improve the design are welcome. Please follow the standard fork
 This project is licensed under the CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P) license - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Authors
-- Håkon Liverud, CERN HSE-RP-IL
+* [Håkon Liverud](haakon.liverud@cern.ch) - CERN HSE-RP-IL
