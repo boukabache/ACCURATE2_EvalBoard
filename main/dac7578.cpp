@@ -75,6 +75,5 @@ void dac7578_i2c_send_all_param() {
         Wire.write(i2c_glob_wr_buffer, DAC_I2C_WR_PCKT_LEN);
         delay(0.1);
         Wire.endTransmission();
-
     }
 }

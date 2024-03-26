@@ -6,70 +6,153 @@
  */
 
 #include "fpga.h"
-#include <Wire.h>
-#include <Math.h>
 
- // Function to initialize and set the FPGA data structure
-FPGAData set_FPGAData() {
-    FPGAData fpgaData;
+void readFPGA() {
+    while (Serial1.available() >= 4 * 7) {
+        uint32_t data[7];
+        String dataString = "";
 
-    // Setting various parameters related to charge and injection timing
-    fpgaData.accurate.tCharge = AccurateTCharge;
-    fpgaData.accurate.tInjection = AccurateTInjection;
-    fpgaData.accurate.disableCP1 = AccurateDisableCP1;
-    fpgaData.accurate.disableCP2 = AccurateDisableCP2;
-    fpgaData.accurate.disableCP3 = AccurateDisableCP3;
+        for (int i = 0; i < 7; i++) {
+            data[i] = readUInt32();
+            dataString += " Data[" + String(i) + "]: " + String(data[i], HEX);
+        }
 
-    // Configuring control parameters for charge pumps
-    fpgaData.accurate.singlyCPActivation = AccurateSinglyCPActivation;
-    fpgaData.accurate.cooldownMinCP1 = AccurateCooldownMin_vTh2;
-    fpgaData.accurate.cooldownMaxCP1 = AccurateCooldownMax_vTh2;
-    fpgaData.accurate.cooldownMinCP2 = AccurateCooldownMin_vTh3;
-    fpgaData.accurate.cooldownMaxCP2 = AccurateCooldownMax_vTh3;
-    fpgaData.accurate.cooldownMinCP3 = AccurateCooldownMin_vTh4;
-    fpgaData.accurate.cooldownMaxCP3 = AccurateCooldownMax_vTh4;
+        if (data[6] == 0x5A) { // Stop bit
+            Serial.print(dataString + " - OK");
+            Serial.print(" - Measured Current: ");
+            printCurrentInAppropriateUnit(calculateCurrent(data[0], data[1], data[2], data[3], data[4]));
+        }
+        else {
+            //Serial.println("Error");
+            Serial.println(dataString + " - Error");
 
-    // Calculations for charge quantization in charge pumps
-    double CCrome = CInt;
-    double C1 = AccurateCcp1;
-    double C2 = AccurateCcp2;
-    double C3 = AccurateCcp3;
-
-    // Converting the charge pump capacities to quantized charges
-    fpgaData.accurate.chargeQuantaCP1 = (int)(C1 * (VP - VM) / CCrome * pow(2, 24) / (2 * VRANGE));
-    fpgaData.accurate.chargeQuantaCP2 = (int)(C2 * (VP - VM) / CCrome * pow(2, 24) / (2 * VRANGE));
-    fpgaData.accurate.chargeQuantaCP3 = (int)(C3 * (VP - VM) / CCrome * pow(2, 24) / (2 * VRANGE));
-
-    // Setting threshold and bias voltages for the FPGA
-    fpgaData.accurateCapEnable = AccurateCapEnable;
-    fpgaData.accurateVCm = (int)ACCURATE_V_CM;
-    fpgaData.accurateVTh1 = (int)ACCURATE_V_TH1;
-    fpgaData.accurateVTh2 = (int)ACCURATE_V_TH2;
-    fpgaData.accurateVTh3 = (int)ACCURATE_V_TH3;
-    fpgaData.accurateVTh4 = (int)ACCURATE_V_TH4;
-    fpgaData.accurateVBias1 = (int)ACCURATE_V_BIAS1;
-    fpgaData.accurateVBias3 = (int)ACCURATE_V_BIAS3;
-    fpgaData.accurateVChargeP = (int)ACCURATE_V_CHARGE_P;
-
-    return fpgaData;
+            attemptResynchronization();
+        }
+    }
 }
 
-// Function to write data to the FPGA via I2C
-void write_FPGAData(FPGAData fpgaData) {
-    Wire.beginTransmission(FPGA_I2C_ADDRESS);
-    Wire.write((uint8_t*)&fpgaData, sizeof(FPGAData));
-    Wire.endTransmission();
+uint32_t readUInt32() {
+    uint32_t value = 0;
+    value |= ((uint32_t)Serial1.read()) << 0;
+    value |= ((uint32_t)Serial1.read()) << 8;
+    value |= ((uint32_t)Serial1.read()) << 16;
+    value |= ((uint32_t)Serial1.read()) << 24;
+    return value;
 }
 
-// Function to receive data from the FPGA
-FPGAData receive_data() {
-    FPGAData data;
+float calculateCurrent(uint32_t data0, uint32_t data1, uint32_t data2, uint32_t data3, uint32_t data4) {
+    // Extract the last nibble (4 bits) from data4
+    uint32_t lastHexDigitOfData5 = data4 & 0xF;
 
-    // Request data from the FPGA
-    Wire.requestFrom(FPGA_I2C_ADDRESS, sizeof(FPGAData));
+    // Combine data0 and the last nibble of data4 to form interval1_count
+    uint32_t interval1_count = (data0 << 4) | lastHexDigitOfData5;
 
-    // Read the data into the FPGAData struct
-    Wire.readBytes((char*)&data, sizeof(FPGAData));
+    float current_dir_slope;
+    if (interval1_count == 0) {
+        current_dir_slope = 0;
+    }
+    else {
+        current_dir_slope = Cf * VINT1 * 1e8 / interval1_count;
+    }
 
-    return data;
+    float current_low = static_cast<float>(data1) * Qref1 / Tw;
+    float current_medium = static_cast<float>(data2) * Qref2 / Tw;
+    float current_high = static_cast<float>(data3) * Qref3 / Tw;
+
+    float current_ch_inj = current_low + current_medium + current_high;
+    return current_ch_inj;
+}
+
+void attemptResynchronization() {
+    bool foundMarker = false;
+    while (Serial1.available() && !foundMarker) {
+        if (Serial1.peek() == 0x5A) {
+            if (Serial1.available() >= 4 * 6) {
+                foundMarker = true;
+                // Discard bytes up to the marker, effectively starting from the next packet in the next loop iteration
+                for (int i = 0; i < 4; i++) Serial1.read(); // Discard the bytes of the misaligned 0x5A
+            }
+            else {
+                // Not enough data for a full packet; break to avoid blocking
+                break;
+            }
+        }
+        else {
+            Serial1.read(); // Discard the current byte and move to the next one
+        }
+    }
+}
+
+void sendConfigurations() {
+    delay(5000);
+    Serial.println("");
+    sendParam(INIT_CONFIG_ADDRESS, INIT_CONFIG);
+    Serial.println("INIT Config sent");
+    sendParam(GATE_LENGTH_ADDRESS, calculateGateLength());
+    Serial.println("GATE sent");
+    delay(20);
+    sendParam(RST_DURATION_ADDRESS, RST_DURATION);
+    Serial.println("RST DURATION sent");
+    delay(20);
+    sendParam(VBIAS1_ADDRESS, convertVoltageToDAC(VBIAS1_DEC));
+    sendParam(VBIAS2_ADDRESS, convertVoltageToDAC(VBIAS2_DEC));
+    delay(20);
+    sendParam(VBIAS3_ADDRESS, convertVoltageToDAC(VBIAS3_DEC));
+    Serial.println("VBIAS Sent");
+    sendParam(VCM_ADDRESS, convertVoltageToDAC(VCM_DEC));
+    delay(20);
+    sendParam(VCM1_ADDRESS, convertVoltageToDAC(VCM_DEC));
+    Serial.println("VCM Sent");
+    sendParam(VTH1_ADDRESS, convertVoltageToDAC(VTH1_DEC));
+    sendParam(VTH2_ADDRESS, convertVoltageToDAC(VTH2_DEC));
+    sendParam(VTH3_ADDRESS, convertVoltageToDAC(VTH3_DEC));
+    sendParam(VTH4_ADDRESS, convertVoltageToDAC(VTH4_DEC));
+    sendParam(VTH5_ADDRESS, convertVoltageToDAC(VTH5_DEC));
+    sendParam(VTH6_ADDRESS, convertVoltageToDAC(VTH6_DEC));
+    sendParam(VTH7_ADDRESS, convertVoltageToDAC(VTH7_DEC));
+    Serial.println("VTH Sent");
+    sendParam(INIT_CONFIG_ADDRESS, INIT_CONFIG_START);
+    Serial.println("Configuration sent");
+    Serial.println("");
+}
+
+uint32_t convertVoltageToDAC(float voltage) {
+    return static_cast<uint32_t>(round((voltage * ADC_RESOLUTION_ACCURATE) / REF_VOLTAGE));
+}
+
+void sendParam(uint32_t address, uint32_t value) {
+    Serial1.write(address & 0xFF); // LSB
+    Serial1.write((address >> 8) & 0xFF);
+    Serial1.write((address >> 16) & 0xFF);
+    Serial1.write((address >> 24) & 0xFF); // MSB
+
+    Serial1.write(value & 0xFF); // LSB
+    Serial1.write((value >> 8) & 0xFF);
+    Serial1.write((value >> 16) & 0xFF);
+    Serial1.write((value >> 24) & 0xFF); // MSB
+}
+
+
+uint32_t calculateGateLength() {
+    uint32_t gate = static_cast<uint32_t>((TW * CLOCK_PERIOD) - 1);
+    return gate;
+}
+
+void printCurrentInAppropriateUnit(float currentInFemtoAmperes) {
+    if (currentInFemtoAmperes < 1000) {
+        Serial.print(currentInFemtoAmperes, 3);
+        Serial.println(" fA");
+    }
+    else if (currentInFemtoAmperes < 1e6) {
+        Serial.print(currentInFemtoAmperes / 1000, 3);
+        Serial.println(" pA");
+    }
+    else if (currentInFemtoAmperes < 1e9) {
+        Serial.print(currentInFemtoAmperes / 1e6, 3);
+        Serial.println(" nA");
+    }
+    else {
+        Serial.print(currentInFemtoAmperes / 1e9, 3);
+        Serial.println(" uA");
+    }
 }
