@@ -8867,7 +8867,7 @@
       (property "Footprint Ref" "SAMTEC_TSW-103-23-L-D" (at 0 -48.895 0)
         (effects (font (size 1.27 1.27)) (justify left) hide)
       )
-      (property "Family" "Header 6" (at 0 -50.8 0)
+      (property "Family_1" "Header 6" (at 0 -50.8 0)
         (effects (font (size 1.27 1.27)) (justify left) hide)
       )
       (property "Mounted" "Yes" (at 0 -52.705 0)
@@ -14053,12 +14053,12 @@
     (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 452.755 222.25 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (pin "6" (uuid 230ca8ec-4b2a-4a46-ba46-0987821fe94e))
-    (pin "3" (uuid 9e75bfa2-c5d4-48e0-8d18-e682fc128c09))
-    (pin "5" (uuid b33d8651-f10d-4434-991e-6425204c760a))
-    (pin "1" (uuid 9d15faa6-2c33-4067-b4ad-3ea9dc122f68))
-    (pin "2" (uuid 04c00400-d9b6-40ef-8e1f-aa9952424705))
-    (pin "4" (uuid 3ca915c8-00e6-4a24-9098-ee2c7bab8410))
+    (pin "6" (uuid 230ca8ec-4b2a-4a46-ba46-0987821fe94f))
+    (pin "3" (uuid 9e75bfa2-c5d4-48e0-8d18-e682fc128c0a))
+    (pin "5" (uuid b33d8651-f10d-4434-991e-6425204c760b))
+    (pin "1" (uuid 9d15faa6-2c33-4067-b4ad-3ea9dc122f69))
+    (pin "2" (uuid 04c00400-d9b6-40ef-8e1f-aa9952424706))
+    (pin "4" (uuid 3ca915c8-00e6-4a24-9098-ee2c7bab8411))
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
@@ -17966,12 +17966,12 @@
     (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 464.185 222.25 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (pin "6" (uuid 230ca8ec-4b2a-4a46-ba46-0987821fe94e))
-    (pin "3" (uuid 9e75bfa2-c5d4-48e0-8d18-e682fc128c09))
-    (pin "5" (uuid b33d8651-f10d-4434-991e-6425204c760a))
-    (pin "1" (uuid 9d15faa6-2c33-4067-b4ad-3ea9dc122f68))
-    (pin "2" (uuid 04c00400-d9b6-40ef-8e1f-aa9952424705))
-    (pin "4" (uuid 3ca915c8-00e6-4a24-9098-ee2c7bab8410))
+    (pin "6" (uuid 230ca8ec-4b2a-4a46-ba46-0987821fe950))
+    (pin "3" (uuid 9e75bfa2-c5d4-48e0-8d18-e682fc128c0b))
+    (pin "5" (uuid b33d8651-f10d-4434-991e-6425204c760c))
+    (pin "1" (uuid 9d15faa6-2c33-4067-b4ad-3ea9dc122f6a))
+    (pin "2" (uuid 04c00400-d9b6-40ef-8e1f-aa9952424707))
+    (pin "4" (uuid 3ca915c8-00e6-4a24-9098-ee2c7bab8412))
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
@@ -20200,12 +20200,12 @@
     (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 467.995 222.25 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (pin "6" (uuid 230ca8ec-4b2a-4a46-ba46-0987821fe94e))
-    (pin "3" (uuid 9e75bfa2-c5d4-48e0-8d18-e682fc128c09))
-    (pin "5" (uuid b33d8651-f10d-4434-991e-6425204c760a))
-    (pin "1" (uuid 9d15faa6-2c33-4067-b4ad-3ea9dc122f68))
-    (pin "2" (uuid 04c00400-d9b6-40ef-8e1f-aa9952424705))
-    (pin "4" (uuid 3ca915c8-00e6-4a24-9098-ee2c7bab8410))
+    (pin "6" (uuid 230ca8ec-4b2a-4a46-ba46-0987821fe951))
+    (pin "3" (uuid 9e75bfa2-c5d4-48e0-8d18-e682fc128c0c))
+    (pin "5" (uuid b33d8651-f10d-4434-991e-6425204c760d))
+    (pin "1" (uuid 9d15faa6-2c33-4067-b4ad-3ea9dc122f6b))
+    (pin "2" (uuid 04c00400-d9b6-40ef-8e1f-aa9952424708))
+    (pin "4" (uuid 3ca915c8-00e6-4a24-9098-ee2c7bab8413))
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"
@@ -28635,12 +28635,12 @@
     (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 460.375 222.25 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (pin "6" (uuid 230ca8ec-4b2a-4a46-ba46-0987821fe94e))
-    (pin "3" (uuid 9e75bfa2-c5d4-48e0-8d18-e682fc128c09))
-    (pin "5" (uuid b33d8651-f10d-4434-991e-6425204c760a))
-    (pin "1" (uuid 9d15faa6-2c33-4067-b4ad-3ea9dc122f68))
-    (pin "2" (uuid 04c00400-d9b6-40ef-8e1f-aa9952424705))
-    (pin "4" (uuid 3ca915c8-00e6-4a24-9098-ee2c7bab8410))
+    (pin "6" (uuid 230ca8ec-4b2a-4a46-ba46-0987821fe952))
+    (pin "3" (uuid 9e75bfa2-c5d4-48e0-8d18-e682fc128c0d))
+    (pin "5" (uuid b33d8651-f10d-4434-991e-6425204c760e))
+    (pin "1" (uuid 9d15faa6-2c33-4067-b4ad-3ea9dc122f6c))
+    (pin "2" (uuid 04c00400-d9b6-40ef-8e1f-aa9952424709))
+    (pin "4" (uuid 3ca915c8-00e6-4a24-9098-ee2c7bab8414))
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537/3601916a-1298-4c62-aaea-496828b211de"

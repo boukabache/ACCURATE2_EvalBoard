@@ -3,6 +3,8 @@
 ## Overview
 This repository contains the KiCad design files for the ACCURATE 2A Evaluation Board. It includes schematics, and other relevant design files for a system designed to perform ultra-low current measurements through the ACCURATE 2A ASIC, controlled by a Lattice iCE5LP FPGA and an Atsam SAMD21 MCU. Also includes a Sensirion SHT41 Temperature and Humidity sensor, and an SSD1306 display.
 
+### See the **[wiki](https://ohwr.org/project/accurate2-eval/wikis/home)** for more information and useage. ###
+
 ![Block Design](./assets/BlockDesign.png)
 
 ## Documentation
@@ -12,7 +14,7 @@ Read the wiki page (in the sidebar) for documentation of the functionality of th
 - **Schematics**: Detailed schematics for the ACCURATE2 ASIC evaluation board, FPGA, MCU, and peripheral components.
 
 ## Requirements
-- KiCad 8.0.0 or above
+- KiCad 8.0.1 or above
 
 ## Getting Started
 1. **Install KiCad**: Download and install the latest version of KiCad from [KiCad's official website](https://www.kicad.org/).

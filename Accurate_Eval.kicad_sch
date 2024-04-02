@@ -5882,12 +5882,12 @@
     (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 159.385 250.19 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (pin "6" (uuid 29789997-3beb-4521-b091-9425d86e5a9c))
-    (pin "4" (uuid 5e6dc29b-b6b2-4999-bc73-78a90207664f))
-    (pin "3" (uuid e7950442-37bf-4e91-96ea-43a3261db9f3))
-    (pin "2" (uuid 897075e3-c7d6-4876-8771-3847623c77a6))
-    (pin "1" (uuid 4d4496f7-6add-45ec-828d-df413afb9a50))
-    (pin "5" (uuid 82f891d1-c74e-4c7b-bd88-3e6a524ed65c))
+    (pin "6" (uuid 29789997-3beb-4521-b091-9425d86e5a9d))
+    (pin "4" (uuid 5e6dc29b-b6b2-4999-bc73-78a902076650))
+    (pin "3" (uuid e7950442-37bf-4e91-96ea-43a3261db9f4))
+    (pin "2" (uuid 897075e3-c7d6-4876-8771-3847623c77a7))
+    (pin "1" (uuid 4d4496f7-6add-45ec-828d-df413afb9a51))
+    (pin "5" (uuid 82f891d1-c74e-4c7b-bd88-3e6a524ed65d))
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537"
@@ -7223,12 +7223,12 @@
     (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 170.815 250.19 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (pin "6" (uuid 29789997-3beb-4521-b091-9425d86e5a9c))
-    (pin "4" (uuid 5e6dc29b-b6b2-4999-bc73-78a90207664f))
-    (pin "3" (uuid e7950442-37bf-4e91-96ea-43a3261db9f3))
-    (pin "2" (uuid 897075e3-c7d6-4876-8771-3847623c77a6))
-    (pin "1" (uuid 4d4496f7-6add-45ec-828d-df413afb9a50))
-    (pin "5" (uuid 82f891d1-c74e-4c7b-bd88-3e6a524ed65c))
+    (pin "6" (uuid 29789997-3beb-4521-b091-9425d86e5a9e))
+    (pin "4" (uuid 5e6dc29b-b6b2-4999-bc73-78a902076651))
+    (pin "3" (uuid e7950442-37bf-4e91-96ea-43a3261db9f5))
+    (pin "2" (uuid 897075e3-c7d6-4876-8771-3847623c77a8))
+    (pin "1" (uuid 4d4496f7-6add-45ec-828d-df413afb9a52))
+    (pin "5" (uuid 82f891d1-c74e-4c7b-bd88-3e6a524ed65e))
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537"
@@ -7373,12 +7373,12 @@
     (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 163.195 250.19 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (pin "6" (uuid 29789997-3beb-4521-b091-9425d86e5a9c))
-    (pin "4" (uuid 5e6dc29b-b6b2-4999-bc73-78a90207664f))
-    (pin "3" (uuid e7950442-37bf-4e91-96ea-43a3261db9f3))
-    (pin "2" (uuid 897075e3-c7d6-4876-8771-3847623c77a6))
-    (pin "1" (uuid 4d4496f7-6add-45ec-828d-df413afb9a50))
-    (pin "5" (uuid 82f891d1-c74e-4c7b-bd88-3e6a524ed65c))
+    (pin "6" (uuid 29789997-3beb-4521-b091-9425d86e5a9f))
+    (pin "4" (uuid 5e6dc29b-b6b2-4999-bc73-78a902076652))
+    (pin "3" (uuid e7950442-37bf-4e91-96ea-43a3261db9f6))
+    (pin "2" (uuid 897075e3-c7d6-4876-8771-3847623c77a9))
+    (pin "1" (uuid 4d4496f7-6add-45ec-828d-df413afb9a53))
+    (pin "5" (uuid 82f891d1-c74e-4c7b-bd88-3e6a524ed65f))
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537"
@@ -7992,12 +7992,12 @@
     (property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics." (at 167.005 250.19 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (pin "6" (uuid 29789997-3beb-4521-b091-9425d86e5a9c))
-    (pin "4" (uuid 5e6dc29b-b6b2-4999-bc73-78a90207664f))
-    (pin "3" (uuid e7950442-37bf-4e91-96ea-43a3261db9f3))
-    (pin "2" (uuid 897075e3-c7d6-4876-8771-3847623c77a6))
-    (pin "1" (uuid 4d4496f7-6add-45ec-828d-df413afb9a50))
-    (pin "5" (uuid 82f891d1-c74e-4c7b-bd88-3e6a524ed65c))
+    (pin "6" (uuid 29789997-3beb-4521-b091-9425d86e5aa0))
+    (pin "4" (uuid 5e6dc29b-b6b2-4999-bc73-78a902076653))
+    (pin "3" (uuid e7950442-37bf-4e91-96ea-43a3261db9f7))
+    (pin "2" (uuid 897075e3-c7d6-4876-8771-3847623c77aa))
+    (pin "1" (uuid 4d4496f7-6add-45ec-828d-df413afb9a54))
+    (pin "5" (uuid 82f891d1-c74e-4c7b-bd88-3e6a524ed660))
     (instances
       (project "Accurate_Eval"
         (path "/d3b6a045-fd77-42ad-b330-1b1925488537"
