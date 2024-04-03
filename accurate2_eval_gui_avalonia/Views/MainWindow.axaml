@@ -123,45 +123,48 @@
           <Label Grid.Row="0" Grid.ColumnSpan="2" MinHeight="35" Margin="12, 0, 12, 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI Variable Display" Foreground="Black" FontWeight="SemiBold" >Buttons and LEDs status</Label>
           
           <Viewbox Grid.Row="1" Grid.Column="0">
-            <Border  Margin="10" Width="50" Height="50" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="12"/>
+            <Border x:Name="btn0" Margin="10" Width="50" Height="50" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="12"/>
           </Viewbox>
 
           <Viewbox Grid.Row="2" Grid.Column="0">
-            <Border  Margin="10" Width="50" Height="50" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="12"/>
+            <Border x:Name="btn1" Margin="10" Width="50" Height="50" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="12"/>
           </Viewbox>
 
           <Viewbox Grid.Row="3" Grid.Column="0">
-            <Border  Margin="10" Width="50" Height="50" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="12"/>
+            <Border x:Name="btn2" Margin="10" Width="50" Height="50" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="12"/>
           </Viewbox>
           
           <Viewbox Grid.Row="1" Grid.Column="1">
             <Ellipse
-                Fill="LightYellow"
-                Stroke="Black"
-                Height="50"
-                Width="50"
-                Margin="10"
-                StrokeThickness="1"/>
+              x:Name="led0"
+              Fill="LightYellow"
+              Stroke="Black"
+              Height="50"
+              Width="50"
+              Margin="10"
+              StrokeThickness="1"/>
           </Viewbox>
 
           <Viewbox Grid.Row="2" Grid.Column="1">
             <Ellipse
-                Fill="LightYellow"
-                Stroke="Black"
-                Height="50"
-                Width="50"
-                Margin="10"
-                StrokeThickness="1"/>
+              x:Name="led1"
+              Fill="LightYellow"
+              Stroke="Black"
+              Height="50"
+              Width="50"
+              Margin="10"
+              StrokeThickness="1"/>
           </Viewbox>
 
           <Viewbox Grid.Row="3" Grid.Column="1">
             <Ellipse
-                Fill="LightYellow"
-                Stroke="Black"
-                Height="50"
-                Width="50"
-                Margin="10"
-                StrokeThickness="1"/>
+              x:Name="led2"
+              Fill="LightYellow"
+              Stroke="Black"
+              Height="50"
+              Width="50"
+              Margin="10"
+              StrokeThickness="1"/>
           </Viewbox>
         </Grid>
       </Border>
@@ -184,7 +187,7 @@
           </lvc:CartesianChart>
 
           <WrapPanel Grid.Row="3" Grid.Column="0">
-            <Button x:Name="resetButton" Command="{Binding OnResetClickCommand}" MinHeight="45"  Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Reset View"></Button>
+            <Button x:Name="resetViewButton" Command="{Binding OnResetViewClickCommand}" MinHeight="45"  Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Reset View"></Button>
             <Button x:Name="exportButton" Command="{Binding OnExportClickCommand}" MinHeight="45" Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Export CSV"></Button>
           </WrapPanel>
 

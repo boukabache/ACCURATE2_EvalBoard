@@ -79,7 +79,7 @@ public partial class MainViewModel : ViewModelBase
         OnExportButtonClicked?.Invoke(this, EventArgs.Empty);
     }
 
-    public void OnResetClickCommand()
+    public void OnResetViewClickCommand()
     {
         // Reset Current Chart X and Y Axes
         foreach (var axis in CurrentXAxis)
@@ -113,8 +113,6 @@ public partial class MainViewModel : ViewModelBase
         OnPropertyChanged(nameof(TemperatureAndHumidityXAxis));
         OnPropertyChanged(nameof(TemperatureAndHumidityYAxis));
     }
-
-
 
     public ISeries[]? CurrentSeries { get; set; }
 

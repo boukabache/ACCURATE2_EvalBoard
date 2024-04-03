@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Avalonia.Platform.Storage;
 using System.Globalization;
 using CsvHelper;
+using Avalonia.Media;
 
 namespace accurate2_eval_gui_avalonia.Views;
 
@@ -214,18 +215,29 @@ public partial class MainWindow : Window
         }
     }
 
-    // Parses incoming data strings and updates ViewModel with new values.
     private void ParseAndSendDataToViewModel(string data)
     {
         // Extracting and converting data from the received string format.
         var parts = data.Split(',');
         if (parts.Length == 3)
         {
-            if (double.TryParse(parts[0], out double current) &&
+            // Assuming the current value received from the device is in femtoamps (fA) and needs conversion to Amperes (A).
+            if (double.TryParse(parts[0], out double currentInFemtoAmps) &&
                 double.TryParse(parts[1], out double temperature) &&
-                double.TryParse(parts[2], out double humidity))
+                double.TryParse(parts[2], out double humidity) &&
+                int.TryParse(parts[3], out int btnLedStatus))
             {
-                totalCurrent += current;
+                // Convert current from femtoamps to amperes by dividing by 10^15.
+                double currentInAmperes = currentInFemtoAmps / 1e15;
+
+                bool btn0Activated = (btnLedStatus & 0x20) != 0; // 0x20 = 0010 0000
+                bool btn1Activated = (btnLedStatus & 0x10) != 0; // 0x10 = 0001 0000
+                bool btn2Activated = (btnLedStatus & 0x08) != 0; // 0x08 = 0000 1000
+                bool led0Activated = (btnLedStatus & 0x04) != 0; // 0x04 = 0000 0100
+                bool led1Activated = (btnLedStatus & 0x02) != 0; // 0x02 = 0000 0010
+                bool led2Activated = (btnLedStatus & 0x01) != 0; // 0x01 = 0000 0001
+
+                totalCurrent += currentInAmperes; // Accumulate the converted current for averaging.
                 currentReadingsCount++;
                 SamplesText.Content = currentReadingsCount.ToString() + " samples since first connection";
 
@@ -233,14 +245,15 @@ public partial class MainWindow : Window
 
                 if (DataContext is MainViewModel viewModel)
                 {
-                    viewModel.UpdateGraphs(current, temperature, humidity);
-                    liveCurrent.Content = current.ToString("N2") + " A";
-                    averageCurrent.Content = calculatedAverageCurrent.ToString("N2") + " A";
+                    viewModel.UpdateGraphs(currentInAmperes, temperature, humidity);
+                    liveCurrent.Content = currentInAmperes.ToString("N2") + " A"; // Display in Amperes with two decimal places.
+                    averageCurrent.Content = calculatedAverageCurrent.ToString("N2") + " A"; // Display average in Amperes.
                 }
+
+                UpdateButtonAndLedStates(btn0Activated, btn1Activated, btn2Activated, led0Activated, led1Activated, led2Activated);
             }
         }
     }
-
     // Provides functionality for exporting data to a CSV file, with file saving dialog.
     private async void ExportData(object? sender, EventArgs e)
     {
@@ -341,4 +354,21 @@ public partial class MainWindow : Window
             usbEventWatcher.Dispose();
         }
     }
+
+    private void UpdateButtonAndLedStates(bool btn0Activated, bool btn1Activated, bool btn2Activated, bool led0Activated, bool led1Activated, bool led2Activated)
+    {
+        Dispatcher.UIThread.InvokeAsync(() =>
+        {
+            // Update button backgrounds
+            btn0.Background = btn0Activated ? Brushes.Black : Brushes.White;
+            btn1.Background = btn1Activated ? Brushes.Black : Brushes.White;
+            btn2.Background = btn2Activated ? Brushes.Black : Brushes.White;
+
+            // Update LED fills to a brighter yellow when activated, or a dimmer color when not
+            led0.Fill = led0Activated ? Brushes.Yellow : Brushes.LightYellow;
+            led1.Fill = led1Activated ? Brushes.Yellow : Brushes.LightYellow;
+            led2.Fill = led2Activated ? Brushes.Yellow : Brushes.LightYellow;
+        });
+    }
+
 }
