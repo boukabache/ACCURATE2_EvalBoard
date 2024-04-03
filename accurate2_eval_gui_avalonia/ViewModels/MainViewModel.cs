@@ -114,6 +114,15 @@ public partial class MainViewModel : ViewModelBase
         OnPropertyChanged(nameof(TemperatureAndHumidityYAxis));
     }
 
+    public void OnResetDataClickCommand()
+    {
+        CurrentValues.Clear();
+        TemperatureValues.Clear();
+        HumidityValues.Clear();
+
+        OnResetViewClickCommand();
+    }
+
     public ISeries[]? CurrentSeries { get; set; }
 
     public ISeries[]? TemperatureAndHumiditySeries { get; set; }

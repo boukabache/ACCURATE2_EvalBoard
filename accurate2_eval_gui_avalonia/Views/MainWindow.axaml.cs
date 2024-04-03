@@ -219,16 +219,18 @@ public partial class MainWindow : Window
     {
         // Extracting and converting data from the received string format.
         var parts = data.Split(',');
-        if (parts.Length == 3)
+        if (parts.Length == 4)
         {
             // Assuming the current value received from the device is in femtoamps (fA) and needs conversion to Amperes (A).
             if (double.TryParse(parts[0], out double currentInFemtoAmps) &&
                 double.TryParse(parts[1], out double temperature) &&
-                double.TryParse(parts[2], out double humidity) &&
-                int.TryParse(parts[3], out int btnLedStatus))
+                double.TryParse(parts[2], out double humidity))
             {
-                // Convert current from femtoamps to amperes by dividing by 10^15.
-                double currentInAmperes = currentInFemtoAmps / 1e15;
+                // Convert the binary string to an integer for button and LED states.
+                string btnLedBinaryString = parts[3];
+                // Ensure the binary string is correctly padded to the expected length.
+                btnLedBinaryString = btnLedBinaryString.PadLeft(6, '0');
+                int btnLedStatus = Convert.ToInt32(btnLedBinaryString, 2); // Convert binary string to integer.
 
                 bool btn0Activated = (btnLedStatus & 0x20) != 0; // 0x20 = 0010 0000
                 bool btn1Activated = (btnLedStatus & 0x10) != 0; // 0x10 = 0001 0000
@@ -236,6 +238,9 @@ public partial class MainWindow : Window
                 bool led0Activated = (btnLedStatus & 0x04) != 0; // 0x04 = 0000 0100
                 bool led1Activated = (btnLedStatus & 0x02) != 0; // 0x02 = 0000 0010
                 bool led2Activated = (btnLedStatus & 0x01) != 0; // 0x01 = 0000 0001
+
+                // Convert current from femtoamps to amperes by dividing by 10^15.
+                double currentInAmperes = currentInFemtoAmps / 1e15;
 
                 totalCurrent += currentInAmperes; // Accumulate the converted current for averaging.
                 currentReadingsCount++;

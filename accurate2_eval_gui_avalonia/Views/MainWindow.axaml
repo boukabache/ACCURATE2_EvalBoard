@@ -188,6 +188,7 @@
 
           <WrapPanel Grid.Row="3" Grid.Column="0">
             <Button x:Name="resetViewButton" Command="{Binding OnResetViewClickCommand}" MinHeight="45"  Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Reset View"></Button>
+            <Button x:Name="resetDataButton" Command="{Binding OnResetDataClickCommand}" MinHeight="45"  Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Reset Data"></Button>
             <Button x:Name="exportButton" Command="{Binding OnExportClickCommand}" MinHeight="45" Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Export CSV"></Button>
           </WrapPanel>
 
