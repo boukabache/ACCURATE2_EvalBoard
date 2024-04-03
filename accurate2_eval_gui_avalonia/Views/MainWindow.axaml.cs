@@ -113,8 +113,6 @@ public partial class MainWindow : Window
         switch (clickCount1)
         {
             case 0:
-                onButton.IsEnabled = false;
-                offButton.IsEnabled = false;
                 try
                 {
                     if (arduinoPort.IsOpen == true)
@@ -159,8 +157,6 @@ public partial class MainWindow : Window
                             {
                                 connectedTime.Content = "Connected";
                                 ConnectButtonLabel.Content = "Disconnect";
-                                onButton.IsEnabled = true;
-                                offButton.IsEnabled = true;
                                 dispatcherTimer.Start();
                                 time = TimeSpan.FromSeconds(1);
                                 Task.Run(() => ReadDataFromUSB());

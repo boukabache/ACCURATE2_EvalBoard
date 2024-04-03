@@ -42,7 +42,7 @@
   </Window.Styles>
 
   
-    <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.1*, 0.3*, 0.1*, 0.25*, 0.25*" Background="#FFF0F3FA">
+    <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.1*, 0.2*, 0.1*, 0.3*, 0.23*" Background="#FFF0F3FA">
       
       <Grid Grid.Row="0" Grid.ColumnSpan="2">
         <Viewbox HorizontalAlignment="Left" Margin="24, 16, 24, 16">
@@ -52,20 +52,13 @@
 
       
       <Border Grid.Row="1" BorderThickness="0" CornerRadius="8" Margin="24, 4, 12, 4" Background="White">
-        <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.15*, 0.283*, 0.283*, 0.283*">
+        <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.15*, 0.425*, 0.425*">
           
           <Label MinHeight="35" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black" x:Name="Connection" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 4, 4, 4">Connection</Label>
-          
-          <Button x:Name="onButton" Grid.Row="1" Margin="12,  4, 12, 4" Background="LightGreen" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Label FontFamily="Segoe UI Variable Text" FontSize="20" Foreground="Black">On</Label>
-          </Button>
-
-          <Button x:Name="offButton" Grid.Row="1" Grid.Column="1" Margin="12, 4, 12, 4" Background="LightPink" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Label FontFamily="Segoe UI Variable Text" FontSize="20" Foreground="Black">Off</Label>
-          </Button>
+         
 
           <ComboBox
-            Grid.Row="2"
+            Grid.Row="1"
             Name="portComboBox"
             SelectedIndex="0"
             Margin="12, 4, 12, 4"
@@ -88,14 +81,14 @@
             </ComboBox.ItemTemplate>
           </ComboBox>
 
-          <Button Grid.Row="2" Grid.Column="1" Name="ConnectButton" Background="White" FontSize="20" Foreground="Black" Margin="12, 4, 12, 4" Command="{Binding OnConnectClickCommand}" HorizontalAlignment="Stretch"
+          <Button Grid.Row="1" Grid.Column="1" Name="ConnectButton" Background="White" FontSize="20" Foreground="Black" Margin="12, 4, 12, 4" Command="{Binding OnConnectClickCommand}" HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch">
             <Label Name="ConnectButtonLabel" FontFamily="Segoe UI Variable Text" FontSize="20" Foreground="Black">Connect</Label>
           </Button>
 
           <Viewbox Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="12, 0, 12, 12" VerticalAlignment="Center">
             <StackPanel>
-              <Label Name="test" FontFamily="Segoe UI Variable Text" FontWeight="SemiBold" Foreground="Black" BorderThickness="0" Padding="5, 0">ACCURATE 2A evaluation board</Label>
+              <Label Name="test" FontFamily="Segoe UI Variable Text" FontWeight="SemiBold" Foreground="Black" BorderThickness="0" Padding="5, 0">ACCURATE 2A Evaluation Board</Label>
               <Label FontFamily="Segoe UI Variable Text" BorderThickness="0" Foreground="Black" Padding="5, 0">Microchip SAMD21G18, Lattice iCE5LP4K</Label>
               <Label x:Name="connectedTime" FontFamily="Segoe UI Variable Text" Foreground="Black" BorderThickness="0" Padding="5, 0">Disconnected</Label>
             </StackPanel>
