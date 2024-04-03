@@ -56,8 +56,11 @@ float readFPGA();
 // Reads a 32-bit unsigned integer from the Serial1 buffer.
 uint32_t readUInt32();
 
-// Calculates the current based on FPGA data readings, both charge injection and direct slope.
-float calculateCurrent(uint32_t data0, uint32_t data1, uint32_t data2, uint32_t data3, uint32_t data4);
+// Calculates the current based on FPGA data readings, direct slope.
+float calculateCurrentDirSlope(uint32_t data0, uint32_t data4);
+
+// Calculates the current based on FPGA data readings, charge injection.
+float calculateCurrentChInj(uint32_t data1, uint32_t data2, uint32_t data3);
 
 // Attempts to resynchronize the data stream from the FPGA in case of errors.
 void attemptResynchronization();

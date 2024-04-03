@@ -20,7 +20,7 @@ float readFPGA() {
         if (data[6] == 0x5A) { // Stop bit
             Serial.print(dataString + " - OK");
             Serial.print(" - Measured Current: ");
-            float readCurrent = calculateCurrent(data[0], data[1], data[2], data[3], data[4]);
+            float readCurrent = calculateCurrentChInj(data[1], data[2], data[3]);
             printCurrentInAppropriateUnit(readCurrent);
             return readCurrent;
         }
@@ -96,7 +96,7 @@ uint32_t calculateGateLength() {
     return gate;
 }
 
-float calculateCurrent(uint32_t data0, uint32_t data1, uint32_t data2, uint32_t data3, uint32_t data4) {
+float calculateCurrentDirSlope(uint32_t data0, uint32_t data4) {
     // Extract the last nibble (4 bits) from data4
     uint32_t lastHexDigitOfData5 = data4 & 0xF;
 
@@ -111,6 +111,10 @@ float calculateCurrent(uint32_t data0, uint32_t data1, uint32_t data2, uint32_t 
         current_dir_slope = Cf * VINT1 * 1e8 / interval1_count;
     }
 
+    return current_dir_slope;
+}
+
+float calculateCurrentChInj(uint32_t data1, uint32_t data2, uint32_t data3) {
     float current_low = static_cast<float>(data1) * Qref1 / Tw;
     float current_medium = static_cast<float>(data2) * Qref2 / Tw;
     float current_high = static_cast<float>(data3) * Qref3 / Tw;
