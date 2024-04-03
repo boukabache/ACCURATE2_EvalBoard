@@ -18,17 +18,22 @@ CurrentMeasurement readFPGA() {
         }
 
         if (data[6] == 0x5A) { // Stop bit
-            Serial.print(dataString + " - OK");
             float readCurrent = calculateCurrentChInj(data[1], data[2], data[3]);
             CurrentMeasurement measurement = getCurrentInAppropriateRange(readCurrent);
+#ifdef DEBUG
+            Serial.print(dataString + " - OK");
             Serial.print(" - Measured Current: ");
             Serial.print(measurement.convertedCurrent);
             Serial.print(" ");
             Serial.println(measurement.range);
+#endif
             return measurement;
         }
         else {
+#ifdef DEBUG
             Serial.println(dataString + " - Error");
+#endif
+
             attemptResynchronization();
 
             // Return a measurement indicating an error
@@ -63,24 +68,52 @@ void attemptResynchronization() {
 
 void sendConfigurations() {
     delay(5000);
+
+#ifdef DEBUG
     Serial.println("");
+#endif
+
     sendParam(INIT_CONFIG_ADDRESS, INIT_CONFIG);
+
+#ifdef DEBUG
     Serial.println("INIT Config sent");
+#endif
+
     sendParam(GATE_LENGTH_ADDRESS, calculateGateLength());
+
+#ifdef DEBUG
     Serial.println("GATE sent");
+#endif
+
     delay(20);
     sendParam(RST_DURATION_ADDRESS, RST_DURATION);
+
+#ifdef DEBUG
     Serial.println("RST DURATION sent");
+#endif
+
     delay(20);
     sendParam(VBIAS1_ADDRESS, convertVoltageToDAC(VBIAS1_DEC));
     sendParam(VBIAS2_ADDRESS, convertVoltageToDAC(VBIAS2_DEC));
+
+#ifdef DEBUG
     delay(20);
+#endif
+
     sendParam(VBIAS3_ADDRESS, convertVoltageToDAC(VBIAS3_DEC));
+
+#ifdef DEBUG
     Serial.println("VBIAS Sent");
+#endif
+
     sendParam(VCM_ADDRESS, convertVoltageToDAC(VCM_DEC));
+
+#ifdef DEBUG
     delay(20);
-    sendParam(VCM1_ADDRESS, convertVoltageToDAC(VCM_DEC));
     Serial.println("VCM Sent");
+#endif
+
+    sendParam(VCM1_ADDRESS, convertVoltageToDAC(VCM_DEC));
     sendParam(VTH1_ADDRESS, convertVoltageToDAC(VTH1_DEC));
     sendParam(VTH2_ADDRESS, convertVoltageToDAC(VTH2_DEC));
     sendParam(VTH3_ADDRESS, convertVoltageToDAC(VTH3_DEC));
@@ -88,11 +121,15 @@ void sendConfigurations() {
     sendParam(VTH5_ADDRESS, convertVoltageToDAC(VTH5_DEC));
     sendParam(VTH6_ADDRESS, convertVoltageToDAC(VTH6_DEC));
     sendParam(VTH7_ADDRESS, convertVoltageToDAC(VTH7_DEC));
+
+#ifdef DEBUG
     Serial.println("VTH Sent");
     sendParam(INIT_CONFIG_ADDRESS, INIT_CONFIG_START);
     Serial.println("Configuration sent");
     Serial.println("");
+#endif
 }
+
 
 uint32_t convertVoltageToDAC(float voltage) {
     return static_cast<uint32_t>(round((voltage * ADC_RESOLUTION_ACCURATE) / REF_VOLTAGE));

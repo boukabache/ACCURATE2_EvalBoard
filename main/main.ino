@@ -16,6 +16,10 @@ void setup() {
 
     Serial.begin(9600);
 
+#ifdef DEBUG
+    Serial.println("Debug mode is ON");
+#endif
+
     Wire.begin();
 
     pinMode(LED_0_PIN, OUTPUT);

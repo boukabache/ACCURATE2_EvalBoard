@@ -1,6 +1,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+// Uncomment the following line to enable debug mode
+// #define DEBUG
+
 struct CurrentMeasurement {
     float currentInFemtoAmpere; // Current in fA
     float convertedCurrent;     // Converted current based on range
