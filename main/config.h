@@ -11,12 +11,12 @@ struct CurrentMeasurement {
 };
 
 // IO Settings
-#define LED_0_PIN 14
-#define LED_1_PIN 15
-#define LED_2_PIN 16
-#define BTN_0_PIN 17
-#define BTN_1_PIN 18
-#define BTN_2_PIN 19
+#define LED_0_PIN 33
+#define LED_1_PIN 34
+#define LED_2_PIN 39
+#define BTN_0_PIN 41
+#define BTN_1_PIN 48
+#define BTN_2_PIN 37
 
 // SHT41 Settings
 #define SHT41_RD_PERIOD		    1 // periodic read interval [s]
