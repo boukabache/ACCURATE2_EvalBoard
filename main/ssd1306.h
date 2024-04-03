@@ -11,8 +11,8 @@
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
-#define SSD1306_ADDR 0b0111100
+#define SSD1306_ADDR 0x3C
 
 void ssd1306_init();
 
-void ssd1306_print_currentmA_temp_humidity(float current, String current_range, float temp, float humidity);
+void ssd1306_print_current_temp_humidity(float current, String current_range, float temp, float humidity);

@@ -1,11 +1,19 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+struct CurrentMeasurement {
+    float currentInFemtoAmpere; // Current in fA
+    float convertedCurrent;     // Converted current based on range
+    String range;               // String indicating the current range
+};
+
 // IO Settings
-#define LED_ALIVE_PIN           PIN_LED_13
-#define LED_1_PIN               14
-#define LED_2_PIN               15
-#define LED_3_PIN               16
+#define LED_0_PIN 14
+#define LED_1_PIN 15
+#define LED_2_PIN 16
+#define BTN_0_PIN 17
+#define BTN_1_PIN 18
+#define BTN_2_PIN 19
 
 // SHT41 Settings
 #define SHT41_RD_PERIOD		    1 // periodic read interval [s]

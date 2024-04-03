@@ -24,7 +24,7 @@ void ssd1306_init() {
   display.setTextColor(WHITE);
 }
 
-void ssd1306_print_currentmA_temp_humidity(float current, String current_range, float temp, float humidity) {
+void ssd1306_print_current_temp_humidity(float current, String current_range, float temp, float humidity) {
   display.clearDisplay();
   display.setTextSize(1);
   display.setCursor(0, 0);

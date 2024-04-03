@@ -7,7 +7,7 @@
 
 #include "fpga.h"
 
-float readFPGA() {
+CurrentMeasurement readFPGA() {
     while (Serial1.available() >= 4 * 7) {
         uint32_t data[7];
         String dataString = "";
@@ -19,17 +19,24 @@ float readFPGA() {
 
         if (data[6] == 0x5A) { // Stop bit
             Serial.print(dataString + " - OK");
-            Serial.print(" - Measured Current: ");
             float readCurrent = calculateCurrentChInj(data[1], data[2], data[3]);
-            printCurrentInAppropriateUnit(readCurrent);
-            return readCurrent;
+            CurrentMeasurement measurement = getCurrentInAppropriateRange(readCurrent);
+            Serial.print(" - Measured Current: ");
+            Serial.print(measurement.convertedCurrent);
+            Serial.print(" ");
+            Serial.println(measurement.range);
+            return measurement;
         }
         else {
-            //Serial.println("Error");
             Serial.println(dataString + " - Error");
-
             attemptResynchronization();
-            return std::nan("1");
+
+            // Return a measurement indicating an error
+            CurrentMeasurement errorMeasurement;
+            errorMeasurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
+            errorMeasurement.convertedCurrent = std::nan("1");
+            errorMeasurement.range = "Error";
+            return errorMeasurement;
         }
     }
 }
@@ -123,23 +130,29 @@ float calculateCurrentChInj(uint32_t data1, uint32_t data2, uint32_t data3) {
     return current_ch_inj;
 }
 
-void printCurrentInAppropriateUnit(float currentInFemtoAmperes) {
+CurrentMeasurement getCurrentInAppropriateRange(float currentInFemtoAmperes) {
+    CurrentMeasurement measurement;
+    measurement.currentInFemtoAmpere = currentInFemtoAmperes; // Store the original value in fA
+
+    // Convert the current and determine the range
     if (currentInFemtoAmperes < 1000) {
-        Serial.print(currentInFemtoAmperes, 3);
-        Serial.println(" fA");
+        measurement.convertedCurrent = currentInFemtoAmperes;
+        measurement.range = "fA";
     }
     else if (currentInFemtoAmperes < 1e6) {
-        Serial.print(currentInFemtoAmperes / 1000, 3);
-        Serial.println(" pA");
+        measurement.convertedCurrent = currentInFemtoAmperes / 1000;
+        measurement.range = "pA";
     }
     else if (currentInFemtoAmperes < 1e9) {
-        Serial.print(currentInFemtoAmperes / 1e6, 3);
-        Serial.println(" nA");
+        measurement.convertedCurrent = currentInFemtoAmperes / 1e6;
+        measurement.range = "nA";
     }
     else {
-        Serial.print(currentInFemtoAmperes / 1e9, 3);
-        Serial.println(" uA");
+        measurement.convertedCurrent = currentInFemtoAmperes / 1e9;
+        measurement.range = "uA";
     }
+
+    return measurement;
 }
 
 uint32_t readUInt32() {

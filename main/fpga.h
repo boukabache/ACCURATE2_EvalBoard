@@ -51,7 +51,7 @@ const uint32_t RST_DURATION = 0x0708;
 const uint32_t INIT_CONFIG_START = 0x01C007;
 
 // Attempts to read data from the FPGA, returns the current measured or NaN on error.
-float readFPGA();
+CurrentMeasurement readFPGA();
 
 // Reads a 32-bit unsigned integer from the Serial1 buffer.
 uint32_t readUInt32();
@@ -78,6 +78,6 @@ void sendParam(uint32_t address, uint32_t value);
 uint32_t calculateGateLength();
 
 // Prints the current measurement in an appropriate unit (fA, pA, nA, uA).
-void printCurrentInAppropriateUnit(float currentInFemtoAmperes);
+CurrentMeasurement getCurrentInAppropriateRange(float currentInFemtoAmperes);
 
 #endif /* FPGA_H_ */
