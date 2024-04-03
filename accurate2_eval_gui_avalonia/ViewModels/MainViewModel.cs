@@ -15,6 +15,8 @@ public partial class MainViewModel : ViewModelBase
     // Events to enable communication with the View for specific button actions.
     public event EventHandler ?OnConnectButtonClicked;
     public event EventHandler ?OnExportButtonClicked;
+    public event EventHandler ?OnResetDataButtonClicked;
+
     // Collections to dynamically store and update measurement data.
     public ObservableCollection<ObservableValue> CurrentValues = new ObservableCollection<ObservableValue>();
     public ObservableCollection<ObservableValue> TemperatureValues = new ObservableCollection<ObservableValue>();
@@ -79,6 +81,20 @@ public partial class MainViewModel : ViewModelBase
         OnExportButtonClicked?.Invoke(this, EventArgs.Empty);
     }
 
+    public void OnResetDataClickCommand()
+    {
+        Dispatcher.UIThread.InvokeAsync(() =>
+        {
+            CurrentValues.Clear();
+            TemperatureValues.Clear();
+            HumidityValues.Clear();
+
+            OnResetViewClickCommand();
+
+            OnResetDataButtonClicked?.Invoke(this, EventArgs.Empty);
+        });
+    }
+
     public void OnResetViewClickCommand()
     {
         // Reset Current Chart X and Y Axes
@@ -112,15 +128,6 @@ public partial class MainViewModel : ViewModelBase
         OnPropertyChanged(nameof(CurrentYAxis));
         OnPropertyChanged(nameof(TemperatureAndHumidityXAxis));
         OnPropertyChanged(nameof(TemperatureAndHumidityYAxis));
-    }
-
-    public void OnResetDataClickCommand()
-    {
-        CurrentValues.Clear();
-        TemperatureValues.Clear();
-        HumidityValues.Clear();
-
-        OnResetViewClickCommand();
     }
 
     public ISeries[]? CurrentSeries { get; set; }

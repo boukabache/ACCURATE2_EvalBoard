@@ -66,6 +66,7 @@ public partial class MainWindow : Window
                 {
                     context.OnConnectButtonClicked += ConnectUSB;
                     context.OnExportButtonClicked += ExportData;
+                    context.OnResetDataButtonClicked += ResetData;
                 }
             }
         };
@@ -305,7 +306,6 @@ public partial class MainWindow : Window
         }
     }
 
-
     // Device connection timekeeping
     private void DispatcherTimer_Tick(object? sender, EventArgs e)
     {
@@ -376,4 +376,20 @@ public partial class MainWindow : Window
         });
     }
 
+    private void ResetData(object? sender, EventArgs e)
+    {
+        Dispatcher.UIThread.InvokeAsync(() =>
+        {
+            liveCurrent.Content = "N/A fA";
+            averageCurrent.Content = "N/A fA";
+
+            btn0.Background = Brushes.White;
+            btn1.Background = Brushes.White;
+            btn2.Background = Brushes.White;
+
+            led0.Fill = Brushes.LightYellow;
+            led1.Fill = Brushes.LightYellow;
+            led2.Fill = Brushes.LightYellow;
+        });
+    }
 }
