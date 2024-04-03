@@ -9,26 +9,13 @@
 #define FPGA_H_
 
 #include <Arduino.h>
+#include <cmath>
+#include "config.h"
 
 #define DOWNSCALING_FACTOR 10E14
 
 const float CLOCK_PERIOD = 1E8; // ^-1
 const float TW = 0.1;
-
-const float VBIAS1_DEC = 1.6;
-const float VBIAS2_DEC = 2.5;
-const float VBIAS3_DEC = 1.18;
-const float VCM_DEC = 1.5;
-const float VTH1_DEC = 1.55;
-const float VTH2_DEC = 1.7;
-const float VTH3_DEC = 1.83;
-const float VTH4_DEC = 2.5;
-const float VTH5_DEC = 1.5; // Vcmd
-const float VTH6_DEC = 1.5; // Vcharge-
-const float VTH7_DEC = 2.5; // Vcharge+
-
-const uint32_t ADC_RESOLUTION_ACCURATE = 4096;
-const float REF_VOLTAGE = 3.0;
 
 const float Cf = 5e-12 * DOWNSCALING_FACTOR;
 const float Tw = 0.1;
@@ -63,22 +50,31 @@ const uint32_t INIT_CONFIG = 0x4107;
 const uint32_t RST_DURATION = 0x0708;
 const uint32_t INIT_CONFIG_START = 0x01C007;
 
-void readFPGA();
+// Attempts to read data from the FPGA, returns the current measured or NaN on error.
+float readFPGA();
 
+// Reads a 32-bit unsigned integer from the Serial1 buffer.
 uint32_t readUInt32();
 
+// Calculates the current based on FPGA data readings, both charge injection and direct slope.
 float calculateCurrent(uint32_t data0, uint32_t data1, uint32_t data2, uint32_t data3, uint32_t data4);
 
+// Attempts to resynchronize the data stream from the FPGA in case of errors.
 void attemptResynchronization();
 
+// Sends predefined configuration parameters to the FPGA.
 void sendConfigurations();
 
-uint32_t convertVoltageToDAC(float voltage);
+// Converts a voltage value to its corresponding DAC value.
+extern uint32_t convertVoltageToDAC(float voltage);
 
+// Sends a single parameter value to a specified address in the FPGA.
 void sendParam(uint32_t address, uint32_t value);
 
+// Calculates the gate length based on predefined constants.
 uint32_t calculateGateLength();
 
+// Prints the current measurement in an appropriate unit (fA, pA, nA, uA).
 void printCurrentInAppropriateUnit(float currentInFemtoAmperes);
 
 #endif /* FPGA_H_ */

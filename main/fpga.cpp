@@ -7,7 +7,7 @@
 
 #include "fpga.h"
 
-void readFPGA() {
+float readFPGA() {
     while (Serial1.available() >= 4 * 7) {
         uint32_t data[7];
         String dataString = "";
@@ -20,47 +20,18 @@ void readFPGA() {
         if (data[6] == 0x5A) { // Stop bit
             Serial.print(dataString + " - OK");
             Serial.print(" - Measured Current: ");
-            printCurrentInAppropriateUnit(calculateCurrent(data[0], data[1], data[2], data[3], data[4]));
+            float readCurrent = calculateCurrent(data[0], data[1], data[2], data[3], data[4]);
+            printCurrentInAppropriateUnit(readCurrent);
+            return readCurrent;
         }
         else {
             //Serial.println("Error");
             Serial.println(dataString + " - Error");
 
             attemptResynchronization();
+            return std::nan("1");
         }
     }
-}
-
-uint32_t readUInt32() {
-    uint32_t value = 0;
-    value |= ((uint32_t)Serial1.read()) << 0;
-    value |= ((uint32_t)Serial1.read()) << 8;
-    value |= ((uint32_t)Serial1.read()) << 16;
-    value |= ((uint32_t)Serial1.read()) << 24;
-    return value;
-}
-
-float calculateCurrent(uint32_t data0, uint32_t data1, uint32_t data2, uint32_t data3, uint32_t data4) {
-    // Extract the last nibble (4 bits) from data4
-    uint32_t lastHexDigitOfData5 = data4 & 0xF;
-
-    // Combine data0 and the last nibble of data4 to form interval1_count
-    uint32_t interval1_count = (data0 << 4) | lastHexDigitOfData5;
-
-    float current_dir_slope;
-    if (interval1_count == 0) {
-        current_dir_slope = 0;
-    }
-    else {
-        current_dir_slope = Cf * VINT1 * 1e8 / interval1_count;
-    }
-
-    float current_low = static_cast<float>(data1) * Qref1 / Tw;
-    float current_medium = static_cast<float>(data2) * Qref2 / Tw;
-    float current_high = static_cast<float>(data3) * Qref3 / Tw;
-
-    float current_ch_inj = current_low + current_medium + current_high;
-    return current_ch_inj;
 }
 
 void attemptResynchronization() {
@@ -120,22 +91,32 @@ uint32_t convertVoltageToDAC(float voltage) {
     return static_cast<uint32_t>(round((voltage * ADC_RESOLUTION_ACCURATE) / REF_VOLTAGE));
 }
 
-void sendParam(uint32_t address, uint32_t value) {
-    Serial1.write(address & 0xFF); // LSB
-    Serial1.write((address >> 8) & 0xFF);
-    Serial1.write((address >> 16) & 0xFF);
-    Serial1.write((address >> 24) & 0xFF); // MSB
-
-    Serial1.write(value & 0xFF); // LSB
-    Serial1.write((value >> 8) & 0xFF);
-    Serial1.write((value >> 16) & 0xFF);
-    Serial1.write((value >> 24) & 0xFF); // MSB
-}
-
-
 uint32_t calculateGateLength() {
     uint32_t gate = static_cast<uint32_t>((TW * CLOCK_PERIOD) - 1);
     return gate;
+}
+
+float calculateCurrent(uint32_t data0, uint32_t data1, uint32_t data2, uint32_t data3, uint32_t data4) {
+    // Extract the last nibble (4 bits) from data4
+    uint32_t lastHexDigitOfData5 = data4 & 0xF;
+
+    // Combine data0 and the last nibble of data4 to form interval1_count
+    uint32_t interval1_count = (data0 << 4) | lastHexDigitOfData5;
+
+    float current_dir_slope;
+    if (interval1_count == 0) {
+        current_dir_slope = 0;
+    }
+    else {
+        current_dir_slope = Cf * VINT1 * 1e8 / interval1_count;
+    }
+
+    float current_low = static_cast<float>(data1) * Qref1 / Tw;
+    float current_medium = static_cast<float>(data2) * Qref2 / Tw;
+    float current_high = static_cast<float>(data3) * Qref3 / Tw;
+
+    float current_ch_inj = current_low + current_medium + current_high;
+    return current_ch_inj;
 }
 
 void printCurrentInAppropriateUnit(float currentInFemtoAmperes) {
@@ -155,4 +136,25 @@ void printCurrentInAppropriateUnit(float currentInFemtoAmperes) {
         Serial.print(currentInFemtoAmperes / 1e9, 3);
         Serial.println(" uA");
     }
+}
+
+uint32_t readUInt32() {
+    uint32_t value = 0;
+    value |= ((uint32_t)Serial1.read()) << 0;
+    value |= ((uint32_t)Serial1.read()) << 8;
+    value |= ((uint32_t)Serial1.read()) << 16;
+    value |= ((uint32_t)Serial1.read()) << 24;
+    return value;
+}
+
+void sendParam(uint32_t address, uint32_t value) {
+    Serial1.write(address & 0xFF); // LSB
+    Serial1.write((address >> 8) & 0xFF);
+    Serial1.write((address >> 16) & 0xFF);
+    Serial1.write((address >> 24) & 0xFF); // MSB
+
+    Serial1.write(value & 0xFF); // LSB
+    Serial1.write((value >> 8) & 0xFF);
+    Serial1.write((value >> 16) & 0xFF);
+    Serial1.write((value >> 24) & 0xFF); // MSB
 }

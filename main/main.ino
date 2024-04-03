@@ -2,7 +2,6 @@
 #include <Wire.h>
 #include <Time.h>
 #include <stdint.h>
-#include "config.h"
 #include "sht41.h"
 #include "dac7578.h"
 #include "ssd1306.h"
@@ -28,4 +27,6 @@ void setup() {
 
 void loop() {
     readFPGA();
+
+    // Write to computer using Serial in the format (current[A],temp,humidity,btnLedStatus(btn0,btn1,btn2,led0,led1,led2 binary))
 }

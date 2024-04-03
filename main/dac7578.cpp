@@ -21,14 +21,14 @@ static DAC7578 ACCURATE_DAC;
 // Initializes ACCURATE_DAC fields with given address and default channel values
 void dac7578_init() {
     ACCURATE_DAC.address = DAC_ADDRESS;
-    ACCURATE_DAC.channel_val[VBIAS1_CH] = VBIAS1_REG;		// default :  1.68 V
-    ACCURATE_DAC.channel_val[VCM_CH] = VCM_REG;			    // default :  1.5 V
-    ACCURATE_DAC.channel_val[VTH1_CH] = VTH1_REG;			// default :  2.3 V
-    ACCURATE_DAC.channel_val[VCHARGEP_CH] = VCHARGEP_REG;	// default :  2.5 V
-    ACCURATE_DAC.channel_val[VTH2_CH] = VTH2_REG;			// default :  2.4 V
-    ACCURATE_DAC.channel_val[VTH4_CH] = VTH4_REG;			// default :  2.5 V
-    ACCURATE_DAC.channel_val[VTH3_CH] = VTH3_REG;			// default :  2.5 V
-    ACCURATE_DAC.channel_val[VBIAS3_CH] = VBIAS3_REG;		// default :  1.18 V
+    ACCURATE_DAC.channel_val[VBIAS1_CH] = convertVoltageToDAC(VBIAS1_DEC);
+    ACCURATE_DAC.channel_val[VCM_CH] = convertVoltageToDAC(VCM_DEC);
+    ACCURATE_DAC.channel_val[VTH1_CH] = convertVoltageToDAC(VTH1_DEC);
+    ACCURATE_DAC.channel_val[VCHARGEP_CH] = convertVoltageToDAC(VTH7_DEC);
+    ACCURATE_DAC.channel_val[VTH2_CH] = convertVoltageToDAC(VTH2_DEC);
+    ACCURATE_DAC.channel_val[VTH4_CH] = convertVoltageToDAC(VTH4_DEC);
+    ACCURATE_DAC.channel_val[VTH3_CH] = convertVoltageToDAC(VTH3_DEC);
+    ACCURATE_DAC.channel_val[VBIAS3_CH] = convertVoltageToDAC(VBIAS3_DEC);
 }
 
 // set DAC's channel(ch_idx) value
