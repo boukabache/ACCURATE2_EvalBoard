@@ -1,0 +1,252 @@
+v 4
+file / "/Users/mattia/Downloads/PoC/src/mem/mem.pkg.vhdl" "6998772fa28428e09f4af0cd33ae0e9f0e3d174a" "20240522155424.759":
+  package mem at 47( 1919) + 0 on 4;
+  package body mem at 86( 2645) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/lut/lut_Sine.vhdl" "2e008cf69eeb9dfd449b3b3682757210111e9c86" "20240522155424.759":
+  entity lut_sine at 31( 1262) + 0 on 4;
+  architecture rtl of lut_sine at 57( 1834) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/ocram_tdp.vhdl" "b1cf1ae63f276307673b61be466ff61098e79c71" "20240522155424.758":
+  entity ocram_tdp at 70( 2708) + 0 on 4;
+  architecture rtl of ocram_tdp at 105( 3983) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/ocram_esdp.vhdl" "10176b7052c6fb49a3349736e65579c97a2f0223" "20240522155424.758":
+  entity ocram_esdp at 82( 3129) + 0 on 4;
+  architecture rtl of ocram_esdp at 118( 4300) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/ocram_sp.vhdl" "cfbc2dba1fa785d6e0c43af37fbc297b3d2a79af" "20240522155424.758":
+  entity ocram_sp at 56( 2123) + 0 on 4;
+  architecture rtl of ocram_sp at 85( 2906) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/ocram_tdp_wf.vhdl" "a08837bb5d57793d9d973e9e32d7044ce3d402fe" "20240522155424.757":
+  entity ocram_tdp_wf at 71( 2850) + 0 on 4;
+  architecture rtl of ocram_tdp_wf at 104( 3977) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/ocram_tdp_sim.vhdl" "e4bdcc0a81b88a77272ec8f0ef48f59603a6a675" "20240522155424.757":
+  entity ocram_tdp_sim at 40( 1667) + 0 on 4;
+  architecture sim of ocram_tdp_sim at 74( 2924) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/altera/ocram_sp_altera.vhdl" "22a46ad57f73cb49b13161f6c3d4e0dc056cb5bf" "20240522155424.757":
+  entity ocram_sp_altera at 36( 1485) + 0 on 4;
+  architecture rtl of ocram_sp_altera at 66( 2016) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/altera/ocram_tdp_altera.vhdl" "7442e99aa05cde88583716b08583ab8154d52460" "20240522155424.757":
+  entity ocram_tdp_altera at 36( 1490) + 0 on 4;
+  architecture rtl of ocram_tdp_altera at 72( 2242) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/ocram_sdp.vhdl" "0780151936c69aa6c789ce0f0d2e6593febb1246" "20240522155424.756":
+  entity ocram_sdp at 53( 2245) + 0 on 4;
+  architecture rtl of ocram_sdp at 85( 3206) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/ocram_sdp_wf.vhdl" "553bb376aca12c7b5f501fc141dde0caf0b81f98" "20240522155424.756":
+  entity ocram_sdp_wf at 53( 2096) + 0 on 4;
+  architecture rtl of ocram_sdp_wf at 75( 2909) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocram/ocram.pkg.vhdl" "7a01d2d0e07802d69bcab809a7924777d539cb36" "20240522155424.756":
+  package ocram at 35( 1490) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/sdram/sdram_ctrl_s3esk.vhdl" "fce65689c60d0157ee90a6286dd40a9a13705b79" "20240522155424.755":
+  entity sdram_ctrl_s3esk at 62( 2675) + 0 on 4;
+  architecture rtl of sdram_ctrl_s3esk at 114( 4189) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/sdram/sdram_ctrl_de0.vhdl" "687dd36c99ef9a4ca5b28728e085597a81ba2691" "20240522155424.755":
+  entity sdram_ctrl_de0 at 61( 2505) + 0 on 4;
+  architecture rtl of sdram_ctrl_de0 at 102( 3636) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/sdram/sdram_ctrl_phy_de0.vhdl" "dd1d28de3274ee5dc35610929cb7d2cf466f845e" "20240522155424.755":
+  entity sdram_ctrl_phy_de0 at 83( 3438) + 0 on 4;
+  architecture rtl of sdram_ctrl_phy_de0 at 124( 4546) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/sdram/sdram_ctrl_phy_s3esk.vhdl" "7c49fc7dfc3552e8c9be66dec83900751a71e488" "20240522155424.754":
+  entity sdram_ctrl_phy_s3esk at 101( 5035) + 0 on 4;
+  architecture rtl of sdram_ctrl_phy_s3esk at 153( 6423) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/sdram/sdram_ctrl_fsm.vhdl" "185e5177182d6d48ad84e6af85953cc4c11e7176" "20240522155424.754":
+  entity sdram_ctrl_fsm at 97( 4081) + 0 on 4;
+  architecture rtl of sdram_ctrl_fsm at 150( 5910) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocrom/ocrom.pkg.vhdl" "5b50f777e9779915a3a90c96848a8829845d7212" "20240522155424.753":
+  package ocrom at 35( 1462) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocrom/ocrom_dp.vhdl" "9ac0761c868a9868a1bd2f2c2f7de7a207ba4bff" "20240522155424.752":
+  entity ocrom_dp at 44( 1677) + 0 on 4;
+  architecture rtl of ocrom_dp at 79( 2341) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ocrom/ocrom_sp.vhdl" "d28cf361ee2547da86e76f9be81962ef7e9da328" "20240522155424.752":
+  entity ocrom_sp at 37( 1374) + 0 on 4;
+  architecture rtl of ocrom_sp at 68( 1900) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ddr2/ddr2_mem2mig_adapter_Spartan6.vhdl" "68428257fe99eacb74a266b53a8f1ba49e48300a" "20240522155424.752":
+  entity ddr2_mem2mig_adapter_spartan6 at 54( 2291) + 0 on 4;
+  architecture rtl of ddr2_mem2mig_adapter_spartan6 at 98( 3626) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/mem/ddr3/ddr3_mem2mig_adapter_Series7.vhdl" "2861ca6881940c58b6e67165340dbc5651cce04d" "20240522155424.752":
+  entity ddr3_mem2mig_adapter_series7 at 53( 2135) + 0 on 4;
+  architecture rtl of ddr3_mem2mig_adapter_series7 at 98( 3439) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/sim/sim_types.vhdl" "123ccc7193797030cb57eab7f4ff356ec00a829e" "20240522155424.751":
+  package sim_types at 32( 1333) + 0 on 4;
+  package body sim_types at 155( 6466) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/sim/sim_random.v08.vhdl" "b3d330291fa4014bd902ca95e1db7614b4fac023" "20240522155424.750":
+  package sim_random at 31( 1303) + 0 on 4;
+  package body sim_random at 93( 4804) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/sim/sim_simulation.v08.vhdl" "87b2bb4e57f969d6e8f627f0b72988d59b747612" "20240522155424.750":
+  package simulation at 32( 1333) + 0 on 4;
+  package body simulation at 94( 4350) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/sim/sim_global.v93.vhdl" "44c1308c43b886912a343aa346d351edfa3e590f" "20240522155424.750":
+  package sim_global at 31( 1306) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/sim/sim_VCDParser.vhdl" "7d5bb025cffb54fc22f9416073b9686281a70d5f" "20240522155424.749":
+  package sim_vcdparser at 36( 1589) + 0 on 4;
+  package body sim_vcdparser at 59( 2230) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/sim/sim_unprotected.v93.vhdl" "cccdb5caaeff3c79be92e9b1ac663aa679ecb3df" "20240522155424.749":
+  package sim_unprotected at 31( 1303) + 0 on 4;
+  package body sim_unprotected at 83( 3119) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/sim/sim_protected.v08.vhdl" "fca5b83ec5619e41260048ac3a37639394493298" "20240522155424.748":
+  package sim_protected at 32( 1333) + 0 on 4;
+  package body sim_protected at 85( 3208) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/sim/sim_waveform.vhdl" "c800e7036360b2a70547d750053844c06dd4309e" "20240522155424.747":
+  package waveform at 32( 1328) + 0 on 4;
+  package body waveform at 285( 11523) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/fifo/fifo_ic_assembly.vhdl" "396c4fb79dc3ac5e5b994f61a7aea27443272af2" "20240522155424.745":
+  entity fifo_ic_assembly at 42( 2114) + 0 on 4;
+  architecture rtl of fifo_ic_assembly at 81( 3274) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/fifo/fifo_cc_got_tempput.vhdl" "9e10a85813b4e4a4d0d01004199dd90d5d193bb9" "20240522155424.744":
+  entity fifo_cc_got_tempput at 75( 3171) + 0 on 4;
+  architecture rtl of fifo_cc_got_tempput at 117( 4557) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/fifo/fifo.pkg.vhdl" "92df0cd21403d41098ff8495799c5e79fb19cdd1" "20240522155424.744":
+  package fifo at 35( 1448) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/fifo/fifo_ic_got.vhdl" "e9c37057f253a44bcd8c425065d194d506ccb4b3" "20240522155424.743":
+  entity fifo_ic_got at 68( 3047) + 0 on 4;
+  architecture rtl of fifo_ic_got at 106( 4232) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/fifo/fifo_cc_got_tempgot.vhdl" "fb2182be5873c2bf3a675851eb2f3e7fcaab1a56" "20240522155424.743":
+  entity fifo_cc_got_tempgot at 75( 3160) + 0 on 4;
+  architecture rtl of fifo_cc_got_tempgot at 117( 4546) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/fifo/fifo_shift.vhdl" "397a1d563e6dd6639c8efdd6bc5d3131a5060f25" "20240522155424.743":
+  entity fifo_shift at 37( 1674) + 0 on 4;
+  architecture rtl of fifo_shift at 66( 2493) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/fifo/fifo_glue.vhdl" "a77eb5878de9b7e63425252b8fd744cc3e28af51" "20240522155424.742":
+  entity fifo_glue at 33( 1526) + 0 on 4;
+  architecture rtl of fifo_glue at 58( 2271) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/fifo/fifo_cc_got.vhdl" "2586288c936d3fc71233d70b100e49222e549114" "20240522155424.742":
+  entity fifo_cc_got at 88( 3709) + 0 on 4;
+  architecture rtl of fifo_cc_got at 127( 5010) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/fileio.v93.vhdl" "c4f0806948370d4a7549ac4a69053fd9ecffcee2" "20240522155424.742":
+  package fileio at 40( 1776) + 0 on 4;
+  package body fileio at 74( 2776) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/protected.v08.vhdl" "bdabcc953bc147536a9f390b298fd25c24913e78" "20240522155424.741":
+  package protectedtypes at 31( 1290) + 0 on 4;
+  package body protectedtypes at 103( 3646) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/physical.vhdl" "6d286caf3bf5d57c33fe82bce5647bee75346296" "20240522155424.741":
+  package physical at 57( 1961) + 0 on 4;
+  package body physical at 210( 8952) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/strings.vhdl" "92ecd1c644f7204656354b8e13f4dc3e9f22a7fa" "20240522155424.739":
+  package strings at 33( 1347) + 0 on 4;
+  package body strings at 170( 7898) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/components.vhdl" "67b8edecdd6cffd8cd05e115641b83709d25e5f5" "20240522155424.738":
+  package components at 37( 1601) + 0 on 4;
+  package body components at 95( 5253) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/vectors.vhdl" "52814c7eee9f3fd79c5313343749b9d8f9393569" "20240522155424.737":
+  package vectors at 33( 1338) + 0 on 4;
+  package body vectors at 202( 11378) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/utils.vhdl" "c560b7d3a2f3d2e2b9cb54964f385bca655f7620" "20240522155424.736":
+  package utils at 34( 1363) + 0 on 4;
+  package body utils at 315( 15237) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/debug.vhdl" "b50ac8e39c984fe9827d35e6cbe38fe0034558af" "20240522155424.733":
+  package debug at 34( 1414) + 0 on 4;
+  package body debug at 46( 1619) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/common.vhdl" "c6be7afb03c0187fa01415ea623007ba372e1326" "20240522155424.733":
+  context common at 31( 1332) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/config.vhdl" "77833a3df589d1b34896a724c0c979374c6e63ce" "20240522155424.733":
+  package config_private at 34( 1442) + 0 on 4;
+  package body config_private at 90( 3530) + 0 on 4;
+  package config at 372( 14943) + 0 on 4;
+  package body config at 569( 22542) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/common/math.vhdl" "ac2667da07ba27831f306fc751895c8ab781f2ff" "20240522155424.731":
+  package math at 31( 1293) + 0 on 4;
+  package body math at 55( 1967) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_div.vhdl" "227d71285b3fed478cc8a2b1c8fbdac960722b2f" "20240522155424.731":
+  entity arith_div at 35( 1618) + 0 on 4;
+  architecture rtl of arith_div at 64( 2490) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_prefix_or.vhdl" "977c71d2d1f00ad62eefb903ab24dbb7e7ff03cb" "20240522155424.731":
+  entity arith_prefix_or at 34( 1429) + 0 on 4;
+  architecture rtl of arith_prefix_or at 54( 1725) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_prefix_and.vhdl" "9e7e79e89778dc83548e072b09b9bcf04ac5a1e3" "20240522155424.730":
+  entity arith_prefix_and at 34( 1431) + 0 on 4;
+  architecture rtl of arith_prefix_and at 54( 1728) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_addw.vhdl" "e2a59c665bbbdba61b144eff217146a135db6580" "20240522155424.730":
+  entity arith_addw at 46( 1788) + 0 on 4;
+  architecture rtl of arith_addw at 73( 2470) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_counter_bcd.vhdl" "1d168ef239a8137342f98b28b618431225ae5424" "20240522155424.730":
+  entity arith_counter_bcd at 43( 1766) + 0 on 4;
+  architecture rtl of arith_counter_bcd at 64( 2178) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_carrychain_inc.vhdl" "abd6c71bfcf957a01ac2da4b8d260e0b66a1997d" "20240522155424.730":
+  entity arith_carrychain_inc at 33( 1378) + 0 on 4;
+  architecture rtl of arith_carrychain_inc at 55( 1760) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_counter_free.vhdl" "90e05f4141bec189f67fda1a97fc787dca49f3f1" "20240522155424.729":
+  entity arith_counter_free at 38( 1705) + 0 on 4;
+  architecture rtl of arith_counter_free at 56( 2007) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith.pkg.vhdl" "23790f62e509c44f69e25ec5d15e9bf508e09cba" "20240522155424.729":
+  package arith at 34( 1421) + 0 on 4;
+  package body arith at 238( 6822) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_sqrt.vhdl" "88a33524266ea1a7336e19b6a154ce6a533e2c4e" "20240522155424.729":
+  entity arith_sqrt at 33( 1363) + 0 on 4;
+  architecture rtl of arith_sqrt at 58( 1924) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_trng.vhdl" "af232c8bf50a7547384c69451bfd05c263ba123c" "20240522155424.729":
+  entity arith_trng at 45( 2132) + 0 on 4;
+  architecture rtl of arith_trng at 59( 2433) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_shifter_barrel.vhdl" "0904ecce82594715ac2be13f7b8100ed673e4c4d" "20240522155424.729":
+  entity arith_shifter_barrel at 37( 1476) + 0 on 4;
+  architecture rtl of arith_shifter_barrel at 60( 1964) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_counter_ring.vhdl" "8ad6dcd3df008164c17412e9696d5b112164c1d1" "20240522155424.729":
+  entity arith_counter_ring at 34( 1495) + 0 on 4;
+  architecture rtl of arith_counter_ring at 57( 2216) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_scaler.vhdl" "3d34f262b2c7c035eb03f43beb0edfdd0b3e306b" "20240522155424.728":
+  entity arith_scaler at 45( 2197) + 0 on 4;
+  architecture rtl of arith_scaler at 72( 2958) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_same.vhdl" "281ab22ce556a35473687d61fbe841cf8f4e93de" "20240522155424.728":
+  entity arith_same at 38( 1818) + 0 on 4;
+  architecture rtl of arith_same at 60( 2244) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_prng.vhdl" "841dae7775eb1f25a03bc5a6ff87bfe720320a4b" "20240522155424.728":
+  entity arith_prng at 38( 1685) + 0 on 4;
+  architecture rtl of arith_prng at 60( 2194) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/xilinx/arith_prefix_or_xilinx.vhdl" "3e84eacf41c1bf1b596562eb1a032d56ffb93002" "20240522155424.727":
+  entity arith_prefix_or_xilinx at 33( 1414) + 0 on 4;
+  architecture rtl of arith_prefix_or_xilinx at 52( 1707) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/xilinx/arith_cca_xilinx.vhdl" "a5203b9949f0958d55a61a866ddc9bf359cc37da" "20240522155424.727":
+  entity arith_cca at 45( 2420) + 0 on 4;
+  architecture rtl of arith_cca at 63( 2877) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/xilinx/arith_addw_xilinx.vhdl" "1989b2923e2a3308954e2de20e2634f97a9430be" "20240522155424.726":
+  entity arith_addw_xilinx at 47( 1831) + 0 on 4;
+  architecture rtl of arith_addw_xilinx at 73( 2413) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/xilinx/arith_inc_ovcy_xilinx.vhdl" "c35e3800cf949ced20085406b7468b3753cd5ea6" "20240522155424.725":
+  entity arith_inc_ovcy_xilinx at 29( 1248) + 0 on 4;
+  architecture rtl of arith_inc_ovcy_xilinx at 48( 1662) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/xilinx/arith_carrychain_inc_xilinx.vhdl" "ad60499f35f0d18c2645b55fb4925845cd09c0b3" "20240522155424.725":
+  entity arith_carrychain_inc_xilinx at 34( 1389) + 0 on 4;
+  architecture rtl of arith_carrychain_inc_xilinx at 53( 1719) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/xilinx/arith_prefix_and_xilinx.vhdl" "9119d34a9e37b0bedb4b146fe3f71ff0c47395cc" "20240522155424.725":
+  entity arith_prefix_and_xilinx at 33( 1415) + 0 on 4;
+  architecture rtl of arith_prefix_and_xilinx at 52( 1709) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_firstone.vhdl" "d7d16ec69150b6ab0c07aa5f28fb06f3d0c40c0d" "20240522155424.725":
+  entity arith_firstone at 44( 2048) + 0 on 4;
+  architecture rtl of arith_firstone at 64( 2657) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_convert_bin2bcd.vhdl" "f4d60f036c64992a0d65b94ffde7a91f70a7b368" "20240522155424.724":
+  entity arith_convert_bin2bcd at 31( 1304) + 0 on 4;
+  architecture rtl of arith_convert_bin2bcd at 61( 1901) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/arith/arith_counter_gray.vhdl" "9fc7bddcc8fbfe78000ae60ba749a7f6296b7321" "20240522155424.724":
+  entity arith_counter_gray at 33( 1330) + 0 on 4;
+  architecture rtl of arith_counter_gray at 54( 1912) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/comm/remote/remote_terminal_control.vhdl" "903f3b93d3a648e18d775c64cd7d74ef010f3e64" "20240522155424.723":
+  entity remote_terminal_control at 80( 3116) + 0 on 4;
+  architecture rtl of remote_terminal_control at 120( 4135) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/comm/comm.pkg.vhdl" "c342981faff2cfd424b43db6158d42223b7fb928" "20240522155424.722":
+  package comm at 32( 1369) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/comm/comm_scramble.vhdl" "79ab334d074db600d4e68df9598019e616a02f28" "20240522155424.722":
+  entity comm_scramble at 33( 1492) + 0 on 4;
+  architecture rtl of comm_scramble at 54( 2066) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/comm/comm_crc.vhdl" "503fef31b7755b48dc3ea26da59936fcb8deb360" "20240522155424.722":
+  entity comm_crc at 38( 1623) + 0 on 4;
+  architecture rtl of comm_crc at 67( 2457) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/bus/bus_Arbiter.vhdl" "d08c760c747843e25191902cd5799ef58c96504d" "20240522155424.721":
+  entity bus_arbiter at 34( 1365) + 0 on 4;
+  architecture rtl of bus_arbiter at 63( 2087) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/bus/stream/stream.pkg.vhdl" "216eea4c9f820e231c7acb83720c80e433b99edd" "20240522155424.721":
+  package stream at 32( 1373) + 0 on 4;
+  package body stream at 164( 7524) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/bus/stream/stream_Mux.vhdl" "12ca102d1d12c934c090660e78473d19b94442d0" "20240522155424.720":
+  entity stream_mux at 31( 1310) + 0 on 4;
+  architecture rtl of stream_mux at 72( 2598) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/bus/stream/stream_FrameGenerator.vhdl" "e6c7f7540ca1a881ecf9d324a040ff62ba3fb42c" "20240522155424.719":
+  entity stream_framegenerator at 31( 1310) + 0 on 4;
+  architecture rtl of stream_framegenerator at 69( 2308) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/bus/stream/stream_Mirror.vhdl" "457c4afb2e812c0951d3dda4678721a4d669aed8" "20240522155424.719":
+  entity stream_mirror at 31( 1310) + 0 on 4;
+  architecture rtl of stream_mirror at 73( 2682) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/bus/stream/stream_Source.vhdl" "4257452eb7edf959d5e7a655140ff208010ea928" "20240522155424.718":
+  entity stream_source at 31( 1310) + 0 on 4;
+  architecture rtl of stream_source at 61( 1888) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/bus/stream/stream_Buffer.vhdl" "f0e2493cc3a411617097afaad5ddbe9693486879" "20240522155424.718":
+  entity stream_buffer at 34( 1494) + 0 on 4;
+  architecture rtl of stream_buffer at 77( 2825) + 0 on 4;
+file / "/Users/mattia/Downloads/PoC/src/bus/stream/stream_DeMux.vhdl" "806cc03761a3fce197c3ed0b6d1f24f1d66e21b4" "20240522155424.717":
+  entity stream_demux at 31( 1310) + 0 on 4;
+  architecture rtl of stream_demux at 73( 2634) + 0 on 4;

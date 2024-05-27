@@ -1,0 +1,50 @@
+# Constraint file for iCE40 Ultra Breackout board
+# iCE5LP4k chip, SG48 package
+# See the following for the format reference:
+# https://github.com/YosysHQ/nextpnr/blob/master/docs/ice40.md
+
+
+## Clock (35 eval, 20 lattice)
+set_io clkInxDI 35
+## Clock frequency constraints
+set_frequency clkGlobal 20
+set_frequency clk100 100
+
+## Reset
+# No reset button on the current version of the evaluation board
+
+## I2C interface
+set_io -pullup yes fpga_sdaxDIO 36 
+set_io -pullup yes fpga_sclxDIO 43
+
+## UART interface
+set_io tx_fpgaxDO 42
+set_io rx_fpgaxDI 38
+
+## ACCURATE Charge Pumps control
+# Low CP
+set_io enableCP1xDO 32
+# Medium CP
+set_io enableCP2xDO 31
+# High CP
+set_io enableCP3xDO 28
+# charge/discharge cycle
+set_io capClkxDO 37
+
+## ACCURATE comparators outputs
+# Comparator 1
+set_io vTh1NxDI 26
+# Comparator 2
+set_io vTh2NxDI 27
+# Comparator 3
+set_io vTh3NxDI 23
+# Comparator 4
+set_io vTh4NxDI 25
+
+## ACCURATE reset
+set_io resetOTAxDO 34
+
+
+# Debug
+# IOB_0
+# set_io debug_0 46
