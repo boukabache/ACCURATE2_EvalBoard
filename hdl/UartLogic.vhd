@@ -25,7 +25,10 @@ entity UartLogic is
 
         -- UART port
         rxFpgaxDI : in  std_logic;   -- FPGA RX data input
-        txFpgaxDO : out std_logic    -- FPGA TX data output
+        txFpgaxDO : out std_logic;    -- FPGA TX data output
+
+        -- DEBUG
+        led_g : out std_logic := '0'
         
     );
 end entity UartLogic;
@@ -50,7 +53,7 @@ architecture rtl of UartLogic is
 
     -- State machine
     type StateType is (IDLE_S, SEND_S, RECEIVE_S);
-    signal state : StateType := IDLE_S;
+    signal state, rxState : StateType := IDLE_S;
 
     -- Window signals
     signal RightBoundxDP, RightBoundxDN : integer range 0 to voltageChangeRegLengthC := 0;
@@ -140,19 +143,30 @@ begin
                             -- Sample the data to send
                             voltageChangeIntervalxDP <= voltageChangeIntervalxDI;
                         end if;
-                        -- Data received
-                        -- if (something) then
+                        
+                        -- Data received -> fifo not empty
+                        -- if (fifoEmpty = '0') then
                         --     state <= RECEIVE_S;
                         -- end if;
-
+                        -- fifoRead <= '0';
+                        
                     when SEND_S =>
                         -- Check if the full data has been sent
                         if (LeftBoundxDP = voltageChangeRegLengthC) then
                             state <= IDLE_S;
                         end if;
 
-                    when RECEIVE_S =>
-                        -- TODO
+                    -- when RECEIVE_S =>
+                    --     fifoRead <= '1';
+                    --     state <= IDLE_S;
+                    --     if (fifoDataOut = x"CA") then
+                    --         cnt := cnt + 1;
+                    --     end if;
+
+                    --     if (cnt = 200) then
+                    --         led_g <= '1';
+                    --         cnt := 0;
+                    --     end if;
 
                     when others =>
                         state <= IDLE_S;
@@ -160,6 +174,44 @@ begin
             end if;
         end if;
     end process logicP;
+
+
+
+    rxLogicP: process(clk, rst)
+        variable cnt : integer := 0;
+    begin
+        if rising_edge(clk) then
+            if rst = '1' then
+                -- TODO
+            else
+
+                case rxState is
+                    when IDLE_S =>
+                        -- Data received -> fifo not empty
+                        if (fifoEmpty = '0') then
+                            rxState <= RECEIVE_S;
+                        end if;
+                        fifoRead <= '0';
+                        
+                    when RECEIVE_S =>
+                        fifoRead <= '1';
+                        rxState <= IDLE_S;
+                        if (fifoDataOut = x"CA") then
+                            cnt := cnt + 1;
+                        end if;
+
+                        if (cnt = 200) then
+                            led_g <= '1';
+                            cnt := 0;
+                        end if;
+
+                    when others =>
+                        rxState <= IDLE_S;
+                end case;
+            end if;
+        end if;
+    end process rxLogicP;
+                
 
 
     

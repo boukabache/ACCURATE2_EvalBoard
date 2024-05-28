@@ -16,6 +16,8 @@ architecture test of UartLogicTB is
     signal txFpgaxDO : std_logic := '0';
 
 begin
+    -- Loopback
+    rxFpgaxDI <= txFpgaxDO;
 
     -- Instantiate the UartLogic module
     U1 : entity work.UartLogic
