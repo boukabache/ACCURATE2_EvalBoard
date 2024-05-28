@@ -44,6 +44,11 @@ set_io vTh4NxDI 25
 ## ACCURATE reset
 set_io resetOTAxDO 34
 
+# RGB led
+set_io led_r 41
+set_io led_g 40
+set_io led_b 39
+
 
 # Debug
 # IOB_0

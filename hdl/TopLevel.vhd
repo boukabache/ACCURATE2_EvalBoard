@@ -47,9 +47,13 @@ entity TopLevel is
         --! Enable med current charge pump. Must by synchronous with cap_clk
         enableCP2xDO : out std_logic;
         --! Enable high current charge pump. Must by synchronous with cap_clk
-        enableCP3xDO : out std_logic
+        enableCP3xDO : out std_logic;
         -- END ACCURATE interface
 
+        -- LEDs
+        led_g : out std_logic;
+        led_r : out std_logic;
+        led_b : out std_logic
 
         -- DEBUG
         -- debug_0 : out std_logic
@@ -257,7 +261,9 @@ begin
 
             -- FOR DEBUG ON REAL HARDWARE
             voltageChangeIntervalxDI => x"C123456789abc",
-            voltageChangeRdyxDI      => debug
+            voltageChangeRdyxDI      => debug,
+
+            led_g => led_g
     );
 
     ------------------------- CONFIG REGISTER FILE -----------------------------
@@ -284,7 +290,7 @@ begin
     begin
         if rising_edge(clkGlobal) then
             cnt := cnt + 1;
-            if cnt = 1000000000 then
+            if cnt = 100000000 then
                 debug <= '1';
                 cnt := 0;
             else 
@@ -292,5 +298,8 @@ begin
             end if; 
         end if;
     end process;
+
+    led_b <= '1';
+    led_r <= '1';
 
 end architecture rtl;
