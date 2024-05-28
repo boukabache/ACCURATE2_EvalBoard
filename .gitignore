@@ -1,6 +1,9 @@
 # MacOS crap
 .DS_Store
 
+# Log crap
+build/log.txt
+
 hardware.json
 hardware.bin
 hardware.asc
