@@ -18,11 +18,14 @@ The FPGA used is a Lattice iCE40 iCE5LP4k chip (SG48 package) mounted on a custo
 
 Install the `oss-cad-suite`, following the [installation instructions](https://github.com/YosysHQ/oss-cad-suite-build?tab=readme-ov-file#installation).
 
-
 Clone the repository:
 ```bash
 git clone https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_rtl.git
 ```
+---
+
+Note that GHDL and the GHDL plugin for Yosys (required in this project) are only available for linux-x64 and darwin-x64 platforms.
+The main development was carried on a M1 Pro MacBook Pro machine. No isseues were found concering the translation from x86 to arm.
 
 ## Usage
 
