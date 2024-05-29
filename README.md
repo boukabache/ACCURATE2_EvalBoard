@@ -28,8 +28,8 @@ git clone https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_rtl.git
 ```
 ---
 
-Note that GHDL and the GHDL plugin for Yosys (required in this project) are only available for linux-x64 and darwin-x64 platforms.
-The main development was carried on a M1 Pro MacBook Pro machine. No isseues were found concering the translation from x86 to arm.
+Note that GHDL and the GHDL plugin for Yosys (required for this project) are only available for linux-x64 and darwin-x64 platforms.
+The main development was carried on a M1 Pro MacBook Pro machine. No isseues were found concering the translation of the darwin-x64 from x86 to arm.
 
 ## Usage
 
