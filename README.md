@@ -7,6 +7,10 @@ A ready to use Makefile is provided to compile the code, generate the bitstream 
 
 The FPGA used is a Lattice iCE40 iCE5LP4k chip (SG48 package) mounted on a custom board. The code is written entirely in VHDL and compiled with the open source [`oss-cad-suite`](https://github.com/YosysHQ/oss-cad-suite-build?tab=readme-ov-file) toolchain.
 
+The current block diagram of the internal logic is shown below:
+
+![VHDL block diagram](VHDL_Diagram.svg)
+
 ## Table of Contents
 
 - [Installation](#installation)
