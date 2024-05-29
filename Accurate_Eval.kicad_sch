@@ -12368,12 +12368,6 @@
 		(uuid "39b24a63-3af6-4504-8ba4-e4309dd32050")
 	)
 	(junction
-		(at 182.88 77.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3b399b59-888a-4792-94e2-d32a92c04bb1")
-	)
-	(junction
 		(at 92.71 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -14060,16 +14054,6 @@
 			(type default)
 		)
 		(uuid "d1bf0106-105a-42ee-acc2-b8b05b521a0a")
-	)
-	(wire
-		(pts
-			(xy 182.88 77.47) (xy 306.07 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d3cd6112-c8c2-4381-b5f6-be84cf03a503")
 	)
 	(wire
 		(pts
@@ -18243,9 +18227,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4d90d48e-296a-40b3-8300-f6f24e404cd1")
-		(property "Reference" "TP3"
+		(property "Reference" "TP40"
 			(at 77.47 50.8 0)
 			(effects
 				(font
@@ -18722,7 +18705,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537"
-					(reference "TP3")
+					(reference "TP40")
 					(unit 1)
 				)
 			)
@@ -19574,7 +19557,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ec76ba3-83cc-43ca-af3b-a2749775fc56")
-		(property "Reference" "TP2"
+		(property "Reference" "TP39"
 			(at 72.39 50.8 0)
 			(effects
 				(font
@@ -20051,7 +20034,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537"
-					(reference "TP2")
+					(reference "TP39")
 					(unit 1)
 				)
 			)
@@ -20937,7 +20920,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8675b05a-a98a-4b5f-bec2-e03bdb187033")
-		(property "Reference" "TP1"
+		(property "Reference" "TP38"
 			(at 67.31 50.8 0)
 			(effects
 				(font
@@ -21414,7 +21397,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537"
-					(reference "TP1")
+					(reference "TP38")
 					(unit 1)
 				)
 			)
@@ -25423,9 +25406,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d0c02eca-1b2a-4272-8fbf-2d33a4e63d04")
-		(property "Reference" "TP4"
+		(property "Reference" "TP41"
 			(at 82.55 50.8 0)
 			(effects
 				(font
@@ -25902,7 +25884,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537"
-					(reference "TP4")
+					(reference "TP41")
 					(unit 1)
 				)
 			)
@@ -28934,16 +28916,6 @@
 				(justify right)
 			)
 			(uuid "84a5b169-497a-4936-8d39-49613890071f")
-		)
-		(pin "3V3_REF" input
-			(at 306.07 77.47 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "d7f292bc-b68f-4cc8-bfa8-e5c480914766")
 		)
 		(pin "FPGA_PROG[0..7]" input
 			(at 306.07 66.04 180)

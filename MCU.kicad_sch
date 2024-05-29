@@ -23046,8 +23046,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "02879656-ab38-4f23-b8c1-71be96b77be8")
-		(property "Reference" "R44"
-			(at 217.17 53.34 90)
+		(property "Reference" "R27"
+			(at 217.17 53.3399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23105,7 +23105,7 @@
 			)
 		)
 		(property "Val" "470"
-			(at 217.17 55.88 90)
+			(at 217.17 55.8799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23537,7 +23537,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R44")
+					(reference "R27")
 					(unit 1)
 				)
 			)
@@ -23554,8 +23554,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "02f4f383-3ec7-47c0-a268-7b2ceb254bd9")
-		(property "Reference" "R45"
-			(at 227.33 53.34 90)
+		(property "Reference" "R28"
+			(at 227.33 53.3399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23613,7 +23613,7 @@
 			)
 		)
 		(property "Val" "470"
-			(at 227.33 55.88 90)
+			(at 227.33 55.8799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24045,7 +24045,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R45")
+					(reference "R28")
 					(unit 1)
 				)
 			)
@@ -24062,8 +24062,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "030613ec-ac61-44c9-b366-e58e4d6700ed")
-		(property "Reference" "R46"
-			(at 361.95 80.01 90)
+		(property "Reference" "R29"
+			(at 361.95 80.0099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24121,7 +24121,7 @@
 			)
 		)
 		(property "Val" "1k"
-			(at 361.95 82.55 90)
+			(at 361.95 82.5499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24553,7 +24553,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R46")
+					(reference "R29")
 					(unit 1)
 				)
 			)
@@ -25095,7 +25095,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "227d3e36-2ffb-4bef-be5c-ecd27650c5ba")
-		(property "Reference" "C68"
+		(property "Reference" "C34"
 			(at 78.74 59.69 0)
 			(effects
 				(font
@@ -25574,7 +25574,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "C68")
+					(reference "C34")
 					(unit 1)
 				)
 			)
@@ -26175,7 +26175,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "29c1a1d7-e591-4f11-8b28-25219a1c9016")
-		(property "Reference" "R42"
+		(property "Reference" "R25"
 			(at 85.09 104.14 90)
 			(effects
 				(font
@@ -26666,7 +26666,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R42")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -26749,8 +26749,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2c6585dd-cb22-4428-8c9c-7e7151faaff8")
-		(property "Reference" "R47"
-			(at 372.11 80.01 90)
+		(property "Reference" "R30"
+			(at 372.11 80.0099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26808,7 +26808,7 @@
 			)
 		)
 		(property "Val" "1k"
-			(at 372.11 82.55 90)
+			(at 372.11 82.5499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27240,7 +27240,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R47")
+					(reference "R30")
 					(unit 1)
 				)
 			)
@@ -27322,8 +27322,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "32a8e99b-a730-48c7-85e5-a3c6603c27cd")
-		(property "Reference" "R43"
-			(at 207.01 88.9 90)
+		(property "Reference" "R26"
+			(at 207.01 88.8999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27381,7 +27381,7 @@
 			)
 		)
 		(property "Val" "470"
-			(at 207.01 91.44 90)
+			(at 207.01 91.4399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27813,7 +27813,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R43")
+					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -28026,7 +28026,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4a433b41-98d0-4b42-83cb-8a3e15aafd2f")
-		(property "Reference" "TP36"
+		(property "Reference" "TP13"
 			(at 67.31 87.63 0)
 			(effects
 				(font
@@ -28503,7 +28503,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "TP36")
+					(reference "TP13")
 					(unit 1)
 				)
 			)
@@ -28518,7 +28518,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "51879b80-7fb6-4abe-bed5-ee1d4ef05dea")
-		(property "Reference" "C69"
+		(property "Reference" "C35"
 			(at 95.25 228.6 90)
 			(effects
 				(font
@@ -28999,7 +28999,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "C69")
+					(reference "C35")
 					(unit 1)
 				)
 			)
@@ -29082,8 +29082,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "54e76b1f-ef4f-42ff-afdf-4ab26f1cfeb4")
-		(property "Reference" "R51"
-			(at 382.27 80.01 90)
+		(property "Reference" "R34"
+			(at 382.27 80.0099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29141,7 +29141,7 @@
 			)
 		)
 		(property "Val" "1k"
-			(at 382.27 82.55 90)
+			(at 382.27 82.5499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29573,7 +29573,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R51")
+					(reference "R34")
 					(unit 1)
 				)
 			)
@@ -29721,7 +29721,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "61afebcc-584f-45ce-8a55-026bcd034f14")
-		(property "Reference" "J11"
+		(property "Reference" "J10"
 			(at 330.2 191.77 90)
 			(effects
 				(font
@@ -30215,7 +30215,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "J11")
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -30231,7 +30231,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "63b34809-772b-41e5-a8b6-d35e0c9bf2d9")
-		(property "Reference" "R49"
+		(property "Reference" "R32"
 			(at 378.46 184.15 0)
 			(effects
 				(font
@@ -30720,7 +30720,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R49")
+					(reference "R32")
 					(unit 1)
 				)
 			)
@@ -30735,7 +30735,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "64050bfc-42d2-4928-8772-f08378d2b9cc")
-		(property "Reference" "R39"
+		(property "Reference" "R22"
 			(at 77.47 78.74 90)
 			(effects
 				(font
@@ -31226,7 +31226,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R39")
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -31933,7 +31933,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7fd4287e-6792-4148-8d4e-c581b75ea7bd")
-		(property "Reference" "C73"
+		(property "Reference" "C39"
 			(at 133.35 215.9 90)
 			(effects
 				(font
@@ -32414,7 +32414,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "C73")
+					(reference "C39")
 					(unit 1)
 				)
 			)
@@ -32430,7 +32430,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "81dd5c36-db9f-48bd-b0fe-fce15d4887f3")
-		(property "Reference" "TP35"
+		(property "Reference" "TP12"
 			(at 67.31 85.09 0)
 			(effects
 				(font
@@ -32907,7 +32907,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "TP35")
+					(reference "TP12")
 					(unit 1)
 				)
 			)
@@ -32988,7 +32988,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "877619e1-be77-43a0-a2c4-a683b061dd1d")
-		(property "Reference" "IC16"
+		(property "Reference" "IC9"
 			(at 158.75 191.77 0)
 			(effects
 				(font
@@ -33610,7 +33610,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "IC16")
+					(reference "IC9")
 					(unit 2)
 				)
 			)
@@ -33625,7 +33625,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "895d3062-bd1d-4770-a600-e7eb656a1e80")
-		(property "Reference" "C74"
+		(property "Reference" "C40"
 			(at 185.42 203.2 90)
 			(effects
 				(font
@@ -34106,7 +34106,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "C74")
+					(reference "C40")
 					(unit 1)
 				)
 			)
@@ -34189,7 +34189,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "90f125bc-7f4d-4ad2-8745-cbe927044257")
-		(property "Reference" "J9"
+		(property "Reference" "J7"
 			(at 298.45 191.77 90)
 			(effects
 				(font
@@ -34689,7 +34689,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "J9")
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -35267,7 +35267,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "99c2b463-232f-4820-93a5-dbd7a03e539b")
-		(property "Reference" "R41"
+		(property "Reference" "R24"
 			(at 85.09 78.74 90)
 			(effects
 				(font
@@ -35758,7 +35758,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R41")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -35773,7 +35773,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a12df459-23d7-462a-9196-86eb69841f1f")
-		(property "Reference" "C71"
+		(property "Reference" "C37"
 			(at 119.38 228.6 90)
 			(effects
 				(font
@@ -36254,7 +36254,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "C71")
+					(reference "C37")
 					(unit 1)
 				)
 			)
@@ -36335,7 +36335,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aa40fba0-5e87-4ab5-b558-23fba9d24174")
-		(property "Reference" "C72"
+		(property "Reference" "C38"
 			(at 125.73 215.9 90)
 			(effects
 				(font
@@ -36816,7 +36816,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "C72")
+					(reference "C38")
 					(unit 1)
 				)
 			)
@@ -36964,7 +36964,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b51a91da-3a49-4853-ad0e-c6441b85cb99")
-		(property "Reference" "R50"
+		(property "Reference" "R33"
 			(at 378.46 199.39 0)
 			(effects
 				(font
@@ -37453,7 +37453,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R50")
+					(reference "R33")
 					(unit 1)
 				)
 			)
@@ -37964,7 +37964,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "baf42605-2041-489a-a0cf-33eb8b39339d")
-		(property "Reference" "J12"
+		(property "Reference" "J9"
 			(at 323.85 57.15 90)
 			(effects
 				(font
@@ -38464,7 +38464,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "J12")
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -38478,10 +38478,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "c08de8f5-03be-487a-87ab-a799e44f1818")
-		(property "Reference" "C67"
-			(at 78.74 41.91 0)
+		(property "Reference" "C33"
+			(at 78.74 41.656 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38528,7 +38527,7 @@
 			)
 		)
 		(property "Val" "22pF"
-			(at 78.74 44.45 0)
+			(at 78.74 44.196 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38959,7 +38958,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "C67")
+					(reference "C33")
 					(unit 1)
 				)
 			)
@@ -38974,7 +38973,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c1d3e3c5-916b-4531-b80e-ad623b8956eb")
-		(property "Reference" "R40"
+		(property "Reference" "R23"
 			(at 77.47 104.14 90)
 			(effects
 				(font
@@ -39465,7 +39464,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R40")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -39481,8 +39480,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c62f4f17-5cb9-4372-9eae-26bf5548ff82")
-		(property "Reference" "PB5"
-			(at 384.81 109.6294 90)
+		(property "Reference" "PB4"
+			(at 384.81 109.6293 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39989,7 +39988,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "PB5")
+					(reference "PB4")
 					(unit 1)
 				)
 			)
@@ -40004,7 +40003,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c77a771f-36a3-4e4f-b953-1a8e8f38809d")
-		(property "Reference" "TP37"
+		(property "Reference" "TP14"
 			(at 67.31 111.76 0)
 			(effects
 				(font
@@ -40481,7 +40480,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "TP37")
+					(reference "TP14")
 					(unit 1)
 				)
 			)
@@ -40993,8 +40992,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c80c4d95-2e26-41be-869e-fc73fa838890")
-		(property "Reference" "PB3"
-			(at 364.49 109.6294 90)
+		(property "Reference" "PB2"
+			(at 364.49 109.6293 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -41501,7 +41500,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "PB3")
+					(reference "PB2")
 					(unit 1)
 				)
 			)
@@ -41517,7 +41516,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cba67173-4a14-4fe6-be7a-380b110bd4fd")
-		(property "Reference" "J10"
+		(property "Reference" "J8"
 			(at 299.72 57.15 90)
 			(effects
 				(font
@@ -42022,7 +42021,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "J10")
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -42104,8 +42103,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cd15caf3-0179-4fd7-9aec-852995812186")
-		(property "Reference" "PB4"
-			(at 374.65 109.6294 90)
+		(property "Reference" "PB3"
+			(at 374.65 109.6293 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42612,7 +42611,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "PB4")
+					(reference "PB3")
 					(unit 1)
 				)
 			)
@@ -42628,7 +42627,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d3f8ef82-1556-4334-b8be-9f24013b6073")
-		(property "Reference" "TP38"
+		(property "Reference" "TP15"
 			(at 67.31 114.3 0)
 			(effects
 				(font
@@ -43105,7 +43104,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "TP38")
+					(reference "TP15")
 					(unit 1)
 				)
 			)
@@ -43253,7 +43252,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e4da7282-8d53-4e30-8d14-30f86590e383")
-		(property "Reference" "R48"
+		(property "Reference" "R31"
 			(at 378.46 168.91 0)
 			(effects
 				(font
@@ -43742,7 +43741,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "R48")
+					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -44253,7 +44252,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ec8c312c-4fc2-4d64-aaed-84cd5e15d8a4")
-		(property "Reference" "IC16"
+		(property "Reference" "IC9"
 			(at 158.75 50.8 0)
 			(effects
 				(font
@@ -44874,7 +44873,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "IC16")
+					(reference "IC9")
 					(unit 1)
 				)
 			)
@@ -44889,7 +44888,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ed967a0a-659e-40d1-86f8-a3fbff3db4c5")
-		(property "Reference" "C70"
+		(property "Reference" "C36"
 			(at 110.49 228.6 90)
 			(effects
 				(font
@@ -45370,7 +45369,7 @@
 		(instances
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "C70")
+					(reference "C36")
 					(unit 1)
 				)
 			)
