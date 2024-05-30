@@ -20,7 +20,7 @@ BIN_FILE := $(ASC_FILE:.asc=.bin)
 O_FILE := $(VHDL_FILES:.vhd=.o)
 
 # GHDL work directory
-WORK_DIR := build
+WORK_DIR := ./
 # GHDL build flags
 GHDLFLAGS := --std=08 --workdir=$(WORK_DIR)
 # Top module name
