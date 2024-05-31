@@ -14,7 +14,7 @@
 #include "fpga.h"
 
 #define DAC7578_NCH		8 // number of channels per DAC. Must not exceed 2^8-1 = 255
-#define DAC_ADDRESS 	0x4B
+#define DAC_ADDRESS 	0x48
 
  // DACs channels
 #define VBIAS1_CH		0

@@ -8,7 +8,6 @@
 #include <Arduino.h>
 #include <Time.h>
 
-
  /************************************************************************/
  /* GLobal variables definition                                          */
 static DAC7578 ACCURATE_DAC;
@@ -67,7 +66,7 @@ void dac7578_i2c_send_all_param() {
     uint8_t i = 0;
     uint8_t i2c_glob_wr_buffer[2];
 
-    for (i = 0; i < DAC7578_NCH - 1; i++) {
+    for (i = 0; i <= DAC7578_NCH - 1; i++) {
         Wire.beginTransmission(ACCURATE_DAC.address);
         i2c_glob_wr_buffer[0] = (uint8_t)(DAC7578_WRU_CMD << 4 | i);
         i2c_glob_wr_buffer[1] = (uint8_t)(ACCURATE_DAC.channel_val[i] >> 4); // data msb
