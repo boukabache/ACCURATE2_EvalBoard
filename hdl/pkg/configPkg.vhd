@@ -37,6 +37,9 @@ package configPkg is
     -------------------- Register Length Configuration ------------------------
     --! Length of register required to store the voltage sum data
     constant voltageChangeRegLengthC    : natural := 52;
+    --! Dimension of RegisterFile
+    constant registerFileAddressWidthC   : natural := 8;
+    constant registerFileDataWidthC      : natural := 32;
    
     ------------------------ FSM Safe State -----------------------------------
     --! String for safe state attribute. Provides Hamming 3 encoding on state
