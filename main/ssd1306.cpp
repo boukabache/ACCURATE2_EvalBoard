@@ -24,7 +24,7 @@ void ssd1306_init() {
   display.setTextColor(WHITE);
 }
 
-void ssd1306_print_current_temp_humidity(float current, String current_range, float temp, float humidity) {
+void ssd1306_print_current_temp_humidity(float current, String current_range, String temp, String humidity) {
   display.clearDisplay();
   display.setTextSize(1);
   display.setCursor(0, 0);
@@ -32,9 +32,8 @@ void ssd1306_print_current_temp_humidity(float current, String current_range, fl
   display.print(current);
   display.print(" " + current_range);
   display.setCursor(0, 10);
-  display.print("Temp: ");
+  display.print("Temperature: ");
   display.print(temp);
-  display.print("C");
   display.setCursor(0, 20);
   display.print("Humidity: ");
   display.print(humidity);

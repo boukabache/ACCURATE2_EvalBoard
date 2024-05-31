@@ -22,18 +22,10 @@ void setup() {
 
     Wire.begin();
 
-    pinMode(LED_0_PIN, OUTPUT);
-    pinMode(LED_1_PIN, OUTPUT);
-    pinMode(LED_2_PIN, OUTPUT);
 
-    pinMode(BTN_0_PIN, INPUT);
-    pinMode(BTN_1_PIN, INPUT);
-    pinMode(BTN_2_PIN, INPUT);
 
     ssd1306_init();
     dac7578_init();
-
-    pinMode(PIN_LED_13, OUTPUT);
 
     sendConfigurations();
     dac7578_i2c_send_all_param();
@@ -41,14 +33,39 @@ void setup() {
 
 void loop() {
     CurrentMeasurement measuredCurrent = readFPGA();
-    float measuredTemperature = sht41_i2c_read_temp();
-    float measuredHumidity = sht41_i2c_read_rh();
     String btnLedStatus = getPinStatus();
+    TempHumMeasurement measuredTempHum = sht41_i2c_read();
+    String temp;
+    String humidity;
 
+    if (measuredTempHum.status == SHT41_OK) {
+        temp = String(measuredTempHum.temperature, 2) + "C";
+        humidity = String(measuredTempHum.humidity, 2);
+    }
+    else {
+        switch (measuredTempHum.status) {
+        case SHT41_ERR_I2C:
+            temp = "I2C_ERR";
+            humidity = "I2C_ERR";
+            break;
+        case SHT41_ERR_CRC:
+            temp = "CRC_ERR";
+            humidity = "CRC_ERR";
+            break;
+        case SHT41_ERR_MEASUREMENT:
+            temp = "MEAS_ERR";
+            humidity = "MEAS_ERR";
+            break;
+        default:
+            temp = "UNK_ERR";
+            humidity = "UNK_ERR";
+            break;
+        }
+    }
+
+    ssd1306_print_current_temp_humidity(measuredCurrent.convertedCurrent, measuredCurrent.range, temp, humidity);
     // Write to computer using Serial in the format (current[A], temp, humidity, btnLedStatus(btn0,btn1,btn2,led0,led1,led2 in binary))
-    String message = "(" + String(measuredCurrent.currentInFemtoAmpere) + "," + String(measuredTemperature) + "," + String(measuredHumidity) + "," + btnLedStatus + ")";
-
-    ssd1306_print_current_temp_humidity(measuredCurrent.convertedCurrent, measuredCurrent.range, measuredTemperature, measuredHumidity);
+    String message = "(" + String(measuredCurrent.currentInFemtoAmpere) + "," + String(temp) + "," + String(humidity) + "," + btnLedStatus + ")";
 }
 
 String getPinStatus() {

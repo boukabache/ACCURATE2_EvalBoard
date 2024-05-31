@@ -1,87 +1,66 @@
 /*
  * sht41.cpp
  *
- * Created: 04/03/2021 08:04:48
- *  Author: vcruchet, hliverud
+ * Created: 14/09/2024 14:10:08
+ *  Author: hliverud
  */
 
 #include "sht41.h"
 #include <Arduino.h>
 #include <Wire.h>
+#include <math.h>
 
-bool sht41_temp_rq = false;
-bool sht41_rh_rq = false;
-bool sht41_start_t = false;
-bool sht41_start_rh = false;
-bool sht41_updated = true;
-
-uint16_t sht41_temp_u16 = 0;	// raw temperature sensor data
-uint16_t sht41_rh_u16 = 0;	// raw relative-humidity sensor data
-
-// get the latest temperature reading
-uint16_t sht41_get_temp(void) {
-    return sht41_temp_u16;
+ // CRC-8 polynomial: x^8 + x^5 + x^4 + 1 (0x31)
+uint8_t crc8(const uint8_t* data, int len) {
+    uint8_t crc = 0xFF;
+    for (int j = len; j; --j) {
+        crc ^= *data++;
+        for (int i = 8; i; --i) {
+            crc = (crc & 0x80) ? (crc << 1) ^ 0x31 : (crc << 1);
+        }
+    }
+    return crc;
 }
 
-// get the latest humidity reading
-uint16_t sht41_get_rh(void) {
-    return sht41_rh_u16;
-}
-
-// request read temperature sensor via i2c
-float sht41_i2c_read_temp(void) {
-    sht41_updated = false;
-    sht41_start_t = false;
+// Read temperature and humidity from sensor
+TempHumMeasurement sht41_i2c_read(void) {
+    TempHumMeasurement tempHum = { 0, 0, SHT41_OK };
 
     Wire.beginTransmission(SHT41_ADDR);
-    Wire.write(SHT41_CMD_TEMP_H >> 8);
-    Wire.write(SHT41_CMD_TEMP_H & 0xFF);
-    Wire.endTransmission();
+    Wire.write(SHT41_CMD_MEASURE);
+    if (Wire.endTransmission() != 0) {
+        tempHum.status = SHT41_ERR_I2C;
+        return tempHum;
+    }
 
-    delay(15);
+    delay(85);  // Delay for maximum measurement time
 
-    Wire.requestFrom(SHT41_ADDR, SHT41_RD_LEN);
-
-    uint8_t buffer[SHT41_RD_LEN];
-    buffer[0] = Wire.read();
-    buffer[1] = Wire.read();
-    buffer[2] = Wire.read();
-
-    sht41_temp_u16 = (buffer[0] << 8) | buffer[1];
-
-    sht41_temp_rq = true;
-
-    sht41_updated = true;
-
-    // conversion formula from SHT41 datasheet
-    return -46.85 + 175.72 * sht41_temp_u16 / 65536; // in �C}
-}
-
-// request read humidity (RH) sensor via i2c
-float sht41_i2c_read_rh(void) {
-    sht41_updated = false;
-    sht41_start_rh = false;
-
-    Wire.beginTransmission(SHT41_ADDR);
-    Wire.write(SHT41_CMD_RH_H >> 8);
-    Wire.write(SHT41_CMD_RH_H & 0xFF);
-    Wire.endTransmission();
-
-    delay(15);
-
-    Wire.requestFrom(SHT41_ADDR, SHT41_RD_LEN);
+    if (Wire.requestFrom(SHT41_ADDR, SHT41_RD_LEN) != SHT41_RD_LEN) {
+        tempHum.status = SHT41_ERR_MEASUREMENT;
+        return tempHum;
+    }
 
     uint8_t buffer[SHT41_RD_LEN];
-    buffer[0] = Wire.read();
-    buffer[1] = Wire.read();
-    buffer[2] = Wire.read();
+    for (int i = 0; i < SHT41_RD_LEN; i++) {
+        buffer[i] = Wire.read();
+    }
 
-    sht41_rh_u16 = (buffer[0] << 8) | buffer[1];
+    // Validate CRC
+    if (crc8(buffer, 2) != buffer[2] || crc8(buffer + 3, 2) != buffer[5]) {
+        tempHum.status = SHT41_ERR_CRC;
+        return tempHum;
+    }
 
-    sht41_rh_rq = true;
+    uint16_t sht41_temp_u16 = (buffer[0] << 8) | buffer[1];
+    uint16_t sht41_rh_u16 = (buffer[3] << 8) | buffer[4];
 
-    sht41_updated = true;
+    // Conversion formulas from SHT41 datasheet
+    tempHum.temperature = -45 + 175 * sht41_temp_u16 / (float)(65535);
+    tempHum.humidity = -6 + 125 * sht41_rh_u16 / (float)(65535);
 
-    // conversion formula from SHT41 datasheet
-    return -6 + 125 * sht41_rh_u16 / 65536; // in %RH
+    // Crop humidity values to the range of 0% to 100%
+    if (tempHum.humidity > 100) tempHum.humidity = 100;
+    if (tempHum.humidity < 0) tempHum.humidity = 0;
+
+    return tempHum;
 }

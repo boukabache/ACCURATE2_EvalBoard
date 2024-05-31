@@ -15,4 +15,4 @@
 
 void ssd1306_init();
 
-void ssd1306_print_current_temp_humidity(float current, String current_range, float temp, float humidity);
+void ssd1306_print_current_temp_humidity(float current, String current_range, String temp, String humidity);
