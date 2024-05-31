@@ -1,8 +1,8 @@
 --! @file IOPkg.vhd
 --! @brief This package contains the records of the internal busses
 --!
---! For now it contains the following records:
---! - dacConfig: record for the configuration of the DAC
+--! The package contains the following records:
+--! - dacConfig: record for the configuration of the DAC outputs
 --! - accurate:  record for the configuration of the ACCURATE ASIC
 
 
@@ -45,6 +45,22 @@ package IOPkg is
         vOutG => (others => '0'),
         vOutH => (others => '0')
     );
+
+    --! Default values for the DAC configuration
+    --! Values generated with the Din_calculator.py script
+    constant dacConfigRecordTDefault : dacConfigRecordT := (
+        vOutA => "100010001000", -- A1_Vbias1   = 1.6V 
+        vOutB => "100000000000", -- Vcm         = 1.5V 
+        vOutC => "110101010101", -- A1_Vth1     = 1.55V
+        vOutD => "110101010101", -- A1_Vcharge+ = 2.5V 
+        vOutE => "100010001000", -- A1_Vth2     = 1.6V 
+        vOutF => "110101010101", -- A1_Vth4     = 2.5V 
+        vOutG => "100111000010", -- A1_Vth3     = 1.83V
+        vOutH => "011001001011" -- A1_Vbias3    = 1.18V
+    );
+
+
+
 
     --! Record for the configuration of ACCURATE
     type accurateRecordT is record
@@ -100,6 +116,26 @@ package IOPkg is
         disableCP2 => '0',
         disableCP3 => '0',
         singlyCPActivation => '0'
+    );
+
+    --! Default values for the ACCURATE configuration
+    constant accurateRecordTDefault : accurateRecordT := (
+        chargeQuantaCP1      => (others => '0'),
+        chargeQuantaCP2      => (others => '0'),
+        chargeQuantaCP3      => (others => '0'),
+        cooldownMinCP1       => (others => '0'),
+        cooldownMaxCP1       => (others => '0'),
+        cooldownMinCP2       => (others => '0'),
+        cooldownMaxCP2       => (others => '0'),
+        cooldownMinCP3       => (others => '0'),
+        cooldownMaxCP3       => (others => '0'),
+        resetOTA             => '0',
+        tCharge              => x"07",
+        tInjection           => x"08",
+        disableCP1           => '0',
+        disableCP2           => '0',
+        disableCP3           => '0',
+        singlyCPActivation   => '0'
     );
 
 
