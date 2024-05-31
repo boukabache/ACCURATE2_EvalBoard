@@ -7,8 +7,10 @@
 --! TX: The data to be sent is sampled when the data ready signal is high.
 --! Then the data is sent byte by byte, using a sliding window from left to right.
 --
---! RX: The data received is sampled when the FIFO is not empty. The received data
---! is then assembled in 32 bits words and forwarded to the RegisterFile module.
+--! RX: The data received is sampled when the FIFO is not empty. The expected
+--! format is: address(8bit) - 4xdata(8bit). The data is then assembled in 32bit
+--! words to obtain: address(8bit) - data(32bit). Address and data is then forwarded
+--! to the RegisterFile module.
 
 
 
@@ -33,6 +35,11 @@ entity UartLogic is
         rxFpgaxDI : in  std_logic;   -- FPGA RX data input
         txFpgaxDO : out std_logic;    -- FPGA TX data output
 
+        -- Output port to the RegisterFile module
+        addressxDO   : out unsigned(registerFileAddressWidthC-1 downto 0); -- Address input
+        dataxDO      : out std_logic_vector(registerFileDataWidthC-1 downto 0); -- Data input
+        dataValidxDO : out std_logic; -- Data valid input
+
         -- DEBUG
         led_g : out std_logic := '0'
         
@@ -44,6 +51,11 @@ end entity UartLogic;
 architecture rtl of UartLogic is
     -- Sample the data once ready
     signal voltageChangeIntervalxDP : std_logic_vector(voltageChangeRegLengthC - 1 downto 0) := (others => '0');
+
+    -- Counter used in the RX FSM
+    -- Used to receive and "assemble" the data before forwarding it to
+    -- the RegisterFile module
+    signal cnt : integer range 0 to 4 := 0;
 
     -- UartWrapper signals
     signal fifoFull    : std_logic := '0';
@@ -58,7 +70,7 @@ architecture rtl of UartLogic is
     ----------------------
 
     -- State machine
-    type StateType is (IDLE_S, SEND_S, RECEIVE_S);
+    type StateType is (IDLE_S, SEND_S, RECEIVE_S, DONE_S);
     signal state, rxState : StateType := IDLE_S;
     ----------------------
 
@@ -73,6 +85,9 @@ architecture rtl of UartLogic is
     constant paddingVector : std_logic_vector(7 - paddingNumber downto 0) := (others => '0');
     constant RightBoundEdgeCase : integer := voltageChangeRegLengthC - paddingNumber;
     ----------------------
+
+    -- DEBUG
+    signal flag : std_logic := '0';
 
 begin
     -- Instantiate UartWrapper module
@@ -174,13 +189,12 @@ begin
     -- RX LOGIC
     --------------------
     rxLogicP: process(clk, rst)
-        variable cnt : integer := 0;
     begin
         if rising_edge(clk) then
             if rst = '1' then
                 rxState <= IDLE_S;
+                cnt <= 0;
             else
-
                 -- FSM
                 case rxState is
                     when IDLE_S =>
@@ -188,15 +202,42 @@ begin
                         if (fifoEmpty = '0') then
                             rxState <= RECEIVE_S;
                         end if;
-
-                        led_g <= '0';
                         
                     when RECEIVE_S =>
+                        -- Assemble the data
+                        case cnt is
+                            when 0 =>
+                                -- Address
+                                addressxDO <= unsigned(fifoDataOut);
+                                rxState <= IDLE_S;
+                                cnt <= cnt + 1;
+                            when 1 =>
+                                -- Data
+                                dataxDO(7 downto 0) <= fifoDataOut;
+                                rxState <= IDLE_S;
+                                cnt <= cnt + 1;
+                            when 2 =>
+                                -- Data
+                                dataxDO(15 downto 8) <= fifoDataOut;
+                                rxState <= IDLE_S;
+                                cnt <= cnt + 1;
+                            when 3 =>
+                                -- Data
+                                dataxDO(23 downto 16) <= fifoDataOut;
+                                rxState <= IDLE_S;
+                                cnt <= cnt + 1;
+                            when 4 =>
+                                -- Data
+                                dataxDO(31 downto 24) <= fifoDataOut;
+                                rxState <= DONE_S;
+                        end case;
+                    
+                    when DONE_S =>
+                        -- Data received
                         rxState <= IDLE_S;
+                        cnt <= 0;
+                        flag <= not flag;
 
-                        if (fifoDataOut = x"CA") then
-                            led_g <= '1';
-                        end if;
 
                     when others =>
                         rxState <= IDLE_S;
@@ -210,5 +251,10 @@ begin
     -- is already available (no need to wait a clock cycle for the data to be available
     -- after fifoRead is asserted).
     fifoRead <= '1' when rxState = RECEIVE_S else '0';
+
+    -- When reception is done, signalise the RegisterFile module that the data is valid
+    dataValidxDO <= '1' when rxState = DONE_S else '0';
+
+    led_g <= '0' when flag = '0' else '1';
                 
 end architecture rtl;
