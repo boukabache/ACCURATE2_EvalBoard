@@ -5,6 +5,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.fixed_pkg.all;
+use ieee.numeric_std.all;
 
 library work;
 use work.configPkg.all;
@@ -70,6 +71,7 @@ architecture rtl of TopLevel is
     -- Global clock
     signal clkGlobal : std_logic;
     signal clk100    : std_logic;
+    ----------------------
     
 
     -- I2C interface
@@ -77,6 +79,7 @@ architecture rtl of TopLevel is
     signal i_sdaInxDI  : std_logic;
     signal i_sclOutxDO : std_logic;
     signal i_sclInxDI  : std_logic;
+    ----------------------
 
 
     -- DAC7578 I2C interface
@@ -91,6 +94,8 @@ architecture rtl of TopLevel is
 
     signal i2cDAC7578TxDataWLength : std_logic_vector(3 downto 0);
     signal i2cDAC7578RxDataWLength : std_logic_vector(3 downto 0);
+    ----------------------
+
 
     -- DAC7578 configuration signals
     signal DAC7578Config : dacConfigRecordT;
@@ -108,10 +113,17 @@ architecture rtl of TopLevel is
     signal voltageChangeIntervalxDO : std_logic_vector(voltageChangeRegLengthC - 1 downto 0);
     --! The voltageChangeIntervalxDO value is ready
     signal voltageChangeRdyxDO      : std_logic;
+    ----------------------
 
 
     -- Window generator signals
     signal wind100ms           : std_logic; -- 100ms window
+
+
+    -- RegisterFile signals
+    signal registerFileAddress   : unsigned(registerFileAddressWidthC-1 downto 0);
+    signal registerFileData      : std_logic_vector(registerFileDataWidthC-1 downto 0);
+    signal registerFileDataValid : std_logic;
 
 
 begin
@@ -256,12 +268,16 @@ begin
             rst                      => '0',
             rxFpgaxDI                => rx_fpgaxDI,
             txFpgaxDO                => tx_fpgaxDO,
-            -- voltageChangeIntervalxDI => voltageChangeIntervalxDO,
-            -- voltageChangeRdyxDI      => voltageChangeRdyxDO
+            voltageChangeIntervalxDI => voltageChangeIntervalxDO,
+            voltageChangeRdyxDI      => voltageChangeRdyxDO,
+
+            addressxDO   => registerFileAddress,
+            dataxDO      => registerFileData,
+            dataValidxDO => registerFileDataValid,
 
             -- FOR DEBUG ON REAL HARDWARE
-            voltageChangeIntervalxDI => x"C123456789abc",
-            voltageChangeRdyxDI      => debug,
+            -- voltageChangeIntervalxDI => x"C123456789abc",
+            -- voltageChangeRdyxDI      => wind100ms,
 
             led_g => led_g
     );
@@ -279,7 +295,12 @@ begin
 
             -- ACCURATE config registers
             accurateConfigxDO => configxDI,
-            accurateConfigValidxDO => configValidxDI
+            accurateConfigValidxDO => configValidxDI,
+
+            -- Input port
+            addressxDI   => registerFileAddress,
+            dataxDI      => registerFileData,
+            dataValidxDI => registerFileDataValid
     );
 
 
