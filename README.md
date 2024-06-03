@@ -9,14 +9,15 @@ The FPGA used is a Lattice iCE40 iCE5LP4k chip (SG48 package) mounted on a custo
 
 The current block diagram of the internal logic is shown below:
 
-![VHDL block diagram](VHDL_Diagram.svg)
+<div align="center">
+    <img src="VHDL_Diagram.svg" alt="VHDL block diagram">
+</div>
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Register map](#register-map)
 
 ## Installation
 
@@ -53,10 +54,37 @@ Program the FPGA's flash:
 make prog
 ```
 
-## Contributing
+## Register map
+The application utilise a very simple register map to configure internal logic parameters, namely the DAC's output voltages and ACCURATE's parameters.
 
-Guidelines for contributing to the project, including how to report issues or submit pull requests.
+To program the registers, the user must write to the FPGA's UART interface. The FPGA expect 5 bytes: the first byte is the register address, and the following 4 bytes are the register value sent in LSB to MSB order (i.e. byte1 (LSB) first and byte4 (MSB) last). The UART interface is configured to 9600 baud rate, 8 data bits, 1 stop bit, and no parity bit. Once a comunication is started, it can not be stopped until the 5 bytes are received.
 
-## License
+The register map is shown below:
 
-Information about the project's license and any relevant terms or conditions.
+| Register address | Register name | Description | Type |
+|------------------|---------------|-------------| ---- |
+| 0x00 | vOutA | DAC's port A output voltage | 12-bit unsigned |
+| 0x01 | vOutB | DAC's port B output voltage | 12-bit unsigned |
+| 0x02 | vOutC | DAC's port C output voltage | 12-bit unsigned |
+| 0x03 | vOutD | DAC's port D output voltage | 12-bit unsigned |
+| 0x04 | vOutE | DAC's port E output voltage | 12-bit unsigned |
+| 0x05 | vOutF | DAC's port F output voltage | 12-bit unsigned |
+| 0x06 | vOutG | DAC's port G output voltage | 12-bit unsigned |
+| 0x07 | vOutH | DAC's port H output voltage | 12-bit unsigned |
+|||||
+| 0x08 | chargeQuantaCP1 | Charge quanta for CP1 | Unknown |
+| 0x09 | chargeQuantaCP2 | Charge quanta for CP2 | Unknown |
+| 0x0A | chargeQuantaCP3 | Charge quanta for CP3 | Unknown |
+| 0x0B | cooldownMinCP1 | Minimum cooldown for CP1 | Unknown |
+| 0x0C | cooldownMaxCP1 | Maximum cooldown for CP1 | Unknown |
+| 0x0D | cooldownMinCP2 | Minimum cooldown for CP2 | Unknown |
+| 0x0E | cooldownMaxCP2 | Maximum cooldown for CP2 | Unknown |
+| 0x0F | cooldownMinCP3 | Minimum cooldown for CP3 | Unknown |
+| 0x10 | cooldownMaxCP3 | Maximum cooldown for CP3 | Unknown |
+| 0x11 | resetOTA | Reset OTA | Unknown |
+| 0x12 | tCharge | T Charge | Unknown |
+| 0x13 | tInjection | T Injection | Unknown |
+| 0x14 | disableCP1 | Disable CP1 | Unknown |
+| 0x15 | disableCP2 | Disable CP2 | Unknown |
+| 0x16 | disableCP3 | Disable CP3 | Unknown |
+| 0x17 | singlyCPActivation | Singly CP Activation | Unknown |
