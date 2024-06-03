@@ -72,19 +72,19 @@ The register map is shown below:
 | 0x06 | vOutG | DAC's port G output voltage | 12-bit unsigned |
 | 0x07 | vOutH | DAC's port H output voltage | 12-bit unsigned |
 |||||
-| 0x08 | chargeQuantaCP1 | Charge quanta for CP1 | Unknown |
-| 0x09 | chargeQuantaCP2 | Charge quanta for CP2 | Unknown |
-| 0x0A | chargeQuantaCP3 | Charge quanta for CP3 | Unknown |
-| 0x0B | cooldownMinCP1 | Minimum cooldown for CP1 | Unknown |
-| 0x0C | cooldownMaxCP1 | Maximum cooldown for CP1 | Unknown |
-| 0x0D | cooldownMinCP2 | Minimum cooldown for CP2 | Unknown |
-| 0x0E | cooldownMaxCP2 | Maximum cooldown for CP2 | Unknown |
-| 0x0F | cooldownMinCP3 | Minimum cooldown for CP3 | Unknown |
-| 0x10 | cooldownMaxCP3 | Maximum cooldown for CP3 | Unknown |
-| 0x11 | resetOTA | Reset OTA | Unknown |
-| 0x12 | tCharge | T Charge | Unknown |
-| 0x13 | tInjection | T Injection | Unknown |
-| 0x14 | disableCP1 | Disable CP1 | Unknown |
-| 0x15 | disableCP2 | Disable CP2 | Unknown |
-| 0x16 | disableCP3 | Disable CP3 | Unknown |
-| 0x17 | singlyCPActivation | Singly CP Activation | Unknown |
+| 0x08 | chargeQuantaCP1 | Charge quanta for CP1 | 24-bit signed |
+| 0x09 | chargeQuantaCP2 | Charge quanta for CP2 | 24-bit signed |
+| 0x0A | chargeQuantaCP3 | Charge quanta for CP3 | 24-bit signed |
+| 0x0B | cooldownMinCP1 | Minimum cooldown for CP1 | 16-bit unsigned |
+| 0x0C | cooldownMaxCP1 | Maximum cooldown for CP1 | 16-bit unsigned |
+| 0x0D | cooldownMinCP2 | Minimum cooldown for CP2 | 16-bit unsigned |
+| 0x0E | cooldownMaxCP2 | Maximum cooldown for CP2 | 16-bit unsigned |
+| 0x0F | cooldownMinCP3 | Minimum cooldown for CP3 | 16-bit unsigned |
+| 0x10 | cooldownMaxCP3 | Maximum cooldown for CP3 | 16-bit unsigned |
+| 0x11 | resetOTA | Reset OTA | std_logic |
+| 0x12 | tCharge | T Charge | 8-bit unsigned |
+| 0x13 | tInjection | T Injection | 8-bit unsigned |
+| 0x14 | disableCP1 | Disable CP1 | std_logic |
+| 0x15 | disableCP2 | Disable CP2 | std_logic |
+| 0x16 | disableCP3 | Disable CP3 | std_logic |
+| 0x17 | singlyCPActivation | Singly CP Activation | std_logic |

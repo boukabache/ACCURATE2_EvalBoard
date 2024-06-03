@@ -30,7 +30,7 @@ def main():
     # print(result_with_labels)
 
     for key, value in result_with_labels.items():
-        print(f"{key}: {value} - ({bin(int(value))[2:].zfill(12)})")
+        print(f"{key}: {value} - ({bin(int(value))[2:].zfill(12)}) - 0x{hex(int(value))[2:].zfill(3)}")
 
     exit(0)
 
