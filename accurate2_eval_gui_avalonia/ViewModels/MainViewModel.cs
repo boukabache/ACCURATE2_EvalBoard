@@ -134,6 +134,7 @@ public partial class MainViewModel : ViewModelBase
 
     public ISeries[]? TemperatureAndHumiditySeries { get; set; }
 
+    // TODO: Make a utility class for formatting labels to avoid code duplication with MainWindow.xaml.cs
     private static string FormatLabel(double val)
     {
         if (val >= 1e-3)
@@ -196,13 +197,13 @@ public partial class MainViewModel : ViewModelBase
             new Axis
             {
                 MinStep = 0.1,
-                Labeler = (val) => val.ToString() + "°C",
+                Labeler = (val) => val.ToString("F2") + "°C",
             },
             new Axis
             {
                 MinLimit = 0,
                 MinStep = 1,
-                Labeler = (val) => val.ToString() + "%",
+                Labeler = (val) => val.ToString("F2") + "%",
             }
     };
 

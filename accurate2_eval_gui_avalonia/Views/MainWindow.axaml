@@ -7,7 +7,7 @@
         MinHeight="600"
         x:Class="accurate2_eval_gui_avalonia.Views.MainWindow"
         Icon="/Assets/CERN-logo.ico"
-        Title="accurate2_eval_gui_avalonia"
+        Title="ACCURATE 2A Evaluation Software"
         FontSize="20"
         xmlns:local="using:accurate2_eval_gui_avalonia.ViewModels"
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia">

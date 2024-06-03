@@ -152,7 +152,6 @@ public partial class MainWindow : Window
                         try
                         {
                             // Check if Arduino is sending data by sending a command and waiting for a response and test WriteTimeout
-                            arduinoPort.WriteLine("Hello");
                             if (arduinoPort.ReadLine() != "")
                             {
                                 connectedTime.Content = "Connected";
@@ -216,12 +215,13 @@ public partial class MainWindow : Window
     {
         // Extracting and converting data from the received string format.
         var parts = data.Split(',');
+        parts[3] = parts[3].Trim();
         if (parts.Length == 4)
         {
             // Assuming the current value received from the device is in femtoamps (fA) and needs conversion to Amperes (A).
-            if (double.TryParse(parts[0], out double currentInFemtoAmps) &&
-                double.TryParse(parts[1], out double temperature) &&
-                double.TryParse(parts[2], out double humidity))
+            if (double.TryParse(parts[0], NumberStyles.Float, CultureInfo.InvariantCulture, out double currentInFemtoAmps) &&
+                double.TryParse(parts[1], NumberStyles.Float, CultureInfo.InvariantCulture, out double temperature) &&
+                double.TryParse(parts[2], NumberStyles.Float, CultureInfo.InvariantCulture, out double humidity))
             {
                 // Convert the binary string to an integer for button and LED states.
                 string btnLedBinaryString = parts[3];
@@ -248,8 +248,10 @@ public partial class MainWindow : Window
                 if (DataContext is MainViewModel viewModel)
                 {
                     viewModel.UpdateGraphs(currentInAmperes, temperature, humidity);
-                    liveCurrent.Content = currentInAmperes.ToString("N2") + " A"; // Display in Amperes with two decimal places.
-                    averageCurrent.Content = calculatedAverageCurrent.ToString("N2") + " A"; // Display average in Amperes.
+
+                    // Determine the correct unit and format for the live current.
+                    liveCurrent.Content = FormatCurrent(currentInAmperes);
+                    averageCurrent.Content = FormatCurrent(calculatedAverageCurrent);
                 }
 
                 UpdateButtonAndLedStates(btn0Activated, btn1Activated, btn2Activated, led0Activated, led1Activated, led2Activated);
@@ -361,14 +363,14 @@ public partial class MainWindow : Window
         Dispatcher.UIThread.InvokeAsync(() =>
         {
             // Update button backgrounds
-            btn0.Background = btn0Activated ? Brushes.Black : Brushes.White;
-            btn1.Background = btn1Activated ? Brushes.Black : Brushes.White;
-            btn2.Background = btn2Activated ? Brushes.Black : Brushes.White;
+            btn0.Background = btn0Activated ? Brushes.Gray : Brushes.White;
+            btn1.Background = btn1Activated ? Brushes.Gray : Brushes.White;
+            btn2.Background = btn2Activated ? Brushes.Gray : Brushes.White;
 
             // Update LED fills to a brighter yellow when activated, or a dimmer color when not
-            led0.Fill = led0Activated ? Brushes.Yellow : Brushes.LightYellow;
-            led1.Fill = led1Activated ? Brushes.Yellow : Brushes.LightYellow;
-            led2.Fill = led2Activated ? Brushes.Yellow : Brushes.LightYellow;
+            led0.Fill = led0Activated ? Brushes.Gold : Brushes.LightYellow;
+            led1.Fill = led1Activated ? Brushes.Gold : Brushes.LightYellow;
+            led2.Fill = led2Activated ? Brushes.Gold : Brushes.LightYellow;
         });
     }
 
@@ -387,5 +389,33 @@ public partial class MainWindow : Window
             led1.Fill = Brushes.LightYellow;
             led2.Fill = Brushes.LightYellow;
         });
+    }
+
+    private static string FormatCurrent(double val)
+    {
+        if (val >= 1e-3)
+        {
+            return val.ToString("N2") + "mA";
+        }
+        else if (val >= 1e-6)
+        {
+            return (val * 1e6).ToString("N2") + "µA";
+        }
+        else if (val >= 1e-9)
+        {
+            return (val * 1e9).ToString("N2") + "nA";
+        }
+        else if (val >= 1e-12)
+        {
+            return (val * 1e12).ToString("N2") + "pA";
+        }
+        else if (val >= 1e-15)
+        {
+            return (val * 1e15).ToString("N2") + "fA";
+        }
+        else
+        {
+            return (val * 1e18).ToString("N2") + "aA";
+        }
     }
 }

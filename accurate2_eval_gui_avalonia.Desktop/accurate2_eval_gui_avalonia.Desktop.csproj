@@ -10,6 +10,7 @@
     <ApplicationIcon>CERN-logo.ico</ApplicationIcon>
     <AssemblyName>ACCURATE 2A Evaluation Software</AssemblyName>
     <StartupObject>accurate2_eval_gui_avalonia.Desktop.Program</StartupObject>
+    <RootNamespace>ACCURATE 2A Evaluation Software</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="CERN-logo.ico" />
