@@ -20,14 +20,14 @@ static DAC7578 ACCURATE_DAC;
 // Initializes ACCURATE_DAC fields with given address and default channel values
 void dac7578_init() {
     ACCURATE_DAC.address = DAC_ADDRESS;
-    ACCURATE_DAC.channel_val[VBIAS1_CH] = convertVoltageToDAC(VBIAS1_DEC);
-    ACCURATE_DAC.channel_val[VCM_CH] = convertVoltageToDAC(VCM_DEC);
-    ACCURATE_DAC.channel_val[VTH1_CH] = convertVoltageToDAC(VTH1_DEC);
-    ACCURATE_DAC.channel_val[VCHARGEP_CH] = convertVoltageToDAC(VTH7_DEC);
-    ACCURATE_DAC.channel_val[VTH2_CH] = convertVoltageToDAC(VTH2_DEC);
-    ACCURATE_DAC.channel_val[VTH4_CH] = convertVoltageToDAC(VTH4_DEC);
-    ACCURATE_DAC.channel_val[VTH3_CH] = convertVoltageToDAC(VTH3_DEC);
-    ACCURATE_DAC.channel_val[VBIAS3_CH] = convertVoltageToDAC(VBIAS3_DEC);
+    ACCURATE_DAC.channel_val[VBIAS1_CH] = fpga_convert_volt_to_DAC(VBIAS1_DEC);
+    ACCURATE_DAC.channel_val[VCM_CH] = fpga_convert_volt_to_DAC(VCM_DEC);
+    ACCURATE_DAC.channel_val[VTH1_CH] = fpga_convert_volt_to_DAC(VTH1_DEC);
+    ACCURATE_DAC.channel_val[VCHARGEP_CH] = fpga_convert_volt_to_DAC(VTH7_DEC);
+    ACCURATE_DAC.channel_val[VTH2_CH] = fpga_convert_volt_to_DAC(VTH2_DEC);
+    ACCURATE_DAC.channel_val[VTH4_CH] = fpga_convert_volt_to_DAC(VTH4_DEC);
+    ACCURATE_DAC.channel_val[VTH3_CH] = fpga_convert_volt_to_DAC(VTH3_DEC);
+    ACCURATE_DAC.channel_val[VBIAS3_CH] = fpga_convert_volt_to_DAC(VBIAS3_DEC);
 }
 
 // set DAC's channel(ch_idx) value
