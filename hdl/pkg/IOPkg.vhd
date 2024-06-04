@@ -119,10 +119,11 @@ package IOPkg is
     );
 
     --! Default values for the ACCURATE configuration
+    --! chargeQuanta values generated with the chargeQuanta_calculator.py script
     constant accurateRecordTDefault : accurateRecordT := (
-        chargeQuantaCP1      => (others => '0'),
-        chargeQuantaCP2      => (others => '0'),
-        chargeQuantaCP3      => (others => '0'),
+        chargeQuantaCP1      => "000000000011000110100110",
+        chargeQuantaCP2      => "000000000110001101001100",
+        chargeQuantaCP3      => "000000011000110100110000",
         cooldownMinCP1       => (others => '0'),
         cooldownMaxCP1       => (others => '0'),
         cooldownMinCP2       => (others => '0'),
