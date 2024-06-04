@@ -42,12 +42,12 @@ void setup() {
     ssd1306_init();
     dac7578_init();
 
-    sendConfigurations();
+    fpga_send_configurations();
     dac7578_i2c_send_all_param();
 }
 
 void loop() {
-    CurrentMeasurement measuredCurrent = readFPGA();
+    CurrentMeasurement measuredCurrent = fpga_read();
     String btnLedStatus = getPinStatus();
     TempHumMeasurement measuredTempHum = sht41_i2c_read();
     String temp;

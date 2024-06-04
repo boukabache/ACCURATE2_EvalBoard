@@ -7,19 +7,21 @@
 
 #include "fpga.h"
 
-CurrentMeasurement readFPGA() {
+CurrentMeasurement fpga_read() {
     while (Serial1.available() >= 4 * 7) {
         uint32_t data[7];
         String dataString = "";
 
         for (int i = 0; i < 7; i++) {
-            data[i] = readUInt32();
+            data[i] = fpga_read_UInt32();
+#ifdef DEBUG
             dataString += " Data[" + String(i) + "]: " + String(data[i], HEX);
+#endif
         }
 
         if (data[6] == 0x5A) { // Stop bit
-            float readCurrent = calculateCurrentChInj(data[1], data[2], data[3]);
-            CurrentMeasurement measurement = getCurrentInAppropriateRange(readCurrent);
+            float readCurrent = fpga_calc_current_ch_inj(data[1], data[2], data[3]);
+            CurrentMeasurement measurement = fpga_format_current(readCurrent);
 #ifdef DEBUG
             Serial.print(dataString + " - OK");
             Serial.print(" - Measured Current: ");
@@ -34,7 +36,7 @@ CurrentMeasurement readFPGA() {
             Serial.println(dataString + " - Error");
 #endif
 
-            attemptResynchronization();
+            fpga_attempt_resynchronization();
 
             // Return a measurement indicating an error
             CurrentMeasurement errorMeasurement;
@@ -46,7 +48,7 @@ CurrentMeasurement readFPGA() {
     }
 }
 
-void attemptResynchronization() {
+void fpga_attempt_resynchronization() {
     bool foundMarker = false;
     while (Serial1.available() && !foundMarker) {
         if (Serial1.peek() == 0x5A) {
@@ -66,61 +68,60 @@ void attemptResynchronization() {
     }
 }
 
-void sendConfigurations() {
-    delay(5000);
-
+void fpga_send_configurations() {
+    delay(1000); // Wait for the FPGA to boot up
 #ifdef DEBUG
     Serial.println("");
 #endif
 
-    sendParam(INIT_CONFIG_ADDRESS, INIT_CONFIG);
+    fpga_send_parameters(INIT_CONFIG_ADDRESS, INIT_CONFIG);
 
 #ifdef DEBUG
     Serial.println("INIT Config sent");
 #endif
 
-    sendParam(GATE_LENGTH_ADDRESS, calculateGateLength());
+    fpga_send_parameters(GATE_LENGTH_ADDRESS, fpga_calculate_gate_len());
 
 #ifdef DEBUG
     Serial.println("GATE sent");
 #endif
 
     delay(20);
-    sendParam(RST_DURATION_ADDRESS, RST_DURATION);
+    fpga_send_parameters(RST_DURATION_ADDRESS, RST_DURATION);
 
 #ifdef DEBUG
     Serial.println("RST DURATION sent");
 #endif
 
     delay(20);
-    sendParam(VBIAS1_ADDRESS, convertVoltageToDAC(VBIAS1_DEC));
-    sendParam(VBIAS2_ADDRESS, convertVoltageToDAC(VBIAS2_DEC));
+    fpga_send_parameters(VBIAS1_ADDRESS, fpga_convert_volt_to_DAC(VBIAS1_DEC));
+    fpga_send_parameters(VBIAS2_ADDRESS, fpga_convert_volt_to_DAC(VBIAS2_DEC));
 
 #ifdef DEBUG
     delay(20);
 #endif
 
-    sendParam(VBIAS3_ADDRESS, convertVoltageToDAC(VBIAS3_DEC));
+    fpga_send_parameters(VBIAS3_ADDRESS, fpga_convert_volt_to_DAC(VBIAS3_DEC));
 
 #ifdef DEBUG
     Serial.println("VBIAS Sent");
 #endif
 
-    sendParam(VCM_ADDRESS, convertVoltageToDAC(VCM_DEC));
+    fpga_send_parameters(VCM_ADDRESS, fpga_convert_volt_to_DAC(VCM_DEC));
 
 #ifdef DEBUG
     delay(20);
     Serial.println("VCM Sent");
 #endif
 
-    sendParam(VCM1_ADDRESS, convertVoltageToDAC(VCM_DEC));
-    sendParam(VTH1_ADDRESS, convertVoltageToDAC(VTH1_DEC));
-    sendParam(VTH2_ADDRESS, convertVoltageToDAC(VTH2_DEC));
-    sendParam(VTH3_ADDRESS, convertVoltageToDAC(VTH3_DEC));
-    sendParam(VTH4_ADDRESS, convertVoltageToDAC(VTH4_DEC));
-    sendParam(VTH5_ADDRESS, convertVoltageToDAC(VTH5_DEC));
-    sendParam(VTH6_ADDRESS, convertVoltageToDAC(VTH6_DEC));
-    sendParam(VTH7_ADDRESS, convertVoltageToDAC(VTH7_DEC));
+    fpga_send_parameters(VCM1_ADDRESS, fpga_convert_volt_to_DAC(VCM_DEC));
+    fpga_send_parameters(VTH1_ADDRESS, fpga_convert_volt_to_DAC(VTH1_DEC));
+    fpga_send_parameters(VTH2_ADDRESS, fpga_convert_volt_to_DAC(VTH2_DEC));
+    fpga_send_parameters(VTH3_ADDRESS, fpga_convert_volt_to_DAC(VTH3_DEC));
+    fpga_send_parameters(VTH4_ADDRESS, fpga_convert_volt_to_DAC(VTH4_DEC));
+    fpga_send_parameters(VTH5_ADDRESS, fpga_convert_volt_to_DAC(VTH5_DEC));
+    fpga_send_parameters(VTH6_ADDRESS, fpga_convert_volt_to_DAC(VTH6_DEC));
+    fpga_send_parameters(VTH7_ADDRESS, fpga_convert_volt_to_DAC(VTH7_DEC));
 
 #ifdef DEBUG
     Serial.println("VTH Sent");
@@ -131,16 +132,16 @@ void sendConfigurations() {
 }
 
 
-uint32_t convertVoltageToDAC(float voltage) {
+uint32_t fpga_convert_volt_to_DAC(float voltage) {
     return static_cast<uint32_t>(round((voltage * ADC_RESOLUTION_ACCURATE) / REF_VOLTAGE));
 }
 
-uint32_t calculateGateLength() {
+uint32_t fpga_calculate_gate_len() {
     uint32_t gate = static_cast<uint32_t>((TW * CLOCK_PERIOD) - 1);
     return gate;
 }
 
-float calculateCurrentDirSlope(uint32_t data0, uint32_t data4) {
+float fpga_calc_current_dir_slope(uint32_t data0, uint32_t data4) {
     // Extract the last nibble (4 bits) from data4
     uint32_t lastHexDigitOfData5 = data4 & 0xF;
 
@@ -158,7 +159,7 @@ float calculateCurrentDirSlope(uint32_t data0, uint32_t data4) {
     return current_dir_slope;
 }
 
-float calculateCurrentChInj(uint32_t data1, uint32_t data2, uint32_t data3) {
+float fpga_calc_current_ch_inj(uint32_t data1, uint32_t data2, uint32_t data3) {
     float current_low = static_cast<float>(data1) * Qref1 / Tw;
     float current_medium = static_cast<float>(data2) * Qref2 / Tw;
     float current_high = static_cast<float>(data3) * Qref3 / Tw;
@@ -167,7 +168,7 @@ float calculateCurrentChInj(uint32_t data1, uint32_t data2, uint32_t data3) {
     return current_ch_inj;
 }
 
-CurrentMeasurement getCurrentInAppropriateRange(float currentInFemtoAmperes) {
+CurrentMeasurement fpga_format_current(float currentInFemtoAmperes) {
     CurrentMeasurement measurement;
     measurement.currentInFemtoAmpere = currentInFemtoAmperes; // Store the original value in fA
 
@@ -192,7 +193,7 @@ CurrentMeasurement getCurrentInAppropriateRange(float currentInFemtoAmperes) {
     return measurement;
 }
 
-uint32_t readUInt32() {
+uint32_t fpga_read_UInt32() {
     uint32_t value = 0;
     value |= ((uint32_t)Serial1.read()) << 0;
     value |= ((uint32_t)Serial1.read()) << 8;
@@ -201,11 +202,8 @@ uint32_t readUInt32() {
     return value;
 }
 
-void sendParam(uint32_t address, uint32_t value) {
-    Serial1.write(address & 0xFF); // LSB
-    Serial1.write((address >> 8) & 0xFF);
-    Serial1.write((address >> 16) & 0xFF);
-    Serial1.write((address >> 24) & 0xFF); // MSB
+void fpga_send_parameters(uint8_t address, uint32_t value) {
+    Serial1.write(address);
 
     Serial1.write(value & 0xFF); // LSB
     Serial1.write((value >> 8) & 0xFF);
