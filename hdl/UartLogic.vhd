@@ -38,10 +38,7 @@ entity UartLogic is
         -- Output port to the RegisterFile module
         addressxDO   : out unsigned(registerFileAddressWidthC-1 downto 0); -- Address input
         dataxDO      : out std_logic_vector(registerFileDataWidthC-1 downto 0); -- Data input
-        dataValidxDO : out std_logic; -- Data valid input
-
-        -- DEBUG
-        led_g : out std_logic := '0'
+        dataValidxDO : out std_logic -- Data valid input
         
     );
 end entity UartLogic;
@@ -70,7 +67,7 @@ architecture rtl of UartLogic is
     ----------------------
 
     -- State machine
-    type StateType is (IDLE_S, SEND_S, RECEIVE_S, DONE_S);
+    type StateType is (IDLE_S, SEND_HEADER_S, SEND_S, RECEIVE_S, DONE_S);
     signal state, rxState : StateType := IDLE_S;
     ----------------------
 
@@ -85,9 +82,6 @@ architecture rtl of UartLogic is
     constant paddingVector : std_logic_vector(7 - paddingNumber downto 0) := (others => '0');
     constant RightBoundEdgeCase : integer := voltageChangeRegLengthC - paddingNumber;
     ----------------------
-
-    -- DEBUG
-    signal flag : std_logic := '0';
 
 begin
     -- Instantiate UartWrapper module
@@ -135,13 +129,18 @@ begin
                     when IDLE_S =>
                         -- Data ready to be sent
                         if (voltageChangeRdyxDI = '1') then
-                            state <= SEND_S;
+                            state <= SEND_HEADER_S;
                             -- Reset the window when starting a new transmission
                             LeftBoundxDP <= 7;
                             RightBoundxDP <= 0;
                             -- Sample the data to send
                             voltageChangeIntervalxDP <= voltageChangeIntervalxDI;
                         end if;
+
+                    when SEND_HEADER_S =>
+                        -- Send the header
+                        txDataxDP <= x"AB";
+                        state <= SEND_S;
                         
                     when SEND_S =>
                         -- Check if the full data has been sent
@@ -157,7 +156,7 @@ begin
     end process logicP;
 
     -- Write enable signal for the UART's TX FIFO
-    fifoWriteEnxDN <= '1' when state = SEND_S and fifoFull = '0'
+    fifoWriteEnxDN <= '1' when (state = SEND_S or state = SEND_HEADER_S) and fifoFull = '0'
                     else '0';
     
     -- The data window to be sent.
@@ -204,7 +203,6 @@ begin
                         end if;
                         
                     when RECEIVE_S =>
-                        -- Assemble the data
                         case cnt is
                             when 0 =>
                                 -- Address
@@ -233,10 +231,8 @@ begin
                         end case;
                     
                     when DONE_S =>
-                        -- Data received
                         rxState <= IDLE_S;
                         cnt <= 0;
-                        flag <= not flag;
 
 
                     when others =>
@@ -254,7 +250,5 @@ begin
 
     -- When reception is done, signalise the RegisterFile module that the data is valid
     dataValidxDO <= '1' when rxState = DONE_S else '0';
-
-    led_g <= '0' when flag = '0' else '1';
                 
 end architecture rtl;
