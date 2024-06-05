@@ -8,6 +8,15 @@
 #include "fpga.h"
 
 CurrentMeasurement fpga_read() {
+    if (Serial1.available() < 4 * 7) {
+        // Return a measurement indicating no device available
+        CurrentMeasurement noDeviceMeasurement;
+        noDeviceMeasurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
+        noDeviceMeasurement.convertedCurrent = std::nan("1");
+        noDeviceMeasurement.range = "Error";
+        return noDeviceMeasurement;
+    }
+
     while (Serial1.available() >= 4 * 7) {
         uint32_t data[7];
         String dataString = "";
@@ -30,12 +39,10 @@ CurrentMeasurement fpga_read() {
             Serial.println(measurement.range);
 #endif
             return measurement;
-        }
-        else {
+        } else {
 #ifdef DEBUG
             Serial.println(dataString + " - Error");
 #endif
-
             fpga_attempt_resynchronization();
 
             // Return a measurement indicating an error

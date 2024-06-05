@@ -49,6 +49,7 @@ void setup() {
 
 void loop() {
     CurrentMeasurement measuredCurrent = fpga_read();
+    float voltage = ltc2471_read_voltage();
     String btnLedStatus = getPinStatus();
     TempHumMeasurement measuredTempHum = sht41_i2c_read();
     String temp;
@@ -84,9 +85,6 @@ void loop() {
     String message = String(measuredCurrent.currentInFemtoAmpere) + "," + String(temp) + "," + String(humidity) + "," + btnLedStatus;
     Serial.println(message);
 
-    float voltage = ltc2471_read_voltage();
-    Serial.print("Voltage: ");
-    Serial.println(voltage, 6);  // Print voltage with 6 decimal places
     delay(100);
 }
 
