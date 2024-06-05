@@ -1,6 +1,21 @@
 --! @file TopLevel.vhd
 --! @brief Top-level VHDL file for ACCURATE reading test
---! 
+--
+--! A brief explanation of the logic of the design:
+--! PLL: Takes the clock coming from a pad connected to an
+--! external 100MHz oscillator and generates a 20MHz clock. The input clock
+--! is also forwarded to the output.
+--! ACCURATE: The AccurateWrapper receive the configuration data from the register
+--! file and the sampling tempo from the window generator. It drives the ASIC and
+--! outputs the amount of charge counted in the last interval (in LSBs).
+--! DAC: Sets the reference voltages used internally by ACCURATE. It is
+--! programmed via I2C using default values at startup. The values are update
+--! during operations as soon as the register file receive new values.
+--! Register file: Contains the configuration registers for the DAC and ACCURATE.
+--! Default values are hardcoded and utilised during startup. During operations
+--! new values can be sent via UART interface.
+--! UART: In charge of sending the ACCURATE output to the external world and
+--! receiving new configuration data from the user.
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -27,9 +42,14 @@ entity TopLevel is
         fpga_sclxDIO : inout std_logic;
 
 
-        -- UART port
-        rx_fpgaxDI : in  std_logic;   -- FPGA RX data input
-        tx_fpgaxDO : out std_logic;    -- FPGA TX data output
+        -- UART interface: FPGA - USB
+        rxUartUsbxDI : in  std_logic;    -- FPGA RX data input
+        txUartUsbxDO : out std_logic;    -- FPGA TX data output
+
+
+        -- UART interface: FPGA - MCU
+        rxUartMcuxDI : in  std_logic;    -- FPGA RX data input
+        txUartMcuxDO : out std_logic;    -- FPGA TX data output
 
 
         -- ACCURATE interface
@@ -48,16 +68,8 @@ entity TopLevel is
         --! Enable med current charge pump. Must by synchronous with cap_clk
         enableCP2xDO : out std_logic;
         --! Enable high current charge pump. Must by synchronous with cap_clk
-        enableCP3xDO : out std_logic;
+        enableCP3xDO : out std_logic
         -- END ACCURATE interface
-
-        -- LEDs
-        led_g : out std_logic;
-        led_r : out std_logic;
-        led_b : out std_logic
-
-        -- DEBUG
-        -- debug_0 : out std_logic
 
     );
 end entity TopLevel;
@@ -121,9 +133,10 @@ architecture rtl of TopLevel is
 
 
     -- RegisterFile signals
-    signal registerFileAddress   : unsigned(registerFileAddressWidthC-1 downto 0);
-    signal registerFileData      : std_logic_vector(registerFileDataWidthC-1 downto 0);
-    signal registerFileDataValid : std_logic;
+    signal registerFileAddress, registerFileAddressMcu, registerFileAddressUsb       : unsigned(registerFileAddressWidthC-1 downto 0);
+    signal registerFileData, registerFileDataMcu, registerFileDataUsb                : std_logic_vector(registerFileDataWidthC-1 downto 0);
+    signal registerFileDataValid, registerFileDataValidMcu, registerFileDataValidUsb : std_logic;
+    ----------------------
 
 
 begin
@@ -261,25 +274,34 @@ begin
     );
 
 
-    -------------------------- UART LOGIC --------------------------------------
-    UartLogicE : entity work.UartLogic
+    -------------------------- UART FPGA - USB --------------------------------------
+    UartLogicUsbE : entity work.UartLogic
         port map (
             clk                      => clkGlobal,
             rst                      => '0',
-            rxFpgaxDI                => rx_fpgaxDI,
-            txFpgaxDO                => tx_fpgaxDO,
+            rxFpgaxDI                => rxUartUsbxDI,
+            txFpgaxDO                => txUartUsbxDO,
             voltageChangeIntervalxDI => voltageChangeIntervalxDO,
             voltageChangeRdyxDI      => voltageChangeRdyxDO,
 
-            addressxDO   => registerFileAddress,
-            dataxDO      => registerFileData,
-            dataValidxDO => registerFileDataValid,
+            addressxDO   => registerFileAddressUsb,
+            dataxDO      => registerFileDataUsb,
+            dataValidxDO => registerFileDataValidUsb
+    );
 
-            -- FOR DEBUG ON REAL HARDWARE
-            -- voltageChangeIntervalxDI => x"C123456789abc",
-            -- voltageChangeRdyxDI      => wind100ms,
+    -------------------------- UART FPGA - MCU --------------------------------------
+    UartLogicMcuE : entity work.UartLogic
+        port map (
+            clk                      => clkGlobal,
+            rst                      => '0',
+            rxFpgaxDI                => rxUartMcuxDI,
+            txFpgaxDO                => txUartMcuxDO,
+            voltageChangeIntervalxDI => voltageChangeIntervalxDO,
+            voltageChangeRdyxDI      => voltageChangeRdyxDO,
 
-            led_g => led_g
+            addressxDO   => registerFileAddressMcu,
+            dataxDO      => registerFileDataMcu,
+            dataValidxDO => registerFileDataValidMcu
     );
 
     ------------------------- CONFIG REGISTER FILE -----------------------------
@@ -303,24 +325,16 @@ begin
             dataValidxDI => registerFileDataValid
     );
 
+    -- Arbitration logic to merge the signals coming from the UARTs
+    registerFileAddress <= registerFileAddressUsb when registerFileDataValidUsb = '1' else
+                           registerFileAddressMcu when registerFileDataValidMcu = '1' else
+                           (others => '0');
 
+    registerFileData <= registerFileDataUsb when registerFileDataValidUsb = '1' else
+                        registerFileDataMcu when registerFileDataValidMcu = '1' else
+                        (others => '0');
 
-    -------------------------- DEBUG -------------------------------------------
-    process(clkGlobal)
-        variable cnt : integer := 0;
-    begin
-        if rising_edge(clkGlobal) then
-            cnt := cnt + 1;
-            if cnt = 100000000 then
-                debug <= '1';
-                cnt := 0;
-            else 
-                debug <= '0';
-            end if; 
-        end if;
-    end process;
+    registerFileDataValid <= registerFileDataValidUsb or registerFileDataValidMcu;
 
-    led_b <= '1';
-    led_r <= '1';
 
 end architecture rtl;

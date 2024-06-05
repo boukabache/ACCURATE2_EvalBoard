@@ -7,7 +7,8 @@
 ## Clock (35 eval, 20 lattice)
 set_io clkInxDI 35
 ## Clock frequency constraints
-set_frequency clkGlobal 20
+# WARNING: Use only lower cases for the net names
+set_frequency clkglobal 20
 set_frequency clk100 100
 
 ## Reset
@@ -17,9 +18,13 @@ set_frequency clk100 100
 set_io -pullup yes fpga_sdaxDIO 36 
 set_io -pullup yes fpga_sclxDIO 43
 
-## UART interface
-set_io tx_fpgaxDO 42
-set_io rx_fpgaxDI 38
+## UART interface: FPGA - USB
+set_io txUartUsbxDO 42
+set_io rxUartUsbxDI 38
+
+## UART interface: FPGA - MCU
+set_io txUartMcuxDO 18
+set_io rxUartMcuxDI 19
 
 ## ACCURATE Charge Pumps control
 # Low CP
@@ -45,9 +50,9 @@ set_io vTh4NxDI 25
 set_io resetOTAxDO 34
 
 # RGB led
-set_io led_r 41
-set_io led_g 40
-set_io led_b 39
+# set_io led_r 41
+# set_io led_g 40
+# set_io led_b 39
 
 
 # Debug
