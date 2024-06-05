@@ -12,7 +12,7 @@ The FPGA used is a Lattice iCE40 iCE5LP4k chip (SG48 package) mounted on a custo
 - **ACCURATE**: The AccurateWrapper receive the configuration data from the register file and the sampling tempo from the window generator. It drives the ASIC and forward to UartLogic the amount of charge counted in the last interval (in LSBs).
 - **DAC**: Sets the reference voltages used internally by ACCURATE. It is programmed via I2C using default values at startup. The values are update during operations as soon as the register file receive new values.
 - **Register file**: Contains the configuration registers for the DAC and ACCURATE. Default values are hardcoded and utilised during startup. During operations new values can be sent via UART interface.
-- **UART**: In charge of sending the ACCURATE output to the external world and receiving new configuration data from the user.
+- **UART**: In charge of sending the ACCURATE output to the external world and receiving new configuration data from the user. It is actually duplicated, to allow communication between FPGA-USB and FPGA-MCU.‡˚
 
 ### Block diagram of the internal logic:
 
