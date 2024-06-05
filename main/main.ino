@@ -7,6 +7,7 @@
 #include "ssd1306.h"
 #include "fpga.h"
 #include "config.h"
+#include "ltc2471.h"
 
 void setup() {
     Serial.begin(9600);
@@ -18,6 +19,8 @@ void setup() {
     while (!Serial1) {
         ;
     }
+
+    Wire.begin();
 
     // Init LEDs and buttons and set LEDs to off
     pinMode(PIN_BUTTON, INPUT_PULLUP);
@@ -36,8 +39,6 @@ void setup() {
 #ifdef DEBUG
     Serial.println("Debug mode is ON");
 #endif
-
-    Wire.begin();
 
     ssd1306_init();
     dac7578_init();
@@ -82,6 +83,10 @@ void loop() {
     // Write to computer using Serial in the format (current[A], temp, humidity, btnLedStatus(btn0,btn1,btn2,led0,led1,led2 in binary))
     String message = String(measuredCurrent.currentInFemtoAmpere) + "," + String(temp) + "," + String(humidity) + "," + btnLedStatus;
     Serial.println(message);
+
+    float voltage = ltc2471_read_voltage();
+    Serial.print("Voltage: ");
+    Serial.println(voltage, 6);  // Print voltage with 6 decimal places
     delay(100);
 }
 
