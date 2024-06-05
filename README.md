@@ -5,14 +5,14 @@
 This repo contains the VHDL code for the ACCURATE2 Evaluation Board.
 A ready to use Makefile is provided to compile the code, generate the bitstream and program the FPGA.
 
-The FPGA used is a Lattice iCE40 iCE5LP4k chip (SG48 package) mounted on a custom board. More informations abount the custom board, including schematics PCB layout and BOM, can be found [here](https://example.com). The code is written entirely in VHDL and compiled with the open source [`oss-cad-suite`](https://github.com/YosysHQ/oss-cad-suite-build?tab=readme-ov-file) toolchain. No proprietary tools or IPs are used.
+The FPGA used is a Lattice iCE40 iCE5LP4k chip (SG48 package) mounted on a custom board. More informations abount the custom board, including schematics PCB layout and BOM, can be found [here](https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_pcb). The code is written entirely in VHDL and compiled with the open source [`oss-cad-suite`](https://github.com/YosysHQ/oss-cad-suite-build?tab=readme-ov-file) toolchain. No proprietary tools or IPs are used.
 
 ### A brief explanation of the logic of the design:
 - **PLL**: Takes the clock coming from an external 100MHz oscillator and generates a 20MHz clock. The input clock is also forwarded to the output port as well.
 - **ACCURATE**: The AccurateWrapper receive the configuration data from the register file and the sampling tempo from the window generator. It drives the ASIC and forward to UartLogic the amount of charge counted in the last interval (in LSBs).
 - **DAC**: Sets the reference voltages used internally by ACCURATE. It is programmed via I2C using default values at startup. The values are update during operations as soon as the register file receive new values.
 - **Register file**: Contains the configuration registers for the DAC and ACCURATE. Default values are hardcoded and utilised during startup. During operations new values can be sent via UART interface.
-- **UART**: In charge of sending the ACCURATE output to the external world and receiving new configuration data from the user. It is actually duplicated, to allow communication between FPGA-USB and FPGA-MCU.‡˚
+- **UART**: In charge of sending the ACCURATE output to the external world and receiving new configuration data from the user. It is actually duplicated, to allow communication between FPGA-USB and FPGA-MCU.
 
 ### Block diagram of the internal logic:
 
