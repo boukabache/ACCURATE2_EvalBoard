@@ -19,6 +19,11 @@ entity i2cAdcLTC2471 is
         rst : in  std_logic;     --! Reset signal
 
 
+        -- Out port
+        adcDataOutxDO      : out std_logic_vector(15 downto 0); --! ADC data output
+        adcDataOutValidxDO : out std_logic; --! ADC data output valid
+
+
         -- i2cMaster
         lockAcquirexDO : out std_logic; --! Acquire master lock (no collision with DAC)
         lockAckxDI     : in  std_logic; --! i2c arbiter acknowledges the transmission     
@@ -61,6 +66,57 @@ architecture rtl of i2cADCLTC2471 is
 
 begin
 
-    
+
+    logicP: process (clk, rst)
+    begin
+        if rising_edge(clk) then
+            if (rst = '1')
+                -- TODO
+            else
+
+                case state is
+                    when IDLE_S =>
+                        lockAcquirexDO <= '1';
+                        if (lockAckxDI = '1' and busyxDI = '0') then
+                            startxDO <= '1';
+                            txDataxDO <= i2cTxData;
+                            state <= WRITE_S;
+                        end if;
+
+                    when WRITE_S =>
+                        if (ackxDI = '1') then
+                            state <= READ_1_S;
+                        end if;
+
+                    when READ_1_S =>
+                        if (ackxDI = '1') then
+                            i2cRxData(0) <= rxDataxDI;
+                            state <= READ_2_S;
+                        end if;
+
+                    when READ_2_S =>
+                        if (busyxDI = '0') then
+                            i2cRxData(1) <= rxDataxDI;
+                            lockAcquire <= '0';
+                            state <= IDLE_S;
+                        end if;
+
+                    when others =>
+                        state <= IDLE_S;
+                end case;
+
+
+            end if;
+        end if;
+    end process logicP;
+
+    -- Always sending 1 Byte: the address + R
+    txDataWLengthxDO <= std_logic_vector(to_unsigned(i2cTxDataWLength, txDataWLengthxDO'length));
+    -- Always reading 2 Bytes: the 16-bit result
+    rxDataWLengthxDO <= std_logic_vector(to_unsigned(i2cRxDataWLength, rxDataWLengthxDO'length));
+
+    -- Output the 16-bit result
+    adcDataOutxDO <= i2cRxData;
+    adcDataOutValidxDO <= '1' when state = READ_2_S else '0';
 
 end architecture;
