@@ -24,7 +24,7 @@ entity i2cDAC7578 is
         rst             : in  std_logic; --! Synchronous reset
 
         -- i2cMaster
-        lockAcquirexDO : out std_logic; --! Acquire master lock (no collision with sht21)
+        lockAcquirexDO : out std_logic; --! Acquire master lock (no collision with ADC)
         lockAckxDI     : in  std_logic; --! i2c arbiter acknowledges the transmission
 
         i2cStartxDO         : out std_logic; --! Enable i2c transmission
