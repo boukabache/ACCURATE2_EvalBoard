@@ -112,7 +112,7 @@ begin
     --------------------
     -- TX LOGIC
     --------------------
-    logicP: process(clk, rst)
+    txLogicP: process(clk, rst)
     begin
         if rising_edge(clk) then
             if rst = '1' then

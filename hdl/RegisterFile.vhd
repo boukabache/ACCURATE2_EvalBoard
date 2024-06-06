@@ -125,6 +125,7 @@ begin
 
     -- Required as without reset the configuration is not initialized
     accurateConfigxDO <= accurateRecordTDefault;
+    accurateConfigValidxDO <= '1';
     
 
 end architecture rtl;
