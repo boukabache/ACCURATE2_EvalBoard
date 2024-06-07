@@ -70,7 +70,7 @@ begin
     logicP: process (clk, rst)
     begin
         if rising_edge(clk) then
-            if (rst = '1')
+            if (rst = '1') then
                 -- TODO
             else
 

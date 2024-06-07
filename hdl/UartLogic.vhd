@@ -153,7 +153,7 @@ begin
                 end case;
             end if;
         end if;
-    end process logicP;
+    end process txLogicP;
 
     -- Write enable signal for the UART's TX FIFO
     fifoWriteEnxDN <= '1' when (state = SEND_S or state = SEND_HEADER_S) and fifoFull = '0'

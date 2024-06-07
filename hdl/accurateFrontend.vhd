@@ -43,10 +43,12 @@ use work.configPkg.all;
 --! For overflow-protected accumulation of charge
 use ieee.fixed_pkg.all;
 use work.customFixedUtilsPkg.all;
-
 use work.IOPkg.all;
 
 entity accurateFrontend is
+    generic (
+        lightweightG: std_logic := '1' -- If '1', cooldown logic is disabled to improve speeds.
+    );
     port (
         clk100 : in  std_logic; --! 100MHz ACCURATE clock
         rst    : in  std_logic; --! Synchronous reset
@@ -91,6 +93,10 @@ entity accurateFrontend is
 end entity accurateFrontend;
 
 architecture behavioral of accurateFrontend is
+    -- The following should not be necessary, but nesting if generate if for generate statement does not seem supported by GHDL
+    constant lightweightC : std_logic := lightweightG;
+    signal lightweight : std_logic;
+
     constant chargePumpNumberC : natural := 3;
 
     constant cooldownMaxWidthC : natural := 8;
@@ -175,9 +181,11 @@ begin
         configSafe.disableCP1 <= '0' when configxDI.disableCP2 = '1' and configxDI.disableCP3 = '1' else
                                  configxDI.disableCP1;
 
-        configSafe.cooldownMaxCP1 <= maximum(configxDI.cooldownMaxCP1, configxDI.cooldownMinCP1);
-        configSafe.cooldownMaxCP2 <= maximum(configxDI.cooldownMaxCP2, configxDI.cooldownMinCP2);
-        configSafe.cooldownMaxCP3 <= maximum(configxDI.cooldownMaxCP3, configxDI.cooldownMinCP3);
+        LIGTH1: if lightweightG = '0' then
+            configSafe.cooldownMaxCP1 <= maximum(configxDI.cooldownMaxCP1, configxDI.cooldownMinCP1);
+            configSafe.cooldownMaxCP2 <= maximum(configxDI.cooldownMaxCP2, configxDI.cooldownMinCP2);
+            configSafe.cooldownMaxCP3 <= maximum(configxDI.cooldownMaxCP3, configxDI.cooldownMinCP3);
+        end if;
     end process safeCycleP;
 
     cycleLength <= ufixed(configSafe.tCharge) + ufixed(configSafe.tInjection);
@@ -188,17 +196,19 @@ begin
     configCurrentxDN <= configCurrentxDP when (or_reduce(inPulsexDP)) else
                         configSafe;
 
-    cooldownMaxCurrentArray <= (
-        configCurrentxDP.cooldownMaxCP1,
-        configCurrentxDP.cooldownMaxCP2,
-        configCurrentxDP.cooldownMaxCP3
-    );
+    LIGHT2: if lightweightG = '0' generate
+        cooldownMaxCurrentArray <= (
+            configCurrentxDP.cooldownMaxCP1,
+            configCurrentxDP.cooldownMaxCP2,
+            configCurrentxDP.cooldownMaxCP3
+        );
 
-    cooldownMinCurrentArray <= (
-        configCurrentxDP.cooldownMinCP1,
-        configCurrentxDP.cooldownMinCP2,
-        configCurrentxDP.cooldownMinCP3
-    );
+        cooldownMinCurrentArray <= (
+            configCurrentxDP.cooldownMinCP1,
+            configCurrentxDP.cooldownMinCP2,
+            configCurrentxDP.cooldownMinCP3
+        );
+    end generate;
 
     compVthN(0) <= compN_2r(1); -- vTh2N
     compVthN(1) <= compN_2r(2); -- vTh3N
@@ -316,7 +326,7 @@ begin
                        (others => '0') when endCycle = '1' else
                        cycleCounterxDP + 1;
 
-    endCycle <= '1' when cycleCounterxDP >= unsigned(cycleLengthCurrentxDP - 1) else
+    endCycle <= '1' when cycleCounterxDP = unsigned(cycleLengthCurrentxDP - 1) else
                 '0';
 
     CP_CHANNEL : for I in 0 to chargePumpNumberC - 1 generate
@@ -326,20 +336,22 @@ begin
 
         -- Allow activation only if counter bigger than half the previous activation time (capped at cooldownMax)
         -- Second condition is here to ensure proper alignement
-        cooldown(I) <= '0' when cooldownCurrentDurationxDP(I) = 0 else
+        cooldown(I) <= '0' when lightweightG = '1' else
+                       '0' when cooldownCurrentDurationxDP(I) = 0 else
                        '0' when cooldownCounterxDP(I) = cooldownCurrentDurationxDP(I) and
                                 endCycle = '1' else
                        '1' when cooldownCounterxDP(I) <= cooldownCurrentDurationxDP(I) else
                        '0';
-
         -- Count number of injection/charge cycles since last activation, capped at cooldownMax
-        cooldownCounterxDN(I) <= to_unsigned(1, cooldownCounterxDN(I)) when startPulse(I) = '1' else
+        cooldownCounterxDN(I) <= (others => '0') when lightweightG = '1' else
+                                 to_unsigned(1, cooldownCounterxDN(I)) when startPulse(I) = '1' else
                                  -- Count when cycleCounter is wrapping up to keep activations aligned
                                  cooldownCounterxDP(I) + 1 when endCycle = '1' else
                                  cooldownCounterxDP(I);
 
         -- When starting an activation, save the counter value
-        cooldownCurrentDurationxDN(I) <= maximum(minimum(cooldownCounterxDP(I) / 2, cooldownMaxCurrentArray(I)),
+        cooldownCurrentDurationxDN(I) <= (others => '0') when lightweightG = '1' else
+                                         maximum(minimum(cooldownCounterxDP(I) / 2, cooldownMaxCurrentArray(I)),
                                                  cooldownMinCurrentArray(I)) when startPulse(I) = '1' else
                                          cooldownCurrentDurationxDP(I);
 

@@ -85,9 +85,9 @@ package IOPkg is
         --! As long as it is one, the switch short circuiting the output to the input of the OTA is closed
         resetOTA : std_logic;
         --! Time duration in clock cycles for recharge of the charge pump. 0 is automatically corrected to 1
-        tCharge : unsigned(8 - 1 downto 0);
+        tCharge : unsigned(4 - 1 downto 0);
         --! Time duration in clock cycles for activation (injection) of the charge pump. 0 is automatically corrected to 1
-        tInjection : unsigned(8 - 1 downto 0);
+        tInjection : unsigned(4 - 1 downto 0);
         --! Do not use first charge pump
         disableCP1 : std_logic;
         --! Do not use second charge pump
@@ -131,8 +131,8 @@ package IOPkg is
         cooldownMinCP3       => (others => '0'),
         cooldownMaxCP3       => (others => '0'),
         resetOTA             => '0',
-        tCharge              => x"07",
-        tInjection           => x"08",
+        tCharge              => x"7",
+        tInjection           => x"8",
         disableCP1           => '0',
         disableCP2           => '0',
         disableCP3           => '0',
