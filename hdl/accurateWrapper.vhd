@@ -99,43 +99,43 @@ begin
         end if;
     end process regP20;
 
-    -- accurateCDC_E : entity work.accurateCDC
-    --     port map (
-    --         clk20  => clk20,
-    --         clk100 => clk100,
-    --         rst    => rst,
+    accurateCDC_E : entity work.accurateCDC
+        port map (
+            clk20  => clk20,
+            clk100 => clk100,
+            rst    => rst,
 
-    --         windIntervalSysxDI => windIntervalxDI,
-    --         windIntervalAccxDO => windIntervalAcc,
+            windIntervalSysxDI => windIntervalxDI,
+            windIntervalAccxDO => windIntervalAcc,
 
-    --         voltageChangeIntervalSysxDO => voltageChangeIntervalSys,
-    --         voltageChangeIntervalAccxDI => voltageChangeIntervalAcc,
+            voltageChangeIntervalSysxDO => voltageChangeIntervalSys,
+            voltageChangeIntervalAccxDI => voltageChangeIntervalAcc,
 
-    --         voltageChangeRdySysxDO => voltageChangeRdyxDO,
-    --         voltageChangeRdyAccxDI => voltageChangeRdyAcc,
+            voltageChangeRdySysxDO => voltageChangeRdyxDO,
+            voltageChangeRdyAccxDI => voltageChangeRdyAcc,
 
-    --         accurateConfigSysxDI => configValidatedxDP,
-    --         accurateConfigAccxDO => configAcc
-    --     );
+            accurateConfigSysxDI => configValidatedxDP,
+            accurateConfigAccxDO => configAcc
+        );
 
-    -- voltageChangeIntervalxDO <= voltageChangeIntervalSys when previousCycleResetxDP = '0' else
-    --                             -- this is so that it's clear from the outside that the system is in reset, without
-    --                             -- needing to touch the ROMULUSlib (as this is just for prototype, for now...)
-    --                             largeVoltageSfixed;
+    voltageChangeIntervalxDO <= voltageChangeIntervalSys when previousCycleResetxDP = '0' else
+                                -- this is so that it's clear from the outside that the system is in reset, without
+                                -- needing to touch the ROMULUSlib (as this is just for prototype, for now...)
+                                largeVoltageSfixed;
 
-    -- -- The following uses the knowledge that ps2pl values only change on windInterval falling edge
-    -- previousCycleResetxDN <= '1' when windIntervalxDI = '1' and ps2plResetOTAxDI = '1' else
-    --                          '0' when windIntervalxDI = '1' and ps2plResetOTAxDI = '0' else
-    --                          previousCycleResetxDP;
+    -- The following uses the knowledge that ps2pl values only change on windInterval falling edge
+    previousCycleResetxDN <= '1' when windIntervalxDI = '1' and ps2plResetOTAxDI = '1' else
+                             '0' when windIntervalxDI = '1' and ps2plResetOTAxDI = '0' else
+                             previousCycleResetxDP;
 
     accurateFrontend_E : entity work.accurateFrontend
         port map (
             clk100 => clk100,
             rst => rst,
 
-            windIntervalxDI => windIntervalxDI,
-            voltageChangeIntervalxDO => voltageChangeIntervalxDO,
-            voltageChangeRdyxDO => voltageChangeRdyxDO,
+            windIntervalxDI => windIntervalAcc,
+            voltageChangeIntervalxDO => voltageChangeIntervalAcc,
+            voltageChangeRdyxDO => voltageChangeRdyAcc,
 
             enable100xDI => '1',
             vTh1_100xDO => open,
