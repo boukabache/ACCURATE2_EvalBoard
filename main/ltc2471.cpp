@@ -6,32 +6,32 @@
  */
 
 #include "LTC2471.h"
+#include <Arduino.h>
 
- // Function to configure the ADC
-void ltc2471_configure() {
-    Wire.beginTransmission(LTC2471_ADDRESS);
-    Wire.write(0xA0);  // Configuration byte: Enable, SPD=0 (208sps), SLP=0 (Nap mode)
-    Wire.endTransmission();
-}
-
-// Function to read ADC value
 uint16_t ltc2471_read() {
     uint16_t adcValue = 0;
 
     Wire.beginTransmission(LTC2471_ADDRESS);
-    Wire.endTransmission();
+    if (Wire.endTransmission() != 0) {
+        return adcValue;
+    }
 
-    Wire.requestFrom(LTC2471_ADDRESS, 2);  // Request 2 bytes from ADC
+    delay(10);
+
+    Wire.requestFrom(LTC2471_ADDRESS, LTC2471_RD_LEN);
     if (Wire.available() == 2) {
-        adcValue = Wire.read() << 8;  // Read MSB
-        adcValue |= Wire.read();      // Read LSB
+        adcValue = (Wire.read() << 8);  // Read MSB
+        adcValue |= Wire.read();        // Read LSB
+        Serial.println(adcValue);
     }
 
     return adcValue;
 }
 
-// Function to read ADC value and convert to voltage
+
 float ltc2471_read_voltage() {
     uint16_t adcValue = ltc2471_read();
-    return (adcValue / 65535.0) * 1.25;  // Convert ADC value to voltage
+    // Convert ADC value to voltage
+    float voltage = (adcValue * LTC2471_VREF) / LTC2471_RESOLUTION;
+    return voltage;
 }

@@ -12,10 +12,13 @@
 #include <Arduino.h>
 #include <Wire.h>
 
- // I2C address for LTC2471 or LTC2473
+ // I2C address for LTC2471 with A0 tied to GND
 #define LTC2471_ADDRESS 0x14 // Adjust according to A0 pin configuration (0x14 or 0x54)
 
-void ltc2471_configure();
+#define LTC2471_VREF 1.25  // Internal reference voltage is 1.25V
+#define LTC2471_RESOLUTION 65535  // 16-bit ADC resolution
+#define LTC2471_RD_LEN 2
+
 uint16_t ltc2471_read();
 float ltc2471_read_voltage();
 
