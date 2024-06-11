@@ -118,13 +118,13 @@ architecture behavioral of accurateFrontend is
     signal cycleCounterxDN : unsigned(cycleLength'left downto 0);
     signal windIntervalxDP : std_logic;
 
-    -- We substract 2 from voltageChangeIntervalxDO to ensure that no overflow
-    -- can occur during the addtion of each of the channels
     type chargeSumCPT is
         array (chargePumpNumberC - 1 downto 0) of
         sfixed(voltageChangeIntervalxDO'left - 2 downto voltageChangeIntervalxDO'right);
 
     signal chargeSumCPxDN, chargeSumCPxDP : chargeSumCPT;
+    signal chargeSumCPFinalBufferxDN, chargeSumCPFinalBufferxDP : chargeSumCPT;
+
     signal chargeSumNext : chargeSumCPT;
 
     type chargeQuantaCPT is
@@ -157,6 +157,9 @@ architecture behavioral of accurateFrontend is
 
     signal voltageChangeIntervalxDN : sfixed(voltageChangeRegLengthC - 1 downto 0);
     signal voltageChangeIntervalxDP : sfixed(voltageChangeRegLengthC - 1 downto 0);
+
+    signal voltageChangeIntervalPartialSumxDN : sfixed(voltageChangeRegLengthC - 1 downto 0);
+    signal voltageChangeIntervalPartialSumxDP : sfixed(voltageChangeRegLengthC - 1 downto 0);
 
     signal startPulse : std_logic_vector(chargePumpNumberC - 1 downto 0);
     signal inPulsexDN, inPulsexDP : std_logic_vector(chargePumpNumberC - 1 downto 0);
@@ -241,8 +244,6 @@ begin
                 cooldownCurrentDurationxDP <= (others => (others => '0'));
                 overflow_effectivexDP <= (others => '0');
 
-                inPulsexDP <= (others => '0');
-
                 configCurrentxDP <= accurateRecordTInit;
                 cycleLengthCurrentxDP <= (others => '0');
 
@@ -264,8 +265,6 @@ begin
 
                 cycleCounterxDP <= cycleCounterxDN;
 
-                inPulsexDP <= inPulsexDN;
-
                 voltageChangeIntervalxDP <= voltageChangeIntervalxDN;
                 overflow_effectivexDP <= overflow_effectivexDN;
 
@@ -279,6 +278,8 @@ begin
 
                 startPulsexDP <= startPulse;
 
+                chargeSumCPFinalBufferxDP <= chargeSumCPFinalBufferxDN;
+                voltageChangeIntervalPartialSumxDP <= voltageChangeIntervalPartialSumxDN;
             end if;
         end if;
     end process regP;
@@ -297,33 +298,38 @@ begin
                               -- Allow activation if not in pulse, or pulse available next cycle
                               ((or_reduce(inPulsexDP) = '0') or (endCycle = '1')) and
                               -- Do not activate if bigger charge pump is in cooldown
-                              cooldown(2) = '0' and cooldown(1) = '0' and cooldown(0) = '0' and
-                              -- Activate if no bigger charge pump can activate
-                              (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP3 = '1' or compVthN(2) = '1') and
-                              (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP2 = '1' or compVthN(1) = '1') and
+                              (lightweightG = '1' or (
+                                cooldown(2) = '0' and cooldown(1) = '0' and cooldown(0) = '0' and
+                                -- Activate if no bigger charge pump can activate
+                                (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP3 = '1' or compVthN(2) = '1') and
+                                (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP2 = '1' or compVthN(1) = '1')
+                              )) and
                               -- Activate if threshold is reached
                               compVthN(0) = '0' else
                      '0';
 
     startPulse(1) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP2 = '0' and
                               ((or_reduce(inPulsexDP) = '0') or (endCycle = '1')) and
-                              -- Do not activate if bigger charge pump is in cooldown
-                              cooldown(2) = '0' and cooldown(1) = '0' and
-                              -- Do not activate if bigger charge pump could activate
-                              (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP3 = '1' or compVthN(2) = '1') and
+                              (lightweightG = '1' or (
+                                -- Do not activate if bigger charge pump is in cooldown
+                                cooldown(2) = '0' and cooldown(1) = '0' and
+                                -- Do not activate if bigger charge pump could activate
+                                (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP3 = '1' or compVthN(2) = '1')
+                              )) and
                               -- Activate if threshold is reached
                               compVthN(1) = '0' else
                      '0';
 
     startPulse(2) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP3 = '0' and
                               ((or_reduce(inPulsexDP) = '0') or (endCycle = '1')) and
-                              cooldown(2) = '0' and compVthN(2) = '0' else
+                              (lightweightG = '1' or (cooldown(2) = '0')) and
+                              compVthN(2) = '0' else
                      '0';
 
     enableCPxDN <= inPulsexDP;
 
-    cycleCounterxDN <= (others => '0') when or_reduce(startPulse) = '1' else
-                       (others => '0') when endCycle = '1' else
+    cycleCounterxDN <= (others => '0') when endCycle = '1' else
+                       (others => '0') when or_reduce(startPulse) = '1' else
                        cycleCounterxDP + 1;
 
     endCycle <= '1' when cycleCounterxDP = unsigned(cycleLengthCurrentxDP - 1) else
@@ -355,6 +361,21 @@ begin
                                                  cooldownMinCurrentArray(I)) when startPulse(I) = '1' else
                                          cooldownCurrentDurationxDP(I);
 
+        -- We could win some time by using the following, but we are currently limited by the voltageChangeInterval computation
+        -- PIP_ADDER: entity work.pipelined_adder
+        --     generic map(
+        --         inputBitwidthG => 48,
+        --         stageBitwidthG => 16
+        --     )
+        --     port map (
+        --         clk => clk100,
+        --         rst => rst,
+        --         axDI => signed(resize(chargeSumCPxDP(I), 47, 0)),
+        --         bxDI => signed(resize(chargeQuantaCP(I), 47, 0)),
+        --         sfixed(sumxDO) => chargeSumNext(I),
+        --         overflowxDO => overflow_res(I)
+        --     );
+
         accumulate(L => chargeSumCPxDP(I),
                    R => chargeQuantaCP(I),
                    Result => chargeSumNext(I),
@@ -376,12 +397,43 @@ begin
                                     '1' when overflow_effectivexDP(I) = '0' else
                                     overflow_res(I);
 
+        chargeSumCPFinalBufferxDN(I) <= chargeSumCPxDP(I) when windIntervalxDI = '1' else
+                                        chargeSumCPFinalBufferxDP(I);
     end generate CP_CHANNEL;
 
-    voltageChangeIntervalxDN <= resize(chargeSumCPxDP(0) + chargeSumCPxDP(1) + chargeSumCPxDP(2),
-                                       voltageChangeIntervalxDN'left,
-                                       voltageChangeIntervalxDN'right) when windIntervalxDI = '1' else
-                                voltageChangeIntervalxDP;
+    PIP_ADDER: entity work.pipelined_adder
+        generic map(
+            inputBitwidthG => 48,
+            stageBitwidthG => 24
+        )
+        port map (
+            clk => clk100,
+            rst => rst,
+            axDI => signed(resize(chargeSumCPFinalBufferxDP(0), 47, 0)),
+            bxDI => signed(resize(chargeSumCPFinalBufferxDP(1), 47, 0)),
+            sfixed(sumxDO) => voltageChangeIntervalPartialSumxDN,
+            overflowxDO => open
+        );
+
+    PIP_ADDER22: entity work.pipelined_adder
+        generic map(
+            inputBitwidthG => 48,
+            stageBitwidthG => 24
+        )
+        port map (
+            clk => clk100,
+            rst => rst,
+            axDI => signed(resize(chargeSumCPFinalBufferxDP(2), 47, 0)),
+            bxDI => signed(resize(voltageChangeIntervalPartialSumxDP, 47, 0)),
+            sfixed(sumxDO) => voltageChangeIntervalxDO,
+            overflowxDO => open
+        );
+    -- voltageChangeIntervalxDN <= resize(chargeSumCPxDP(0) + chargeSumCPxDP(1) + chargeSumCPxDP(2),
+    --                                    voltageChangeIntervalxDN'left,
+    --                                    voltageChangeIntervalxDN'right) when windIntervalxDI = '1' else
+    --                             voltageChangeIntervalxDP;
+
+
 
     capClkxDN <= '1' when (or_reduce(inPulsexDP) = '1' and cycleCounterxDP < unsigned(configCurrentxDP.tInjection)) else
                  '0';
