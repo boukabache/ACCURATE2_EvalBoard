@@ -163,7 +163,7 @@ architecture behavioral of accurateFrontend is
 
     signal startPulse : std_logic_vector(chargePumpNumberC - 1 downto 0);
     signal inPulsexDN, inPulsexDP : std_logic_vector(chargePumpNumberC - 1 downto 0);
-    signal endCycle : std_logic;
+    signal endCyclexDN, endCyclexDP : std_logic;
 
     signal capClkxDP, capClkxDN : std_logic;
     signal enableCPxDP, enableCPxDN : std_logic_vector(chargePumpNumberC - 1 downto 0);
@@ -280,6 +280,7 @@ begin
 
                 chargeSumCPFinalBufferxDP <= chargeSumCPFinalBufferxDN;
                 voltageChangeIntervalPartialSumxDP <= voltageChangeIntervalPartialSumxDN;
+                endCyclexDP <= endCyclexDN;
             end if;
         end if;
     end process regP;
@@ -296,7 +297,7 @@ begin
     -- cp are not working (i.e: in cooldown).
     startPulse(0) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP1= '0' and
                               -- Allow activation if not in pulse, or pulse available next cycle
-                              ((or_reduce(inPulsexDP) = '0') or (endCycle = '1')) and
+                              ((or_reduce(inPulsexDP) = '0') or (endCyclexDP = '1')) and
                               -- Do not activate if bigger charge pump is in cooldown
                               (lightweightG = '1' or (
                                 cooldown(2) = '0' and cooldown(1) = '0' and cooldown(0) = '0' and
@@ -309,7 +310,7 @@ begin
                      '0';
 
     startPulse(1) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP2 = '0' and
-                              ((or_reduce(inPulsexDP) = '0') or (endCycle = '1')) and
+                              ((or_reduce(inPulsexDP) = '0') or (endCyclexDP = '1')) and
                               (lightweightG = '1' or (
                                 -- Do not activate if bigger charge pump is in cooldown
                                 cooldown(2) = '0' and cooldown(1) = '0' and
@@ -321,23 +322,23 @@ begin
                      '0';
 
     startPulse(2) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP3 = '0' and
-                              ((or_reduce(inPulsexDP) = '0') or (endCycle = '1')) and
+                              ((or_reduce(inPulsexDP) = '0') or (endCyclexDP = '1')) and
                               (lightweightG = '1' or (cooldown(2) = '0')) and
                               compVthN(2) = '0' else
                      '0';
 
     enableCPxDN <= inPulsexDP;
 
-    cycleCounterxDN <= (others => '0') when endCycle = '1' else
+    cycleCounterxDN <= (others => '0') when endCyclexDP = '1' else
                        (others => '0') when or_reduce(startPulse) = '1' else
                        cycleCounterxDP + 1;
 
-    endCycle <= '1' when cycleCounterxDP = unsigned(cycleLengthCurrentxDP - 1) else
+    endCyclexDN <= '1' when cycleCounterxDP = unsigned(cycleLengthCurrentxDP - 2) else
                 '0';
 
     CP_CHANNEL : for I in 0 to chargePumpNumberC - 1 generate
         inPulsexDN(I) <= '1' when startPulse(I) = '1' else
-                         '0' when endCycle = '1' else
+                         '0' when endCyclexDP = '1' else
                          inPulsexDP(I);
 
         -- Allow activation only if counter bigger than half the previous activation time (capped at cooldownMax)
@@ -345,14 +346,14 @@ begin
         cooldown(I) <= '0' when lightweightG = '1' else
                        '0' when cooldownCurrentDurationxDP(I) = 0 else
                        '0' when cooldownCounterxDP(I) = cooldownCurrentDurationxDP(I) and
-                                endCycle = '1' else
+                                endCyclexDP = '1' else
                        '1' when cooldownCounterxDP(I) <= cooldownCurrentDurationxDP(I) else
                        '0';
         -- Count number of injection/charge cycles since last activation, capped at cooldownMax
         cooldownCounterxDN(I) <= (others => '0') when lightweightG = '1' else
                                  to_unsigned(1, cooldownCounterxDN(I)) when startPulse(I) = '1' else
                                  -- Count when cycleCounter is wrapping up to keep activations aligned
-                                 cooldownCounterxDP(I) + 1 when endCycle = '1' else
+                                 cooldownCounterxDP(I) + 1 when endCyclexDP = '1' else
                                  cooldownCounterxDP(I);
 
         -- When starting an activation, save the counter value
@@ -364,22 +365,22 @@ begin
         -- We could win some time by using the following, but we are currently limited by the voltageChangeInterval computation
         -- PIP_ADDER: entity work.pipelined_adder
         --     generic map(
-        --         inputBitwidthG => 48,
-        --         stageBitwidthG => 16
+        --         inputBitwidthG => 46,
+        --         stageBitwidthG => 23
         --     )
         --     port map (
         --         clk => clk100,
         --         rst => rst,
-        --         axDI => signed(resize(chargeSumCPxDP(I), 47, 0)),
-        --         bxDI => signed(resize(chargeQuantaCP(I), 47, 0)),
+        --         axDI => signed(resize(chargeSumCPxDP(I), 45, 0)),
+        --         bxDI => signed(resize(chargeQuantaCP(I), 45, 0)),
         --         sfixed(sumxDO) => chargeSumNext(I),
         --         overflowxDO => overflow_res(I)
         --     );
 
-        accumulate(L => chargeSumCPxDP(I),
-                   R => chargeQuantaCP(I),
-                   Result => chargeSumNext(I),
-                   overflow => overflow_res(I));
+         accumulate(L => chargeSumCPxDP(I),
+                    R => chargeQuantaCP(I),
+                    Result => chargeSumNext(I),
+                    overflow => overflow_res(I));
 
         -- Compute voltage sums. They are reset every time new data is pushed to
         -- the processing blocks. Corner case: a cp activation happens at the same
@@ -404,7 +405,7 @@ begin
     PIP_ADDER: entity work.pipelined_adder
         generic map(
             inputBitwidthG => 48,
-            stageBitwidthG => 24
+            stageBitwidthG => 12
         )
         port map (
             clk => clk100,
@@ -418,7 +419,7 @@ begin
     PIP_ADDER22: entity work.pipelined_adder
         generic map(
             inputBitwidthG => 48,
-            stageBitwidthG => 24
+            stageBitwidthG => 12
         )
         port map (
             clk => clk100,
@@ -433,8 +434,6 @@ begin
     --                                    voltageChangeIntervalxDN'right) when windIntervalxDI = '1' else
     --                             voltageChangeIntervalxDP;
 
-
-
     capClkxDN <= '1' when (or_reduce(inPulsexDP) = '1' and cycleCounterxDP < unsigned(configCurrentxDP.tInjection)) else
                  '0';
 
@@ -444,6 +443,9 @@ begin
     voltageChangeRdyxDO      <= windIntervalxDP;
     overflowErrorxDO <= or_reduce(overflow_effectivexDP);
 
+
+    -- FIXME: Delay to correct?
+    -- FIXME: Why extra register between enableCP and inPulsexDP?
     enableCP1xDO <= enableCPxDP(0);
     enableCP2xDO <= enableCPxDP(1);
     enableCP3xDO <= enableCPxDP(2);
