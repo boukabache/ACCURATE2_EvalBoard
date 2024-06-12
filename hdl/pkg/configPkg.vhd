@@ -40,7 +40,7 @@ package configPkg is
     --! Dimension of RegisterFile
     constant registerFileAddressWidthC   : natural := 8;
     constant registerFileDataWidthC      : natural := 32;
-   
+
     ------------------------ FSM Safe State -----------------------------------
     --! String for safe state attribute. Provides Hamming 3 encoding on state
     --! machines to recover from SEUs to state machine stage registers
