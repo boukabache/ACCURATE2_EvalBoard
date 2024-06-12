@@ -36,7 +36,7 @@ package configPkg is
 
     -------------------- Register Length Configuration ------------------------
     --! Length of register required to store the voltage sum data
-    constant voltageChangeRegLengthC    : natural := 39;
+    constant voltageChangeRegLengthC    : natural := 48;
     --! Dimension of RegisterFile
     constant registerFileAddressWidthC   : natural := 8;
     constant registerFileDataWidthC      : natural := 32;
