@@ -68,8 +68,11 @@ entity TopLevel is
         --! Enable med current charge pump. Must by synchronous with cap_clk
         enableCP2xDO : out std_logic;
         --! Enable high current charge pump. Must by synchronous with cap_clk
-        enableCP3xDO : out std_logic
+        enableCP3xDO : out std_logic;
         -- END ACCURATE interface
+
+
+        debug_0 : out std_logic
 
     );
 end entity TopLevel;
@@ -81,8 +84,9 @@ architecture rtl of TopLevel is
 
 
     -- Global clock
-    signal clkGlobal : std_logic;
+    signal clkGlobal : std_logic := '0';
     signal clk100    : std_logic;
+    signal clk40     : std_logic;
     ----------------------
     
 
@@ -142,22 +146,30 @@ architecture rtl of TopLevel is
 begin
     -------------------------- PHASE LOCKED LOOP ------------------------------------
     -- From: 100MHz
-    -- To:   20MHz
+    -- To:   40MHz
     pllE: entity work.pll
         generic map (
             -- Values obtained from the icepll tool
             DIVR_G => "0100",
             DIVF_G => "0011111",
-            DIVQ_G => "101",
+            DIVQ_G => "100",
             FILTER_RANGE_G => "010"
         )
         port map (
             clkInxDI        => clkInxDI,  -- 100MHz
             clkInForwardxDO => clk100,    -- 100MHz (forward of input clock)
-            clkOutxDO       => clkGlobal  -- 20MHz
+            clkOutxDO       => clk40      -- 40MHz
     );
 
-    -- debug_0 <= clkGlobal; -- TODO check the new values from the icepll tool
+    -- Clock divider to generate 20MHz clock
+    clockDivP: process(clk40)
+    begin
+        if rising_edge(clk40) then
+            clkGlobal <= not clkGlobal;
+        end if;
+    end process;
+
+    debug_0 <= clkGlobal;
 
 
     -------------------------- I2C MASTER ------------------------------------
@@ -227,7 +239,7 @@ begin
     accurateWrapperE : entity work.accurateWrapper
         port map (
             clk20  => clkGlobal,
-            clk100 => clk100,
+            clk100 => clk40, -- 40 MHz to respect timing constraints
             rst => '0',
 
             -- Sampling time, coming from window generator

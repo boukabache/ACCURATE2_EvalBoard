@@ -10,6 +10,7 @@ set_io clkInxDI 35
 # WARNING: Use only lower cases for the net names
 set_frequency clkglobal 20
 set_frequency clk100 100
+set_frequency clk40 40
 
 ## Reset
 # No reset button on the current version of the evaluation board
@@ -57,4 +58,4 @@ set_io resetOTAxDO 34
 
 # Debug
 # IOB_0
-# set_io debug_0 46
+set_io debug_0 46
