@@ -17,6 +17,9 @@ struct CurrentMeasurement {
 #define DOWNSCALING_FACTOR 10E14
 const float Cf = 5e-12 * DOWNSCALING_FACTOR;
 
+// FPGA Settings
+#define FPGA_CALCULATE_AVERAGE 1 // Set to 1 to enable average current calculation, 0 for instantaneous current only
+
 // DAC Settings
 const float VBIAS1_DEC = 1.6;
 const float VBIAS2_DEC = 2.5;

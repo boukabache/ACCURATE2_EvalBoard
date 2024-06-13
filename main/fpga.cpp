@@ -7,73 +7,62 @@
 
 #include "fpga.h"
 
+float accumulatedCurrent = 0;
+int measurementCount = 0;
+
 CurrentMeasurement fpga_read() {
-    if (Serial1.available() < 4 * 7) {
-        // Return a measurement indicating no device available
+    if (Serial1.available() < 6) {
         CurrentMeasurement noDeviceMeasurement;
         noDeviceMeasurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
         noDeviceMeasurement.convertedCurrent = std::nan("1");
         noDeviceMeasurement.range = "Error";
+
         return noDeviceMeasurement;
     }
 
-    while (Serial1.available() >= 4 * 7) {
-        uint32_t data[7];
-        String dataString = "";
-
-        for (int i = 0; i < 7; i++) {
-            data[i] = fpga_read_UInt32();
-#ifdef DEBUG
-            dataString += " Data[" + String(i) + "]: " + String(data[i], HEX);
-#endif
+    while (Serial1.available() >= 6) {
+        if (Serial1.read() != 0xDD) {
+            continue;
+        }
+        uint8_t dataBytes[5];
+        for (int i = 0; i < 5; i++) {
+            dataBytes[i] = Serial1.read();
         }
 
-        if (data[6] == 0x5A) { // Stop bit
-            float readCurrent = fpga_calc_current_ch_inj(data[1], data[2], data[3]);
-            CurrentMeasurement measurement = fpga_format_current(readCurrent);
-#ifdef DEBUG
-            Serial.print(dataString + " - OK");
-            Serial.print(" - Measured Current: ");
-            Serial.print(measurement.convertedCurrent);
-            Serial.print(" ");
-            Serial.println(measurement.range);
-#endif
-            return measurement;
+        uint64_t data = 0;
+        for (int i = 0; i < 5; i++) {
+            data |= ((uint64_t)dataBytes[i] << (8 * i));
         }
-        else {
-#ifdef DEBUG
-            Serial.println(dataString + " - Error");
-#endif
-            fpga_attempt_resynchronization();
 
-            // Return a measurement indicating an error
-            CurrentMeasurement errorMeasurement;
-            errorMeasurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
-            errorMeasurement.convertedCurrent = std::nan("1");
-            errorMeasurement.range = "Error";
-            return errorMeasurement;
+        float readCurrent = fpga_calc_current(data, DEFAULT_LSB, DEFAULT_PERIOD);
+
+        if (FPGA_CALCULATE_AVERAGE) {
+            accumulatedCurrent += readCurrent;
+            measurementCount++;
         }
+
+        float finalCurrent = FPGA_CALCULATE_AVERAGE ? accumulatedCurrent / measurementCount : readCurrent;
+        CurrentMeasurement measurement = fpga_format_current(finalCurrent);
+
+#ifdef DEBUG
+        Serial.print("Data: 0x");
+        for (int i = 4; i >= 0; i--) {
+            Serial.print(dataBytes[i], HEX);
+        }
+        Serial.print(" - Measured Current: ");
+        Serial.print(measurement.convertedCurrent);
+        Serial.print(" ");
+        Serial.println(measurement.range);
+#endif
+        return measurement;
     }
-}
 
-void fpga_attempt_resynchronization() {
-    bool foundMarker = false;
-    while (Serial1.available() && !foundMarker) {
-        if (Serial1.peek() == 0x5A) {
-            if (Serial1.available() >= 4 * 6) {
-                foundMarker = true;
-                // Discard bytes up to the marker, effectively starting from the next packet in the next loop iteration
-                for (int i = 0; i < 4; i++) Serial1.read(); // Discard the bytes of the misaligned 0x5A
-            }
-            else {
-                // Not enough data for a full packet; break to avoid blocking
-                break;
-            }
-        }
-        else {
-            Serial1.read(); // Discard the current byte and move to the next one
-        }
-    }
+    // Return a measurement indicating an error
+    CurrentMeasurement errorMeasurement;
+    errorMeasurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
+    errorMeasurement.convertedCurrent = std::nan("1");
+    errorMeasurement.range = "Error";
+    return errorMeasurement;
 }
 
 void fpga_send_configurations() {
@@ -133,12 +122,10 @@ void fpga_send_configurations() {
 
 #ifdef DEBUG
     Serial.println("VTH Sent");
-    sendParam(INIT_CONFIG_ADDRESS, INIT_CONFIG_START);
     Serial.println("Configuration sent");
     Serial.println("");
 #endif
 }
-
 
 uint32_t fpga_convert_volt_to_DAC(float voltage) {
     return static_cast<uint32_t>(round((voltage * ADC_RESOLUTION_ACCURATE) / REF_VOLTAGE));
@@ -149,38 +136,18 @@ uint32_t fpga_calculate_gate_len() {
     return gate;
 }
 
-float fpga_calc_current_dir_slope(uint32_t data0, uint32_t data4) {
-    // Extract the last nibble (4 bits) from data4
-    uint32_t lastHexDigitOfData5 = data4 & 0xF;
+float fpga_calc_current(uint64_t data, float lsb, int period) {
+    float charge = data * lsb;
+    float attoCurrent = charge / (period * 1e-6);
+    float femtoCurrent = attoCurrent * 1e-6;
 
-    // Combine data0 and the last nibble of data4 to form interval1_count
-    uint32_t interval1_count = (data0 << 4) | lastHexDigitOfData5;
-
-    float current_dir_slope;
-    if (interval1_count == 0) {
-        current_dir_slope = 0;
-    }
-    else {
-        current_dir_slope = Cf * VINT1 * 1e8 / interval1_count;
-    }
-
-    return current_dir_slope;
-}
-
-float fpga_calc_current_ch_inj(uint32_t data1, uint32_t data2, uint32_t data3) {
-    float current_low = static_cast<float>(data1) * Qref1 / TW;
-    float current_medium = static_cast<float>(data2) * Qref2 / TW;
-    float current_high = static_cast<float>(data3) * Qref3 / TW;
-
-    float current_ch_inj = current_low + current_medium + current_high;
-    return current_ch_inj;
+    return femtoCurrent;
 }
 
 CurrentMeasurement fpga_format_current(float currentInFemtoAmperes) {
     CurrentMeasurement measurement;
-    measurement.currentInFemtoAmpere = currentInFemtoAmperes; // Store the original value in fA
+    measurement.currentInFemtoAmpere = currentInFemtoAmperes;
 
-    // Convert the current and determine the range
     if (currentInFemtoAmperes < 1000) {
         measurement.convertedCurrent = currentInFemtoAmperes;
         measurement.range = "fA";
@@ -199,15 +166,6 @@ CurrentMeasurement fpga_format_current(float currentInFemtoAmperes) {
     }
 
     return measurement;
-}
-
-uint32_t fpga_read_UInt32() {
-    uint32_t value = 0;
-    value |= ((uint32_t)Serial1.read()) << 0;
-    value |= ((uint32_t)Serial1.read()) << 8;
-    value |= ((uint32_t)Serial1.read()) << 16;
-    value |= ((uint32_t)Serial1.read()) << 24;
-    return value;
 }
 
 void fpga_send_parameters(uint8_t address, uint32_t value) {
