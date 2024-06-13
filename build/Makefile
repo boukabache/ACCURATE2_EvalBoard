@@ -65,4 +65,4 @@ all-ps: all prog-s
 # -g (before -m) is to print also debug messages
 show:
 	@echo "Converting GHDL to JSON"
-	@yosys -m ghdl -p 'ghdl $(VHDL_FILES) -e $(TOP_MODULE); synth_ice40 -json $(JSON_FILE); show'
+	@yosys -m ghdl -p 'ghdl --no-formal $(GHDLFLAGS) $(VHDL_FILES) -e $(TOP_MODULE); synth_ice40 -json $(JSON_FILE); show'

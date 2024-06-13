@@ -43,10 +43,12 @@ use work.configPkg.all;
 --! For overflow-protected accumulation of charge
 use ieee.fixed_pkg.all;
 use work.customFixedUtilsPkg.all;
-
-use work.IOPkg.all;
+use work.IOpkg.all;
 
 entity accurateFrontend is
+    generic (
+        lightweightG: std_logic := '1' -- If '1', cooldown logic is disabled to improve speeds.
+    );
     port (
         clk100 : in  std_logic; --! 100MHz ACCURATE clock
         rst    : in  std_logic; --! Synchronous reset
@@ -91,6 +93,10 @@ entity accurateFrontend is
 end entity accurateFrontend;
 
 architecture behavioral of accurateFrontend is
+    -- The following should not be necessary, but nesting if generate if for generate statement does not seem supported by GHDL
+    constant lightweightC : std_logic := lightweightG;
+    signal lightweight : std_logic;
+
     constant chargePumpNumberC : natural := 3;
 
     constant cooldownMaxWidthC : natural := 8;
@@ -110,15 +116,22 @@ architecture behavioral of accurateFrontend is
 
     signal cycleCounterxDP : unsigned(cycleLength'left downto 0);
     signal cycleCounterxDN : unsigned(cycleLength'left downto 0);
-    signal windIntervalxDP : std_logic;
 
-    -- We substract 2 from voltageChangeIntervalxDO to ensure that no overflow
-    -- can occur during the addtion of each of the channels
+    signal cycleCounterFuturexDP : unsigned(cycleLength'left downto 0);
+    signal cycleCounterFuturexDN : unsigned(cycleLength'left downto 0);
+
+    -- Delayed signal of windIntervalxDI, used to produce voltageChangeRdyxDO.
+    -- Its width is 1+processing delay. The processing delay comes from the pipelined addition
+    -- of the partial charge sums.
+    signal windIntervalxDP : std_logic_vector(9 downto 0);
+
     type chargeSumCPT is
         array (chargePumpNumberC - 1 downto 0) of
-        sfixed(voltageChangeIntervalxDO'left - 2 downto voltageChangeIntervalxDO'right);
+        sfixed(voltageChangeIntervalxDO'left downto voltageChangeIntervalxDO'right);
 
     signal chargeSumCPxDN, chargeSumCPxDP : chargeSumCPT;
+    signal chargeSumCPFinalBufferxDN, chargeSumCPFinalBufferxDP : chargeSumCPT := (others => (others => '0'));
+
     signal chargeSumNext : chargeSumCPT;
 
     type chargeQuantaCPT is
@@ -152,13 +165,16 @@ architecture behavioral of accurateFrontend is
     signal voltageChangeIntervalxDN : sfixed(voltageChangeRegLengthC - 1 downto 0);
     signal voltageChangeIntervalxDP : sfixed(voltageChangeRegLengthC - 1 downto 0);
 
-    signal startPulse : std_logic_vector(chargePumpNumberC - 1 downto 0);
+    signal voltageChangeIntervalPartialSumxDN : sfixed(voltageChangeRegLengthC - 1 downto 0) := (others => '0');
+    signal voltageChangeIntervalPartialSumxDP : sfixed(voltageChangeRegLengthC - 1 downto 0) := (others => '0');
+
+    signal startPulseNextCycle : std_logic_vector(chargePumpNumberC - 1 downto 0);
     signal inPulsexDN, inPulsexDP : std_logic_vector(chargePumpNumberC - 1 downto 0);
-    signal endCycle : std_logic;
+    signal endCyclexDN, endCyclexDP : std_logic;
 
     signal capClkxDP, capClkxDN : std_logic;
     signal enableCPxDP, enableCPxDN : std_logic_vector(chargePumpNumberC - 1 downto 0);
-    signal startPulsexDP : std_logic_vector(chargePumpNumberC - 1 downto 0);
+    signal startPulseNextCyclexDP : std_logic_vector(chargePumpNumberC - 1 downto 0);
 
 begin
 
@@ -175,30 +191,34 @@ begin
         configSafe.disableCP1 <= '0' when configxDI.disableCP2 = '1' and configxDI.disableCP3 = '1' else
                                  configxDI.disableCP1;
 
-        configSafe.cooldownMaxCP1 <= maximum(configxDI.cooldownMaxCP1, configxDI.cooldownMinCP1);
-        configSafe.cooldownMaxCP2 <= maximum(configxDI.cooldownMaxCP2, configxDI.cooldownMinCP2);
-        configSafe.cooldownMaxCP3 <= maximum(configxDI.cooldownMaxCP3, configxDI.cooldownMinCP3);
+        LIGTH1: if lightweightG = '0' then
+            configSafe.cooldownMaxCP1 <= maximum(configxDI.cooldownMaxCP1, configxDI.cooldownMinCP1);
+            configSafe.cooldownMaxCP2 <= maximum(configxDI.cooldownMaxCP2, configxDI.cooldownMinCP2);
+            configSafe.cooldownMaxCP3 <= maximum(configxDI.cooldownMaxCP3, configxDI.cooldownMinCP3);
+        end if;
     end process safeCycleP;
 
     cycleLength <= ufixed(configSafe.tCharge) + ufixed(configSafe.tInjection);
 
-    cycleLengthCurrentxDN <= cycleLength when (or_reduce(startPulse)) else
+    cycleLengthCurrentxDN <= cycleLength when (or_reduce(startPulseNextCycle)) else
                              cycleLengthCurrentxDP;
 
     configCurrentxDN <= configCurrentxDP when (or_reduce(inPulsexDP)) else
                         configSafe;
 
-    cooldownMaxCurrentArray <= (
-        configCurrentxDP.cooldownMaxCP1,
-        configCurrentxDP.cooldownMaxCP2,
-        configCurrentxDP.cooldownMaxCP3
-    );
+    LIGHT2: if lightweightG = '0' generate
+        cooldownMaxCurrentArray <= (
+            configCurrentxDP.cooldownMaxCP1,
+            configCurrentxDP.cooldownMaxCP2,
+            configCurrentxDP.cooldownMaxCP3
+        );
 
-    cooldownMinCurrentArray <= (
-        configCurrentxDP.cooldownMinCP1,
-        configCurrentxDP.cooldownMinCP2,
-        configCurrentxDP.cooldownMinCP3
-    );
+        cooldownMinCurrentArray <= (
+            configCurrentxDP.cooldownMinCP1,
+            configCurrentxDP.cooldownMinCP2,
+            configCurrentxDP.cooldownMinCP3
+        );
+    end generate;
 
     compVthN(0) <= compN_2r(1); -- vTh2N
     compVthN(1) <= compN_2r(2); -- vTh3N
@@ -213,7 +233,7 @@ begin
     begin
         if rising_edge(clk100) then
             if (rst = '1') then
-                windIntervalxDP <= '0';
+                windIntervalxDP <= (others => '0');
 
                 -- 2 FF Synchronizer
                 compN_r  <= (others => '1');
@@ -231,18 +251,16 @@ begin
                 cooldownCurrentDurationxDP <= (others => (others => '0'));
                 overflow_effectivexDP <= (others => '0');
 
-                inPulsexDP <= (others => '0');
-
                 configCurrentxDP <= accurateRecordTInit;
                 cycleLengthCurrentxDP <= (others => '0');
 
                 capClkxDP <= '0';
                 enableCPxDP <= (others => '0');
 
-                startPulsexDP <= (others => '0');
+                startPulseNextCyclexDP <= (others => '0');
 
             else
-                windIntervalxDP <= windIntervalxDI;
+                windIntervalxDP <= windIntervalxDP(windIntervalxDP'left - 1 downto windIntervalxDP'right) & windIntervalxDI;
                 -- 2 FF Synchronizer
                 compN_r <= vTh4NxDI & vTh3NxDI & vTh2NxDI & vTh1NxDI;
                 compN_2r <= compN_r;
@@ -253,8 +271,7 @@ begin
                 chargeSumCPxDP <= chargeSumCPxDN;
 
                 cycleCounterxDP <= cycleCounterxDN;
-
-                inPulsexDP <= inPulsexDN;
+                cycleCounterFuturexDP <= cycleCounterFuturexDN;
 
                 voltageChangeIntervalxDP <= voltageChangeIntervalxDN;
                 overflow_effectivexDP <= overflow_effectivexDN;
@@ -267,8 +284,11 @@ begin
                 capClkxDP <= capClkxDN;
                 enableCPxDP <= enableCPxDN;
 
-                startPulsexDP <= startPulse;
+                startPulseNextCyclexDP <= startPulseNextCycle;
 
+                chargeSumCPFinalBufferxDP <= chargeSumCPFinalBufferxDN;
+                voltageChangeIntervalPartialSumxDP <= voltageChangeIntervalPartialSumxDN;
+                endCyclexDP <= endCyclexDN;
             end if;
         end if;
     end process regP;
@@ -278,75 +298,98 @@ begin
     -- whereas other are hard (necessary for proper function). Hard rules are:
     -- * Do not enable if the module is disabled (enable100xDI = '0')
     -- * Do not enable if a full injection/charge cycle is not completed
-    --   /!\ startPulse is combinatorial -> no - 1 when comparing with
+    --   /!\ startPulseNextCycle is combinatorial -> no - 1 when comparing with
     --   cycleCounter.
     -- The rest are soft rules that can be played with.
     -- Currently, a charge pump is allowed to discharge only if higher value
     -- cp are not working (i.e: in cooldown).
-    startPulse(0) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP1= '0' and
-                              -- Allow activation if not in pulse, or pulse available next cycle
-                              ((or_reduce(inPulsexDP) = '0') or (endCycle = '1')) and
-                              -- Do not activate if bigger charge pump is in cooldown
-                              cooldown(2) = '0' and cooldown(1) = '0' and cooldown(0) = '0' and
-                              -- Activate if no bigger charge pump can activate
-                              (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP3 = '1' or compVthN(2) = '1') and
-                              (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP2 = '1' or compVthN(1) = '1') and
-                              -- Activate if threshold is reached
-                              compVthN(0) = '0' else
+    startPulseNextCycle(0) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP1= '0' and
+                                        -- Allow activation if not in pulse, or pulse available next cycle
+                                        ((or_reduce(inPulsexDP) = '0') or (endCyclexDP = '1')) and
+                                        -- Do not activate if bigger charge pump is in cooldown
+                                        (lightweightG = '1' or (
+                                          cooldown(2) = '0' and cooldown(1) = '0' and cooldown(0) = '0' and
+                                          -- Activate if no bigger charge pump can activate
+                                          (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP3 = '1' or compVthN(2) = '1') and
+                                          (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP2 = '1' or compVthN(1) = '1')
+                                        )) and
+                                        -- Activate if threshold is reached
+                                        compVthN(0) = '0' else
                      '0';
 
-    startPulse(1) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP2 = '0' and
-                              ((or_reduce(inPulsexDP) = '0') or (endCycle = '1')) and
-                              -- Do not activate if bigger charge pump is in cooldown
-                              cooldown(2) = '0' and cooldown(1) = '0' and
-                              -- Do not activate if bigger charge pump could activate
-                              (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP3 = '1' or compVthN(2) = '1') and
+    startPulseNextCycle(1) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP2 = '0' and
+                                        ((or_reduce(inPulsexDP) = '0') or (endCyclexDP = '1')) and
+                                        (lightweightG = '1' or (
+                                          -- Do not activate if bigger charge pump is in cooldown
+                                          cooldown(2) = '0' and cooldown(1) = '0' and
+                                          -- Do not activate if bigger charge pump could activate
+                                          (configCurrentxDP.singlyCPActivation = '0' or configCurrentxDP.disableCP3 = '1' or compVthN(2) = '1')
+                                        )) and
                               -- Activate if threshold is reached
                               compVthN(1) = '0' else
                      '0';
 
-    startPulse(2) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP3 = '0' and
-                              ((or_reduce(inPulsexDP) = '0') or (endCycle = '1')) and
-                              cooldown(2) = '0' and compVthN(2) = '0' else
+    startPulseNextCycle(2) <= '1' when enable100xDI = '1' and configCurrentxDP.disableCP3 = '0' and
+                                        ((or_reduce(inPulsexDP) = '0') or (endCyclexDP = '1')) and
+                                        (lightweightG = '1' or (cooldown(2) = '0')) and
+                                        compVthN(2) = '0' else
                      '0';
 
-    enableCPxDN <= inPulsexDP;
+    enableCPxDN <= inPulsexDN;
 
-    cycleCounterxDN <= (others => '0') when or_reduce(startPulse) = '1' else
-                       (others => '0') when endCycle = '1' else
-                       cycleCounterxDP + 1;
+    cycleCounterxDN <= (others => '0') when endCyclexDP = '1' else
+                       cycleCounterxDP + 1 when or_reduce(inPulsexDP) else
+                       cycleCounterxDP;
+                       --(others => '0') when or_reduce(startPulseNextCycle) = '1' else
 
-    endCycle <= '1' when cycleCounterxDP >= unsigned(cycleLengthCurrentxDP - 1) else
-                '0';
+    endCyclexDN <= '1' when (cycleCounterxDP = unsigned(cycleLengthCurrentxDP - 2)) and or_reduce(inPulsexDP) = '1' else
+                   '0';
 
     CP_CHANNEL : for I in 0 to chargePumpNumberC - 1 generate
-        inPulsexDN(I) <= '1' when startPulse(I) = '1' else
-                         '0' when endCycle = '1' else
+        inPulsexDN(I) <= '1' when startPulseNextCycle(I) = '1' else
+                         '0' when endCyclexDP = '1' else
                          inPulsexDP(I);
 
         -- Allow activation only if counter bigger than half the previous activation time (capped at cooldownMax)
         -- Second condition is here to ensure proper alignement
-        cooldown(I) <= '0' when cooldownCurrentDurationxDP(I) = 0 else
+        cooldown(I) <= '0' when lightweightG = '1' else
+                       '0' when cooldownCurrentDurationxDP(I) = 0 else
                        '0' when cooldownCounterxDP(I) = cooldownCurrentDurationxDP(I) and
-                                endCycle = '1' else
+                                endCyclexDP = '1' else
                        '1' when cooldownCounterxDP(I) <= cooldownCurrentDurationxDP(I) else
                        '0';
-
         -- Count number of injection/charge cycles since last activation, capped at cooldownMax
-        cooldownCounterxDN(I) <= to_unsigned(1, cooldownCounterxDN(I)) when startPulse(I) = '1' else
+        cooldownCounterxDN(I) <= (others => '0') when lightweightG = '1' else
+                                 to_unsigned(1, cooldownCounterxDN(I)) when startPulseNextCycle(I) = '1' else
                                  -- Count when cycleCounter is wrapping up to keep activations aligned
-                                 cooldownCounterxDP(I) + 1 when endCycle = '1' else
+                                 cooldownCounterxDP(I) + 1 when endCyclexDP = '1' else
                                  cooldownCounterxDP(I);
 
         -- When starting an activation, save the counter value
-        cooldownCurrentDurationxDN(I) <= maximum(minimum(cooldownCounterxDP(I) / 2, cooldownMaxCurrentArray(I)),
-                                                 cooldownMinCurrentArray(I)) when startPulse(I) = '1' else
+        cooldownCurrentDurationxDN(I) <= (others => '0') when lightweightG = '1' else
+                                         maximum(minimum(cooldownCounterxDP(I) / 2, cooldownMaxCurrentArray(I)),
+                                                 cooldownMinCurrentArray(I)) when startPulseNextCycle(I) = '1' else
                                          cooldownCurrentDurationxDP(I);
 
-        accumulate(L => chargeSumCPxDP(I),
-                   R => chargeQuantaCP(I),
-                   Result => chargeSumNext(I),
-                   overflow => overflow_res(I));
+        -- We could win some time by using the following, but we are currently limited by the voltageChangeInterval computation
+        PIP_ADDER: entity work.pipelined_adder
+            generic map(
+                inputBitwidthG => voltageChangeRegLengthC,
+                stageBitwidthG => (voltageChangeRegLengthC)/2
+            )
+            port map (
+                clk => clk100,
+                rst => rst,
+                axDI => signed(resize(chargeSumCPxDN(I), voltageChangeRegLengthC-1, 0)),
+                bxDI => signed(resize(chargeQuantaCP(I), voltageChangeRegLengthC-1, 0)),
+                sfixed(sumxDO) => chargeSumNext(I),
+                overflowxDO => overflow_res(I)
+            );
+
+        -- accumulate(L => chargeSumCPxDP(I),
+        --            R => chargeQuantaCP(I),
+        --            Result => chargeSumNext(I),
+        --            overflow => overflow_res(I));
 
         -- Compute voltage sums. They are reset every time new data is pushed to
         -- the processing blocks. Corner case: a cp activation happens at the same
@@ -355,31 +398,62 @@ begin
         -- activation and then multiplying, but meeting timing requirements then
         -- would be harder.
         chargeSumCPxDN(I) <= resize(chargeQuantaCP(I), chargeSumCPxDN(I)'left, chargeSumCPxDN(I)'right)
-                                 when windIntervalxDI = '1' and startPulsexDP(I) = '1' else
+                                 when windIntervalxDI = '1' and startPulseNextCyclexDP(I) = '1' else
                              (others => '0') when windIntervalxDI = '1' else
-                             chargeSumNext(I) when startPulsexDP(I) = '1' else
+                             resize(chargeQuantaCP(I), chargeSumCPxDN(I)'left, chargeSumCPxDN(I)'right)
+                                 when windIntervalxDP(0) = '1' and startPulseNextCyclexDP(I) = '1' else
+                             chargeSumNext(I) when startPulseNextCyclexDP(I) = '1' else
                              chargeSumCPxDP(I);
 
         overflow_effectivexDN(I) <= '0' when windIntervalxDI = '1' else
                                     '1' when overflow_effectivexDP(I) = '0' else
                                     overflow_res(I);
 
+        chargeSumCPFinalBufferxDN(I) <= chargeSumCPxDP(I) when windIntervalxDI = '1' else
+                                        chargeSumCPFinalBufferxDP(I);
     end generate CP_CHANNEL;
 
-    voltageChangeIntervalxDN <= resize(chargeSumCPxDP(0) + chargeSumCPxDP(1) + chargeSumCPxDP(2),
-                                       voltageChangeIntervalxDN'left,
-                                       voltageChangeIntervalxDN'right) when windIntervalxDI = '1' else
-                                voltageChangeIntervalxDP;
+    PIP_ADDER: entity work.pipelined_adder
+        generic map(
+            inputBitwidthG => voltageChangeRegLengthC,
+            stageBitwidthG => voltageChangeRegLengthC/4
+        )
+        port map (
+            clk => clk100,
+            rst => rst,
+            axDI => signed(resize(chargeSumCPFinalBufferxDP(0), voltageChangeRegLengthC-1, 0)),
+            bxDI => signed(resize(chargeSumCPFinalBufferxDP(1), voltageChangeRegLengthC-1, 0)),
+            sfixed(sumxDO) => voltageChangeIntervalPartialSumxDN,
+            overflowxDO => open
+        );
 
-    capClkxDN <= '1' when (or_reduce(inPulsexDP) = '1' and cycleCounterxDP < unsigned(configCurrentxDP.tInjection)) else
-                 '0';
+    PIP_ADDER22: entity work.pipelined_adder
+        generic map(
+            inputBitwidthG => voltageChangeRegLengthC,
+            stageBitwidthG => voltageChangeRegLengthC/4
+        )
+        port map (
+            clk => clk100,
+            rst => rst,
+            axDI => signed(resize(chargeSumCPFinalBufferxDP(2), voltageChangeRegLengthC-1, 0)),
+            bxDI => signed(resize(voltageChangeIntervalPartialSumxDP, voltageChangeRegLengthC-1, 0)),
+            sfixed(sumxDO) => voltageChangeIntervalxDO,
+            overflowxDO => open
+        );
+
+    capClkxDN <= '1' when or_reduce(startPulseNextCycle) else --(or_reduce(inPulsexDN) = '1' and (endCyclexDP = '1' or cycleCounterxDP < configCurrentxDP.tCharge - 1)) else
+                 '0' when cycleCounterxDP = configCurrentxDP.tCharge - 1 else
+                 capClkxDP;
 
     vTh1_100xDO <= not compN_2r(0); -- vTh1N
 
-    voltageChangeIntervalxDO <= voltageChangeIntervalxDP;
-    voltageChangeRdyxDO      <= windIntervalxDP;
+    --voltageChangeIntervalxDO <= voltageChangeIntervalxDP;
+    voltageChangeRdyxDO      <= windIntervalxDP(windIntervalxDP'left);
     overflowErrorxDO <= or_reduce(overflow_effectivexDP);
 
+
+    -- FIXME: Delay to correct?
+    -- FIXME: Why extra register between enableCP and inPulsexDP?
     enableCP1xDO <= enableCPxDP(0);
     enableCP2xDO <= enableCPxDP(1);
     enableCP3xDO <= enableCPxDP(2);

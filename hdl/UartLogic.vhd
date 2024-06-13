@@ -139,7 +139,7 @@ begin
 
                     when SEND_HEADER_S =>
                         -- Send the header
-                        txDataxDP <= x"AB";
+                        txDataxDP <= x"DD";
                         state <= SEND_S;
                         
                     when SEND_S =>
