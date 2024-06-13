@@ -12326,12 +12326,6 @@
 		(uuid "0228ebd4-eff3-4897-8b26-a6f8a9d9dee5")
 	)
 	(junction
-		(at 187.96 224.79)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0b2ba880-3018-4e98-bee7-3b90dbbd8810")
-	)
-	(junction
 		(at 85.09 242.57)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -12468,6 +12462,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e5d31311-11ac-41ae-89cf-a1cbc2bd722c")
+	)
+	(junction
+		(at 158.75 224.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e9b0ed9b-a919-4b9a-a338-33a7155d37e4")
 	)
 	(junction
 		(at 72.39 138.43)
@@ -12657,7 +12657,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 90.17) (xy 161.29 90.17)
+			(xy 156.21 87.63) (xy 163.83 87.63)
 		)
 		(stroke
 			(width 0)
@@ -12787,6 +12787,16 @@
 	)
 	(wire
 		(pts
+			(xy 158.75 92.71) (xy 158.75 224.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20b5a416-a6c8-48ee-9329-f08355d5d753")
+	)
+	(wire
+		(pts
 			(xy 245.11 143.51) (xy 255.27 143.51)
 		)
 		(stroke
@@ -12827,7 +12837,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 224.79) (xy 187.96 242.57)
+			(xy 158.75 224.79) (xy 158.75 242.57)
 		)
 		(stroke
 			(width 0)
@@ -12847,7 +12857,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 217.17) (xy 158.75 217.17)
+			(xy 203.2 217.17) (xy 161.29 217.17)
 		)
 		(stroke
 			(width 0)
@@ -13287,7 +13297,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 92.71) (xy 156.21 92.71)
+			(xy 161.29 90.17) (xy 156.21 90.17)
 		)
 		(stroke
 			(width 0)
@@ -13297,7 +13307,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 214.63) (xy 203.2 214.63)
+			(xy 163.83 214.63) (xy 203.2 214.63)
 		)
 		(stroke
 			(width 0)
@@ -13407,7 +13417,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 217.17) (xy 158.75 92.71)
+			(xy 161.29 217.17) (xy 161.29 90.17)
 		)
 		(stroke
 			(width 0)
@@ -13454,16 +13464,6 @@
 			(type default)
 		)
 		(uuid "814f8949-a8b8-465a-8cac-7092a000fe8b")
-	)
-	(wire
-		(pts
-			(xy 306.07 82.55) (xy 187.96 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "838ce574-1686-4b60-9ce4-727d0f8191fe")
 	)
 	(wire
 		(pts
@@ -13627,7 +13627,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 242.57) (xy 187.96 242.57)
+			(xy 129.54 242.57) (xy 158.75 242.57)
 		)
 		(stroke
 			(width 0)
@@ -13727,7 +13727,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 224.79) (xy 203.2 224.79)
+			(xy 158.75 224.79) (xy 203.2 224.79)
 		)
 		(stroke
 			(width 0)
@@ -14127,16 +14127,6 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 82.55) (xy 187.96 224.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0c842b7-33a3-4756-ad02-c4f1bcc11331")
-	)
-	(wire
-		(pts
 			(xy 85.09 87.63) (xy 87.63 87.63)
 		)
 		(stroke
@@ -14154,6 +14144,16 @@
 			(type default)
 		)
 		(uuid "e215efcf-c3f8-4565-9773-4a6e8cd6c0f5")
+	)
+	(wire
+		(pts
+			(xy 156.21 92.71) (xy 158.75 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e29c971e-5353-4a56-83bb-eab04d9549b1")
 	)
 	(wire
 		(pts
@@ -14307,7 +14307,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 90.17) (xy 161.29 214.63)
+			(xy 163.83 87.63) (xy 163.83 214.63)
 		)
 		(stroke
 			(width 0)
@@ -28354,7 +28354,7 @@
 			(uuid "b39ccd0c-28b7-48ff-9a9e-ce061ed4ad4d")
 		)
 		(pin "MCU_TX" output
-			(at 156.21 90.17 0)
+			(at 156.21 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28364,7 +28364,7 @@
 			(uuid "f1d3370d-cb01-487b-b9ed-668cecfa0dea")
 		)
 		(pin "MCU_RX" input
-			(at 156.21 92.71 0)
+			(at 156.21 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28492,6 +28492,16 @@
 				(justify left)
 			)
 			(uuid "7d95adf7-11be-45cd-a83d-a691e395804f")
+		)
+		(pin "DTR" output
+			(at 156.21 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "268af518-e05e-47f9-b1c4-362cae32bde8")
 		)
 		(instances
 			(project "Accurate_Eval"
@@ -28897,16 +28907,6 @@
 			)
 			(uuid "eda800a6-2570-47cc-9892-e8eb574672b9")
 		)
-		(pin "FPGA_SDA" bidirectional
-			(at 350.52 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "e678727c-d19d-41b9-a556-5a4762e6ccb0")
-		)
 		(pin "FPGA_SCL" bidirectional
 			(at 350.52 101.6 0)
 			(effects
@@ -29017,16 +29017,6 @@
 			)
 			(uuid "975d80db-1fe1-4e9f-98c0-fd02e40685b9")
 		)
-		(pin "RESET" input
-			(at 306.07 82.55 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "19bf8930-771c-4718-b364-55546e9939b9")
-		)
 		(pin "SERCOM1" bidirectional
 			(at 350.52 83.82 0)
 			(effects
@@ -29046,6 +29036,16 @@
 				(justify right)
 			)
 			(uuid "5c99b036-a072-45ce-b132-22edd0a3a1fb")
+		)
+		(pin "FPGA_SDA" bidirectional
+			(at 350.52 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "85cb6128-8621-4d88-8165-2c242765114f")
 		)
 		(instances
 			(project "Accurate_Eval"
