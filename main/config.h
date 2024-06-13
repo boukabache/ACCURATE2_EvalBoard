@@ -13,6 +13,10 @@ struct CurrentMeasurement {
 // SHT41 Settings
 #define SHT41_RD_PERIOD		    1 // periodic read interval [s]
 
+// ACCURATE Constants
+#define DOWNSCALING_FACTOR 10E14
+const float Cf = 5e-12 * DOWNSCALING_FACTOR;
+
 // DAC Settings
 const float VBIAS1_DEC = 1.6;
 const float VBIAS2_DEC = 2.5;
@@ -28,5 +32,8 @@ const float VTH7_DEC = 2.5; // Vcharge+
 
 const uint32_t ADC_RESOLUTION_ACCURATE = 4096;
 const float REF_VOLTAGE = 3.0;
+
+// ADC Settings
+#define CURRENT_MEASUREMENT_DELAY 100 // Delay between current measurements [ms]
 
 #endif // CONFIG_H

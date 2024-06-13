@@ -39,7 +39,8 @@ CurrentMeasurement fpga_read() {
             Serial.println(measurement.range);
 #endif
             return measurement;
-        } else {
+        }
+        else {
 #ifdef DEBUG
             Serial.println(dataString + " - Error");
 #endif
@@ -167,9 +168,9 @@ float fpga_calc_current_dir_slope(uint32_t data0, uint32_t data4) {
 }
 
 float fpga_calc_current_ch_inj(uint32_t data1, uint32_t data2, uint32_t data3) {
-    float current_low = static_cast<float>(data1) * Qref1 / Tw;
-    float current_medium = static_cast<float>(data2) * Qref2 / Tw;
-    float current_high = static_cast<float>(data3) * Qref3 / Tw;
+    float current_low = static_cast<float>(data1) * Qref1 / TW;
+    float current_medium = static_cast<float>(data2) * Qref2 / TW;
+    float current_high = static_cast<float>(data3) * Qref3 / TW;
 
     float current_ch_inj = current_low + current_medium + current_high;
     return current_ch_inj;

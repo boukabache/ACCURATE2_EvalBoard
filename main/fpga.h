@@ -12,13 +12,9 @@
 #include <cmath>
 #include "config.h"
 
-#define DOWNSCALING_FACTOR 10E14
-
 const float CLOCK_PERIOD = 1E8; // ^-1
-const float TW = 0.1;
 
-const float Cf = 5e-12 * DOWNSCALING_FACTOR;
-const float Tw = 0.1;
+const float TW = 0.1;
 
 const float VINT1 = (VTH2_DEC - VTH1_DEC) * 0.9;
 

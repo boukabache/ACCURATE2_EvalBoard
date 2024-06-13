@@ -49,7 +49,7 @@ void setup() {
 
 void loop() {
     CurrentMeasurement measuredCurrent = fpga_read();
-    float voltage = ltc2471_read_voltage();
+    //float current = ltc2471_read_current();
     String btnLedStatus = getPinStatus();
     TempHumMeasurement measuredTempHum = sht41_i2c_read();
     String temp;
@@ -81,11 +81,9 @@ void loop() {
     }
 
     ssd1306_print_current_temp_humidity(measuredCurrent.convertedCurrent, measuredCurrent.range, temp + " C", humidity);
-    // Write to computer using Serial in the format (current[A], temp, humidity, btnLedStatus(btn0,btn1,btn2,led0,led1,led2 in binary))
     String message = String(measuredCurrent.currentInFemtoAmpere) + "," + String(temp) + "," + String(humidity) + "," + btnLedStatus;
     Serial.println(message);
-
-    delay(100);
+    delay(50);
 }
 
 String getPinStatus() {
