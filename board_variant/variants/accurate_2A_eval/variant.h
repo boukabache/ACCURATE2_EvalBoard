@@ -82,11 +82,11 @@ extern "C"
  // LEDs
 #define PIN_LED_28           (28u)
 #define PIN_LED_29           (29u)
-#define PIN_LED_27           (27u)
+#define PIN_LED_26           (26u)
 #define PIN_LED_31           (31u)
 #define PIN_LED              PIN_LED_28
 #define PIN_LED2             PIN_LED_29
-#define PIN_LED3             PIN_LED_27
+#define PIN_LED3             PIN_LED_26
 #define LED_BUILTIN          PIN_LED_13
 #define LED_ALIVE            PIN_LED_31
 
@@ -98,10 +98,17 @@ extern "C"
 #define PIN_BUTTON2          PIN_BUTTON_25
 #define PIN_BUTTON3          PIN_BUTTON_30
 
-
 /*
- * Analog pins
+ * USB
  */
+#define PIN_USB_HOST_ENABLE (255ul) // Use a value that is out of the range of actual pin numbers
+#define PIN_USB_DM          (255ul)
+#define PIN_USB_DP          (255ul)
+
+
+ /*
+  * Analog pins
+  */
 #define PIN_A0               (14ul)
 #define PIN_A1               (15ul)
 #define PIN_A2               (16ul)
@@ -129,34 +136,33 @@ extern "C"
    // Serial
 #define PIN_SERIAL_RX       (24ul)
 #define PIN_SERIAL_TX       (23ul)
-#define PAD_SERIAL_TX       (UART_TX_PAD_2)
-#define PAD_SERIAL_RX       (SERCOM_RX_PAD_3)
+#define PAD_SERIAL_TX       (SERCOM_RX_PAD_3)
+#define PAD_SERIAL_RX       (UART_TX_PAD_2)
    // Serial1
-#define PIN_SERIAL1_RX       (0ul)
-#define PIN_SERIAL1_TX       (1ul)
-#define PAD_SERIAL1_TX       (UART_TX_PAD_2)
-#define PAD_SERIAL1_RX       (SERCOM_RX_PAD_3)
-
+#define PIN_SERIAL1_RX       (38ul)
+#define PIN_SERIAL1_TX       (22ul)
+#define PAD_SERIAL1_TX       (SERCOM_RX_PAD_1)
+#define PAD_SERIAL1_RX       (UART_TX_PAD_0)
    // Serial2
-#define PIN_SERIAL2_RX       (22ul)
-#define PIN_SERIAL2_TX       (38ul)
-#define PAD_SERIAL2_TX       (UART_TX_PAD_2)
-#define PAD_SERIAL2_RX       (SERCOM_RX_PAD_3)
-
+#define PIN_SERIAL2_RX       (0ul)
+#define PIN_SERIAL2_TX       (1ul)
+#define PAD_SERIAL2_TX       (SERCOM_RX_PAD_3)
+#define PAD_SERIAL2_RX       (UART_TX_PAD_2)
 
 /*
  * SPI Interfaces
  */
 #define SPI_INTERFACES_COUNT 1
 
-#define PIN_SPI_MISO         (22u)
-#define PIN_SPI_MOSI         (23u)
-#define PIN_SPI_SCK          (24u)
-#define PERIPH_SPI           sercom4
-#define PAD_SPI_TX           SPI_PAD_2_SCK_3
-#define PAD_SPI_RX           SERCOM_RX_PAD_0
+#define PIN_SPI_MISO         (34u)
+#define PIN_SPI_MOSI         (35u)
+#define PIN_SPI_SCK          (37u)
+#define PIN_SPI_SS           (36u)
+#define PERIPH_SPI           sercom1
+#define PAD_SPI_TX           SPI_PAD_0_SCK_1
+#define PAD_SPI_RX           SERCOM_RX_PAD_3
 
-  static const uint8_t SS = PIN_A2;	// SERCOM4 last PAD is present on A2 but HW SS isn't used. Set here only for reference.
+  static const uint8_t SS = PIN_SPI_SS;	// SERCOM1 last PAD is present on A2 but HW SS isn't used. Set here only for reference.
   static const uint8_t MOSI = PIN_SPI_MOSI;
   static const uint8_t MISO = PIN_SPI_MISO;
   static const uint8_t SCK = PIN_SPI_SCK;
@@ -235,10 +241,10 @@ extern "C" {
 //
 // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
 //                            pins are NOT connected to anything by default.
-#define SERIAL_PORT_USBVIRTUAL      SerialUSB
+#define SERIAL_PORT_USBVIRTUAL      Serial
 #define SERIAL_PORT_MONITOR         Serial
 // Serial has no physical pins broken out, so it's not listed as HARDWARE port
-#define SERIAL_PORT_HARDWARE        Serial1
+#define SERIAL_PORT_HARDWARE        Serial, Serial1
 #define SERIAL_PORT_HARDWARE_OPEN   Serial1
 
 #endif /* _VARIANT_ARDUINO_ZERO_ */
