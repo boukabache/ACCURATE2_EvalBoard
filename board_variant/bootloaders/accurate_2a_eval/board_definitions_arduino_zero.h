@@ -29,28 +29,28 @@
 #define USB_PID_HIGH   0x00
 #define USB_PID_LOW    0x4D
 
-/*
- * If BOOT_DOUBLE_TAP_ADDRESS is defined the bootloader is started by
- * quickly tapping two times on the reset button.
- * BOOT_DOUBLE_TAP_ADDRESS must point to a free SRAM cell that must not
- * be touched from the loaded application.
- */
+ /*
+  * If BOOT_DOUBLE_TAP_ADDRESS is defined the bootloader is started by
+  * quickly tapping two times on the reset button.
+  * BOOT_DOUBLE_TAP_ADDRESS must point to a free SRAM cell that must not
+  * be touched from the loaded application.
+  */
 #define BOOT_DOUBLE_TAP_ADDRESS           (0x20007FFCul)
 #define BOOT_DOUBLE_TAP_DATA              (*((volatile uint32_t *) BOOT_DOUBLE_TAP_ADDRESS))
 
-/*
- * If BOOT_LOAD_PIN is defined the bootloader is started if the selected
- * pin is tied LOW.
- */
-//#define BOOT_LOAD_PIN                     PIN_PA21 // Pin 7
-//#define BOOT_LOAD_PIN                     PIN_PA15 // Pin 5
+  /*
+   * If BOOT_LOAD_PIN is defined the bootloader is started if the selected
+   * pin is tied LOW.
+   */
+   //#define BOOT_LOAD_PIN                     PIN_PA21 // Pin 7
+   //#define BOOT_LOAD_PIN                     PIN_PA15 // Pin 5
 
-#define BOOT_USART_MODULE                 SERCOM0
-#define BOOT_USART_BUS_CLOCK_INDEX        PM_APBCMASK_SERCOM0
-#define BOOT_USART_PER_CLOCK_INDEX        GCLK_CLKCTRL_ID_SERCOM0_CORE_Val
+#define BOOT_USART_MODULE                 SERCOM4
+#define BOOT_USART_BUS_CLOCK_INDEX        PM_APBCMASK_SERCOM4
+#define BOOT_USART_PER_CLOCK_INDEX        GCLK_CLKCTRL_ID_SERCOM4_CORE_Val
 #define BOOT_USART_PAD_SETTINGS           UART_RX_PAD3_TX_PAD2
-#define BOOT_USART_PAD3                   PINMUX_PA11C_SERCOM0_PAD3
-#define BOOT_USART_PAD2                   PINMUX_PA10C_SERCOM0_PAD2
+#define BOOT_USART_PAD3                   PINMUX_PB11D_SERCOM4_PAD3
+#define BOOT_USART_PAD2                   PINMUX_PB10D_SERCOM4_PAD2
 #define BOOT_USART_PAD1                   PINMUX_UNUSED
 #define BOOT_USART_PAD0                   PINMUX_UNUSED
 
