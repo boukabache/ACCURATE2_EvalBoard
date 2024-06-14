@@ -28829,7 +28829,7 @@
 			)
 			(uuid "8e280b07-1672-4184-8cda-e520a7a43367")
 		)
-		(pin "SERCOM1" bidirectional
+		(pin "MCU_FPGA_TX" bidirectional
 			(at 245.11 226.06 0)
 			(effects
 				(font
@@ -28839,7 +28839,7 @@
 			)
 			(uuid "cde61e5a-4e53-4a76-b4d7-c17c2206161a")
 		)
-		(pin "SERCOM2" bidirectional
+		(pin "MCU_FPGA_RX" bidirectional
 			(at 245.11 223.52 0)
 			(effects
 				(font
@@ -29017,7 +29017,7 @@
 			)
 			(uuid "975d80db-1fe1-4e9f-98c0-fd02e40685b9")
 		)
-		(pin "SERCOM1" bidirectional
+		(pin "MCU_FPGA_TX" bidirectional
 			(at 350.52 83.82 0)
 			(effects
 				(font
@@ -29027,7 +29027,7 @@
 			)
 			(uuid "9b6c919d-b74b-4250-ba2a-8776fbbe9e80")
 		)
-		(pin "SERCOM2" bidirectional
+		(pin "MCU_FPGA_RX" bidirectional
 			(at 350.52 86.36 0)
 			(effects
 				(font

@@ -18025,7 +18025,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 88.9) (xy 50.8 88.9)
+			(xy 27.94 88.9) (xy 52.07 88.9)
 		)
 		(stroke
 			(width 0)
@@ -18855,7 +18855,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 100.33) (xy 50.8 100.33)
+			(xy 27.94 100.33) (xy 52.07 100.33)
 		)
 		(stroke
 			(width 0)
@@ -19655,7 +19655,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 96.52) (xy 50.8 96.52)
+			(xy 27.94 96.52) (xy 52.07 96.52)
 		)
 		(stroke
 			(width 0)
@@ -19825,7 +19825,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 92.71) (xy 50.8 92.71)
+			(xy 27.94 92.71) (xy 52.07 92.71)
 		)
 		(stroke
 			(width 0)
@@ -20035,7 +20035,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 85.09) (xy 50.8 85.09)
+			(xy 27.94 85.09) (xy 52.07 85.09)
 		)
 		(stroke
 			(width 0)
@@ -20226,7 +20226,7 @@
 		)
 		(uuid "167bb0b3-3502-4463-87cf-fad270abd27a")
 	)
-	(label "SERCOM2"
+	(label "MCU_FPGA_RX"
 		(at 115.57 88.9 0)
 		(fields_autoplaced yes)
 		(effects
@@ -20315,7 +20315,7 @@
 		(uuid "24c3b41a-1f1f-4d6a-a277-f1ecadc035ce")
 	)
 	(label "MCU_SWCLK"
-		(at 50.8 85.09 180)
+		(at 52.07 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20379,17 +20379,6 @@
 			(justify right bottom)
 		)
 		(uuid "33f15081-362a-4821-b0b7-4b5c77bd4f6d")
-	)
-	(label "SERCOM1"
-		(at 50.8 96.52 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "341c59ce-5849-4a39-b76c-795402dcefd8")
 	)
 	(label "PA06_TCC1-W0"
 		(at 311.15 93.98 90)
@@ -20567,17 +20556,6 @@
 		)
 		(uuid "5f13c2aa-c0ec-4139-abcd-15f3c354c0ed")
 	)
-	(label "SERCOM2"
-		(at 50.8 100.33 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "5f62865a-72c9-4b0c-964e-23d9b557d9ac")
-	)
 	(label "RESET"
 		(at 293.37 153.67 270)
 		(fields_autoplaced yes)
@@ -20644,6 +20622,17 @@
 		)
 		(uuid "64b5beec-431e-40d2-95b4-a6d14a5ef825")
 	)
+	(label "MCU_FPGA_RX"
+		(at 52.07 100.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6527f0af-73d6-4222-808c-6b953755432c")
+	)
 	(label "PB08_AIN2"
 		(at 325.12 153.67 270)
 		(fields_autoplaced yes)
@@ -20678,7 +20667,7 @@
 		(uuid "6c1ff575-4d05-4c55-b6bb-fcae3d5cf92a")
 	)
 	(label "RESET"
-		(at 50.8 92.71 180)
+		(at 52.07 92.71 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -20753,6 +20742,17 @@
 			(justify left bottom)
 		)
 		(uuid "8064f541-6155-420d-a33a-a37ea731d6a8")
+	)
+	(label "MCU_FPGA_TX"
+		(at 52.07 96.52 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "80fc7f38-1f04-4c16-b655-b8537a8e3ea0")
 	)
 	(label "P.A10"
 		(at 265.43 133.35 0)
@@ -21030,7 +21030,7 @@
 		(uuid "dab514c5-2ae5-4f1f-a4bb-b6c32585a8a4")
 	)
 	(label "MCU_SWDIO"
-		(at 50.8 88.9 180)
+		(at 52.07 88.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -21216,7 +21216,7 @@
 		)
 		(uuid "fb508335-b0fa-4548-b91e-9a249c1d2c2d")
 	)
-	(label "SERCOM1, TX"
+	(label "MCU_FPGA_TX"
 		(at 115.57 86.36 0)
 		(fields_autoplaced yes)
 		(effects
@@ -21331,7 +21331,7 @@
 	)
 	(hierarchical_label "MCU_SWDIO"
 		(shape input)
-		(at 26.67 88.9 180)
+		(at 27.94 88.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -21343,7 +21343,7 @@
 	)
 	(hierarchical_label "RESET"
 		(shape input)
-		(at 26.67 92.71 180)
+		(at 27.94 92.71 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -21379,7 +21379,7 @@
 	)
 	(hierarchical_label "MCU_SWCLK"
 		(shape input)
-		(at 26.67 85.09 180)
+		(at 27.94 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -21401,9 +21401,9 @@
 		)
 		(uuid "cf659553-faa3-4db4-9067-d0a929f59632")
 	)
-	(hierarchical_label "SERCOM1"
+	(hierarchical_label "MCU_FPGA_TX"
 		(shape bidirectional)
-		(at 26.67 96.52 180)
+		(at 27.94 96.52 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -21425,9 +21425,9 @@
 		)
 		(uuid "e3bacc2a-af4b-4ece-815b-b1da3bc05096")
 	)
-	(hierarchical_label "SERCOM2"
+	(hierarchical_label "MCU_FPGA_RX"
 		(shape bidirectional)
-		(at 26.67 100.33 180)
+		(at 27.94 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
