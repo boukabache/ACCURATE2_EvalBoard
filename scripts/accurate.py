@@ -140,7 +140,7 @@ def get_current(
 
                 # Print current
                 if average:
-                    print(f"Average current: {pico_current_avg:.2f} pA", end='\r', flush=True)
+                    print(f"Average current: {(pico_current_avg/count):.2f} pA", end='\r', flush=True)
                 else:
                     print(f"Instantaneous current: {pico_current:.2f} pA", end='\r', flush=True)
         except KeyboardInterrupt:
