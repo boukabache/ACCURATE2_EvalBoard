@@ -72,8 +72,8 @@ architecture rtl of UartLogic is
     ----------------------
 
     -- Window signals
-    signal RightBoundxDP, RightBoundxDN : integer range 0 to voltageChangeRegLengthC := 0;
-    signal LeftBoundxDP, LeftBoundxDN   : integer range 0 to voltageChangeRegLengthC := 7;
+    signal RightBoundxDP, RightBoundxDN : integer range 0 to voltageChangeRegLengthC - 1 := 0;
+    -- Left bound is calculated as RightBound + 7
     ----------------------
 
     -- Constants used to pad data when voltageChangeIntervalxDI has a width
@@ -119,7 +119,6 @@ begin
                 state <= IDLE_S;
             else
                 -- Registers update
-                LeftBoundxDP <= LeftBoundxDN;
                 RightBoundxDP <= RightBoundxDN;
                 txDataxDP <= txDataxDN;
                 fifoWriteEnxDP <= fifoWriteEnxDN;
@@ -131,7 +130,6 @@ begin
                         if (voltageChangeRdyxDI = '1') then
                             state <= SEND_HEADER_S;
                             -- Reset the window when starting a new transmission
-                            LeftBoundxDP <= 7;
                             RightBoundxDP <= 0;
                             -- Sample the data to send
                             voltageChangeIntervalxDP <= voltageChangeIntervalxDI;
@@ -139,12 +137,12 @@ begin
 
                     when SEND_HEADER_S =>
                         -- Send the header
-                        txDataxDP <= x"DD";
+                        txDataxDP <= x"AB";
                         state <= SEND_S;
                         
                     when SEND_S =>
                         -- Check if the full data has been sent
-                        if (LeftBoundxDP = voltageChangeRegLengthC) then
+                        if ((RightBoundxDP + 7) = voltageChangeRegLengthC - 1) then
                             state <= IDLE_S;
                         end if;
 
@@ -170,17 +168,8 @@ begin
     -- Falling edge signify the end of the transmission of a byte.
     -- When the last window is transmitted, no increment is done.
     RightBoundxDN <= (RightBoundxDP + 8) when state = SEND_S
-                        and LeftBoundxDP /= voltageChangeRegLengthC
+                        and (RightBoundxDP + 7) < (voltageChangeRegLengthC - 1)
                         else RightBoundxDP;
-
-    -- Increment the left bound of the window when falling edge is detected.
-    -- Falling edge signify the end of the transmission of a byte.
-    -- The length of the data can be not 8 bits aligned, extra care must be taken.
-    -- When the last window is transmitted, no increment is done.
-    LeftBoundxDN <= (LeftBoundxDP + 8) when state = SEND_S
-                        and (LeftBoundxDP + 8) <= voltageChangeRegLengthC
-                        else voltageChangeRegLengthC when state = SEND_S
-                        else LeftBoundxDP;
 
 
 
