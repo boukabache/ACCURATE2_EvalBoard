@@ -59,4 +59,18 @@ package IOPkg is
         vOutH => "011001001011" -- A1_Vbias3    = 1.18V
     );
 
-end package IOPkg;
+    --! Record for the SHT41 sensor output data
+    type sht41RecordT is record
+        temperature : std_logic_vector(16 - 1 downto 0);
+        humidity    : std_logic_vector(16 - 1 downto 0);
+        dataValid   : std_logic;
+    end record sht41RecordT;
+
+    --! Reset record for the sht41RecordT
+    constant sht41RecordTInit : sht41RecordT := (
+        temperature => (others => '0'),
+        humidity    => (others => '0'),
+        dataValid   => '0'
+    );
+
+end package IOPkg;  
