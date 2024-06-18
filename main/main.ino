@@ -48,10 +48,11 @@ void setup() {
 }
 
 void loop() {
-    CurrentMeasurement measuredCurrent = fpga_read();
+    CurrentMeasurement measuredCurrent = fpga_read_current();
     //float current = ltc2471_read_current();
     String btnLedStatus = getPinStatus();
-    TempHumMeasurement measuredTempHum = sht41_i2c_read();
+    //TempHumMeasurement measuredTempHum = sht41_i2c_read();
+    TempHumMeasurement measuredTempHum = fpga_read_temp_humidity();
     String temp;
     String humidity;
 

@@ -10,7 +10,7 @@
 float accumulatedCurrent = 0;
 int measurementCount = 0;
 
-CurrentMeasurement fpga_read() {
+CurrentMeasurement fpga_read_current() {
     if (Serial1.available() < 6) {
         CurrentMeasurement noDeviceMeasurement;
         noDeviceMeasurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
@@ -21,7 +21,7 @@ CurrentMeasurement fpga_read() {
     }
 
     while (Serial1.available() >= 6) {
-        if (Serial1.read() != 0xDD) {
+        if (Serial1.read() != FPGA_CURRENT_ADDRESS) {
             continue;
         }
         uint8_t dataBytes[5];
@@ -63,6 +63,38 @@ CurrentMeasurement fpga_read() {
     errorMeasurement.convertedCurrent = std::nan("1");
     errorMeasurement.range = "Error";
     return errorMeasurement;
+}
+
+TempHumMeasurement fpga_read_temp_humidity() {
+    TempHumMeasurement measurement;
+    measurement.status = SHT41_ERR_MEASUREMENT;
+
+    if (Serial1.available() < 7) {
+        return measurement;
+    }
+
+    // Check if the address matches the temperature/humidity address
+    if (Serial1.read() != FPGA_TEMPHUM_ADDRESS) {
+        return measurement;
+    }
+
+    uint8_t dataBytes[6];
+    for (int i = 0; i < 6; i++) {
+        dataBytes[i] = Serial1.read();
+    }
+
+    // Validate CRC
+    if (crc8(dataBytes, 2) != dataBytes[2] || crc8(dataBytes + 3, 2) != dataBytes[5]) {
+        measurement.status = SHT41_ERR_CRC;
+        return measurement;
+    }
+
+    uint16_t rawTemperature = (dataBytes[1] << 8) | dataBytes[0];
+    uint16_t rawHumidity = (dataBytes[3] << 8) | dataBytes[2];
+
+    sht41_calculate(rawTemperature, rawHumidity, &measurement);
+
+    return measurement;
 }
 
 void fpga_send_configurations() {

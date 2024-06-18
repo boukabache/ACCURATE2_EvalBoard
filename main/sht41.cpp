@@ -51,16 +51,21 @@ TempHumMeasurement sht41_i2c_read(void) {
         return tempHum;
     }
 
-    uint16_t sht41_temp_u16 = (buffer[0] << 8) | buffer[1];
-    uint16_t sht41_rh_u16 = (buffer[3] << 8) | buffer[4];
+    uint16_t rawTemperature = (buffer[0] << 8) | buffer[1];
+    uint16_t rawHumidity = (buffer[3] << 8) | buffer[4];
 
-    // Conversion formulas from SHT41 datasheet
-    tempHum.temperature = -45 + 175 * sht41_temp_u16 / (float)(65535);
-    tempHum.humidity = -6 + 125 * sht41_rh_u16 / (float)(65535);
-
-    // Crop humidity values to the range of 0% to 100%
-    if (tempHum.humidity > 100) tempHum.humidity = 100;
-    if (tempHum.humidity < 0) tempHum.humidity = 0;
+    sht41_calculate(rawTemperature, rawHumidity, &tempHum);
 
     return tempHum;
+}
+
+void sht41_calculate(uint16_t rawTemperature, uint16_t rawHumidity, TempHumMeasurement* measurement) {
+    measurement->temperature = -45 + 175 * rawTemperature / 65535.0;
+    measurement->humidity = -6 + 125 * rawHumidity / 65535.0;
+
+    // Crop humidity values to the range of 0% to 100%
+    if (measurement->humidity > 100) measurement->humidity = 100;
+    if (measurement->humidity < 0) measurement->humidity = 0;
+
+    measurement->status = SHT41_OK;
 }

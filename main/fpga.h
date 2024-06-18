@@ -11,6 +11,7 @@
 #include <Arduino.h>
 #include <cmath>
 #include "config.h"
+#include "sht41.h"
 
 const float CLOCK_PERIOD = 1E8; // ^-1
 
@@ -18,6 +19,9 @@ const float TW = 0.1;
 
 const float DEFAULT_LSB = 39.339; // aC
 const int DEFAULT_PERIOD = 100; // ms
+
+const uint8_t FPGA_CURRENT_ADDRESS = 0xDD;
+const uint8_t FPGA_TEMPHUM_ADDRESS = 0xEE;
 
 const uint8_t INIT_CONFIG_ADDRESS = 0x01;
 const uint8_t GATE_LENGTH_ADDRESS = 0x02;
@@ -40,7 +44,10 @@ const uint32_t RST_DURATION = 0x0708;
 const uint32_t INIT_CONFIG_START = 0x01C007;
 
 // Attempts to read data from the FPGA, returns the current measured or NaN on error.
-CurrentMeasurement fpga_read();
+CurrentMeasurement fpga_read_current();
+
+// Reads temperature and humidity data from the FPGA
+TempHumMeasurement fpga_read_temp_humidity();
 
 // Calculates the current based on FPGA data readings, charge injection.
 float fpga_calc_current(uint64_t data, float lsb, int period);
