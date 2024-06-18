@@ -108,14 +108,34 @@ architecture rtl of TopLevel is
     signal i2cDAC7578AckErr      : std_logic;
 
     signal i2cDAC7578TxData : std_logic_vector(7 downto 0);
+    signal i2cDAC7578RxData : std_logic_vector(7 downto 0);
 
     signal i2cDAC7578TxDataWLength : std_logic_vector(3 downto 0);
     signal i2cDAC7578RxDataWLength : std_logic_vector(3 downto 0);
     ----------------------
 
 
+    -- SHT41 I2C interface
+    signal i2cSHT41LockAcquire : std_logic;
+    signal i2cSHT41LockAck     : std_logic;
+    signal i2cSHT41Start       : std_logic;
+    signal i2cSHT41Busy        : std_logic;
+    signal i2cSHT41Ack         : std_logic;
+    signal i2cSHT41AckErr      : std_logic;
+
+    signal i2cSHT41TxData : std_logic_vector(7 downto 0);
+    signal i2cSHT41RxData : std_logic_vector(7 downto 0);
+
+    signal i2cSHT41TxDataWLength : std_logic_vector(3 downto 0);
+    signal i2cSHT41RxDataWLength : std_logic_vector(3 downto 0);
+    ----------------------
+
+
     -- DAC7578 configuration signals
     signal DAC7578Config : dacConfigRecordT;
+
+    -- SHT41 signals
+    signal sht41Meas : sht41RecordT;
 
 
     -- ACCURATE signals
@@ -182,15 +202,16 @@ begin
             clk => clkGlobal,
             rst => '0',
 
-            startxDI  => i2cDAC7578Start,
-            busyxDO   => i2cDAC7578Busy,
-            ackxDO    => i2cDAC7578Ack,
-            ackErrxDO => i2cDAC7578AckErr,
+            startxDI  => i2cSHT41Start,
+            busyxDO   => i2cSHT41Busy,
+            ackxDO    => i2cSHT41Ack,
+            ackErrxDO => i2cSHT41AckErr,
 
-            txDataxDI => i2cDAC7578TxData,
+            txDataxDI => i2cSHT41TxData,
+            rxDataxDO => i2cSHT41RxData,
 
-            txDataWLengthxDI => i2cDAC7578TxDataWLength,
-            rxDataWLengthxDI => i2cDAC7578RxDataWLength,
+            txDataWLengthxDI => i2cSHT41TxDataWLength,
+            rxDataWLengthxDI => i2cSHT41RxDataWLength,
 
             -- To the I2C bus
             sdaOutxDO => i_sdaOutxDO,
@@ -357,5 +378,29 @@ begin
 
     registerFileDataValid <= registerFileDataValidUsb or registerFileDataValidMcu;
 
+    ------------------------------ SHT41 ------------------------------------
+    sht41ControllerE : entity work.sht41Controller
+        port map (
+            clk => clkGlobal,
+            rst => '0',
+
+            -- Out port
+            sht41MeasxDO => sht41Meas,
+
+            -- Arbitration signals
+            lockAcquirexDO => open,
+            lockAckxDI     => '1',
+
+            -- I2C signals
+            StartxDO => i2cSHT41Start,
+            BusyxDI => i2cSHT41Busy,
+            AckxDI => i2cSHT41Ack,
+            AckErrxDI => i2cSHT41AckErr,
+
+            TxDataxDO => i2cSHT41TxData,
+            TxDataWLengthxDO => i2cSHT41TxDataWLength,
+            rxDataxDI => i2cSHT41RxData,
+            RxDataWLengthxDO => i2cSHT41RxDataWLength
+    );
 
 end architecture rtl;
