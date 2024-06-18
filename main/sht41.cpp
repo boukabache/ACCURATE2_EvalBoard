@@ -23,7 +23,7 @@ uint8_t crc8(const uint8_t* data, int len) {
 }
 
 // Read temperature and humidity from sensor
-TempHumMeasurement sht41_i2c_read(void) {
+TempHumMeasurement sht41_read_temp_humidity(void) {
     TempHumMeasurement tempHum = { 0, 0, SHT41_OK };
 
     Wire.beginTransmission(SHT41_ADDR);

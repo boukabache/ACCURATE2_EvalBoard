@@ -48,11 +48,16 @@ void setup() {
 }
 
 void loop() {
+    // To measure current through the FPGA with charge injection, uncomment first line, to measure current with the ADC through the OTA output, uncomment second line.
     CurrentMeasurement measuredCurrent = fpga_read_current();
-    //float current = ltc2471_read_current();
+    //float measuredCurrent = ltc2471_read_current();
+
+    // If J17 is connected to the MCU, uncomment the first line. If it is connected to the FPGA, uncomment the second line.
+    TempHumMeasurement measuredTempHum = sht41_read_temp_humidity();
+    //TempHumMeasurement measuredTempHum = fpga_read_temp_humidity();
+
     String btnLedStatus = getPinStatus();
-    //TempHumMeasurement measuredTempHum = sht41_i2c_read();
-    TempHumMeasurement measuredTempHum = fpga_read_temp_humidity();
+
     String temp;
     String humidity;
 

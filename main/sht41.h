@@ -34,7 +34,7 @@ struct TempHumMeasurement {
 };
 
 // Read temperature and humidity temperature
-TempHumMeasurement sht41_i2c_read(void);
+TempHumMeasurement sht41_read_temp_humidity(void);
 
 // Calculate temperature and humidity from raw data
 void sht41_calculate(uint16_t rawTemperature, uint16_t rawHumidity, TempHumMeasurement* measurement);
