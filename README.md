@@ -2,6 +2,8 @@
 
 ## Description
 Accurate2 Eval GUI is an Avalonia-based application designed for real-time monitoring and analysis of sensor data from the ACCURATE 2A Evaluation Board. It provides a user-friendly interface for connecting to USB devices, visualizing current, temperature, and humidity data, and exporting this data for further analysis.
+The application is based on Avalonia UI together with .NET 8.0 to allow for cross platform compatibility.
+The charting is done using LiveCharts2.
 
 ## Features
 - **Real-time Data Visualization**: Live charts display current, temperature, and humidity readings.
