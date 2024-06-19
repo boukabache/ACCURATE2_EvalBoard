@@ -39,6 +39,7 @@ use ieee.numeric_std.all;
 
 library work;
 use work.IOPkg.all;
+use work.accurateConfigPkg.all;
 use work.configPkg.all;
 
 entity RegisterFile is
@@ -68,9 +69,9 @@ architecture rtl of RegisterFile is
         std_logic_vector(registerFileDataWidthC - 1 downto 0);
 
     signal regFile : memoryT;
-    
+
 begin
-    
+
     -----------------
     -- INPUT
     -----------------
@@ -126,6 +127,6 @@ begin
     -- Required as without reset the configuration is not initialized
     accurateConfigxDO <= accurateRecordTDefault;
     accurateConfigValidxDO <= '1';
-    
+
 
 end architecture rtl;

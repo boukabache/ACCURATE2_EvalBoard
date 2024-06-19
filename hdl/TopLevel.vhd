@@ -25,6 +25,7 @@ use ieee.numeric_std.all;
 library work;
 use work.configPkg.all;
 use work.IOPkg.all;
+use work.accurateConfigPkg.all;
 
 library poc;
 
@@ -88,7 +89,7 @@ architecture rtl of TopLevel is
     signal clk100    : std_logic;
     signal clk40     : std_logic;
     ----------------------
-    
+
 
     -- I2C interface
     signal i_sdaOutxDO : std_logic;
@@ -127,6 +128,8 @@ architecture rtl of TopLevel is
     signal ps2plResetOTAxDI         : std_logic; --! ps request to reset OTA
     --! Change in voltage over the last Interval period or MAX if OTA is reset
     signal voltageChangeIntervalxDO : std_logic_vector(voltageChangeRegLengthC - 1 downto 0);
+
+    signal chargeMeasurementTmp : signed(44 - 1 downto 0);
     --! The voltageChangeIntervalxDO value is ready
     signal voltageChangeRdyxDO      : std_logic;
     ----------------------
@@ -202,7 +205,7 @@ begin
     i_sdaInxDI <= fpga_sdaxDIO;
     fpga_sclxDIO <= '0' when i_sclOutxDO = '0' else 'Z';
 
-    
+
     -------------------------- ACCURATE DAC------------------------------------
     DAC7578E : entity work.i2cDAC7578
         port map (
@@ -224,31 +227,31 @@ begin
             i2cRxDataWLengthxDO => i2cDAC7578RxDataWLength,
 
             -- Voltge level ports (12bit width)
-            AxDI => DAC7578Config.vOutA, -- A1_Vbias1  
-            BxDI => DAC7578Config.vOutB, -- Vcm        
-            CxDI => DAC7578Config.vOutC, -- A1_Vth1    
+            AxDI => DAC7578Config.vOutA, -- A1_Vbias1
+            BxDI => DAC7578Config.vOutB, -- Vcm
+            CxDI => DAC7578Config.vOutC, -- A1_Vth1
             DxDI => DAC7578Config.vOutD, -- A1_Vcharge+
-            ExDI => DAC7578Config.vOutE, -- A1_Vth2    
-            FxDI => DAC7578Config.vOutF, -- A1_Vth4    
-            GxDI => DAC7578Config.vOutG, -- A1_Vth3    
-            HxDI => DAC7578Config.vOutH  -- A1_Vbias3  
+            ExDI => DAC7578Config.vOutE, -- A1_Vth2
+            FxDI => DAC7578Config.vOutF, -- A1_Vth4
+            GxDI => DAC7578Config.vOutG, -- A1_Vth3
+            HxDI => DAC7578Config.vOutH  -- A1_Vbias3
     );
 
 
     -------------------------- ACCURATE ---------------------------------------
-    accurateWrapperE : entity work.accurateWrapper
+    accurateFrontendE : entity work.accurateFrontend
         port map (
             clk20  => clkGlobal,
             clk100 => clk40, -- 40 MHz to respect timing constraints
             rst => '0',
 
             -- Sampling time, coming from window generator
-            windIntervalxDI => wind100ms,
+            samplexDI => wind100ms,
 
             -- Amout of LSBs of charge counted in the last interval
-            std_logic_vector(voltageChangeIntervalxDO) => voltageChangeIntervalxDO,
+            chargeMeasurementxDO => chargeMeasurementTmp,
             -- If voltageChangeIntervalxDO value is ready
-            voltageChangeRdyxDO => voltageChangeRdyxDO,
+            measurementReadyxDO => voltageChangeRdyxDO,
 
             -- ACCURATE physical I/Os
             -- Comparators inputs
@@ -271,6 +274,8 @@ begin
             configxDI             => configxDI, --! Configuration data from PS
             configValidxDI        => configValidxDI
     );
+
+    voltageChangeIntervalxDO <= std_logic_vector(resize(chargeMeasurementTmp, voltageChangeIntervalxDO'length));
 
     ps2plResetOTAValidxDI <= '0'; --! Not used in this design
     ps2plResetOTAxDI <= '0';      --! Not used in this design
