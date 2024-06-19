@@ -11,13 +11,7 @@ The charting is done using LiveCharts2.
 - **Data Export**: Export sensor data to CSV files for external use.
 
 ## Installation
-To install the Accurate2 Eval GUI, clone this repository and build the project using .NET Core. Ensure that Avalonia dependencies are properly installed.
-
-```bash
-git clone https://github.com/your-repository/accurate2-eval-gui.git
-cd accurate2-eval-gui
-dotnet build
-```
+To install the Accurate2 Eval GUI, clone this repository and open it with Visual Studio 2022 or above. Make sure to install all necessary NuGet packages.
 
 ## Usage
 1. **Connect a USB Device**: Select a port and click the "Connect" button to start receiving data from your USB device.
