@@ -131,7 +131,7 @@ def get_current(
             while True:
                 # Check header
                 header = ser.read()
-                if header[0] != 0xDD:
+                if header[0] != 0xAB:
                     continue
 
                 # Read data
