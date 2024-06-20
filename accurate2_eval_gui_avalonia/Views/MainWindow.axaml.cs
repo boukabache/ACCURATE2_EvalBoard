@@ -72,13 +72,15 @@ public partial class MainWindow : Window
         };
 
         Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
-        usbEventWatcher = new UsbEventWatcher();
-        usbEventWatcher.UsbDeviceAdded += (sender, args) =>
+
+        usbEventWatcher = new UsbEventWatcher(true, false, true, false);
+
+        usbEventWatcher.UsbDeviceAdded += (_, device) =>
         {
             Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
         };
 
-        usbEventWatcher.UsbDeviceRemoved += (sender, args) =>
+        usbEventWatcher.UsbDeviceRemoved += (_, device) =>
         {
             Dispatcher.UIThread.InvokeAsync(() => USBEventArrived());
         };
