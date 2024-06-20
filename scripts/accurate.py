@@ -8,6 +8,7 @@ import typer
 import serial
 import serial.tools.list_ports
 from typing_extensions import Annotated
+import datetime
 
 app = typer.Typer(
     help="Command line interface for the ACCURATE2 evaluation board.",
@@ -78,13 +79,13 @@ def get_current(
     ] = 9600,
     period: Annotated[
         int, typer.Option(
-            "-p", "--period",
+            "--period",
             help="Sampling period in ms."
         )
     ] = default_period,
     lsb: Annotated[
         float, typer.Option(
-            "-l", "--lsb",
+            "--lsb",
             help="Least significant bit value in aC."
         )
     ] = default_lsb,
@@ -92,6 +93,12 @@ def get_current(
         bool, typer.Option(
             "-a", "--average",
             help="Print average current instead of instantaneous."
+        )
+    ] = False,
+    log: Annotated[
+        bool, typer.Option(
+            "-l", "--log",
+            help="Log the values to file. If average is enabled, it will log both instant and average current."
         )
     ] = False,
     verbose: Annotated[
@@ -110,6 +117,15 @@ def get_current(
         pico_current_avg = 0
         count = 0
 
+    if log:
+        with open("valuess.log", "w") as f:
+            if average:
+                f.write("Timestamp, Instantaneous current (pA), Average current (pA)\n")
+            else:
+                f.write("Timestamp, Instantaneous current (pA)\n")
+            f.write("Start time: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
+            f.write("-----------------------------\n")
+
     with serial.Serial(port, baudrate, timeout=1) as ser:
         try:
             while True:
@@ -119,7 +135,7 @@ def get_current(
                     continue
 
                 # Read data
-                ser_data = ser.read(7)
+                ser_data = ser.read(6)
                 # Extract data
                 data = int.from_bytes(ser_data, byteorder='little')
                 if verbose:
@@ -136,6 +152,15 @@ def get_current(
                 if average:
                     pico_current_avg += pico_current
                     count += 1
+
+                # Log to file instant and average current in CSV format
+                if log:
+                    with open("values.log", "a") as f:
+                        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        if average:
+                            f.write(f"{timestamp}, {pico_current:.2f}, {pico_current_avg/count:.2f}\n")
+                        else:
+                            f.write(f"{timestamp}, {pico_current:.2f}\n")
 
 
                 # Print current
