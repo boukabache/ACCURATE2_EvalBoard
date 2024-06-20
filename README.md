@@ -72,7 +72,7 @@ For quickly getting started using the evaluation board, a Command Line Interface
 ## Serial output
 As soon as the board is powered up the FPGA will start to stream on the UART bus the measurements coming from ACCURATE.
 
-The format is the following: 1 byte of header followed by 6 bytes of data (LSB first). The header byte is `0xAB`. The data value is actually 52bit long, so the 4 MSb are all zeros and used just for padding.
+The format is the following: 1 byte of header followed by 6 bytes of data (LSB first). The header byte is `0xDD`. The data value is actually 52bit long, so the 4 MSb are all zeros and used just for padding.
 
 
 ## Register map
