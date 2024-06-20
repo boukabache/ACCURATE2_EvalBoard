@@ -172,7 +172,7 @@
 
       
       <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" BorderThickness="0" CornerRadius="8" Margin="12, 4, 24, 4" Background="White">
-        <Grid Grid.RowSpan="3" ColumnDefinitions="0.5*, 0.5*" RowDefinitions="0.05*, 0.85*, 0.1*">
+        <Grid Grid.RowSpan="3" ColumnDefinitions="0.6*, 0.4*" RowDefinitions="0.05*, 0.85*, 0.1*">
 
           <Label Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="35" FontFamily="Segoe UI Variable Display" FontWeight="SemiBold" Margin="12, 4, 4, 4">Live Current</Label>
 
@@ -189,7 +189,7 @@
             <Button x:Name="exportButton" Command="{Binding OnExportClickCommand}" MinHeight="45" Margin="12, 4, 0, 4" Foreground="Black" Background="White" BorderThickness="1" FontFamily="Segoe UI Variable Text" Content="Export CSV"></Button>
           </WrapPanel>
 
-          <Label Name="SamplesText" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Segoe UI Variable Text" Foreground="Black" Margin="0, 4, 12, 4">N/A samples since first connection</Label>
+          <Label Name="SamplesText" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Segoe UI Variable Text" Foreground="Black" Margin="0, 4, 12, 4">N/A samples since connection</Label>
         </Grid>
       </Border>
 

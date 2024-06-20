@@ -21,7 +21,7 @@ namespace accurate2_eval_gui_avalonia.Views;
 public partial class MainWindow : Window
 {
     string[] serialPorts = SerialPort.GetPortNames();
-    int clickCount1;
+    int clickCount;
     readonly SerialPort arduinoPort = new();
     readonly DispatcherTimer dispatcherTimer;
     TimeSpan time;
@@ -101,16 +101,16 @@ public partial class MainWindow : Window
     private void ConnectUSB(object? sender, EventArgs e)
     {
 
-        if (!(clickCount1 == 1))
+        if (!(clickCount == 1))
         {
-            clickCount1 = 1;
+            clickCount = 1;
         }
         else
         {
-            clickCount1 = 0;
+            clickCount = 0;
         }
 
-        switch (clickCount1)
+        switch (clickCount)
         {
             case 0:
                 try
@@ -122,6 +122,7 @@ public partial class MainWindow : Window
                 }
                 catch
                 {
+                    clickCount = 0;
                     MessageBoxError("Failed to disconnect device.", "Connection Error");
                 }
 
@@ -140,8 +141,8 @@ public partial class MainWindow : Window
                 }
                 else
                 {
+                    clickCount = 0;
                     MessageBoxError("Please select a valid port.", "Connection Error");
-                    return;
                 }
 
                 try
@@ -163,6 +164,7 @@ public partial class MainWindow : Window
                         }
                         catch (Exception ex)
                         {
+                            clickCount = 0;
                             Dispatcher.UIThread.InvokeAsync(() => MessageBoxError("Failed to connect to device: " + ex.Message, "Connection Error"));
                             arduinoPort.Close();
                         }
@@ -171,11 +173,11 @@ public partial class MainWindow : Window
 
                 catch (Exception ex)
                 {
+                    clickCount = 0;
                     Dispatcher.UIThread.InvokeAsync(() => MessageBoxError("Failed to connect to device: " + ex.Message, "Connection Error"));
                 }
 
                 break;
-
         }
     }
 
@@ -241,7 +243,7 @@ public partial class MainWindow : Window
 
                 totalCurrent += currentInAmperes; // Accumulate the converted current for averaging.
                 currentReadingsCount++;
-                SamplesText.Content = currentReadingsCount.ToString() + " samples since first connection";
+                SamplesText.Content = currentReadingsCount.ToString() + " samples since connection";
 
                 double calculatedAverageCurrent = totalCurrent / currentReadingsCount;
 
@@ -376,6 +378,9 @@ public partial class MainWindow : Window
 
     private void ResetData(object? sender, EventArgs e)
     {
+        totalCurrent = 0;
+        currentReadingsCount = 0;
+
         Dispatcher.UIThread.InvokeAsync(() =>
         {
             liveCurrent.Content = "N/A fA";
