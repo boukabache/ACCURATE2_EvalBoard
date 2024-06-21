@@ -1,4 +1,0 @@
-v 4
-file / "/Users/mattia/Desktop/uart.vhd" "5447cba825fc48cedf04a3c40181b131159974f1" "20240522150305.813":
-  entity uart at 26( 1205) + 0 on 11;
-  architecture logic of uart at 50( 2625) + 0 on 12;

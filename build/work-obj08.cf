@@ -1,47 +1,65 @@
 v 4
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/pkg/customFixedUtilsPkg.vhd" "6c17a7e72c73270fc30a8df532bfffee196edc9e" "20240522145139.153":
-  package customfixedutilspkg at 1( 0) + 0 on 19 body;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/pkg/customFixedUtilsPkg.vhd" "6c17a7e72c73270fc30a8df532bfffee196edc9e" "20240619071901.633":
+  package customfixedutilspkg at 1( 0) + 0 on 19;
   package body customfixedutilspkg at 16( 285) + 0 on 20;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/pkg/IOPkg.vhd" "478fd2888a0345c0827f5cd8fe2c26d19c98911f" "20240522145139.153":
-  package iopkg at 10( 290) + 0 on 12;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/pkg/configPkg.vhd" "6e93761a5da7d9e4a3d645288431131bcdc5e27a" "20240522145139.153":
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/pkg/IOPkg.vhd" "ad9035263ec1520a6cb925e8fc87f9a8b44761a8" "20240619071901.633":
+  package iopkg at 10( 299) + 0 on 12;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/pkg/configPkg.vhd" "b7c3da0786cd2bd683cf70772a71a23778c629cb" "20240619071901.633":
   package configpkg at 14( 463) + 0 on 11;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/TopLevel.vhd" "a84e53a8ef0a66a2c6b2ef3ab1b8fdc7990d06ba" "20240522152520.525":
-  entity toplevel at 5( 86) + 0 on 45;
-  architecture rtl of toplevel at 59( 1713) + 0 on 46;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/UartLogic.vhd" "cdc90dead715265e954f26def5aebe176ff6146f" "20240522152520.525":
-  entity uartlogic at 9( 370) + 0 on 43;
-  architecture rtl of uartlogic at 35( 951) + 0 on 44;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/uart.vhd" "5447cba825fc48cedf04a3c40181b131159974f1" "20240522145139.153":
-  entity uart at 26( 1205) + 0 on 29;
-  architecture logic of uart at 50( 2625) + 0 on 30;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/DualUnidirectionalBram.vhd" "847dac13dc0b5c712533fc6588c7ef71cf80bf05" "20240522144948.707":
-  entity dualunidirectionalbram at 9( 337) + 0 on 4;
-  architecture behaviour of dualunidirectionalbram at 32( 1012) + 0 on 4;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/tb/UartLogicTB.vhd" "55fff412a0e5330d7f676c126df0bfecc9e950b9" "20240522144948.706":
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/i2cAdcLTC2471.vhd" "bf915e8acd0c506d2ad0efcfdda799cc8ca75aed" "20240619071730.797":
+  entity i2cadcltc2471 at 13( 517) + 0 on 4;
+  architecture rtl of i2cadcltc2471 at 50( 1944) + 0 on 4;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/pipelined_adder.vhd" "8bc1f49dbe3b9df95665ad865d9c01fa5f28b994" "20240619071901.633":
+  entity pipelined_adder at 1( 0) + 0 on 23;
+  architecture behavioral of pipelined_adder at 20( 508) + 0 on 24;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/UartWrapper.vhd" "9dd280872013417f03c6417fc18e817841cad655" "20240619071901.633":
+  entity uartwrapper at 10( 352) + 0 on 35;
+  architecture rtl of uartwrapper at 40( 1283) + 0 on 36;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/TopLevel.vhd" "4f2b6dd6df56a9c228595ecf6402e7a920e007e0" "20240619071901.633":
+  entity toplevel at 20( 1105) + 0 on 43;
+  architecture rtl of toplevel at 79( 2928) + 0 on 44;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/UartLogic.vhd" "d55211d71f3e2868795b539e8fa469172fa6569e" "20240619071901.633":
+  entity uartlogic at 17( 680) + 0 on 37;
+  architecture rtl of uartlogic at 48( 1556) + 0 on 38;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/sht41Controller.vhd" "4fd1b27b96e16342664d76dfd4e1348bc2cfad0e" "20240619071901.633":
+  entity sht41controller at 1( 0) + 0 on 41;
+  architecture behavioral of sht41controller at 38( 1605) + 0 on 42;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/uart.vhd" "5447cba825fc48cedf04a3c40181b131159974f1" "20240619071901.633":
+  entity uart at 26( 1205) + 0 on 31;
+  architecture logic of uart at 50( 2625) + 0 on 32;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/tb/UartLogicTB.vhd" "98f65842f7c7f6107d7197c6731862c5e8f54520" "20240619071730.795":
   entity uartlogictb at 1( 0) + 0 on 4;
   architecture test of uartlogictb at 9( 144) + 0 on 4;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/accurateFrontend.vhd" "5897bcb82df2f215a67eeff0c174025f04c3f8e4" "20240522145139.153":
-  entity accuratefrontend at 34( 2029) + 0 on 23;
-  architecture behavioral of accuratefrontend at 93( 4263) + 0 on 24;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/accurateCDC.vhd" "379ec1652ef9785c9dfed95407b9d1ce2a32a31e" "20240522145139.153":
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/tb/UartWrapperTB.vhd" "f388b6c73149314ad28404af63c9a633b6b356d3" "20240619071730.795":
+  entity uartwrappertb at 1( 0) + 0 on 4;
+  architecture test of uartwrappertb at 9( 148) + 0 on 4;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/tb/sht41ControllerTB.vhd" "c115f6137d88891033f446ea9f4f7e645fbefe3e" "20240619072031.453":
+  entity sht41controllertb at 1( 0) + 0 on 45;
+  architecture test of sht41controllertb at 12( 197) + 0 on 46;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/accurateFrontend.vhd" "182400767be5f0702d33dbcdbc2d0a8b8a035acc" "20240619071901.633":
+  entity accuratefrontend at 34( 2029) + 0 on 25;
+  architecture behavioral of accuratefrontend at 95( 4379) + 0 on 26;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/accurateCDC.vhd" "379ec1652ef9785c9dfed95407b9d1ce2a32a31e" "20240619071901.633":
   entity accuratecdc at 12( 799) + 0 on 21;
   architecture behavioral of accuratecdc at 49( 2320) + 0 on 22;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/windowGenerator.vhd" "689e717904ca4781cddc5f5dc204bec7eb200b6d" "20240522145139.153":
-  entity windowgenerator at 46( 2843) + 0 on 27;
-  architecture behavioral of windowgenerator at 71( 3693) + 0 on 28;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/accurateWrapper.vhd" "f63050d1c3a8ca372f6d3a59273aec8f9fdfa3ff" "20240522145139.153":
-  entity accuratewrapper at 8( 180) + 0 on 25;
-  architecture behavior of accuratewrapper at 62( 2218) + 0 on 26;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/i2cMaster.vhd" "abba3dcfc4f0582accc308568906e9e6880bcaa3" "20240522145139.153":
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/Fifo.vhd" "13574698d6e0c18f997db62c3b126388a536ab4d" "20240619071901.633":
+  entity fifo at 24( 1234) + 0 on 33;
+  architecture rtl of fifo at 49( 1783) + 0 on 34;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/windowGenerator.vhd" "689e717904ca4781cddc5f5dc204bec7eb200b6d" "20240619071901.633":
+  entity windowgenerator at 46( 2843) + 0 on 29;
+  architecture behavioral of windowgenerator at 71( 3693) + 0 on 30;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/accurateWrapper.vhd" "f63050d1c3a8ca372f6d3a59273aec8f9fdfa3ff" "20240619071901.633":
+  entity accuratewrapper at 8( 180) + 0 on 27;
+  architecture behavior of accuratewrapper at 62( 2218) + 0 on 28;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/i2cMaster.vhd" "abba3dcfc4f0582accc308568906e9e6880bcaa3" "20240619071901.633":
   entity i2cmaster at 38( 1910) + 0 on 15;
   architecture behavioural of i2cmaster at 76( 3484) + 0 on 16;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/i2cDAC7578.vhd" "f74ab1d6c37ce1f2ebac92bfd76ac1c9640aec24" "20240522145139.153":
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/i2cDAC7578.vhd" "1e810493c33330df09b300c4d875a5c38afdb319" "20240619071901.633":
   entity i2cdac7578 at 7( 172) + 0 on 17;
-  architecture behavioral of i2cdac7578 at 50( 1839) + 0 on 18;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/RegisterFile.vhd" "809676c9a66e86235aa01f41f0a2ff6f9f8ca519" "20240522145139.153":
-  entity registerfile at 4( 106) + 0 on 33;
-  architecture rtl of registerfile at 26( 572) + 0 on 34;
-file "/Users/mattia/CERN/eval_board_tests_rtl/accurate/" "./hdl/Pll.vhd" "43c46f570ed43516382d1bdd1706f7575e963d5e" "20240522145139.153":
+  architecture behavioral of i2cdac7578 at 50( 1837) + 0 on 18;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/RegisterFile.vhd" "ba17d23a40791e5e7b9e835eefc1a180afef10b0" "20240619071901.633":
+  entity registerfile at 36( 1013) + 0 on 39;
+  architecture rtl of registerfile at 65( 1806) + 0 on 40;
+file "/Users/mattia/CERN/accurate2_eval_rtl/" "./hdl/Pll.vhd" "43c46f570ed43516382d1bdd1706f7575e963d5e" "20240619071901.633":
   entity pll at 20( 920) + 0 on 13;
   architecture rtl of pll at 38( 1417) + 0 on 14;
