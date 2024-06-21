@@ -118,7 +118,7 @@ def get_current(
         count = 0
 
     if log:
-        with open("valuess.log", "w") as f:
+        with open("values.log", "w") as f:
             if average:
                 f.write("Timestamp, Instantaneous current (pA), Average current (pA)\n")
             else:

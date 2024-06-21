@@ -3,6 +3,7 @@
 
 # Log crap
 build/log.txt
+*.log
 
 hardware.json
 hardware.bin
