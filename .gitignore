@@ -5,6 +5,9 @@
 build/log.txt
 *.log
 
+# GHDL crap
+*.cf
+
 hardware.json
 hardware.bin
 hardware.asc
