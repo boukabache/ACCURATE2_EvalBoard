@@ -11,7 +11,7 @@ float accumulatedCurrent = 0;
 int measurementCount = 0;
 
 CurrentMeasurement fpga_read_current() {
-    if (Serial1.available() < 6) {
+    if (Serial1.available() < FPGA_DATA_LENGTH) {
         CurrentMeasurement noDeviceMeasurement;
         noDeviceMeasurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
         noDeviceMeasurement.convertedCurrent = std::nan("1");
@@ -20,17 +20,25 @@ CurrentMeasurement fpga_read_current() {
         return noDeviceMeasurement;
     }
 
-    while (Serial1.available() >= 6) {
-        if (Serial1.read() != FPGA_CURRENT_ADDRESS) {
+    while (Serial1.available() >= FPGA_DATA_LENGTH) {
+        uint8_t addressByte = Serial1.read();
+        if (addressByte != FPGA_CURRENT_ADDRESS) {
+            // Clear the remaining bytes in the buffer
+            for (int i = 0; i < FPGA_PAYLOAD_LENGTH; i++) {
+                if (Serial1.available()) {
+                    Serial1.read();
+                }
+            }
             continue;
         }
-        uint8_t dataBytes[5];
-        for (int i = 0; i < 5; i++) {
+
+        uint8_t dataBytes[FPGA_PAYLOAD_LENGTH];
+        for (int i = 0; i < FPGA_PAYLOAD_LENGTH; i++) {
             dataBytes[i] = Serial1.read();
         }
 
         uint64_t data = 0;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < FPGA_PAYLOAD_LENGTH; i++) {
             data |= ((uint64_t)dataBytes[i] << (8 * i));
         }
 
@@ -46,7 +54,8 @@ CurrentMeasurement fpga_read_current() {
 
 #ifdef DEBUG
         Serial.print("Data: 0x");
-        for (int i = 4; i >= 0; i--) {
+        Serial.print(addressByte, HEX);
+        for (int i = FPGA_PAYLOAD_LENGTH - 1; i >= 0; i--) {
             Serial.print(dataBytes[i], HEX);
         }
         Serial.print(" - Measured Current: ");
@@ -69,31 +78,43 @@ TempHumMeasurement fpga_read_temp_humidity() {
     TempHumMeasurement measurement;
     measurement.status = SHT41_ERR_MEASUREMENT;
 
-    if (Serial1.available() < 7) {
+    if (Serial1.available() < TEMPHUM_DATA_LENGTH) {
         return measurement;
     }
 
-    // Check if the address matches the temperature/humidity address
-    if (Serial1.read() != FPGA_TEMPHUM_ADDRESS) {
+    while (Serial1.available() >= TEMPHUM_DATA_LENGTH) {
+        uint8_t addressByte = Serial1.read();
+        if (addressByte != FPGA_TEMPHUM_ADDRESS) {
+            // Clear the remaining bytes in the buffer
+            for (int i = 0; i < TEMPHUM_PAYLOAD_LENGTH; i++) {
+                if (Serial1.available()) {
+                    Serial1.read();
+                }
+            }
+            continue;
+        }
+
+        uint8_t dataBytes[TEMPHUM_PAYLOAD_LENGTH];
+        for (int i = 0; i < TEMPHUM_PAYLOAD_LENGTH; i++) {
+            dataBytes[i] = Serial1.read();
+        }
+
+        // Validate CRC
+        if (crc8(dataBytes, 2) != dataBytes[2] || crc8(dataBytes + 3, 2) != dataBytes[5]) {
+            measurement.status = SHT41_ERR_CRC;
+            return measurement;
+        }
+
+        uint16_t rawTemperature = (dataBytes[1] << 8) | dataBytes[0];
+        uint16_t rawHumidity = (dataBytes[3] << 8) | dataBytes[2];
+
+        sht41_calculate(rawTemperature, rawHumidity, &measurement);
+
         return measurement;
     }
 
-    uint8_t dataBytes[6];
-    for (int i = 0; i < 6; i++) {
-        dataBytes[i] = Serial1.read();
-    }
-
-    // Validate CRC
-    if (crc8(dataBytes, 2) != dataBytes[2] || crc8(dataBytes + 3, 2) != dataBytes[5]) {
-        measurement.status = SHT41_ERR_CRC;
-        return measurement;
-    }
-
-    uint16_t rawTemperature = (dataBytes[1] << 8) | dataBytes[0];
-    uint16_t rawHumidity = (dataBytes[3] << 8) | dataBytes[2];
-
-    sht41_calculate(rawTemperature, rawHumidity, &measurement);
-
+    // Return a measurement indicating an error
+    measurement.status = SHT41_ERR_MEASUREMENT;
     return measurement;
 }
 

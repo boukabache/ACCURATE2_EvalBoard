@@ -20,7 +20,11 @@ const float TW = 0.1;
 const float DEFAULT_LSB = 39.339; // aC
 const int DEFAULT_PERIOD = 100; // ms
 
+const int FPGA_DATA_LENGTH = 8;
+const int FPGA_PAYLOAD_LENGTH = FPGA_DATA_LENGTH - 1; // 7 bytes payload + 1 byte address
 const uint8_t FPGA_CURRENT_ADDRESS = 0xDD;
+const int TEMPHUM_DATA_LENGTH = 7;
+const int TEMPHUM_PAYLOAD_LENGTH = TEMPHUM_DATA_LENGTH - 1; // 6 bytes payload + 1 byte address
 const uint8_t FPGA_TEMPHUM_ADDRESS = 0xEE;
 
 const uint8_t INIT_CONFIG_ADDRESS = 0x01;

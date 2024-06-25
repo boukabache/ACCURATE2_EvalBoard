@@ -89,7 +89,6 @@ void loop() {
     ssd1306_print_current_temp_humidity(measuredCurrent.convertedCurrent, measuredCurrent.range, temp + " C", humidity);
     String message = String(measuredCurrent.currentInFemtoAmpere) + "," + String(temp) + "," + String(humidity) + "," + btnLedStatus;
     Serial.println(message);
-    delay(50);
 }
 
 String getPinStatus() {
