@@ -11,7 +11,29 @@ The project is made using Visual Studio 2022.
 - **USB Device Integration**: Connect and disconnect to USB devices with ease.
 - **Data Export**: Export sensor data to CSV files for external use.
 
-## Installation
+## App Installation
+1. Go to [releases](https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_gui_avalonia/-/releases) and download the executable for your machine.
+
+### Windows
+2. Run the .exe file
+
+### Mac
+2. Unzip the file.
+3. Open a terminal in the same folder as the .app file and run
+```
+xattr -cr "ACCURATE 2A Evaluation Software.app"
+ ```
+
+ 4. Open the file.
+
+ ### Linux
+ 2. Open a terminal in the same folder as the file and run
+
+```
+rpm -i "ACCURATE 2A Evaluation Software.rpm"
+ ```
+
+## Project Installation
 To install the Accurate2 Eval GUI, clone this repository and open it with Visual Studio 2022 or above. Make sure to install all necessary NuGet packages.
 
 ## Usage
@@ -34,11 +56,20 @@ To install the Accurate2 Eval GUI, clone this repository and open it with Visual
 ```
 dotnet restore -r osx-arm64
 
-dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-arm64 -property:Configuration=Release -p:CFBundleShortVersionString=1.X.X -p:UseAppHost=true
+dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-arm64 -property:Configuration=Release-p:CFBundleShortVersionString=1.1.2 -p:SelfContained=true -p:CFBundleIconFile="../../../../CERN-logo.icns"
  ```
 This will create a .app file in bin>Release>net8.0>osx-arm64>publish.
-2. Sign the Mac app using a valid certificate on a Mac
-3. Make a Dmg by going into Disk Image, pressing "File>New Diskfile" and choose the app
+
+To publish properly (which has not yet been done):
+2. Sign the Mac app using a valid Apple Developer ID certificate on a Mac. This requires a subscription for being an Apple Developer. This must be done on a Mac. Sign it by running
+
+```
+codesign --force --timestamp --options=runtime --entitlements "$ENTITLEMENTS" --sign "$SIGNING_IDENTITY" "$APP_NAME"
+ ```
+
+3. Make a Dmg by going into Disk Image, pressing "File>New Diskfile" and choose the app.
+4. Sign the Mac Dmg file as with the .app.
+5. Notarize the Dmg by following the guide [here](https://docs.avaloniaui.net/docs/deployment/macOS#notarizing-your-software).
 
 ### Linux x64 Rpm
 In the accurate2_eval_gui_avalonia.Desktop folder, run
@@ -46,7 +77,7 @@ In the accurate2_eval_gui_avalonia.Desktop folder, run
 ```
 dotnet restore -r linux-x64
 
-dotnet msbuild -t:CreateRpm -p:RuntimeIdentifier=linux-x64 -property:Configuration=Release -p:CFBundleShortVersionString=1.X.X -p:UseAppHost=true
+dotnet msbuild -t:CreateRpm -p:RuntimeIdentifier=linux-x64 -property:Configuration=Release -p:CFBundleShortVersionString=1.X.X -p:UseAppHost=true -p:CFBundleIconFile="../../../../CERN-logo.png"
 ```
 
 This will create a .rpm file in bin>Release>net8.0>linux-x64.
