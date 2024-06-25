@@ -15,7 +15,7 @@ void setup() {
         ;
     }
 
-    Serial1.begin(9600, SERIAL_8N2); // No parity, two stop bits
+    Serial1.begin(9600, SERIAL_8N1); // No parity, one stop bit
     while (!Serial1) {
         ;
     }
