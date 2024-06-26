@@ -8,6 +8,9 @@ build/log.txt
 # GHDL crap
 *.cf
 
+# Wave crap
+*.vcd
+
 hardware.json
 hardware.bin
 hardware.asc
