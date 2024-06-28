@@ -20062,7 +20062,7 @@
 		)
 		(uuid "7d428048-3124-4621-bcab-fbe534255daf")
 	)
-	(text_box "Routing note:\n- Placement of female headers must match Arduino Zero Hat"
+	(text_box "Routing note:\n- Placement of female headers must match Arduino Zero Shield"
 		(exclude_from_sim no)
 		(at 285.75 43.18 0)
 		(size 52.07 7.62)
@@ -20336,7 +20336,7 @@
 		)
 		(uuid "26c44385-02d9-4b4e-84dc-5d6505c80b45")
 	)
-	(label "MCU_RxD"
+	(label "MCU_RX"
 		(at 201.93 68.58 180)
 		(fields_autoplaced yes)
 		(effects
@@ -20523,7 +20523,7 @@
 		)
 		(uuid "59e8bfe5-3870-41fa-a3c1-2d997c8cb9d7")
 	)
-	(label "MCU_TxD"
+	(label "MCU_TX"
 		(at 350.52 36.83 0)
 		(fields_autoplaced yes)
 		(effects
@@ -20655,7 +20655,7 @@
 		)
 		(uuid "6b126c99-e8a2-43ed-a546-29ae24f5c911")
 	)
-	(label "P.A22"
+	(label "MCU_SDA"
 		(at 350.52 29.21 0)
 		(fields_autoplaced yes)
 		(effects
@@ -20853,7 +20853,7 @@
 		)
 		(uuid "a34754c3-17ad-4a92-82bf-4d062f0ddd60")
 	)
-	(label "MCU_RxD"
+	(label "MCU_RX"
 		(at 350.52 40.64 0)
 		(fields_autoplaced yes)
 		(effects
@@ -20985,7 +20985,7 @@
 		)
 		(uuid "cc53178c-838c-4491-bed8-fd99033b1e52")
 	)
-	(label "P.A23"
+	(label "MCU_SCL"
 		(at 350.52 33.02 0)
 		(fields_autoplaced yes)
 		(effects
@@ -21128,7 +21128,7 @@
 		)
 		(uuid "eddfdbef-d10d-41d3-a3a6-7b0755229f37")
 	)
-	(label "MCU_TxD"
+	(label "MCU_TX"
 		(at 201.93 66.04 180)
 		(fields_autoplaced yes)
 		(effects
@@ -21161,7 +21161,7 @@
 		)
 		(uuid "f488f515-2bfb-4a5b-9f7f-fa30de2a07ee")
 	)
-	(label "P.A22"
+	(label "MCU_SDA"
 		(at 107.95 111.76 180)
 		(fields_autoplaced yes)
 		(effects
@@ -21249,7 +21249,7 @@
 		)
 		(uuid "fd707118-d5f5-4336-a798-bcd2fb97fcb6")
 	)
-	(label "P.A23"
+	(label "MCU_SCL"
 		(at 107.95 114.3 180)
 		(fields_autoplaced yes)
 		(effects
@@ -21353,7 +21353,7 @@
 		)
 		(uuid "7bb3ee4b-b92b-45a8-a3c1-bad572a57819")
 	)
-	(hierarchical_label "MCU_TxD"
+	(hierarchical_label "MCU_TX"
 		(shape output)
 		(at 374.65 36.83 0)
 		(fields_autoplaced yes)
@@ -21413,7 +21413,7 @@
 		)
 		(uuid "d7f7d5de-0e31-4af9-a9b1-76d8c88f84ce")
 	)
-	(hierarchical_label "MCU_RxD"
+	(hierarchical_label "MCU_RX"
 		(shape input)
 		(at 374.65 40.64 0)
 		(fields_autoplaced yes)

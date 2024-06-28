@@ -28759,7 +28759,7 @@
 			)
 			(uuid "e4ee76fc-acf9-4de6-a220-00632ad1059e")
 		)
-		(pin "MCU_RxD" input
+		(pin "MCU_RX" input
 			(at 203.2 217.17 180)
 			(effects
 				(font
@@ -28769,7 +28769,7 @@
 			)
 			(uuid "6ac66245-3fd7-4093-98be-5ba2dd4cb227")
 		)
-		(pin "MCU_TxD" output
+		(pin "MCU_TX" output
 			(at 203.2 214.63 180)
 			(effects
 				(font

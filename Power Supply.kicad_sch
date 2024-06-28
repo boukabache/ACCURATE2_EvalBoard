@@ -36020,7 +36020,7 @@
 		(uuid "2144c2ee-38f5-4a3e-b74f-e4365042b0ad")
 	)
 	(junction
-		(at 325.12 227.33)
+		(at 325.12 228.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "244e8aa0-6fb8-460b-8e0d-fabda2c8e68c")
@@ -36038,10 +36038,16 @@
 		(uuid "2cac2eb3-fa94-469b-a56a-3814d257c660")
 	)
 	(junction
-		(at 279.4 227.33)
+		(at 279.4 228.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2f049d31-5d92-40da-bce8-f81c96c52a20")
+	)
+	(junction
+		(at 322.58 240.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2fe23eb2-6806-476d-b5b0-db6010fc790d")
 	)
 	(junction
 		(at 133.35 252.73)
@@ -36170,7 +36176,7 @@
 		(uuid "596062ab-ced3-4b11-bb8f-c3a50535e037")
 	)
 	(junction
-		(at 271.78 237.49)
+		(at 271.78 240.03)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5b524445-2b52-403b-adc7-f88c2c409614")
@@ -36302,16 +36308,10 @@
 		(uuid "86ed8196-2922-46d0-9a4c-4b65a1317cf8")
 	)
 	(junction
-		(at 284.48 227.33)
+		(at 284.48 228.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "899c42b0-8e75-465e-b046-1825cfb8a78d")
-	)
-	(junction
-		(at 314.96 238.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8f7e1407-0bdc-4e55-b1e0-e83d2b64198d")
 	)
 	(junction
 		(at 29.21 241.3)
@@ -36332,7 +36332,7 @@
 		(uuid "9a22ab0c-5b84-424f-a09a-4b89438d032f")
 	)
 	(junction
-		(at 314.96 227.33)
+		(at 314.96 228.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9cdd5c01-36b5-4c6b-a177-443407d0d3be")
@@ -36374,7 +36374,7 @@
 		(uuid "a74be0b4-e479-452c-8287-9d6b3181bdea")
 	)
 	(junction
-		(at 279.4 237.49)
+		(at 279.4 240.03)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a865440a-da9d-4ae2-ad90-5d6eed892253")
@@ -36488,7 +36488,7 @@
 		(uuid "d39b49c2-546f-41ce-9176-f2ab41c38b80")
 	)
 	(junction
-		(at 271.78 227.33)
+		(at 271.78 228.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d781dd53-c426-4626-89db-c644b33c2950")
@@ -36566,7 +36566,7 @@
 		(uuid "f6a2a380-86c3-43ff-b27d-d1ac13f0eef2")
 	)
 	(junction
-		(at 322.58 227.33)
+		(at 322.58 228.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f7b19167-f6c8-42c1-a4ea-3a9a8176ae66")
@@ -36650,11 +36650,11 @@
 		(uuid "6322cfe3-9cf5-47fd-b996-0b33cf4602fa")
 	)
 	(no_connect
-		(at 312.42 229.87)
+		(at 312.42 231.14)
 		(uuid "639640e6-483f-4474-b809-ab80b6424673")
 	)
 	(no_connect
-		(at 287.02 232.41)
+		(at 287.02 233.68)
 		(uuid "74267113-265f-4810-a6bd-c2d3bcc2bac1")
 	)
 	(no_connect
@@ -36670,7 +36670,7 @@
 		(uuid "8897ff27-8ecb-424e-8438-ee33ff4dc56d")
 	)
 	(no_connect
-		(at 312.42 234.95)
+		(at 312.42 236.22)
 		(uuid "89acd9d4-b730-48d3-8b53-ec6cdb9add92")
 	)
 	(no_connect
@@ -36678,7 +36678,7 @@
 		(uuid "8b0ad159-f9cd-49e0-b880-344283d105d0")
 	)
 	(no_connect
-		(at 312.42 232.41)
+		(at 312.42 233.68)
 		(uuid "8df50b71-fb32-4823-a5f2-c64d6c505e8f")
 	)
 	(no_connect
@@ -37173,7 +37173,7 @@
 	)
 	(wire
 		(pts
-			(xy 279.4 236.22) (xy 279.4 237.49)
+			(xy 279.4 237.49) (xy 279.4 240.03)
 		)
 		(stroke
 			(width 0)
@@ -37713,7 +37713,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 237.49) (xy 279.4 237.49)
+			(xy 271.78 240.03) (xy 279.4 240.03)
 		)
 		(stroke
 			(width 0)
@@ -37793,7 +37793,7 @@
 	)
 	(wire
 		(pts
-			(xy 312.42 227.33) (xy 314.96 227.33)
+			(xy 312.42 228.6) (xy 314.96 228.6)
 		)
 		(stroke
 			(width 0)
@@ -37803,7 +37803,7 @@
 	)
 	(wire
 		(pts
-			(xy 284.48 227.33) (xy 287.02 227.33)
+			(xy 284.48 228.6) (xy 287.02 228.6)
 		)
 		(stroke
 			(width 0)
@@ -37923,7 +37923,7 @@
 	)
 	(wire
 		(pts
-			(xy 325.12 220.98) (xy 325.12 227.33)
+			(xy 325.12 222.25) (xy 325.12 228.6)
 		)
 		(stroke
 			(width 0)
@@ -38093,7 +38093,7 @@
 	)
 	(wire
 		(pts
-			(xy 284.48 227.33) (xy 284.48 229.87)
+			(xy 284.48 228.6) (xy 284.48 231.14)
 		)
 		(stroke
 			(width 0)
@@ -38153,7 +38153,7 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 227.33) (xy 322.58 227.33)
+			(xy 314.96 228.6) (xy 322.58 228.6)
 		)
 		(stroke
 			(width 0)
@@ -38343,7 +38343,7 @@
 	)
 	(wire
 		(pts
-			(xy 284.48 237.49) (xy 279.4 237.49)
+			(xy 284.48 240.03) (xy 279.4 240.03)
 		)
 		(stroke
 			(width 0)
@@ -38403,7 +38403,7 @@
 	)
 	(wire
 		(pts
-			(xy 322.58 228.6) (xy 322.58 227.33)
+			(xy 322.58 229.87) (xy 322.58 228.6)
 		)
 		(stroke
 			(width 0)
@@ -38503,7 +38503,7 @@
 	)
 	(wire
 		(pts
-			(xy 287.02 234.95) (xy 284.48 234.95)
+			(xy 287.02 236.22) (xy 284.48 236.22)
 		)
 		(stroke
 			(width 0)
@@ -38543,7 +38543,7 @@
 	)
 	(wire
 		(pts
-			(xy 284.48 234.95) (xy 284.48 237.49)
+			(xy 284.48 236.22) (xy 284.48 240.03)
 		)
 		(stroke
 			(width 0)
@@ -38653,7 +38653,7 @@
 	)
 	(wire
 		(pts
-			(xy 287.02 229.87) (xy 284.48 229.87)
+			(xy 287.02 231.14) (xy 284.48 231.14)
 		)
 		(stroke
 			(width 0)
@@ -38703,7 +38703,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 223.52) (xy 271.78 227.33)
+			(xy 271.78 224.79) (xy 271.78 228.6)
 		)
 		(stroke
 			(width 0)
@@ -38833,7 +38833,7 @@
 	)
 	(wire
 		(pts
-			(xy 322.58 227.33) (xy 325.12 227.33)
+			(xy 322.58 228.6) (xy 325.12 228.6)
 		)
 		(stroke
 			(width 0)
@@ -38903,7 +38903,7 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 236.22) (xy 314.96 238.76)
+			(xy 314.96 237.49) (xy 314.96 240.03)
 		)
 		(stroke
 			(width 0)
@@ -39043,7 +39043,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 237.49) (xy 271.78 240.03)
+			(xy 271.78 240.03) (xy 271.78 242.57)
 		)
 		(stroke
 			(width 0)
@@ -39083,7 +39083,7 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 238.76) (xy 314.96 240.03)
+			(xy 322.58 240.03) (xy 322.58 242.57)
 		)
 		(stroke
 			(width 0)
@@ -39443,7 +39443,7 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 228.6) (xy 314.96 227.33)
+			(xy 314.96 229.87) (xy 314.96 228.6)
 		)
 		(stroke
 			(width 0)
@@ -39553,7 +39553,7 @@
 	)
 	(wire
 		(pts
-			(xy 322.58 238.76) (xy 314.96 238.76)
+			(xy 322.58 240.03) (xy 314.96 240.03)
 		)
 		(stroke
 			(width 0)
@@ -39583,7 +39583,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 236.22) (xy 271.78 237.49)
+			(xy 271.78 237.49) (xy 271.78 240.03)
 		)
 		(stroke
 			(width 0)
@@ -39663,7 +39663,7 @@
 	)
 	(wire
 		(pts
-			(xy 279.4 227.33) (xy 284.48 227.33)
+			(xy 279.4 228.6) (xy 284.48 228.6)
 		)
 		(stroke
 			(width 0)
@@ -39703,7 +39703,7 @@
 	)
 	(wire
 		(pts
-			(xy 335.28 227.33) (xy 342.9 227.33)
+			(xy 335.28 228.6) (xy 342.9 228.6)
 		)
 		(stroke
 			(width 0)
@@ -39713,7 +39713,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 227.33) (xy 279.4 227.33)
+			(xy 271.78 228.6) (xy 279.4 228.6)
 		)
 		(stroke
 			(width 0)
@@ -39763,7 +39763,7 @@
 	)
 	(wire
 		(pts
-			(xy 322.58 236.22) (xy 322.58 238.76)
+			(xy 322.58 237.49) (xy 322.58 240.03)
 		)
 		(stroke
 			(width 0)
@@ -40043,7 +40043,7 @@
 	)
 	(wire
 		(pts
-			(xy 325.12 227.33) (xy 327.66 227.33)
+			(xy 325.12 228.6) (xy 327.66 228.6)
 		)
 		(stroke
 			(width 0)
@@ -40483,7 +40483,7 @@
 	)
 	(wire
 		(pts
-			(xy 279.4 227.33) (xy 279.4 228.6)
+			(xy 279.4 228.6) (xy 279.4 229.87)
 		)
 		(stroke
 			(width 0)
@@ -41003,7 +41003,7 @@
 	)
 	(wire
 		(pts
-			(xy 271.78 227.33) (xy 271.78 228.6)
+			(xy 271.78 228.6) (xy 271.78 229.87)
 		)
 		(stroke
 			(width 0)
@@ -41502,7 +41502,7 @@
 		)
 		(uuid "1c0f6d81-5cc0-424b-a02e-6e79f357abaa")
 	)
-	(label "RxD"
+	(label "RX"
 		(at 349.25 205.74 0)
 		(fields_autoplaced yes)
 		(effects
@@ -41568,7 +41568,7 @@
 		)
 		(uuid "3be39fcc-5374-43e3-b208-7ed80cdfc803")
 	)
-	(label "TxD"
+	(label "TX"
 		(at 342.9 99.06 180)
 		(fields_autoplaced yes)
 		(effects
@@ -41623,7 +41623,7 @@
 		)
 		(uuid "68f5ae62-6124-457d-9444-87280dc6f7c2")
 	)
-	(label "RxD"
+	(label "RX"
 		(at 342.9 101.6 180)
 		(fields_autoplaced yes)
 		(effects
@@ -41690,7 +41690,7 @@
 		(uuid "94ad5eff-03b9-4bb1-80a2-55121cfff8b2")
 	)
 	(label "3V_REF"
-		(at 342.9 227.33 180)
+		(at 342.9 228.6 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41854,7 +41854,7 @@
 		)
 		(uuid "ecfb3288-a8d6-41e4-a668-88667205b006")
 	)
-	(label "TxD"
+	(label "TX"
 		(at 349.25 208.28 0)
 		(fields_autoplaced yes)
 		(effects
@@ -53204,7 +53204,7 @@
 	)
 	(symbol
 		(lib_id "Resistors SMD:R0603_0R_JUMPER")
-		(at 327.66 227.33 0)
+		(at 327.66 228.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -53212,7 +53212,7 @@
 		(dnp no)
 		(uuid "317e6b8f-7af5-41f9-aade-d86579b26e49")
 		(property "Reference" "R60"
-			(at 331.47 225.552 0)
+			(at 331.47 226.822 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53220,7 +53220,7 @@
 			)
 		)
 		(property "Value" "R0603_0R_JUMPER"
-			(at 327.66 232.283 0)
+			(at 327.66 233.553 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53230,7 +53230,7 @@
 			)
 		)
 		(property "Footprint" "Resistors SMD:RESC1608X55N"
-			(at 327.66 234.188 0)
+			(at 327.66 235.458 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53240,7 +53240,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
-			(at 327.66 236.093 0)
+			(at 327.66 237.363 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53250,7 +53250,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 327.66 227.33 0)
+			(at 327.66 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53259,7 +53259,7 @@
 			)
 		)
 		(property "Val" "0"
-			(at 331.47 229.108 0)
+			(at 331.47 230.378 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53267,7 +53267,7 @@
 			)
 		)
 		(property "Part Number" "R0603_0R_JUMPER"
-			(at 327.66 237.998 0)
+			(at 327.66 239.268 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53277,7 +53277,7 @@
 			)
 		)
 		(property "Library Ref" "Resistor"
-			(at 327.66 239.903 0)
+			(at 327.66 241.173 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53287,7 +53287,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Resistors.SchLib"
-			(at 327.66 241.808 0)
+			(at 327.66 243.078 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53297,7 +53297,7 @@
 			)
 		)
 		(property "Comment" "0"
-			(at 327.66 243.713 0)
+			(at 327.66 244.983 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53307,7 +53307,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 327.66 245.618 0)
+			(at 327.66 246.888 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53317,7 +53317,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 327.66 247.523 0)
+			(at 327.66 248.793 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53327,7 +53327,7 @@
 			)
 		)
 		(property "PackageDescription" " "
-			(at 327.66 249.428 0)
+			(at 327.66 250.698 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53337,7 +53337,7 @@
 			)
 		)
 		(property "Pin Count" "2"
-			(at 327.66 251.333 0)
+			(at 327.66 252.603 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53347,7 +53347,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
-			(at 327.66 253.238 0)
+			(at 327.66 254.508 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53357,7 +53357,7 @@
 			)
 		)
 		(property "Footprint Ref" "RESC1608X55N"
-			(at 327.66 255.143 0)
+			(at 327.66 256.413 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53367,7 +53367,7 @@
 			)
 		)
 		(property "Status" "Preferred"
-			(at 327.66 257.048 0)
+			(at 327.66 258.318 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53377,7 +53377,7 @@
 			)
 		)
 		(property "Power" " "
-			(at 327.66 258.953 0)
+			(at 327.66 260.223 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53387,7 +53387,7 @@
 			)
 		)
 		(property "TC" " "
-			(at 327.66 260.858 0)
+			(at 327.66 262.128 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53397,7 +53397,7 @@
 			)
 		)
 		(property "Voltage" " "
-			(at 327.66 262.763 0)
+			(at 327.66 264.033 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53407,7 +53407,7 @@
 			)
 		)
 		(property "Tolerance" " "
-			(at 327.66 264.668 0)
+			(at 327.66 265.938 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53417,7 +53417,7 @@
 			)
 		)
 		(property "Part Description" "1A (0.05R Max DC Resistance) Zero Ohm Jumper"
-			(at 327.66 266.573 0)
+			(at 327.66 267.843 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53427,7 +53427,7 @@
 			)
 		)
 		(property "Manufacturer" "GENERIC"
-			(at 327.66 268.478 0)
+			(at 327.66 269.748 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53437,7 +53437,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "R0603_0R_JUMPER"
-			(at 327.66 270.383 0)
+			(at 327.66 271.653 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53447,7 +53447,7 @@
 			)
 		)
 		(property "Case" "0603"
-			(at 327.66 272.288 0)
+			(at 327.66 273.558 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53457,7 +53457,7 @@
 			)
 		)
 		(property "PressFit" "No"
-			(at 327.66 274.193 0)
+			(at 327.66 275.463 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53467,7 +53467,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 327.66 276.098 0)
+			(at 327.66 277.368 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53477,7 +53477,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 327.66 278.003 0)
+			(at 327.66 279.273 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53487,7 +53487,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 327.66 279.908 0)
+			(at 327.66 281.178 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53497,7 +53497,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 327.66 281.813 0)
+			(at 327.66 283.083 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53507,7 +53507,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 327.66 283.718 0)
+			(at 327.66 284.988 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53517,7 +53517,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 327.66 285.623 0)
+			(at 327.66 286.893 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53527,7 +53527,7 @@
 			)
 		)
 		(property "ComponentHeight" " "
-			(at 327.66 287.528 0)
+			(at 327.66 288.798 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53537,7 +53537,7 @@
 			)
 		)
 		(property "Manufacturer1 Example" "NIC COMPONENT"
-			(at 327.66 289.433 0)
+			(at 327.66 290.703 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53547,7 +53547,7 @@
 			)
 		)
 		(property "Manufacturer1 Part Number" "NRC06Z0"
-			(at 327.66 291.338 0)
+			(at 327.66 292.608 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53557,7 +53557,7 @@
 			)
 		)
 		(property "Manufacturer1 ComponentHeight" "0.55mm"
-			(at 327.66 293.243 0)
+			(at 327.66 294.513 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53567,7 +53567,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
-			(at 327.66 295.148 0)
+			(at 327.66 296.418 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53577,7 +53577,7 @@
 			)
 		)
 		(property "Author" "CERN DEM JLC"
-			(at 327.66 297.053 0)
+			(at 327.66 298.323 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53587,7 +53587,7 @@
 			)
 		)
 		(property "CreateDate" "12/03/07 00:00:00"
-			(at 327.66 298.958 0)
+			(at 327.66 300.228 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53597,7 +53597,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "03/13/08 00:00:00"
-			(at 327.66 300.863 0)
+			(at 327.66 302.133 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53607,7 +53607,7 @@
 			)
 		)
 		(property "Database Table Name" "Resistors"
-			(at 327.66 302.768 0)
+			(at 327.66 304.038 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53617,7 +53617,7 @@
 			)
 		)
 		(property "Library Name" "Resistors SMD"
-			(at 327.66 304.673 0)
+			(at 327.66 305.943 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53627,7 +53627,7 @@
 			)
 		)
 		(property "Footprint Library" "Resistors SMD"
-			(at 327.66 306.578 0)
+			(at 327.66 307.848 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53637,7 +53637,7 @@
 			)
 		)
 		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 327.66 308.483 0)
+			(at 327.66 309.753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53647,7 +53647,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 327.66 227.33 0)
+			(at 327.66 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53656,7 +53656,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 327.66 227.33 0)
+			(at 327.66 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53665,7 +53665,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 327.66 227.33 0)
+			(at 327.66 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53674,7 +53674,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 327.66 227.33 0)
+			(at 327.66 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53683,7 +53683,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 327.66 227.33 0)
+			(at 327.66 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59302,7 +59302,7 @@
 	(symbol
 		(lib_name "HARWIN_S1751-46_3")
 		(lib_id "HARWIN:HARWIN_S1751-46")
-		(at 325.12 220.98 0)
+		(at 325.12 222.25 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -59310,7 +59310,7 @@
 		(dnp no)
 		(uuid "51057807-8019-4a11-a2b1-fcba1e44bd4a")
 		(property "Reference" "TP11"
-			(at 325.12 218.44 0)
+			(at 325.12 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59318,7 +59318,7 @@
 			)
 		)
 		(property "Value" "HARWIN_S1751-46"
-			(at 325.12 224.917 0)
+			(at 325.12 226.187 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59328,7 +59328,7 @@
 			)
 		)
 		(property "Footprint" "HARWIN SMD:HARWIN_S1751-46"
-			(at 325.12 226.822 0)
+			(at 325.12 228.092 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59338,7 +59338,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\HARWIN_S1751-46.pdf"
-			(at 325.12 228.727 0)
+			(at 325.12 229.997 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59348,7 +59348,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 325.12 220.98 0)
+			(at 325.12 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59357,7 +59357,7 @@
 			)
 		)
 		(property "Family" "Test Point"
-			(at 325.12 220.98 0)
+			(at 325.12 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59366,7 +59366,7 @@
 			)
 		)
 		(property "Part Number" "HARWIN_S1751-46"
-			(at 325.12 230.632 0)
+			(at 325.12 231.902 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59376,7 +59376,7 @@
 			)
 		)
 		(property "Library Ref" "Test Point"
-			(at 325.12 232.537 0)
+			(at 325.12 233.807 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59386,7 +59386,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Connectors.SchLib"
-			(at 325.12 234.442 0)
+			(at 325.12 235.712 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59396,7 +59396,7 @@
 			)
 		)
 		(property "Comment" " "
-			(at 325.12 236.347 0)
+			(at 325.12 237.617 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59406,7 +59406,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 325.12 238.252 0)
+			(at 325.12 239.522 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59416,7 +59416,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 325.12 240.157 0)
+			(at 325.12 241.427 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59426,7 +59426,7 @@
 			)
 		)
 		(property "Pin Count" "1"
-			(at 325.12 243.967 0)
+			(at 325.12 245.237 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59436,7 +59436,7 @@
 			)
 		)
 		(property "Case" " "
-			(at 325.12 245.872 0)
+			(at 325.12 247.142 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59446,7 +59446,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\HARWIN SMD.PcbLib"
-			(at 325.12 247.777 0)
+			(at 325.12 249.047 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59456,7 +59456,7 @@
 			)
 		)
 		(property "Footprint Ref" "HARWIN_S1751-46"
-			(at 325.12 249.682 0)
+			(at 325.12 250.952 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59466,7 +59466,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 325.12 253.492 0)
+			(at 325.12 254.762 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59476,7 +59476,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 325.12 255.397 0)
+			(at 325.12 256.667 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59486,7 +59486,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 325.12 257.302 0)
+			(at 325.12 258.572 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59496,7 +59496,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 325.12 261.112 0)
+			(at 325.12 262.382 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59506,7 +59506,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 325.12 263.017 0)
+			(at 325.12 264.287 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59516,7 +59516,7 @@
 			)
 		)
 		(property "Status" "None"
-			(at 325.12 264.922 0)
+			(at 325.12 266.192 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59526,7 +59526,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 325.12 266.827 0)
+			(at 325.12 268.097 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59536,7 +59536,7 @@
 			)
 		)
 		(property "SCEM" " "
-			(at 325.12 268.732 0)
+			(at 325.12 270.002 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59546,7 +59546,7 @@
 			)
 		)
 		(property "Part Description" "Surface Mount PCB Test Point"
-			(at 325.12 272.542 0)
+			(at 325.12 273.812 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59556,7 +59556,7 @@
 			)
 		)
 		(property "Manufacturer" "HARWIN"
-			(at 325.12 274.447 0)
+			(at 325.12 275.717 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59566,7 +59566,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "S1751-46R"
-			(at 325.12 276.352 0)
+			(at 325.12 277.622 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59576,7 +59576,7 @@
 			)
 		)
 		(property "ComponentHeight" "2mm"
-			(at 325.12 278.257 0)
+			(at 325.12 279.527 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59586,7 +59586,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\HARWIN_S1751-46.pdf"
-			(at 325.12 280.162 0)
+			(at 325.12 281.432 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59596,7 +59596,7 @@
 			)
 		)
 		(property "ComponentLink1URL" " "
-			(at 325.12 282.067 0)
+			(at 325.12 283.337 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59606,7 +59606,7 @@
 			)
 		)
 		(property "ComponentLink1Description" " "
-			(at 325.12 283.972 0)
+			(at 325.12 285.242 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59616,7 +59616,7 @@
 			)
 		)
 		(property "ComponentLink2URL" " "
-			(at 325.12 285.877 0)
+			(at 325.12 287.147 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59626,7 +59626,7 @@
 			)
 		)
 		(property "ComponentLink2Description" " "
-			(at 325.12 287.782 0)
+			(at 325.12 289.052 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59636,7 +59636,7 @@
 			)
 		)
 		(property "Author" "CERN DEM MR"
-			(at 325.12 289.687 0)
+			(at 325.12 290.957 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59646,7 +59646,7 @@
 			)
 		)
 		(property "CreateDate" "02/10/16 00:00:00"
-			(at 325.12 291.592 0)
+			(at 325.12 292.862 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59656,7 +59656,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "10/11/23 00:00:00"
-			(at 325.12 293.497 0)
+			(at 325.12 294.767 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59666,7 +59666,7 @@
 			)
 		)
 		(property "PackageDescription" " "
-			(at 325.12 242.062 0)
+			(at 325.12 243.332 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59676,7 +59676,7 @@
 			)
 		)
 		(property "Database Table Name" "Connectors"
-			(at 325.12 295.402 0)
+			(at 325.12 296.672 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59686,7 +59686,7 @@
 			)
 		)
 		(property "Library Name" "HARWIN"
-			(at 325.12 297.307 0)
+			(at 325.12 298.577 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59696,7 +59696,7 @@
 			)
 		)
 		(property "Footprint Library" "HARWIN SMD"
-			(at 325.12 299.212 0)
+			(at 325.12 300.482 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59706,7 +59706,7 @@
 			)
 		)
 		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 325.12 301.117 0)
+			(at 325.12 302.387 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59716,7 +59716,7 @@
 			)
 		)
 		(property "PressFit" "No"
-			(at 325.12 259.207 0)
+			(at 325.12 260.477 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59726,7 +59726,7 @@
 			)
 		)
 		(property "Device" " "
-			(at 325.12 270.637 0)
+			(at 325.12 271.907 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59736,7 +59736,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 325.12 220.98 0)
+			(at 325.12 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59745,7 +59745,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 325.12 220.98 0)
+			(at 325.12 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59754,7 +59754,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 325.12 220.98 0)
+			(at 325.12 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59763,7 +59763,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 325.12 220.98 0)
+			(at 325.12 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59772,7 +59772,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 325.12 220.98 0)
+			(at 325.12 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61373,7 +61373,7 @@
 	)
 	(symbol
 		(lib_id "Regulators:REF193GS")
-		(at 292.1 224.79 0)
+		(at 292.1 226.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -61381,7 +61381,7 @@
 		(dnp no)
 		(uuid "57b4e1ea-43fb-4bd2-baaf-e6f1a837cc97")
 		(property "Reference" "IC8"
-			(at 299.72 222.25 0)
+			(at 299.72 223.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61389,7 +61389,7 @@
 			)
 		)
 		(property "Value" "REF193GS"
-			(at 292.1 240.03 0)
+			(at 292.1 241.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61398,7 +61398,7 @@
 			)
 		)
 		(property "Footprint" "ICs And Semiconductors SMD:SOIC127P600X175-8N"
-			(at 292.1 243.84 0)
+			(at 292.1 245.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61408,7 +61408,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\REF19x_Series.pdf"
-			(at 292.1 245.745 0)
+			(at 292.1 247.015 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61418,7 +61418,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 292.1 224.79 0)
+			(at 292.1 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61427,7 +61427,7 @@
 			)
 		)
 		(property "Part Number" "REF193GS"
-			(at 292.1 247.65 0)
+			(at 292.1 248.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61437,7 +61437,7 @@
 			)
 		)
 		(property "Library Ref" "REF19x"
-			(at 292.1 249.555 0)
+			(at 292.1 250.825 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61447,7 +61447,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Regulators.SchLib"
-			(at 292.1 251.46 0)
+			(at 292.1 252.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61457,7 +61457,7 @@
 			)
 		)
 		(property "Comment" "REF196GS"
-			(at 292.1 253.365 0)
+			(at 292.1 254.635 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61467,7 +61467,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 292.1 255.27 0)
+			(at 292.1 256.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61477,7 +61477,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 292.1 257.175 0)
+			(at 292.1 258.445 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61487,7 +61487,7 @@
 			)
 		)
 		(property "Device" "REF193GS"
-			(at 292.1 259.08 0)
+			(at 292.1 260.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61497,7 +61497,7 @@
 			)
 		)
 		(property "PackageDescription" "SOIC 8, Pitch 1.27mm, Body 4x5mm, IPC Medium Density"
-			(at 292.1 260.985 0)
+			(at 292.1 262.255 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61507,7 +61507,7 @@
 			)
 		)
 		(property "Status" " "
-			(at 292.1 262.89 0)
+			(at 292.1 264.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61517,7 +61517,7 @@
 			)
 		)
 		(property "Part Description" "3V Precision Micropower, Low Dropout Voltage Reference, 10ppm/°C, -40°C to +85°C"
-			(at 292.1 264.795 0)
+			(at 292.1 266.065 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61527,7 +61527,7 @@
 			)
 		)
 		(property "Manufacturer" "ANALOG DEVICES"
-			(at 292.1 266.7 0)
+			(at 292.1 267.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61537,7 +61537,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "REF193GS"
-			(at 292.1 268.605 0)
+			(at 292.1 269.875 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61547,7 +61547,7 @@
 			)
 		)
 		(property "Pin Count" "8"
-			(at 292.1 270.51 0)
+			(at 292.1 271.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61557,7 +61557,7 @@
 			)
 		)
 		(property "Case" "SOIC8"
-			(at 292.1 272.415 0)
+			(at 292.1 273.685 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61567,7 +61567,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 292.1 274.32 0)
+			(at 292.1 275.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61577,7 +61577,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 292.1 276.225 0)
+			(at 292.1 277.495 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61587,7 +61587,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 292.1 278.13 0)
+			(at 292.1 279.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61597,7 +61597,7 @@
 			)
 		)
 		(property "PressFit" "No"
-			(at 292.1 280.035 0)
+			(at 292.1 281.305 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61607,7 +61607,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 292.1 281.94 0)
+			(at 292.1 283.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61617,7 +61617,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 292.1 283.845 0)
+			(at 292.1 285.115 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61627,7 +61627,7 @@
 			)
 		)
 		(property "Bonding" "No"
-			(at 292.1 285.75 0)
+			(at 292.1 287.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61637,7 +61637,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 292.1 287.655 0)
+			(at 292.1 288.925 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61647,7 +61647,7 @@
 			)
 		)
 		(property "ComponentHeight" "1.75mm"
-			(at 292.1 289.56 0)
+			(at 292.1 290.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61657,7 +61657,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 292.1 291.465 0)
+			(at 292.1 292.735 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61667,7 +61667,7 @@
 			)
 		)
 		(property "Footprint Ref" "SOIC127P600X175-8N"
-			(at 292.1 293.37 0)
+			(at 292.1 294.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61677,7 +61677,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\REF19x_Series.pdf"
-			(at 292.1 295.275 0)
+			(at 292.1 296.545 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61687,7 +61687,7 @@
 			)
 		)
 		(property "ComponentLink1URL" " "
-			(at 292.1 297.18 0)
+			(at 292.1 298.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61697,7 +61697,7 @@
 			)
 		)
 		(property "ComponentLink1Description" " "
-			(at 292.1 299.085 0)
+			(at 292.1 300.355 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61707,7 +61707,7 @@
 			)
 		)
 		(property "ComponentLink2URL" " "
-			(at 292.1 300.99 0)
+			(at 292.1 302.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61717,7 +61717,7 @@
 			)
 		)
 		(property "ComponentLink2Description" " "
-			(at 292.1 302.895 0)
+			(at 292.1 304.165 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61727,7 +61727,7 @@
 			)
 		)
 		(property "Author" "CERN DEM HF"
-			(at 292.1 304.8 0)
+			(at 292.1 306.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61737,7 +61737,7 @@
 			)
 		)
 		(property "CreateDate" "10/31/23 00:00:00"
-			(at 292.1 306.705 0)
+			(at 292.1 307.975 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61747,7 +61747,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "10/31/23 00:00:00"
-			(at 292.1 308.61 0)
+			(at 292.1 309.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61757,7 +61757,7 @@
 			)
 		)
 		(property "SCEM" " "
-			(at 292.1 310.515 0)
+			(at 292.1 311.785 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61767,7 +61767,7 @@
 			)
 		)
 		(property "Database Table Name" "ICs And Semiconductors"
-			(at 292.1 312.42 0)
+			(at 292.1 313.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61777,7 +61777,7 @@
 			)
 		)
 		(property "Library Name" "Regulators"
-			(at 292.1 314.325 0)
+			(at 292.1 315.595 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61787,7 +61787,7 @@
 			)
 		)
 		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 292.1 316.23 0)
+			(at 292.1 317.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61797,7 +61797,7 @@
 			)
 		)
 		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 292.1 318.135 0)
+			(at 292.1 319.405 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61807,7 +61807,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 292.1 224.79 0)
+			(at 292.1 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61816,7 +61816,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 292.1 224.79 0)
+			(at 292.1 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61825,7 +61825,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 292.1 224.79 0)
+			(at 292.1 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61834,7 +61834,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 292.1 224.79 0)
+			(at 292.1 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61843,7 +61843,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 292.1 224.79 0)
+			(at 292.1 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61886,7 +61886,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 314.96 240.03 0)
+		(at 322.58 242.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -61894,7 +61894,7 @@
 		(dnp no)
 		(uuid "588a188d-4a20-4fdd-b498-56fba4a57d59")
 		(property "Reference" "#PWR0141"
-			(at 314.96 246.38 0)
+			(at 322.58 248.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61903,7 +61903,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 314.96 245.11 0)
+			(at 322.58 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61911,7 +61911,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 314.96 240.03 0)
+			(at 322.58 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61920,7 +61920,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 314.96 240.03 0)
+			(at 322.58 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -61929,7 +61929,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 314.96 240.03 0)
+			(at 322.58 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69270,7 +69270,7 @@
 	)
 	(symbol
 		(lib_id "Capacitors SMD:CC0603_10UF_25V_20%_X5R")
-		(at 279.4 228.6 270)
+		(at 279.4 229.87 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -69278,7 +69278,7 @@
 		(dnp no)
 		(uuid "7b94d73b-c45e-461a-85db-6e161be43c0f")
 		(property "Reference" "C24"
-			(at 279.4 229.87 90)
+			(at 279.4 231.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69287,7 +69287,7 @@
 			)
 		)
 		(property "Value" "CC0603_10UF_25V_20%_X5R"
-			(at 273.177 228.6 0)
+			(at 273.177 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69297,7 +69297,7 @@
 			)
 		)
 		(property "Footprint" "Capacitors SMD:CAPC1709X100N"
-			(at 271.272 228.6 0)
+			(at 271.272 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69307,7 +69307,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X5R_TDK_C.pdf"
-			(at 269.367 228.6 0)
+			(at 269.367 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69317,7 +69317,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 279.4 228.6 0)
+			(at 279.4 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69326,7 +69326,7 @@
 			)
 		)
 		(property "Val" "10uF"
-			(at 279.4 234.95 90)
+			(at 279.4 236.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69335,7 +69335,7 @@
 			)
 		)
 		(property "Part Number" "CC0603_10UF_25V_20%_X5R"
-			(at 267.462 228.6 0)
+			(at 267.462 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69345,7 +69345,7 @@
 			)
 		)
 		(property "Library Ref" "Capacitor - non polarized"
-			(at 265.557 228.6 0)
+			(at 265.557 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69355,7 +69355,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Capacitors.SchLib"
-			(at 263.652 228.6 0)
+			(at 263.652 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69365,7 +69365,7 @@
 			)
 		)
 		(property "Comment" "10uF"
-			(at 261.747 228.6 0)
+			(at 261.747 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69375,7 +69375,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 259.842 228.6 0)
+			(at 259.842 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69385,7 +69385,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 257.937 228.6 0)
+			(at 257.937 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69395,7 +69395,7 @@
 			)
 		)
 		(property "Pin Count" "2"
-			(at 256.032 228.6 0)
+			(at 256.032 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69405,7 +69405,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
-			(at 254.127 228.6 0)
+			(at 254.127 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69415,7 +69415,7 @@
 			)
 		)
 		(property "Footprint Ref" "CAPC1709X100N"
-			(at 252.222 228.6 0)
+			(at 252.222 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69425,7 +69425,7 @@
 			)
 		)
 		(property "PackageDescription" " "
-			(at 250.317 228.6 0)
+			(at 250.317 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69435,7 +69435,7 @@
 			)
 		)
 		(property "Status" "None"
-			(at 248.412 228.6 0)
+			(at 248.412 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69445,7 +69445,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 246.507 228.6 0)
+			(at 246.507 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69455,7 +69455,7 @@
 			)
 		)
 		(property "Voltage" "25V"
-			(at 244.602 228.6 0)
+			(at 244.602 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69465,7 +69465,7 @@
 			)
 		)
 		(property "TC" "X5R"
-			(at 242.697 228.6 0)
+			(at 242.697 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69475,7 +69475,7 @@
 			)
 		)
 		(property "Tolerance" "±20%"
-			(at 240.792 228.6 0)
+			(at 240.792 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69485,7 +69485,7 @@
 			)
 		)
 		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
-			(at 238.887 228.6 0)
+			(at 238.887 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69495,7 +69495,7 @@
 			)
 		)
 		(property "Manufacturer" "GENERIC"
-			(at 236.982 228.6 0)
+			(at 236.982 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69505,7 +69505,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CC0603_10UF_25V_20%_X5R"
-			(at 235.077 228.6 0)
+			(at 235.077 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69515,7 +69515,7 @@
 			)
 		)
 		(property "Case" "0603"
-			(at 233.172 228.6 0)
+			(at 233.172 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69525,7 +69525,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 231.267 228.6 0)
+			(at 231.267 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69535,7 +69535,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 229.362 228.6 0)
+			(at 229.362 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69545,7 +69545,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 227.457 228.6 0)
+			(at 227.457 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69555,7 +69555,7 @@
 			)
 		)
 		(property "PressFit" " "
-			(at 225.552 228.6 0)
+			(at 225.552 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69565,7 +69565,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 223.647 228.6 0)
+			(at 223.647 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69575,7 +69575,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 221.742 228.6 0)
+			(at 221.742 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69585,7 +69585,7 @@
 			)
 		)
 		(property "ComponentHeight" " "
-			(at 219.837 228.6 0)
+			(at 219.837 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69595,7 +69595,7 @@
 			)
 		)
 		(property "Manufacturer1 Example" "TDK"
-			(at 217.932 228.6 0)
+			(at 217.932 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69605,7 +69605,7 @@
 			)
 		)
 		(property "Manufacturer1 Part Number" "C1608X5R1E106M080"
-			(at 216.027 228.6 0)
+			(at 216.027 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69615,7 +69615,7 @@
 			)
 		)
 		(property "Manufacturer1 ComponentHeight" "1mm"
-			(at 214.122 228.6 0)
+			(at 214.122 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69625,7 +69625,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X5R_TDK_C.pdf"
-			(at 212.217 228.6 0)
+			(at 212.217 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69635,7 +69635,7 @@
 			)
 		)
 		(property "Author" "CERN DEM BC"
-			(at 210.312 228.6 0)
+			(at 210.312 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69645,7 +69645,7 @@
 			)
 		)
 		(property "CreateDate" "07/01/20 00:00:00"
-			(at 208.407 228.6 0)
+			(at 208.407 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69655,7 +69655,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "07/01/20 00:00:00"
-			(at 206.502 228.6 0)
+			(at 206.502 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69665,7 +69665,7 @@
 			)
 		)
 		(property "Database Table Name" "Capacitors"
-			(at 204.597 228.6 0)
+			(at 204.597 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69675,7 +69675,7 @@
 			)
 		)
 		(property "Library Name" "Capacitors SMD"
-			(at 202.692 228.6 0)
+			(at 202.692 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69685,7 +69685,7 @@
 			)
 		)
 		(property "Footprint Library" "Capacitors SMD"
-			(at 200.787 228.6 0)
+			(at 200.787 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69695,7 +69695,7 @@
 			)
 		)
 		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 198.882 228.6 0)
+			(at 198.882 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69705,7 +69705,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 279.4 228.6 0)
+			(at 279.4 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69714,7 +69714,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 279.4 228.6 0)
+			(at 279.4 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69723,7 +69723,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 279.4 228.6 0)
+			(at 279.4 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69732,7 +69732,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 279.4 228.6 0)
+			(at 279.4 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -69741,7 +69741,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 279.4 228.6 0)
+			(at 279.4 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79845,7 +79845,7 @@
 	)
 	(symbol
 		(lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R")
-		(at 314.96 228.6 270)
+		(at 314.96 229.87 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -79853,7 +79853,7 @@
 		(dnp no)
 		(uuid "b5f15006-043e-4859-8fe8-53aeee5f8953")
 		(property "Reference" "C29"
-			(at 314.96 229.87 90)
+			(at 314.96 231.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79862,7 +79862,7 @@
 			)
 		)
 		(property "Value" "CC0603_100NF_50V_10%_X7R"
-			(at 308.737 228.6 0)
+			(at 308.737 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79872,7 +79872,7 @@
 			)
 		)
 		(property "Footprint" "Capacitors SMD:CAPC1608X87N"
-			(at 306.832 228.6 0)
+			(at 306.832 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79882,7 +79882,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 304.927 228.6 0)
+			(at 304.927 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79892,7 +79892,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 314.96 228.6 0)
+			(at 314.96 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79901,7 +79901,7 @@
 			)
 		)
 		(property "Val" "100nF"
-			(at 314.96 234.95 90)
+			(at 314.96 236.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79910,7 +79910,7 @@
 			)
 		)
 		(property "Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 303.022 228.6 0)
+			(at 303.022 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79920,7 +79920,7 @@
 			)
 		)
 		(property "Library Ref" "Capacitor - non polarized"
-			(at 301.117 228.6 0)
+			(at 301.117 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79930,7 +79930,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Capacitors.SchLib"
-			(at 299.212 228.6 0)
+			(at 299.212 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79940,7 +79940,7 @@
 			)
 		)
 		(property "Comment" "100nF"
-			(at 297.307 228.6 0)
+			(at 297.307 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79950,7 +79950,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 295.402 228.6 0)
+			(at 295.402 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79960,7 +79960,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 293.497 228.6 0)
+			(at 293.497 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79970,7 +79970,7 @@
 			)
 		)
 		(property "Pin Count" "2"
-			(at 291.592 228.6 0)
+			(at 291.592 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79980,7 +79980,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
-			(at 289.687 228.6 0)
+			(at 289.687 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79990,7 +79990,7 @@
 			)
 		)
 		(property "Footprint Ref" "CAPC1608X87N"
-			(at 287.782 228.6 0)
+			(at 287.782 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80000,7 +80000,7 @@
 			)
 		)
 		(property "PackageDescription" " "
-			(at 285.877 228.6 0)
+			(at 285.877 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80010,7 +80010,7 @@
 			)
 		)
 		(property "Status" "Preferred"
-			(at 283.972 228.6 0)
+			(at 283.972 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80020,7 +80020,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 282.067 228.6 0)
+			(at 282.067 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80030,7 +80030,7 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 280.162 228.6 0)
+			(at 280.162 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80040,7 +80040,7 @@
 			)
 		)
 		(property "TC" "X7R"
-			(at 278.257 228.6 0)
+			(at 278.257 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80050,7 +80050,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 276.352 228.6 0)
+			(at 276.352 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80060,7 +80060,7 @@
 			)
 		)
 		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
-			(at 274.447 228.6 0)
+			(at 274.447 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80070,7 +80070,7 @@
 			)
 		)
 		(property "Manufacturer" "GENERIC"
-			(at 272.542 228.6 0)
+			(at 272.542 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80080,7 +80080,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 270.637 228.6 0)
+			(at 270.637 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80090,7 +80090,7 @@
 			)
 		)
 		(property "Case" "0603"
-			(at 268.732 228.6 0)
+			(at 268.732 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80100,7 +80100,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 266.827 228.6 0)
+			(at 266.827 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80110,7 +80110,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 264.922 228.6 0)
+			(at 264.922 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80120,7 +80120,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 263.017 228.6 0)
+			(at 263.017 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80130,7 +80130,7 @@
 			)
 		)
 		(property "PressFit" " "
-			(at 261.112 228.6 0)
+			(at 261.112 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80140,7 +80140,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 259.207 228.6 0)
+			(at 259.207 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80150,7 +80150,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 257.302 228.6 0)
+			(at 257.302 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80160,7 +80160,7 @@
 			)
 		)
 		(property "ComponentHeight" " "
-			(at 255.397 228.6 0)
+			(at 255.397 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80170,7 +80170,7 @@
 			)
 		)
 		(property "Manufacturer1 Example" "PHYCOMP"
-			(at 253.492 228.6 0)
+			(at 253.492 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80180,7 +80180,7 @@
 			)
 		)
 		(property "Manufacturer1 Part Number" "223858615649"
-			(at 251.587 228.6 0)
+			(at 251.587 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80190,7 +80190,7 @@
 			)
 		)
 		(property "Manufacturer1 ComponentHeight" "0.87mm"
-			(at 249.682 228.6 0)
+			(at 249.682 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80200,7 +80200,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 247.777 228.6 0)
+			(at 247.777 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80210,7 +80210,7 @@
 			)
 		)
 		(property "Author" "CERN DEM JLC"
-			(at 245.872 228.6 0)
+			(at 245.872 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80220,7 +80220,7 @@
 			)
 		)
 		(property "CreateDate" "12/03/07 00:00:00"
-			(at 243.967 228.6 0)
+			(at 243.967 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80230,7 +80230,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "12/03/07 00:00:00"
-			(at 242.062 228.6 0)
+			(at 242.062 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80240,7 +80240,7 @@
 			)
 		)
 		(property "Database Table Name" "Capacitors"
-			(at 240.157 228.6 0)
+			(at 240.157 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80250,7 +80250,7 @@
 			)
 		)
 		(property "Library Name" "Capacitors SMD"
-			(at 238.252 228.6 0)
+			(at 238.252 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80260,7 +80260,7 @@
 			)
 		)
 		(property "Footprint Library" "Capacitors SMD"
-			(at 236.347 228.6 0)
+			(at 236.347 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80270,7 +80270,7 @@
 			)
 		)
 		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 234.442 228.6 0)
+			(at 234.442 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80280,7 +80280,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 314.96 228.6 0)
+			(at 314.96 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80289,7 +80289,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 314.96 228.6 0)
+			(at 314.96 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80298,7 +80298,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 314.96 228.6 0)
+			(at 314.96 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80307,7 +80307,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 314.96 228.6 0)
+			(at 314.96 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -80316,7 +80316,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 314.96 228.6 0)
+			(at 314.96 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86623,7 +86623,7 @@
 	(symbol
 		(lib_name "CC0603_1UF_25V_10%_X7R_1")
 		(lib_id "Capacitors SMD:CC0603_1UF_25V_10%_X7R")
-		(at 322.58 228.6 270)
+		(at 322.58 229.87 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -86631,7 +86631,7 @@
 		(dnp no)
 		(uuid "da62a533-9e7d-4d72-8cf7-3860caa34b1e")
 		(property "Reference" "C61"
-			(at 322.58 229.87 90)
+			(at 322.58 231.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86640,7 +86640,7 @@
 			)
 		)
 		(property "Value" "CC0603_1UF_25V_10%_X7R"
-			(at 316.357 228.6 0)
+			(at 316.357 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86650,7 +86650,7 @@
 			)
 		)
 		(property "Footprint" "Capacitors SMD:CAPC1608X87N"
-			(at 314.452 228.6 0)
+			(at 314.452 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86660,7 +86660,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_MURATA.pdf"
-			(at 312.547 228.6 0)
+			(at 312.547 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86670,7 +86670,7 @@
 			)
 		)
 		(property "Description" "SMD Multilayer Chip Ceramic Capacitor"
-			(at 319.532 232.41 0)
+			(at 319.532 233.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86679,7 +86679,7 @@
 			)
 		)
 		(property "Val" "1uF"
-			(at 322.58 234.95 90)
+			(at 322.58 236.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86688,7 +86688,7 @@
 			)
 		)
 		(property "Part Number" "CC0603_1UF_25V_10%_X7R"
-			(at 310.642 228.6 0)
+			(at 310.642 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86698,7 +86698,7 @@
 			)
 		)
 		(property "Library Ref" "Capacitor - non polarized"
-			(at 308.737 228.6 0)
+			(at 308.737 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86708,7 +86708,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Capacitors.SchLib"
-			(at 306.832 228.6 0)
+			(at 306.832 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86718,7 +86718,7 @@
 			)
 		)
 		(property "Comment" "1uF"
-			(at 304.927 228.6 0)
+			(at 304.927 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86728,7 +86728,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 303.022 228.6 0)
+			(at 303.022 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86738,7 +86738,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 301.117 228.6 0)
+			(at 301.117 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86748,7 +86748,7 @@
 			)
 		)
 		(property "Pin Count" "2"
-			(at 299.212 228.6 0)
+			(at 299.212 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86758,7 +86758,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
-			(at 297.307 228.6 0)
+			(at 297.307 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86768,7 +86768,7 @@
 			)
 		)
 		(property "Footprint Ref" "CAPC1608X87N"
-			(at 295.402 228.6 0)
+			(at 295.402 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86778,7 +86778,7 @@
 			)
 		)
 		(property "PackageDescription" " "
-			(at 293.497 228.6 0)
+			(at 293.497 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86788,7 +86788,7 @@
 			)
 		)
 		(property "Status" "None"
-			(at 291.592 228.6 0)
+			(at 291.592 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86798,7 +86798,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 289.687 228.6 0)
+			(at 289.687 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86808,7 +86808,7 @@
 			)
 		)
 		(property "Voltage" "25V"
-			(at 287.782 228.6 0)
+			(at 287.782 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86818,7 +86818,7 @@
 			)
 		)
 		(property "TC" "X7R"
-			(at 285.877 228.6 0)
+			(at 285.877 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86828,7 +86828,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 283.972 228.6 0)
+			(at 283.972 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86838,7 +86838,7 @@
 			)
 		)
 		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
-			(at 282.067 228.6 0)
+			(at 282.067 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86848,7 +86848,7 @@
 			)
 		)
 		(property "Manufacturer" "GENERIC"
-			(at 280.162 228.6 0)
+			(at 280.162 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86858,7 +86858,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CC0603_1UF_25V_10%_X7R"
-			(at 278.257 228.6 0)
+			(at 278.257 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86868,7 +86868,7 @@
 			)
 		)
 		(property "Case" "0603"
-			(at 276.352 228.6 0)
+			(at 276.352 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86878,7 +86878,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 274.447 228.6 0)
+			(at 274.447 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86888,7 +86888,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 272.542 228.6 0)
+			(at 272.542 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86898,7 +86898,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 270.637 228.6 0)
+			(at 270.637 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86908,7 +86908,7 @@
 			)
 		)
 		(property "PressFit" " "
-			(at 268.732 228.6 0)
+			(at 268.732 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86918,7 +86918,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 266.827 228.6 0)
+			(at 266.827 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86928,7 +86928,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 264.922 228.6 0)
+			(at 264.922 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86938,7 +86938,7 @@
 			)
 		)
 		(property "ComponentHeight" " "
-			(at 263.017 228.6 0)
+			(at 263.017 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86948,7 +86948,7 @@
 			)
 		)
 		(property "Manufacturer1 Example" "MURATA"
-			(at 261.112 228.6 0)
+			(at 261.112 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86958,7 +86958,7 @@
 			)
 		)
 		(property "Manufacturer1 Part Number" "GRM188R71E105KA12D"
-			(at 259.207 228.6 0)
+			(at 259.207 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86968,7 +86968,7 @@
 			)
 		)
 		(property "Manufacturer1 ComponentHeight" "0.9mm"
-			(at 257.302 228.6 0)
+			(at 257.302 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86978,7 +86978,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_MURATA.pdf"
-			(at 255.397 228.6 0)
+			(at 255.397 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86988,7 +86988,7 @@
 			)
 		)
 		(property "Author" "CERN DEM JLC"
-			(at 253.492 228.6 0)
+			(at 253.492 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -86998,7 +86998,7 @@
 			)
 		)
 		(property "CreateDate" "01/18/11 00:00:00"
-			(at 251.587 228.6 0)
+			(at 251.587 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87008,7 +87008,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "01/18/11 00:00:00"
-			(at 249.682 228.6 0)
+			(at 249.682 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87018,7 +87018,7 @@
 			)
 		)
 		(property "Database Table Name" "Capacitors"
-			(at 247.777 228.6 0)
+			(at 247.777 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87028,7 +87028,7 @@
 			)
 		)
 		(property "Library Name" "Capacitors SMD"
-			(at 245.872 228.6 0)
+			(at 245.872 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87038,7 +87038,7 @@
 			)
 		)
 		(property "Footprint Library" "Capacitors SMD"
-			(at 243.967 228.6 0)
+			(at 243.967 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87048,7 +87048,7 @@
 			)
 		)
 		(property "License" "CC-BY-SA 4.0"
-			(at 242.062 228.6 0)
+			(at 242.062 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87058,7 +87058,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 322.58 228.6 0)
+			(at 322.58 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87067,7 +87067,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 322.58 228.6 0)
+			(at 322.58 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87076,7 +87076,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 322.58 228.6 0)
+			(at 322.58 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87085,7 +87085,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 322.58 228.6 0)
+			(at 322.58 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -87094,7 +87094,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 322.58 228.6 0)
+			(at 322.58 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90369,7 +90369,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 271.78 240.03 0)
+		(at 271.78 242.57 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -90377,7 +90377,7 @@
 		(dnp no)
 		(uuid "e116cd65-9db6-4fe5-84b1-138f065ce3f7")
 		(property "Reference" "#PWR0139"
-			(at 271.78 246.38 0)
+			(at 271.78 248.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90386,7 +90386,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 271.78 245.11 0)
+			(at 271.78 247.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90394,7 +90394,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 271.78 240.03 0)
+			(at 271.78 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90403,7 +90403,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 271.78 240.03 0)
+			(at 271.78 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90412,7 +90412,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 271.78 240.03 0)
+			(at 271.78 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90566,7 +90566,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 271.78 223.52 0)
+		(at 271.78 224.79 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -90575,7 +90575,7 @@
 		(fields_autoplaced yes)
 		(uuid "e24a4028-02ea-4ad4-ad0b-8fd0a88f2337")
 		(property "Reference" "#PWR0138"
-			(at 271.78 227.33 0)
+			(at 271.78 228.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90584,7 +90584,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 271.78 218.44 0)
+			(at 271.78 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90592,7 +90592,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 271.78 223.52 0)
+			(at 271.78 224.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90601,7 +90601,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 271.78 223.52 0)
+			(at 271.78 224.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -90610,7 +90610,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 271.78 223.52 0)
+			(at 271.78 224.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92252,7 +92252,7 @@
 	)
 	(symbol
 		(lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R")
-		(at 271.78 228.6 270)
+		(at 271.78 229.87 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -92260,7 +92260,7 @@
 		(dnp no)
 		(uuid "eab82768-d107-4076-9120-df8e200787ca")
 		(property "Reference" "C23"
-			(at 271.78 229.87 90)
+			(at 271.78 231.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92269,7 +92269,7 @@
 			)
 		)
 		(property "Value" "CC0603_100NF_50V_10%_X7R"
-			(at 265.557 228.6 0)
+			(at 265.557 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92279,7 +92279,7 @@
 			)
 		)
 		(property "Footprint" "Capacitors SMD:CAPC1608X87N"
-			(at 263.652 228.6 0)
+			(at 263.652 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92289,7 +92289,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 261.747 228.6 0)
+			(at 261.747 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92299,7 +92299,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 271.78 228.6 0)
+			(at 271.78 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92308,7 +92308,7 @@
 			)
 		)
 		(property "Val" "100nF"
-			(at 271.78 234.95 90)
+			(at 271.78 236.22 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92317,7 +92317,7 @@
 			)
 		)
 		(property "Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 259.842 228.6 0)
+			(at 259.842 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92327,7 +92327,7 @@
 			)
 		)
 		(property "Library Ref" "Capacitor - non polarized"
-			(at 257.937 228.6 0)
+			(at 257.937 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92337,7 +92337,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Capacitors.SchLib"
-			(at 256.032 228.6 0)
+			(at 256.032 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92347,7 +92347,7 @@
 			)
 		)
 		(property "Comment" "100nF"
-			(at 254.127 228.6 0)
+			(at 254.127 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92357,7 +92357,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 252.222 228.6 0)
+			(at 252.222 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92367,7 +92367,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 250.317 228.6 0)
+			(at 250.317 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92377,7 +92377,7 @@
 			)
 		)
 		(property "Pin Count" "2"
-			(at 248.412 228.6 0)
+			(at 248.412 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92387,7 +92387,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
-			(at 246.507 228.6 0)
+			(at 246.507 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92397,7 +92397,7 @@
 			)
 		)
 		(property "Footprint Ref" "CAPC1608X87N"
-			(at 244.602 228.6 0)
+			(at 244.602 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92407,7 +92407,7 @@
 			)
 		)
 		(property "PackageDescription" " "
-			(at 242.697 228.6 0)
+			(at 242.697 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92417,7 +92417,7 @@
 			)
 		)
 		(property "Status" "Preferred"
-			(at 240.792 228.6 0)
+			(at 240.792 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92427,7 +92427,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 238.887 228.6 0)
+			(at 238.887 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92437,7 +92437,7 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 236.982 228.6 0)
+			(at 236.982 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92447,7 +92447,7 @@
 			)
 		)
 		(property "TC" "X7R"
-			(at 235.077 228.6 0)
+			(at 235.077 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92457,7 +92457,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 233.172 228.6 0)
+			(at 233.172 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92467,7 +92467,7 @@
 			)
 		)
 		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
-			(at 231.267 228.6 0)
+			(at 231.267 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92477,7 +92477,7 @@
 			)
 		)
 		(property "Manufacturer" "GENERIC"
-			(at 229.362 228.6 0)
+			(at 229.362 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92487,7 +92487,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 227.457 228.6 0)
+			(at 227.457 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92497,7 +92497,7 @@
 			)
 		)
 		(property "Case" "0603"
-			(at 225.552 228.6 0)
+			(at 225.552 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92507,7 +92507,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 223.647 228.6 0)
+			(at 223.647 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92517,7 +92517,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 221.742 228.6 0)
+			(at 221.742 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92527,7 +92527,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 219.837 228.6 0)
+			(at 219.837 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92537,7 +92537,7 @@
 			)
 		)
 		(property "PressFit" " "
-			(at 217.932 228.6 0)
+			(at 217.932 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92547,7 +92547,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 216.027 228.6 0)
+			(at 216.027 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92557,7 +92557,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 214.122 228.6 0)
+			(at 214.122 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92567,7 +92567,7 @@
 			)
 		)
 		(property "ComponentHeight" " "
-			(at 212.217 228.6 0)
+			(at 212.217 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92577,7 +92577,7 @@
 			)
 		)
 		(property "Manufacturer1 Example" "PHYCOMP"
-			(at 210.312 228.6 0)
+			(at 210.312 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92587,7 +92587,7 @@
 			)
 		)
 		(property "Manufacturer1 Part Number" "223858615649"
-			(at 208.407 228.6 0)
+			(at 208.407 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92597,7 +92597,7 @@
 			)
 		)
 		(property "Manufacturer1 ComponentHeight" "0.87mm"
-			(at 206.502 228.6 0)
+			(at 206.502 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92607,7 +92607,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 204.597 228.6 0)
+			(at 204.597 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92617,7 +92617,7 @@
 			)
 		)
 		(property "Author" "CERN DEM JLC"
-			(at 202.692 228.6 0)
+			(at 202.692 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92627,7 +92627,7 @@
 			)
 		)
 		(property "CreateDate" "12/03/07 00:00:00"
-			(at 200.787 228.6 0)
+			(at 200.787 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92637,7 +92637,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "12/03/07 00:00:00"
-			(at 198.882 228.6 0)
+			(at 198.882 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92647,7 +92647,7 @@
 			)
 		)
 		(property "Database Table Name" "Capacitors"
-			(at 196.977 228.6 0)
+			(at 196.977 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92657,7 +92657,7 @@
 			)
 		)
 		(property "Library Name" "Capacitors SMD"
-			(at 195.072 228.6 0)
+			(at 195.072 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92667,7 +92667,7 @@
 			)
 		)
 		(property "Footprint Library" "Capacitors SMD"
-			(at 193.167 228.6 0)
+			(at 193.167 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92677,7 +92677,7 @@
 			)
 		)
 		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 191.262 228.6 0)
+			(at 191.262 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92687,7 +92687,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 271.78 228.6 0)
+			(at 271.78 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92696,7 +92696,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 271.78 228.6 0)
+			(at 271.78 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92705,7 +92705,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 271.78 228.6 0)
+			(at 271.78 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92714,7 +92714,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 271.78 228.6 0)
+			(at 271.78 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -92723,7 +92723,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 271.78 228.6 0)
+			(at 271.78 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
