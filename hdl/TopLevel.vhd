@@ -27,7 +27,6 @@ use work.configPkg.all;
 use work.IOPkg.all;
 use work.accurateConfigPkg.all;
 
-library poc;
 
 -- Top-level entity declaration
 entity TopLevel is
@@ -189,8 +188,6 @@ begin
             clkGlobal <= not clkGlobal;
         end if;
     end process;
-
-    debug_0 <= clkGlobal;
 
 
     -------------------------- I2C MASTER ------------------------------------
@@ -400,7 +397,9 @@ begin
             TxDataxDO => i2cSHT41TxData,
             TxDataWLengthxDO => i2cSHT41TxDataWLength,
             rxDataxDI => i2cSHT41RxData,
-            RxDataWLengthxDO => i2cSHT41RxDataWLength
+            RxDataWLengthxDO => i2cSHT41RxDataWLength,
+
+            debug0xDO => debug_0
     );
 
 end architecture rtl;
