@@ -142,5 +142,5 @@ void SERCOM2_Handler()
 
 void SERCOM0_Handler()
 {
-  Serial1.IrqHandler();
+  Serial2.IrqHandler();
 }
