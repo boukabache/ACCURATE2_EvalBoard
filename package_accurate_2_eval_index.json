@@ -1,0 +1,55 @@
+{
+    "packages": [
+        {
+            "name": "accurate_2a_eval",
+            "maintainer": "CERN HSE-RP-IL",
+            "websiteURL": "https://crome.web.cern.ch/",
+            "email": "mattia.consani@cern.ch",
+            "platforms": [
+                {
+                    "name": "ACCURATE 2A Evaluation Board",
+                    "architecture": "samd",
+                    "version": "1.2.0",
+                    "category": "Contributed",
+                    "url": "https://cernbox.cern.ch/remote.php/dav/public-files/TWwqu8KmsGvFJ5Y/accurate_2a_eval-1.2.0.zip",
+                    "archiveFileName": "accurate_2a_eval-1.2.0.zip",
+                    "checksum": "SHA-256:f402bfd92e165782812dcc7d3a3bba101e27f0e124c2245206af1cf3c10c3703",
+                    "size": "2067296",
+                    "boards": [
+                        {
+                            "name": "ACCURATE 2A Evaluation Board"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "arduino",
+                            "name": "arm-none-eabi-gcc",
+                            "version": "7-2017q4"
+                        },
+                        {
+                            "packager": "arduino",
+                            "name": "bossac",
+                            "version": "1.8.0-48-gb176eee"
+                        },
+                        {
+                            "packager": "arduino",
+                            "name": "openocd",
+                            "version": "0.10.0-arduino9"
+                        },
+                        {
+                            "packager": "arduino",
+                            "name": "CMSIS",
+                            "version": "4.5.0"
+                        },
+                        {
+                            "packager": "arduino",
+                            "name": "CMSIS-Atmel",
+                            "version": "1.2.0"
+                        }
+                    ]
+                }
+            ],
+            "tools": []
+        }
+    ]
+}
