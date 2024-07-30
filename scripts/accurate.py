@@ -140,9 +140,11 @@ def get_current(
     # Initialize and write header to file
     if log is not None:
         with open(log, "w") as f:
-            f.write("Timestamp, Instantaneous current (fA), Average current (fA)\n")
-            f.write("Start time: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
-            f.write("-----------------------------\n")
+            f.write("Timestamp, Instantaneous current (fA), Average current (fA)")
+            if verbose:
+                f.write(", Serial data, Integer representation")
+            f.write("\nStart time: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
+            f.write("-----------------------------")
 
     with serial.Serial(port, baudrate, timeout=1) as ser:
         try:
@@ -181,7 +183,9 @@ def get_current(
                     # Log to file in CSV format
                     if log is not None:
                         with open(log, "a") as f:
-                            f.write(f"{timestamp}, {femto_current:.2f}, {femto_current_avg/count:.2f}\n")
+                            f.write(f"\n{timestamp}, {femto_current:.2f}, {femto_current_avg/count:.2f}")
+                            if verbose:
+                                f.write(f", 0x{ser_data.hex()}, {data}")
 
                     # Create a text object with the current values
                     text = Text()
