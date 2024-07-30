@@ -11,10 +11,17 @@ from typing_extensions import Annotated
 import datetime
 from typing import Optional
 
+# For formatted output
 from rich.console import Console
 from rich.live import Live
 from rich.text import Text
-import time
+
+# For plotting
+import matplotlib.pyplot as plt
+
+# For Keithley control
+import pyvisa
+
 
 app = typer.Typer(
     help="Command Line Interface for the ACCURATE2 evaluation board.",
@@ -108,6 +115,12 @@ def get_current(
             "-v", "--verbose",
             help="Enable verbose output."
         )
+    ] = False,
+    plot: Annotated[
+        bool, typer.Option(
+            "-p", "--plot",
+            help="Enable real time plotting."
+        )
     ] = False
 ):
     '''
@@ -119,6 +132,9 @@ def get_current(
     # Initialize variables
     femto_current_avg = 0
     count = 0
+    timestamps = []
+    instantaneous_currents = []
+    average_currents = []
     # Initialize the console
     console = Console()
     # Initialize and write header to file
@@ -146,29 +162,52 @@ def get_current(
                     charge = data * lsb
                     atto_current = charge / (period * 1e-3)
                     femto_current = atto_current * 1e-3
-                    # Average current
+                    # Average currents
+                    # If a difference of at least a decate in the current is detected,
+                    # reset the average current as it is likely a new measurement.
+                    if (femto_current - instantaneous_currents[-1]) > 10:
+                        femto_current_avg = 0
+                        count = 0
                     femto_current_avg += femto_current
                     count += 1
                     # Format current
                     scale_factor, unit = format_current(femto_current)
+                    # Append current values to the lists
+                    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
+                    timestamps.append(timestamp)
+                    instantaneous_currents.append(femto_current)
+                    average_currents.append(femto_current_avg)
 
                     # Log to file in CSV format
                     if log is not None:
                         with open(log, "a") as f:
-                            timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                             f.write(f"{timestamp}, {femto_current:.2f}, {femto_current_avg/count:.2f}\n")
 
                     # Create a text object with the current values
                     text = Text()
                     text.append("Live data:", style="bold")
                     text.append(f"\nInstantaneous current: {femto_current*scale_factor:.2f} {unit}")
-                    text.append(f" - Average current: {(femto_current_avg*scale_factor/count):.2f} {unit}")
+                    text.append(f" - Average current: {(femto_current_avg*scale_factor/count):.2f} {unit} ({count})")
                     if verbose:
-                        text.append(f"\n\nDebug Data:", style="bold dim")
+                        text.append(f"\nDebug Data:", style="bold dim")
                         text.append(f"\nSerial data: 0x{ser_data.hex()} - ", style="dim")
                         text.append(f"Integer representation: {data}", style="dim")
                     # Update the live display with the new text
                     live.update(text)
+
+
+                    # Plot the current values
+                    if plot:
+                        # plt.ion()  # Turn on interactive mode
+                        plt.plot(timestamps, instantaneous_currents*scale_factor, 'o', markersize=2, color='red', label='Instantaneous current')
+                        plt.plot(timestamps, average_currents*scale_factor/count, 'o', markersize=2, color='blue', label='Average current')
+                        # plt.xticks([]) # Do not print x-axis values
+                        plt.xlabel('Time [s]')
+                        plt.ylabel(f'Current [{unit}]')
+                        plt.legend()
+                        # plt.draw()
+                        plt.pause(0.001)
+                        # plt.clf()  # Clear the current figure
 
         except KeyboardInterrupt:
             # Ctrl+C pressed, exit
@@ -216,6 +255,42 @@ def set_dac(
     
     print(f"Channel {channel} set to {voltage}V - ({Din_binary})")
     raise typer.Exit()
+
+
+@app.command()
+def set_keithley(
+    address: Annotated[
+        str, typer.Argument(
+            help="Keithley address."
+        )
+    ],
+    current : Annotated[
+        float, typer.Argument(
+            help="Current to set in uA."
+        )
+    ],
+    verbose: Annotated[
+        bool, typer.Option(
+            "-v", "--verbose",
+            help="Enable verbose output."
+        )
+    ] = False,
+):
+    '''
+    Set the Keithley's current.
+    '''
+    # Connect to the Keithley
+    rm = pyvisa.ResourceManager()
+    keithley = rm.open_resource(address)
+    # Set the current
+    keithley.write(":SOUR:FUNC CURR")  # Set to current source mode
+    keithley.write(f":SOUR:CURR {current}")  # Set current to
+    keithley.write(":OUTP ON") # Turn on the output
+    # Read the current
+    read = keithley.query("READ?")
+    # Close the connection
+    keithley.close()
+    rm.close()
 
 
 
