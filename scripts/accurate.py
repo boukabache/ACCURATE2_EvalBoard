@@ -131,10 +131,12 @@ def get_current(
 
     # Initialize variables
     femto_current_avg = 0
+    femto_current = 0
     count = 0
     timestamps = []
     instantaneous_currents = []
     average_currents = []
+    previous_current = 0
     # Initialize the console
     console = Console()
     # Initialize and write header to file
@@ -160,6 +162,9 @@ def get_current(
                     # Extract data
                     data = int.from_bytes(ser_data, byteorder='little')
 
+                    # Save the previous current measurement
+                    previous_current =  femto_current
+
                     # Instantaneous current
                     charge = data * lsb
                     atto_current = charge / (period * 1e-3)
@@ -167,18 +172,15 @@ def get_current(
                     # Average currents
                     # If a difference of at least a decate in the current is detected,
                     # reset the average current as it is likely a new measurement.
-                    if (femto_current - instantaneous_currents[-1]) > 10:
+                    if (femto_current - previous_current) > 10:
                         femto_current_avg = 0
                         count = 0
                     femto_current_avg += femto_current
                     count += 1
                     # Format current
                     scale_factor, unit = format_current(femto_current)
-                    # Append current values to the lists
+
                     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
-                    timestamps.append(timestamp)
-                    instantaneous_currents.append(femto_current)
-                    average_currents.append(femto_current_avg)
 
                     # Log to file in CSV format
                     if log is not None:
@@ -202,6 +204,11 @@ def get_current(
 
                     # Plot the current values
                     if plot:
+                        # Append current values to the lists
+                        timestamps.append(timestamp)
+                        instantaneous_currents.append(femto_current)
+                        average_currents.append(femto_current_avg)
+
                         # plt.ion()  # Turn on interactive mode
                         plt.plot(timestamps, instantaneous_currents*scale_factor, 'o', markersize=2, color='red', label='Instantaneous current')
                         plt.plot(timestamps, average_currents*scale_factor/count, 'o', markersize=2, color='blue', label='Average current')
