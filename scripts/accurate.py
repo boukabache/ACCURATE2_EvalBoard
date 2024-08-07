@@ -1,8 +1,8 @@
 # Script that receive from serial port the voltageChangeIntervalxDO value
 # from the FPGA and calculate the correspective current.
 # The communication format is the following:
-# 1B of header (0xAB) + 5B of data (coming from LSB to MSB)
-# Of the 40 bits of data, the first 39 are used. The rest is just zero padding.
+# 1B of header (0xDD) + 6B of data (coming from LSB to MSB)
+# Of the 48 bits of data, the first 39 are used. The rest is just zero padding.
 
 import typer
 import serial
@@ -172,9 +172,8 @@ def get_current(
                     # Average currents
                     # If a difference of at least a decate in the current is detected,
                     # reset the average current as it is likely a new measurement.
-                    if (femto_current - previous_current) > 10:
-                        femto_current_avg = 0
-                        count = 0
+                    # TODO: implement this logic
+                    
                     femto_current_avg += femto_current
                     count += 1
                     # Format current
