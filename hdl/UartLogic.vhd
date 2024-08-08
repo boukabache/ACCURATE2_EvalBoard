@@ -5,7 +5,10 @@
 --! the data transmission and reception logic.
 --
 --! TX: The data to be sent is sampled when the data ready signal is high.
---! Then the data is sent byte by byte, using a sliding window from left to right.
+--! Then the data is sent byte by byte, using a sliding window from right to left.
+--! Temperature and humidityh data are attached and sent after the charge pump data.
+--! As the sht41 data width is not expected to change, the values are hardcoded.
+--! Format: 1 byte header - 6 bytes charge pump data - 2 bytes temperature - 2 bytes humidity data
 --
 --! RX: The data received is sampled when the FIFO is not empty. The expected
 --! format is: address(8bit) - 4xdata(8bit). The data is then assembled in 32bit
@@ -20,15 +23,18 @@ use ieee.numeric_std.all;
 
 library work;
 use work.configPkg.all;
+use work.IOPkg.all;
 
 entity UartLogic is
     port (
         clk   : in std_logic;
         rst : in std_logic;
 
-        -- Data to send
+        -- Charge data
         voltageChangeIntervalxDI : in std_logic_vector(voltageChangeRegLengthC - 1 downto 0);
-        -- Data ready to be sent
+        -- Temp and humidity data
+        sht41MeasxDI             : in sht41RecordT;
+        -- Charge data ready to be sent. Used to clock data out.
         voltageChangeRdyxDI      : in std_logic;
 
         -- UART port
@@ -48,11 +54,15 @@ end entity UartLogic;
 architecture rtl of UartLogic is
     -- Sample the data once ready
     signal voltageChangeIntervalxDP : std_logic_vector(voltageChangeRegLengthC - 1 downto 0) := (others => '0');
+    signal sht41MeasxDP, sht41MeasxDN : sht41RecordT := sht41RecordTInit;
 
     -- Counter used in the RX FSM
     -- Used to receive and "assemble" the data before forwarding it to
     -- the RegisterFile module
     signal cnt : integer range 0 to 4 := 0;
+    -- Counter used in the TX FSM
+    -- Used to slide the window from right to left for temp and hum data
+    signal sht_cnt : integer range 0 to 4 := 0;
 
     -- UartWrapper signals
     signal fifoFull    : std_logic := '0';
@@ -67,7 +77,7 @@ architecture rtl of UartLogic is
     ----------------------
 
     -- State machine
-    type StateType is (IDLE_S, SEND_HEADER_S, SEND_S, RECEIVE_S, DONE_S);
+    type StateType is (IDLE_S, SEND_HEADER_S, SEND_S, SEND_TEMP_HUM_S, RECEIVE_S, DONE_S);
     signal state, rxState : StateType := IDLE_S;
     ----------------------
 
@@ -122,6 +132,7 @@ begin
                 RightBoundxDP <= RightBoundxDN;
                 txDataxDP <= txDataxDN;
                 fifoWriteEnxDP <= fifoWriteEnxDN;
+                sht41MeasxDP <= sht41MeasxDN;
 
                 -- FSM
                 case state is
@@ -131,6 +142,8 @@ begin
                             state <= SEND_HEADER_S;
                             -- Reset the window when starting a new transmission
                             RightBoundxDP <= 0;
+                            -- Reset the sht counter when starting a new transmission
+                            sht_cnt <= 0;
                             -- Sample the data to send
                             voltageChangeIntervalxDP <= voltageChangeIntervalxDI;
                         end if;
@@ -143,7 +156,25 @@ begin
                     when SEND_S =>
                         -- Check if the full data has been sent
                         if ((RightBoundxDP + 7) = voltageChangeRegLengthC - 1) then
-                            state <= IDLE_S;
+                            state <= SEND_TEMP_HUM_S; -- IDLS_S to skip sending sht data
+                        end if;
+
+                    when SEND_TEMP_HUM_S =>
+                        -- Send the temperature data
+                        if (fifoFull = '0') then
+                            if (sht_cnt = 0) then
+                                txDataxDP <= sht41MeasxDP.temperature(7 downto 0);
+                                sht_cnt <= sht_cnt + 1;
+                            elsif (sht_cnt = 1) then
+                                txDataxDP <= sht41MeasxDP.temperature(15 downto 8);
+                                sht_cnt <= sht_cnt + 1;
+                            elsif (sht_cnt = 2) then
+                                txDataxDP <= sht41MeasxDP.humidity(7 downto 0);
+                                sht_cnt <= sht_cnt + 1;
+                            elsif (sht_cnt = 3) then
+                                txDataxDP <= sht41MeasxDP.humidity(15 downto 8);
+                                state <= IDLE_S;
+                            end if;
                         end if;
 
                     when others =>
@@ -154,7 +185,8 @@ begin
     end process txLogicP;
 
     -- Write enable signal for the UART's TX FIFO
-    fifoWriteEnxDN <= '1' when (state = SEND_S or state = SEND_HEADER_S) and fifoFull = '0'
+    fifoWriteEnxDN <= '1' when (state = SEND_S or state = SEND_HEADER_S or state = SEND_TEMP_HUM_S)
+                    and fifoFull = '0'
                     else '0';
     
     -- The data window to be sent.
@@ -164,12 +196,20 @@ begin
                 when (RightBoundxDP) >= RightBoundEdgeCase else 
                 voltageChangeIntervalxDP(RightBoundxDP+7 downto RightBoundxDP);
 
-    -- Increment the right bound of the window when falling edge is detected.
-    -- Falling edge signify the end of the transmission of a byte.
+    -- Increment the right bound of the window once per clock cycle.
+    -- Wait if FIFO is full.
     -- When the last window is transmitted, no increment is done.
     RightBoundxDN <= (RightBoundxDP + 8) when state = SEND_S
                         and (RightBoundxDP + 7) < (voltageChangeRegLengthC - 1)
+                        and fifoFull = '0'
                         else RightBoundxDP;
+
+    -- SHT41 data, despite beign syncronised with the charge data to be sent,
+    -- is valid when dataValid is asserted.
+    -- If data is beign sent, do not update.
+    sht41MeasxDN <= sht41MeasxDI when sht41MeasxDI.dataValid = '1'
+                    and (state /= SEND_TEMP_HUM_S)
+                    else sht41MeasxDP;
 
 
 
