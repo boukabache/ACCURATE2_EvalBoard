@@ -115,18 +115,32 @@ architecture rtl of TopLevel is
 
 
     -- SHT41 I2C interface
-    signal i2cSHT41LockAcquire : std_logic;
-    signal i2cSHT41LockAck     : std_logic;
-    signal i2cSHT41Start       : std_logic;
-    signal i2cSHT41Busy        : std_logic;
-    signal i2cSHT41Ack         : std_logic;
-    signal i2cSHT41AckErr      : std_logic;
+    signal i2cShtLockAcquire : std_logic;
+    signal i2cShtLockAck     : std_logic;
+    signal i2cShtStart       : std_logic;
+    signal i2cShtBusy        : std_logic;
+    signal i2cShtAck         : std_logic;
+    signal i2cShtAckErr      : std_logic;
 
-    signal i2cSHT41TxData : std_logic_vector(7 downto 0);
-    signal i2cSHT41RxData : std_logic_vector(7 downto 0);
+    signal i2cShtTxData : std_logic_vector(7 downto 0);
+    signal i2cShtRxData : std_logic_vector(7 downto 0);
 
-    signal i2cSHT41TxDataWLength : std_logic_vector(3 downto 0);
-    signal i2cSHT41RxDataWLength : std_logic_vector(3 downto 0);
+    signal i2cShtTxDataWLength : std_logic_vector(3 downto 0);
+    signal i2cShtRxDataWLength : std_logic_vector(3 downto 0);
+    ----------------------
+
+
+    -- I2C Master
+    signal i2cMasterStart  : std_logic;
+    signal i2cMasterBusy   : std_logic;
+    signal i2cMasterAck    : std_logic;
+    signal i2cMasterAckErr : std_logic;
+
+    signal i2cMasterTxData : std_logic_vector(7 downto 0);
+    signal i2cMasterRxData : std_logic_vector(7 downto 0);
+
+    signal i2cMasterTxDataWLength : std_logic_vector(3 downto 0);
+    signal i2cMasterRxDataWLength : std_logic_vector(3 downto 0);
     ----------------------
 
 
@@ -199,16 +213,16 @@ begin
             clk => clkGlobal,
             rst => '0',
 
-            startxDI  => i2cSHT41Start,
-            busyxDO   => i2cSHT41Busy,
-            ackxDO    => i2cSHT41Ack,
-            ackErrxDO => i2cSHT41AckErr,
+            startxDI  => i2cMasterStart,
+            busyxDO   => i2cMasterBusy,
+            ackxDO    => i2cMasterAck,
+            ackErrxDO => i2cMasterAckErr,
 
-            txDataxDI => i2cSHT41TxData,
-            rxDataxDO => i2cSHT41RxData,
+            txDataxDI => i2cMasterTxData,
+            rxDataxDO => i2cMasterRxData,
 
-            txDataWLengthxDI => i2cSHT41TxDataWLength,
-            rxDataWLengthxDI => i2cSHT41RxDataWLength,
+            txDataWLengthxDI => i2cMasterTxDataWLength,
+            rxDataWLengthxDI => i2cMasterRxDataWLength,
 
             -- To the I2C bus
             sdaOutxDO => i_sdaOutxDO,
@@ -229,9 +243,8 @@ begin
             rst => '0',
 
             -- I2C arbitration signals
-            -- Arbitration is not used in this design
-            lockAcquirexDO => open,
-            lockAckxDI => '1',
+            lockAcquirexDO => i2cDAC7578LockAcquire,
+            lockAckxDI => i2cDAC7578LockAck,
 
             -- I2C signals
             i2cStartxDO => i2cDAC7578Start,
@@ -323,6 +336,8 @@ begin
             voltageChangeIntervalxDI => voltageChangeInterval,
             voltageChangeRdyxDI      => voltageChangeRdy,
 
+            sht41MeasxDI => sht41Meas,
+
             addressxDO   => registerFileAddressUsb,
             dataxDO      => registerFileDataUsb,
             dataValidxDO => registerFileDataValidUsb
@@ -337,6 +352,8 @@ begin
             txFpgaxDO                => txUartMcuxDO,
             voltageChangeIntervalxDI => voltageChangeInterval,
             voltageChangeRdyxDI      => voltageChangeRdy,
+
+            sht41MeasxDI => sht41Meas,
 
             addressxDO   => registerFileAddressMcu,
             dataxDO      => registerFileDataMcu,
@@ -385,21 +402,57 @@ begin
             sht41MeasxDO => sht41Meas,
 
             -- Arbitration signals
-            lockAcquirexDO => open,
-            lockAckxDI     => '1',
+            lockAcquirexDO => i2cShtLockAcquire,
+            lockAckxDI     => i2cShtLockAck,
 
             -- I2C signals
-            StartxDO => i2cSHT41Start,
-            BusyxDI => i2cSHT41Busy,
-            AckxDI => i2cSHT41Ack,
-            AckErrxDI => i2cSHT41AckErr,
+            StartxDO => i2cShtStart,
+            BusyxDI => i2cShtBusy,
+            AckxDI => i2cShtAck,
+            AckErrxDI => i2cShtAckErr,
 
-            TxDataxDO => i2cSHT41TxData,
-            TxDataWLengthxDO => i2cSHT41TxDataWLength,
-            rxDataxDI => i2cSHT41RxData,
-            RxDataWLengthxDO => i2cSHT41RxDataWLength,
-
-            debug0xDO => debug_0
+            TxDataxDO => i2cShtTxData,
+            TxDataWLengthxDO => i2cShtTxDataWLength,
+            rxDataxDI => i2cShtRxData,
+            RxDataWLengthxDO => i2cShtRxDataWLength
     );
+
+    -------------------------- I2C ARBITER ------------------------------------
+    i2cArbiterE : entity work.i2cArbiter
+        port map (
+            clk => clkGlobal,
+            rst => '0',
+            -- Channel 1
+            C1_lockAcquirexDI => i2cShtLockAcquire,
+            C1_lockAckxDO     => i2cShtLockAck,
+            C1_startxDI   => i2cShtStart,
+            C1_ackxDO     => i2cShtAck,
+            C1_ackErrxDO  => i2cShtAckErr,
+            C1_busyxDO    => i2cShtBusy,
+            C1_txDataxDI  => i2cShtTxData,
+            C1_rxDataxDO  => i2cShtRxData,
+            C1_txDataWLengthxDI => i2cShtTxDataWLength,
+            C1_rxDataWLengthxDI => i2cShtRxDataWLength,
+
+            C2_lockAcquirexDI => i2cDAC7578LockAcquire,
+            C2_lockAckxDO     => i2cDAC7578LockAck,
+            C2_startxDI   => i2cDAC7578Start,
+            C2_ackxDO     => i2cDAC7578Ack,
+            C2_ackErrxDO  => i2cDAC7578AckErr,
+            C2_busyxDO    => i2cDAC7578Busy,
+            C2_txDataxDI  => i2cDAC7578TxData,
+            C2_rxDataxDO  => open,
+            C2_txDataWLengthxDI => i2cDAC7578TxDataWLength,
+            C2_rxDataWLengthxDI => i2cDAC7578RxDataWLength,
+
+            master_startxDO  => i2cMasterStart,
+            master_ackxDI    => i2cMasterAck,
+            master_ackErrxDI => i2cMasterAckErr,
+            master_busyxDI   => i2cMasterBusy,
+            master_txDataxDO => i2cMasterTxData,
+            master_rxDataxDI => i2cMasterRxData,
+            master_txDataWLengthxDO => i2cMasterTxDataWLength,
+            master_rxDataWLengthxDO => i2cMasterRxDataWLength
+        );
 
 end architecture rtl;
