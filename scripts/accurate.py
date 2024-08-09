@@ -159,8 +159,12 @@ def get_current(
 
                     # Read data
                     ser_data = ser.read(6)
+                    ser_data_temp = ser.read(2)
+                    ser_data_hum = ser.read(2)
                     # Extract data
                     data = int.from_bytes(ser_data, byteorder='little')
+                    raw_temperature = int.from_bytes(ser_data_temp, byteorder='little')
+                    raw_humidity = int.from_bytes(ser_data_hum, byteorder='little')
 
                     # Save the previous current measurement
                     previous_current =  femto_current
@@ -169,6 +173,13 @@ def get_current(
                     charge = data * lsb
                     atto_current = charge / (period * 1e-3)
                     femto_current = atto_current * 1e-3
+                    # Temperature
+                    temperature = -45 + 175 * raw_temperature / 65535.0
+                    # Humidity
+                    humidity = -6 + 125 * raw_humidity / 65535.0
+                    # Crop humidity values to the range of 0% to 100%
+                    if (humidity > 100): humidity = 100
+                    if (humidity < 0): humidity = 0
                     # Average currents
                     # If a difference of at least a decate in the current is detected,
                     # reset the average current as it is likely a new measurement.
@@ -193,6 +204,7 @@ def get_current(
                     text.append("Live data:", style="bold")
                     text.append(f"\nInstantaneous current: {femto_current*scale_factor:.2f} {unit}")
                     text.append(f" - Average current: {(femto_current_avg*scale_factor/count):.2f} {unit} ({count})")
+                    text.append(f"\nTemperature: {temperature:.2f} °C - Humidity: {humidity:.2f} %")
                     if verbose:
                         text.append(f"\nDebug Data:", style="bold dim")
                         text.append(f"\nSerial data: 0x{ser_data.hex()} - ", style="dim")
