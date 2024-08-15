@@ -124,8 +124,8 @@ architecture rtl of TopLevel is
     --! Control interface
     signal configxDI                : accurateRecordT;
     signal configValidxDI           : std_logic;
-    signal ps2plResetOTAValidxDI    : std_logic; --! If ps2plResetOTA value is valid.
-    signal ps2plResetOTAxDI         : std_logic; --! ps request to reset OTA
+    signal resetOTARequestValidxDI    : std_logic; --! If resetOTARequest value is valid.
+    signal resetOTARequestxDI         : std_logic; --! ps request to reset OTA
     --! Change in voltage over the last Interval period or MAX if OTA is reset
     signal voltageChangeIntervalxDO : std_logic_vector(voltageChangeRegLengthC - 1 downto 0);
 
@@ -253,6 +253,12 @@ begin
             -- If voltageChangeIntervalxDO value is ready
             measurementReadyxDO => voltageChangeRdyxDO,
 
+            cp1CountxDO => open,
+            cp2CountxDO => open,
+            cp3CountxDO => open,
+
+            cp1LastIntervalxDO => open,
+
             -- ACCURATE physical I/Os
             -- Comparators inputs
             vTh1NxDI  => vTh1NxDI,
@@ -269,16 +275,16 @@ begin
             resetOTAxDO => resetOTAxDO,
 
             -- Control interface
-            ps2plResetOTAValidxDI => ps2plResetOTAValidxDI, --! If ps2plResetOTA value is valid.
-            ps2plResetOTAxDI      => ps2plResetOTAxDI, --! ps request to reset OTA
-            configxDI             => configxDI, --! Configuration data from PS
-            configValidxDI        => configValidxDI
+            resetOTARequestValidxDI => resetOTARequestValidxDI, --! If resetOTARequest value is valid.
+            resetOTARequestxDI      => resetOTARequestxDI, --! ps request to reset OTA
+            configxDI      => configxDI, --! Configuration data from PS
+            configValidxDI => configValidxDI
     );
 
     voltageChangeIntervalxDO <= std_logic_vector(resize(chargeMeasurementTmp, voltageChangeIntervalxDO'length));
 
-    ps2plResetOTAValidxDI <= '0'; --! Not used in this design
-    ps2plResetOTAxDI <= '0';      --! Not used in this design
+    resetOTARequestValidxDI <= '0'; --! Not used in this design
+    resetOTARequestxDI <= '0';      --! Not used in this design
 
 
     -------------------------- WINDOW GENERATOR --------------------------------
