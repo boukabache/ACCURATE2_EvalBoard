@@ -119,19 +119,17 @@ architecture rtl of TopLevel is
 
 
     -- ACCURATE signals
-    --! Window high for one clock period each Interval
-    signal windIntervalxDI : std_logic;
     --! Control interface
-    signal configxDI                : accurateRecordT;
-    signal configValidxDI           : std_logic;
-    signal resetOTARequestValidxDI    : std_logic; --! If resetOTARequest value is valid.
-    signal resetOTARequestxDI         : std_logic; --! ps request to reset OTA
+    signal config                : accurateRecordT;
+    signal configValid           : std_logic;
+    signal resetOTARequestValid    : std_logic; --! If resetOTARequest value is valid.
+    signal resetOTARequest         : std_logic; --! ps request to reset OTA
     --! Change in voltage over the last Interval period or MAX if OTA is reset
-    signal voltageChangeIntervalxDO : std_logic_vector(voltageChangeRegLengthC - 1 downto 0);
+    signal voltageChangeInterval : std_logic_vector(voltageChangeRegLengthC - 1 downto 0);
 
     signal chargeMeasurementTmp : signed(44 - 1 downto 0);
-    --! The voltageChangeIntervalxDO value is ready
-    signal voltageChangeRdyxDO      : std_logic;
+    --! The voltageChangeInterval value is ready
+    signal voltageChangeRdy      : std_logic;
     ----------------------
 
 
@@ -250,8 +248,8 @@ begin
 
             -- Amout of LSBs of charge counted in the last interval
             chargeMeasurementxDO => chargeMeasurementTmp,
-            -- If voltageChangeIntervalxDO value is ready
-            measurementReadyxDO => voltageChangeRdyxDO,
+            -- If voltageChangeInterval value is ready
+            measurementReadyxDO => voltageChangeRdy,
 
             cp1CountxDO => open,
             cp2CountxDO => open,
@@ -275,16 +273,16 @@ begin
             resetOTAxDO => resetOTAxDO,
 
             -- Control interface
-            resetOTARequestValidxDI => resetOTARequestValidxDI, --! If resetOTARequest value is valid.
-            resetOTARequestxDI      => resetOTARequestxDI, --! ps request to reset OTA
-            configxDI      => configxDI, --! Configuration data from PS
-            configValidxDI => configValidxDI
+            resetOTARequestValidxDI => resetOTARequestValid, --! If resetOTARequest value is valid.
+            resetOTARequestxDI      => resetOTARequest, --! ps request to reset OTA
+            configxDI      => config, --! Configuration data from PS
+            configValidxDI => configValid
     );
 
-    voltageChangeIntervalxDO <= std_logic_vector(resize(chargeMeasurementTmp, voltageChangeIntervalxDO'length));
+    voltageChangeInterval <= std_logic_vector(resize(chargeMeasurementTmp, voltageChangeInterval'length));
 
-    resetOTARequestValidxDI <= '0'; --! Not used in this design
-    resetOTARequestxDI <= '0';      --! Not used in this design
+    resetOTARequestValid <= '0'; --! Not used in this design
+    resetOTARequest <= '0';      --! Not used in this design
 
 
     -------------------------- WINDOW GENERATOR --------------------------------
@@ -304,8 +302,8 @@ begin
             rst                      => '0',
             rxFpgaxDI                => rxUartUsbxDI,
             txFpgaxDO                => txUartUsbxDO,
-            voltageChangeIntervalxDI => voltageChangeIntervalxDO,
-            voltageChangeRdyxDI      => voltageChangeRdyxDO,
+            voltageChangeIntervalxDI => voltageChangeInterval,
+            voltageChangeRdyxDI      => voltageChangeRdy,
 
             addressxDO   => registerFileAddressUsb,
             dataxDO      => registerFileDataUsb,
@@ -319,8 +317,8 @@ begin
             rst                      => '0',
             rxFpgaxDI                => rxUartMcuxDI,
             txFpgaxDO                => txUartMcuxDO,
-            voltageChangeIntervalxDI => voltageChangeIntervalxDO,
-            voltageChangeRdyxDI      => voltageChangeRdyxDO,
+            voltageChangeIntervalxDI => voltageChangeInterval,
+            voltageChangeRdyxDI      => voltageChangeRdy,
 
             addressxDO   => registerFileAddressMcu,
             dataxDO      => registerFileDataMcu,
@@ -339,8 +337,8 @@ begin
             dacConfigxDO => DAC7578Config,
 
             -- ACCURATE config registers
-            accurateConfigxDO => configxDI,
-            accurateConfigValidxDO => configValidxDI,
+            accurateConfigxDO => config,
+            accurateConfigValidxDO => configValid,
 
             -- Input port
             addressxDI   => registerFileAddress,
