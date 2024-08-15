@@ -327,38 +327,75 @@ begin
 
 
     -------------------------- UART FPGA - USB --------------------------------------
-    UartLogicUsbE : entity work.UartLogic
+    UartLogicUsbE : entity work.uart_generic_tx
+        generic map (
+            txMessageLengthBytesG => 11
+        )
         port map (
             clk                      => clkGlobal,
             rst                      => '0',
             rxFpgaxDI                => rxUartUsbxDI,
             txFpgaxDO                => txUartUsbxDO,
-            voltageChangeIntervalxDI => voltageChangeInterval,
-            voltageChangeRdyxDI      => voltageChangeRdy,
 
-            sht41MeasxDI => sht41Meas,
+            txSendMessagexDI => voltageChangeRdy,
+            txMessagexDI => sht41Meas.humidity & sht41Meas.temperature & voltageChangeInterval & x"DD",
 
             addressxDO   => registerFileAddressUsb,
             dataxDO      => registerFileDataUsb,
             dataValidxDO => registerFileDataValidUsb
     );
 
-    -------------------------- UART FPGA - MCU --------------------------------------
-    UartLogicMcuE : entity work.UartLogic
+    -- UartLogicUsbE : entity work.UartLogic
+    --     port map (
+    --         clk                      => clkGlobal,
+    --         rst                      => '0',
+    --         rxFpgaxDI                => rxUartUsbxDI,
+    --         txFpgaxDO                => txUartUsbxDO,
+
+    --         voltageChangeIntervalxDI => voltageChangeIntervalxDO,
+    --         voltageChangeRdyxDI      => voltageChangeRdyxDO,
+
+    --         sht41MeasxDI => sht41Meas,
+
+    --         addressxDO   => registerFileAddressUsb,
+    --         dataxDO      => registerFileDataUsb,
+    --         dataValidxDO => registerFileDataValidUsb
+    -- );
+
+    UartLogicMcuE : entity work.uart_generic_tx
+        generic map (
+            txMessageLengthBytesG => 11
+        )
         port map (
             clk                      => clkGlobal,
             rst                      => '0',
             rxFpgaxDI                => rxUartMcuxDI,
             txFpgaxDO                => txUartMcuxDO,
-            voltageChangeIntervalxDI => voltageChangeInterval,
-            voltageChangeRdyxDI      => voltageChangeRdy,
 
-            sht41MeasxDI => sht41Meas,
+            txSendMessagexDI => voltageChangeRdy,
+            txMessagexDI => sht41Meas.humidity & sht41Meas.temperature & voltageChangeInterval & x"DD",
 
             addressxDO   => registerFileAddressMcu,
             dataxDO      => registerFileDataMcu,
             dataValidxDO => registerFileDataValidMcu
     );
+    -- -------------------------- UART FPGA - MCU --------------------------------------
+    -- UartLogicMcuE : entity work.UartLogic
+    --     port map (
+    --         clk                      => clkGlobal,
+    --         rst                      => '0',
+    --         rxFpgaxDI                => rxUartMcuxDI,
+    --         txFpgaxDO                => txUartMcuxDO,
+
+    --         voltageChangeIntervalxDI => voltageChangeIntervalxDO,
+    --         voltageChangeRdyxDI      => voltageChangeRdyxDO,
+
+    --         sht41MeasxDI => sht41Meas,
+
+    --         addressxDO   => registerFileAddressMcu,
+    --         dataxDO      => registerFileDataMcu,
+    --         dataValidxDO => registerFileDataValidMcu
+    -- );
 
     ------------------------- CONFIG REGISTER FILE -----------------------------
     -- Contains the configuration registers for the DAC7578 and ACCURATE
