@@ -26,14 +26,16 @@ entity UartWrapper is
         -- UART signals
         rxUartxDI : in std_logic;
         txUartxDO : out std_logic;
-        
-        -- FIFO signals
+
+        -- TX FIFO signals
         fifoDataInxDI  : in std_logic_vector(DATA_WIDTH_G-1 downto 0);
+        fifoFullxDO    : out std_logic;
+        fifoWritexDI   : in std_logic;
+
+        -- RX FIFO signals
         fifoDataOutxDO : out std_logic_vector(DATA_WIDTH_G-1 downto 0);
         fifoEmptyxDO   : out std_logic;
-        fifoFullxDO    : out std_logic;
-        fifoReadxDI    : in std_logic;
-        fifoWritexDI   : in std_logic
+        fifoReadxDI    : in std_logic
     );
 end UartWrapper;
 
@@ -90,9 +92,9 @@ begin
             rx_busy  => rxBusyUart,
             rx_error => rxErrorUart,
             rx_data  => rxDataUart
-            
+
     );
-    
+
     -- Read RX FIFO instantiation
     rxFifoE : entity work.Fifo
         generic map (
@@ -102,12 +104,12 @@ begin
         port map (
             i_rst_sync => rst,
             i_clk      => clk,
-        
+
             -- FIFO Write Interface (in from uart)
             i_wr_en   => rxFifoWrEn,
             i_wr_data => rxDataUart,
             o_full    => rxFifoFull,
-        
+
             -- FIFO Read Interface (out of UartWrapper)
             i_rd_en   => fifoReadxDI,
             o_rd_data => fifoDataOutxDO,
@@ -123,12 +125,12 @@ begin
         port map (
             i_rst_sync => rst,
             i_clk      => clk,
-        
+
             -- FIFO Write Interface (in from UartWrapper)
             i_wr_en   => fifoWritexDI,
             i_wr_data => fifoDataInxDI,
             o_full    => fifoFullxDO,
-        
+
             -- FIFO Read Interface (to uart)
             i_rd_en   => txFifoRdEn,
             o_rd_data => txDataUart,
@@ -143,7 +145,7 @@ begin
     -- TODO to check if the FIFO out is updated after the uart read the current data
     txFifoRdEn <= '1' when txEnaUart = '1' else '0';
 
-    
+
     -- Detect if new data was received by the UART, and store it in the RX FIFO
     -- A transition high to low of the rxBusyUart signal indicates that a new byte
     -- was received by the UART.
@@ -166,5 +168,5 @@ begin
             end if;
         end if;
     end process;
-    
+
 end rtl;
