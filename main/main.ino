@@ -95,30 +95,63 @@ void loop() {
     // ACCURATE CURRENT MEASUREMENT
     // ----------------------------
 
-    char data[6];
-    uint64_t int_data = 0;
+    char chargeRaw[6];
+    char cp1CountRaw[4];
+    char cp2CountRaw[4];
+    char cp3CountRaw[4];
+    char cp1LastIntervalRaw[5];
+
+    int64_t int_data = 0;
 
     // Only read and update display if there is data available
     if (Serial1.find(FPGA_CURRENT_ADDRESS)) {
         // Wait for the full payload to be available
-        while (Serial1.available() < FPGA_PAYLOAD_LENGTH);
+        //while (Serial1.available() < FPGA_PAYLOAD_LENGTH);
         // Read the payload
-        Serial1.readBytes(data, FPGA_PAYLOAD_LENGTH);
+        Serial1.readBytes(chargeRaw, 6);
 
+        // FIXME: THIS IS WRONG. rawCharge is of signed type!! What happens to leading '1's if it is negative?
         // Convert the payload to a 64-bit integer rapresentation
-        for (int i = 0; i < FPGA_PAYLOAD_LENGTH; i++) {
-            int_data |= ((uint64_t)data[i] << (8 * i));
+        for (int i = 0; i < 6; i++) {
+            int_data |= ((int64_t)chargeRaw[i] << (8 * i));
         }
 
         // Calculate the current and format it
         float readCurrent = fpga_calc_current(int_data, DEFAULT_LSB, DEFAULT_PERIOD);
         CurrentMeasurement measurement = fpga_format_current(readCurrent);
 
+        Serial1.readBytes(cp1CountRaw, 4);
+        uint32_t cp1Count = *(uint32_t*) cp1CountRaw;
+
+        Serial1.readBytes(cp2CountRaw, 4);
+        uint32_t cp2Count = *(uint32_t*) cp2CountRaw;
+
+        Serial1.readBytes(cp3CountRaw, 4);
+        uint32_t cp3Count = *(uint32_t*) cp3CountRaw;
+
+        Serial1.readBytes(cp3CountRaw, 4);
+        uint32_t cp3Count = *(uint32_t*) cp3CountRaw;
+
+        Serial1.readBytes(cp1LastIntervalRaw, 5);
+        uint64_t cp1LastInterval = 0;
+
+        for (int i = 0; i < 5; i++) {
+            cp1LastInterval |= ((int64_t)cp1LastIntervalRaw[i] << (8 * i));
+        }
+
+
         // Print the current and update the display
         ssd1306_print_current_temp_humidity(measurement.convertedCurrent, measurement.range, temp + " C", humidity);
-        String message = String(measurement.currentInFemtoAmpere) + "," + String(temp) + "," + String(humidity) + "," + btnLedStatus;
+        String message = String(measurement.currentInFemtoAmpere) + "," +
+                         String(cp1Count) + "," +
+                         String(cp2Count) + "," +
+                         String(cp3Count) + "," +
+                         String(cp1LastInterval) + "," +
+                         String(temp) + "," +
+                         String(humidity) + "," +
+                         btnLedStatus;
         Serial.println(message);
-        
+
         // Clear the rest of the serial buffer, if not empty
         while (Serial1.available()) {
             Serial1.read();
