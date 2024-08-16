@@ -27,7 +27,7 @@ use work.IOPkg.all;
 
 entity uart_generic_tx is
     generic (
-        txMessageLengthBytesG : integer := 4
+        txMessageLengthBytesG : integer := 28
     );
     port (
         clk   : in std_logic;
@@ -52,7 +52,9 @@ end entity uart_generic_tx;
 
 architecture rtl of uart_generic_tx is
     -- Sample the data once ready
-    signal txMessageSampledxDP, txMessageSampledxDN : std_logic_vector(txMessageLengthBytesG * 8 - 1 downto 0);
+    type txMessageBytesT is array (0 to txMessageLengthBytesG - 1) of std_logic_vector(8 - 1 downto 0);
+    signal txInputMessageBytes : txMessageBytesT := (others => (others => '0'));
+    signal txMessageBytesxDP, txMessageBytesxDN : txMessageBytesT := (others => (others => '0'));
     signal txMessageByteForwardedxDP, txMessageByteForwardedxDN : integer range 0 to txMessageLengthBytesG := txMessageLengthBytesG;
     -- Counter used in the RX FSM
     -- Used to receive and "assemble" the data before forwarding it to
@@ -122,33 +124,31 @@ begin
         if rising_edge(clk) then
             if rst = '1' then
                 txMessageByteForwardedxDP <= txMessageLengthBytesG;
-                txMessageSampledxDP <= (others => '0');
-                txDataxDP <= (others => '0');
-                fifoWriteEnxDP <= '0';
             else
                 txMessageByteForwardedxDP <= txMessageByteForwardedxDN;
-                txMessageSampledxDP <= txMessageSampledxDN;
+                txMessageBytesxDP <= txMessageBytesxDN;
                 txDataxDP <= txDataxDN;
                 fifoWriteEnxDP <= fifoWriteEnxDN;
             end if;
         end if;
     end process txRegP;
 
+    messageCast: for i in 0 to txMessageLengthBytesG-1 generate
+        txInputMessageBytes(i) <= txMessagexDI((i+1)*8-1 downto i*8);
+    end generate;
+
     -- Transmission is considered ongoing if txMessageByteForwardedxDN != txMessageLengthBytesG
     txMessageByteForwardedxDN <= 0 when txSendMessagexDI else
-                                 txMessageLengthBytesG when txMessageByteForwardedxDP = txMessageLengthBytesG else
-                                 txMessageByteForwardedxDP when fifoFull = '1' else
-                                 txMessageByteForwardedxDP + 1;
+                                 txMessageByteForwardedxDP + 1 when fifoWriteEnxDP = '1' else
+                                 txMessageByteForwardedxDP;
 
-    txMessageSampledxDN <= txMessagexDI when txSendMessagexDI else
-                           txMessageSampledxDP;
+    txMessageBytesxDN <= txInputMessageBytes when txSendMessagexDI else
+                         txMessageBytesxDP;
 
-    fifoWriteEnxDN <= '1' when fifoFull = '0' and txMessageByteForwardedxDN /= txMessageLengthBytesG else
+    fifoWriteEnxDN <= '1' when fifoFull = '0' and txMessageByteForwardedxDP /= txMessageLengthBytesG else
                       '0';
 
-    txDataxDN <= txMessagexDI(7 downto 0) when txSendMessagexDI else
-                 (others => '0') when txMessageByteForwardedxDN = txMessageLengthBytesG else
-                 txMessageSampledxDP(txMessageByteForwardedxDN * 8 + 7 downto txMessageByteForwardedxDN * 8);
+    txDataxDN <= txMessageBytesxDP(txMessageByteForwardedxDP);
 
     --------------------
     -- RX LOGIC
@@ -212,9 +212,11 @@ begin
     -- As the FIFO is FWFT, the read signal is asserted immediately: the byte
     -- is already available (no need to wait a clock cycle for the data to be available
     -- after fifoRead is asserted).
-    fifoRead <= '1' when rxState = RECEIVE_S else '0';
+    fifoRead <= '1' when rxState = RECEIVE_S else
+                '0';
 
     -- When reception is done, signalise the RegisterFile module that the data is valid
-    dataValidxDO <= '1' when rxState = DONE_S else '0';
+    dataValidxDO <= '1' when rxState = DONE_S else
+                    '0';
 
 end architecture rtl;
