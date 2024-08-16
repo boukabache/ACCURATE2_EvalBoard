@@ -30,32 +30,32 @@ all: $(BIN_FILE)
 
 # --no-formal is needed to avoid $assert cell errors
 $(JSON_FILE): $(VHDL_FILES)
-	@echo "Converting GHDL to JSON" 
-	@yosys -m ghdl -p 'ghdl --no-formal $(GHDLFLAGS) $(VHDL_FILES) -e $(TOP_MODULE); synth_ice40 -json $(JSON_FILE)'
+	@echo "Converting GHDL to JSON"
+	yosys -m ghdl -p 'ghdl --no-formal $(GHDLFLAGS) $(VHDL_FILES) -e $(TOP_MODULE); synth_ice40 -dsp -json $(JSON_FILE)'
 
 $(ASC_FILE): $(JSON_FILE)
 	@echo "Run place and route for $<"
-	@nextpnr-ice40 --u4k --package sg48 --json $< --pcf lp4k_wlcs36.pcf --asc $@
+	nextpnr-ice40 --u4k --package sg48 --json $< --pcf lp4k_wlcs36.pcf --asc $@
 
 $(BIN_FILE): $(ASC_FILE)
 	@echo "Packing to bin for $<"
-	@icepack $< $@
+	icepack $< $@
 
 # Works only for flash programming. -S is needed for direct programming
 prog:
 	@echo "Programming the flash"
-	@iceprog hardware.bin -v 2>log.txt
+	iceprog hardware.bin -v 2>log.txt
 	@echo "Done. See log.txt for more details."
 
 # Perform SRAM programming (for directly programming the FPGA)
 prog-s:
 	@echo "Programming the FPGA SRAM"
-	@iceprog -S hardware.bin
+	iceprog -S hardware.bin
 	@echo "Done"
 
 clean:
 	@echo "Removing intermediate files"
-	@rm -f $(JSON_FILE) $(ASC_FILE) $(BIN_FILE) $(O_FILE)
+	rm -f $(JSON_FILE) $(ASC_FILE) $(BIN_FILE) $(O_FILE)
 
 
 # Convenience formula that synthesizes, implements and programs the FPGA
@@ -65,4 +65,4 @@ all-ps: all prog-s
 # -g (before -m) is to print also debug messages
 show:
 	@echo "Converting GHDL to JSON"
-	@yosys -m ghdl -p 'ghdl --no-formal $(GHDLFLAGS) $(VHDL_FILES) -e $(TOP_MODULE); synth_ice40 -json $(JSON_FILE); show'
+	yosys -m ghdl -p 'ghdl --no-formal $(GHDLFLAGS) $(VHDL_FILES) -e $(TOP_MODULE); synth_ice40 -dsp -json $(JSON_FILE); show'
