@@ -22,8 +22,10 @@ entity accurateFrontend is
         -- width is 24 because ceil(log2(0.1 second / 10 nano second)) = 24
         countBitwidthG : integer := 24;
         chargeQuantaBitwidthG : integer := 18;
-        -- width is 37 because ceil(log2(500fC/1fA * 100MHz)) = 36 + 1 bit for error/sign bit
-        countTimeIntervalBitwidthG : integer := 37
+        -- 2^n slow down factor. Precision we'd like is ~10us @ 100MHz = ~ 1024 = 2^10
+        countTimeIntervalSlowFactorG : integer := 10;
+        -- width is 37 because ceil(log2(500fC/1fA * 100MHz/1024)) = 26 + 1 bit for error/sign bit
+        countTimeIntervalBitwidthG : integer := 27
     );
     port (
         clk20  : in  std_logic; --! System clock
@@ -91,15 +93,10 @@ architecture behavior of accurateFrontend is
     signal cp1LastIntervalSampledAccxDN, cp1LastIntervalSampledAccxDP : signed(countTimeIntervalBitwidthG - 1 downto 0) := ('1', others => '0');
     signal cp1LastIntervalSys : signed(countTimeIntervalBitwidthG - 1 downto 0) := ('1', others => '0');
 
-    -- As we multiply the counts by the charge quanta, the resulting bitwidth will be the sum of the multiplied vectors
-    constant channelChargeSumBitwidthC : integer := cp1CountAcc'length + configxDI.chargeQuantaCP1'length;
-    signal chargeCP1xDN, chargeCP1xDP : signed(channelChargeSumBitwidthC - 1 downto 0) := (others => '0');
-    signal chargeCP2xDN, chargeCP2xDP : signed(channelChargeSumBitwidthC - 1 downto 0) := (others => '0');
-    signal chargeCP3xDN, chargeCP3xDP : signed(channelChargeSumBitwidthC - 1 downto 0) := (others => '0');
-
     -- As we sum three chargesum channels, we can add two bits and never have overflow
+    constant channelChargeSumBitwidthC : integer := cp1CountAcc'length + configxDI.chargeQuantaCP1'length;
     constant chargeSumBitwidthC : integer := channelChargeSumBitwidthC + 2;
-    signal chargeSumxDN, chargeSumxDP : signed(chargeSumBitwidthC - 1 downto 0) := (others => '0');
+    signal chargeSum : signed(chargeSumBitwidthC - 1 downto 0) := (others => '0');
 
     signal sampleAcc : std_logic;
 
@@ -124,16 +121,25 @@ architecture behavior of accurateFrontend is
     signal resetOTAxDP, resetOTAxDN : std_logic;
 begin
 
-    chargeCP1xDN <= configValidatedxDP.chargeQuantaCP1 * signed(cp1CountSys) when measurementReadySys = '1' else
-                    chargeCP1xDP;
-    chargeCP2xDN <= configValidatedxDP.chargeQuantaCP2 * signed(cp2CountSys) when measurementReadySys = '1' else
-                    chargeCP2xDP;
-    chargeCP3xDN <= configValidatedxDP.chargeQuantaCP3 * signed(cp3CountSys) when measurementReadySys = '1' else
-                    chargeCP3xDP;
-
-    chargeSumxDN <= resize(chargeCP1xDP, chargeSumxDN'length) +
-                    resize(chargeCP2xDP, chargeSumxDN'length) +
-                    resize(chargeCP3xDP, chargeSumxDN'length);
+    mult_accumulatorE : entity work.mult_accumulator
+        generic map (
+            ABitwidthG => countBitwidthG,
+            BBitwidthG => configxDI.chargeQuantaCP1'length,
+            resultBitwidthG => chargeSumBitwidthC
+        )
+        port map (
+            clk => clk20,
+            rst => rst,
+            startxDI => measurementReadySys,
+            A1xDI => cp1CountSys,
+            B1xDI => configValidatedxDP.chargeQuantaCP1,
+            A2xDI => cp2CountSys,
+            B2xDI => configValidatedxDP.chargeQuantaCP2,
+            A3xDI => cp3CountSys,
+            B3xDI => configValidatedxDP.chargeQuantaCP3,
+            resultxDO => chargeSum,
+            resultValidxDO => measurementReadyxDO
+        );
 
     configValidatedxDN <= configxDI when configValidxDI else
                           configValidatedxDP;
@@ -148,19 +154,11 @@ begin
                 configValidatedxDP <= accurateRecordTInit;
                 previousCycleResetxDP <= '0';
                 resetOTAxDP <= '1';
-                chargeCP1xDP <= (others => '0');
-                chargeCP2xDP <= (others => '0');
-                chargeCP3xDP <= (others => '0');
-                chargeSumxDP <= (others => '0');
                 measurementReadySysxDP <= (others => '0');
             else
                 configValidatedxDP <= configValidatedxDN;
                 previousCycleResetxDP <= previousCycleResetxDN;
                 resetOTAxDP <= resetOTAxDN;
-                chargeCP1xDP <= chargeCP1xDN;
-                chargeCP2xDP <= chargeCP2xDN;
-                chargeCP3xDP <= chargeCP3xDN;
-                chargeSumxDP <= chargeSumxDN;
                 measurementReadySysxDP <= measurementReadySysxDP(measurementReadySysxDP'left-1 downto 0) &
                                           measurementReadySys;
             end if;
@@ -213,8 +211,8 @@ begin
                                                   cp2CountSys'length - 1 downto cp1CountSys'length));
     cp1CountSys <= unsigned(measurementDataTmpSys(cp1CountSys'length - 1 downto 0));
 
-    measurementReadyxDO <= measurementReadySysxDP(measurementReadySysxDP'left);
-    chargeMeasurementxDO <= chargeSumxDP when previousCycleResetxDP = '0' else
+    --measurementReadyxDO <= measurementReadySysxDP(measurementReadySysxDP'left);
+    chargeMeasurementxDO <= chargeSum when previousCycleResetxDP = '0' else
                             -- this is so that it's clear from the outside that the system is in reset, without
                             -- needing to touch the ROMULUSlib (as this is just for prototype, for now...)
                             largeVoltageSfixed;
@@ -268,7 +266,8 @@ begin
 
     TIME_INTERVAL_COUNTER: entity work.timeIntervalCounter
         generic map(
-            countBitwidthG => countTimeIntervalBitwidthG
+            countBitwidthG => countTimeIntervalBitwidthG,
+            slowFactorG => countTimeIntervalSlowFactorG
         )
         port map(
             clk => clk100,
