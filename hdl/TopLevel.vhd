@@ -164,7 +164,10 @@ architecture rtl of TopLevel is
     --! The voltageChangeInterval value is ready
     signal voltageChangeRdy      : std_logic;
     ----------------------
-
+    signal cp1Count : unsigned(24 - 1 downto 0);
+    signal cp2Count : unsigned(24 - 1 downto 0);
+    signal cp3Count : unsigned(24 - 1 downto 0);
+    signal cp1LastInterval : signed(27-1 downto 0);
 
     -- Window generator signals
     signal wind100ms           : std_logic; -- 100ms window
@@ -268,7 +271,14 @@ begin
 
 
     -------------------------- ACCURATE ---------------------------------------
+    -- Note: we are short on carry resources. I make sacrifices to make it fit with the generics
     accurateFrontendE : entity work.accurateFrontend
+        generic map (
+            -- 2^n slow down factor. Precision we'd like is ~10us @ 40MHz = ~ 512 = 2^9
+            countTimeIntervalSlowFactorG => 9,
+            -- width is 37 because ceil(log2(200fC/10fA * 40MHz/512)) = 26 + 1 bit for error/sign bit
+            countTimeIntervalBitwidthG => 27
+        )
         port map (
             clk20  => clkGlobal,
             clk100 => clk40, -- 40 MHz to respect timing constraints
@@ -282,11 +292,11 @@ begin
             -- If voltageChangeInterval value is ready
             measurementReadyxDO => voltageChangeRdy,
 
-            cp1CountxDO => open,
-            cp2CountxDO => open,
-            cp3CountxDO => open,
+            cp1CountxDO => cp1Count,
+            cp2CountxDO => cp2Count,
+            cp3CountxDO => cp3Count,
 
-            cp1LastIntervalxDO => open,
+            cp1LastIntervalxDO => cp1LastInterval,
 
             -- ACCURATE physical I/Os
             -- Comparators inputs
@@ -329,7 +339,7 @@ begin
     -------------------------- UART FPGA - USB --------------------------------------
     UartLogicUsbE : entity work.uart_generic_tx
         generic map (
-            txMessageLengthBytesG => 11
+            txMessageLengthBytesG => 28
         )
         port map (
             clk                      => clkGlobal,
@@ -338,7 +348,14 @@ begin
             txFpgaxDO                => txUartUsbxDO,
 
             txSendMessagexDI => voltageChangeRdy,
-            txMessagexDI => sht41Meas.humidity & sht41Meas.temperature & voltageChangeInterval & x"DD",
+            txMessagexDI => sht41Meas.humidity &
+                            sht41Meas.temperature &
+                            std_logic_vector(resize(cp1LastInterval, 40)) &
+                            std_logic_vector(resize(cp3Count, 32)) &
+                            std_logic_vector(resize(cp2Count, 32)) &
+                            std_logic_vector(resize(cp1Count, 32)) &
+                            voltageChangeInterval &
+                            x"DD",
 
             addressxDO   => registerFileAddressUsb,
             dataxDO      => registerFileDataUsb,
@@ -364,7 +381,7 @@ begin
 
     UartLogicMcuE : entity work.uart_generic_tx
         generic map (
-            txMessageLengthBytesG => 11
+            txMessageLengthBytesG => 28
         )
         port map (
             clk                      => clkGlobal,
@@ -373,7 +390,14 @@ begin
             txFpgaxDO                => txUartMcuxDO,
 
             txSendMessagexDI => voltageChangeRdy,
-            txMessagexDI => sht41Meas.humidity & sht41Meas.temperature & voltageChangeInterval & x"DD",
+            txMessagexDI => sht41Meas.humidity &
+                            sht41Meas.temperature &
+                            std_logic_vector(resize(cp1LastInterval, 40)) &
+                            std_logic_vector(resize(cp3Count, 32)) &
+                            std_logic_vector(resize(cp2Count, 32)) &
+                            std_logic_vector(resize(cp1Count, 32)) &
+                            voltageChangeInterval &
+                            x"DD",
 
             addressxDO   => registerFileAddressMcu,
             dataxDO      => registerFileDataMcu,
