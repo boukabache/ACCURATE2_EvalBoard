@@ -14,7 +14,9 @@ use ieee.numeric_std.all;
 
 entity timeIntervalCounter is
     generic (
-        countBitwidthG : integer := 16
+        countBitwidthG : integer := 16;
+        -- Slowing down the clock for counting. This avoids ending up with unreasonably large bitwidths
+        slowFactorG : integer := 2
     );
     port (
         clk : in  std_logic; --! 100MHz ACCURATE clock
@@ -29,6 +31,7 @@ entity timeIntervalCounter is
 end entity timeIntervalCounter;
 
 architecture behavioral of timeIntervalCounter is
+    signal slowCounterxDP, slowCounterxDN : unsigned(slowFactorG - 1 downto 0) := (others => '0');
     signal intervalCounterxDN, intervalCounterxDP : unsigned (countBitwidthG - 1 downto 0) := ('1', others => '0');
 
     signal lastIntervalDurationxDN, lastIntervalDurationxDP : signed(countBitwidthG - 1 downto 0) := ('1', others => '0');
@@ -41,16 +44,22 @@ begin
             if (rst = '1') then
                 intervalCounterxDP <= ('1', others => '0');
                 lastIntervalDurationxDP <= ('1', others => '0');
+                slowCounterxDP <= (others => '0');
             else
                 intervalCounterxDP <= intervalCounterxDN;
                 lastIntervalDurationxDP <= lastIntervalDurationxDN;
+                slowCounterxDP <= slowCounterxDN;
             end if;
         end if;
     end process regP;
 
+    slowCounterxDN <= (others => '0') when inxDI = '1' else
+                      slowCounterxDP + 1;
+
     intervalCounterxDN <= (others => '0') when inxDI = '1' else
-                          intervalCounterxDP when intervalCounterxDP(intervalCounterxDP'left) = '1' else
-                          intervalCounterxDP + 1;
+                          ('1', others => '0') when intervalCounterxDP(intervalCounterxDP'left) = '1' else
+                          intervalCounterxDP + 1 when slowCounterxDP(slowCounterxDP'left) = '1' else
+                          intervalCounterxDP;
 
     lastIntervalDurationxDN <= signed(intervalCounterxDP) when inxDI = '1' else
                                lastIntervalDurationxDP;
