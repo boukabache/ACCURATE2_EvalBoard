@@ -95,7 +95,7 @@ begin
     UartWrapperE : entity work.UartWrapper
         generic map (
             DATA_WIDTH_G => 8,
-            FIFO_DEPTH_G => 16,
+            FIFO_DEPTH_G => 1,
             CLK_FREQ_G   => 20_000_000,
             BAUD_RATE_G  => 9_600
         )
