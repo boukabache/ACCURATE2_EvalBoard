@@ -1,3 +1,12 @@
+/**
+ * @file main.ino
+ * @brief Main file for the project. Contains Arduino setup and loop functions.
+ * @author Mattia Consani, hliverud
+ * 
+ * 
+ * 
+*/
+
 #include <Arduino.h>
 #include <Wire.h>
 #include <Time.h>
@@ -11,14 +20,9 @@
 
 void setup() {
     Serial.begin(9600);
-    while (!Serial) {
-        ;
-    }
+    while (!Serial);
 
     Serial1.begin(9600, SERIAL_8N1); // No parity, one stop bit
-    while (!Serial1) {
-        ;
-    }
 
     Wire.begin();
 
@@ -40,25 +44,54 @@ void setup() {
     Serial.println("Debug mode is ON");
 #endif
 
+    // Init screen and DAC
     ssd1306_init();
     dac7578_init();
 
-    fpga_send_configurations();
-    dac7578_i2c_send_all_param();
+    // Send configuration to FPGA and DAC
+    // delay(1000); // Wait for the FPGA to boot up
+    // fpga_send_configurations();
+    // dac7578_i2c_send_all_param();
 }
 
 void loop() {
-    // To measure current through the FPGA with charge injection, uncomment first line, to measure current with the ADC through the OTA output, uncomment second line.
-    // CurrentMeasurement measuredCurrent = fpga_read_current();
-    // float measuredCurrent = ltc2471_read_current();
 
     // ----------------------------
-    // TEMPERATURE AND HUMIDITY
+    // TEMPERATURE AND HUMIDITY (from sensor)
     // ----------------------------
 
     // If J17 is connected to the MCU, uncomment the first line. If it is connected to the FPGA, uncomment the second line.
-    TempHumMeasurement measuredTempHum = sht41_read_temp_humidity();
-    //TempHumMeasurement measuredTempHum = fpga_read_temp_humidity();
+    TempHumMeasurement measuredTempHum;
+    uint8_t sht_data[6];
+    measuredTempHum = sht41_read_temp_humidity();
+
+    // ----------------------------
+    // TEMPERATURE AND HUMIDITY (from FPGA)
+    // ----------------------------
+
+    // Check if data is available
+    if (Serial1.find(FPGA_TEMPHUM_ADDRESS)) {
+        // Wait for the full payload to be available
+        while (Serial1.available() < TEMPHUM_PAYLOAD_LENGTH);
+        // Read the payload
+        Serial1.readBytes(sht_data, TEMPHUM_PAYLOAD_LENGTH);
+
+        // Validate CRC
+        if (crc8(sht_data, 2) != sht_data[2] || crc8(sht_data + 3, 2) != sht_data[5]) {
+            measuredTempHum.status = SHT41_ERR_CRC;
+            continue;
+        }
+
+        uint16_t rawTemperature = (dataBytes[1] << 8) | dataBytes[0];
+        uint16_t rawHumidity = (dataBytes[3] << 8) | dataBytes[2];
+
+        sht41_calculate(rawTemperature, rawHumidity, &measuredTempHum);
+        
+        // Clear the rest of the serial buffer, if not already empty
+        while (Serial1.available()) {
+            Serial1.read();
+        }
+    }
 
     String btnLedStatus = getPinStatus();
 
@@ -118,7 +151,7 @@ void loop() {
 
         // Calculate the current and format it
         float readCurrent = fpga_calc_current(int_data, DEFAULT_LSB, DEFAULT_PERIOD);
-        CurrentMeasurement measurement = fpga_format_current(readCurrent);
+        CurrentMeasurement current_measurement = fpga_format_current(readCurrent);
 
         Serial1.readBytes(cp1CountRaw, 4);
         uint32_t cp1Count = *(uint32_t*) cp1CountRaw;
@@ -152,26 +185,30 @@ void loop() {
                          btnLedStatus;
         Serial.println(message);
 
-        // Clear the rest of the serial buffer, if not empty
+
+        // TODO: Move back to function implementation to make the main loop more readable
+        // ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
+        // String message = String(current_measurement.currentInFemtoAmpere) + "," + String(temp) + "," + String(humidity) + "," + btnLedStatus;
+        // Serial.println(message);
+        
+        // Clear the rest of the serial buffer, if not already empty
         while (Serial1.available()) {
             Serial1.read();
         }
     }
-
-    // ----------------------------
-    // INACCURATE CURRENT MEASUREMENT HAHAHAHAHAHA
-    // ----------------------------
-    // CurrentMeasurement measurement;
-    // measurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
-    // measurement.convertedCurrent = std::nan("1");
-    // measurement.range = "Error";
-
-    // ssd1306_print_current_temp_humidity(measurement.convertedCurrent, measurement.range, temp + " C", humidity);
-    // // String message = String(measurement.currentInFemtoAmpere) + "," + String(temp) + "," + String(humidity) + "," + btnLedStatus;
-    // String message = String("1234") + "," + "99.9" + "," + "25.55" + "," + "000000";
-    // Serial.println(message);
 }
 
+
+/**
+ * @brief Get the current status of the buttons and LEDs
+ * @return String The status of the buttons and LEDs encoded in a string
+ * 
+ * The status is encoded as follows:
+ * - The first three characters represent the status of the buttons.
+ *   Order is BUTTON, BUTTON2, BUTTON3. 1 means pressed, 0 means not pressed.
+ * - The last three characters represent the status of the LEDs.
+ *   Order is LED, LED2, LED3. 1 means ON, 0 means OFF.
+ */
 String getPinStatus() {
     String status = "";
 
