@@ -7,72 +7,6 @@
 
 #include "fpga.h"
 
-float accumulatedCurrent = 0;
-int measurementCount = 0;
-
-CurrentMeasurement fpga_read_current() {
-    if (Serial1.available() < FPGA_DATA_LENGTH) {
-        CurrentMeasurement noDeviceMeasurement;
-        noDeviceMeasurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
-        noDeviceMeasurement.convertedCurrent = std::nan("1");
-        noDeviceMeasurement.range = "Error";
-
-        return noDeviceMeasurement;
-    }
-
-    while (Serial1.available() >= FPGA_DATA_LENGTH) {
-        uint8_t addressByte = Serial1.read();
-        if (addressByte != FPGA_CURRENT_ADDRESS) {
-            // Clear the remaining bytes in the buffer
-            for (int i = 0; i < FPGA_PAYLOAD_LENGTH; i++) {
-                if (Serial1.available()) {
-                    Serial1.read();
-                }
-            }
-            continue;
-        }
-
-        uint8_t dataBytes[FPGA_PAYLOAD_LENGTH];
-        for (int i = 0; i < FPGA_PAYLOAD_LENGTH; i++) {
-            dataBytes[i] = Serial1.read();
-        }
-
-        uint64_t data = 0;
-        for (int i = 0; i < FPGA_PAYLOAD_LENGTH; i++) {
-            data |= ((uint64_t)dataBytes[i] << (8 * i));
-        }
-
-        float readCurrent = fpga_calc_current(data, DEFAULT_LSB, DEFAULT_PERIOD);
-
-        if (FPGA_CALCULATE_AVERAGE) {
-            accumulatedCurrent += readCurrent;
-            measurementCount++;
-        }
-
-        float finalCurrent = FPGA_CALCULATE_AVERAGE ? accumulatedCurrent / measurementCount : readCurrent;
-        CurrentMeasurement measurement = fpga_format_current(finalCurrent);
-
-#ifdef DEBUG
-        Serial.print("Data: 0x");
-        Serial.print(addressByte, HEX);
-        for (int i = FPGA_PAYLOAD_LENGTH - 1; i >= 0; i--) {
-            Serial.print(dataBytes[i], HEX);
-        }
-        Serial.print(" - Measured Current: ");
-        Serial.print(measurement.convertedCurrent);
-        Serial.print(" ");
-        Serial.println(measurement.range);
-#endif
-        return measurement;
-    }
-
-    // Return a measurement indicating an error
-    CurrentMeasurement errorMeasurement;
-    errorMeasurement.currentInFemtoAmpere = std::nan("1"); // NaN to indicate error
-    errorMeasurement.convertedCurrent = std::nan("1");
-    errorMeasurement.range = "Error";
-    return errorMeasurement;
-}
 
 TempHumMeasurement fpga_read_temp_humidity() {
     TempHumMeasurement measurement;
@@ -119,50 +53,18 @@ TempHumMeasurement fpga_read_temp_humidity() {
 }
 
 void fpga_send_configurations() {
-    delay(1000); // Wait for the FPGA to boot up
-#ifdef DEBUG
-    Serial.println("");
-#endif
 
     fpga_send_parameters(INIT_CONFIG_ADDRESS, INIT_CONFIG);
 
-#ifdef DEBUG
-    Serial.println("INIT Config sent");
-#endif
-
     fpga_send_parameters(GATE_LENGTH_ADDRESS, fpga_calculate_gate_len());
 
-#ifdef DEBUG
-    Serial.println("GATE sent");
-#endif
-
-    delay(20);
     fpga_send_parameters(RST_DURATION_ADDRESS, RST_DURATION);
 
-#ifdef DEBUG
-    Serial.println("RST DURATION sent");
-#endif
-
-    delay(20);
     fpga_send_parameters(VBIAS1_ADDRESS, fpga_convert_volt_to_DAC(VBIAS1_DEC));
     fpga_send_parameters(VBIAS2_ADDRESS, fpga_convert_volt_to_DAC(VBIAS2_DEC));
-
-#ifdef DEBUG
-    delay(20);
-#endif
-
     fpga_send_parameters(VBIAS3_ADDRESS, fpga_convert_volt_to_DAC(VBIAS3_DEC));
 
-#ifdef DEBUG
-    Serial.println("VBIAS Sent");
-#endif
-
     fpga_send_parameters(VCM_ADDRESS, fpga_convert_volt_to_DAC(VCM_DEC));
-
-#ifdef DEBUG
-    delay(20);
-    Serial.println("VCM Sent");
-#endif
 
     fpga_send_parameters(VCM1_ADDRESS, fpga_convert_volt_to_DAC(VCM_DEC));
     fpga_send_parameters(VTH1_ADDRESS, fpga_convert_volt_to_DAC(VTH1_DEC));
@@ -173,11 +75,6 @@ void fpga_send_configurations() {
     fpga_send_parameters(VTH6_ADDRESS, fpga_convert_volt_to_DAC(VTH6_DEC));
     fpga_send_parameters(VTH7_ADDRESS, fpga_convert_volt_to_DAC(VTH7_DEC));
 
-#ifdef DEBUG
-    Serial.println("VTH Sent");
-    Serial.println("Configuration sent");
-    Serial.println("");
-#endif
 }
 
 uint32_t fpga_convert_volt_to_DAC(float voltage) {
