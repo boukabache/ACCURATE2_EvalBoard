@@ -79,13 +79,12 @@ void loop() {
         // Validate CRC
         if (crc8(sht_data, 2) != sht_data[2] || crc8(sht_data + 3, 2) != sht_data[5]) {
             measuredTempHum.status = SHT41_ERR_CRC;
-            continue;
+        } else {
+            uint16_t rawTemperature = (sht_data[1] << 8) | sht_data[0];
+            uint16_t rawHumidity = (sht_data[3] << 8) | sht_data[2];
+
+            sht41_calculate(rawTemperature, rawHumidity, &measuredTempHum);
         }
-
-        uint16_t rawTemperature = (dataBytes[1] << 8) | dataBytes[0];
-        uint16_t rawHumidity = (dataBytes[3] << 8) | dataBytes[2];
-
-        sht41_calculate(rawTemperature, rawHumidity, &measuredTempHum);
         
         // Clear the rest of the serial buffer, if not already empty
         while (Serial1.available()) {
