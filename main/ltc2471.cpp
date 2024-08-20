@@ -5,7 +5,7 @@
  *  Author: hliverud
  */
 
-#include "LTC2471.h"
+#include "ltc2471.h"
 #include <Arduino.h>
 
 uint16_t ltc2471_read() {
