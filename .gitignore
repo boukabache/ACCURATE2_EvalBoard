@@ -31,5 +31,5 @@ auto_saved_files
 *.csv
 *.xlsx
 
-#Folders
-PDF
+# MacOS crap
+.DS_Store
