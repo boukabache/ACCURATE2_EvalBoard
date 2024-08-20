@@ -12,8 +12,8 @@ entity mult_accumulator is
         resultBitwidthG : integer := 32
     );
     port (
-        clk : in std_logic;
-        rst : in std_logic;
+        clk : in  std_logic;
+        rst : in  std_logic;
 
         startxDI : in  std_logic;
 
@@ -54,10 +54,11 @@ begin
 
     -- Lots of casting here. The unsigned element is casted to signed, adding a dummy bit in front of it.
     -- This causes the multiplication result to also have a dummy bit, which we can then get rid of.
-    multResultxDN <= resize(signed('0' & AArray(processStagexDP)) * BArray(processStagexDP), ABitwidthG+BBitwidthG) when processStagexDP < 3 else
+    multResultxDN <= resize(signed('0' & AArray(processStagexDP)) * BArray(processStagexDP),
+                            ABitwidthG + BBitwidthG) when processStagexDP < 3 else
                      (others => '0');
 
-    accumulatorxDN <= multResultxDP + accumulatorxDP when processStagexDP > 1 else
+    accumulatorxDN <= multResultxDP + accumulatorxDP when processStagexDP /= 0 else
                       (others => '0');
 
     regP : process (clk)

@@ -211,7 +211,6 @@ begin
                                                   cp2CountSys'length - 1 downto cp1CountSys'length));
     cp1CountSys <= unsigned(measurementDataTmpSys(cp1CountSys'length - 1 downto 0));
 
-    --measurementReadyxDO <= measurementReadySysxDP(measurementReadySysxDP'left);
     chargeMeasurementxDO <= chargeSum when previousCycleResetxDP = '0' else
                             -- this is so that it's clear from the outside that the system is in reset, without
                             -- needing to touch the ROMULUSlib (as this is just for prototype, for now...)
@@ -264,12 +263,12 @@ begin
         );
 
 
-    TIME_INTERVAL_COUNTER: entity work.timeIntervalCounter
-        generic map(
+    TIME_INTERVAL_COUNTER : entity work.timeIntervalCounter
+        generic map (
             countBitwidthG => countTimeIntervalBitwidthG,
             slowFactorG => countTimeIntervalSlowFactorG
         )
-        port map(
+        port map (
             clk => clk100,
             rst => rst,
             inxDI => cp1Activated,

@@ -2,11 +2,16 @@
 --! @brief Connects the 20Mhz system to the 100Mhz accurate interface
 -- Copyright (C) CERN CROME Project
 
--- For the PS interface, a simple 2FF synchronizer is used, as the signals do not change often and are unidirectional.
--- For wind, after a 2FF sync, the rising edge is detected so that we ensure a single cycle pulse-width.
+-- For the PS interface, a simple 2FF synchronizer is used, as the signals do
+-- not change often and are unidirectional.
+-- For the sampling signal, after a 2FF sync, the rising edge is detected so
+-- that we ensure a single cycle pulse-width.
 -- For measurementDataxDO, a 2FF sync is used.
--- For measurementReady, things are more complicated, as we want to transfer a single cycle pulse from high to low frequency.
--- In order to do that, I used a bistable in the high clock to set on measurementReady, and only de-assert it once the lower clock side had acknowledged it. An edge detector is used to ensure an end result with single cycle pulse width.
+-- For measurementReady, things are more complicated, as we want to transfer a
+-- single cycle pulse from high to low frequency. In order to do that, I used a
+-- bistable in the high clock to set on measurementReady, and only de-assert it
+-- once the lower clock side had acknowledged it. An edge detector is used to
+-- ensure an end result with single cycle pulse width.
 
 --! Use standard library
 library ieee;
@@ -33,8 +38,10 @@ entity accurateCDC is
         sampleSysxDI : in  std_logic; --! Window high for one clock period each Interval
         sampleAccxDO : out std_logic; --! Window high for one clock period each Interval
 
-        measurementDataSysxDO : out std_logic_vector(measurementWidthG - 1 downto 0); --! Measurement data to slow clock
-        measurementDataAccxDI : in  std_logic_vector(measurementWidthG - 1 downto 0); --! Measurement data from fast clock
+        --! Measurement data to slow clock
+        measurementDataSysxDO : out std_logic_vector(measurementWidthG - 1 downto 0);
+        --! Measurement data from fast clock
+        measurementDataAccxDI : in  std_logic_vector(measurementWidthG - 1 downto 0);
 
         measurementReadySysxDO : out std_logic; --! The measurementDataxDO value is ready
         measurementReadyAccxDI : in  std_logic;  --! The measurementDataxDI value is ready

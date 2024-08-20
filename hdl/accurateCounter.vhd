@@ -1,6 +1,19 @@
 --! @file accurateCounter.vhd
 --! @brief Counts the number of activations of the charge pumps
-
+--!
+--! Counts the number of cycle each of the cpNActivated signals spend high.
+--! When samplexDI is raised high, produces the number of counts since the last
+--! samplexDI at the cpNCountxDO output after 2 cycles. cpCountsReadyxDO
+--! indicates that the counts have been updated to their new value.
+--! It is possible for the counter to overflow if the samplexDI signals are
+--! too far apart in terms of number of clock cycles, in which case the
+--! overflowErrorxDO signal will go high after the sampling.
+--!
+--! For developers, the fact that the activation signal can only be high every
+--! other cycle (due to the charge/injection behavior of the ASIC) is used.
+--! If the activation signals are high for more than one consecutive cycle,
+--! the counting will fail.
+--! For the same reason, samplexDI cannot be held high.
 -- Copyright (C) CERN CROME Project
 
 --! Use standard library
@@ -21,22 +34,24 @@ entity accurateCounter is
         clk : in  std_logic; --! 100MHz ACCURATE clock
         rst : in  std_logic; --! Synchronous reset
 
-        --! Window high for one clock period each Interval
-        samplexDI          : in  std_logic;
+        --! Trigger the readout of the counts and resets the counting
+        samplexDI : in  std_logic;
 
         -- Number of activation in the last samplexDI interval
         -- width is 24 because ceil(log2(0.1 second / 10 nano second)) = 24
         cp1CountxDO : out unsigned(countBitwidthG - 1 downto 0);
+        -- Number of activation of cp2 in the last samplexDI interval
         cp2CountxDO : out unsigned(countBitwidthG - 1 downto 0);
+        -- Number of activation of cp3 in the last samplexDI interval
         cp3CountxDO : out unsigned(countBitwidthG - 1 downto 0);
 
         --! The charge pump counts values are ready
         cpCountsReadyxDO : out std_logic;
         overflowErrorxDO : out std_logic;
 
-        cp1ActivatedxDI : in std_logic; --! High for 1 cycle when cp1 is activated
-        cp2ActivatedxDI : in std_logic; --! High for 1 cycle when cp2 is activated
-        cp3ActivatedxDI : in std_logic --! High for 1 cycle when cp3 is activated
+        cp1ActivatedxDI : in  std_logic; --! High for 1 cycle when cp1 is activated
+        cp2ActivatedxDI : in  std_logic; --! High for 1 cycle when cp2 is activated
+        cp3ActivatedxDI : in  std_logic --! High for 1 cycle when cp3 is activated
     );
 
 end entity accurateCounter;
@@ -96,10 +111,10 @@ begin
     end process regP;
 
     CP_CHANNEL : for I in 0 to chargePumpNumberC - 1 generate
-        CHANNEL_INCREMENT: entity work.pipelined_increment
-            generic map(
+        CHANNEL_INCREMENT : entity work.pipelined_increment
+            generic map (
                 inputBitwidthG => cpCounterxDN(I)'length,
-                stageBitwidthG => cpCounterxDN(I)'length/2,
+                stageBitwidthG => cpCounterxDN(I)'length / 2,
                 signedG => '0'
             )
             port map (
@@ -115,7 +130,8 @@ begin
                            chargeSumNext(I) when cpNActivatedxDP(I) = '1' else
                            cpCounterxDP(I);
 
-        activationWhileResetting(I) <= '1' when (cpNActivatedxDP(I) = '1') and (samplexDP(1) = '1' or samplexDP(0) = '1') else
+        activationWhileResetting(I) <= '1' when (cpNActivatedxDP(I) = '1') and
+                                                (samplexDP(1) = '1' or samplexDP(0) = '1') else
                                        '0';
     end generate CP_CHANNEL;
 

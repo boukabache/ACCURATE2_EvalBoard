@@ -58,7 +58,8 @@ begin
 
     intervalCounterxDN <= (others => '0') when inxDI = '1' else
                           ('1', others => '0') when intervalCounterxDP(intervalCounterxDP'left) = '1' else
-                          intervalCounterxDP + 1 when slowCounterxDP(slowCounterxDP'left) = '1' else
+                          intervalCounterxDP + 1 when slowFactorG = 0 else
+                          intervalCounterxDP + 1 when slowCounterxDP = slowCounterxDP'length ** 2 - 1 else
                           intervalCounterxDP;
 
     lastIntervalDurationxDN <= signed(intervalCounterxDP) when inxDI = '1' else

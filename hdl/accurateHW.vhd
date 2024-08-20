@@ -3,13 +3,18 @@
 --!
 --! Physical interface to ACCURATE ASIC. Activates the corresponding charge pump
 --! when a threshold is detected. It also has a few extra features:
---! * Cooldown: limits the activation rate of a charge pump to half the time since the last activation. Capped between cooldownMax cooldownMin (unit in cap clock periods)
---! * SinglyActivation: prevents activating multiple charge pump at the same time by only allowing the largest triggered charge pump to activated.
---! The generic lightweightG disables the above features to allow for higher clock speeds.
---! Each time a charge pump activates, the corresponding cpNActivatedxDO goes high for a single cycle.
+--! * Cooldown: limits the activation rate of a charge pump to half the time
+--!   since the last activation. Capped between cooldownMax cooldownMin (unit
+--!   in cap clock periods)
+--! * SinglyActivation: prevents activating multiple charge pump at the same
+--!   time by only allowing the largest triggered charge pump to activated.
+--!
+--! The generic lightweightG disables the above features to allow for higher
+--! clock speeds.
+--! Each time a charge pump activates, the corresponding cpNActivatedxDO goes
+--! high for a single cycle.
 
 -- Copyright (C) CERN CROME Project
--- FIXME: use clock cycles for cooldown instead of cycle lengths?
 
 --! Use standard library
 library ieee;
@@ -23,7 +28,7 @@ use work.accurateConfigPkg.all;
 
 entity accurateHW is
     generic (
-        lightweightG: std_logic := '0' -- If '1', cooldown logic is disabled to improve speeds.
+        lightweightG : std_logic := '0' -- If '1', cooldown logic is disabled to improve speeds.
     );
     port (
         clk : in  std_logic; --! Input clock, typically 100MHz
@@ -95,8 +100,6 @@ architecture behavioral of accurateHW is
     signal cooldownMinCurrentArray : cooldownDurationArrayT;
 
     signal compVthN : std_logic_vector(chargePumpNumberC - 1 downto 0);
-    signal overflow_res : std_logic_vector(chargePumpNumberC - 1 downto 0);
-    signal overflow_effectivexDN, overflow_effectivexDP : std_logic_vector(chargePumpNumberC - 1 downto 0);
 
     type cooldownCounterT is
         array (chargePumpNumberC - 1 downto 0) of
@@ -109,7 +112,7 @@ architecture behavioral of accurateHW is
 
     signal startPulseNextCycle : std_logic_vector(chargePumpNumberC - 1 downto 0);
     signal inPulsexDN, inPulsexDP : std_logic_vector(chargePumpNumberC - 1 downto 0);
-    signal anyInPulsexDN, anyInPulsexDP : std_logic;
+    signal anyInPulsexDP : std_logic;
     signal endCyclexDN, endCyclexDP : std_logic;
 
     signal capClkxDP, capClkxDN : std_logic;
@@ -144,7 +147,7 @@ begin
     configCurrentxDN <= configCurrentxDP when anyInPulsexDP else
                         configSafe;
 
-    LIGHT2: if lightweightG = '0' generate
+    LIGHT2 : if lightweightG = '0' generate
         cooldownMaxCurrentArray <= (
             configCurrentxDP.cooldownMaxCP1,
             configCurrentxDP.cooldownMaxCP2,
@@ -159,7 +162,7 @@ begin
     else generate
         cooldownMaxCurrentArray <= (others => (others => '0'));
         cooldownMinCurrentArray <= (others => (others => '0'));
-    end generate;
+    end generate LIGHT2;
 
     compVthN(0) <= compN_2r(1); -- vTh2N
     compVthN(1) <= compN_2r(2); -- vTh3N
@@ -276,12 +279,9 @@ begin
         -- Allow activation only if counter bigger than half the previous activation time (capped at cooldownMax)
         -- Second condition is here to ensure proper alignement
         cooldown(I) <= '0' when lightweightG = '1' else
-                       -- '0' when cooldownCurrentDurationxDP(I) = 0 else
-                       -- '0' when cooldownCounterxDP(I) = cooldownCurrentDurationxDP(I) and
-                       --          endCyclexDP = '1' else
-                       --'0' when cooldownCurrentDurationxDP(I) = 0 else
                        '1' when cooldownCounterxDP(I) < cooldownCurrentDurationxDP(I) else
                        '0';
+
         -- Count number of injection/charge cycles since last activation, capped at cooldownMax
         cooldownCounterxDN(I) <= (others => '0') when lightweightG = '1' else
                                  to_unsigned(1, cooldownCounterxDN(I)) when startPulseNextCycle(I) = '1' else
