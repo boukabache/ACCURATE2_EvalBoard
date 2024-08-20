@@ -161,24 +161,22 @@ void loop() {
         Serial1.readBytes(cp3CountRaw, 4);
         uint32_t cp3Count = *(uint32_t*) cp3CountRaw;
 
-        Serial1.readBytes(cp3CountRaw, 4);
-        uint32_t cp3Count = *(uint32_t*) cp3CountRaw;
-
         Serial1.readBytes(cp1LastIntervalRaw, 5);
-        uint64_t cp1LastInterval = 0;
+        int64_t cp1LastInterval = 0;
 
         for (int i = 0; i < 5; i++) {
             cp1LastInterval |= ((int64_t)cp1LastIntervalRaw[i] << (8 * i));
         }
 
-
+        char  buffer[21]; //maximum value for uint64_t is 20 digits
+        sprintf(buffer, "%llu", cp1LastInterval);
         // Print the current and update the display
         ssd1306_print_current_temp_humidity(measurement.convertedCurrent, measurement.range, temp + " C", humidity);
         String message = String(measurement.currentInFemtoAmpere) + "," +
                          String(cp1Count) + "," +
                          String(cp2Count) + "," +
                          String(cp3Count) + "," +
-                         String(cp1LastInterval) + "," +
+                         buffer+ "," +
                          String(temp) + "," +
                          String(humidity) + "," +
                          btnLedStatus;
