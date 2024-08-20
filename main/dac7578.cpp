@@ -6,7 +6,7 @@
  */
 #include "dac7578.h"
 #include <Arduino.h>
-#include <Time.h>
+#include <TimeLib.h>
 
  /************************************************************************/
  /* GLobal variables definition                                          */

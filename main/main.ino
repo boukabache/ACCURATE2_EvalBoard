@@ -9,7 +9,7 @@
 
 #include <Arduino.h>
 #include <Wire.h>
-#include <Time.h>
+#include <TimeLib.h>
 #include <stdint.h>
 #include "sht41.h"
 #include "dac7578.h"
