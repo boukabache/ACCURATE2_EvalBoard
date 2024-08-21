@@ -20,13 +20,13 @@
 --     Initial Public Release
 --   Version 1.1 8/3/2021 Scott Larson
 --     Corrected rx start bit error checking
---    
+--
 --------------------------------------------------------------------------------
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-ENTITY uart IS
+ENTITY uartDriver IS
   GENERIC(
     clk_freq  :  INTEGER    := 50_000_000;  --frequency of system clock in Hertz
     baud_rate :  INTEGER    := 19_200;      --data link baud rate in bits/second
@@ -45,9 +45,9 @@ ENTITY uart IS
     rx_data  :  OUT  STD_LOGIC_VECTOR(d_width-1 DOWNTO 0);  --data received
     tx_busy  :  OUT  STD_LOGIC;                             --transmission in progress
     tx       :  OUT  STD_LOGIC);                            --transmit pin
-END uart;
-    
-ARCHITECTURE logic OF uart IS
+END uartDriver;
+
+ARCHITECTURE logic OF uartDriver IS
   TYPE   tx_machine IS(idle, transmit);                       --tranmit state machine data type
   TYPE   rx_machine IS(idle, receive);                        --receive state machine data type
   SIGNAL tx_state     :  tx_machine;                          --transmit state machine
@@ -84,7 +84,7 @@ BEGIN
       --create oversampling enable pulse
       IF(count_os < clk_freq/baud_rate/os_rate-1) THEN  --oversampling period not reached
         count_os := count_os + 1;                         --increment oversampling period counter
-        os_pulse <= '0';                                  --deassert oversampling rate pulse    
+        os_pulse <= '0';                                  --deassert oversampling rate pulse
       ELSE                                              --oversampling period reached
         count_os := 0;                                    --reset oversampling period counter
         os_pulse <= '1';                                  --assert oversampling pulse
@@ -116,7 +116,7 @@ BEGIN
               os_count := 0;                                         --clear oversampling pulse counter
               rx_count := 0;                                         --clear the bits received counter
               rx_busy <= '1';                                        --assert busy flag
-              rx_buffer <= rx & rx_buffer(parity+d_width DOWNTO 1);  --shift the start bit into receive buffer							
+              rx_buffer <= rx & rx_buffer(parity+d_width DOWNTO 1);  --shift the start bit into receive buffer
               rx_state <= receive;                                   --advance to receive state
             END IF;
           ELSE                                                   --start bit not present
@@ -128,7 +128,7 @@ BEGIN
             os_count := os_count + 1;                              --increment oversampling pulse counter
             rx_state <= receive;                                   --remain in receive state
           ELSIF(rx_count < parity+d_width) THEN                  --center of bit and not all bits received
-            os_count := 0;                                         --reset oversampling pulse counter    
+            os_count := 0;                                         --reset oversampling pulse counter
             rx_count := rx_count + 1;                              --increment number of bits received counter
             rx_buffer <= rx & rx_buffer(parity+d_width DOWNTO 1);  --shift new received bit into receive buffer
             rx_state <= receive;                                   --remain in receive state
@@ -141,7 +141,7 @@ BEGIN
       END CASE;
     END IF;
   END PROCESS;
-    
+
   --receive parity calculation logic
   rx_parity(0) <= parity_eo;
   rx_parity_logic: FOR i IN 0 to d_width-1 GENERATE
@@ -150,7 +150,7 @@ BEGIN
   WITH parity SELECT  --compare calculated parity bit with received parity bit to determine error
     parity_error <= rx_parity(d_width) XOR rx_buffer(parity+d_width) WHEN 1,  --using parity
                     '0' WHEN OTHERS;                                          --not using parity
-    
+
   --transmit state machine
   PROCESS(reset_n, clk)
     VARIABLE tx_count :  INTEGER RANGE 0 TO parity+d_width+3 := 0;  --count bits transmitted
@@ -188,12 +188,12 @@ BEGIN
       END CASE;
       tx <= tx_buffer(0);                                       --output last bit in transmit transaction buffer
     END IF;
-  END PROCESS;  
-  
+  END PROCESS;
+
   --transmit parity calculation logic
   tx_parity(0) <= parity_eo;
   tx_parity_logic: FOR i IN 0 to d_width-1 GENERATE
     tx_parity(i+1) <= tx_parity(i) XOR tx_data(i);
   END GENERATE;
-  
+
 END logic;

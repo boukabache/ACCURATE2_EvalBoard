@@ -337,15 +337,20 @@ begin
 
 
     -------------------------- UART FPGA - USB --------------------------------------
-    UartLogicUsbE : entity work.uart_generic_tx
+    uartWrapperUsbE : entity work.uartWrapper
         generic map (
-            txMessageLengthBytesG => 28
+            clkFreqG => 40_000_000,
+            baudRateG => 9_600,
+            parityG => 0,
+            parityEoG => '0',
+            txMessageLengthG => 28,
+            txMessageWidthG => 8
         )
         port map (
-            clk                      => clkGlobal,
-            rst                      => '0',
-            rxFpgaxDI                => rxUartUsbxDI,
-            txFpgaxDO                => txUartUsbxDO,
+            clk => clkGlobal,
+            rst => '0',
+
+            txxDO => txUartUsbxDO,
 
             txSendMessagexDI => voltageChangeRdy,
             txMessagexDI => sht41Meas.humidity &
@@ -356,10 +361,7 @@ begin
                             std_logic_vector(resize(cp1Count, 32)) &
                             voltageChangeInterval &
                             x"DD",
-
-            addressxDO   => registerFileAddressUsb,
-            dataxDO      => registerFileDataUsb,
-            dataValidxDO => registerFileDataValidUsb
+            feederBusyxDO => open
     );
 
     -- UartLogicUsbE : entity work.UartLogic
@@ -379,15 +381,20 @@ begin
     --         dataValidxDO => registerFileDataValidUsb
     -- );
 
-    UartLogicMcuE : entity work.uart_generic_tx
+    uartWrapperMcuE : entity work.uartWrapper
         generic map (
-            txMessageLengthBytesG => 28
+            clkFreqG => 40_000_000,
+            baudRateG => 9_600,
+            parityG => 0,
+            parityEoG => '0',
+            txMessageLengthG => 28,
+            txMessageWidthG => 8
         )
         port map (
-            clk                      => clkGlobal,
-            rst                      => '0',
-            rxFpgaxDI                => rxUartMcuxDI,
-            txFpgaxDO                => txUartMcuxDO,
+            clk => clkGlobal,
+            rst => '0',
+
+            txxDO => txUartMcuxDO,
 
             txSendMessagexDI => voltageChangeRdy,
             txMessagexDI => sht41Meas.humidity &
@@ -398,10 +405,7 @@ begin
                             std_logic_vector(resize(cp1Count, 32)) &
                             voltageChangeInterval &
                             x"DD",
-
-            addressxDO   => registerFileAddressMcu,
-            dataxDO      => registerFileDataMcu,
-            dataValidxDO => registerFileDataValidMcu
+            feederBusyxDO => open
     );
     -- -------------------------- UART FPGA - MCU --------------------------------------
     -- UartLogicMcuE : entity work.UartLogic
