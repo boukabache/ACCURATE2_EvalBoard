@@ -2,9 +2,9 @@
  * @file main.ino
  * @brief Main file for the project. Contains Arduino setup and loop functions.
  * @author Mattia Consani, hliverud
- * 
- * 
- * 
+ *
+ *
+ *
 */
 
 #include <Arduino.h>
@@ -65,66 +65,7 @@ void loop() {
 
     // If J17 is connected to the MCU, uncomment the first line. If it is connected to the FPGA, uncomment the second line.
     TempHumMeasurement measuredTempHum;
-    uint8_t sht_data[6];
     measuredTempHum = sht41_read_temp_humidity();
-
-    // ----------------------------
-    // TEMPERATURE AND HUMIDITY (from FPGA)
-    // ----------------------------
-
-    // TODO: timeout message if FPGA_TEMPHUM_ADDRESS never found
-    // Check if data is available
-    if (Serial1.find(FPGA_TEMPHUM_ADDRESS)) {
-        // Wait for the full payload to be available
-        while (Serial1.available() < TEMPHUM_PAYLOAD_LENGTH);
-        // Read the payload
-        Serial1.readBytes(sht_data, TEMPHUM_PAYLOAD_LENGTH);
-
-        // Validate CRC
-        if (crc8(sht_data, 2) != sht_data[2] || crc8(sht_data + 3, 2) != sht_data[5]) {
-            measuredTempHum.status = SHT41_ERR_CRC;
-        } else {
-            uint16_t rawTemperature = (sht_data[1] << 8) | sht_data[0];
-            uint16_t rawHumidity = (sht_data[3] << 8) | sht_data[2];
-
-            sht41_calculate(rawTemperature, rawHumidity, &measuredTempHum);
-        }
-        
-        // Clear the rest of the serial buffer, if not already empty
-        while (Serial1.available()) {
-            Serial1.read();
-        }
-    }
-
-    String btnLedStatus = getPinStatus();
-
-    String temp;
-    String humidity;
-
-    if (measuredTempHum.status == SHT41_OK) {
-        temp = String(measuredTempHum.temperature, 2);
-        humidity = String(measuredTempHum.humidity, 2);
-    }
-    else {
-        switch (measuredTempHum.status) {
-        case SHT41_ERR_I2C:
-            temp = "I2C_ERR";
-            humidity = "I2C_ERR";
-            break;
-        case SHT41_ERR_CRC:
-            temp = "CRC_ERR";
-            humidity = "CRC_ERR";
-            break;
-        case SHT41_ERR_MEASUREMENT:
-            temp = "MEAS_ERR";
-            humidity = "MEAS_ERR";
-            break;
-        default:
-            temp = "UNK_ERR";
-            humidity = "UNK_ERR";
-            break;
-        }
-    }
 
     // ----------------------------
     // ACCURATE CURRENT MEASUREMENT
@@ -136,17 +77,18 @@ void loop() {
     char cp3CountRaw[4];
     char cp1LastIntervalRaw[5];
 
+    char temperatureRaw[2];
+    char humidityRaw[2];
+
     uint64_t int_data = 0;
 
-    char buffer[27];
     // Only read and update display if there is data available
     if (Serial1.find(FPGA_CURRENT_ADDRESS)) {
         // Wait for the full payload to be available
-        //while (Serial1.available() < FPGA_PAYLOAD_LENGTH);
         // Read the payload
         Serial1.readBytes(chargeRaw, 6);
 
-        // FIXME: THIS IS WRONG. rawCharge is of signed type!! What happens to leading '1's if it is negative?
+        // FIXME: THIS IS WRONG. rawCharge is of signed type inside the vhdl code!! What happens to leading '1's if it is negative?
         // Convert the payload to a 64-bit integer rapresentation
         for (int i = 0; i < 6; i++) {
             int_data |= ((uint64_t)chargeRaw[i] << (8 * i));
@@ -172,26 +114,69 @@ void loop() {
             cp1LastInterval |= ((int64_t)cp1LastIntervalRaw[i] << (8 * i));
         }
 
-        char  buffer[21]; //maximum value for uint64_t is 20 digits
-        sprintf(buffer, "%" PRId64, cp1LastInterval);
+        // Following should be a function "uinit64_to_char"
+        char buffer[21]; //maximum value for uint64_t is 20 digits
+        uint64_t val = int_data;
+        char* ndx = &buffer[sizeof(buffer) - 1];
+        *ndx = '\0';
+        do {
+          *--ndx = val % 10 + '0';
+          val = val  / 10;
+        } while (val != 0);
+
+        Serial1.readBytes(temperatureRaw, 2);
+        uint16_t tempSht41 = *(uint16_t*) temperatureRaw;
+
+        Serial1.readBytes(humidityRaw, 2);
+        uint16_t humidSht41 = *(uint16_t*) humidityRaw;
+
+        TempHumMeasurement measuredTempHum;
+        sht41_calculate(tempSht41, humidSht41, &measuredTempHum);
+
+        String temp;
+        String humidity;
+
+        if (measuredTempHum.status == SHT41_OK) {
+            temp = String(measuredTempHum.temperature, 2);
+            humidity = String(measuredTempHum.humidity, 2);
+        }
+        else {
+            switch (measuredTempHum.status) {
+            case SHT41_ERR_I2C:
+                temp = "I2C_ERR";
+                humidity = "I2C_ERR";
+                break;
+            case SHT41_ERR_CRC:
+                temp = "CRC_ERR";
+                humidity = "CRC_ERR";
+                break;
+            case SHT41_ERR_MEASUREMENT:
+                temp = "MEAS_ERR";
+                humidity = "MEAS_ERR";
+                break;
+            default:
+                temp = "UNK_ERR";
+                humidity = "UNK_ERR";
+                break;
+            }
+        }
+
+        String btnLedStatus = getPinStatus();
+
         // Print the current and update the display
         ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
-        
+
         String message = String(current_measurement.currentInFemtoAmpere) + "," +
                          String(cp1Count) + "," +
                          String(cp2Count) + "," +
                          String(cp3Count) + "," +
-                         String(buffer)+ "," +
+                         String(ndx)+ "," +
                          String(temp) + "," +
                          String(humidity) + "," +
                          btnLedStatus;
         Serial.println(message);
 
-        // TODO: Move back to function implementation to make the main loop more readable
-        // ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
-        // String message = String(current_measurement.currentInFemtoAmpere) + "," + String(temp) + "," + String(humidity) + "," + btnLedStatus;
-        // Serial.println(message);
-        
+        // Is the following useful?
         // Clear the rest of the serial buffer, if not already empty
         while (Serial1.available()) {
             Serial1.read();
@@ -203,7 +188,7 @@ void loop() {
 /**
  * @brief Get the current status of the buttons and LEDs
  * @return String The status of the buttons and LEDs encoded in a string
- * 
+ *
  * The status is encoded as follows:
  * - The first three characters represent the status of the buttons.
  *   Order is BUTTON, BUTTON2, BUTTON3. 1 means pressed, 0 means not pressed.
