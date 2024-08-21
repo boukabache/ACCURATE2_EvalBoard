@@ -339,7 +339,7 @@ begin
     -------------------------- UART FPGA - USB --------------------------------------
     uartWrapperUsbE : entity work.uartWrapper
         generic map (
-            clkFreqG => 40_000_000,
+            clkFreqG => 20_000_000,
             baudRateG => 9_600,
             parityG => 0,
             parityEoG => '0',
@@ -383,7 +383,7 @@ begin
 
     uartWrapperMcuE : entity work.uartWrapper
         generic map (
-            clkFreqG => 40_000_000,
+            clkFreqG => 20_000_000,
             baudRateG => 9_600,
             parityG => 0,
             parityEoG => '0',
