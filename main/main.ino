@@ -11,6 +11,8 @@
 #include <Wire.h>
 #include <TimeLib.h>
 #include <stdint.h>
+#include <inttypes.h>
+
 #include "sht41.h"
 #include "dac7578.h"
 #include "ssd1306.h"
@@ -23,7 +25,7 @@ void setup() {
     while (!Serial);
 
     Serial1.begin(9600, SERIAL_8N1); // No parity, one stop bit
-
+    Serial1.setTimeout(500);
     Wire.begin();
 
     // Init LEDs and buttons and set LEDs to off
@@ -54,8 +56,9 @@ void setup() {
     // dac7578_i2c_send_all_param();
 }
 
-void loop() {
+#include <math.h>
 
+void loop() {
     // ----------------------------
     // TEMPERATURE AND HUMIDITY (from sensor)
     // ----------------------------
@@ -69,6 +72,7 @@ void loop() {
     // TEMPERATURE AND HUMIDITY (from FPGA)
     // ----------------------------
 
+    // TODO: timeout message if FPGA_TEMPHUM_ADDRESS never found
     // Check if data is available
     if (Serial1.find(FPGA_TEMPHUM_ADDRESS)) {
         // Wait for the full payload to be available
@@ -122,7 +126,6 @@ void loop() {
         }
     }
 
-
     // ----------------------------
     // ACCURATE CURRENT MEASUREMENT
     // ----------------------------
@@ -133,8 +136,9 @@ void loop() {
     char cp3CountRaw[4];
     char cp1LastIntervalRaw[5];
 
-    int64_t int_data = 0;
+    uint64_t int_data = 0;
 
+    char buffer[27];
     // Only read and update display if there is data available
     if (Serial1.find(FPGA_CURRENT_ADDRESS)) {
         // Wait for the full payload to be available
@@ -145,7 +149,7 @@ void loop() {
         // FIXME: THIS IS WRONG. rawCharge is of signed type!! What happens to leading '1's if it is negative?
         // Convert the payload to a 64-bit integer rapresentation
         for (int i = 0; i < 6; i++) {
-            int_data |= ((int64_t)chargeRaw[i] << (8 * i));
+            int_data |= ((uint64_t)chargeRaw[i] << (8 * i));
         }
 
         // Calculate the current and format it
@@ -169,19 +173,19 @@ void loop() {
         }
 
         char  buffer[21]; //maximum value for uint64_t is 20 digits
-        sprintf(buffer, "%llu", cp1LastInterval);
+        sprintf(buffer, "%" PRId64, cp1LastInterval);
         // Print the current and update the display
-        ssd1306_print_current_temp_humidity(measurement.convertedCurrent, measurement.range, temp + " C", humidity);
-        String message = String(measurement.currentInFemtoAmpere) + "," +
+        ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
+        
+        String message = String(current_measurement.currentInFemtoAmpere) + "," +
                          String(cp1Count) + "," +
                          String(cp2Count) + "," +
                          String(cp3Count) + "," +
-                         buffer+ "," +
+                         String(buffer)+ "," +
                          String(temp) + "," +
                          String(humidity) + "," +
                          btnLedStatus;
         Serial.println(message);
-
 
         // TODO: Move back to function implementation to make the main loop more readable
         // ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
