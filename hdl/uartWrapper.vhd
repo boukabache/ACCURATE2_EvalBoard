@@ -43,8 +43,8 @@ begin
             baud_rate => baudRateG,
             os_rate   => 16,
             d_width   => txMessageWidthG,
-            parity    => 0,
-            parity_eo => '0'
+            parity    => parityG,
+            parity_eo => parityEoG
         )
         port map (
             clk      => clk,
