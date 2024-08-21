@@ -66,3 +66,17 @@ all-ps: all prog-s
 show:
 	@echo "Converting GHDL to JSON"
 	yosys -m ghdl -p 'ghdl --no-formal $(GHDLFLAGS) $(VHDL_FILES) -e $(TOP_MODULE); synth_ice40 -dsp -json $(JSON_FILE); show'
+
+
+# Run the style check rules over the full VHDL project
+.PHONY: styleCheck
+styleCheck: ./styleCheck/rules.yaml $(VHDL_FILES)
+	vsg -f $(VHDL_FILES) \
+		-c ./styleCheck/rules.yaml
+#		--junit styleCheck/styleCheck_junit.xml --quality_report styleCheck/styleCheck_quality_report.xml
+
+# Run the style check rules over the specified file
+.PHONY: styleCheckFile
+styleCheckFile: ./styleCheck/rules.yaml $(FILE_TO_CHECK)
+	vsg -f $(FILE_TO_CHECK) \
+		-c ./styleCheck/rules.yaml
