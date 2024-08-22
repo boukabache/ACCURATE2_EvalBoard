@@ -86,7 +86,7 @@ architecture rtl of TopLevel is
     -- Global clock
     signal clkGlobal : std_logic := '0';
     signal clk100    : std_logic;
-    signal clk40     : std_logic;
+    signal clk50     : std_logic;
     ----------------------
 
 
@@ -183,25 +183,25 @@ architecture rtl of TopLevel is
 begin
     -------------------------- PHASE LOCKED LOOP ------------------------------------
     -- From: 100MHz
-    -- To:   40MHz
+    -- To:   50MHz
     pllE: entity work.pll
         generic map (
-            -- Values obtained from the icepll tool
-            DIVR_G => "0100",
-            DIVF_G => "0011111",
+            -- Values obtained from the icepll cli tool
+            DIVR_G => "0000",
+            DIVF_G => "0000111",
             DIVQ_G => "100",
-            FILTER_RANGE_G => "010"
+            FILTER_RANGE_G => "101"
         )
         port map (
             clkInxDI        => clkInxDI,  -- 100MHz
             clkInForwardxDO => clk100,    -- 100MHz (forward of input clock)
-            clkOutxDO       => clk40      -- 40MHz
+            clkOutxDO       => clk50      -- 50MHz
     );
 
-    -- Clock divider to generate 20MHz clock
-    clockDivP: process(clk40)
+    -- Clock divider to generate 25MHz clock
+    clockDivP: process(clk50)
     begin
-        if rising_edge(clk40) then
+        if rising_edge(clk50) then
             clkGlobal <= not clkGlobal;
         end if;
     end process;
@@ -281,7 +281,7 @@ begin
         )
         port map (
             clk20  => clkGlobal,
-            clk100 => clk40, -- 40 MHz to respect timing constraints
+            clk100 => clk50, -- 40 MHz to respect timing constraints
             rst => '0',
 
             -- Sampling time, coming from window generator
@@ -339,7 +339,7 @@ begin
     -------------------------- UART FPGA - USB --------------------------------------
     uartWrapperUsbE : entity work.uartWrapper
         generic map (
-            clkFreqG => 20_000_000,
+            clkFreqG => 25_000_000,
             baudRateG => 9_600,
             parityG => 0,
             parityEoG => '0',
@@ -383,7 +383,7 @@ begin
 
     uartWrapperMcuE : entity work.uartWrapper
         generic map (
-            clkFreqG => 20_000_000,
+            clkFreqG => 25_000_000,
             baudRateG => 9_600,
             parityG => 0,
             parityEoG => '0',
