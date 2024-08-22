@@ -48,7 +48,7 @@ package configPkg is
 
     ------------------------ Timing Configuration -----------------------------
     --!The frequency of the clock in MHz
-    constant clkFreqMhzC     : real := 20.0;
+    constant clkFreqMhzC     : real := 25.0;
     --!The period of the clock in nano seconds
     constant clkPeriodNsC    : natural := natural(1000.0 / clkFreqMhzC);
     --!The 100ms cycle period converted to number of clock cycles
