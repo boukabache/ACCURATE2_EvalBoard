@@ -8,9 +8,9 @@
 set_io clkInxDI 35
 ## Clock frequency constraints
 # WARNING: Use only lower cases for the net names
-set_frequency clkglobal 20
+set_frequency clkglobal 25
 set_frequency clk100 100
-set_frequency clk40 40
+set_frequency clk50 50
 
 ## Reset
 # No reset button on the current version of the evaluation board
