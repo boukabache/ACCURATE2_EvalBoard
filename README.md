@@ -12,14 +12,26 @@ This project is developed for the ACCURATE 2 ASIC evaluation board, designed to 
 ## Hardware Requirements
 - ACCURATE 2 ASIC Evaluation Board
 
-## Software Requirements
-- Arduino IDE
-- Relevant Arduino Libraries (Wire, Adafruit_GFX, Adafruit_SSD1306, etc.)
 
 ## Setup and Configuration
-1. **Arduino Setup**: Install the Arduino IDE and configure it for the specific microcontroller used in the project.
-2. **Library Installation**: Install all required libraries through the Arduino IDE's Library Manager.
-4. **Firmware Upload**: Compile and upload the `main.ino` file to the Arduino microcontroller.
+### Via Arduino IDE
+1. **Board Installation**: This project utilize a custom board package for the SAMD21 microcontroller. Add the following URL to the Arduino IDE's Additional Board Manager URLs.
+    ```
+    https://cernbox.cern.ch/remote.php/dav/public-files/rhgPdIoh4Lmkulf/package_accurate_2_eval_index.json
+    ```
+    Then, install the `accurate_2a_eval` AND `Arduino SAMD` board package through the Arduino IDE's Board Manager.
+2. **Library Installation**: Install the following libraries through the Arduino IDE's Library Manager.
+    - Adafruit SSD1306
+    - TimeLib
+
+### Via Arduino CLI
+Execute the following commands to install all the dependencies required by this project.
+```bash
+arduino-cli --additional-urls https://cernbox.cern.ch/remote.php/dav/public-files/rhgPdIoh4Lmkulf/package_accurate_2_eval_index.json core install accurate_2a_eval:samd 
+arduino-cli core install arduino:samd 
+arduino-cli lib install "Adafruit SSD1306" 
+arduino-cli lib install Time
+```
 
 ## File Structure
 - `main.ino`: Main Arduino sketch file.
