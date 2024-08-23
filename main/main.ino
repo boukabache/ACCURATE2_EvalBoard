@@ -3,8 +3,6 @@
  * @brief Main file for the project. Contains Arduino setup and loop functions.
  * @author Mattia Consani, hliverud
  *
- *
- *
 */
 
 #include <Arduino.h>
@@ -19,6 +17,9 @@
 #include "fpga.h"
 #include "config.h"
 #include "ltc2471.h"
+
+// To enable raw output, uncomment the following line:
+// #define RAW_OUTPUT
 
 void setup() {
     Serial.begin(9600);
@@ -166,18 +167,35 @@ void loop() {
         // Print the current and update the display
         ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
 
-        String message = String(current_measurement.currentInFemtoAmpere) + "," +
-                         String(cp1Count) + "," +
-                         String(cp2Count) + "," +
-                         String(cp3Count) + "," +
-                         String(ndx)+ "," +
-                         String(temp) + "," +
-                         String(humidity) + "," +
-                         btnLedStatus;
+
+        // Print data to serial. If the RAW_OUTPUT flag is defined,
+        // forward what is received from the FPGA without any data manipulation. 
+        String message;
+#ifdef RAW_OUTPUT
+        message = String(int_data) + "," +
+                    String(cp1Count) + "," +
+                    String(cp2Count) + "," +
+                    String(cp3Count) + "," +
+                    String(cp1LastInterval) + "," +
+                    String(tempSht41) + "," +
+                    String(humidSht41) + "," +
+                    btnLedStatus;
+#else
+        message = String(current_measurement.currentInFemtoAmpere) + "," +
+                    String(cp1Count) + "," +
+                    String(cp2Count) + "," +
+                    String(cp3Count) + "," +
+                    String(ndx) + "," +
+                    String(temp) + "," +
+                    String(humidity) + "," +
+                    btnLedStatus;
+#endif
         Serial.println(message);
 
-        // Is the following useful?
-        // Clear the rest of the serial buffer, if not already empty
+
+        // Clear the rest of the serial buffer, if not already empty.
+        // This is necessary to avoid communication artifacts that 
+        // affect the current measurement, introducing spikes.
         while (Serial1.available()) {
             Serial1.read();
         }
