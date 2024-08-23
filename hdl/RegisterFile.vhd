@@ -87,9 +87,8 @@ begin
     begin
         if rising_edge(clk) then
             if rst = '1' then
-                -- dacConfigxDO <= dacConfigRecordTInit; -- or dacConfigRecordTDefault
-                -- accurateConfigxDO <= accurateRecordTInit; -- or accurateRecordTDefault
-
+                dacConfigxDO <= dacConfigRecordTDefault;
+                accurateConfigxDO <= accurateRecordTDefault;
             else
                 regFilexDP <= regFilexDN;
                 requestErrorxDP <= requestErrorxDN;
@@ -113,38 +112,32 @@ begin
     -----------------
     -- OUTPUT
     -----------------
-    -- dacConfigxDO.vOutA <= unsigned(regFilexDP(0)(11 downto 0));
-    -- dacConfigxDO.vOutB <= unsigned(regFilexDP(1)(11 downto 0));
-    -- dacConfigxDO.vOutC <= unsigned(regFilexDP(2)(11 downto 0));
-    -- dacConfigxDO.vOutD <= unsigned(regFilexDP(3)(11 downto 0));
-    -- dacConfigxDO.vOutE <= unsigned(regFilexDP(4)(11 downto 0));
-    -- dacConfigxDO.vOutF <= unsigned(regFilexDP(5)(11 downto 0));
-    -- dacConfigxDO.vOutG <= unsigned(regFilexDP(6)(11 downto 0));
-    -- dacConfigxDO.vOutH <= unsigned(regFilexDP(7)(11 downto 0));
+    dacConfigxDO.vOutA <= unsigned(regFilexDP(0)(11 downto 0));
+    dacConfigxDO.vOutB <= unsigned(regFilexDP(1)(11 downto 0));
+    dacConfigxDO.vOutC <= unsigned(regFilexDP(2)(11 downto 0));
+    dacConfigxDO.vOutD <= unsigned(regFilexDP(3)(11 downto 0));
+    dacConfigxDO.vOutE <= unsigned(regFilexDP(4)(11 downto 0));
+    dacConfigxDO.vOutF <= unsigned(regFilexDP(5)(11 downto 0));
+    dacConfigxDO.vOutG <= unsigned(regFilexDP(6)(11 downto 0));
+    dacConfigxDO.vOutH <= unsigned(regFilexDP(7)(11 downto 0));
 
-    -- Required as without reset the configuration is not initialized
-    dacConfigxDO <= dacConfigRecordTDefault;
+    accurateConfigxDO.chargeQuantaCP1    <= signed(regFilexDP(8)(23 downto 0));
+    accurateConfigxDO.chargeQuantaCP2    <= signed(regFilexDP(9)(23 downto 0));
+    accurateConfigxDO.chargeQuantaCP3    <= signed(regFilexDP(10)(23 downto 0));
+    accurateConfigxDO.cooldownMinCP1     <= unsigned(regFilexDP(11)(15 downto 0));
+    accurateConfigxDO.cooldownMaxCP1     <= unsigned(regFilexDP(12)(15 downto 0));
+    accurateConfigxDO.cooldownMinCP2     <= unsigned(regFilexDP(13)(15 downto 0));
+    accurateConfigxDO.cooldownMaxCP2     <= unsigned(regFilexDP(14)(15 downto 0));
+    accurateConfigxDO.cooldownMinCP3     <= unsigned(regFilexDP(15)(15 downto 0));
+    accurateConfigxDO.cooldownMaxCP3     <= unsigned(regFilexDP(16)(15 downto 0));
+    accurateConfigxDO.resetOTA           <= regFilexDP(17)(0);
+    accurateConfigxDO.tCharge            <= unsigned(regFilexDP(18)(7 downto 0));
+    accurateConfigxDO.tInjection         <= unsigned(regFilexDP(19)(7 downto 0));
+    accurateConfigxDO.disableCP1         <= regFilexDP(20)(0);
+    accurateConfigxDO.disableCP2         <= regFilexDP(21)(0);
+    accurateConfigxDO.disableCP3         <= regFilexDP(22)(0);
+    accurateConfigxDO.singlyCPActivation <= regFilexDP(23)(0);
 
-
-    -- accurateConfigxDO.chargeQuantaCP1    <= signed(regFilexDP(8)(23 downto 0));
-    -- accurateConfigxDO.chargeQuantaCP2    <= signed(regFilexDP(9)(23 downto 0));
-    -- accurateConfigxDO.chargeQuantaCP3    <= signed(regFilexDP(10)(23 downto 0));
-    -- accurateConfigxDO.cooldownMinCP1     <= unsigned(regFilexDP(11)(15 downto 0));
-    -- accurateConfigxDO.cooldownMaxCP1     <= unsigned(regFilexDP(12)(15 downto 0));
-    -- accurateConfigxDO.cooldownMinCP2     <= unsigned(regFilexDP(13)(15 downto 0));
-    -- accurateConfigxDO.cooldownMaxCP2     <= unsigned(regFilexDP(14)(15 downto 0));
-    -- accurateConfigxDO.cooldownMinCP3     <= unsigned(regFilexDP(15)(15 downto 0));
-    -- accurateConfigxDO.cooldownMaxCP3     <= unsigned(regFilexDP(16)(15 downto 0));
-    -- accurateConfigxDO.resetOTA           <= regFilexDP(17)(0);
-    -- accurateConfigxDO.tCharge            <= unsigned(regFilexDP(18)(7 downto 0));
-    -- accurateConfigxDO.tInjection         <= unsigned(regFilexDP(19)(7 downto 0));
-    -- accurateConfigxDO.disableCP1         <= regFilexDP(20)(0);
-    -- accurateConfigxDO.disableCP2         <= regFilexDP(21)(0);
-    -- accurateConfigxDO.disableCP3         <= regFilexDP(22)(0);
-    -- accurateConfigxDO.singlyCPActivation <= regFilexDP(23)(0);
-
-    -- Required as without reset the configuration is not initialized
-    accurateConfigxDO <= accurateRecordTDefault;
     accurateConfigValidxDO <= '1';
 
     requestErrorxDO <= requestErrorxDP;
