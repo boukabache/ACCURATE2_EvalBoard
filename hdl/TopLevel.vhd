@@ -68,21 +68,13 @@ entity TopLevel is
         --! Enable med current charge pump. Must by synchronous with cap_clk
         enableCP2xDO : out std_logic;
         --! Enable high current charge pump. Must by synchronous with cap_clk
-        enableCP3xDO : out std_logic;
+        enableCP3xDO : out std_logic
         -- END ACCURATE interface
-
-
-        debug_0 : out std_logic
-
     );
 end entity TopLevel;
 
 
 architecture rtl of TopLevel is
-    -- DEBUG
-    signal debug : std_logic;
-
-
     -- Global clock
     signal clkGlobal : std_logic := '0';
     signal clk100    : std_logic;
@@ -179,7 +171,11 @@ architecture rtl of TopLevel is
     signal registerFileDataValid, registerFileDataValidMcu, registerFileDataValidUsb : std_logic;
     ----------------------
 
+    signal rxMessageValid : std_logic := '0';
+    signal rxMessage : std_logic_vector(registerFileAddressWidthC + registerFileDataWidthC - 1 downto 0) := (others => '0');
 
+    signal registerFileRequestError : std_logic := '0';
+    signal enableDataStreamUart : std_logic := '0';
 begin
     -------------------------- PHASE LOCKED LOOP ------------------------------------
     -- From: 100MHz
@@ -325,7 +321,6 @@ begin
     resetOTARequestValid <= '0'; --! Not used in this design
     resetOTARequest <= '0';      --! Not used in this design
 
-
     -------------------------- WINDOW GENERATOR --------------------------------
     -- More windows width are supported by the window generator
     windowGeneratorE : entity work.windowGenerator
@@ -335,52 +330,6 @@ begin
             wind100msxDO          => wind100ms
     );
 
-
-    -------------------------- UART FPGA - USB --------------------------------------
-    -- uartWrapperUsbE : entity work.uartWrapper
-    --     generic map (
-    --         clkFreqG => 25_000_000,
-    --         baudRateG => 9_600,
-    --         parityG => 0,
-    --         parityEoG => '0',
-    --         txMessageLengthG => 28,
-    --         txMessageWidthG => 8
-    --     )
-    --     port map (
-    --         clk => clkGlobal,
-    --         rst => '0',
-
-    --         txxDO => txUartUsbxDO,
-
-    --         txSendMessagexDI => voltageChangeRdy,
-    --         txMessagexDI => sht41Meas.humidity &
-    --                         sht41Meas.temperature &
-    --                         std_logic_vector(resize(cp1LastInterval, 40)) &
-    --                         std_logic_vector(resize(cp3Count, 32)) &
-    --                         std_logic_vector(resize(cp2Count, 32)) &
-    --                         std_logic_vector(resize(cp1Count, 32)) &
-    --                         voltageChangeInterval &
-    --                         x"DD",
-    --         feederBusyxDO => open
-    -- );
-
-    -- UartLogicUsbE : entity work.UartLogic
-    --     port map (
-    --         clk                      => clkGlobal,
-    --         rst                      => '0',
-    --         rxFpgaxDI                => rxUartUsbxDI,
-    --         txFpgaxDO                => txUartUsbxDO,
-
-    --         voltageChangeIntervalxDI => voltageChangeIntervalxDO,
-    --         voltageChangeRdyxDI      => voltageChangeRdyxDO,
-
-    --         sht41MeasxDI => sht41Meas,
-
-    --         addressxDO   => registerFileAddressUsb,
-    --         dataxDO      => registerFileDataUsb,
-    --         dataValidxDO => registerFileDataValidUsb
-    -- );
-
     uartWrapperMcuE : entity work.uartWrapper
         generic map (
             clkFreqG => 25_000_000,
@@ -389,7 +338,7 @@ begin
             parityEoG => '0',
             txMessageLengthG => 28,
             uartBusWidthG => 8,
-            rxMessageLengthG => 4,
+            rxMessageLengthG => 6,
             rxMessageHeaderG => x"DD",
             rxTimeoutUsG => 500
         )
@@ -400,7 +349,7 @@ begin
             txxDO => txUartMcuxDO,
             rxxDI => rxUartMcuxDI,
             -- FIXME
-            allowRespondToRxxDI => '0',
+            allowRespondToRxxDI => not enableDataStreamUart,
             txSendMessagexDI => voltageChangeRdy,
             txMessagexDI => sht41Meas.humidity &
                             sht41Meas.temperature &
@@ -412,28 +361,10 @@ begin
                             x"DD",
             feederBusyxDO => open,
             -- FIXME
-            rxMessagexDO => open,
-            rxMessageValidxDO => open,
-            rxMessageInvalidxDI => '0'
-
+            rxMessagexDO => rxMessage,
+            rxMessageValidxDO => rxMessageValid,
+            rxMessageInvalidxDI => registerFileRequestError
     );
-    -- -------------------------- UART FPGA - MCU --------------------------------------
-    -- UartLogicMcuE : entity work.UartLogic
-    --     port map (
-    --         clk                      => clkGlobal,
-    --         rst                      => '0',
-    --         rxFpgaxDI                => rxUartMcuxDI,
-    --         txFpgaxDO                => txUartMcuxDO,
-
-    --         voltageChangeIntervalxDI => voltageChangeIntervalxDO,
-    --         voltageChangeRdyxDI      => voltageChangeRdyxDO,
-
-    --         sht41MeasxDI => sht41Meas,
-
-    --         addressxDO   => registerFileAddressMcu,
-    --         dataxDO      => registerFileDataMcu,
-    --         dataValidxDO => registerFileDataValidMcu
-    -- );
 
     ------------------------- CONFIG REGISTER FILE -----------------------------
     -- Contains the configuration registers for the DAC7578 and ACCURATE
@@ -450,22 +381,18 @@ begin
             accurateConfigxDO => config,
             accurateConfigValidxDO => configValid,
 
+            enableDataStreamUartxDO => enableDataStreamUart,
+
             -- Input port
             addressxDI   => registerFileAddress,
             dataxDI      => registerFileData,
-            dataValidxDI => registerFileDataValid
+            dataValidxDI => registerFileDataValid,
+            requestErrorxDO => registerFileRequestError
     );
 
-    -- Arbitration logic to merge the signals coming from the UARTs
-    registerFileAddress <= registerFileAddressUsb when registerFileDataValidUsb = '1' else
-                           registerFileAddressMcu when registerFileDataValidMcu = '1' else
-                           (others => '0');
-
-    registerFileData <= registerFileDataUsb when registerFileDataValidUsb = '1' else
-                        registerFileDataMcu when registerFileDataValidMcu = '1' else
-                        (others => '0');
-
-    registerFileDataValid <= registerFileDataValidUsb or registerFileDataValidMcu;
+    registerFileAddress <= unsigned(rxMessage(registerFileAddressWidthC - 1 downto 0));
+    registerFileData <= rxMessage(registerFileDataWidthC + registerFileAddressWidthC - 1 downto registerFileAddressWidthC);
+    registerFileDataValid <= rxMessageValid;
 
     ------------------------------ SHT41 ------------------------------------
     sht41ControllerE : entity work.sht41Controller
@@ -530,4 +457,5 @@ begin
             master_rxDataWLengthxDO => i2cMasterRxDataWLength
         );
 
+        txUartUsbxDO <= '1';
 end architecture rtl;
