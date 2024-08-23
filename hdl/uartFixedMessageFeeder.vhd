@@ -16,7 +16,7 @@ use ieee.numeric_std.all;
 entity uartFixedMessageFeeder is
     generic (
         -- The length of the message to send in words
-        txMessageLengthG : integer := 28;
+        txMessageMaxLengthG : integer := 28;
         -- The length of a word in bits
         txMessageWidthG : integer := 8
     );
@@ -24,9 +24,12 @@ entity uartFixedMessageFeeder is
         clk : in  std_logic;
         rst : in  std_logic;
 
-        txSendMessagexDI : in  std_logic; -- Sample and start feeding the driver
-        -- The complete content of the data to transmit, LSB are transmitted first.
-        txMessagexDI : in  std_logic_vector(txMessageLengthG * 8 - 1 downto 0);
+        --! Sample and start feeding the driver
+        txSendMessagexDI : in  std_logic;
+        --! How many words to send in the current transaction
+        txMessageLengthxDI: in integer range 1 to txMessageMaxLengthG;
+        --! The complete content of the data to transmit, LSB are transmitted first.
+        txMessagexDI : in  std_logic_vector(txMessageMaxLengthG * txMessageWidthG - 1 downto 0);
         -- If this module is currently busy feeding the driver
         feederBusyxDO : out std_logic;
 
@@ -38,22 +41,25 @@ entity uartFixedMessageFeeder is
 end entity uartFixedMessageFeeder;
 
 architecture behavioral of uartFixedMessageFeeder is
-    type txMessageWordsT is array (0 to txMessageLengthG - 1) of std_logic_vector(txMessageWidthG - 1 downto 0);
+    type txMessageWordsT is array (0 to txMessageMaxLengthG - 1) of std_logic_vector(txMessageWidthG - 1 downto 0);
     signal txInputMessageWords : txMessageWordsT := (others => (others => '0'));
     signal txMessageWordsxDP, txMessageWordsxDN : txMessageWordsT := (others => (others => '0'));
-    signal txMessageByteForwardedxDP, txMessageByteForwardedxDN : integer range 0 to txMessageLengthG := txMessageLengthG;
+    signal txMessageLengthxDP, txMessageLengthxDN : integer range 0 to txMessageMaxLengthG := 1;
+    signal txMessageByteForwardedxDP, txMessageByteForwardedxDN : integer range 0 to txMessageMaxLengthG := 1;
 
     signal txDataxDP, txDataxDN : std_logic_vector(txDataxDO'range) := (others => '0');
     signal txEnaxDP, txEnaxDN : std_logic := '0';
+
 
 begin
     txRegp: process(clk, rst)
     begin
         if rising_edge(clk) then
             if rst = '1' then
-                txMessageByteForwardedxDP <= txMessageLengthG;
+                txMessageByteForwardedxDP <= txMessageLengthxDP;
             else
                 txMessageByteForwardedxDP <= txMessageByteForwardedxDN;
+                txMessageLengthxDP <= txMessageLengthxDN;
                 txMessageWordsxDP <= txMessageWordsxDN;
                 txDataxDP <= txDataxDN;
                 txEnaxDP <= txEnaxDN;
@@ -61,11 +67,14 @@ begin
         end if;
     end process txRegP;
 
-    messageCast: for i in 0 to txMessageLengthG-1 generate
-        txInputMessageWords(i) <= txMessagexDI((i + 1) * 8 - 1 downto i * 8);
+    messageCast: for i in 0 to txMessageMaxLengthG-1 generate
+        txInputMessageWords(i) <= txMessagexDI((i + 1) * txMessageWidthG - 1 downto i * txMessageWidthG);
     end generate;
 
-    -- transmission is considered ongoing if txMessageByteForwardedxDN != txMessageLengthG
+    txMessageLengthxDN <= txMessageLengthxDI when txSendMessagexDI = '1' else
+                          txMessageLengthxDP;
+
+    -- transmission is considered ongoing if txMessageByteForwardedxDN != txMessageMaxLengthG
     txMessageByteForwardedxDN <= 0 when txSendMessagexDI = '1' else
                                  txMessageByteForwardedxDP + 1 when txEnaxDP = '1' else
                                  txMessageByteForwardedxDP;
@@ -73,13 +82,13 @@ begin
     txMessageWordsxDN <= txInputMessageWords when txSendMessagexDI  = '1' else
                          txMessageWordsxDP;
 
-    txEnaxDN <= '1' when txBusyxDI = '0' and txMessageByteForwardedxDP /= txMessageLengthG else
+    txEnaxDN <= '1' when txBusyxDI = '0' and txMessageByteForwardedxDP /= txMessageLengthxDP else
                 '0';
 
-    txDataxDN <= (others => '0') when txMessageByteForwardedxDP = txMessageLengthG else
+    txDataxDN <= (others => '0') when txMessageByteForwardedxDP = txMessageLengthxDP else
                  txMessageWordsxDP(txMessageByteForwardedxDP);
 
-    feederBusyxDO <= '0' when txMessageByteForwardedxDP = txMessageLengthG else
+    feederBusyxDO <= '0' when txMessageByteForwardedxDP = txMessageLengthxDP else
                      '1';
 
     txEnaxDO <= txEnaxDN;

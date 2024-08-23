@@ -337,32 +337,32 @@ begin
 
 
     -------------------------- UART FPGA - USB --------------------------------------
-    uartWrapperUsbE : entity work.uartWrapper
-        generic map (
-            clkFreqG => 25_000_000,
-            baudRateG => 9_600,
-            parityG => 0,
-            parityEoG => '0',
-            txMessageLengthG => 28,
-            txMessageWidthG => 8
-        )
-        port map (
-            clk => clkGlobal,
-            rst => '0',
+    -- uartWrapperUsbE : entity work.uartWrapper
+    --     generic map (
+    --         clkFreqG => 25_000_000,
+    --         baudRateG => 9_600,
+    --         parityG => 0,
+    --         parityEoG => '0',
+    --         txMessageLengthG => 28,
+    --         txMessageWidthG => 8
+    --     )
+    --     port map (
+    --         clk => clkGlobal,
+    --         rst => '0',
 
-            txxDO => txUartUsbxDO,
+    --         txxDO => txUartUsbxDO,
 
-            txSendMessagexDI => voltageChangeRdy,
-            txMessagexDI => sht41Meas.humidity &
-                            sht41Meas.temperature &
-                            std_logic_vector(resize(cp1LastInterval, 40)) &
-                            std_logic_vector(resize(cp3Count, 32)) &
-                            std_logic_vector(resize(cp2Count, 32)) &
-                            std_logic_vector(resize(cp1Count, 32)) &
-                            voltageChangeInterval &
-                            x"DD",
-            feederBusyxDO => open
-    );
+    --         txSendMessagexDI => voltageChangeRdy,
+    --         txMessagexDI => sht41Meas.humidity &
+    --                         sht41Meas.temperature &
+    --                         std_logic_vector(resize(cp1LastInterval, 40)) &
+    --                         std_logic_vector(resize(cp3Count, 32)) &
+    --                         std_logic_vector(resize(cp2Count, 32)) &
+    --                         std_logic_vector(resize(cp1Count, 32)) &
+    --                         voltageChangeInterval &
+    --                         x"DD",
+    --         feederBusyxDO => open
+    -- );
 
     -- UartLogicUsbE : entity work.UartLogic
     --     port map (
@@ -388,14 +388,19 @@ begin
             parityG => 0,
             parityEoG => '0',
             txMessageLengthG => 28,
-            txMessageWidthG => 8
+            uartBusWidthG => 8,
+            rxMessageLengthG => 4,
+            rxMessageHeaderG => x"DD",
+            rxTimeoutUsG => 500
         )
         port map (
             clk => clkGlobal,
             rst => '0',
 
             txxDO => txUartMcuxDO,
-
+            rxxDI => rxUartMcuxDI,
+            -- FIXME
+            allowRespondToRxxDI => '0',
             txSendMessagexDI => voltageChangeRdy,
             txMessagexDI => sht41Meas.humidity &
                             sht41Meas.temperature &
@@ -405,7 +410,12 @@ begin
                             std_logic_vector(resize(cp1Count, 32)) &
                             voltageChangeInterval &
                             x"DD",
-            feederBusyxDO => open
+            feederBusyxDO => open,
+            -- FIXME
+            rxMessagexDO => open,
+            rxMessageValidxDO => open,
+            rxMessageInvalidxDI => '0'
+
     );
     -- -------------------------- UART FPGA - MCU --------------------------------------
     -- UartLogicMcuE : entity work.UartLogic
