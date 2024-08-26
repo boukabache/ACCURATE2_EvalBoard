@@ -45,7 +45,7 @@ architecture behavioral of uartFixedMessageReceiver is
     signal rxBusyXDP : std_logic := '0';
     signal newWordAvailable : std_logic := '0';
 
-    constant counterTimeoutValC : integer := (timeoutUsG) * (clkFreqHzG/10000000) + 1;
+    constant counterTimeoutValC : integer := (timeoutUsG) * (clkFreqHzG/1_000_000) + 1;
     signal counterTimeoutxDP, counterTimeoutxDN : integer range 0 to counterTimeoutValC := 0;
 
 begin
@@ -75,9 +75,9 @@ begin
                         '0';
 
     -- transmission is considered ongoing if txMessageWordReadxDN != txMessageLengthG
-    rxMessageWordReadxDN <= 0 when rxMessageWordReadxDP = rxMessageLengthG else
+    rxMessageWordReadxDN <= 0 when counterTimeoutxDP = counterTimeoutValC else
+                            0 when rxMessageWordReadxDP = rxMessageLengthG else
                             rxMessageWordReadxDP + 1 when newWordAvailable = '1' else
-                            0 when counterTimeoutxDP = counterTimeoutValC else
                             rxMessageWordReadxDP;
 
     rxMessageWordsxDN <= rxDataxDI & rxMessageWordsxDP(0 to rxMessageLengthG - 2) when newWordAvailable  = '1' else
