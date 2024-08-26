@@ -18,8 +18,6 @@
 #include "config.h"
 #include "ltc2471.h"
 
-// To enable raw output, uncomment the following line:
-// #define RAW_OUTPUT
 
 void setup() {
     Serial.begin(9600);
@@ -65,59 +63,27 @@ void loop() {
     // ----------------------------
 
     // If J17 is connected to the MCU, uncomment the first line. If it is connected to the FPGA, uncomment the second line.
-    TempHumMeasurement measuredTempHum;
-    measuredTempHum = sht41_read_temp_humidity();
+    // TempHumMeasurement measuredTempHum;
+    // measuredTempHum = sht41_read_temp_humidity();
 
     // ----------------------------
     // ACCURATE CURRENT MEASUREMENT
     // ----------------------------
-
-    char chargeRaw[6];
-    char cp1CountRaw[4];
-    char cp2CountRaw[4];
-    char cp3CountRaw[4];
-    char cp1LastIntervalRaw[5];
-
-    char temperatureRaw[2];
-    char humidityRaw[2];
-
-    uint64_t int_data = 0;
+    
+    struct rawDataFPGA rawData;
+    rawData = fpga_read_data();
 
     // Only read and update display if there is data available
-    if (Serial1.find(FPGA_CURRENT_ADDRESS)) {
-        // Wait for the full payload to be available
-        // Read the payload
-        Serial1.readBytes(chargeRaw, 6);
-
-        // FIXME: THIS IS WRONG. rawCharge is of signed type inside the vhdl code!! What happens to leading '1's if it is negative?
-        // Convert the payload to a 64-bit integer rapresentation
-        for (int i = 0; i < 6; i++) {
-            int_data |= ((uint64_t)chargeRaw[i] << (8 * i));
-        }
+    if (rawData.valid) {
+        rawData.valid = false;
 
         // Calculate the current and format it
-        float readCurrent = fpga_calc_current(int_data, DEFAULT_LSB, DEFAULT_PERIOD);
+        float readCurrent = fpga_calc_current(rawData.charge, DEFAULT_LSB, DEFAULT_PERIOD);
         CurrentMeasurement current_measurement = fpga_format_current(readCurrent);
-
-        Serial1.readBytes(cp1CountRaw, 4);
-        uint32_t cp1Count = *(uint32_t*) cp1CountRaw;
-
-        Serial1.readBytes(cp2CountRaw, 4);
-        uint32_t cp2Count = *(uint32_t*) cp2CountRaw;
-
-        Serial1.readBytes(cp3CountRaw, 4);
-        uint32_t cp3Count = *(uint32_t*) cp3CountRaw;
-
-        Serial1.readBytes(cp1LastIntervalRaw, 5);
-        int64_t cp1LastInterval = 0;
-
-        for (int i = 0; i < 5; i++) {
-            cp1LastInterval |= ((int64_t)cp1LastIntervalRaw[i] << (8 * i));
-        }
 
         // Following should be a function "uinit64_to_char"
         char buffer[21]; //maximum value for uint64_t is 20 digits
-        uint64_t val = int_data;
+        uint64_t val = rawData.charge;
         char* ndx = &buffer[sizeof(buffer) - 1];
         *ndx = '\0';
         do {
@@ -125,106 +91,115 @@ void loop() {
           val = val  / 10;
         } while (val != 0);
 
-        Serial1.readBytes(temperatureRaw, 2);
-        uint16_t tempSht41 = *(uint16_t*) temperatureRaw;
 
-        Serial1.readBytes(humidityRaw, 2);
-        uint16_t humidSht41 = *(uint16_t*) humidityRaw;
-
+        // Calculate temperature and humidity from raw data
         TempHumMeasurement measuredTempHum;
-        sht41_calculate(tempSht41, humidSht41, &measuredTempHum);
+        sht41_calculate(rawData.tempSht41, rawData.humidSht41, &measuredTempHum);
+        String temp = String(measuredTempHum.temperature, 2);
+        String humidity = String(measuredTempHum.humidity, 2);
 
-        String temp;
-        String humidity;
 
-        if (measuredTempHum.status == SHT41_OK) {
-            temp = String(measuredTempHum.temperature, 2);
-            humidity = String(measuredTempHum.humidity, 2);
-        }
-        else {
-            switch (measuredTempHum.status) {
-            case SHT41_ERR_I2C:
-                temp = "I2C_ERR";
-                humidity = "I2C_ERR";
-                break;
-            case SHT41_ERR_CRC:
-                temp = "CRC_ERR";
-                humidity = "CRC_ERR";
-                break;
-            case SHT41_ERR_MEASUREMENT:
-                temp = "MEAS_ERR";
-                humidity = "MEAS_ERR";
-                break;
-            default:
-                temp = "UNK_ERR";
-                humidity = "UNK_ERR";
-                break;
-            }
+        // Screen update
+        enum ScreenMode screenMode;
+        screenMode = updateState(screenMode);
+
+        switch (screenMode) {
+        case CHARGE_DETECTION:
+            ssd1306_print_transition(screenMode);
+            ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
+            break;
+        case CHARGE_INTEGRATION:
+            ssd1306_print_transition(screenMode);
+            break;
+        case VAR_SEMPLING_TIME:
+            ssd1306_print_transition(screenMode);
+            break;
+        default:
+            break;
         }
 
-        String btnLedStatus = getPinStatus();
 
-        // Print the current and update the display
-        ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
-
-
-        // Print data to serial. If the RAW_OUTPUT flag is defined,
-        // forward what is received from the FPGA without any data manipulation. 
+        // Get and print the output string
         String message;
-#ifdef RAW_OUTPUT
-        message = String(int_data) + "," +
-                    String(cp1Count) + "," +
-                    String(cp2Count) + "," +
-                    String(cp3Count) + "," +
-                    String(cp1LastInterval) + "," +
-                    String(tempSht41) + "," +
-                    String(humidSht41) + "," +
-                    btnLedStatus;
-#else
-        message = String(current_measurement.currentInFemtoAmpere) + "," +
-                    String(cp1Count) + "," +
-                    String(cp2Count) + "," +
-                    String(cp3Count) + "," +
-                    String(ndx) + "," +
-                    String(temp) + "," +
-                    String(humidity) + "," +
-                    btnLedStatus;
-#endif
+        message = getOutputString(rawData, current_measurement, temp, humidity, ndx);
         Serial.println(message);
-
-
-        // Clear the rest of the serial buffer, if not already empty.
-        // This is necessary to avoid communication artifacts that 
-        // affect the current measurement, introducing spikes.
-        while (Serial1.available()) {
-            Serial1.read();
-        }
     }
 }
 
 
 /**
- * @brief Get the current status of the buttons and LEDs
- * @return String The status of the buttons and LEDs encoded in a string
- *
- * The status is encoded as follows:
- * - The first three characters represent the status of the buttons.
- *   Order is BUTTON, BUTTON2, BUTTON3. 1 means pressed, 0 means not pressed.
- * - The last three characters represent the status of the LEDs.
- *   Order is LED, LED2, LED3. 1 means ON, 0 means OFF.
+ * @brief Update the screen mode based on the button status
+ * @param screenMode The current screen mode
+ * @return The new screen mode
  */
-String getPinStatus() {
-    String status = "";
+enum ScreenMode updateState(enum ScreenMode screenMode) {
+    IOstatus status = getPinStatus();
+    enum ScreenMode newState = parseButtons(status, screenMode);
+    return newState;
+}
 
-    // Read button states (HIGH means pressed if using pull-up resistors)
-    status += digitalRead(PIN_BUTTON) == LOW ? "1" : "0";
-    status += digitalRead(PIN_BUTTON2) == LOW ? "1" : "0";
-    status += digitalRead(PIN_BUTTON3) == LOW ? "1" : "0";
 
-    // Assuming HIGH means LED is ON.
-    status += digitalRead(PIN_LED) == LOW ? "1" : "0";
-    status += digitalRead(PIN_LED2) == LOW ? "1" : "0";
-    status += digitalRead(PIN_LED3) == LOW ? "1" : "0";
+/**
+ * @brief Parse the button status and update the screen mode
+ * @param status The status of the buttons and LEDs
+ * @param screenMode The current screen mode
+ * @return screenMode The new screen mode
+ * 
+ * Check if button1 is pressed. If so, cycle to the next screen mode.
+ */
+enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode) {
+    enum ScreenMode newState;
 
-    return status;
+    if (status.btn1 == 1) {
+        switch (screenMode) {
+        case CHARGE_DETECTION:
+            newState = CHARGE_INTEGRATION;
+            break;
+        case CHARGE_INTEGRATION:
+            newState = VAR_SEMPLING_TIME;
+            break;
+        case VAR_SEMPLING_TIME:
+            newState = CHARGE_DETECTION;
+            break;
+        default:
+            break;
+        }
+    }
+
+    return newState;
+}
+
+
+/**
+ * @brief Get the output string to print
+ * @param rawData The raw data from the FPGA
+ * @param current_measurement The current value
+ * @param temp The temperature value
+ * @param humidity The humidity calue
+ * @param ndx The charge value
+ * @return The output string
+ */
+String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_measurement, String temp, String humidity, char* ndx) {
+    String message;
+    struct IOstatus btnLedStatus = getPinStatus();
+
+#ifdef RAW_OUTPUT
+    message = String(rawData.charge) + "," +
+            String(rawData.cp1Count) + "," +
+            String(rawData.cp2Count) + "," +
+            String(rawData.cp3Count) + "," +
+            String(rawData.cp1LastInterval) + "," +
+            String(rawData.tempSht41) + "," +
+            String(rawData.humidSht41) + "," +
+            btnLedStatus.status;
+#else
+    message = String(current_measurement.currentInFemtoAmpere) + "," +
+            String(rawData.cp1Count) + "," +
+            String(rawData.cp2Count) + "," +
+            String(rawData.cp3Count) + "," +
+            String(ndx) + "," +
+            String(temp) + "," +
+            String(humidity) + "," +
+            btnLedStatus.status;
+#endif
 }
