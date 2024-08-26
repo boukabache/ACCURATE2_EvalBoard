@@ -11,6 +11,17 @@
 #include <Arduino.h>
 #include "config.h"
 
+
+/**
+ * @brief Enum to define the different screen modes.
+ */
+enum ScreenMode {
+    CHARGE_DETECTION,
+    CHARGE_INTEGRATION,
+    VAR_SEMPLING_TIME
+};
+
+
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
