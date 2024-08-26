@@ -333,14 +333,14 @@ begin
     uartWrapperMcuE : entity work.uartWrapper
         generic map (
             clkFreqG => 25_000_000,
-            baudRateG => 9_600,
+            baudRateG => 19_200,
             parityG => 0,
             parityEoG => '0',
             txMessageLengthG => 28,
             uartBusWidthG => 8,
             rxMessageLengthG => 6,
             rxMessageHeaderG => x"DD",
-            rxTimeoutUsG => 500
+            rxTimeoutUsG => 5000
         )
         port map (
             clk => clkGlobal,
@@ -390,8 +390,8 @@ begin
             requestErrorxDO => registerFileRequestError
     );
 
-    registerFileAddress <= unsigned(rxMessage(registerFileAddressWidthC - 1 downto 0));
-    registerFileData <= rxMessage(registerFileDataWidthC + registerFileAddressWidthC - 1 downto registerFileAddressWidthC);
+    registerFileAddress <= unsigned(rxMessage(rxMessage'left downto rxMessage'length - registerFileAddressWidthC));
+    registerFileData <= rxMessage(rxMessage'left - registerFileAddressWidthC downto 0);
     registerFileDataValid <= rxMessageValid;
 
     ------------------------------ SHT41 ------------------------------------
