@@ -75,7 +75,37 @@ architecture rtl of RegisterFile is
         array ( 0 to ((2 ** registerFileAddressWidthC) - 1)) of
         std_logic_vector(registerFileDataWidthC - 1 downto 0);
 
-    signal regFilexDN, regFilexDP : memoryT;
+    constant memoryInitialStateC : memoryT := (
+        0  => std_logic_vector(resize(dacConfigRecordTDefault.vOutA, registerFileDataWidthC)),
+        1  => std_logic_vector(resize(dacConfigRecordTDefault.vOutB, registerFileDataWidthC)),
+        2  => std_logic_vector(resize(dacConfigRecordTDefault.vOutC, registerFileDataWidthC)),
+        3  => std_logic_vector(resize(dacConfigRecordTDefault.vOutD, registerFileDataWidthC)),
+        4  => std_logic_vector(resize(dacConfigRecordTDefault.vOutE, registerFileDataWidthC)),
+        5  => std_logic_vector(resize(dacConfigRecordTDefault.vOutF, registerFileDataWidthC)),
+        6  => std_logic_vector(resize(dacConfigRecordTDefault.vOutG, registerFileDataWidthC)),
+        7  => std_logic_vector(resize(dacConfigRecordTDefault.vOutH, registerFileDataWidthC)),
+
+        8  => std_logic_vector(resize(accurateRecordTDefault.chargeQuantaCP1, registerFileDataWidthC)),
+        9  => std_logic_vector(resize(accurateRecordTDefault.chargeQuantaCP2, registerFileDataWidthC)),
+        10 => std_logic_vector(resize(accurateRecordTDefault.chargeQuantaCP3, registerFileDataWidthC)),
+        11 => std_logic_vector(resize(accurateRecordTDefault.cooldownMinCP1, registerFileDataWidthC)),
+        12 => std_logic_vector(resize(accurateRecordTDefault.cooldownMaxCP1, registerFileDataWidthC)),
+        13 => std_logic_vector(resize(accurateRecordTDefault.cooldownMinCP2, registerFileDataWidthC)),
+        14 => std_logic_vector(resize(accurateRecordTDefault.cooldownMaxCP2, registerFileDataWidthC)),
+        15 => std_logic_vector(resize(accurateRecordTDefault.cooldownMinCP3, registerFileDataWidthC)),
+        16 => std_logic_vector(resize(accurateRecordTDefault.cooldownMaxCP3, registerFileDataWidthC)),
+        17 => (0 => accurateRecordTDefault.resetOTA, others => '0'),
+        18 => std_logic_vector(resize(accurateRecordTDefault.tCharge, registerFileDataWidthC)),
+        19 => std_logic_vector(resize(accurateRecordTDefault.tInjection, registerFileDataWidthC)),
+        20 => (0 => accurateRecordTDefault.disableCP1, others => '0'),
+        21 => (0 => accurateRecordTDefault.disableCP2, others => '0'),
+        22 => (0 => accurateRecordTDefault.disableCP3, others => '0'),
+        23 => (0 => accurateRecordTDefault.singlyCPActivation, others => '0'),
+        24 => (0 => '1', others => '0'),
+        others => (others => '0')
+    );
+
+    signal regFilexDN, regFilexDP : memoryT := memoryInitialStateC;
 
     signal requestErrorxDP, requestErrorxDN : std_logic := '0';
 begin
@@ -87,8 +117,7 @@ begin
     begin
         if rising_edge(clk) then
             if rst = '1' then
-                dacConfigxDO <= dacConfigRecordTDefault;
-                accurateConfigxDO <= accurateRecordTDefault;
+                regFilexDP <= memoryInitialStateC;
             else
                 regFilexDP <= regFilexDN;
                 requestErrorxDP <= requestErrorxDN;
@@ -112,36 +141,35 @@ begin
     -----------------
     -- OUTPUT
     -----------------
-    dacConfigxDO.vOutA <= unsigned(regFilexDP(0)(11 downto 0));
-    dacConfigxDO.vOutB <= unsigned(regFilexDP(1)(11 downto 0));
-    dacConfigxDO.vOutC <= unsigned(regFilexDP(2)(11 downto 0));
-    dacConfigxDO.vOutD <= unsigned(regFilexDP(3)(11 downto 0));
-    dacConfigxDO.vOutE <= unsigned(regFilexDP(4)(11 downto 0));
-    dacConfigxDO.vOutF <= unsigned(regFilexDP(5)(11 downto 0));
-    dacConfigxDO.vOutG <= unsigned(regFilexDP(6)(11 downto 0));
-    dacConfigxDO.vOutH <= unsigned(regFilexDP(7)(11 downto 0));
+    dacConfigxDO.vOutA <= unsigned(regFilexDP(0)(dacConfigxDO.vOutA'range));
+    dacConfigxDO.vOutB <= unsigned(regFilexDP(1)(dacConfigxDO.vOutB'range));
+    dacConfigxDO.vOutC <= unsigned(regFilexDP(2)(dacConfigxDO.vOutC'range));
+    dacConfigxDO.vOutD <= unsigned(regFilexDP(3)(dacConfigxDO.vOutD'range));
+    dacConfigxDO.vOutE <= unsigned(regFilexDP(4)(dacConfigxDO.vOutE'range));
+    dacConfigxDO.vOutF <= unsigned(regFilexDP(5)(dacConfigxDO.vOutF'range));
+    dacConfigxDO.vOutG <= unsigned(regFilexDP(6)(dacConfigxDO.vOutG'range));
+    dacConfigxDO.vOutH <= unsigned(regFilexDP(7)(dacConfigxDO.vOutH'range));
 
-    accurateConfigxDO.chargeQuantaCP1    <= signed(regFilexDP(8)(23 downto 0));
-    accurateConfigxDO.chargeQuantaCP2    <= signed(regFilexDP(9)(23 downto 0));
-    accurateConfigxDO.chargeQuantaCP3    <= signed(regFilexDP(10)(23 downto 0));
-    accurateConfigxDO.cooldownMinCP1     <= unsigned(regFilexDP(11)(15 downto 0));
-    accurateConfigxDO.cooldownMaxCP1     <= unsigned(regFilexDP(12)(15 downto 0));
-    accurateConfigxDO.cooldownMinCP2     <= unsigned(regFilexDP(13)(15 downto 0));
-    accurateConfigxDO.cooldownMaxCP2     <= unsigned(regFilexDP(14)(15 downto 0));
-    accurateConfigxDO.cooldownMinCP3     <= unsigned(regFilexDP(15)(15 downto 0));
-    accurateConfigxDO.cooldownMaxCP3     <= unsigned(regFilexDP(16)(15 downto 0));
+    accurateConfigxDO.chargeQuantaCP1    <= signed(regFilexDP( 8)(accurateConfigxDO.chargeQuantaCP1'range));
+    accurateConfigxDO.chargeQuantaCP2    <= signed(regFilexDP( 9)(accurateConfigxDO.chargeQuantaCP2'range));
+    accurateConfigxDO.chargeQuantaCP3    <= signed(regFilexDP(10)(accurateConfigxDO.chargeQuantaCP3'range));
+    accurateConfigxDO.cooldownMinCP1     <= unsigned(regFilexDP(11)(accurateConfigxDO.cooldownMinCP1'range));
+    accurateConfigxDO.cooldownMaxCP1     <= unsigned(regFilexDP(12)(accurateConfigxDO.cooldownMaxCP1'range));
+    accurateConfigxDO.cooldownMinCP2     <= unsigned(regFilexDP(13)(accurateConfigxDO.cooldownMinCP2'range));
+    accurateConfigxDO.cooldownMaxCP2     <= unsigned(regFilexDP(14)(accurateConfigxDO.cooldownMaxCP2'range));
+    accurateConfigxDO.cooldownMinCP3     <= unsigned(regFilexDP(15)(accurateConfigxDO.cooldownMinCP3'range));
+    accurateConfigxDO.cooldownMaxCP3     <= unsigned(regFilexDP(16)(accurateConfigxDO.cooldownMaxCP3'range));
     accurateConfigxDO.resetOTA           <= regFilexDP(17)(0);
-    accurateConfigxDO.tCharge            <= unsigned(regFilexDP(18)(7 downto 0));
-    accurateConfigxDO.tInjection         <= unsigned(regFilexDP(19)(7 downto 0));
+    accurateConfigxDO.tCharge            <= unsigned(regFilexDP(18)(accurateConfigxDO.tCharge'range));
+    accurateConfigxDO.tInjection         <= unsigned(regFilexDP(19)(accurateConfigxDO.tInjection'range));
     accurateConfigxDO.disableCP1         <= regFilexDP(20)(0);
     accurateConfigxDO.disableCP2         <= regFilexDP(21)(0);
     accurateConfigxDO.disableCP3         <= regFilexDP(22)(0);
     accurateConfigxDO.singlyCPActivation <= regFilexDP(23)(0);
 
+    enableDataStreamUartxDO <= regFilexDP(24)(0);
+
     accurateConfigValidxDO <= '1';
 
     requestErrorxDO <= requestErrorxDP;
-
-    enableDataStreamUartxDO <= regFilexDP(24)(0);
-
 end architecture rtl;
