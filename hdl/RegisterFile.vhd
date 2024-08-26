@@ -127,10 +127,10 @@ begin
 
     regFileP: process(all)
     begin
-        requestErrorxDN <= '1';
+        requestErrorxDN <= '0';
         regFilexDN <= regFilexDP;
         if dataValidxDI = '1' then
-            if addressxDI >= to_unsigned(registerFileAddressWidthC - 1, addressxDI'length) then
+            if addressxDI >= to_unsigned(2**registerFileAddressWidthC - 1, addressxDI'length) then
                 requestErrorxDN <= '1';
             else
                 regFilexDN(to_integer(addressxDI)) <= dataxDI;
