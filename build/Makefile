@@ -35,7 +35,7 @@ $(JSON_FILE): $(VHDL_FILES)
 
 $(ASC_FILE): $(JSON_FILE)
 	@echo "Run place and route for $<"
-	nextpnr-ice40 --u4k --package sg48 --json $< --pcf lp4k_wlcs36.pcf --asc $@
+	nextpnr-ice40 --parallel-refine --u4k --package sg48 --json $< --pcf lp4k_wlcs36.pcf --asc $@
 
 $(BIN_FILE): $(ASC_FILE)
 	@echo "Packing to bin for $<"
