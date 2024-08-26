@@ -80,15 +80,15 @@ architecture behavioral of accurateHW is
 
     -- config with invalid values filtered out, updates only at a start of a new cycle.
     signal configCurrentxDN, configCurrentxDP : accurateRecordT;
-    signal configSafe : accurateRecordT;
+    signal configSafexDN, configSafexDP : accurateRecordT;
 
-    signal cycleLength : unsigned(maximum(configxDI.tCharge'left, configxDI.tInjection'left) + 1 downto 0);
+    signal cycleLengthxDN, cycleLengthxDP : unsigned(maximum(configxDI.tCharge'left, configxDI.tInjection'left) + 1 downto 0);
 
-    signal cycleLengthCurrentxDP : unsigned(cycleLength'left downto 0);
-    signal cycleLengthCurrentxDN : unsigned(cycleLength'left downto 0);
+    signal cycleLengthCurrentxDP : unsigned(cycleLengthxDN'range);
+    signal cycleLengthCurrentxDN : unsigned(cycleLengthxDN'range);
 
-    signal cycleCounterxDP : unsigned(cycleLength'left downto 0);
-    signal cycleCounterxDN : unsigned(cycleLength'left downto 0);
+    signal cycleCounterxDP : unsigned(cycleLengthxDN'range);
+    signal cycleCounterxDN : unsigned(cycleLengthxDN'range);
 
     signal cooldown : std_logic_vector(chargePumpNumberC - 1 downto 0);
 
@@ -119,33 +119,40 @@ architecture behavioral of accurateHW is
     signal enableCPxDP, enableCPxDN : std_logic_vector(chargePumpNumberC - 1 downto 0);
     signal startPulseNextCyclexDP : std_logic_vector(chargePumpNumberC - 1 downto 0);
 
+    signal endTChargexDP, endTChargexDN : unsigned(configxDI.tCharge'range) := (others => '0');
+    signal endTChargeCurrentxDP, endTChargeCurrentxDN : unsigned(configxDI.tCharge'range) := (others => '0');
 begin
 
     safeCycleP : process (all)
     begin
-        configSafe <= configxDI;
+        configSafexDN <= configxDI;
 
-        configSafe.tInjection <= to_unsigned(1, configSafe.tInjection'length) when configxDI.tInjection = 0 else
-                                 configxDI.tInjection;
+        configSafexDN.tInjection <= to_unsigned(1, configSafexDN.tInjection'length) when configxDI.tInjection = 0 else
+                                    configxDI.tInjection;
 
-        configSafe.tCharge <= to_unsigned(1, configSafe.tCharge'length) when configxDI.tCharge = 0 else
-                              configxDI.tCharge;
+        configSafexDN.tCharge <= to_unsigned(1, configSafexDN.tCharge'length) when configxDI.tCharge = 0 else
+                                 configxDI.tCharge;
 
-        configSafe.disableCP1 <= '0' when configxDI.disableCP2 = '1' and configxDI.disableCP3 = '1' else
-                                 configxDI.disableCP1;
+        configSafexDN.disableCP1 <= '0' when configxDI.disableCP2 = '1' and configxDI.disableCP3 = '1' else
+                                    configxDI.disableCP1;
 
-        configSafe.cooldownMaxCP1 <= maximum(configxDI.cooldownMaxCP1, configxDI.cooldownMinCP1);
-        configSafe.cooldownMaxCP2 <= maximum(configxDI.cooldownMaxCP2, configxDI.cooldownMinCP2);
-        configSafe.cooldownMaxCP3 <= maximum(configxDI.cooldownMaxCP3, configxDI.cooldownMinCP3);
+        configSafexDN.cooldownMaxCP1 <= maximum(configxDI.cooldownMaxCP1, configxDI.cooldownMinCP1);
+        configSafexDN.cooldownMaxCP2 <= maximum(configxDI.cooldownMaxCP2, configxDI.cooldownMinCP2);
+        configSafexDN.cooldownMaxCP3 <= maximum(configxDI.cooldownMaxCP3, configxDI.cooldownMinCP3);
     end process safeCycleP;
 
-    cycleLength <= resize(configSafe.tCharge, cycleLength'length) + resize(configSafe.tInjection, cycleLength'length);
+    endTChargexDN <= configSafexDP.tCharge - 1;
 
-    cycleLengthCurrentxDN <= cycleLength when (or_reduce(startPulseNextCycle)) else
+    endTChargeCurrentxDN <= endTChargeCurrentxDP when anyInPulsexDP else
+                            endTChargexDP;
+
+    cycleLengthxDN <= resize(configxDI.tCharge, cycleLengthxDN'length) + resize(configxDI.tInjection, cycleLengthxDN'length);
+
+    cycleLengthCurrentxDN <= cycleLengthxDP when (or_reduce(startPulseNextCycle)) else
                              cycleLengthCurrentxDP;
 
     configCurrentxDN <= configCurrentxDP when anyInPulsexDP else
-                        configSafe;
+                        configSafexDP;
 
     LIGHT2 : if lightweightG = '0' generate
         cooldownMaxCurrentArray <= (
@@ -186,6 +193,9 @@ begin
                 cooldownCurrentDurationxDP <= (others => (others => '0'));
 
                 configCurrentxDP <= accurateRecordTInit;
+                configSafexDP <= accurateRecordTInit;
+                cycleLengthxDP <= (others => '0');
+
                 cycleLengthCurrentxDP <= (others => '0');
 
                 capClkxDP <= '0';
@@ -208,6 +218,10 @@ begin
                 anyInPulsexDP <= or_reduce(inPulsexDN);
 
                 configCurrentxDP <= configCurrentxDN;
+                configSafexDP <= configSafexDN;
+                cycleLengthxDP <= cycleLengthxDN;
+                endTChargexDP <= endTChargexDN;
+                endTChargeCurrentxDP <= endTChargeCurrentxDN;
                 cycleLengthCurrentxDP <= cycleLengthCurrentxDN;
 
                 capClkxDP <= capClkxDN;
@@ -296,7 +310,7 @@ begin
     end generate CP_CHANNEL;
 
     capClkxDN <= '1' when or_reduce(startPulseNextCycle) else
-                 '0' when cycleCounterxDP = configCurrentxDP.tCharge - 1 else
+                 '0' when cycleCounterxDP = endTChargeCurrentxDP else
                  capClkxDP;
 
     vTh1xDO <= not compN_2r(0); -- vTh1N
