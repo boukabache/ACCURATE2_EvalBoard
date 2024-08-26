@@ -69,6 +69,8 @@ architecture behavioral of uartWrapper is
     signal txSendMessage : std_logic := '0';
     signal rxStatusVector : std_logic_vector(3 downto 0);
 
+    signal feederBusy : std_logic := '0';
+
 begin
     rst_n <= '0' when rst = '1' else
              '1';
@@ -84,11 +86,12 @@ begin
                                          uartBusWidthG));
 
     txSendMessage <= txSendMessagexDI when allowRespondToRxxDI = '0' else
-                     '1' when ((rxMessageInvalidxDI = '1') or
-                               (rxHeaderError = '1') or
-                               (rxTransactionTimeout = '1') or
-                               (rxError = '1') or
-                               (rxMessageValid = '1')) else
+                     '1' when (((rxMessageInvalidxDI = '1') or
+                                (rxHeaderError = '1') or
+                                (rxTransactionTimeout = '1') or
+                                (rxError = '1') or
+                                (rxMessageValid = '1')
+                               ) and feederBusy = '0') else
                      '0';
 
     uartDriverE : entity work.uartDriver
@@ -122,10 +125,10 @@ begin
             clk => clk,
             rst => rst,
 
-            txSendMessagexDI => txSendMessagexDI,
-            txMessageLengthxDI => txMessageLengthG,
-            txMessagexDI => txMessagexDI,
-            feederBusyxDO => feederBusyxDO,
+            txSendMessagexDI => txSendMessage,
+            txMessageLengthxDI => txMessageLength,
+            txMessagexDI => txMessage,
+            feederBusyxDO => feederBusy,
 
             txBusyxDI => txBusy,
             txEnaxDO  => txEna,
@@ -152,7 +155,7 @@ begin
         );
 
         rxHeaderError <= '0' when rxMessageHeaderG'length = 0 else
-                         '1' when ((rxMessage(rxMessageHeaderG'length - 1 downto 0) /= rxMessageHeaderG) and
+                         '1' when ((rxMessage(rxMessage'left downto rxMessage'length - rxMessageHeaderG'length) /= rxMessageHeaderG) and
                                    (rxMessageValid = '1')) else
                          '0';
 
@@ -160,7 +163,9 @@ begin
                              '1' when rxMessageValid = '1' else
                              '0';
 
-        rxMessagexDO <= rxMessage(rxMessageLengthG * uartBusWidthG - 1 downto rxMessageHeaderG'length);
+        rxMessagexDO <= rxMessage(rxMessage'length - rxMessageHeaderG'length - 1 downto 0);
+
+        feederBusyxDO <= feederBusy;
 
 end architecture behavioral;
 
