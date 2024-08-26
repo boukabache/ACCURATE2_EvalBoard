@@ -1,10 +1,8 @@
-/*
- * ssd1306.cpp
- *
- * Created: 10/11/2023 15:08
- *  Author: hliverud
+/**
+ * @file ssd1306.cpp
+ * @brief Source file for the SSD1306 OLED display helper functions.
+ * @author Mattia Consani, hliverud
  */
-
 
 #include "ssd1306.h"
 
@@ -15,30 +13,56 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 void ssd1306_init() {
-  if (!display.begin(SSD1306_SWITCHCAPVCC, SSD1306_ADDR)) {
-    Serial.println(F("SSD1306 allocation failed"));
-    for (;;);
-  }
-  delay(2000);
-  display.clearDisplay();
-  display.setTextColor(WHITE);
+    if (!display.begin(SSD1306_SWITCHCAPVCC, SSD1306_ADDR)) {
+        Serial.println(F("SSD1306 allocation failed"));
+        for (;;);
+    }
+    delay(2000);
+    display.clearDisplay();
+    display.setTextColor(WHITE);
 }
 
 void ssd1306_print_current_temp_humidity(float current, String current_range, String temp, String humidity) {
-  display.clearDisplay();
-  display.setTextSize(2);
-  display.setCursor(0, 0);
-  display.print("Current: ");
-  display.setCursor(0, 20);
-  display.print(current);
-  display.print(" " + current_range);
-  display.setCursor(0, 40);
-  display.setTextSize(1);
-  display.print("Temperature: ");
-  display.print(temp);
-  display.setCursor(0, 50);
-  display.print("Humidity: ");
-  display.print(humidity);
-  display.print(" %");
-  display.display();
+    display.clearDisplay();
+    display.setTextSize(2);
+    display.setCursor(0, 0);
+    display.print("Current: ");
+    display.setCursor(0, 20);
+    display.print(current);
+    display.print(" " + current_range);
+    display.setCursor(0, 40);
+    display.setTextSize(1);
+    display.print("Temperature: ");
+    display.print(temp);
+    display.setCursor(0, 50);
+    display.print("Humidity: ");
+    display.print(humidity);
+    display.print(" %");
+    display.display();
+}
+
+void ssd1306_print_transition(int screenMode) {
+    // Prepare the display
+    display.clearDisplay();
+    display.setTextSize(2);
+    display.setCursor(0, 0);
+
+    // Print the correct screen mode
+    switch (screenMode) {
+    case CHARGE_DETECTION:
+        display.print("CHARGE_DETECTION");
+        break;
+    case CHARGE_INTEGRATION:
+        display.print("CHARGE_INTEGRATION");
+        break;
+    case VAR_SEMPLING_TIME:
+        display.print("VAR_SEMPLING_TIME");
+        break;
+    default:
+        display.print("Unknown");
+        break;
+    }
+
+    // Hold it on screen for sec seconds
+    delay(TRANSITION_TIME * 1000);
 }

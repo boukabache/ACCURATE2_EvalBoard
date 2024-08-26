@@ -1,12 +1,15 @@
-/*
- * ssd1306.h
- *
- * Created: 10/11/2023 15:08
- *  Author: hliverud
+/**
+ * @file ssd1306.h
+ * @brief Header file for the SSD1306 OLED display helper functions.
+ * @author Mattia Consani, hliverud
+ * 
+ * Contains the init function and the print to oled functions.
+ * 
  */
 
 #include <stdint.h>
 #include <Arduino.h>
+#include "config.h"
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
@@ -16,3 +19,13 @@
 void ssd1306_init();
 
 void ssd1306_print_current_temp_humidity(float current, String current_range, String temp, String humidity);
+
+/**
+ * @brief Print the screen mode to the display for sec seconds.
+ * 
+ * @param screenMode The screen mode to print.
+ * 
+ * @warning This function contains a delay call! It will block the
+ * execution for sec seconds.
+ */
+void ssd1306_print_transition(int screenMode);
