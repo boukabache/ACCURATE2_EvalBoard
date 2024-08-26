@@ -64,6 +64,33 @@ rawDataFPGA fpga_read_data() {
     return data;
 }
 
+
+struct IOstatus getPinStatus() {
+    struct IOstatus status;
+
+    // Read button states (HIGH means pressed if using pull-up resistors)
+    status.btn1 = digitalRead(PIN_BUTTON);
+    status.btn2 = digitalRead(PIN_BUTTON2);
+    status.btn3 = digitalRead(PIN_BUTTON3);
+
+    // Assuming HIGH means LED is ON.
+    status.led1 = digitalRead(PIN_LED);
+    status.led2 = digitalRead(PIN_LED2);
+    status.led3 = digitalRead(PIN_LED3);
+
+    // Encode the status as a string
+    status.status = "";
+    status.status += status.btn1 ? "1" : "0";
+    status.status += status.btn2 ? "1" : "0";
+    status.status += status.btn3 ? "1" : "0";
+    status.status += status.led1 ? "1" : "0";
+    status.status += status.led2 ? "1" : "0";
+    status.status += status.led3 ? "1" : "0";
+
+    return status;
+}
+
+
 TempHumMeasurement fpga_read_temp_humidity()
 {
     TempHumMeasurement measurement;

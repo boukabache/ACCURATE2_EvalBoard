@@ -25,6 +25,20 @@ struct rawDataFPGA {
     bool valid; // Flag to indicate if the data is valid
 };
 
+/**
+ * @brief Structure to hold the current status of buttons and LEDs.
+ */
+struct IOstatus {
+    bool btn1; // Button 1
+    bool btn2; // Button 2
+    bool btn3; // Button 3
+    bool led1; // LED 1
+    bool led2; // LED 2
+    bool led3; // LED 3
+    String status; // Status string
+};
+
+
 
 const float CLOCK_PERIOD = 1E8; // ^-1
 
@@ -66,6 +80,18 @@ const uint32_t INIT_CONFIG_START = 0x01C007;
  * @return rawDataFPGA struct containing the raw data.
  */
 struct rawDataFPGA fpga_read_data();
+
+/**
+ * @brief Get the current status of the buttons and LEDs
+ * @return PinStatus The status of the buttons and LEDs + string encoding
+ *
+ * The status is encoded as follows:
+ * - The first three characters represent the status of the buttons.
+ *   Order is BUTTON1, BUTTON2, BUTTON3. 1 means pressed, 0 means not pressed.
+ * - The last three characters represent the status of the LEDs.
+ *   Order is LED1, LED2, LED3. 1 means ON, 0 means OFF.
+ */
+struct IOstatus getPinStatus();
 
 
 // Attempts to read data from the FPGA, returns the current measured or NaN on error.
