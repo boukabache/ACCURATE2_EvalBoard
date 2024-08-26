@@ -211,10 +211,10 @@ begin
                                                   cp2CountSys'length - 1 downto cp1CountSys'length));
     cp1CountSys <= unsigned(measurementDataTmpSys(cp1CountSys'length - 1 downto 0));
 
-    chargeMeasurementxDO <= chargeSum when previousCycleResetxDP = '0' else
+    chargeMeasurementxDO <= chargeSum; -- when previousCycleResetxDP = '0' else
                             -- this is so that it's clear from the outside that the system is in reset, without
                             -- needing to touch the ROMULUSlib (as this is just for prototype, for now...)
-                            largeVoltageSfixed;
+                            -- largeVoltageSfixed;
 
     -- The following uses the knowledge that ps2pl values only change on sample falling edge
     previousCycleResetxDN <= '1' when samplexDI = '1' and resetOTARequestxDI = '1' else
@@ -233,7 +233,7 @@ begin
             cp2ActivatedxDO => cp2Activated,
             cp3ActivatedxDO => cp3Activated,
             vTh1xDO  => open,
-            configxDI => configxDI,
+            configxDI => configAcc,
             vTh1NxDI => vTh1NxDI,
             vTh2NxDI => vTh2NxDI,
             vTh3NxDI => vTh3NxDI,
