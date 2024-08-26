@@ -4,11 +4,18 @@
 // Uncomment the following line to enable debug mode
 // #define DEBUG
 
+// To enable raw output, uncomment the following line:
+// #define RAW_OUTPUT
+
 struct CurrentMeasurement {
     float currentInFemtoAmpere; // Current in fA
     float convertedCurrent;     // Converted current based on range
     String range;               // String indicating the current range
 };
+
+
+// Hold display time for the transition screen
+#define TRANSITION_TIME 3
 
 // SHT41 Settings
 #define SHT41_RD_PERIOD		    1 // periodic read interval [s]
