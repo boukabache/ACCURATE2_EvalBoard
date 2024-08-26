@@ -7,8 +7,65 @@
 
 #include "fpga.h"
 
+rawDataFPGA fpga_read_data() {
+    char chargeRaw[6];
+    char cp1CountRaw[4];
+    char cp2CountRaw[4];
+    char cp3CountRaw[4];
+    char cp1LastIntervalRaw[5];
+    char temperatureRaw[2];
+    char humidityRaw[2];
 
-TempHumMeasurement fpga_read_temp_humidity() {
+    struct rawDataFPGA data;
+    data.valid = false;
+
+    if (Serial1.find(FPGA_CURRENT_ADDRESS)) {
+        // Wait for the full payload to be available
+        // Read the payload
+        Serial1.readBytes(chargeRaw, 6);
+
+        // FIXME: THIS IS WRONG. rawCharge is of signed type inside the vhdl code!! What happens to leading '1's if it is negative?
+        // Convert the payload to a 64-bit integer rapresentation
+        for (int i = 0; i < 6; i++) {
+            data.charge |= ((uint64_t)chargeRaw[i] << (8 * i));
+        }
+
+        Serial1.readBytes(cp1CountRaw, 4);
+        data.cp1Count = *(uint32_t*) cp1CountRaw;
+
+        Serial1.readBytes(cp2CountRaw, 4);
+        data.cp2Count = *(uint32_t*) cp2CountRaw;
+
+        Serial1.readBytes(cp3CountRaw, 4);
+        data.cp3Count = *(uint32_t*) cp3CountRaw;
+
+        Serial1.readBytes(cp1LastIntervalRaw, 5);
+        data.cp1LastInterval = 0;
+        for (int i = 0; i < 5; i++) {
+            data.cp1LastInterval |= ((int64_t)cp1LastIntervalRaw[i] << (8 * i));
+        }
+
+        Serial1.readBytes(temperatureRaw, 2);
+        data.tempSht41 = *(uint16_t*) temperatureRaw;
+
+        Serial1.readBytes(humidityRaw, 2);
+        data.humidSht41 = *(uint16_t*) humidityRaw;
+
+        // Clear the rest of the serial buffer, if not already empty.
+        // This is necessary to avoid communication artifacts that 
+        // affect the current measurement, introducing spikes.
+        while (Serial1.available()) {
+            Serial1.read();
+        }
+
+        data.valid = true;
+    }
+    
+    return data;
+}
+
+TempHumMeasurement fpga_read_temp_humidity()
+{
     TempHumMeasurement measurement;
     measurement.status = SHT41_ERR_MEASUREMENT;
 

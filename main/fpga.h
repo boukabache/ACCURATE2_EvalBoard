@@ -1,10 +1,8 @@
-/*
- * fpga.h
- *
- * Created: 11/13/2023 13:40
- *  Author: hliverud
+/**
+ * @file fpga.h
+ * @brief Header file for the FPGA helper functions.
+ * @author Mattia Consani, hliverud
  */
-
 #ifndef FPGA_H_
 #define FPGA_H_
 
@@ -12,6 +10,21 @@
 #include <cmath>
 #include "config.h"
 #include "sht41.h"
+
+/**
+ * @brief Struct containing the raw data coming from the FPGA.
+ */
+struct rawDataFPGA {
+    uint64_t charge; // Detected charge in LSB
+    uint32_t cp1Count; // Number of activations of CP1
+    uint32_t cp2Count; // Number of activations of CP2
+    uint32_t cp3Count; // Number of activations of CP3
+    int64_t cp1LastInterval; // Time between last two CP1 activations
+    uint16_t tempSht41; // Temperature data from SHT41
+    uint16_t humidSht41; // Humidity data from SHT41
+    bool valid; // Flag to indicate if the data is valid
+};
+
 
 const float CLOCK_PERIOD = 1E8; // ^-1
 
@@ -46,6 +59,14 @@ const uint8_t VTH7_ADDRESS = 0x0F;
 const uint32_t INIT_CONFIG = 0x4107;
 const uint32_t RST_DURATION = 0x0708;
 const uint32_t INIT_CONFIG_START = 0x01C007;
+
+
+/**
+ * @brief Reads data from the FPGA and returns it in a struct.
+ * @return rawDataFPGA struct containing the raw data.
+ */
+struct rawDataFPGA fpga_read_data();
+
 
 // Attempts to read data from the FPGA, returns the current measured or NaN on error.
 CurrentMeasurement fpga_read_current();
