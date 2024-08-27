@@ -31,7 +31,7 @@ all: $(BIN_FILE)
 # --no-formal is needed to avoid $assert cell errors
 $(JSON_FILE): $(VHDL_FILES)
 	@echo "Converting GHDL to JSON"
-	yosys -m ghdl -p 'ghdl --no-formal $(GHDLFLAGS) $(VHDL_FILES) -e $(TOP_MODULE); synth_ice40 -dsp -json $(JSON_FILE)'
+	yosys -m ghdl -p 'ghdl --no-formal $(GHDLFLAGS) $(VHDL_FILES) -e $(TOP_MODULE); synth_ice40 -device lp -abc2 -dsp -json $(JSON_FILE)'
 
 $(ASC_FILE): $(JSON_FILE)
 	@echo "Run place and route for $<"
