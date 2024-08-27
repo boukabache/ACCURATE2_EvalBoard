@@ -87,6 +87,11 @@ architecture behavioral of accurateHW is
     signal cycleLengthCurrentxDP : unsigned(cycleLengthxDN'range);
     signal cycleLengthCurrentxDN : unsigned(cycleLengthxDN'range);
 
+    signal cycleLengthMinus2xDN, cycleLengthMinus2xDP : unsigned(maximum(configxDI.tCharge'left, configxDI.tInjection'left) + 1 downto 0);
+
+    signal cycleLengthMinus2CurrentxDP : unsigned(cycleLengthxDN'range);
+    signal cycleLengthMinus2CurrentxDN : unsigned(cycleLengthxDN'range);
+
     signal cycleCounterxDP : unsigned(cycleLengthxDN'range);
     signal cycleCounterxDN : unsigned(cycleLengthxDN'range);
 
@@ -148,8 +153,14 @@ begin
 
     cycleLengthxDN <= resize(configxDI.tCharge, cycleLengthxDN'length) + resize(configxDI.tInjection, cycleLengthxDN'length);
 
+    cycleLengthMinus2xDN <= cycleLengthxDN - 2;
+
     cycleLengthCurrentxDN <= cycleLengthxDP when (or_reduce(startPulseNextCycle)) else
                              cycleLengthCurrentxDP;
+
+    cycleLengthMinus2CurrentxDN <= cycleLengthMinus2xDP when (or_reduce(startPulseNextCycle)) else
+                                   cycleLengthMinus2CurrentxDP;
+
 
     configCurrentxDN <= configCurrentxDP when anyInPulsexDP else
                         configSafexDP;
@@ -197,6 +208,7 @@ begin
                 cycleLengthxDP <= (others => '0');
 
                 cycleLengthCurrentxDP <= (others => '0');
+                cycleLengthMinus2CurrentxDP <= (others => '0');
 
                 capClkxDP <= '0';
                 enableCPxDP <= (others => '0');
@@ -223,6 +235,8 @@ begin
                 endTChargexDP <= endTChargexDN;
                 endTChargeCurrentxDP <= endTChargeCurrentxDN;
                 cycleLengthCurrentxDP <= cycleLengthCurrentxDN;
+                cycleLengthMinus2xDP <= cycleLengthMinus2xDN;
+                cycleLengthMinus2CurrentxDP <= cycleLengthMinus2CurrentxDN;
 
                 capClkxDP <= capClkxDN;
                 enableCPxDP <= enableCPxDN;
@@ -282,7 +296,7 @@ begin
                        cycleCounterxDP + 1 when anyInPulsexDP else
                        cycleCounterxDP;
 
-    endCyclexDN <= '1' when (cycleCounterxDP = unsigned(cycleLengthCurrentxDP - 2)) and anyInPulsexDP = '1' else
+    endCyclexDN <= '1' when (cycleCounterxDP = cycleLengthMinus2CurrentxDP) and anyInPulsexDP = '1' else
                    '0';
 
     CP_CHANNEL : for I in 0 to chargePumpNumberC - 1 generate
