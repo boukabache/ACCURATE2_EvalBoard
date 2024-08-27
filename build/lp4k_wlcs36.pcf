@@ -9,14 +9,13 @@ set_io clkInxDI 35
 ## Clock frequency constraints
 # WARNING: Use only lower cases for the net names
 set_frequency clkglobal 25
-set_frequency clk100 100
 set_frequency clk50 50
 
 ## Reset
 # No reset button on the current version of the evaluation board
 
 ## I2C interface
-set_io -pullup yes fpga_sdaxDIO 36 
+set_io -pullup yes fpga_sdaxDIO 36
 set_io -pullup yes fpga_sclxDIO 43
 
 ## UART interface: FPGA - USB
@@ -58,4 +57,4 @@ set_io resetOTAxDO 34
 
 # Debug
 # IOB_0
-set_io debug_0 46
+# set_io debug_0 46
