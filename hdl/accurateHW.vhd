@@ -81,6 +81,7 @@ architecture behavioral of accurateHW is
     -- config with invalid values filtered out, updates only at a start of a new cycle.
     signal configCurrentxDN, configCurrentxDP : accurateRecordT;
     signal configSafexDN, configSafexDP : accurateRecordT;
+    signal configSafex2DP : accurateRecordT;
 
     signal cycleLengthxDN, cycleLengthxDP : unsigned(maximum(configxDI.tCharge'left, configxDI.tInjection'left) + 1 downto 0);
 
@@ -151,7 +152,7 @@ begin
     endTChargeCurrentxDN <= endTChargeCurrentxDP when anyInPulsexDP else
                             endTChargexDP;
 
-    cycleLengthxDN <= resize(configxDI.tCharge, cycleLengthxDN'length) + resize(configxDI.tInjection, cycleLengthxDN'length);
+    cycleLengthxDN <= resize(configSafexDP.tCharge, cycleLengthxDN'length) + resize(configSafexDP.tInjection, cycleLengthxDN'length);
 
     cycleLengthMinus2xDN <= cycleLengthxDN - 2;
 
@@ -163,7 +164,7 @@ begin
 
 
     configCurrentxDN <= configCurrentxDP when anyInPulsexDP else
-                        configSafexDP;
+                        configSafex2DP;
 
     LIGHT2 : if lightweightG = '0' generate
         cooldownMaxCurrentArray <= (
@@ -231,6 +232,7 @@ begin
 
                 configCurrentxDP <= configCurrentxDN;
                 configSafexDP <= configSafexDN;
+                configSafex2DP <= configSafexDP;
                 cycleLengthxDP <= cycleLengthxDN;
                 endTChargexDP <= endTChargexDN;
                 endTChargeCurrentxDP <= endTChargeCurrentxDN;
