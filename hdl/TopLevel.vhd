@@ -159,7 +159,7 @@ architecture rtl of TopLevel is
     signal cp1Count : unsigned(24 - 1 downto 0);
     signal cp2Count : unsigned(24 - 1 downto 0);
     signal cp3Count : unsigned(24 - 1 downto 0);
-    signal cp1LastInterval : signed(27-1 downto 0);
+    signal cp1LastInterval : unsigned(24-1 downto 0);
 
     -- Window generator signals
     signal wind100ms           : std_logic; -- 100ms window
@@ -271,9 +271,9 @@ begin
     accurateFrontendE : entity work.accurateFrontend
         generic map (
             -- 2^n slow down factor. Precision we'd like is ~10us @ 40MHz = ~ 512 = 2^9
-            countTimeIntervalSlowFactorG => 9,
+            countTimeIntervalSlowFactorG => 0,
             -- width is 37 because ceil(log2(200fC/10fA * 40MHz/512)) = 26 + 1 bit for error/sign bit
-            countTimeIntervalBitwidthG => 27
+            countTimeIntervalBitwidthG => 24
         )
         port map (
             clk20  => clkGlobal,
