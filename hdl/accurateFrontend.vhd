@@ -25,7 +25,9 @@ entity accurateFrontend is
         -- 2^n slow down factor.
         countTimeIntervalSlowFactorG : integer := 0;
         -- Bitwidth for countTimeInterval
-        countTimeIntervalBitwidthG : integer := 24
+        countTimeIntervalBitwidthG : integer := 24;
+        -- If '1' smaller feature set implemented for accurateHW (no cooldown, no singly)
+        lightweightG : std_logic := '1'
     );
     port (
         clk20  : in  std_logic; --! System clock
@@ -199,10 +201,10 @@ begin
                                                   cp2CountSys'length - 1 downto cp1CountSys'length));
     cp1CountSys <= unsigned(measurementDataTmpSys(cp1CountSys'length - 1 downto 0));
 
-    chargeMeasurementxDO <= chargeSum; -- when previousCycleResetxDP = '0' else
+    chargeMeasurementxDO <= chargeSum when previousCycleResetxDP = '0' else
                             -- this is so that it's clear from the outside that the system is in reset, without
                             -- needing to touch the ROMULUSlib (as this is just for prototype, for now...)
-                            -- largeVoltageSfixed;
+                            largeVoltageSfixed;
 
     -- The following uses the knowledge that ps2pl values only change on sample falling edge
     previousCycleResetxDN <= '1' when samplexDI = '1' and resetOTARequestxDI = '1' else
@@ -211,7 +213,7 @@ begin
 
     ACCURATE_HW : entity work.accurateHW
         generic map (
-            lightweightG => '1'
+            lightweightG => lightweightG
         )
         port map (
             clk => clk100,
