@@ -19,7 +19,7 @@ rawDataFPGA fpga_read_data() {
     struct rawDataFPGA data;
     data.valid = false;
 
-    if (Serial1.find(FPGA_CURRENT_ADDRESS)) {
+    if (Serial1.find((char) FPGA_CURRENT_ADDRESS)) {
         // Wait for the full payload to be available
         // Read the payload
         Serial1.readBytes(chargeRaw, 6);
@@ -39,11 +39,8 @@ rawDataFPGA fpga_read_data() {
         Serial1.readBytes(cp3CountRaw, 4);
         data.cp3Count = *(uint32_t*) cp3CountRaw;
 
-        Serial1.readBytes(cp1LastIntervalRaw, 5);
-        data.cp1LastInterval = 0;
-        for (int i = 0; i < 5; i++) {
-            data.cp1LastInterval |= ((int64_t)cp1LastIntervalRaw[i] << (8 * i));
-        }
+        Serial1.readBytes(cp1LastIntervalRaw, 4);
+        data.cp1LastInterval = *(uint32_t*) cp1LastIntervalRaw;
 
         Serial1.readBytes(temperatureRaw, 2);
         data.tempSht41 = *(uint16_t*) temperatureRaw;
@@ -52,7 +49,7 @@ rawDataFPGA fpga_read_data() {
         data.humidSht41 = *(uint16_t*) humidityRaw;
 
         // Clear the rest of the serial buffer, if not already empty.
-        // This is necessary to avoid communication artifacts that 
+        // This is necessary to avoid communication artifacts that
         // affect the current measurement, introducing spikes.
         while (Serial1.available()) {
             Serial1.read();
@@ -60,7 +57,7 @@ rawDataFPGA fpga_read_data() {
 
         data.valid = true;
     }
-    
+
     return data;
 }
 
