@@ -79,17 +79,7 @@ void loop() {
 
         // Calculate the current and format it
         float readCurrent = fpga_calc_current(rawData.charge, DEFAULT_LSB, DEFAULT_PERIOD);
-        CurrentMeasurement current_measurement = fpga_format_current(readCurrent);
-
-        // Following should be a function "uinit64_to_char"
-        char buffer[21]; //maximum value for uint64_t is 20 digits
-        uint64_t val = rawData.charge;
-        char* ndx = &buffer[sizeof(buffer) - 1];
-        *ndx = '\0';
-        do {
-          *--ndx = val % 10 + '0';
-          val = val  / 10;
-        } while (val != 0);
+        CurrentMeasurement current_measurement = fpga_format_current(readCurrent); 
 
         // Calculate temperature and humidity from raw data
         TempHumMeasurement measuredTempHum;
@@ -98,27 +88,29 @@ void loop() {
         String humidity = String(measuredTempHum.humidity, 2);
 
         // Screen update
-        enum ScreenMode screenMode;
-        screenMode = updateState(screenMode);
+        ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
 
-        switch (screenMode) {
-        case CHARGE_DETECTION:
-            ssd1306_print_transition(screenMode);
-            ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
-            break;
-        case CHARGE_INTEGRATION:
-            ssd1306_print_transition(screenMode);
-            break;
-        case VAR_SEMPLING_TIME:
-            ssd1306_print_transition(screenMode);
-            break;
-        default:
-            break;
-        }
+        // enum ScreenMode screenMode;
+        // screenMode = updateState(screenMode);
+
+        // switch (screenMode) {
+        // case CHARGE_DETECTION:
+        //     // ssd1306_print_transition(screenMode);
+        //     ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
+        //     break;
+        // case CHARGE_INTEGRATION:
+        //     ssd1306_print_transition(screenMode);
+        //     break;
+        // case VAR_SEMPLING_TIME:
+        //     ssd1306_print_transition(screenMode);
+        //     break;
+        // default:
+        //     break;
+        // }
 
         // Get and print the output string
         String message;
-        message = getOutputString(rawData, current_measurement, temp, humidity, ndx);
+        message = getOutputString(rawData, current_measurement);
         Serial.println(message);
     }
 }
@@ -175,13 +167,16 @@ enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode)
  * @param humidity The humidity calue
  * @param ndx The charge value
  * @return The output string
+ * 
+ * @note It uses the global flag RAW_OUTPUT, defined in the file config.h,
+ * to decide if the output should be raw or formatted.
  */
-String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_measurement, String temp, String humidity, char* ndx) {
+String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_measurement) {
     String message;
     struct IOstatus btnLedStatus = getPinStatus();
 
 #ifdef RAW_OUTPUT
-    message = String(rawData.charge) + "," +
+    message = uint64ToString(rawData.charge) + "," +
             String(rawData.cp1Count) + "," +
             String(rawData.cp2Count) + "," +
             String(rawData.cp3Count) + "," +
@@ -190,14 +185,43 @@ String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_me
             String(rawData.humidSht41) + "," +
             btnLedStatus.status;
 #else
+    // Calculate the last activation time
+    float lastActivationTime = (rawData.cp1LastInterval + 1) * 1/ACCURATE_CLK;
+
+    // Calculate temperature and humidity
+    TempHumMeasurement measuredTempHum;
+    sht41_calculate(rawData.tempSht41, rawData.humidSht41, &measuredTempHum);
+    String temp = String(measuredTempHum.temperature, 2);
+    String humidity = String(measuredTempHum.humidity, 2);
+    
     message = String(current_measurement.currentInFemtoAmpere) + "," +
             String(rawData.cp1Count) + "," +
             String(rawData.cp2Count) + "," +
             String(rawData.cp3Count) + "," +
-            String(ndx) + "," +
+            String(lastActivationTime) + "," +
             String(temp) + "," +
             String(humidity) + "," +
             btnLedStatus.status;
 #endif
     return message;
+}
+
+
+/**
+ * @brief Convert a uint64_t to a string
+ * @param input The input value
+ * @return The string representation of the input value
+ * 
+ * Especially useful for printing on serial 64-bit values.
+ */
+String uint64ToString(uint64_t val) {
+    char buffer[21]; //maximum value for uint64_t is 20 digits
+    char* ndx = &buffer[sizeof(buffer) - 1];
+    *ndx = '\0';
+    do {
+        *--ndx = val % 10 + '0';
+        val = val  / 10;
+    } while (val != 0);
+
+    return ndx;
 }
