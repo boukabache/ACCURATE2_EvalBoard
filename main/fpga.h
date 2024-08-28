@@ -19,7 +19,7 @@ struct rawDataFPGA {
     uint32_t cp1Count; // Number of activations of CP1
     uint32_t cp2Count; // Number of activations of CP2
     uint32_t cp3Count; // Number of activations of CP3
-    int64_t cp1LastInterval; // Time between last two CP1 activations
+    uint32_t cp1LastInterval; // Time between last two CP1 activations
     uint16_t tempSht41; // Temperature data from SHT41
     uint16_t humidSht41; // Humidity data from SHT41
     bool valid; // Flag to indicate if the data is valid

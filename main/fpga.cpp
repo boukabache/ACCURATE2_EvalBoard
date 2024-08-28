@@ -26,6 +26,7 @@ rawDataFPGA fpga_read_data() {
 
         // FIXME: THIS IS WRONG. rawCharge is of signed type inside the vhdl code!! What happens to leading '1's if it is negative?
         // Convert the payload to a 64-bit integer rapresentation
+        data.charge = 0;
         for (int i = 0; i < 6; i++) {
             data.charge |= ((uint64_t)chargeRaw[i] << (8 * i));
         }
@@ -77,12 +78,12 @@ struct IOstatus getPinStatus() {
 
     // Encode the status as a string
     status.status = "";
-    status.status += status.btn1 ? "1" : "0";
-    status.status += status.btn2 ? "1" : "0";
-    status.status += status.btn3 ? "1" : "0";
-    status.status += status.led1 ? "1" : "0";
-    status.status += status.led2 ? "1" : "0";
-    status.status += status.led3 ? "1" : "0";
+    status.status += status.btn1 ? "0" : "1";
+    status.status += status.btn2 ? "0" : "1";
+    status.status += status.btn3 ? "0" : "1";
+    status.status += status.led1 ? "0" : "1";
+    status.status += status.led2 ? "0" : "1";
+    status.status += status.led3 ? "0" : "1";
 
     return status;
 }
