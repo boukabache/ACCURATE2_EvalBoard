@@ -7,12 +7,8 @@
 // To enable raw output, uncomment the following line:
 // #define RAW_OUTPUT
 
-struct CurrentMeasurement {
-    float currentInFemtoAmpere; // Current in fA
-    float convertedCurrent;     // Converted current based on range
-    String range;               // String indicating the current range
-};
-
+// Clock frequency of the ACCURATE frontend
+#define ACCURATE_CLK 50E6 // 50 MHz
 
 // Hold display time for the transition screen
 #define TRANSITION_TIME 3
@@ -24,8 +20,13 @@ struct CurrentMeasurement {
 #define DOWNSCALING_FACTOR 10E14
 const float Cf = 5e-12 * DOWNSCALING_FACTOR;
 
-// FPGA Settings
-#define FPGA_CALCULATE_AVERAGE 0 // Set to 1 to enable average current calculation, 0 for instantaneous current only
+
+struct CurrentMeasurement {
+    float currentInFemtoAmpere; // Current in fA
+    float convertedCurrent;     // Converted current based on range
+    String range;               // String indicating the current range
+};
+
 
 // DAC Settings
 const float VBIAS1_DEC = 1.6;
