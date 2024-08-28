@@ -23,7 +23,7 @@ void setup() {
     Serial.begin(9600);
     while (!Serial);
 
-    Serial1.begin(9600, SERIAL_8N1); // No parity, one stop bit
+    Serial1.begin(19200, SERIAL_8N1); // No parity, one stop bit
     Serial1.setTimeout(500);
     Wire.begin();
 
@@ -69,7 +69,7 @@ void loop() {
     // ----------------------------
     // ACCURATE CURRENT MEASUREMENT
     // ----------------------------
-    
+
     struct rawDataFPGA rawData;
     rawData = fpga_read_data();
 
@@ -91,13 +91,11 @@ void loop() {
           val = val  / 10;
         } while (val != 0);
 
-
         // Calculate temperature and humidity from raw data
         TempHumMeasurement measuredTempHum;
         sht41_calculate(rawData.tempSht41, rawData.humidSht41, &measuredTempHum);
         String temp = String(measuredTempHum.temperature, 2);
         String humidity = String(measuredTempHum.humidity, 2);
-
 
         // Screen update
         enum ScreenMode screenMode;
@@ -117,7 +115,6 @@ void loop() {
         default:
             break;
         }
-
 
         // Get and print the output string
         String message;
@@ -144,7 +141,7 @@ enum ScreenMode updateState(enum ScreenMode screenMode) {
  * @param status The status of the buttons and LEDs
  * @param screenMode The current screen mode
  * @return screenMode The new screen mode
- * 
+ *
  * Check if button1 is pressed. If so, cycle to the next screen mode.
  */
 enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode) {
@@ -202,4 +199,5 @@ String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_me
             String(humidity) + "," +
             btnLedStatus.status;
 #endif
+    return message;
 }
