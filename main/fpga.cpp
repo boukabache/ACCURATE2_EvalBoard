@@ -40,7 +40,7 @@ rawDataFPGA fpga_read_data() {
         Serial1.readBytes(cp3CountRaw, 4);
         data.cp3Count = *(uint32_t*) cp3CountRaw;
 
-        Serial1.readBytes(cp1LastIntervalRaw, 4);
+        Serial1.readBytes(cp1LastIntervalRaw, 5);
         data.cp1LastInterval = *(uint32_t*) cp1LastIntervalRaw;
 
         Serial1.readBytes(temperatureRaw, 2);
