@@ -18,6 +18,8 @@
 #include "config.h"
 #include "ltc2471.h"
 
+enum ScreenMode screenMode = CHARGE_DETECTION;
+
 
 void setup() {
     Serial.begin(9600);
@@ -88,25 +90,21 @@ void loop() {
         String humidity = String(measuredTempHum.humidity, 2);
 
         // Screen update
-        ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
-
-        // enum ScreenMode screenMode;
-        // screenMode = updateState(screenMode);
-
-        // switch (screenMode) {
-        // case CHARGE_DETECTION:
-        //     // ssd1306_print_transition(screenMode);
-        //     ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
-        //     break;
-        // case CHARGE_INTEGRATION:
-        //     ssd1306_print_transition(screenMode);
-        //     break;
-        // case VAR_SEMPLING_TIME:
-        //     ssd1306_print_transition(screenMode);
-        //     break;
-        // default:
-        //     break;
-        // }
+        screenMode = updateState(screenMode);
+        switch (screenMode) {
+        case CHARGE_DETECTION:
+            // ssd1306_print_transition(screenMode);
+            ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
+            break;
+        case CHARGE_INTEGRATION:
+            // ssd1306_print_transition(screenMode);
+            break;
+        case VAR_SEMPLING_TIME:
+            // ssd1306_print_transition(screenMode);
+            break;
+        default:
+            break;
+        }
 
         // Get and print the output string
         String message;
@@ -137,9 +135,10 @@ enum ScreenMode updateState(enum ScreenMode screenMode) {
  * Check if button1 is pressed. If so, cycle to the next screen mode.
  */
 enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode) {
-    enum ScreenMode newState;
+    enum ScreenMode newState = screenMode;
 
-    if (status.btn1 == 1) {
+    // Button is idle high
+    if (status.btn1 == 0) {
         switch (screenMode) {
         case CHARGE_DETECTION:
             newState = CHARGE_INTEGRATION;
@@ -193,7 +192,7 @@ String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_me
     sht41_calculate(rawData.tempSht41, rawData.humidSht41, &measuredTempHum);
     String temp = String(measuredTempHum.temperature, 2);
     String humidity = String(measuredTempHum.humidity, 2);
-    
+
     message = String(current_measurement.currentInFemtoAmpere) + "," +
             String(rawData.cp1Count) + "," +
             String(rawData.cp2Count) + "," +
@@ -209,7 +208,7 @@ String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_me
 
 /**
  * @brief Convert a uint64_t to a string
- * @param input The input value
+ * @param val The input value
  * @return The string representation of the input value
  * 
  * Especially useful for printing on serial 64-bit values.
