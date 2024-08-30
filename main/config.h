@@ -5,7 +5,7 @@
 // #define DEBUG
 
 // To enable raw output, uncomment the following line:
-// #define RAW_OUTPUT
+#define RAW_OUTPUT
 
 // Clock frequency of the ACCURATE frontend
 #define ACCURATE_CLK 50E6 // 50 MHz
