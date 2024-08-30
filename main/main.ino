@@ -19,6 +19,7 @@
 #include "ltc2471.h"
 
 enum ScreenMode screenMode = CHARGE_DETECTION;
+bool oldBtn1Status = 1;
 
 
 void setup() {
@@ -60,18 +61,6 @@ void setup() {
 #include <math.h>
 
 void loop() {
-    // ----------------------------
-    // TEMPERATURE AND HUMIDITY (from sensor)
-    // ----------------------------
-
-    // If J17 is connected to the MCU, uncomment the first line. If it is connected to the FPGA, uncomment the second line.
-    // TempHumMeasurement measuredTempHum;
-    // measuredTempHum = sht41_read_temp_humidity();
-
-    // ----------------------------
-    // ACCURATE CURRENT MEASUREMENT
-    // ----------------------------
-
     struct rawDataFPGA rawData;
     rawData = fpga_read_data();
 
@@ -79,50 +68,60 @@ void loop() {
     if (rawData.valid) {
         rawData.valid = false;
 
-        // Calculate the current and format it
-        float readCurrent = fpga_calc_current(rawData.charge, DEFAULT_LSB, DEFAULT_PERIOD);
-        CurrentMeasurement current_measurement = fpga_format_current(readCurrent); 
-
-        // Calculate temperature and humidity from raw data
-        TempHumMeasurement measuredTempHum;
-        sht41_calculate(rawData.tempSht41, rawData.humidSht41, &measuredTempHum);
-        String temp = String(measuredTempHum.temperature, 2);
-        String humidity = String(measuredTempHum.humidity, 2);
-
-        // Screen update
-        screenMode = updateState(screenMode);
-        switch (screenMode) {
-        case CHARGE_DETECTION:
-            // ssd1306_print_transition(screenMode);
-            ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp + " C", humidity);
-            break;
-        case CHARGE_INTEGRATION:
-            // ssd1306_print_transition(screenMode);
-            break;
-        case VAR_SEMPLING_TIME:
-            // ssd1306_print_transition(screenMode);
-            break;
-        default:
-            break;
-        }
+        // Update the oled screen
+        updateScreen(rawData);
 
         // Get and print the output string
         String message;
-        message = getOutputString(rawData, current_measurement);
+        message = getOutputString(rawData);
         Serial.println(message);
     }
 }
 
 
 /**
- * @brief Update the screen mode based on the button status
- * @param screenMode The current screen mode
- * @return The new screen mode
+ * @brief Update the screen mode
+ * @param rawData The raw data coming from the FPGA
+ * @return void
+ *
+ * Calculate the cahrge value based on the current screen mode and print it
+ * to display. Check if button 1 got pressed, if so cycle to the next screen
+ * mode.
  */
-enum ScreenMode updateState(enum ScreenMode screenMode) {
+void updateScreen(struct rawDataFPGA rawData) {
     IOstatus status = getPinStatus();
-    enum ScreenMode newState = parseButtons(status, screenMode);
-    return newState;
+    screenMode = parseButtons(status, screenMode);
+
+    // Calculate the current and format it
+    float readCurrent = fpga_calc_current(rawData.charge, DEFAULT_LSB, DEFAULT_PERIOD);
+    CurrentMeasurement current_measurement = fpga_format_current(readCurrent); 
+
+    // Calculate temperature and humidity from raw data
+    TempHumMeasurement measuredTempHum;
+    sht41_calculate(rawData.tempSht41, rawData.humidSht41, &measuredTempHum);
+    String temp = String(measuredTempHum.temperature, 2);
+    String humidity = String(measuredTempHum.humidity, 2);
+
+    Serial.println(screenMode);
+
+
+    // Screen update
+    switch (screenMode) {
+    case CHARGE_DETECTION:
+        // ssd1306_print_transition(screenMode);
+        ssd1306_print_charge(rawData.charge , temp, humidity, "Single sample");
+        break;
+    case CHARGE_INTEGRATION:
+        // ssd1306_print_transition(screenMode);
+        ssd1306_print_charge(rawData.charge , temp, humidity, "Integration");
+        break;
+    case VAR_SEMPLING_TIME:
+        // ssd1306_print_transition(screenMode);
+        ssd1306_print_charge(rawData.charge , temp, humidity, "Multi sample");
+        break;
+    default:
+        break;
+    }
 }
 
 
@@ -138,7 +137,7 @@ enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode)
     enum ScreenMode newState = screenMode;
 
     // Button is idle high
-    if (status.btn1 == 0) {
+    if (status.btn1 == 1 && oldBtn1Status == 0) {
         switch (screenMode) {
         case CHARGE_DETECTION:
             newState = CHARGE_INTEGRATION;
@@ -153,6 +152,7 @@ enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode)
             break;
         }
     }
+    oldBtn1Status = status.btn1;
 
     return newState;
 }
@@ -161,16 +161,12 @@ enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode)
 /**
  * @brief Get the output string to print
  * @param rawData The raw data from the FPGA
- * @param current_measurement The current value
- * @param temp The temperature value
- * @param humidity The humidity calue
- * @param ndx The charge value
  * @return The output string
  * 
  * @note It uses the global flag RAW_OUTPUT, defined in the file config.h,
  * to decide if the output should be raw or formatted.
  */
-String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_measurement) {
+String getOutputString(struct rawDataFPGA rawData) {
     String message;
     struct IOstatus btnLedStatus = getPinStatus();
 
@@ -193,6 +189,10 @@ String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_me
     String temp = String(measuredTempHum.temperature, 2);
     String humidity = String(measuredTempHum.humidity, 2);
 
+    // Calculate the current and format it
+    float readCurrent = fpga_calc_current(rawData.charge, DEFAULT_LSB, DEFAULT_PERIOD);
+    CurrentMeasurement current_measurement = fpga_format_current(readCurrent); 
+
     message = String(current_measurement.currentInFemtoAmpere) + "," +
             String(rawData.cp1Count) + "," +
             String(rawData.cp2Count) + "," +
@@ -208,7 +208,7 @@ String getOutputString(struct rawDataFPGA rawData, CurrentMeasurement current_me
 
 /**
  * @brief Convert a uint64_t to a string
- * @param val The input value
+ * @param input The input value
  * @return The string representation of the input value
  * 
  * Especially useful for printing on serial 64-bit values.
