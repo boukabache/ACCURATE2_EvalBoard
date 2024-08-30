@@ -40,3 +40,13 @@ void ssd1306_print_current_temp_humidity(float current, String current_range, St
  * execution for sec seconds.
  */
 void ssd1306_print_transition(int screenMode);
+
+
+/**
+ * @brief Print the charge value to the display.
+ * @param charge The charge value to print [aC].
+ * @param temp The temperature value to print [°C].
+ * @param humidity The humidity value to print [%].
+ * @param mode The current screen mode.
+ */
+void ssd1306_print_charge(float charge, String temp, String humidity, String mode);

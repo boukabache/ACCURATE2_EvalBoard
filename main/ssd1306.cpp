@@ -32,12 +32,34 @@ void ssd1306_print_current_temp_humidity(float current, String current_range, St
     display.print(" " + current_range);
     display.setCursor(0, 40);
     display.setTextSize(1);
-    display.print("Temperature: ");
+    display.print("T: ");
     display.print(temp);
-    display.setCursor(0, 50);
-    display.print("Humidity: ");
+    display.print(" H: ");
     display.print(humidity);
     display.print(" %");
+    display.setCursor(0, 54);
+    display.print("Mode: SWAG");
+    display.display();
+}
+
+
+void ssd1306_print_charge(float charge, String temp, String humidity, String mode) {
+    display.clearDisplay();
+    display.setTextSize(2);
+    display.setCursor(0, 0);
+    display.print("Charge: ");
+    display.setCursor(0, 20);
+    display.print(charge);
+    display.print(" aC");
+    display.setCursor(0, 40);
+    display.setTextSize(1);
+    display.print("T: ");
+    display.print(temp);
+    display.print(" H: ");
+    display.print(humidity);
+    display.print(" %");
+    display.setCursor(0, 54);
+    display.print("Mode: " + mode);
     display.display();
 }
 
