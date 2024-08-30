@@ -10,6 +10,7 @@
 #include <TimeLib.h>
 #include <stdint.h>
 #include <inttypes.h>
+#include <math.h>
 
 #include "sht41.h"
 #include "dac7578.h"
@@ -23,11 +24,15 @@ bool oldBtn1Status = 1;
 
 
 void setup() {
+    // Init USB-C serial
     Serial.begin(9600);
     while (!Serial);
 
+    // Init FPGA serial
     Serial1.begin(19200, SERIAL_8N1); // No parity, one stop bit
     Serial1.setTimeout(500);
+
+    // Init I2C
     Wire.begin();
 
     // Init LEDs and buttons and set LEDs to off
@@ -44,36 +49,28 @@ void setup() {
     digitalWrite(PIN_LED2, HIGH);
     digitalWrite(PIN_LED3, HIGH);
 
-#ifdef DEBUG
-    Serial.println("Debug mode is ON");
-#endif
 
     // Init screen and DAC
     ssd1306_init();
     dac7578_init();
 
-    // Send configuration to FPGA and DAC
-    // delay(1000); // Wait for the FPGA to boot up
-    // fpga_send_configurations();
-    // dac7578_i2c_send_all_param();
 }
 
-#include <math.h>
-
 void loop() {
+    // Read data from FPGA
     struct rawDataFPGA rawData;
     rawData = fpga_read_data();
 
-    // Only read and update display if there is data available
+    // Only update display and send out data over serial
+    // if there is data available.
     if (rawData.valid) {
         rawData.valid = false;
 
-        // Update the oled screen
+        // Update the ssd1306 screen
         updateScreen(rawData);
 
-        // Get and print the output string
-        String message;
-        message = getOutputString(rawData);
+        // Get and print over serial the output string
+        String message = getOutputString(rawData);
         Serial.println(message);
     }
 }
