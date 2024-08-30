@@ -21,6 +21,8 @@
 
 enum ScreenMode screenMode = CHARGE_DETECTION;
 bool oldBtn1Status = 1;
+bool newModeFlag = false;
+int chargeIntegration = 0;
 
 
 void setup() {
@@ -99,9 +101,6 @@ void updateScreen(struct rawDataFPGA rawData) {
     String temp = String(measuredTempHum.temperature, 2);
     String humidity = String(measuredTempHum.humidity, 2);
 
-    Serial.println(screenMode);
-
-
     // Screen update
     switch (screenMode) {
     case CHARGE_DETECTION:
@@ -109,8 +108,12 @@ void updateScreen(struct rawDataFPGA rawData) {
         ssd1306_print_charge(rawData.charge , temp, humidity, "Single sample");
         break;
     case CHARGE_INTEGRATION:
-        // ssd1306_print_transition(screenMode);
-        ssd1306_print_charge(rawData.charge , temp, humidity, "Integration");
+        if (newModeFlag == true) {
+            newModeFlag = false;
+            chargeIntegration = 0;
+        }
+        chargeIntegration += rawData.charge;
+        ssd1306_print_charge(chargeIntegration, temp, humidity, "Integration");
         break;
     case VAR_SEMPLING_TIME:
         // ssd1306_print_transition(screenMode);
@@ -135,6 +138,9 @@ enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode)
 
     // Button is idle high
     if (status.btn1 == 1 && oldBtn1Status == 0) {
+        // Set flag to signify that we're entering a new screen mode
+        newModeFlag = true;
+
         switch (screenMode) {
         case CHARGE_DETECTION:
             newState = CHARGE_INTEGRATION;
