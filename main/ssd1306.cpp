@@ -9,6 +9,9 @@
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+#include "MathHelpers.h"
+
+char *dtostrf (double val, signed char width, unsigned char prec, char *sout);
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
@@ -47,10 +50,13 @@ void ssd1306_print_charge(float charge, String temp, String humidity, String mod
     display.clearDisplay();
     display.setTextSize(2);
     display.setCursor(0, 0);
-    display.print("Charge: ");
+    display.print("Charge[aC]");
     display.setCursor(0, 20);
-    display.print(charge);
-    display.print(" aC");
+    if (charge < 10000) {
+        display.print(charge);
+    } else {
+        display.print(sci(charge, 3));
+    }
     display.setCursor(0, 40);
     display.setTextSize(1);
     display.print("T: ");
