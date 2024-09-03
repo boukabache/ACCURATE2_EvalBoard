@@ -18,6 +18,7 @@
 #include "fpga.h"
 #include "config.h"
 #include "ltc2471.h"
+#include "serialComPC.h"
 
 enum ScreenMode screenMode = CHARGE_DETECTION;
 bool oldBtn1Status = 1;
@@ -62,6 +63,9 @@ void loop() {
     // Read data from FPGA
     struct rawDataFPGA rawData;
     rawData = fpga_read_data();
+
+    // Read from PC
+    serialReadFromPC();
 
     // Only update display and send out data over serial
     // if there is data available.
