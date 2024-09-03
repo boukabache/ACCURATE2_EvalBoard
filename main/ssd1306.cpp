@@ -50,7 +50,7 @@ void ssd1306_print_charge(float charge, String temp, String humidity, String mod
     display.clearDisplay();
     display.setTextSize(2);
     display.setCursor(0, 0);
-    display.print("Charge[aC]");
+    display.print("Charge[fC]");
     display.setCursor(0, 20);
     if (charge < 10000) {
         display.print(charge);

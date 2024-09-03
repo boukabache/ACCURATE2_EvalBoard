@@ -105,7 +105,7 @@ void updateScreen(struct rawDataFPGA rawData) {
     switch (screenMode) {
     case CHARGE_DETECTION:
         // ssd1306_print_transition(screenMode);
-        ssd1306_print_charge(rawData.charge , temp, humidity, "Single sample");
+        ssd1306_print_charge(rawData.charge / 1000, temp, humidity, "Single sample");
         break;
     case CHARGE_INTEGRATION:
         if (newModeFlag == true) {
@@ -113,7 +113,7 @@ void updateScreen(struct rawDataFPGA rawData) {
             chargeIntegration = 0;
         }
         chargeIntegration += rawData.charge;
-        ssd1306_print_charge(chargeIntegration, temp, humidity, "Integration");
+        ssd1306_print_charge(chargeIntegration / 1000, temp, humidity, "Integration");
         break;
     case VAR_SEMPLING_TIME:
         // ssd1306_print_transition(screenMode);
