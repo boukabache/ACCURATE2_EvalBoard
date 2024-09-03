@@ -51,7 +51,7 @@ package IOPkg is
     constant dacConfigRecordTDefault : dacConfigRecordT := (
         vOutA => "100010001000", -- A1_Vbias1   = 1.6V
         vOutB => "100000000000", -- Vcm         = 1.5V
-        vOutC => "110101010101", -- A1_Vth1     = 1.55V
+        vOutC => "100001000100", -- A1_Vth1     = 1.55V
         vOutD => "110101010101", -- A1_Vcharge+ = 2.5V
         vOutE => "100010001000", -- A1_Vth2     = 1.6V
         vOutF => "110101010101", -- A1_Vth4     = 2.5V
