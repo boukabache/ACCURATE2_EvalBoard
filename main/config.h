@@ -14,11 +14,21 @@
 #define TRANSITION_TIME 3
 
 // SHT41 Settings
-#define SHT41_RD_PERIOD		    1 // periodic read interval [s]
+#define SHT41_RD_PERIOD 1 // periodic read interval [s]
 
 // ACCURATE Constants
 #define DOWNSCALING_FACTOR 10E14
 const float Cf = 5e-12 * DOWNSCALING_FACTOR;
+
+// Default values for the DAC voltage channels, in volts
+#define DEFAULT_VOUTA 1.6
+#define DEFAULT_VOUTB 1.5
+#define DEFAULT_VOUTC 1.55
+#define DEFAULT_VOUTD 2.5
+#define DEFAULT_VOUTE 1.6
+#define DEFAULT_VOUTF 2.5
+#define DEFAULT_VOUTG 1.83
+#define DEFAULT_VOUTH 1.18
 
 
 struct CurrentMeasurement {
