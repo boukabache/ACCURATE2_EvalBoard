@@ -10,58 +10,83 @@
 #include "serialComPC.h"
 
 
-void serialReadFromPC() {
+void serialReadFromPC(struct confParam *conf) {
+    String outMessage = "ERROR!";
     if (Serial.available() >= 3) {
         char command[3];
         Serial.readBytes(command, 3);
 
         // ----------------- SET command -----------------
         if (String(command) == "SET") {
-            Serial.println("SET command received");
+            outMessage = "SET command received -> ";
 
             if (Serial.available() >= 2) {
                 char address[2];
                 Serial.readBytes(address, 2);
 
-                if (String(address) == "01") {
-                    Serial.println("SET INIT_CONFIG command received");
+                if (String(address) == "00") {
+                    if (Serial.available() > 0) {
+                        char value[10];
+                        Serial.readBytesUntil('\n', value, 10);
+                        conf->dac.vOutA = atof(value);
 
-                    if (Serial.available() >= 1) {
-                        char value[1];
-                        Serial.readBytes(value, 1);
+                        outMessage += "vOutA: " + String(conf->dac.vOutA);
+                    }
+                } else if (String(address) == "01") {
+                    if (Serial.available() > 0) {
+                        char value[10];
+                        Serial.readBytesUntil('\n', value, 10);
+                        conf->dac.vOutB = atof(value);
 
-                        Serial.print("Value: ");
-                        Serial.println(value);
+                        outMessage += "vOutB: " + String(conf->dac.vOutB);
                     }
                 } else if (String(address) == "02") {
-                    Serial.println("SET GATE_LENGTH command received");
+                    if (Serial.available() > 0) {
+                        char value[10];
+                        Serial.readBytesUntil('\n', value, 10);
+                        conf->dac.vOutC = atof(value);
 
-                    if (Serial.available() >= 1) {
-                        char value[1];
-                        Serial.readBytes(value, 1);
-
-                        Serial.print("Value: ");
-                        Serial.println(value);
+                        outMessage += "vOutC: " + String(conf->dac.vOutC);
                     }
                 } else if (String(address) == "03") {
-                    Serial.println("SET RST_DURATION command received");
+                    if (Serial.available() > 0) {
+                        char value[10];
+                        Serial.readBytesUntil('\n', value, 10);
+                        conf->dac.vOutD = atof(value);
 
-                    if (Serial.available() >= 1) {
-                        char value[1];
-                        Serial.readBytes(value, 1);
-
-                        Serial.print("Value: ");
-                        Serial.println(value);
+                        outMessage += "vOutD: " + String(conf->dac.vOutD);
                     }
                 } else if (String(address) == "04") {
-                    Serial.println("SET VBIAS1 command received");
+                    if (Serial.available() > 0) {
+                        char value[10];
+                        Serial.readBytesUntil('\n', value, 10);
+                        conf->dac.vOutE = atof(value);
 
-                    if (Serial.available() >= 1) {
-                        char value[1];
-                        Serial.readBytes(value, 1);
+                        outMessage += "vOutE: " + String(conf->dac.vOutE);
+                    }
+                } else if (String(address) == "05") {
+                    if (Serial.available() > 0) {
+                        char value[10];
+                        Serial.readBytesUntil('\n', value, 10);
+                        conf->dac.vOutF = atof(value);
 
-                        Serial.print("Value: ");
-                        Serial.println(value);
+                        outMessage += "vOutF: " + String(conf->dac.vOutF);
+                    }
+                } else if (String(address) == "06") {
+                    if (Serial.available() > 0) {
+                        char value[10];
+                        Serial.readBytesUntil('\n', value, 10);
+                        conf->dac.vOutG = atof(value);
+
+                        outMessage += "vOutG: " + String(conf->dac.vOutG);
+                    }
+                } else if (String(address) == "07") {
+                    if (Serial.available() > 0) {
+                        char value[10];
+                        Serial.readBytesUntil('\n', value, 10);
+                        conf->dac.vOutH = atof(value);
+
+                        outMessage += "vOutH: " + String(conf->dac.vOutH);
                     }
                 }
             }
@@ -69,23 +94,42 @@ void serialReadFromPC() {
 
         // ----------------- DEFAULT command -----------------
         if (String(command) == "DEF") {
-            Serial.println("DEFAULT command received");
+            outMessage = "DEFAULT command received -> ";
 
             if (Serial.available() >= 2) {
                 char address[2];
                 Serial.readBytes(address, 2);
 
-                if (String(address) == "01") {
-                    Serial.println("DEFAULT INIT_CONFIG command received");
+                if (String(address) == "00") {
+                    conf->dac.vOutA = DEFAULT_VOUTA;
+                    outMessage += "vOutA: " + String(conf->dac.vOutA);
+                } else if (String(address) == "01") {
+                    conf->dac.vOutB = DEFAULT_VOUTB;
+                    outMessage += "vOutB: " + String(conf->dac.vOutB);
                 } else if (String(address) == "02") {
-                    Serial.println("DEFAULT GATE_LENGTH command received");
+                    conf->dac.vOutC = DEFAULT_VOUTC;
+                    outMessage += "vOutC: " + String(conf->dac.vOutC);
                 } else if (String(address) == "03") {
-                    Serial.println("DEFAULT RST_DURATION command received");
+                    conf->dac.vOutD = DEFAULT_VOUTD;
+                    outMessage += "vOutD: " + String(conf->dac.vOutD);
                 } else if (String(address) == "04") {
-                    Serial.println("DEFAULT VBIAS1 command received");
+                    conf->dac.vOutE = DEFAULT_VOUTE;
+                    outMessage += "vOutE: " + String(conf->dac.vOutE);
+                } else if (String(address) == "05") {
+                    conf->dac.vOutF = DEFAULT_VOUTF;
+                    outMessage += "vOutF: " + String(conf->dac.vOutF);
+                } else if (String(address) == "06") {
+                    conf->dac.vOutG = DEFAULT_VOUTG;
+                    outMessage += "vOutG: " + String(conf->dac.vOutG);
+                } else if (String(address) == "07") {
+                    conf->dac.vOutH = DEFAULT_VOUTH;
+                    outMessage += "vOutH: " + String(conf->dac.vOutH);
                 }
             }
         }
+
+        // Print the out message
+        Serial.println(outMessage);
 
         // Clear the rest of the serial buffer, if not already empty.
         while (Serial.available()) {
