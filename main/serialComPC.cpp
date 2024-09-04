@@ -24,70 +24,35 @@ void serialReadFromPC(struct confParam *conf) {
                 char address[2];
                 Serial.readBytes(address, 2);
 
+                char value[10];
+                if (Serial.available() > 0) {
+                    Serial.readBytesUntil('\n', value, 10);
+                }
+
                 if (String(address) == "00") {
-                    if (Serial.available() > 0) {
-                        char value[10];
-                        Serial.readBytesUntil('\n', value, 10);
-                        conf->dac.vOutA = atof(value);
-
-                        outMessage += "vOutA: " + String(conf->dac.vOutA);
-                    }
+                    conf->dac.vOutA = atof(value);
+                    outMessage += "vOutA: " + String(conf->dac.vOutA);
                 } else if (String(address) == "01") {
-                    if (Serial.available() > 0) {
-                        char value[10];
-                        Serial.readBytesUntil('\n', value, 10);
-                        conf->dac.vOutB = atof(value);
-
-                        outMessage += "vOutB: " + String(conf->dac.vOutB);
-                    }
+                    conf->dac.vOutB = atof(value);
+                    outMessage += "vOutB: " + String(conf->dac.vOutB);
                 } else if (String(address) == "02") {
-                    if (Serial.available() > 0) {
-                        char value[10];
-                        Serial.readBytesUntil('\n', value, 10);
-                        conf->dac.vOutC = atof(value);
-
-                        outMessage += "vOutC: " + String(conf->dac.vOutC);
-                    }
+                    conf->dac.vOutC = atof(value);
+                    outMessage += "vOutC: " + String(conf->dac.vOutC);
                 } else if (String(address) == "03") {
-                    if (Serial.available() > 0) {
-                        char value[10];
-                        Serial.readBytesUntil('\n', value, 10);
-                        conf->dac.vOutD = atof(value);
-
-                        outMessage += "vOutD: " + String(conf->dac.vOutD);
-                    }
+                    conf->dac.vOutD = atof(value);
+                    outMessage += "vOutD: " + String(conf->dac.vOutD);
                 } else if (String(address) == "04") {
-                    if (Serial.available() > 0) {
-                        char value[10];
-                        Serial.readBytesUntil('\n', value, 10);
-                        conf->dac.vOutE = atof(value);
-
-                        outMessage += "vOutE: " + String(conf->dac.vOutE);
-                    }
+                    conf->dac.vOutE = atof(value);
+                    outMessage += "vOutE: " + String(conf->dac.vOutE);
                 } else if (String(address) == "05") {
-                    if (Serial.available() > 0) {
-                        char value[10];
-                        Serial.readBytesUntil('\n', value, 10);
-                        conf->dac.vOutF = atof(value);
-
-                        outMessage += "vOutF: " + String(conf->dac.vOutF);
-                    }
+                    conf->dac.vOutF = atof(value);
+                    outMessage += "vOutF: " + String(conf->dac.vOutF);
                 } else if (String(address) == "06") {
-                    if (Serial.available() > 0) {
-                        char value[10];
-                        Serial.readBytesUntil('\n', value, 10);
-                        conf->dac.vOutG = atof(value);
-
-                        outMessage += "vOutG: " + String(conf->dac.vOutG);
-                    }
+                    conf->dac.vOutG = atof(value);
+                    outMessage += "vOutG: " + String(conf->dac.vOutG);
                 } else if (String(address) == "07") {
-                    if (Serial.available() > 0) {
-                        char value[10];
-                        Serial.readBytesUntil('\n', value, 10);
-                        conf->dac.vOutH = atof(value);
-
-                        outMessage += "vOutH: " + String(conf->dac.vOutH);
-                    }
+                    conf->dac.vOutH = atof(value);
+                    outMessage += "vOutH: " + String(conf->dac.vOutH);
                 }
             }
         }
