@@ -25,6 +25,9 @@ bool oldBtn1Status = 1;
 bool newModeFlag = false;
 int chargeIntegration = 0;
 
+// Not super happy about this global variable.
+struct confParam conf;
+
 
 void setup() {
     // Init USB-C serial
@@ -65,7 +68,7 @@ void loop() {
     rawData = fpga_read_data();
 
     // Read from PC
-    serialReadFromPC();
+    serialReadFromPC(&conf);
 
     // Only update display and send out data over serial
     // if there is data available.
