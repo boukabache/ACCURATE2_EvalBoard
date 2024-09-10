@@ -33,6 +33,40 @@ arduino-cli lib install "Adafruit SSD1306"
 arduino-cli lib install Time
 ```
 
+## Serial Communication
+The Arduino communicates with the connected computer through the USB serial port. The serial communication is used for sending the measured data to the computer for visualization and analysis. The serial port is configured at a baud rate of 9600 bps.
+
+The serial communication is also used to send commands to the Arduino for controlling the operation of the ACCURATE 2 ASIC and setting configurations variables. The commands are sent as a string with the following format, and a reply from Arduino is always expected:
+```
+<command><address[optional]><value[optional]>
+```
+- `<command>`: The command to be executed. The available commands are:
+    - `SET`: Set a configuration variable. Adress and value are required.
+    - `DEF`: Reset a configuration variable to its default value. Address is required.
+    - `RAW`: Enable or disable raw data output. Value is required.
+
+- `<address>`: The address of the configuration variable to be set or reset. The available addresses are: from `0x00` to `0xFF`.
+
+- `<value>`: The value to be set for the configuration variable. The value is a 9 digit float or a 10 digit integer.
+
+### Example
+To set the configuration variable at address `0x01` to the value `1.23456789`, the following command should be sent:
+```
+SET011.23456789
+```
+To reset the configuration variable at address `0x01` to its default value, the following command should be sent:
+```
+DEF01
+```
+To enable raw data output, the following command should be sent:
+```
+RAW1
+```
+Vice versa, to disable raw data output, the following command should be sent:
+```
+RAW0
+```
+
 ## File Structure
 - `main.ino`: Main Arduino sketch file.
 - `config.h`: Configuration settings and pin definitions.
