@@ -68,29 +68,3 @@ void ssd1306_print_charge(float charge, String temp, String humidity, String mod
     display.print("Mode: " + mode);
     display.display();
 }
-
-void ssd1306_print_transition(int screenMode) {
-    // Prepare the display
-    display.clearDisplay();
-    display.setTextSize(2);
-    display.setCursor(0, 0);
-
-    // Print the correct screen mode
-    switch (screenMode) {
-    case CHARGE_DETECTION:
-        display.print("CHARGE_DETECTION");
-        break;
-    case CHARGE_INTEGRATION:
-        display.print("CHARGE_INTEGRATION");
-        break;
-    case VAR_SEMPLING_TIME:
-        display.print("VAR_SEMPLING_TIME");
-        break;
-    default:
-        display.print("Unknown");
-        break;
-    }
-
-    // Hold it on screen for sec seconds
-    delay(TRANSITION_TIME * 1000);
-}

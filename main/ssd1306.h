@@ -31,16 +31,6 @@ void ssd1306_init();
 
 void ssd1306_print_current_temp_humidity(float current, String current_range, String temp, String humidity);
 
-/**
- * @brief Print the screen mode to the display for sec seconds.
- * 
- * @param screenMode The screen mode to print.
- * 
- * @warning This function contains a delay call! It will block the
- * execution for sec seconds.
- */
-void ssd1306_print_transition(int screenMode);
-
 
 /**
  * @brief Print the charge value to the display.
