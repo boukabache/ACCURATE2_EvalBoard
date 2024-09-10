@@ -109,18 +109,18 @@ void updateScreen(struct rawDataFPGA rawData) {
     String humidity = String(measuredTempHum.humidity, 2);
 
     // Screen update
+    float chargefA = (rawData.charge * DEFAULT_LSB) / 1000;
     switch (screenMode) {
     case CHARGE_DETECTION:
-        // ssd1306_print_transition(screenMode);
-        ssd1306_print_charge(rawData.charge / 1000, temp, humidity, "Single sample");
+        ssd1306_print_charge(chargefA, temp, humidity, "Single sample");
         break;
     case CHARGE_INTEGRATION:
         if (newModeFlag == true) {
             newModeFlag = false;
             chargeIntegration = 0;
         }
-        chargeIntegration += rawData.charge;
-        ssd1306_print_charge(chargeIntegration / 1000, temp, humidity, "Integration");
+        chargeIntegration += chargefA;
+        ssd1306_print_charge(chargeIntegration, temp, humidity, "Integration");
         break;
     case VAR_SEMPLING_TIME:
         // ssd1306_print_transition(screenMode);
