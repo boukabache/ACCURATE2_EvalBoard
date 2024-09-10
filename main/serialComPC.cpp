@@ -93,6 +93,25 @@ void serialReadFromPC(struct confParam *conf) {
             }
         }
 
+
+        // ----------------- RAW_OUTPUT command -----------------
+        if (String(command) == "RAW") {
+            outMessage = "RAW OUTPUT -> ";
+
+            if (Serial.available() >= 1) {
+                char value;
+                value = Serial.read();
+
+                if (value == '1') {
+                    outMessage += "ENABLED";
+                    rawOutputFlag = true;
+                } else if (value == '0') {
+                    outMessage += "DISABLED";
+                    rawOutputFlag = false;
+                }
+            }
+        }
+
         // Print the out message
         Serial.println(outMessage);
 
