@@ -28,6 +28,9 @@ int chargeIntegration = 0;
 // Not super happy about this global variable.
 struct confParam conf;
 
+// Extern variable definition
+bool rawOutputFlag = true;
+
 
 void setup() {
     // Init USB-C serial
@@ -180,38 +183,38 @@ String getOutputString(struct rawDataFPGA rawData) {
     String message;
     struct IOstatus btnLedStatus = getPinStatus();
 
-#ifdef RAW_OUTPUT
-    message = uint64ToString(rawData.charge) + "," +
-            String(rawData.cp1Count) + "," +
-            String(rawData.cp2Count) + "," +
-            String(rawData.cp3Count) + "," +
-            String(rawData.cp1LastInterval) + "," +
-            String(rawData.tempSht41) + "," +
-            String(rawData.humidSht41) + "," +
-            btnLedStatus.status;
-#else
-    // Calculate the last activation time
-    float lastActivationTime = (rawData.cp1LastInterval + 1) * 1/ACCURATE_CLK;
+    if (rawOutputFlag) {
+        message = uint64ToString(rawData.charge) + "," +
+                String(rawData.cp1Count) + "," +
+                String(rawData.cp2Count) + "," +
+                String(rawData.cp3Count) + "," +
+                String(rawData.cp1LastInterval) + "," +
+                String(rawData.tempSht41) + "," +
+                String(rawData.humidSht41) + "," +
+                btnLedStatus.status;
+    } else {
+        // Calculate the last activation time
+        float lastActivationTime = (rawData.cp1LastInterval + 1) * 1/ACCURATE_CLK;
 
-    // Calculate temperature and humidity
-    TempHumMeasurement measuredTempHum;
-    sht41_calculate(rawData.tempSht41, rawData.humidSht41, &measuredTempHum);
-    String temp = String(measuredTempHum.temperature, 2);
-    String humidity = String(measuredTempHum.humidity, 2);
+        // Calculate temperature and humidity
+        TempHumMeasurement measuredTempHum;
+        sht41_calculate(rawData.tempSht41, rawData.humidSht41, &measuredTempHum);
+        String temp = String(measuredTempHum.temperature, 2);
+        String humidity = String(measuredTempHum.humidity, 2);
 
-    // Calculate the current and format it
-    float readCurrent = fpga_calc_current(rawData.charge, DEFAULT_LSB, DEFAULT_PERIOD);
-    CurrentMeasurement current_measurement = fpga_format_current(readCurrent); 
+        // Calculate the current and format it
+        float readCurrent = fpga_calc_current(rawData.charge, DEFAULT_LSB, DEFAULT_PERIOD);
+        CurrentMeasurement current_measurement = fpga_format_current(readCurrent); 
 
-    message = String(current_measurement.currentInFemtoAmpere) + "," +
-            String(rawData.cp1Count) + "," +
-            String(rawData.cp2Count) + "," +
-            String(rawData.cp3Count) + "," +
-            String(lastActivationTime) + "," +
-            String(temp) + "," +
-            String(humidity) + "," +
-            btnLedStatus.status;
-#endif
+        message = String(current_measurement.currentInFemtoAmpere) + "," +
+                String(rawData.cp1Count) + "," +
+                String(rawData.cp2Count) + "," +
+                String(rawData.cp3Count) + "," +
+                String(lastActivationTime) + "," +
+                String(temp) + "," +
+                String(humidity) + "," +
+                btnLedStatus.status;
+    }
     return message;
 }
 

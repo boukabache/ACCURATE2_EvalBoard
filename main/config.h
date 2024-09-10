@@ -1,17 +1,17 @@
+/**
+ * @file config.h
+ * @brief File containing the configuration parameters for the evaluation board operations.
+ * @author Mattia Consani
+ */
+
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// Uncomment the following line to enable debug mode
-// #define DEBUG
-
-// To enable raw output, uncomment the following line:
-#define RAW_OUTPUT
+// Raw output flag
+extern bool rawOutputFlag;
 
 // Clock frequency of the ACCURATE frontend
 #define ACCURATE_CLK 50E6 // 50 MHz
-
-// Hold display time for the transition screen
-#define TRANSITION_TIME 3
 
 // SHT41 Settings
 #define SHT41_RD_PERIOD 1 // periodic read interval [s]
