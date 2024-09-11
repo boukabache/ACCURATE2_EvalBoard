@@ -103,7 +103,7 @@ void updateScreen(struct rawDataFPGA rawData) {
 
     // Calculate the current and format it
     float readCurrent = fpga_calc_current(rawData.charge, DEFAULT_LSB, DEFAULT_PERIOD);
-    CurrentMeasurement current_measurement = fpga_format_current(readCurrent); 
+    CurrentMeasurement current_measurement = fpga_format_current(readCurrent);
 
     // Calculate temperature and humidity from raw data
     TempHumMeasurement measuredTempHum;
@@ -175,7 +175,7 @@ enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode)
  * @brief Get the output string to print
  * @param rawData The raw data from the FPGA
  * @return The output string
- * 
+ *
  * @note It uses the global flag RAW_OUTPUT, defined in the file config.h,
  * to decide if the output should be raw or formatted.
  */
@@ -188,13 +188,15 @@ String getOutputString(struct rawDataFPGA rawData) {
                 String(rawData.cp1Count) + "," +
                 String(rawData.cp2Count) + "," +
                 String(rawData.cp3Count) + "," +
-                String(rawData.cp1LastInterval) + "," +
+                String(rawData.cp1StartInterval) + "," +
+                String(rawData.cp1EndInterval) + "," +
                 String(rawData.tempSht41) + "," +
                 String(rawData.humidSht41) + "," +
                 btnLedStatus.status;
     } else {
-        // Calculate the last activation time
-        float lastActivationTime = (rawData.cp1LastInterval + 1) * 1/ACCURATE_CLK;
+        // Calculate the time intervals
+        float startIntervalTime = (rawData.cp1StartInterval + 1) * 1/ACCURATE_CLK;
+        float endIntervalTime = (rawData.cp1EndInterval + 1) * 1/ACCURATE_CLK;
 
         // Calculate temperature and humidity
         TempHumMeasurement measuredTempHum;
@@ -204,13 +206,14 @@ String getOutputString(struct rawDataFPGA rawData) {
 
         // Calculate the current and format it
         float readCurrent = fpga_calc_current(rawData.charge, DEFAULT_LSB, DEFAULT_PERIOD);
-        CurrentMeasurement current_measurement = fpga_format_current(readCurrent); 
+        CurrentMeasurement current_measurement = fpga_format_current(readCurrent);
 
         message = String(current_measurement.currentInFemtoAmpere) + "," +
                 String(rawData.cp1Count) + "," +
                 String(rawData.cp2Count) + "," +
                 String(rawData.cp3Count) + "," +
-                String(lastActivationTime) + "," +
+                String(startIntervalTime) + "," +
+                String(endIntervalTime) + "," +
                 String(temp) + "," +
                 String(humidity) + "," +
                 btnLedStatus.status;
@@ -223,7 +226,7 @@ String getOutputString(struct rawDataFPGA rawData) {
  * @brief Convert a uint64_t to a string
  * @param input The input value
  * @return The string representation of the input value
- * 
+ *
  * Especially useful for printing on serial 64-bit values.
  */
 String uint64ToString(uint64_t val) {
