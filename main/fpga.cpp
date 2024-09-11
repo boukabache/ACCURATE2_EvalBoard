@@ -12,7 +12,8 @@ rawDataFPGA fpga_read_data() {
     char cp1CountRaw[4];
     char cp2CountRaw[4];
     char cp3CountRaw[4];
-    char cp1LastIntervalRaw[5];
+    char cp1StartIntervalRaw[4];
+    char cp1EndIntervalRaw[4];
     char temperatureRaw[2];
     char humidityRaw[2];
 
@@ -40,8 +41,11 @@ rawDataFPGA fpga_read_data() {
         Serial1.readBytes(cp3CountRaw, 4);
         data.cp3Count = *(uint32_t*) cp3CountRaw;
 
-        Serial1.readBytes(cp1LastIntervalRaw, 5);
-        data.cp1LastInterval = *(uint32_t*) cp1LastIntervalRaw;
+        Serial1.readBytes(cp1StartIntervalRaw, 4);
+        data.cp1StartInterval = *(uint32_t*) cp1StartIntervalRaw;
+
+        Serial1.readBytes(cp1EndIntervalRaw, 4);
+        data.cp1EndInterval = *(uint32_t*) cp1EndIntervalRaw;
 
         Serial1.readBytes(temperatureRaw, 2);
         data.tempSht41 = *(uint16_t*) temperatureRaw;
