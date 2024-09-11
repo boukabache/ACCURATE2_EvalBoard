@@ -22,8 +22,6 @@ entity accurateFrontend is
         -- width is 24 because ceil(log2(0.1 second / 10 nano second)) = 24
         countBitwidthG : integer := 24;
         chargeQuantaBitwidthG : integer := 18;
-        -- 2^n slow down factor.
-        countTimeIntervalSlowFactorG : integer := 0;
         -- Bitwidth for countTimeInterval
         countTimeIntervalBitwidthG : integer := 24;
         -- If '1' smaller feature set implemented for accurateHW (no cooldown, no singly)
@@ -48,8 +46,13 @@ entity accurateFrontend is
         --! Number of activation of the charge pump3 during the last sampling interval
         cp3CountxDO : out unsigned(countBitwidthG - 1 downto 0);
 
-        --! Number of cycles in between the last two activation of cp1 - 1
-        cp1LastIntervalxDO : out unsigned(countTimeIntervalBitwidthG - 1 downto 0);
+        --! Number of cycles since the start of the sample and the first activation of cp1 - 1.
+        --! Maximum value if no activation.
+        cp1StartIntervalxDO : out unsigned(countTimeIntervalBitwidthG - 1 downto 0);
+
+        --! Number of cycles since the last activation of cp1 and the end of the sample - 1.
+        --! Maximum value if no activation.
+        cp1EndIntervalxDO : out unsigned(countTimeIntervalBitwidthG - 1 downto 0);
 
         --! Change in voltage over the last Interval period or MAX if OTA is reset
         chargeMeasurementxDO : out signed(countBitwidthG + chargeQuantaBitwidthG + 2 - 1 downto 0);
@@ -79,10 +82,26 @@ entity accurateFrontend is
 end entity accurateFrontend;
 
 architecture behavior of accurateFrontend is
+    function to_std_logic(b : boolean) return std_logic is
+    begin
+        if b then
+            return '1';
+        else
+            return '0';
+        end if;
+    end function;
 
     signal cp1Activated : std_logic := '0';
+    signal cp1Activated1xDP : std_logic := '0';
+    signal cp1Activated2xDP : std_logic := '0';
+    signal cp1Activated3xDP : std_logic := '0';
     signal cp2Activated : std_logic := '0';
+    signal cp2ActivatedxDP : std_logic := '0';
     signal cp3Activated : std_logic := '0';
+    signal cp3ActivatedxDP : std_logic := '0';
+
+    signal cp1ActivationThisSamplexDN, cp1ActivationThisSamplexDP : std_logic := '0';
+    signal cp1ActivationThisSamplexDP2 : std_logic := '0';
 
     signal cp1CountAcc : unsigned(countBitwidthG - 1 downto 0) := (others => '0');
     signal cp2CountAcc : unsigned(countBitwidthG - 1 downto 0) := (others => '0');
@@ -91,26 +110,34 @@ architecture behavior of accurateFrontend is
     signal cp2CountSys : unsigned(countBitwidthG - 1 downto 0) := (others => '0');
     signal cp3CountSys : unsigned(countBitwidthG - 1 downto 0) := (others => '0');
 
-    signal cp1LastIntervalAcc : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
-    signal cp1LastIntervalSys : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
+    signal cp1EndIntervalAcc : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
+    signal cp1EndIntervalSys : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
+
+    signal cp1StartIntervalAccxDN, cp1StartIntervalAccxDP : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
+    signal cp1StartIntervalCounter : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
+    signal cp1StartIntervalSys : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
 
     -- As we sum three chargesum channels, we can add two bits and never have overflow
     constant channelChargeSumBitwidthC : integer := cp1CountAcc'length + configxDI.chargeQuantaCP1'length;
     constant chargeSumBitwidthC : integer := channelChargeSumBitwidthC + 2;
     signal chargeSum : signed(chargeSumBitwidthC - 1 downto 0) := (others => '0');
 
-    signal sampleAcc : std_logic;
+    signal sampleAcc : std_logic := '0';
+    signal sampleAccxDP : std_logic := '0';
+    signal sampleAccxDP2 : std_logic := '0';
 
-    signal measurementReadyAcc : std_logic;
-    signal measurementReadySys : std_logic;
+    signal measurementReadyAcc : std_logic := '0';
+    signal measurementReadySys : std_logic := '0';
     signal measurementReadySysxDP : std_logic_vector(1 downto 0) := (others => '0');
 
-    signal measurementDataTmpSys : std_logic_vector(cp1CountSys'length * 3 + countTimeIntervalBitwidthG - 1 downto 0);
+    constant measurementBitwidthC : integer := countBitwidthG * 3 + countTimeIntervalBitwidthG * 2;
+
+    signal measurementDataTmpSys : std_logic_vector(measurementBitwidthC - 1 downto 0) := (others => '0');
 
     signal configValidatedxDP, configValidatedxDN : accurateRecordT;
     signal configAcc : accurateRecordT;
 
-    signal previousCycleResetxDP, previousCycleResetxDN : std_logic;
+    signal previousCycleResetxDP, previousCycleResetxDN : std_logic := '0';
 
     -- below is a hack. This should be made cleaner.
     -- As the frontend currently cannot generate negative current, we indicate
@@ -119,7 +146,7 @@ architecture behavior of accurateFrontend is
     -- interface now.
     constant largeVoltageSfixed : signed(chargeMeasurementxDO'range) := (others => '1');
 
-    signal resetOTAxDP, resetOTAxDN : std_logic;
+    signal resetOTAxDP, resetOTAxDN : std_logic := '0';
 begin
 
     mult_accumulatorE : entity work.mult_accumulator
@@ -166,9 +193,47 @@ begin
         end if;
     end process regP20;
 
+    cp1ActivationThisSamplexDN <= '1' when cp1Activated else
+                                  '0' when sampleAccxDP else
+                                  cp1ActivationThisSamplexDP;
+
+    regP100 : process (clk100)
+    begin
+        if rising_edge(clk100) then
+            if (rst = '1') then
+                sampleAccxDP <= '0';
+                sampleAccxDP2 <= '0';
+                cp1Activated1xDP <= '0';
+                cp1Activated2xDP <= '0';
+                cp1Activated3xDP <= '0';
+                cp2ActivatedxDP <= '0';
+                cp3ActivatedxDP <= '0';
+
+                cp1ActivationThisSamplexDP <= '0';
+                cp1ActivationThisSamplexDP2 <= '0';
+
+                cp1StartIntervalAccxDP <= (others => '0');
+            else
+                sampleAccxDP <= sampleAcc;
+                sampleAccxDP2 <= sampleAccxDP;
+                cp1Activated1xDP <= cp1Activated;
+                cp1Activated2xDP <= cp1Activated;
+                cp1Activated3xDP <= cp1Activated;
+                cp2ActivatedxDP <= cp2Activated;
+                cp3ActivatedxDP <= cp3Activated;
+
+                cp1ActivationThisSamplexDP <= cp1ActivationThisSamplexDN;
+                cp1ActivationThisSamplexDP2 <= cp1ActivationThisSamplexDP;
+
+                cp1StartIntervalAccxDP <= cp1StartIntervalAccxDN;
+            end if;
+        end if;
+    end process regP100;
+
+
     accurateCDC_E : entity work.accurateCDC
         generic map (
-            measurementWidthG => countBitwidthG * 3 + countTimeIntervalBitwidthG
+            measurementWidthG => countBitwidthG * 3 + countTimeIntervalBitwidthG * 2
         )
         port map (
             clk20  => clk20,
@@ -179,19 +244,24 @@ begin
             sampleAccxDO => sampleAcc,
 
             measurementDataSysxDO => measurementDataTmpSys,
-            measurementDataAccxDI => std_logic_vector(cp1LastIntervalAcc) &
+            measurementDataAccxDI => std_logic_vector(cp1StartIntervalAccxDP) &
+                                     std_logic_vector(cp1EndIntervalAcc) &
                                      std_logic_vector(cp3CountAcc) &
                                      std_logic_vector(cp2CountAcc) &
                                      std_logic_vector(cp1CountAcc),
 
             measurementReadySysxDO => measurementReadySys,
-            measurementReadyAccxDI => measurementReadyAcc,
+            measurementReadyAccxDI => sampleAccxDP2,
 
             accurateConfigSysxDI => configValidatedxDP,
             accurateConfigAccxDO => configAcc
         );
 
-    cp1LastIntervalSys <= unsigned(measurementDataTmpSys(countBitwidthG * 3 +
+    cp1StartIntervalSys <= unsigned(measurementDataTmpSys(countBitwidthG * 3 +
+                                                          countTimeIntervalBitwidthG * 2 - 1
+                                                              downto countBitwidthG * 3 + countTimeIntervalBitwidthG));
+
+    cp1EndIntervalSys <= unsigned(measurementDataTmpSys(countBitwidthG * 3 +
                                                          countTimeIntervalBitwidthG - 1 downto countBitwidthG * 3));
 
     cp3CountSys <= unsigned(measurementDataTmpSys(cp1CountSys'length +
@@ -234,40 +304,93 @@ begin
             enableCP3xDO => enableCP3xDO
         );
 
-    ACCURATE_COUNTER : entity work.accurateCounter
+    CP1_COUNTER : entity work.sampleResetCounter
         generic map (
-            countBitwidthG => countBitwidthG
+            countBitwidthG => countBitwidthG,
+            slowFactorG => 0
         )
         port map (
             clk => clk100,
             rst => rst,
             samplexDI => sampleAcc,
-            cp1CountxDO => cp1CountAcc,
-            cp2CountxDO => cp2CountAcc,
-            cp3CountxDO => cp3CountAcc,
-            cpCountsReadyxDO => measurementReadyAcc,
-            overflowErrorxDO => open,
-            cp1ActivatedxDI => cp1Activated,
-            cp2ActivatedxDI => cp2Activated,
-            cp3ActivatedxDI => cp3Activated
+            resetxDI => sampleAcc,
+            incrementxDI => cp1Activated1xDP,
+            resultxDO => cp1CountAcc,
+            overflowxDO => open
         );
 
-
-    TIME_INTERVAL_COUNTER : entity work.timeIntervalCounter
+    CP2_COUNTER : entity work.sampleResetCounter
         generic map (
-            countBitwidthG => countTimeIntervalBitwidthG,
-            slowFactorG => countTimeIntervalSlowFactorG
+            countBitwidthG => countBitwidthG,
+            slowFactorG => 0
         )
         port map (
             clk => clk100,
             rst => rst,
-            inxDI => cp1Activated or sampleAcc,
-            lastIntervalDurationxDO => cp1LastIntervalAcc
+            samplexDI => sampleAcc,
+            resetxDI => sampleAcc,
+            incrementxDI => cp2ActivatedxDP,
+            resultxDO => cp2CountAcc,
+            overflowxDO => open
+        );
+
+    CP3_COUNTER : entity work.sampleResetCounter
+        generic map (
+            countBitwidthG => countBitwidthG,
+            slowFactorG => 0
+        )
+        port map (
+            clk => clk100,
+            rst => rst,
+            samplexDI => sampleAcc,
+            resetxDI => sampleAcc,
+            incrementxDI => cp3ActivatedxDP,
+            resultxDO => cp3CountAcc,
+            overflowxDO => open
+        );
+
+    START_INTERVAL_COUNTER : entity work.sampleResetCounter
+        generic map (
+            countBitwidthG => countTimeIntervalBitwidthG,
+            slowFactorG => 0
+        )
+        port map (
+            clk => clk100,
+            rst => rst,
+            samplexDI => to_std_logic(cp1Activated2xDP = '1' and cp1CountAcc = 0),
+            resetxDI => sampleAcc,
+            incrementxDI => '1',
+            resultxDO => cp1StartIntervalCounter,
+            overflowxDO => open
+        );
+
+    -- If there was no activation during this sample, we can output the maximum
+    -- value by piggy-backing off the end counter. This avoids needing to know
+    -- how much time there is between samples.
+    cp1StartIntervalAccxDN <= cp1StartIntervalCounter when cp1ActivationThisSamplexDP = '1' and sampleAccxDP = '1' else
+                              cp1EndIntervalAcc when sampleAccxDP = '1' else
+                              cp1StartIntervalAccxDP;
+
+    END_INTERVAL_COUNTER : entity work.sampleResetCounter
+        generic map (
+            countBitwidthG => countTimeIntervalBitwidthG,
+            slowFactorG => 0
+        )
+        port map (
+            clk => clk100,
+            rst => rst,
+            samplexDI => sampleAcc,
+            resetxDI => sampleAcc or cp1Activated3xDP,
+            incrementxDI => '1',
+            resultxDO => cp1EndIntervalAcc,
+            overflowxDO => open
         );
 
     resetOTAxDO <= resetOTAxDP;
 
-    cp1LastIntervalxDO <= cp1LastIntervalSys;
+    cp1StartIntervalxDO <= cp1StartIntervalSys;
+
+    cp1EndIntervalxDO <= cp1EndIntervalSys;
 
     cp1CountxDO <= cp1CountSys;
     cp2CountxDO <= cp2CountSys;
