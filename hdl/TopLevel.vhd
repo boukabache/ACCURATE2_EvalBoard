@@ -159,15 +159,16 @@ architecture rtl of TopLevel is
     signal cp1Count : unsigned(24 - 1 downto 0);
     signal cp2Count : unsigned(24 - 1 downto 0);
     signal cp3Count : unsigned(24 - 1 downto 0);
-    signal cp1LastInterval : unsigned(24-1 downto 0);
+    signal cp1StartInterval : unsigned(24 - 1 downto 0);
+    signal cp1EndInterval : unsigned(24 - 1 downto 0);
 
     -- Window generator signals
     signal wind100ms           : std_logic; -- 100ms window
 
 
     -- RegisterFile signals
-    signal registerFileAddress, registerFileAddressMcu, registerFileAddressUsb       : unsigned(registerFileAddressWidthC-1 downto 0);
-    signal registerFileData, registerFileDataMcu, registerFileDataUsb                : std_logic_vector(registerFileDataWidthC-1 downto 0);
+    signal registerFileAddress, registerFileAddressMcu, registerFileAddressUsb       : unsigned(registerFileAddressWidthC - 1 downto 0);
+    signal registerFileData, registerFileDataMcu, registerFileDataUsb                : std_logic_vector(registerFileDataWidthC - 1 downto 0);
     signal registerFileDataValid, registerFileDataValidMcu, registerFileDataValidUsb : std_logic;
     ----------------------
 
@@ -270,9 +271,6 @@ begin
     -- Note: we are short on carry resources. I make sacrifices to make it fit with the generics
     accurateFrontendE : entity work.accurateFrontend
         generic map (
-            -- 2^n slow down factor. Precision we'd like is ~10us @ 40MHz = ~ 512 = 2^9
-            countTimeIntervalSlowFactorG => 0,
-            -- width is 37 because ceil(log2(200fC/10fA * 40MHz/512)) = 26 + 1 bit for error/sign bit
             countTimeIntervalBitwidthG => 24
         )
         port map (
@@ -292,7 +290,8 @@ begin
             cp2CountxDO => cp2Count,
             cp3CountxDO => cp3Count,
 
-            cp1LastIntervalxDO => cp1LastInterval,
+            cp1StartIntervalxDO => cp1StartInterval,
+            cp1EndIntervalxDO => cp1EndInterval,
 
             -- ACCURATE physical I/Os
             -- Comparators inputs
@@ -336,7 +335,7 @@ begin
             baudRateG => 19_200,
             parityG => 0,
             parityEoG => '0',
-            txMessageLengthG => 28,
+            txMessageLengthG => 31,
             uartBusWidthG => 8,
             rxMessageLengthG => 6,
             rxMessageHeaderG => x"DD",
@@ -353,7 +352,8 @@ begin
             txSendMessagexDI => voltageChangeRdy,
             txMessagexDI => sht41Meas.humidity &
                             sht41Meas.temperature &
-                            std_logic_vector(resize(cp1LastInterval, 40)) &
+                            std_logic_vector(resize(cp1EndInterval, 32)) &
+                            std_logic_vector(resize(cp1StartInterval, 32)) &
                             std_logic_vector(resize(cp3Count, 32)) &
                             std_logic_vector(resize(cp2Count, 32)) &
                             std_logic_vector(resize(cp1Count, 32)) &
