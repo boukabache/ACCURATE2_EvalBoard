@@ -177,6 +177,7 @@ architecture rtl of TopLevel is
 
     signal registerFileRequestError : std_logic := '0';
     signal enableDataStreamUart : std_logic := '0';
+    signal uartTx : std_logic := '1';
 begin
     -------------------------- PHASE LOCKED LOOP ------------------------------------
     -- From: 100MHz
@@ -345,7 +346,7 @@ begin
             clk => clkGlobal,
             rst => '0',
 
-            txxDO => txUartMcuxDO,
+            txxDO => uartTx,
             rxxDI => rxUartMcuxDI,
             -- FIXME
             allowRespondToRxxDI => not enableDataStreamUart,
@@ -365,6 +366,8 @@ begin
             rxMessageValidxDO => rxMessageValid,
             rxMessageInvalidxDI => registerFileRequestError
     );
+    txUartMcuxDO <= uartTx;
+    txUartUsbxDO <= uartTx;
 
     ------------------------- CONFIG REGISTER FILE -----------------------------
     -- Contains the configuration registers for the DAC7578 and ACCURATE
@@ -457,5 +460,4 @@ begin
             master_rxDataWLengthxDO => i2cMasterRxDataWLength
         );
 
-        txUartUsbxDO <= '1';
 end architecture rtl;
