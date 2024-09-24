@@ -69,7 +69,7 @@ accurate_2A_eval_native.upload_port.2.pid=0x824d
 accurate_2A_eval_native.upload_port.3.vid=0x2341
 accurate_2A_eval_native.upload_port.3.pid=0x024d
 accurate_2A_eval_native.upload_port.4.board=arduino_zero_native
-accurate_2A_eval_native.upload.protocol=sam-ba
+
 
 accurate_2A_eval_native.upload.tool=bossac
 accurate_2A_eval_native.upload.tool.default=bossac
@@ -77,8 +77,8 @@ accurate_2A_eval_native.upload.tool.network=arduino_ota
 accurate_2A_eval_native.upload.protocol=sam-ba
 accurate_2A_eval_native.upload.maximum_size=262144
 accurate_2A_eval_native.upload.maximum_data_size=32768
-accurate_2A_eval_native.upload.use_1200bps_touch=true
-accurate_2A_eval_native.upload.wait_for_upload_port=true
+accurate_2A_eval_native.upload.use_1200bps_touch=false
+accurate_2A_eval_native.upload.wait_for_upload_port=false
 accurate_2A_eval_native.upload.native_usb=true
 accurate_2A_eval_native.build.mcu=cortex-m0plus
 accurate_2A_eval_native.build.f_cpu=48000000L
