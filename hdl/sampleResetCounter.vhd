@@ -27,11 +27,11 @@ entity sampleResetCounter is
         rst : in  std_logic; --! Synchronous reset
 
         --! Samples the current value of the counter and ouputs it next cycle
-        samplexDI : in std_logic;
+        samplexDI : in  std_logic;
         --! Reset the counter to zero
-        resetxDI : in std_logic;
+        resetxDI : in  std_logic;
         --! Increments the counter
-        incrementxDI : in std_logic;
+        incrementxDI : in  std_logic;
 
         --! Number of activation of cp1 in the last samplexDI interval
         resultxDO : out unsigned (countBitwidthG - 1 downto 0);
@@ -90,7 +90,7 @@ begin
             axDI   => counterxDP,
             sumxDO => nextCount,
             overflowxDO => overflowIncrement
-    );
+        );
 
     stageNumberxDN <= 0 when incrementxDI = '1' and (counterxDP >= slowFactorG) else
                       stageNumberxDP + 1 when stageNumberxDP /= slowFactorG + 1 else
@@ -114,8 +114,8 @@ begin
     resultxDO <= resultxDP;
     overflowxDO <= overflowxDP;
 
-    default clock is rising_edge(clk);
-    INITIAL_RESET : restrict {not rst[+]};
+    -- default clock is rising_edge(clk);
+    -- INITIAL_RESET : restrict {not rst[+]};
 
     -- pIncrement : assert always (incrementxDI and not resetxDI) |=> ((counterxDP = prev(counterxDP) + 1));
     -- pReset0 : assert always (resetxDI and not incrementxDI) |=> (counterxDP = 0);

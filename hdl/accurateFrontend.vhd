@@ -82,14 +82,14 @@ entity accurateFrontend is
 end entity accurateFrontend;
 
 architecture behavior of accurateFrontend is
-    function to_std_logic(b : boolean) return std_logic is
+    function to_std_logic (b : boolean) return std_logic is
     begin
-        if b then
+        if (b) then
             return '1';
         else
             return '0';
         end if;
-    end function;
+    end function to_std_logic;
 
     signal cp1Activated : std_logic := '0';
     signal cp1Activated1xDP : std_logic := '0';
@@ -113,6 +113,8 @@ architecture behavior of accurateFrontend is
     signal cp1EndIntervalAcc : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
     signal cp1EndIntervalSys : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
 
+    signal cp1FirstPulsexDP, cp1FirstPulsexDN : std_logic := '0';
+
     signal cp1StartIntervalAccxDN, cp1StartIntervalAccxDP : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
     signal cp1StartIntervalCounter : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
     signal cp1StartIntervalSys : unsigned(countTimeIntervalBitwidthG - 1 downto 0) := (others => '0');
@@ -126,7 +128,6 @@ architecture behavior of accurateFrontend is
     signal sampleAccxDP : std_logic := '0';
     signal sampleAccxDP2 : std_logic := '0';
 
-    signal measurementReadyAcc : std_logic := '0';
     signal measurementReadySys : std_logic := '0';
     signal measurementReadySysxDP : std_logic_vector(1 downto 0) := (others => '0');
 
@@ -209,6 +210,8 @@ begin
                 cp2ActivatedxDP <= '0';
                 cp3ActivatedxDP <= '0';
 
+                cp1FirstPulsexDP <= '0';
+
                 cp1ActivationThisSamplexDP <= '0';
                 cp1ActivationThisSamplexDP2 <= '0';
 
@@ -221,6 +224,8 @@ begin
                 cp1Activated3xDP <= cp1Activated;
                 cp2ActivatedxDP <= cp2Activated;
                 cp3ActivatedxDP <= cp3Activated;
+
+                cp1FirstPulsexDP <= cp1FirstPulsexDN;
 
                 cp1ActivationThisSamplexDP <= cp1ActivationThisSamplexDN;
                 cp1ActivationThisSamplexDP2 <= cp1ActivationThisSamplexDP;
@@ -357,12 +362,17 @@ begin
         port map (
             clk => clk100,
             rst => rst,
-            samplexDI => to_std_logic(cp1Activated2xDP = '1' and cp1CountAcc = 0),
+            samplexDI => to_std_logic((cp1FirstPulsexDP = '0' and cp1FirstPulsexDN = '1') or (sampleAcc = '1' and cp1Activated2xDP = '1')),
             resetxDI => sampleAcc,
             incrementxDI => '1',
             resultxDO => cp1StartIntervalCounter,
             overflowxDO => open
         );
+
+    cp1FirstPulsexDN <= '1' when sampleAcc = '1' and cp1Activated2xDP = '1' else --corner case
+                        '0' when sampleAcc = '1' else
+                        '1' when cp1Activated2xDP = '1' else
+                        cp1FirstPulsexDP;
 
     -- If there was no activation during this sample, we can output the maximum
     -- value by piggy-backing off the end counter. This avoids needing to know
