@@ -7,6 +7,50 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+
+/**
+ * @brief Struct to hold the ACCURATE configuration.
+*/
+struct confACCURATE {
+    uint32_t chargeQuantaCP1;
+    uint32_t chargeQuantaCP2;
+    uint32_t chargeQuantaCP3;
+    uint32_t cooldownMinCP1;
+    uint32_t cooldownMaxCP1;
+    uint32_t cooldownMinCP2;
+    uint32_t cooldownMaxCP2;
+    uint32_t cooldownMinCP3;
+    uint32_t cooldownMaxCP3;
+    uint8_t resetOTA;
+    uint8_t tCharge;
+    uint8_t tInjection;
+    uint8_t disableCP1;
+    uint8_t disableCP2;
+    uint8_t disableCP3;
+    uint8_t singlyCPActivation;
+};
+
+/**
+ * @brief Struct to hold the serial configuration.
+*/
+struct confSerial {
+    bool stream; // Stream flag, if true the data is streamed on serial port
+    bool rawOutput; // Raw output flag, if true the output is raw
+};
+
+/**
+ * @brief Struct to hold all the configuration parameters.
+*/
+struct confParam {
+    float dac[8]; // DAC configuration vector: vOutA:0, vOutB:1, ecc
+    struct confACCURATE acc; // ACCURATE configuration struct
+    struct confSerial serial; // Serial configuration struct
+    uint32_t* UUID; // Pointer to 128-bit UUID vector
+
+};
+
+extern struct confParam conf;
+
 // Raw output flag
 extern bool rawOutputFlag;
 
