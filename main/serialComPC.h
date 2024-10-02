@@ -45,52 +45,6 @@
 #include <Arduino.h>
 #include "config.h"
 
-
-/**
- * @brief Struct to hold the configuration voltages for the DAC.
-*/
-struct confDAC {
-    float vOutA;
-    float vOutB;
-    float vOutC;
-    float vOutD;
-    float vOutE;
-    float vOutF;
-    float vOutG;
-    float vOutH;
-};
-
-/**
- * @brief Struct to hold the ACCURATE configuration.
-*/
-struct confACCURATE {
-    uint32_t chargeQuantaCP1;
-    uint32_t chargeQuantaCP2;
-    uint32_t chargeQuantaCP3;
-    uint32_t cooldownMinCP1;
-    uint32_t cooldownMaxCP1;
-    uint32_t cooldownMinCP2;
-    uint32_t cooldownMaxCP2;
-    uint32_t cooldownMinCP3;
-    uint32_t cooldownMaxCP3;
-    uint8_t resetOTA;
-    uint8_t tCharge;
-    uint8_t tInjection;
-    uint8_t disableCP1;
-    uint8_t disableCP2;
-    uint8_t disableCP3;
-    uint8_t singlyCPActivation;
-};
-
-/**
- * @brief Struct to hold all the configuration parameters.
-*/
-struct confParam {
-    struct confDAC dac;
-    struct confACCURATE acc;
-    uint8_t confUART;
-};
-
 /**
  * @brief Manage the serial communication with the PC.
  * @param conf* The configuration parameters struct pointer.
@@ -103,7 +57,7 @@ struct confParam {
  * This function reads the serial input from the PC and parses it to the correct
  * variable. A reply is sent back to the PC.
  */
-void serialReadFromPC(struct confParam *conf);
+// void serialReadFromPC(struct confParam *conf);
 
 
 

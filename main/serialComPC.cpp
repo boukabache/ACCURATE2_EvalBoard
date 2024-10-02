@@ -7,6 +7,7 @@
  * parse it to the correct variable.
 */
 
+/*
 #include "serialComPC.h"
 
 
@@ -121,3 +122,4 @@ void serialReadFromPC(struct confParam *conf) {
         }
     }
 }
+*/
