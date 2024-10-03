@@ -18,19 +18,25 @@
 #include "fpga.h"
 #include "config.h"
 #include "ltc2471.h"
-#include "serialComPC.h"
+
+/*
+The library is fully implemented in the header file, so in order to avoid multiple
+definition during linking, the NO_IMPL flag is defined in all outside one include
+statements.
+*/
+#define VREKRER_SCPI_PARSER_NO_IMPL
+#include "scpiInterface.h"
 
 enum ScreenMode screenMode = CHARGE_DETECTION;
 bool oldBtn1Status = 1;
 bool newModeFlag = false;
 int chargeIntegration = 0;
 
-// Not super happy about this global variable.
+// Global configuration struct definition
 struct confParam conf;
 
-// Extern variable definition
-bool rawOutputFlag = true;
-
+// SCPI parser
+SCPI_Parser my_instrument;
 
 void setup() {
     // Init USB-C serial
@@ -58,11 +64,15 @@ void setup() {
     digitalWrite(PIN_LED2, HIGH);
     digitalWrite(PIN_LED3, HIGH);
 
-
     // Init screen and DAC
     ssd1306_init();
     dac7578_init();
 
+    // Init SCPI parser
+    init_scpiInterface();
+
+    // Get samd21 UUID
+    conf.UUID = getChipUUID();
 }
 
 void loop() {
@@ -70,8 +80,8 @@ void loop() {
     struct rawDataFPGA rawData;
     rawData = fpga_read_data();
 
-    // Read from PC
-    serialReadFromPC(&conf);
+    // Read from PC -> SCPI parser
+    my_instrument.ProcessInput(Serial, "\n");
 
     // Only update display and send out data over serial
     // if there is data available.
@@ -136,10 +146,29 @@ void updateScreen(struct rawDataFPGA rawData) {
 
 
 /**
+ * @brief Retrieve the 128-bit UUID of the SAMD21 chip
+ * @return Pointer to the UUID vector
+ * 
+ * The UUID is stored in the SAMD21 chip's memory. This function reads the
+ * memory at the addresses specified by the vendor and returns the
+ * pointer to the UUID vector.
+ */
+uint32_t * getChipUUID() {
+    static uint32_t uuid[4] = {0};
+    uuid[0] = *(volatile uint32_t *)0x0080A00C;
+    uuid[1] = *(volatile uint32_t *)0x0080A040;
+    uuid[2] = *(volatile uint32_t *)0x0080A044;
+    uuid[3] = *(volatile uint32_t *)0x0080A048;
+    
+    return uuid;
+}
+
+
+/**
  * @brief Parse the button status and update the screen mode
  * @param status The status of the buttons and LEDs
  * @param screenMode The current screen mode
- * @return screenMode The new screen mode
+ * @return The new screen mode
  *
  * Check if button1 is pressed. If so, cycle to the next screen mode.
  */
@@ -183,7 +212,7 @@ String getOutputString(struct rawDataFPGA rawData) {
     String message;
     struct IOstatus btnLedStatus = getPinStatus();
 
-    if (rawOutputFlag) {
+    if (conf.serial.rawOutput) {
         message = uint64ToString(rawData.charge) + "," +
                 String(rawData.cp1Count) + "," +
                 String(rawData.cp2Count) + "," +
