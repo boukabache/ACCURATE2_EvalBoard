@@ -12,22 +12,14 @@
  * @brief Struct to hold the ACCURATE configuration.
 */
 struct confACCURATE {
-    uint32_t chargeQuantaCP1;
-    uint32_t chargeQuantaCP2;
-    uint32_t chargeQuantaCP3;
-    uint32_t cooldownMinCP1;
-    uint32_t cooldownMaxCP1;
-    uint32_t cooldownMinCP2;
-    uint32_t cooldownMaxCP2;
-    uint32_t cooldownMinCP3;
-    uint32_t cooldownMaxCP3;
-    uint8_t resetOTA;
-    uint8_t tCharge;
-    uint8_t tInjection;
-    uint8_t disableCP1;
-    uint8_t disableCP2;
-    uint8_t disableCP3;
-    uint8_t singlyCPActivation;
+    uint32_t chargeQuantaCP[3]; //!< Charge injected by one activation of the corresponding charge pump, with LSB=39.3390656 atto coulomb
+    uint32_t cooldownMinCP[3]; //!< Minimum interval between two activation of the corresponding charge pump, in number of charge/discharge cycles
+    uint32_t cooldownMaxCP[3]; //!< Maximum interval between two activation of the corresponding charge pump, in number of charge/discharge cycles
+    uint8_t resetOTA; //!< As long as it is one, the switch short circuiting the output to the input of the OTA is closed
+    uint8_t tCharge; //!< Time duration in clock cycles for recharge of the charge pump. 0 is automatically corrected to 1
+    uint8_t tInjection; //!< Time duration in clock cycles for activation (injection) of the charge pump. 0 is automatically corrected to 1
+    uint8_t disableCP[3]; //!< Do not use the corresponding charge pump
+    uint8_t singlyCPActivation; //!< If high and multiple charge pumps would activate at the same time, only the largest one activates
 };
 
 /**
