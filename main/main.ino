@@ -35,7 +35,7 @@ int chargeIntegration = 0;
 // Global configuration struct definition
 struct confParam conf;
 
-// SCPI parser
+// SCPI parser definition
 SCPI_Parser my_instrument;
 
 void setup() {
@@ -92,8 +92,10 @@ void loop() {
         updateScreen(rawData);
 
         // Get and print over serial the output string
-        String message = getOutputString(rawData);
-        Serial.println(message);
+        if (conf.serial.stream) {
+            String message = getOutputString(rawData);
+            Serial.println(message);
+        }
     }
 }
 
