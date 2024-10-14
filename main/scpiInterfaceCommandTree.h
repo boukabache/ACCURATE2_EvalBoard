@@ -1,5 +1,16 @@
+/**
+ * @file scpiInterfaceCommandTree.h
+ * @brief SCPI Command Tree for the Evaluation Board
+ * 
+ * This file contains the command tree string for the SCPI interface.
+ * It is used to print the command tree when the user requests help.
+ * The string is saved in flash memory and not in RAM for optimisation purposes.
+*/
+
+
 const __FlashStringHelper* scpiCommandTree = F(
-    "Command tree with only SCPI Required Commands and IEEE Mandated Commands:\n"
+    "SCPI Required Commands and IEEE Mandated Commands:\n"
+    "WARNING: NOT ALL THE LISTED COMMANDS ARE IMPLEMENTED YET\n"
     "STATus\n"
     "    :OPERation\n"
     "        :CONDition?\n"
@@ -27,30 +38,30 @@ const __FlashStringHelper* scpiCommandTree = F(
     "*STB\n"
     "*TST?\n"
     "*WAI\n"
-    "\n"
+    "------------------------------------------------\n"
     "Custom commands to operate the Evaluation Board:\n"
     "CONFigure\n"
     "    :DAC\n"
-    "        :VOLTage <port>A|B|C|D|E|F|G|H ,<voltage>\n"
-    "        :VOLTage? <port> A|B|C|D|E|F|G|H\n"
+    "        :VOLTage A|B|C|D|E|F|G|H ,<voltage(V)>\n"
+    "        :VOLTage? A|B|C|D|E|F|G|H\n"
     "    :ACCUrate\n"
-    "        :CHARGE\n"
-    "        :CHARGE?\n"
-    "        :COOLdown\n"
-    "        :COOLdown?\n"
-    "        :RESET\n"
+    "        :CHARGE 1|2|3 ,<chargeQuanta(LSB)>\n"
+    "        :CHARGE? 1|2|3\n"
+    "        :COOLdown MIN|MAX ,1|2|3 ,<time(clk)>\n"
+    "        :COOLdown? MIN|MAX ,1|2|3\n"
+    "        :RESET 1|0\n"
     "        :RESET?\n"
-    "        :TCHARGE\n"
+    "        :TCHARGE <time(clk)>\n"
     "        :TCHARGE?\n"
-    "        :TINJection\n"
+    "        :TINJection <time(clk)>\n"
     "        :TINJection?\n"
-    "        :DISABLE\n"
-    "        :DISABLE?\n"
-    "        :SINGLY\n"
+    "        :DISABLE 1|2|3 ,1|0\n"
+    "        :DISABLE? 1|2|3\n"
+    "        :SINGLY 1|0\n"
     "        :SINGLY?\n"
     "    :SERIal\n"
-    "        :STREAM\n"
+    "        :STREAM ON|OFF\n"
     "        :STREAM?\n"
-    "        :RAW\n"
+    "        :RAW ON|OFF\n"
     "        :RAW?\n"
 );
