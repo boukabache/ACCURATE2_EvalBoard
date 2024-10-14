@@ -2,23 +2,37 @@
 #include "scpiInterfaceCommandTree.h"
 #include "config.h"
 
-void Identify(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void Reset(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void SerialErrorHandler(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void GetLastEror(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void SCPIversion(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void Identify(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void Reset(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void SerialErrorHandler(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void GetLastEror(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void SCPIversion(SCPI_C commands, SCPI_P parameters, Stream& interface);
 
-void dacSetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void dacGetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void dacSetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void dacGetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface);
 
-void serialSetStream(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void serialGetStream(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void serialSetRaw(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void serialGetRaw(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void serialSetStream(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void serialGetStream(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void serialSetRaw(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void serialGetRaw(SCPI_C commands, SCPI_P parameters, Stream& interface);
 
+static void accurateSetCharge(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateGetCharge(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateSetCooldown(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateGetCooldown(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateSetReset(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateGetReset(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateSetTCharge(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateGetTCharge(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateSetTInjection(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateGetTInjection(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateSetDisableCP(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateGetDisableCP(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateSetSingly(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void accurateGetSingly(SCPI_C commands, SCPI_P parameters, Stream& interface);
 
-void printHelp(SCPI_C commands, SCPI_P parameters, Stream& interface);
-void DoNothing(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void printHelp(SCPI_C commands, SCPI_P parameters, Stream& interface);
+static void DoNothing(SCPI_C commands, SCPI_P parameters, Stream& interface);
 
 void init_scpiInterface() {
     /*
@@ -29,9 +43,6 @@ void init_scpiInterface() {
     my_instrument.hash_magic_number = 37; //Default value = 37
     my_instrument.hash_magic_offset = 7;  //Default value = 7
 
-    /*
-    Timeout time can be changed even during program execution
-    */
     my_instrument.timeout = 10; //value in miliseconds. Default value = 10
 
 
@@ -67,19 +78,34 @@ void init_scpiInterface() {
         my_instrument.RegisterCommand(F(":VERSion?"), &SCPIversion);
     my_instrument.SetCommandTreeBase(F("CONFigure:DAC"));
         my_instrument.RegisterCommand(F(":VOLTage#"), &dacSetVoltage);
-        my_instrument.RegisterCommand(F(":VOLTage?"), &DoNothing);
+        my_instrument.RegisterCommand(F(":VOLTage?"), &dacGetVoltage);
+    my_instrument.SetCommandTreeBase(F("CONFigure:ACCUrate"));
+        my_instrument.RegisterCommand(F(":CHARGE#"), &accurateSetCharge);
+        my_instrument.RegisterCommand(F(":CHARGE?#"), &accurateGetCharge);
+        my_instrument.RegisterCommand(F(":COOLdown#"), &accurateSetCooldown);
+        my_instrument.RegisterCommand(F(":COOLdown?#"), &accurateGetCooldown);
+        my_instrument.RegisterCommand(F(":RESET#"), &accurateSetReset);
+        my_instrument.RegisterCommand(F(":RESET?"), &accurateGetReset);
+        my_instrument.RegisterCommand(F(":TCHARGE#"), &accurateSetTCharge);
+        my_instrument.RegisterCommand(F(":TCHARGE?"), &accurateGetTCharge);
+        my_instrument.RegisterCommand(F(":TINJection#"), &accurateSetTInjection);
+        my_instrument.RegisterCommand(F(":TINJection?"), &accurateGetTInjection);
+        my_instrument.RegisterCommand(F(":DISABLE#"), &accurateSetDisableCP);
+        my_instrument.RegisterCommand(F(":DISABLE?#"), &accurateGetDisableCP);
+        my_instrument.RegisterCommand(F(":SINGLY#"), &accurateSetSingly);
+        my_instrument.RegisterCommand(F(":SINGLY?"), &accurateGetSingly);
     my_instrument.SetCommandTreeBase(F("CONFigure:SERIal"));
-        my_instrument.RegisterCommand(F(":STREAM#"), &DoNothing);
-        my_instrument.RegisterCommand(F(":STREAM?"), &DoNothing);
-        my_instrument.RegisterCommand(F(":RAW#"), &DoNothing);
-        my_instrument.RegisterCommand(F(":RAW?"), &DoNothing);
+        my_instrument.RegisterCommand(F(":STREAM#"), &serialSetStream);
+        my_instrument.RegisterCommand(F(":STREAM?"), &serialGetStream);
+        my_instrument.RegisterCommand(F(":RAW#"), &serialSetRaw);
+        my_instrument.RegisterCommand(F(":RAW?"), &serialGetRaw);
     my_instrument.SetCommandTreeBase(F(""));
     my_instrument.RegisterCommand(F("*IDN?"), &Identify);
     my_instrument.RegisterCommand(F("*RST"), &Reset);
     my_instrument.RegisterCommand(F("HELP?"), &printHelp);
 
 
-    my_instrument.PrintDebugInfo(Serial);
+    // my_instrument.PrintDebugInfo(Serial);
     my_instrument.SetErrorHandler(&SerialErrorHandler);
 }
 
@@ -88,7 +114,7 @@ void init_scpiInterface() {
 // ---------------- Functions of implemented commands ----------------
 // -------------------------------------------------------------------
 
-void Identify(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void Identify(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     String outMessage = "CERN, REV1, ";
     for (uint8_t i = 0; i < 4; i++) {
         outMessage += String(( *(conf.UUID+i) ), HEX);
@@ -97,7 +123,7 @@ void Identify(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     interface.println(outMessage);
 }
 
-void Reset(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void Reset(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     interface.println("Resetting the device...");
     delay(1000);
     /*
@@ -108,7 +134,7 @@ void Reset(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     NVIC_SystemReset();
 }
 
-void GetLastEror(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void GetLastEror(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     switch(my_instrument.last_error){
         case my_instrument.ErrorCode::BufferOverflow: 
         interface.println(F("-100, Buffer overflow error"));
@@ -126,7 +152,7 @@ void GetLastEror(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     my_instrument.last_error = my_instrument.ErrorCode::NoError;
 }
 
-void SerialErrorHandler(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void SerialErrorHandler(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     // This function is called every time an error occurs
 
     /* For BufferOverflow errors, the rest of the message, still in the interface
@@ -142,11 +168,11 @@ void SerialErrorHandler(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     }
 }
 
-void SCPIversion(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void SCPIversion(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     interface.println("NOT SCPI COMPLIANT");
 }
 
-void dacSetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void dacSetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     if (parameters.Size() != 2) {
         interface.println("Invalid number of parameters");
         return;
@@ -158,7 +184,7 @@ void dacSetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     conf.dac[channel] = voltage;
 }
 
-void dacGetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void dacGetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     if (parameters.Size() != 1) {
         interface.println("Invalid number of parameters");
         return;
@@ -168,7 +194,7 @@ void dacGetVoltage(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     interface.println(conf.dac[channel]);
 }
 
-void serialSetStream(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void serialSetStream(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     String first_parameter = String(parameters.First());
     first_parameter.toUpperCase();
 
@@ -181,11 +207,11 @@ void serialSetStream(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     }
 }
 
-void serialGetStream(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void serialGetStream(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     interface.println(conf.serial.stream);
 }
 
-void serialSetRaw(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void serialSetRaw(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     String first_parameter = String(parameters.First());
     first_parameter.toUpperCase();
 
@@ -198,14 +224,229 @@ void serialSetRaw(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     }
 }
 
-void serialGetRaw(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void serialGetRaw(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     interface.println(conf.serial.rawOutput);
 }
 
-void printHelp(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void printHelp(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     interface.println(scpiCommandTree);
 }
 
-void DoNothing(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+static void accurateParameters(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    interface.println("Command not implemented");
+}
+
+static void accurateSetCharge(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 2) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    uint8_t channel = atoi(parameters.First());
+    if (channel < 1 || channel > 3) {
+        interface.println("Invalid channel number");
+        return;
+    }
+
+    float charge = atoi(parameters.Last());
+    conf.acc.chargeQuantaCP[channel - 1] = charge;
+}
+
+static void accurateGetCharge(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 1) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    uint8_t channel = atoi(parameters.First());
+    if (channel < 1 || channel > 3) {
+        interface.println("Invalid channel number");
+        return;
+    }
+
+    interface.println(conf.acc.chargeQuantaCP[channel - 1]);
+}
+
+static void accurateSetCooldown(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 3) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    String type = String(parameters.First());
+    type.toUpperCase();
+
+    uint8_t channel = atoi(parameters[1]); // pick the second element
+    if (channel < 1 || channel > 3) {
+        interface.println("Invalid channel number");
+        return;
+    }
+
+    uint32_t time = atoi(parameters.Last());
+
+    if (type == "MIN") {
+        conf.acc.cooldownMinCP[channel - 1] = time;
+    } else if (type == "MAX") {
+        conf.acc.cooldownMaxCP[channel - 1] = time;
+    } else {
+        interface.println("Invalid type parameter");
+    }
+}
+
+static void accurateGetCooldown(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 2) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    String type = String(parameters.First());
+    type.toUpperCase();
+
+    uint8_t channel = atoi(parameters.Last());
+    if (channel < 1 || channel > 3) {
+        interface.println("Invalid channel number");
+        return;
+    }
+
+    if (type == "MIN") {
+        interface.println(conf.acc.cooldownMinCP[channel - 1]);
+    } else if (type == "MAX") {
+        interface.println(conf.acc.cooldownMaxCP[channel - 1]);
+    } else {
+        interface.println("Invalid type parameter");
+    }
+}
+
+static void accurateSetReset(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 1) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    uint8_t reset = atoi(parameters.First());
+    if (reset != 0 && reset != 1) {
+        interface.println("Invalid parameter");
+        return;
+    }
+
+    conf.acc.resetOTA = reset;
+}
+
+static void accurateGetReset(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 0) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    interface.println(conf.acc.resetOTA);
+}
+
+static void accurateSetTCharge(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 1) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    uint8_t time = atoi(parameters.First());
+    if (time <= 0) {
+        time = 1;
+    }
+
+    conf.acc.tCharge = time;
+}
+
+static void accurateGetTCharge(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 0) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    interface.println(conf.acc.tCharge);
+}
+
+static void accurateSetTInjection(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 1) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    uint8_t time = atoi(parameters.First());
+    if (time <= 0) {
+        time = 1;
+    }
+
+    conf.acc.tInjection = time;
+}
+
+static void accurateGetTInjection(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 0) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    interface.println(conf.acc.tInjection);
+}
+
+static void accurateSetDisableCP(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 2) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    uint8_t channel = atoi(parameters.First());
+    if (channel < 1 || channel > 3) {
+        interface.println("Invalid channel number");
+        return;
+    }
+
+    uint8_t disable = atoi(parameters.Last());
+    if (disable != 0 && disable != 1) {
+        interface.println("Invalid parameter");
+        return;
+    }
+
+    conf.acc.disableCP[channel - 1] = disable;
+}
+
+static void accurateGetDisableCP(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 1) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    uint8_t channel = atoi(parameters.First());
+    if (channel < 1 || channel > 3) {
+        interface.println("Invalid channel number");
+        return;
+    }
+
+    interface.println(conf.acc.disableCP[channel - 1]);
+}
+
+static void accurateSetSingly(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 1) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    uint8_t activate = atoi(parameters.First());
+    if (activate != 0 && activate != 1) {
+        interface.println("Invalid parameter");
+        return;
+    }
+
+    conf.acc.singlyCPActivation = activate;
+}
+
+static void accurateGetSingly(SCPI_C commands, SCPI_P parameters, Stream& interface) {
+    if (parameters.Size() != 0) {
+        interface.println("Invalid number of parameters");
+        return;
+    }
+
+    interface.println(conf.acc.singlyCPActivation);
+}
+
+static void DoNothing(SCPI_C commands, SCPI_P parameters, Stream& interface) {
     interface.println("Command not implemented");
 }
