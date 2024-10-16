@@ -9,12 +9,63 @@
                 {
                     "name": "ACCURATE 2A Evaluation Board",
                     "architecture": "samd",
-                    "version": "1.2.0",
+                    "version": "1.4.0",
                     "category": "Contributed",
-                    "url": "https://cernbox.cern.ch/remote.php/dav/public-files/TWwqu8KmsGvFJ5Y/accurate_2a_eval-1.2.0.zip",
-                    "archiveFileName": "accurate_2a_eval-1.2.0.zip",
-                    "checksum": "SHA-256:f402bfd92e165782812dcc7d3a3bba101e27f0e124c2245206af1cf3c10c3703",
-                    "size": "2067296",
+                    "url": "https://cernbox.cern.ch/remote.php/dav/public-files/YOWdym9frI9OYU4/accurate_2a_eval-1.4.0.zip",
+                    "archiveFileName": "accurate_2a_eval-1.4.0.zip",
+                    "checksum": "SHA-256:d215b42f73789625ab624aabda4170963e69eb6e245eda10bf4a637c9b5893e9",
+                    "size": "1787718",
+                    "boards": [
+                        {
+                            "name": "ACCURATE 2A Evaluation Board"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "arduino",
+                            "name": "arm-none-eabi-gcc",
+                            "version": "7-2017q4"
+                        },
+                        {
+                            "packager": "arduino",
+                            "name": "bossac",
+                            "version": "1.8.0-48-gb176eee"
+                        },
+                        {
+                            "packager": "arduino",
+                            "name": "openocd",
+                            "version": "0.10.0-arduino9"
+                        },
+                        {
+                            "packager": "arduino",
+                            "name": "CMSIS",
+                            "version": "4.5.0"
+                        },
+                        {
+                            "packager": "arduino",
+                            "name": "CMSIS-Atmel",
+                            "version": "1.2.0"
+                        }
+                    ]
+                }
+            ],
+            "tools": []
+        },
+        {
+            "name": "accurate_2a_eval",
+            "maintainer": "CERN HSE-RP-IL",
+            "websiteURL": "https://crome.web.cern.ch/",
+            "email": "mattia.consani@cern.ch",
+            "platforms": [
+                {
+                    "name": "ACCURATE 2A Evaluation Board",
+                    "architecture": "samd",
+                    "version": "1.3.0",
+                    "category": "Contributed",
+                    "url": "https://cernbox.cern.ch/remote.php/dav/public-files/sZf7x37IaWxeWb2/accurate_2A_eval-1.3.0.zip",
+                    "archiveFileName": "accurate_2a_eval-1.3.0.zip",
+                    "checksum": "SHA-256:89c56715f17b0738fdc8778bcf196f203e8373e85f606fd1648f7c63b0533fe0",
+                    "size": "1763607",
                     "boards": [
                         {
                             "name": "ACCURATE 2A Evaluation Board"
