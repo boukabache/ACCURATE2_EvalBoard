@@ -87,6 +87,12 @@ CONFigure
         :RAW?
 */
 
+
+/**
+ * @brief Error buffer size
+ */
+#define ERROR_BUFFER_SIZE 15
+
 /**
  * @brief The SCPI parser object
  * 
