@@ -41,7 +41,7 @@ void ssd1306_print_current_temp_humidity(float current, String current_range, St
     display.print(humidity);
     display.print(" %");
     display.setCursor(0, 54);
-    display.print("Mode: SWAG");
+    display.print("Mode: Current Display");
     display.display();
 }
 

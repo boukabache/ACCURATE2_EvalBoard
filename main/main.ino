@@ -27,7 +27,7 @@ statements.
 #define VREKRER_SCPI_PARSER_NO_IMPL
 #include "scpiInterface.h"
 
-enum ScreenMode screenMode = CHARGE_DETECTION;
+enum ScreenMode screenMode = CURRENT_DISPLAY;
 bool oldBtn1Status = 1;
 bool newModeFlag = false;
 int chargeIntegration = 0;
@@ -141,6 +141,8 @@ void updateScreen(struct rawDataFPGA rawData) {
         // ssd1306_print_transition(screenMode);
         ssd1306_print_charge(rawData.charge , temp, humidity, "Multi sample");
         break;
+    case CURRENT_DISPLAY:
+        ssd1306_print_current_temp_humidity(current_measurement.convertedCurrent, current_measurement.range, temp, humidity);
     default:
         break;
     }
@@ -190,6 +192,9 @@ enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode)
             newState = VAR_SEMPLING_TIME;
             break;
         case VAR_SEMPLING_TIME:
+            newState = CURRENT_DISPLAY;
+            break;
+        case CURRENT_DISPLAY:
             newState = CHARGE_DETECTION;
             break;
         default:
