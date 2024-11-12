@@ -18,6 +18,8 @@
 #include "fpga.h"
 #include "config.h"
 #include "ltc2471.h"
+#include "RTClib.h"
+#include "SD.h"
 
 /*
 The library is fully implemented in the header file, so in order to avoid multiple
@@ -35,8 +37,14 @@ int chargeIntegration = 0;
 // Global configuration struct definition
 struct confParam conf;
 
-// SCPI parser definition
+// SCPI parser object definition
 SCPI_Parser my_instrument;
+
+// RTL PCF8523 object definition
+RTC_PCF8523 rtc;
+
+// SD card object definition
+File logFile;
 
 void setup() {
     // Init USB-C serial
@@ -73,6 +81,31 @@ void setup() {
 
     // Get samd21 UUID
     conf.UUID = getChipUUID();
+
+    // Init RTC
+    if (!rtc.begin()) {
+        // Serial.println("Couldn't find RTC");
+    }
+    if (! rtc.initialized() || rtc.lostPower()) {
+        // Serial.println("RTC is NOT initialised! Doing it now...");
+        // following line sets the RTC to the date & time this sketch was compiled
+        rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+    }
+    rtc.start();
+
+    // Init SD card
+    const int chipSelect = 10;
+    pinMode(SD_CHIP_SELECT_PIN, OUTPUT);
+    if (!SD.begin(chipSelect)) {
+        // Serial.println("Card failed, or not present");
+    } else {
+        char filename[] = ""; // TODO: implement file naming structure
+        logFile = SD.open(filename, FILE_WRITE);
+    }
+
+    // For the mu_sweep test
+    conf.serial.stream = true;
+    conf.serial.rawOutput = true;
 }
 
 void loop() {
@@ -91,10 +124,15 @@ void loop() {
         // Update the ssd1306 screen
         updateScreen(rawData);
 
-        // Get and print over serial the output string
+        // Get output string
+        String message = getOutputString(rawData);
+        // Print over serial
         if (conf.serial.stream) {
-            String message = getOutputString(rawData);
             Serial.println(message);
+        }
+        // Log to SD card
+        if (conf.serial.log) {
+            logFile.println(message);
         }
     }
 }
@@ -218,6 +256,9 @@ enum ScreenMode parseButtons(struct IOstatus status, enum ScreenMode screenMode)
 String getOutputString(struct rawDataFPGA rawData) {
     String message;
     struct IOstatus btnLedStatus = getPinStatus();
+    
+    // Create timestamp string
+    String timestamp = rtc.now().timestamp();
 
     if (conf.serial.rawOutput) {
         message = uint64ToString(rawData.charge) + "," +
@@ -229,6 +270,7 @@ String getOutputString(struct rawDataFPGA rawData) {
                 String(rawData.tempSht41) + "," +
                 String(rawData.humidSht41) + "," +
                 btnLedStatus.status;
+                // + "," + timestamp;timestamp;
     } else {
         // Calculate the time intervals
         float startIntervalTime = (rawData.cp1StartInterval + 1) * 1/ACCURATE_CLK;
@@ -253,6 +295,7 @@ String getOutputString(struct rawDataFPGA rawData) {
                 String(temp) + "," +
                 String(humidity) + "," +
                 btnLedStatus.status;
+                // + "," + timestamp;
     }
     return message;
 }
