@@ -17,8 +17,8 @@ The SCPI library supports the following macros to optimize RAM usage:
 - SCPI_HASH_TYPE : Integer size used for hashes.
 */
 #define SCPI_ARRAY_SYZE 4 //Default value = 6
-#define SCPI_MAX_TOKENS 46 //Default value = 15
-#define SCPI_MAX_COMMANDS 46 //Default value = 20
+#define SCPI_MAX_TOKENS 50 //Default value = 15
+#define SCPI_MAX_COMMANDS 50 //Default value = 20
 #define SCPI_MAX_SPECIAL_COMMANDS 0 //Default value = 0
 #define SCPI_BUFFER_LENGTH 128 //Default value = 64
 #define SCPI_HASH_TYPE uint16_t //Default value = uint8_t
@@ -85,6 +85,8 @@ CONFigure
         :STREAM?
         :RAW ON|OFF
         :RAW?
+        :LOG ON|OFF
+        :LOG?
 */
 
 

@@ -37,6 +37,7 @@ static void printHelp(SCPI_C commands, SCPI_P parameters, Stream& interface);
 static void DoNothing(SCPI_C commands, SCPI_P parameters, Stream& interface);
 
 void addErrorToBuffer(String error);
+bool checkNumberParameters(SCPI_P parameters, uint8_t number);
 
 /**
  * @brief Error buffer, implemented as LIFO buffer

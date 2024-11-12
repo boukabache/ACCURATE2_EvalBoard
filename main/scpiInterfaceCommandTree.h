@@ -64,4 +64,6 @@ const __FlashStringHelper* scpiCommandTree = F(
     "        :STREAM?\n"
     "        :RAW ON|OFF\n"
     "        :RAW?\n"
+    "        :LOG ON|OFF\n"
+    "        :LOG?\n"
 );
