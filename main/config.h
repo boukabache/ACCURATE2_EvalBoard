@@ -28,6 +28,7 @@ struct confACCURATE {
 struct confSerial {
     bool stream; // Stream flag, if true the data is streamed on serial port
     bool rawOutput; // Raw output flag, if true the output is raw
+    bool log; // Log flag, if true the data is logged on the SD card
 };
 
 /**
@@ -41,10 +42,10 @@ struct confParam {
 
 };
 
+// Global confiuration struct DECLARATION
 extern struct confParam conf;
 
-// Raw output flag
-extern bool rawOutputFlag;
+
 
 // Clock frequency of the ACCURATE frontend
 #define ACCURATE_CLK 50E6 // 50 MHz
