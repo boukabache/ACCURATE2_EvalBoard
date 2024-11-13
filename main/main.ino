@@ -6,6 +6,7 @@
 */
 
 #include <Arduino.h>
+#include <SD.h>
 #include <Wire.h>
 #include <TimeLib.h>
 #include <stdint.h>
@@ -19,7 +20,6 @@
 #include "config.h"
 #include "ltc2471.h"
 #include "RTClib.h"
-#include "SD.h"
 
 /*
 The library is fully implemented in the header file, so in order to avoid multiple
@@ -269,8 +269,8 @@ String getOutputString(struct rawDataFPGA rawData) {
                 String(rawData.cp1EndInterval) + "," +
                 String(rawData.tempSht41) + "," +
                 String(rawData.humidSht41) + "," +
-                btnLedStatus.status;
-                // + "," + timestamp;timestamp;
+                btnLedStatus.status
+                + "," + timestamp;
     } else {
         // Calculate the time intervals
         float startIntervalTime = (rawData.cp1StartInterval + 1) * 1/ACCURATE_CLK;
@@ -294,8 +294,8 @@ String getOutputString(struct rawDataFPGA rawData) {
                 String(endIntervalTime) + "," +
                 String(temp) + "," +
                 String(humidity) + "," +
-                btnLedStatus.status;
-                // + "," + timestamp;
+                btnLedStatus.status
+                + "," + timestamp;
     }
     return message;
 }
