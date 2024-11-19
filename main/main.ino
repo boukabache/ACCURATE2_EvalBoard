@@ -34,8 +34,8 @@ bool oldBtn1Status = 1;
 bool newModeFlag = false;
 int chargeIntegration = 0;
 
-// Global configuration struct definition
-struct confParam conf;
+// Global configuration struct definition + initialization
+struct confParam conf = defaultConf;
 
 // SCPI parser object definition
 SCPI_Parser my_instrument;
@@ -102,10 +102,6 @@ void setup() {
         char filename[] = ""; // TODO: implement file naming structure
         logFile = SD.open(filename, FILE_WRITE);
     }
-
-    // For the mu_sweep test
-    conf.serial.stream = true;
-    conf.serial.rawOutput = true;
 }
 
 void loop() {
