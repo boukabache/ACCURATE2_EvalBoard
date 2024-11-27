@@ -102,12 +102,15 @@ void setup() {
         char filename[] = ""; // TODO: implement file naming structure
         logFile = SD.open(filename, FILE_WRITE);
     }
+
+    // Init FPGA with default configuration parameters
+    fpgaUpdateAllParam();
 }
 
 void loop() {
     // Read data from FPGA
     struct rawDataFPGA rawData;
-    rawData = fpga_read_data();
+    rawData = fpgaReadData();
 
     // Read from PC -> SCPI parser
     my_instrument.ProcessInput(Serial, "\n");
