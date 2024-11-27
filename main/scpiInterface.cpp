@@ -1,7 +1,12 @@
 #include "scpiInterface.h"
 #include "scpiInterfaceCommandTree.h"
 #include "config.h"
+
+// For the error buffer
 #include "LIFObuf.h"
+
+// For the update of the FPGA parameters
+#include "fpga.h"
 
 static void Identify(SCPI_C commands, SCPI_P parameters, Stream& interface);
 static void Reset(SCPI_C commands, SCPI_P parameters, Stream& interface);
@@ -38,6 +43,16 @@ static void DoNothing(SCPI_C commands, SCPI_P parameters, Stream& interface);
 
 void addErrorToBuffer(String error);
 bool checkNumberParameters(SCPI_P parameters, uint8_t number);
+
+/**
+ * @brief After the function is executed, all the parameters are updated in the FPGA
+ * @param func The function to be executed before updating the FPGA parameters
+ */
+#define PARAM_UPDATE(func) [](SCPI_C commands, SCPI_P parameters, Stream& interface) { \
+    func(commands, parameters, interface); \
+    fpgaUpdateAllParam(); \
+    }
+
 
 /**
  * @brief Error buffer, implemented as LIFO buffer
@@ -105,7 +120,7 @@ void init_scpiInterface() {
         my_instrument.RegisterCommand(F(":TCHARGE?"), &accurateGetTCharge);
         my_instrument.RegisterCommand(F(":TINJection#"), &accurateSetTInjection);
         my_instrument.RegisterCommand(F(":TINJection?"), &accurateGetTInjection);
-        my_instrument.RegisterCommand(F(":DISABLE#"), &accurateSetDisableCP);
+        my_instrument.RegisterCommand(F(":DISABLE#"), PARAM_UPDATE(accurateSetDisableCP)); // TODO: check if this works
         my_instrument.RegisterCommand(F(":DISABLE?#"), &accurateGetDisableCP);
         my_instrument.RegisterCommand(F(":SINGLY#"), &accurateSetSingly);
         my_instrument.RegisterCommand(F(":SINGLY?"), &accurateGetSingly);
