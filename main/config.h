@@ -24,6 +24,10 @@ struct confACCURATE {
 
 /**
  * @brief Struct to hold the serial configuration.
+ * 
+ * @warning These parameters are not FPGA releted!!! There is no register
+ * in the FPGA to set these parameters. Nor the FPGA needs to know about them.
+ * The FPGA has a different UART management register!
 */
 struct confSerial {
     bool stream;    //!< Stream flag, if true the data is streamed on serial port
