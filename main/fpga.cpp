@@ -7,7 +7,8 @@
 
 #include "fpga.h"
 
-rawDataFPGA fpga_read_data() {
+rawDataFPGA fpgaReadData() {
+    // FIXME: use of magic numbers, no bueno
     char chargeRaw[6];
     char cp1CountRaw[4];
     char cp2CountRaw[4];
@@ -93,83 +94,8 @@ struct IOstatus getPinStatus() {
 }
 
 
-TempHumMeasurement fpga_read_temp_humidity()
-{
-    TempHumMeasurement measurement;
-    measurement.status = SHT41_ERR_MEASUREMENT;
-
-    if (Serial1.available() < TEMPHUM_DATA_LENGTH) {
-        return measurement;
-    }
-
-    while (Serial1.available() >= TEMPHUM_DATA_LENGTH) {
-        uint8_t addressByte = Serial1.read();
-        if (addressByte != FPGA_TEMPHUM_ADDRESS) {
-            // Clear the remaining bytes in the buffer
-            for (int i = 0; i < TEMPHUM_PAYLOAD_LENGTH; i++) {
-                if (Serial1.available()) {
-                    Serial1.read();
-                }
-            }
-            continue;
-        }
-
-        uint8_t dataBytes[TEMPHUM_PAYLOAD_LENGTH];
-        for (int i = 0; i < TEMPHUM_PAYLOAD_LENGTH; i++) {
-            dataBytes[i] = Serial1.read();
-        }
-
-        // Validate CRC
-        if (crc8(dataBytes, 2) != dataBytes[2] || crc8(dataBytes + 3, 2) != dataBytes[5]) {
-            measurement.status = SHT41_ERR_CRC;
-            return measurement;
-        }
-
-        uint16_t rawTemperature = (dataBytes[1] << 8) | dataBytes[0];
-        uint16_t rawHumidity = (dataBytes[3] << 8) | dataBytes[2];
-
-        sht41_calculate(rawTemperature, rawHumidity, &measurement);
-
-        return measurement;
-    }
-
-    // Return a measurement indicating an error
-    measurement.status = SHT41_ERR_MEASUREMENT;
-    return measurement;
-}
-
-void fpga_send_configurations() {
-
-    fpga_send_parameters(INIT_CONFIG_ADDRESS, INIT_CONFIG);
-
-    fpga_send_parameters(GATE_LENGTH_ADDRESS, fpga_calculate_gate_len());
-
-    fpga_send_parameters(RST_DURATION_ADDRESS, RST_DURATION);
-
-    fpga_send_parameters(VBIAS1_ADDRESS, fpga_convert_volt_to_DAC(VBIAS1_DEC));
-    fpga_send_parameters(VBIAS2_ADDRESS, fpga_convert_volt_to_DAC(VBIAS2_DEC));
-    fpga_send_parameters(VBIAS3_ADDRESS, fpga_convert_volt_to_DAC(VBIAS3_DEC));
-
-    fpga_send_parameters(VCM_ADDRESS, fpga_convert_volt_to_DAC(VCM_DEC));
-
-    fpga_send_parameters(VCM1_ADDRESS, fpga_convert_volt_to_DAC(VCM_DEC));
-    fpga_send_parameters(VTH1_ADDRESS, fpga_convert_volt_to_DAC(VTH1_DEC));
-    fpga_send_parameters(VTH2_ADDRESS, fpga_convert_volt_to_DAC(VTH2_DEC));
-    fpga_send_parameters(VTH3_ADDRESS, fpga_convert_volt_to_DAC(VTH3_DEC));
-    fpga_send_parameters(VTH4_ADDRESS, fpga_convert_volt_to_DAC(VTH4_DEC));
-    fpga_send_parameters(VTH5_ADDRESS, fpga_convert_volt_to_DAC(VTH5_DEC));
-    fpga_send_parameters(VTH6_ADDRESS, fpga_convert_volt_to_DAC(VTH6_DEC));
-    fpga_send_parameters(VTH7_ADDRESS, fpga_convert_volt_to_DAC(VTH7_DEC));
-
-}
-
 uint32_t fpga_convert_volt_to_DAC(float voltage) {
     return static_cast<uint32_t>(round((voltage * ADC_RESOLUTION_ACCURATE) / REF_VOLTAGE));
-}
-
-uint32_t fpga_calculate_gate_len() {
-    uint32_t gate = static_cast<uint32_t>((TW * CLOCK_PERIOD) - 1);
-    return gate;
 }
 
 float fpga_calc_current(uint64_t data, float lsb, int period) {
@@ -204,11 +130,88 @@ CurrentMeasurement fpga_format_current(float currentInFemtoAmperes) {
     return measurement;
 }
 
-void fpga_send_parameters(uint8_t address, uint32_t value) {
-    Serial1.write(address);
+
+void sendToFPGA(uint8_t address, uint32_t value) {
+    Serial1.write(0xDD); // Start byte
+
+    Serial1.write(address); // 1 byte address
 
     Serial1.write(value & 0xFF); // LSB
     Serial1.write((value >> 8) & 0xFF);
     Serial1.write((value >> 16) & 0xFF);
     Serial1.write((value >> 24) & 0xFF); // MSB
+
+    // As of now just print to serial in case of error
+    fpgaCheckResponse();
+}
+
+void fpgaUpdateAllParam() {
+    // Disable streaming of data from FPGA, enable (n)ack to rx requests
+    sendToFPGA(FPGA_UART_MANAGEMENT_ADDR, 0);
+
+    // Send DAC values
+    sendToFPGA(FPGA_DAC_VOUTA_ADDR, fpga_convert_volt_to_DAC(conf.dac[0]));
+    sendToFPGA(FPGA_DAC_VOUTB_ADDR, fpga_convert_volt_to_DAC(conf.dac[1]));
+    sendToFPGA(FPGA_DAC_VOUTC_ADDR, fpga_convert_volt_to_DAC(conf.dac[2]));
+    sendToFPGA(FPGA_DAC_VOUTD_ADDR, fpga_convert_volt_to_DAC(conf.dac[3]));
+    sendToFPGA(FPGA_DAC_VOUTE_ADDR, fpga_convert_volt_to_DAC(conf.dac[4]));
+    sendToFPGA(FPGA_DAC_VOUTF_ADDR, fpga_convert_volt_to_DAC(conf.dac[5]));
+    sendToFPGA(FPGA_DAC_VOUTG_ADDR, fpga_convert_volt_to_DAC(conf.dac[6]));
+    sendToFPGA(FPGA_DAC_VOUTH_ADDR, fpga_convert_volt_to_DAC(conf.dac[7]));
+
+    // Send ACCURATE configuration values
+    sendToFPGA(FPGA_ACC_CHARGE_QUANTA_CP1_ADDR, conf.acc.chargeQuantaCP[0]);
+    sendToFPGA(FPGA_ACC_CHARGE_QUANTA_CP2_ADDR, conf.acc.chargeQuantaCP[1]);
+    sendToFPGA(FPGA_ACC_CHARGE_QUANTA_CP3_ADDR, conf.acc.chargeQuantaCP[2]);
+    sendToFPGA(FPGA_ACC_COOLDOWN_MIN_CP1_ADDR, conf.acc.cooldownMinCP[0]);
+    sendToFPGA(FPGA_ACC_COOLDOWN_MAX_CP1_ADDR, conf.acc.cooldownMaxCP[0]);
+    sendToFPGA(FPGA_ACC_COOLDOWN_MIN_CP2_ADDR, conf.acc.cooldownMinCP[1]);
+    sendToFPGA(FPGA_ACC_COOLDOWN_MAX_CP2_ADDR, conf.acc.cooldownMaxCP[1]);
+    sendToFPGA(FPGA_ACC_COOLDOWN_MIN_CP3_ADDR, conf.acc.cooldownMinCP[2]);
+    sendToFPGA(FPGA_ACC_COOLDOWN_MAX_CP3_ADDR, conf.acc.cooldownMaxCP[2]);
+    sendToFPGA(FPGA_ACC_RESET_OTA_ADDR, conf.acc.resetOTA);
+    sendToFPGA(FPGA_ACC_TCHARGE_ADDR, conf.acc.tCharge);
+    sendToFPGA(FPGA_ACC_TINJECTION_ADDR, conf.acc.tInjection);
+    sendToFPGA(FPGA_ACC_DISABLE_CP1_ADDR, conf.acc.disableCP[0]);
+    sendToFPGA(FPGA_ACC_DISABLE_CP2_ADDR, conf.acc.disableCP[1]);
+    sendToFPGA(FPGA_ACC_DISABLE_CP3_ADDR, conf.acc.disableCP[2]);
+    sendToFPGA(FPGA_ACC_SINGLY_CP_ACTIVATION_ADDR, conf.acc.singlyCPActivation);
+
+    // Enable back streaming of data from FPGA, disable (n)ack to rx requests
+    sendToFPGA(FPGA_UART_MANAGEMENT_ADDR, 1);
+}
+
+bool fpgaCheckResponse() {
+    // FIXME: use of magic numbers
+    char response[31];
+    // Read the payload
+    Serial1.readBytes(response, 31);
+
+    // Print the response for debugging
+    for (int i = 0; i < 31; i++) {
+        Serial.print(response[i], HEX);
+        Serial.print(" ");
+    }
+
+    // Clear the rest of the serial buffer, if not already empty.
+    while (Serial1.available()) {
+        Serial1.read();
+    }
+
+    // Check if the response is ack
+    if (response[0] == 0x00) { // TODO: check if is response[0] or response[5]
+        return true;
+    } else {
+        if (response[0] == 0x01) {
+            Serial.println("Write error: Generic error");
+        } else if (response[0] == 0x02) {
+            Serial.println("Write error: Transaction timeout");
+        } else if (response[0] == 0x04) {
+            Serial.println("Write error: Header error");
+        } else if (response[0] == 0x08) {
+            Serial.println("Write error: Message invalid");
+        } else {
+            Serial.println("Write error: Unknown error");
+        }
+    }
 }
