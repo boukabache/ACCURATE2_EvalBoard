@@ -69,10 +69,12 @@
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
         "footprint": "error",
+        "footprint_filters_mismatch": "ignore",
         "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
         "hole_near_hole": "error",
+        "hole_to_hole": "warning",
         "holes_co_located": "warning",
         "invalid_outline": "error",
         "isolated_copper": "warning",
@@ -460,6 +462,7 @@
         "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
         "via_diameter": 0.8,
@@ -468,7 +471,7 @@
       }
     ],
     "meta": {
-      "version": 3
+      "version": 4
     },
     "net_colors": null,
     "netclass_assignments": null,
@@ -596,19 +599,19 @@
     ],
     [
       "2ef1ae52-eeb9-49a8-8ab0-44a0905b0f6b",
-      "Power Supply"
+      "Power Supply & USB"
     ],
     [
       "bd41ea46-a9de-4499-b959-ad1671fa0c75",
       "MCU"
     ],
     [
-      "f04f6572-561e-44c2-9bbc-f778f673769c",
-      "FPGA"
-    ],
-    [
       "3be3a387-cb89-452f-af8d-959ec1a9f1d5",
       "ACCURATE ASIC"
+    ],
+    [
+      "f04f6572-561e-44c2-9bbc-f778f673769c",
+      "FPGA"
     ],
     [
       "2af0ef63-5a13-466c-ac96-3981e4cc5343",

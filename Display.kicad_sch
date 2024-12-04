@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20240812)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "8.99")
 	(uuid "c62075f9-635b-4213-b6fa-2eb06ce6a9dc")
 	(paper "A4")
 	(title_block
@@ -541,6 +541,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "LEDs & Displays:DS_MIDAS_MDOB128064V2V-WI"
 			(pin_names
@@ -1008,8 +1009,8 @@
 					)
 				)
 				(rectangle
-					(start 10.16 -13.335)
-					(end 43.18 -12.7)
+					(start 10.16 -3.81)
+					(end 43.18 -1.27)
 					(stroke
 						(width 0)
 						(type solid)
@@ -1030,8 +1031,8 @@
 					)
 				)
 				(rectangle
-					(start 10.16 -3.81)
-					(end 43.18 -1.27)
+					(start 10.16 -13.335)
+					(end 43.18 -12.7)
 					(stroke
 						(width 0)
 						(type solid)
@@ -1144,6 +1145,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "NON-PLATED_HOLE2.5_1"
 			(pin_names
@@ -1610,6 +1612,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "NON-PLATED_HOLE2.5_2"
 			(pin_names
@@ -2076,6 +2079,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "NON-PLATED_HOLE2.5_3"
 			(pin_names
@@ -2542,6 +2546,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Pads:NON-PLATED_HOLE2.5"
 			(pin_names
@@ -3008,6 +3013,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
@@ -3104,6 +3110,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "symbol_lib:+3V3D"
 			(power)
@@ -3181,7 +3188,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -3193,7 +3200,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -3224,7 +3231,61 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(text "Power Ports"
+		(exclude_from_sim no)
+		(at 26.67 25.4 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "0a2161f0-6833-4e66-b8da-06daa73026ab")
+	)
+	(text "Inputs"
+		(exclude_from_sim no)
+		(at 26.67 76.2 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "525380b9-3853-48d9-ae52-97a9691c8ce1")
+	)
+	(text "OLED Display"
+		(exclude_from_sim no)
+		(at 97.79 38.1 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "aa773911-7749-4aa8-8a25-ffb5c4f33525")
+	)
+	(text_box "I2C Address: 0x3C"
+		(exclude_from_sim no)
+		(at 124.46 66.04 0)
+		(size 20.32 3.81)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "3d0bd381-859b-45ec-afef-6dafa12f7780")
 	)
 	(junction
 		(at 109.22 50.8)
@@ -3517,58 +3578,6 @@
 			(type default)
 		)
 		(uuid "fde256bd-fc63-4dbb-aa80-412c0cd2d6a3")
-	)
-	(text_box "I2C Address: 0x3C"
-		(exclude_from_sim no)
-		(at 124.46 66.04 0)
-		(size 20.32 3.81)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "3d0bd381-859b-45ec-afef-6dafa12f7780")
-	)
-	(text "Power Ports"
-		(exclude_from_sim no)
-		(at 26.67 25.4 0)
-		(effects
-			(font
-				(size 2.5 2.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "0a2161f0-6833-4e66-b8da-06daa73026ab")
-	)
-	(text "Inputs"
-		(exclude_from_sim no)
-		(at 26.67 76.2 0)
-		(effects
-			(font
-				(size 2.5 2.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "525380b9-3853-48d9-ae52-97a9691c8ce1")
-	)
-	(text "OLED Display"
-		(exclude_from_sim no)
-		(at 97.79 38.1 0)
-		(effects
-			(font
-				(size 2.5 2.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "aa773911-7749-4aa8-8a25-ffb5c4f33525")
 	)
 	(label "MCU_SDA"
 		(at 97.79 58.42 0)
