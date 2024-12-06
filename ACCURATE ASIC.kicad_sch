@@ -9324,7 +9324,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9336,7 +9336,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9392,7 +9392,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9404,7 +9404,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9460,7 +9460,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9472,7 +9472,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -21072,7 +21072,7 @@
 			(symbol "LM8272MMX_1_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -10.16)
+						(xy 0 0) (xy 10.16 -5.08)
 					)
 					(stroke
 						(width 0.254)
@@ -21084,7 +21084,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 10.16 -5.08)
+						(xy 0 0) (xy 0 -10.16)
 					)
 					(stroke
 						(width 0.254)
@@ -21588,7 +21588,7 @@
 			(symbol "LM8272MMX_2_2"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -10.16)
+						(xy 0 0) (xy 10.16 -5.08)
 					)
 					(stroke
 						(width 0.254)
@@ -21600,7 +21600,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 10.16 -5.08)
+						(xy 0 0) (xy 0 -10.16)
 					)
 					(stroke
 						(width 0.254)
@@ -23122,9 +23122,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -2.54)
-					(mid 1.7472 -2.0012)
-					(end 2.286 -1.778)
+					(start 3.048 -2.54)
+					(mid 2.8248 -3.0788)
+					(end 2.286 -3.302)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23146,9 +23146,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -2.54)
-					(mid 2.8248 -3.0788)
-					(end 2.286 -3.302)
+					(start 1.524 -2.54)
+					(mid 1.7472 -2.0012)
+					(end 2.286 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23182,9 +23182,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -5.08)
-					(mid 1.7472 -4.5412)
-					(end 2.286 -4.318)
+					(start 3.048 -5.08)
+					(mid 2.8248 -5.6188)
+					(end 2.286 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23206,9 +23206,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -5.842)
-					(mid 1.7472 -5.6188)
-					(end 1.524 -5.08)
+					(start 1.524 -5.08)
+					(mid 1.7472 -4.5412)
+					(end 2.286 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23218,9 +23218,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -5.08)
-					(mid 2.8248 -5.6188)
-					(end 2.286 -5.842)
+					(start 2.286 -5.842)
+					(mid 1.7472 -5.6188)
+					(end 1.524 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23254,9 +23254,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -7.62)
-					(mid 1.7472 -7.0812)
-					(end 2.286 -6.858)
+					(start 2.286 -8.382)
+					(mid 1.7472 -8.1588)
+					(end 1.524 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23278,9 +23278,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -8.382)
-					(mid 1.7472 -8.1588)
-					(end 1.524 -7.62)
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23290,9 +23290,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -7.62)
-					(mid 2.8248 -8.1588)
-					(end 2.286 -8.382)
+					(start 1.524 -7.62)
+					(mid 1.7472 -7.0812)
+					(end 2.286 -6.858)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23398,18 +23398,6 @@
 					)
 				)
 				(arc
-					(start 6.096 -2.54)
-					(mid 5.8728 -3.0788)
-					(end 5.334 -3.302)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 5.334 -1.778)
 					(mid 5.8728 -2.0012)
 					(end 6.096 -2.54)
@@ -23422,9 +23410,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -3.302)
-					(mid 4.7952 -3.0788)
-					(end 4.572 -2.54)
+					(start 4.572 -2.54)
+					(mid 4.7952 -2.0012)
+					(end 5.334 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23434,9 +23422,21 @@
 					)
 				)
 				(arc
-					(start 4.572 -2.54)
-					(mid 4.7952 -2.0012)
-					(end 5.334 -1.778)
+					(start 6.096 -2.54)
+					(mid 5.8728 -3.0788)
+					(end 5.334 -3.302)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -3.302)
+					(mid 4.7952 -3.0788)
+					(end 4.572 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23470,21 +23470,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -5.08)
-					(mid 4.7952 -4.5412)
-					(end 5.334 -4.318)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 5.334 -4.318)
-					(mid 5.8728 -4.5412)
-					(end 6.096 -5.08)
+					(start 6.096 -5.08)
+					(mid 5.8728 -5.6188)
+					(end 5.334 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23506,9 +23494,21 @@
 					)
 				)
 				(arc
-					(start 6.096 -5.08)
-					(mid 5.8728 -5.6188)
-					(end 5.334 -5.842)
+					(start 5.334 -4.318)
+					(mid 5.8728 -4.5412)
+					(end 6.096 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.572 -5.08)
+					(mid 4.7952 -4.5412)
+					(end 5.334 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23542,9 +23542,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -7.62)
-					(mid 5.8728 -8.1588)
-					(end 5.334 -8.382)
+					(start 5.334 -8.382)
+					(mid 4.7952 -8.1588)
+					(end 4.572 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23554,9 +23554,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -8.382)
-					(mid 4.7952 -8.1588)
-					(end 4.572 -7.62)
+					(start 6.096 -7.62)
+					(mid 5.8728 -8.1588)
+					(end 5.334 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24597,18 +24597,6 @@
 					)
 				)
 				(arc
-					(start 3.048 -2.54)
-					(mid 2.8248 -3.0788)
-					(end 2.286 -3.302)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 2.286 -3.302)
 					(mid 1.7472 -3.0788)
 					(end 1.524 -2.54)
@@ -24624,6 +24612,18 @@
 					(start 1.524 -2.54)
 					(mid 1.7472 -2.0012)
 					(end 2.286 -1.778)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 3.048 -2.54)
+					(mid 2.8248 -3.0788)
+					(end 2.286 -3.302)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24669,6 +24669,18 @@
 					)
 				)
 				(arc
+					(start 2.286 -4.318)
+					(mid 2.8248 -4.5412)
+					(end 3.048 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
 					(start 3.048 -5.08)
 					(mid 2.8248 -5.6188)
 					(end 2.286 -5.842)
@@ -24704,18 +24716,6 @@
 						(type none)
 					)
 				)
-				(arc
-					(start 2.286 -4.318)
-					(mid 2.8248 -4.5412)
-					(end 3.048 -5.08)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
 						(xy 2.286 -5.842) (xy 2.286 -5.842)
@@ -24741,9 +24741,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -7.62)
-					(mid 1.7472 -7.0812)
-					(end 2.286 -6.858)
+					(start 2.286 -8.382)
+					(mid 1.7472 -8.1588)
+					(end 1.524 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24753,9 +24753,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -8.382)
-					(mid 1.7472 -8.1588)
-					(end 1.524 -7.62)
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24777,9 +24777,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -7.62)
-					(mid 2.8248 -8.1588)
-					(end 2.286 -8.382)
+					(start 1.524 -7.62)
+					(mid 1.7472 -7.0812)
+					(end 2.286 -6.858)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24885,6 +24885,18 @@
 					)
 				)
 				(arc
+					(start 5.334 -3.302)
+					(mid 4.7952 -3.0788)
+					(end 4.572 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
 					(start 5.334 -1.778)
 					(mid 5.8728 -2.0012)
 					(end 6.096 -2.54)
@@ -24920,18 +24932,6 @@
 						(type none)
 					)
 				)
-				(arc
-					(start 5.334 -3.302)
-					(mid 4.7952 -3.0788)
-					(end 4.572 -2.54)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
 						(xy 5.334 -3.302) (xy 5.334 -3.302)
@@ -24957,9 +24957,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -4.318)
-					(mid 5.8728 -4.5412)
-					(end 6.096 -5.08)
+					(start 6.096 -5.08)
+					(mid 5.8728 -5.6188)
+					(end 5.334 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24969,9 +24969,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -5.08)
-					(mid 5.8728 -5.6188)
-					(end 5.334 -5.842)
+					(start 5.334 -5.842)
+					(mid 4.7952 -5.6188)
+					(end 4.572 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24993,9 +24993,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -5.842)
-					(mid 4.7952 -5.6188)
-					(end 4.572 -5.08)
+					(start 5.334 -4.318)
+					(mid 5.8728 -4.5412)
+					(end 6.096 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -25020,18 +25020,6 @@
 					(pts
 						(xy 5.334 -6.858) (xy 5.334 -6.858)
 					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 5.334 -6.858)
-					(mid 5.8728 -7.0812)
-					(end 6.096 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -25068,6 +25056,18 @@
 					(start 6.096 -7.62)
 					(mid 5.8728 -8.1588)
 					(end 5.334 -8.382)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -6.858)
+					(mid 5.8728 -7.0812)
+					(end 6.096 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -25749,7 +25749,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 5.08 0)
+						(xy 5.08 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -25761,7 +25761,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 0 2.032)
+						(xy 5.08 2.032) (xy 5.08 0)
 					)
 					(stroke
 						(width 0.254)
@@ -25817,7 +25817,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -25829,7 +25829,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -26338,7 +26338,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 0 2.032)
+						(xy 5.08 2.032) (xy 5.08 0)
 					)
 					(stroke
 						(width 0.254)
@@ -26350,7 +26350,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 5.08 0)
+						(xy 5.08 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -26406,7 +26406,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -26418,7 +26418,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -26927,7 +26927,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 0 2.032)
+						(xy 5.08 2.032) (xy 5.08 0)
 					)
 					(stroke
 						(width 0.254)
@@ -26939,7 +26939,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 5.08 0)
+						(xy 5.08 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -26995,7 +26995,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -27007,7 +27007,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -27516,7 +27516,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 5.08 0)
+						(xy 5.08 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -27528,7 +27528,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 0 2.032)
+						(xy 5.08 2.032) (xy 5.08 0)
 					)
 					(stroke
 						(width 0.254)
@@ -27584,7 +27584,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -27596,7 +27596,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -29179,6 +29179,12 @@
 		(uuid "894602f2-ccdd-4c20-b36a-bc34a2e7c616")
 	)
 	(junction
+		(at 279.4 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8a30659f-d59a-4a88-af7c-6ece51091f8e")
+	)
+	(junction
 		(at 69.85 241.3)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -29231,12 +29237,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a32bbce2-58d9-4e04-be45-5a3d6b2c285f")
-	)
-	(junction
-		(at 285.75 147.32)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a75b7582-bef2-4924-a880-626a178e823a")
 	)
 	(junction
 		(at 139.7 43.18)
@@ -29937,7 +29937,7 @@
 	)
 	(wire
 		(pts
-			(xy 285.75 147.32) (xy 285.75 153.67)
+			(xy 295.91 147.32) (xy 295.91 153.67)
 		)
 		(stroke
 			(width 0)
@@ -30927,7 +30927,7 @@
 	)
 	(wire
 		(pts
-			(xy 254 147.32) (xy 285.75 147.32)
+			(xy 254 147.32) (xy 295.91 147.32)
 		)
 		(stroke
 			(width 0)
@@ -31117,6 +31117,16 @@
 	)
 	(wire
 		(pts
+			(xy 279.4 152.4) (xy 287.02 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fede1f0-3077-4562-a36a-052f009be255")
+	)
+	(wire
+		(pts
 			(xy 179.07 107.95) (xy 181.61 107.95)
 		)
 		(stroke
@@ -31224,6 +31234,16 @@
 			(type default)
 		)
 		(uuid "56a30f6c-7bfe-496a-a339-951f846c2569")
+	)
+	(wire
+		(pts
+			(xy 287.02 161.29) (xy 287.02 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57c7c986-cd86-483d-89cf-272d187b4386")
 	)
 	(wire
 		(pts
@@ -31787,6 +31807,16 @@
 	)
 	(wire
 		(pts
+			(xy 191.77 170.18) (xy 213.36 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e956c62-8f08-46ff-96db-60a96af6cc2e")
+	)
+	(wire
+		(pts
 			(xy 63.5 137.16) (xy 73.66 137.16)
 		)
 		(stroke
@@ -31917,16 +31947,6 @@
 	)
 	(wire
 		(pts
-			(xy 292.1 161.29) (xy 292.1 162.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "846ec23c-2ce9-461e-af0e-ac5c88a6f96b")
-	)
-	(wire
-		(pts
 			(xy 365.76 64.77) (xy 365.76 62.23)
 		)
 		(stroke
@@ -31934,16 +31954,6 @@
 			(type default)
 		)
 		(uuid "847c0113-71cb-44dc-b1a5-94850142d402")
-	)
-	(wire
-		(pts
-			(xy 191.77 170.18) (xy 213.36 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "85d7a02d-18f1-4344-86c0-9506b864d00e")
 	)
 	(bus
 		(pts
@@ -32467,16 +32477,6 @@
 	)
 	(wire
 		(pts
-			(xy 292.1 147.32) (xy 292.1 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a96dd21a-8570-4752-b3d4-247c7dd46080")
-	)
-	(wire
-		(pts
 			(xy 63.5 139.7) (xy 64.77 139.7)
 		)
 		(stroke
@@ -32787,16 +32787,6 @@
 	)
 	(wire
 		(pts
-			(xy 285.75 147.32) (xy 292.1 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b81a4ddd-a247-4cbf-9f24-69a825e8191e")
-	)
-	(wire
-		(pts
 			(xy 109.22 132.08) (xy 143.51 132.08)
 		)
 		(stroke
@@ -32864,16 +32854,6 @@
 			(type default)
 		)
 		(uuid "bf8b5508-9ad7-4bad-9869-49a0896c2a96")
-	)
-	(wire
-		(pts
-			(xy 279.4 152.4) (xy 279.4 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bfba8e60-eb48-45b9-8d12-3d84944e6e7f")
 	)
 	(wire
 		(pts
@@ -32967,7 +32947,7 @@
 	)
 	(wire
 		(pts
-			(xy 285.75 161.29) (xy 285.75 162.56)
+			(xy 295.91 161.29) (xy 295.91 162.56)
 		)
 		(stroke
 			(width 0)
@@ -33275,6 +33255,16 @@
 		)
 		(uuid "d4c2b189-f3dc-4b2a-b77e-652aa6eb8eaf")
 	)
+	(wire
+		(pts
+			(xy 279.4 152.4) (xy 279.4 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d62cf892-c57e-4d4e-93a4-cebd5e8243b5")
+	)
 	(polyline
 		(pts
 			(xy 322.326 74.93) (xy 322.326 90.0176)
@@ -33324,6 +33314,16 @@
 			(type default)
 		)
 		(uuid "db4f2bbb-d810-49a1-ba3c-b40433350868")
+	)
+	(wire
+		(pts
+			(xy 287.02 152.4) (xy 287.02 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dba8807f-f3b0-46c2-8ee7-1bbf783ffa34")
 	)
 	(wire
 		(pts
@@ -43178,503 +43178,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Capacitors SMD:CC0603_10UF_25V_20%_X5R")
-		(at 292.1 153.67 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "32f427e3-621b-4fee-baa5-5858d0b752c0")
-		(property "Reference" "C86"
-			(at 292.1 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "CC0603_10UF_25V_20%_X5R"
-			(at 298.323 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Capacitors SMD:CAPC1709X100N"
-			(at 300.228 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X5R_TDK_C.pdf"
-			(at 302.133 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 292.1 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Val" "10uF"
-			(at 292.1 160.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Part Number" "CC0603_10UF_25V_20%_X5R"
-			(at 304.038 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "Capacitor - non polarized"
-			(at 305.943 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Capacitors.SchLib"
-			(at 307.848 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "10uF"
-			(at 309.753 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 311.658 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 313.563 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "2"
-			(at 315.468 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
-			(at 317.373 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "CAPC1709X100N"
-			(at 319.278 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" " "
-			(at 321.183 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" "None"
-			(at 323.088 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 324.993 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Voltage" "25V"
-			(at 326.898 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "TC" "X5R"
-			(at 328.803 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "±20%"
-			(at 330.708 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
-			(at 332.613 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "GENERIC"
-			(at 334.518 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "CC0603_10UF_25V_20%_X5R"
-			(at 336.423 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "0603"
-			(at 338.328 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 340.233 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 342.138 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 344.043 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" " "
-			(at 345.948 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 347.853 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 349.758 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" " "
-			(at 351.663 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer1 Example" "TDK"
-			(at 353.568 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer1 Part Number" "C1608X5R1E106M080"
-			(at 355.473 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer1 ComponentHeight" "1mm"
-			(at 357.378 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X5R_TDK_C.pdf"
-			(at 359.283 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Author" "CERN DEM BC"
-			(at 361.188 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "CreateDate" "07/01/20 00:00:00"
-			(at 363.093 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate" "07/01/20 00:00:00"
-			(at 364.998 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Database Table Name" "Capacitors"
-			(at 366.903 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Name" "Capacitors SMD"
-			(at 368.808 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Library" "Capacitors SMD"
-			(at 370.713 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 372.618 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Color_1" ""
-			(at 292.1 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment_1" ""
-			(at 292.1 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Family_1" ""
-			(at 292.1 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint_1" ""
-			(at 292.1 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance_1" ""
-			(at 292.1 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e51dd9bd-f04d-485e-a17e-0807080658cd")
-		)
-		(pin "2"
-			(uuid "4dc3506f-831b-479c-be1c-7dcb2180e7c0")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/3be3a387-cb89-452f-af8d-959ec1a9f1d5"
-					(reference "C86")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 48.26 38.1 0)
 		(unit 1)
@@ -47077,6 +46580,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 287.02 162.56 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "48c7b44d-9935-4e2e-b399-6cd927d6c5e8")
+		(property "Reference" "#PWR074"
+			(at 287.02 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 287.02 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 287.02 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 287.02 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 287.02 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "30f47930-d7da-42d1-9426-727e65251ac1")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/3be3a387-cb89-452f-af8d-959ec1a9f1d5"
+					(reference "#PWR074")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Resistors SMD:R0603_0R_JUMPER")
 		(at 73.66 137.16 0)
 		(unit 1)
@@ -47707,73 +47277,6 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/3be3a387-cb89-452f-af8d-959ec1a9f1d5"
 					(reference "#PWR050")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 292.1 162.56 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4d71f17e-7316-4fb9-9acb-951878dc7c73")
-		(property "Reference" "#PWR074"
-			(at 292.1 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 292.1 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 292.1 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 292.1 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 292.1 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fcf9266a-c787-4237-8a25-f26e6fc984e9")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/3be3a387-cb89-452f-af8d-959ec1a9f1d5"
-					(reference "#PWR074")
 					(unit 1)
 				)
 			)
@@ -55379,7 +54882,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 285.75 162.56 0)
+		(at 295.91 162.56 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -55389,7 +54892,7 @@
 		(fields_autoplaced yes)
 		(uuid "8363201e-daba-4198-9c00-ffa7ab9b9c85")
 		(property "Reference" "#PWR073"
-			(at 285.75 168.91 0)
+			(at 295.91 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55398,7 +54901,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 285.75 167.64 0)
+			(at 295.91 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55406,7 +54909,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 285.75 162.56 0)
+			(at 295.91 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55415,7 +54918,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 285.75 162.56 0)
+			(at 295.91 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55424,7 +54927,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 285.75 162.56 0)
+			(at 295.91 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -72168,6 +71671,503 @@
 		)
 	)
 	(symbol
+		(lib_id "Capacitors SMD:CC0603_10UF_25V_20%_X5R")
+		(at 287.02 153.67 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e3f58c37-f7fe-4750-a7a3-3b49116ac610")
+		(property "Reference" "C64"
+			(at 287.02 154.94 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "CC0603_10UF_25V_20%_X5R"
+			(at 293.243 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitors SMD:CAPC1709X100N"
+			(at 295.148 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X5R_TDK_C.pdf"
+			(at 297.053 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 287.02 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Val" "10uF"
+			(at 287.02 160.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Part Number" "CC0603_10UF_25V_20%_X5R"
+			(at 298.958 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Capacitor - non polarized"
+			(at 300.863 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Capacitors.SchLib"
+			(at 302.768 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "10uF"
+			(at 304.673 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 306.578 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 308.483 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "2"
+			(at 310.388 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
+			(at 312.293 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "CAPC1709X100N"
+			(at 314.198 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" " "
+			(at 316.103 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "None"
+			(at 318.008 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 319.913 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 321.818 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "TC" "X5R"
+			(at 323.723 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "±20%"
+			(at 325.628 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
+			(at 327.533 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "GENERIC"
+			(at 329.438 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CC0603_10UF_25V_20%_X5R"
+			(at 331.343 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "0603"
+			(at 333.248 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 335.153 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 337.058 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 338.963 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" " "
+			(at 340.868 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 342.773 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 344.678 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" " "
+			(at 346.583 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Example" "TDK"
+			(at 348.488 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Part Number" "C1608X5R1E106M080"
+			(at 350.393 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 ComponentHeight" "1mm"
+			(at 352.298 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X5R_TDK_C.pdf"
+			(at 354.203 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM BC"
+			(at 356.108 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "07/01/20 00:00:00"
+			(at 358.013 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "07/01/20 00:00:00"
+			(at 359.918 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Capacitors"
+			(at 361.823 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Capacitors SMD"
+			(at 363.728 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "Capacitors SMD"
+			(at 365.633 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 367.538 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 287.02 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 287.02 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 287.02 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 287.02 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 287.02 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "57b8a374-e524-4266-b826-fb380a5bb2b6")
+		)
+		(pin "2"
+			(uuid "35746c09-0fed-4e67-82cf-d0e473c6983c")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/3be3a387-cb89-452f-af8d-959ec1a9f1d5"
+					(reference "C64")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Diodes:PESD3V3S1UB")
 		(at 147.32 60.96 90)
 		(unit 1)
@@ -76644,7 +76644,7 @@
 	)
 	(symbol
 		(lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R")
-		(at 285.75 153.67 90)
+		(at 295.91 153.67 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -76653,7 +76653,7 @@
 		(dnp no)
 		(uuid "f1c676f7-eea3-4fa0-ba0d-7a1fae225e07")
 		(property "Reference" "C85"
-			(at 285.75 154.94 90)
+			(at 295.91 154.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76662,7 +76662,7 @@
 			)
 		)
 		(property "Value" "CC0603_100NF_50V_10%_X7R"
-			(at 291.973 153.67 0)
+			(at 302.133 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76672,7 +76672,7 @@
 			)
 		)
 		(property "Footprint" "Capacitors SMD:CAPC1608X87N"
-			(at 293.878 153.67 0)
+			(at 304.038 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76682,7 +76682,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 295.783 153.67 0)
+			(at 305.943 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76692,7 +76692,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 285.75 153.67 0)
+			(at 295.91 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76701,7 +76701,7 @@
 			)
 		)
 		(property "Val" "100nF"
-			(at 285.75 160.02 90)
+			(at 295.91 160.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76710,7 +76710,7 @@
 			)
 		)
 		(property "Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 297.688 153.67 0)
+			(at 307.848 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76720,7 +76720,7 @@
 			)
 		)
 		(property "Library Ref" "Capacitor - non polarized"
-			(at 299.593 153.67 0)
+			(at 309.753 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76730,7 +76730,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Capacitors.SchLib"
-			(at 301.498 153.67 0)
+			(at 311.658 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76740,7 +76740,7 @@
 			)
 		)
 		(property "Comment" "100nF"
-			(at 303.403 153.67 0)
+			(at 313.563 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76750,7 +76750,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 305.308 153.67 0)
+			(at 315.468 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76760,7 +76760,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 307.213 153.67 0)
+			(at 317.373 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76770,7 +76770,7 @@
 			)
 		)
 		(property "Pin Count" "2"
-			(at 309.118 153.67 0)
+			(at 319.278 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76780,7 +76780,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
-			(at 311.023 153.67 0)
+			(at 321.183 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76790,7 +76790,7 @@
 			)
 		)
 		(property "Footprint Ref" "CAPC1608X87N"
-			(at 312.928 153.67 0)
+			(at 323.088 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76800,7 +76800,7 @@
 			)
 		)
 		(property "PackageDescription" " "
-			(at 314.833 153.67 0)
+			(at 324.993 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76810,7 +76810,7 @@
 			)
 		)
 		(property "Status" "Preferred"
-			(at 316.738 153.67 0)
+			(at 326.898 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76820,7 +76820,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 318.643 153.67 0)
+			(at 328.803 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76830,7 +76830,7 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 320.548 153.67 0)
+			(at 330.708 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76840,7 +76840,7 @@
 			)
 		)
 		(property "TC" "X7R"
-			(at 322.453 153.67 0)
+			(at 332.613 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76850,7 +76850,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 324.358 153.67 0)
+			(at 334.518 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76860,7 +76860,7 @@
 			)
 		)
 		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
-			(at 326.263 153.67 0)
+			(at 336.423 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76870,7 +76870,7 @@
 			)
 		)
 		(property "Manufacturer" "GENERIC"
-			(at 328.168 153.67 0)
+			(at 338.328 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76880,7 +76880,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 330.073 153.67 0)
+			(at 340.233 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76890,7 +76890,7 @@
 			)
 		)
 		(property "Case" "0603"
-			(at 331.978 153.67 0)
+			(at 342.138 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76900,7 +76900,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 333.883 153.67 0)
+			(at 344.043 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76910,7 +76910,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 335.788 153.67 0)
+			(at 345.948 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76920,7 +76920,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 337.693 153.67 0)
+			(at 347.853 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76930,7 +76930,7 @@
 			)
 		)
 		(property "PressFit" " "
-			(at 339.598 153.67 0)
+			(at 349.758 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76940,7 +76940,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 341.503 153.67 0)
+			(at 351.663 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76950,7 +76950,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 343.408 153.67 0)
+			(at 353.568 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76960,7 +76960,7 @@
 			)
 		)
 		(property "ComponentHeight" " "
-			(at 345.313 153.67 0)
+			(at 355.473 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76970,7 +76970,7 @@
 			)
 		)
 		(property "Manufacturer1 Example" "PHYCOMP"
-			(at 347.218 153.67 0)
+			(at 357.378 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76980,7 +76980,7 @@
 			)
 		)
 		(property "Manufacturer1 Part Number" "223858615649"
-			(at 349.123 153.67 0)
+			(at 359.283 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -76990,7 +76990,7 @@
 			)
 		)
 		(property "Manufacturer1 ComponentHeight" "0.87mm"
-			(at 351.028 153.67 0)
+			(at 361.188 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77000,7 +77000,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 352.933 153.67 0)
+			(at 363.093 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77010,7 +77010,7 @@
 			)
 		)
 		(property "Author" "CERN DEM JLC"
-			(at 354.838 153.67 0)
+			(at 364.998 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77020,7 +77020,7 @@
 			)
 		)
 		(property "CreateDate" "12/03/07 00:00:00"
-			(at 356.743 153.67 0)
+			(at 366.903 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77030,7 +77030,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "12/03/07 00:00:00"
-			(at 358.648 153.67 0)
+			(at 368.808 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77040,7 +77040,7 @@
 			)
 		)
 		(property "Database Table Name" "Capacitors"
-			(at 360.553 153.67 0)
+			(at 370.713 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77050,7 +77050,7 @@
 			)
 		)
 		(property "Library Name" "Capacitors SMD"
-			(at 362.458 153.67 0)
+			(at 372.618 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77060,7 +77060,7 @@
 			)
 		)
 		(property "Footprint Library" "Capacitors SMD"
-			(at 364.363 153.67 0)
+			(at 374.523 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77070,7 +77070,7 @@
 			)
 		)
 		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 366.268 153.67 0)
+			(at 376.428 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77080,7 +77080,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 285.75 153.67 0)
+			(at 295.91 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77089,7 +77089,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 285.75 153.67 0)
+			(at 295.91 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77098,7 +77098,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 285.75 153.67 0)
+			(at 295.91 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77107,7 +77107,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 285.75 153.67 0)
+			(at 295.91 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -77116,7 +77116,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 285.75 153.67 0)
+			(at 295.91 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)

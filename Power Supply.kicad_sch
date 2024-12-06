@@ -8326,592 +8326,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Diodes:CDBU0520-HF"
-			(pin_names
-				(offset 1.27)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 3.81 2.794 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "CDBU0520-HF"
-				(at 0 -5.715 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Footprint" "ICs And Semiconductors SMD:SOD-523F"
-				(at 0 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CDBU0520-HF.pdf"
-				(at 0 -9.525 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Part Number" "CDBU0520-HF"
-				(at 0 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Library Ref" "Diode Schottky"
-				(at 0 -13.335 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Library Path" "SchLib\\Diodes.SchLib"
-				(at 0 -15.24 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Comment" "CDBU0520-HF"
-				(at 0 -17.145 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Component Kind" "Standard"
-				(at 0 -19.05 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Component Type" "Standard"
-				(at 0 -20.955 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Device" "CDBU0520-HF"
-				(at 0 -22.86 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "PackageDescription" "Small Outline Diode Flat Lead (SOD-523F), Body; 1.80mm L X 1mm W X 0.85mm H"
-				(at 0 -24.765 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Voltage" "20V"
-				(at 0 -26.67 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Power" "500mA"
-				(at 0 -28.575 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Status" " "
-				(at 0 -30.48 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Part Description" "20V Surface mount Schottky Barrier Diode"
-				(at 0 -32.385 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer" "COMCHIP"
-				(at 0 -34.29 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Part Number" "CDBU0520-HF"
-				(at 0 -36.195 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Pin Count" "2"
-				(at 0 -38.1 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Case" "SOD-523F"
-				(at 0 -40.005 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mounted" "Yes"
-				(at 0 -41.91 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Socket" "No"
-				(at 0 -43.815 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "SMD" "Yes"
-				(at 0 -45.72 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "PressFit" "No"
-				(at 0 -47.625 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Sense" "No"
-				(at 0 -49.53 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Sense Comment" " "
-				(at 0 -51.435 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Bonding" "No"
-				(at 0 -53.34 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Status Comment" " "
-				(at 0 -55.245 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "ComponentHeight" "1mm"
-				(at 0 -57.15 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-				(at 0 -59.055 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Footprint Ref" "SOD-523F"
-				(at 0 -60.96 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CDBU0520-HF.pdf"
-				(at 0 -62.865 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "ComponentLink1URL" " "
-				(at 0 -64.77 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "ComponentLink1Description" " "
-				(at 0 -66.675 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "ComponentLink2URL" " "
-				(at 0 -68.58 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "ComponentLink2Description" " "
-				(at 0 -70.485 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Author" "CERN DEM HF"
-				(at 0 -72.39 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "CreateDate" "10/13/23 00:00:00"
-				(at 0 -74.295 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "LatestRevisionDate" "10/13/23 00:00:00"
-				(at 0 -76.2 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Field1" " "
-				(at 0 -78.105 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Database Table Name" "ICs And Semiconductors"
-				(at 0 -80.01 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Library Name" "Diodes"
-				(at 0 -81.915 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Footprint Library" "ICs And Semiconductors SMD"
-				(at 0 -83.82 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-				(at 0 -85.725 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "CDBU0520-HF_0_1"
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 5.08 0)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.048 -1.524) (xy 4.572 0) (xy 3.048 1.524) (xy 3.048 -1.524)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.064 1.524) (xy 4.064 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -1.27) (xy 5.08 -1.524)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -1.524) (xy 4.572 -1.524)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 0 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Diodes:PESD3V3L5UY"
 			(pin_names
 				(offset 1.27)
@@ -9480,7 +8894,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9492,7 +8906,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9548,7 +8962,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9560,7 +8974,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9616,7 +9030,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9628,7 +9042,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9684,7 +9098,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -9696,7 +9110,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -10207,7 +9621,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -10219,7 +9633,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -11278,7 +10692,7 @@
 				)
 				(circle
 					(center 0 0)
-					(radius 0.762)
+					(radius 1.016)
 					(stroke
 						(width 0)
 						(type solid)
@@ -11289,7 +10703,7 @@
 				)
 				(circle
 					(center 0 0)
-					(radius 1.016)
+					(radius 0.762)
 					(stroke
 						(width 0)
 						(type solid)
@@ -11800,7 +11214,7 @@
 				)
 				(circle
 					(center 0 0)
-					(radius 0.508)
+					(radius 1.016)
 					(stroke
 						(width 0)
 						(type solid)
@@ -11811,7 +11225,7 @@
 				)
 				(circle
 					(center 0 0)
-					(radius 1.016)
+					(radius 0.508)
 					(stroke
 						(width 0)
 						(type solid)
@@ -12855,7 +12269,7 @@
 				)
 				(circle
 					(center 0 0)
-					(radius 1.016)
+					(radius 0.508)
 					(stroke
 						(width 0)
 						(type solid)
@@ -12866,7 +12280,7 @@
 				)
 				(circle
 					(center 0 0)
-					(radius 0.508)
+					(radius 1.016)
 					(stroke
 						(width 0)
 						(type solid)
@@ -23637,6 +23051,176 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Regulator_Linear:LP5907MFX-2.5"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -3.81 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LP5907MFX-2.5"
+				(at 6.35 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lp5907.pdf"
+				(at 0 12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "250-mA Ultra-Low-Noise Low-IQ LDO, 2.5V, SOT-23"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Single Output LDO Low-Noise"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LP5907MFX-2.5_0_1"
+				(rectangle
+					(start -5.08 -5.08)
+					(end 5.08 5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin power_in line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 5.08 0 180)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Regulators:LP5907MFX-1.2"
 			(pin_names
 				(offset 1.27)
@@ -31125,6 +30709,18 @@
 					)
 				)
 				(arc
+					(start 2.286 -3.302)
+					(mid 1.7472 -3.0788)
+					(end 1.524 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
 					(start 3.048 -2.54)
 					(mid 2.8248 -3.0788)
 					(end 2.286 -3.302)
@@ -31160,18 +30756,6 @@
 						(type none)
 					)
 				)
-				(arc
-					(start 2.286 -3.302)
-					(mid 1.7472 -3.0788)
-					(end 1.524 -2.54)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
 						(xy 2.286 -3.302) (xy 2.286 -3.302)
@@ -31197,30 +30781,6 @@
 					)
 				)
 				(arc
-					(start 3.048 -5.08)
-					(mid 2.8248 -5.6188)
-					(end 2.286 -5.842)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 2.286 -4.318)
-					(mid 2.8248 -4.5412)
-					(end 3.048 -5.08)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 2.286 -5.842)
 					(mid 1.7472 -5.6188)
 					(end 1.524 -5.08)
@@ -31233,9 +30793,33 @@
 					)
 				)
 				(arc
+					(start 3.048 -5.08)
+					(mid 2.8248 -5.6188)
+					(end 2.286 -5.842)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
 					(start 1.524 -5.08)
 					(mid 1.7472 -4.5412)
 					(end 2.286 -4.318)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -4.318)
+					(mid 2.8248 -4.5412)
+					(end 3.048 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -31269,9 +30853,21 @@
 					)
 				)
 				(arc
-					(start 3.048 -7.62)
-					(mid 2.8248 -8.1588)
-					(end 2.286 -8.382)
+					(start 2.286 -8.382)
+					(mid 1.7472 -8.1588)
+					(end 1.524 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.524 -7.62)
+					(mid 1.7472 -7.0812)
+					(end 2.286 -6.858)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -31293,21 +30889,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -8.382)
-					(mid 1.7472 -8.1588)
-					(end 1.524 -7.62)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.524 -7.62)
-					(mid 1.7472 -7.0812)
-					(end 2.286 -6.858)
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -31413,30 +30997,6 @@
 					)
 				)
 				(arc
-					(start 5.334 -3.302)
-					(mid 4.7952 -3.0788)
-					(end 4.572 -2.54)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 4.572 -2.54)
-					(mid 4.7952 -2.0012)
-					(end 5.334 -1.778)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 5.334 -1.778)
 					(mid 5.8728 -2.0012)
 					(end 6.096 -2.54)
@@ -31452,6 +31012,30 @@
 					(start 6.096 -2.54)
 					(mid 5.8728 -3.0788)
 					(end 5.334 -3.302)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -3.302)
+					(mid 4.7952 -3.0788)
+					(end 4.572 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.572 -2.54)
+					(mid 4.7952 -2.0012)
+					(end 5.334 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -31485,18 +31069,6 @@
 					)
 				)
 				(arc
-					(start 5.334 -4.318)
-					(mid 5.8728 -4.5412)
-					(end 6.096 -5.08)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 6.096 -5.08)
 					(mid 5.8728 -5.6188)
 					(end 5.334 -5.842)
@@ -31512,6 +31084,18 @@
 					(start 4.572 -5.08)
 					(mid 4.7952 -4.5412)
 					(end 5.334 -4.318)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -4.318)
+					(mid 5.8728 -4.5412)
+					(end 6.096 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -31557,6 +31141,18 @@
 					)
 				)
 				(arc
+					(start 5.334 -6.858)
+					(mid 5.8728 -7.0812)
+					(end 6.096 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
 					(start 6.096 -7.62)
 					(mid 5.8728 -8.1588)
 					(end 5.334 -8.382)
@@ -31572,18 +31168,6 @@
 					(start 5.334 -8.382)
 					(mid 4.7952 -8.1588)
 					(end 4.572 -7.62)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 5.334 -6.858)
-					(mid 5.8728 -7.0812)
-					(end 6.096 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -32934,7 +32518,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -32946,7 +32530,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -36462,12 +36046,6 @@
 		(uuid "2fe23eb2-6806-476d-b5b0-db6010fc790d")
 	)
 	(junction
-		(at 133.35 252.73)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "305f8270-e7b9-4c65-a8e3-4b1bb2f49d4c")
-	)
-	(junction
 		(at 283.21 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -37150,58 +36728,58 @@
 		(uuid "f7d4b97f-4e89-44e7-af6d-29497d168351")
 	)
 	(bus_entry
-		(at 342.9 58.42)
-		(size 2.54 -2.54)
+		(at 346.71 50.8)
+		(size -2.54 2.54)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1c0989c2-c380-40e4-9824-a83703dde196")
+		(uuid "5c7a8b2f-9fbd-4c8c-827c-2e49d3e7715f")
 	)
 	(bus_entry
-		(at 342.9 63.5)
-		(size 2.54 -2.54)
+		(at 346.71 55.88)
+		(size -2.54 2.54)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3dd04742-662d-457f-8e6e-cec18ef6e2d9")
+		(uuid "77298098-1a7e-41bb-847a-b1d2ce6320b3")
 	)
 	(bus_entry
-		(at 342.9 55.88)
-		(size 2.54 -2.54)
+		(at 346.71 66.04)
+		(size -2.54 2.54)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "46d72bfe-a0e4-48dc-a7f8-5cd4f866baa9")
+		(uuid "8afc0426-ea81-4d53-874e-09a44c9abc3e")
 	)
 	(bus_entry
-		(at 342.9 53.34)
-		(size 2.54 -2.54)
+		(at 346.71 68.58)
+		(size -2.54 2.54)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "516cd9db-7d42-4747-a02a-057543e90afb")
+		(uuid "b4c48254-5672-4f60-9bdc-8c1868aad072")
 	)
 	(bus_entry
-		(at 342.9 71.12)
-		(size 2.54 -2.54)
+		(at 346.71 60.96)
+		(size -2.54 2.54)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5a36fa72-bb97-45ea-a9c1-79d973dbfed3")
+		(uuid "dc4a9660-9ee1-41fe-9b15-98b0c59c34d9")
 	)
 	(bus_entry
-		(at 342.9 68.58)
-		(size 2.54 -2.54)
+		(at 346.71 53.34)
+		(size -2.54 2.54)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "759810cb-c46c-4c47-9e78-da5dbf0ded86")
+		(uuid "fb02504e-f18e-4ec2-836f-03ae80ed3bd6")
 	)
 	(polyline
 		(pts
@@ -37215,7 +36793,7 @@
 	)
 	(wire
 		(pts
-			(xy 364.49 91.44) (xy 387.35 91.44)
+			(xy 363.22 106.68) (xy 386.08 106.68)
 		)
 		(stroke
 			(width 0)
@@ -37363,6 +36941,16 @@
 		)
 		(uuid "0ad68ce2-ecaa-4501-9bd8-0c74631d2a30")
 	)
+	(bus
+		(pts
+			(xy 354.33 90.17) (xy 356.87 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b1fcbdf-b265-4c44-897c-e6781814015b")
+	)
 	(wire
 		(pts
 			(xy 147.32 113.03) (xy 147.32 114.3)
@@ -37435,7 +37023,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 246.38) (xy 127 246.38)
+			(xy 101.6 246.38) (xy 123.19 246.38)
 		)
 		(stroke
 			(width 0)
@@ -37502,6 +37090,16 @@
 			(type default)
 		)
 		(uuid "1521928f-9592-445a-a2ea-db184d43a9d4")
+	)
+	(bus
+		(pts
+			(xy 346.71 55.88) (xy 346.71 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "157e54d2-51a6-49d4-87b8-46e3c876b02c")
 	)
 	(wire
 		(pts
@@ -37655,16 +37253,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 262.89) (xy 133.35 265.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c744731-0d32-4643-ae14-4c8a572d044d")
-	)
-	(wire
-		(pts
 			(xy 241.3 104.14) (xy 243.84 104.14)
 		)
 		(stroke
@@ -37793,16 +37381,6 @@
 		)
 		(uuid "20e751ad-a87b-488e-ae3c-3337cdfc9a54")
 	)
-	(bus
-		(pts
-			(xy 345.44 60.96) (xy 345.44 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20e9a900-9e1b-4583-ac63-86d0eb150b4f")
-	)
 	(wire
 		(pts
 			(xy 269.24 182.88) (xy 276.86 182.88)
@@ -37915,7 +37493,7 @@
 	)
 	(wire
 		(pts
-			(xy 364.49 95.25) (xy 387.35 95.25)
+			(xy 363.22 110.49) (xy 386.08 110.49)
 		)
 		(stroke
 			(width 0)
@@ -37933,15 +37511,15 @@
 		)
 		(uuid "2a724179-e106-4302-ba1a-1672e4bed116")
 	)
-	(wire
+	(bus
 		(pts
-			(xy 133.35 252.73) (xy 133.35 250.19)
+			(xy 354.33 90.17) (xy 354.33 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2b402895-c871-4895-b2f7-d7a52923af67")
+		(uuid "2b090946-7401-439b-a806-1351fd035866")
 	)
 	(wire
 		(pts
@@ -38055,7 +37633,7 @@
 	)
 	(wire
 		(pts
-			(xy 364.49 102.87) (xy 387.35 102.87)
+			(xy 363.22 118.11) (xy 386.08 118.11)
 		)
 		(stroke
 			(width 0)
@@ -38072,16 +37650,6 @@
 			(type default)
 		)
 		(uuid "3109408d-943b-43b5-8849-5d832a1abfd5")
-	)
-	(wire
-		(pts
-			(xy 326.39 63.5) (xy 342.9 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3122ab41-27e8-46af-a5c0-051d18b61f62")
 	)
 	(wire
 		(pts
@@ -38383,16 +37951,6 @@
 		)
 		(uuid "43fcc513-d81b-467c-bf57-273e95e22547")
 	)
-	(bus
-		(pts
-			(xy 345.44 66.04) (xy 345.44 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "442b63b0-55d7-4fd1-9ac1-d369bbc7dc76")
-	)
 	(wire
 		(pts
 			(xy 254 142.24) (xy 254 143.51)
@@ -38575,6 +38133,16 @@
 	)
 	(wire
 		(pts
+			(xy 326.39 58.42) (xy 344.17 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e605056-587a-4a58-8b3a-393b25cb5e55")
+	)
+	(wire
+		(pts
 			(xy 116.84 53.34) (xy 116.84 38.1)
 		)
 		(stroke
@@ -38622,6 +38190,16 @@
 			(type default)
 		)
 		(uuid "50779c7e-397b-4b37-80ca-24fda3c5cdc3")
+	)
+	(wire
+		(pts
+			(xy 326.39 55.88) (xy 344.17 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5120da00-067f-49e5-aa35-4c9bd4e55597")
 	)
 	(wire
 		(pts
@@ -38682,6 +38260,16 @@
 			(type default)
 		)
 		(uuid "558cb7f2-395c-4002-aae6-192467fec892")
+	)
+	(bus
+		(pts
+			(xy 346.71 45.72) (xy 346.71 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55a7bb0a-0faa-4e01-9555-ffca19168558")
 	)
 	(wire
 		(pts
@@ -38772,6 +38360,16 @@
 			(type default)
 		)
 		(uuid "5d1dbeac-ff5e-4f98-8543-f6fefcb82801")
+	)
+	(wire
+		(pts
+			(xy 326.39 63.5) (xy 344.17 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e76aea0-353f-4ab7-99e5-56c586380bc5")
 	)
 	(wire
 		(pts
@@ -38872,16 +38470,6 @@
 			(type default)
 		)
 		(uuid "663f4c44-951f-44b2-8be4-8046bbb94c1a")
-	)
-	(wire
-		(pts
-			(xy 326.39 58.42) (xy 342.9 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67066b7c-1be9-4db2-b313-6f9431a9995a")
 	)
 	(wire
 		(pts
@@ -39135,7 +38723,7 @@
 	)
 	(wire
 		(pts
-			(xy 387.35 83.82) (xy 364.49 83.82)
+			(xy 386.08 99.06) (xy 363.22 99.06)
 		)
 		(stroke
 			(width 0)
@@ -39343,6 +38931,16 @@
 		)
 		(uuid "8052c8db-6c28-4ef5-8f4d-21475f66bc91")
 	)
+	(bus
+		(pts
+			(xy 354.33 87.63) (xy 349.25 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80f02252-8ccb-4654-b81d-f16f5246e045")
+	)
 	(wire
 		(pts
 			(xy 326.39 165.1) (xy 328.93 165.1)
@@ -39543,6 +39141,16 @@
 		)
 		(uuid "8a01a20b-115c-48ab-8b03-b923bda99d22")
 	)
+	(bus
+		(pts
+			(xy 346.71 60.96) (xy 346.71 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a0f6a00-256f-471d-94f2-635fcec24df5")
+	)
 	(wire
 		(pts
 			(xy 326.39 152.4) (xy 328.93 152.4)
@@ -39573,16 +39181,6 @@
 		)
 		(uuid "8ced0511-6d0c-405c-9207-d829ab203cca")
 	)
-	(bus
-		(pts
-			(xy 325.12 44.45) (xy 341.63 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8d139135-06ac-475e-b902-1deb29b5ea81")
-	)
 	(wire
 		(pts
 			(xy 198.12 228.6) (xy 198.12 229.87)
@@ -39612,6 +39210,16 @@
 			(type default)
 		)
 		(uuid "8edce2b0-34b0-42d1-b4e6-a56282c2ad54")
+	)
+	(wire
+		(pts
+			(xy 326.39 71.12) (xy 344.17 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f039b8f-cfd5-4db9-bbdd-ce1e329c0bdc")
 	)
 	(wire
 		(pts
@@ -39763,16 +39371,6 @@
 		)
 		(uuid "95fb42f5-ba38-40dd-b7cb-a6c1f99c899a")
 	)
-	(bus
-		(pts
-			(xy 364.49 76.2) (xy 387.35 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "964613cf-64fa-4870-b310-3a2d700c14f1")
-	)
 	(wire
 		(pts
 			(xy 269.24 154.94) (xy 283.21 154.94)
@@ -39863,26 +39461,6 @@
 		)
 		(uuid "9a1fd445-db2e-4528-993e-9f8426005795")
 	)
-	(bus
-		(pts
-			(xy 341.63 44.45) (xy 345.44 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9a3efbb3-1d68-454d-a3ff-877e2580ddd6")
-	)
-	(wire
-		(pts
-			(xy 133.35 252.73) (xy 133.35 255.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9b123e60-e465-4b15-80f8-fad5e670ded8")
-	)
 	(polyline
 		(pts
 			(xy 12.0142 74.041) (xy 98.3742 74.041)
@@ -39952,16 +39530,6 @@
 			(type default)
 		)
 		(uuid "9faccf07-200f-47ac-ae95-42056b63a46a")
-	)
-	(wire
-		(pts
-			(xy 133.35 237.49) (xy 133.35 240.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0a65ee1-22dc-4543-9394-cdeb8789b366")
 	)
 	(wire
 		(pts
@@ -40035,13 +39603,13 @@
 	)
 	(bus
 		(pts
-			(xy 345.44 68.58) (xy 345.44 71.12)
+			(xy 346.71 53.34) (xy 346.71 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a4d4f05e-fc98-4441-803e-ec6311fa6591")
+		(uuid "a4883937-3a3b-4a7a-a88c-d61707b60ada")
 	)
 	(wire
 		(pts
@@ -40273,16 +39841,6 @@
 		)
 		(uuid "b4975d49-02f3-4937-ba47-96c83a11af18")
 	)
-	(bus
-		(pts
-			(xy 345.44 55.88) (xy 345.44 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b4ba8759-59df-4e79-a5ed-c0f07d4f4312")
-	)
 	(wire
 		(pts
 			(xy 233.68 228.6) (xy 242.57 228.6)
@@ -40325,26 +39883,6 @@
 	)
 	(wire
 		(pts
-			(xy 326.39 55.88) (xy 342.9 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b918197e-c1f8-4df0-8ca2-c18892c73770")
-	)
-	(bus
-		(pts
-			(xy 345.44 53.34) (xy 345.44 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b96355a8-a0bc-4d59-a0fa-ae0fc2b6c54d")
-	)
-	(wire
-		(pts
 			(xy 101.6 171.45) (xy 101.6 172.72)
 		)
 		(stroke
@@ -40383,9 +39921,19 @@
 		)
 		(uuid "bb253b93-3544-4f40-ac0d-c8185ea6f348")
 	)
+	(bus
+		(pts
+			(xy 346.71 66.04) (xy 346.71 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bccf4335-65be-4789-9a65-7e7444003e3d")
+	)
 	(wire
 		(pts
-			(xy 364.49 87.63) (xy 387.35 87.63)
+			(xy 363.22 102.87) (xy 386.08 102.87)
 		)
 		(stroke
 			(width 0)
@@ -40485,7 +40033,7 @@
 	)
 	(wire
 		(pts
-			(xy 364.49 99.06) (xy 387.35 99.06)
+			(xy 363.22 114.3) (xy 386.08 114.3)
 		)
 		(stroke
 			(width 0)
@@ -40602,16 +40150,6 @@
 			(type default)
 		)
 		(uuid "c7a175f2-cd74-40f7-a426-5f3d1de8156d")
-	)
-	(bus
-		(pts
-			(xy 345.44 50.8) (xy 345.44 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8279e5a-b86c-4a32-881b-56ead1014032")
 	)
 	(wire
 		(pts
@@ -40965,7 +40503,7 @@
 	)
 	(wire
 		(pts
-			(xy 387.35 80.01) (xy 364.49 80.01)
+			(xy 386.08 95.25) (xy 363.22 95.25)
 		)
 		(stroke
 			(width 0)
@@ -41053,16 +40591,6 @@
 		)
 		(uuid "e0df042d-a8e8-48c2-b28b-f056f4bf43bb")
 	)
-	(bus
-		(pts
-			(xy 345.44 48.26) (xy 345.44 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0e24523-3a74-41d8-8d69-7582873c66ed")
-	)
 	(wire
 		(pts
 			(xy 163.83 83.82) (xy 168.91 83.82)
@@ -41115,16 +40643,6 @@
 	)
 	(wire
 		(pts
-			(xy 326.39 68.58) (xy 342.9 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3c0c964-f26e-4cac-b79a-befbbe95435f")
-	)
-	(wire
-		(pts
 			(xy 276.86 181.61) (xy 276.86 182.88)
 		)
 		(stroke
@@ -41132,6 +40650,16 @@
 			(type default)
 		)
 		(uuid "e49ca210-aaf5-4b8d-a8f5-ee0fa9d262f4")
+	)
+	(bus
+		(pts
+			(xy 346.71 50.8) (xy 346.71 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5a874c3-cb86-4aad-972f-c728b1e91654")
 	)
 	(wire
 		(pts
@@ -41223,15 +40751,15 @@
 		)
 		(uuid "e9ff3100-0d6d-44a6-bfaa-d0c1b08e3e10")
 	)
-	(wire
+	(bus
 		(pts
-			(xy 326.39 53.34) (xy 342.9 53.34)
+			(xy 298.45 45.72) (xy 346.71 45.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ea008e6e-2cbb-4091-991b-615d3db2fb28")
+		(uuid "eab354bf-4161-4d95-979d-4930fe5e4b14")
 	)
 	(wire
 		(pts
@@ -41295,6 +40823,16 @@
 	)
 	(wire
 		(pts
+			(xy 326.39 68.58) (xy 344.17 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee821658-2051-491c-a94b-fe2253c351ae")
+	)
+	(wire
+		(pts
 			(xy 384.81 54.61) (xy 384.81 58.42)
 		)
 		(stroke
@@ -41322,6 +40860,16 @@
 			(type default)
 		)
 		(uuid "f0b8f7b7-9630-46ad-a69c-f7afe180ce7f")
+	)
+	(wire
+		(pts
+			(xy 344.17 53.34) (xy 326.39 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f222c083-80e4-4ffa-8583-c77d4126421e")
 	)
 	(wire
 		(pts
@@ -41392,16 +40940,6 @@
 			(type default)
 		)
 		(uuid "f7d5bebe-a217-4ee0-8643-8f227b0f89ed")
-	)
-	(wire
-		(pts
-			(xy 326.39 71.12) (xy 342.9 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8179aa8-8818-483b-8e72-5968d9268fd9")
 	)
 	(wire
 		(pts
@@ -41525,7 +41063,7 @@
 		(uuid "07f612e0-349f-44fd-9f8f-2c69c23e3cd3")
 	)
 	(label "FPGA_RX"
-		(at 364.49 99.06 0)
+		(at 363.22 114.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41534,6 +41072,17 @@
 			(justify left bottom)
 		)
 		(uuid "0b425e80-6774-4cb7-833f-e2b218ffdfed")
+	)
+	(label "FPGA_PROG.SS_B"
+		(at 326.39 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "11a0b5ec-fd97-430c-b36c-5a7bf53ba84b")
 	)
 	(label "FLAG2"
 		(at 105.41 200.66 0)
@@ -41557,28 +41106,6 @@
 		)
 		(uuid "190e2e01-56b3-4a91-aeeb-6c15956f9cd3")
 	)
-	(label "FPGA_PROG6"
-		(at 342.9 68.58 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1998e792-0e79-48c5-917c-638d97412290")
-	)
-	(label "FPGA_PROG[0..7]"
-		(at 364.49 76.2 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1c0f6d81-5cc0-424b-a02e-6e79f357abaa")
-	)
 	(label "RX"
 		(at 349.25 205.74 0)
 		(fields_autoplaced yes)
@@ -41589,17 +41116,6 @@
 			(justify left bottom)
 		)
 		(uuid "1f24b5b7-ee85-4dc8-a4cc-7827d633070f")
-	)
-	(label "FPGA_PROG2"
-		(at 342.9 58.42 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "27fe9127-b551-460e-ac69-def4fe22563c")
 	)
 	(label "3V3_REF"
 		(at 265.43 228.6 180)
@@ -41612,28 +41128,6 @@
 		)
 		(uuid "2cedf62a-5bdd-4556-8bae-3fe0c51fa6ff")
 	)
-	(label "FPGA_PROG0"
-		(at 342.9 53.34 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "2d728be5-d716-4eb8-86df-029de6740753")
-	)
-	(label "FPGA_PROG[0..7]"
-		(at 341.63 44.45 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "3a9e5f9c-f5ec-49a5-87e9-156a75409365")
-	)
 	(label "FPGA_TX"
 		(at 349.25 203.2 0)
 		(fields_autoplaced yes)
@@ -41644,6 +41138,17 @@
 			(justify left bottom)
 		)
 		(uuid "3be39fcc-5374-43e3-b208-7ed80cdfc803")
+	)
+	(label "FPGA_PROG.SCK"
+		(at 326.39 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3cdb5302-6281-4759-947a-9214fe0fcb41")
 	)
 	(label "TX"
 		(at 342.9 99.06 180)
@@ -41667,8 +41172,19 @@
 		)
 		(uuid "48240bd9-84e4-4da8-8414-30fce76802e8")
 	)
+	(label "FPGA_PROG.CRESET"
+		(at 326.39 71.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "51a5191c-0388-410e-818b-3218d9cca3c4")
+	)
 	(label "FPGA_TX"
-		(at 364.49 102.87 0)
+		(at 363.22 118.11 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41689,16 +41205,16 @@
 		)
 		(uuid "649f2a15-5415-48b0-8954-a821f4022a66")
 	)
-	(label "FPGA_PROG7"
-		(at 342.9 71.12 180)
+	(label "FPGA_PROG{SCK MOSI MISO SS_B CDONE CRESET}"
+		(at 298.45 45.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
-		(uuid "68f5ae62-6124-457d-9444-87280dc6f7c2")
+		(uuid "66fe475f-6b01-4c10-b506-7966dea37492")
 	)
 	(label "RX"
 		(at 342.9 101.6 180)
@@ -41712,7 +41228,7 @@
 		(uuid "6a90a788-74a6-463a-b312-390dd3619475")
 	)
 	(label "FLAG3"
-		(at 105.41 246.38 0)
+		(at 101.6 246.38 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41723,7 +41239,7 @@
 		(uuid "83c48045-01e7-44b7-b6af-d3c404c4a886")
 	)
 	(label "MCU_RX"
-		(at 364.49 91.44 0)
+		(at 363.22 106.68 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41745,7 +41261,7 @@
 		(uuid "8bdc7d8b-6d73-4a92-93d0-3a1cd601e19e")
 	)
 	(label "3V_REF"
-		(at 364.49 83.82 0)
+		(at 363.22 99.06 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41788,16 +41304,16 @@
 		)
 		(uuid "9924d756-e3da-415b-85a8-6941a0c88598")
 	)
-	(label "FPGA_PROG4"
-		(at 342.9 63.5 180)
+	(label "FPGA_PROG.MOSI"
+		(at 326.39 55.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
-		(uuid "9f4f7e41-c9b5-4041-97e0-6202ce14ee18")
+		(uuid "9a8a61da-e836-4563-bfa0-397839f8b7be")
 	)
 	(label "USB_CONN_N"
 		(at 100.33 43.18 0)
@@ -41844,7 +41360,7 @@
 		(uuid "a90e424b-32f1-4fc1-ba87-665344412952")
 	)
 	(label "MCU_TX"
-		(at 364.49 87.63 0)
+		(at 363.22 102.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41854,16 +41370,16 @@
 		)
 		(uuid "a9bcc5cd-8cb2-4775-8fac-b1059f283a28")
 	)
-	(label "FPGA_PROG1"
-		(at 342.9 55.88 180)
+	(label "FPGA_PROG{SCK MOSI MISO SS_B CDONE CRESET}"
+		(at 349.25 87.63 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
-		(uuid "ba13cc68-00b2-43c9-8836-ea5e865fcc5d")
+		(uuid "ac2cc9bb-819c-44a8-8c00-e1f53b7846e0")
 	)
 	(label "USB_P"
 		(at 181.61 33.02 180)
@@ -41876,6 +41392,17 @@
 		)
 		(uuid "be7e91bf-0dd8-4657-9b07-e55aafef8369")
 	)
+	(label "FPGA_PROG.CDONE"
+		(at 326.39 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c0dfb369-6e65-4102-ac47-61d06734e20d")
+	)
 	(label "MCU_TX"
 		(at 349.25 210.82 0)
 		(fields_autoplaced yes)
@@ -41886,6 +41413,17 @@
 			(justify left bottom)
 		)
 		(uuid "c344ae94-d9e5-46cb-ae4d-fdf4ab12c057")
+	)
+	(label "FPGA_PROG.MISO"
+		(at 326.39 58.42 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c7beacfa-4594-4a19-b52d-4c787b5192df")
 	)
 	(label "USB_N"
 		(at 261.62 63.5 0)
@@ -41899,7 +41437,7 @@
 		(uuid "d3cbe138-9544-4472-92c3-5a4024dde984")
 	)
 	(label "3V3_REF"
-		(at 364.49 80.01 0)
+		(at 363.22 95.25 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41910,7 +41448,7 @@
 		(uuid "dc923fc0-7020-4c04-8214-6e7be038bfe9")
 	)
 	(label "DTR"
-		(at 364.49 95.25 0)
+		(at 363.22 110.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41965,9 +41503,9 @@
 		)
 		(uuid "0b46dbfb-2acb-473e-a556-694ecaa27292")
 	)
-	(hierarchical_label "FPGA_PROG[0..7]"
+	(hierarchical_label "FPGA_PROG{SCK MOSI MISO SS_B CDONE CRESET}"
 		(shape output)
-		(at 387.35 76.2 0)
+		(at 356.87 90.17 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41979,7 +41517,7 @@
 	)
 	(hierarchical_label "FPGA_RX"
 		(shape input)
-		(at 387.35 99.06 0)
+		(at 386.08 114.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -41991,7 +41529,7 @@
 	)
 	(hierarchical_label "FPGA_TX"
 		(shape output)
-		(at 387.35 102.87 0)
+		(at 386.08 118.11 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42027,7 +41565,7 @@
 	)
 	(hierarchical_label "MCU_TX"
 		(shape output)
-		(at 387.35 87.63 0)
+		(at 386.08 102.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42063,7 +41601,7 @@
 	)
 	(hierarchical_label "DTR"
 		(shape output)
-		(at 387.35 95.25 0)
+		(at 386.08 110.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42087,7 +41625,7 @@
 	)
 	(hierarchical_label "3V3_REF"
 		(shape output)
-		(at 387.35 80.01 0)
+		(at 386.08 95.25 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42099,7 +41637,7 @@
 	)
 	(hierarchical_label "MCU_RX"
 		(shape input)
-		(at 387.35 91.44 0)
+		(at 386.08 106.68 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -42111,7 +41649,7 @@
 	)
 	(hierarchical_label "3V_REF"
 		(shape output)
-		(at 387.35 83.82 0)
+		(at 386.08 99.06 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -62027,514 +61565,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Resistors SMD:R0603_1K_1%_0.1W_100PPM")
-		(at 133.35 262.89 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "58da6aa4-7423-4df3-8832-b9cbab3d2a7c")
-		(property "Reference" "R14"
-			(at 135.89 257.8099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "R0603_1K_1%_0.1W_100PPM"
-			(at 128.397 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistors SMD:RESC1608X55N"
-			(at 126.492 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
-			(at 124.587 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 133.35 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "±1%"
-			(at 96.012 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Val" "1k"
-			(at 135.89 260.3499 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Part Number" "R0603_1K_1%_0.1W_100PPM"
-			(at 122.682 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "Resistor - 1%"
-			(at 120.777 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Resistors.SchLib"
-			(at 118.872 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "1k"
-			(at 116.967 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 115.062 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 113.157 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" " "
-			(at 111.252 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "2"
-			(at 109.347 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
-			(at 107.442 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "RESC1608X55N"
-			(at 105.537 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" "Preferred"
-			(at 103.632 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Power" "0.1W"
-			(at 101.727 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "TC" "±100ppm/°C"
-			(at 99.822 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Voltage" " "
-			(at 97.917 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "General Purpose Thick Film Chip Resistor"
-			(at 94.107 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "GENERIC"
-			(at 92.202 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "R0603_1K_1%_0.1W_100PPM"
-			(at 90.297 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "0603"
-			(at 88.392 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 86.487 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 84.582 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 82.677 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 80.772 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 78.867 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 76.962 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 75.057 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" " "
-			(at 73.152 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer1 Example" "NIC COMPONENT"
-			(at 71.247 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer1 Part Number" "NRC06F1001TRF"
-			(at 69.342 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer1 ComponentHeight" "0.55mm"
-			(at 67.437 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
-			(at 65.532 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Author" "CERN DEM JLC"
-			(at 63.627 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "CreateDate" "12/03/07 00:00:00"
-			(at 61.722 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate" "03/13/08 00:00:00"
-			(at 59.817 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Database Table Name" "Resistors"
-			(at 57.912 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Name" "Resistors SMD"
-			(at 56.007 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Library" "Resistors SMD"
-			(at 54.102 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 52.197 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Color_1" ""
-			(at 133.35 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment_1" ""
-			(at 133.35 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Family_1" ""
-			(at 133.35 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint_1" ""
-			(at 133.35 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance_1" ""
-			(at 133.35 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8faaa241-9073-4a92-ba18-959c6accd308")
-		)
-		(pin "2"
-			(uuid "06a89c03-06a9-4c70-ba15-1010d2481840")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/2ef1ae52-eeb9-49a8-8ab0-44a0905b0f6b"
-					(reference "R14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+1V2")
 		(at 71.12 167.64 0)
 		(unit 1)
@@ -74055,472 +73085,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Transistors:SQ2310CES")
-		(at 127 246.38 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "93d9b923-9add-4fce-8170-0841866f5f5f")
-		(property "Reference" "T3"
-			(at 135.89 245.1099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "SQ2310CES"
-			(at 127 253.873 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "ICs And Semiconductors SMD:SOT95P237X112-3N"
-			(at 127 255.778 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\SQ2310CES.pdf"
-			(at 127 257.683 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "20V 6A N-Channel TrenchFET® Power MOSFET"
-			(at 127 246.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "SQ2310CES"
-			(at 127 259.588 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "N-MOSFET-D 1G 2S 3D"
-			(at 127 261.493 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Transistors.SchLib"
-			(at 127 263.398 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "SQ2310CES"
-			(at 127 265.303 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 127 267.208 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 127 269.113 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Device" "SQ2310CES"
-			(at 127 271.018 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" "SOT23, 0.95mm Pitch; 3 Pin, 1.30mm W X 2.92mm L X 1.12mm H body, IPC Medium Density"
-			(at 127 272.923 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" " "
-			(at 127 274.828 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "20V 6A N-Channel TrenchFET® Power MOSFET"
-			(at 127 276.733 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "VISHAY SILICONIX"
-			(at 127 278.638 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "SQ2310CES"
-			(at 127 280.543 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "3"
-			(at 127 282.448 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "SOT23-3"
-			(at 127 284.353 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 127 286.258 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 127 288.163 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 127 290.068 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 127 291.973 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 127 293.878 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 127 295.783 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Bonding" "No"
-			(at 127 297.688 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 127 299.593 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" "1.12mm"
-			(at 127 301.498 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 127 303.403 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "SOT95P237X112-3N"
-			(at 127 305.308 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\SQ2310CES.pdf"
-			(at 127 307.213 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1URL" " "
-			(at 127 309.118 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1Description" " "
-			(at 127 311.023 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2URL" " "
-			(at 127 312.928 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2Description" " "
-			(at 127 314.833 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Author" "CERN DEM HF"
-			(at 127 316.738 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "CreateDate" "06/03/24 00:00:00"
-			(at 127 318.643 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate" "06/03/24 00:00:00"
-			(at 127 320.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SCEM" " "
-			(at 127 322.453 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate1" " "
-			(at 127 324.358 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Database Table Name" "ICs And Semiconductors"
-			(at 127 326.263 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Name" "Transistors"
-			(at 127 328.168 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 127 330.073 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "License" "CC-BY-SA 4.0"
-			(at 127 331.978 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "306b0d9c-d410-4b49-b20a-5a079dc8ab68")
-		)
-		(pin "2"
-			(uuid "6a929997-922b-4b7c-aa23-d6c7ed614b1e")
-		)
-		(pin "3"
-			(uuid "1cf952e1-307d-4fb6-b523-7fd211518ec7")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/2ef1ae52-eeb9-49a8-8ab0-44a0905b0f6b"
-					(reference "T3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Resistors SMD:R0603_12K_1%_0.1W_100PPM")
 		(at 271.78 71.12 0)
 		(unit 1)
@@ -78198,72 +76762,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 133.35 265.43 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ab4d26e0-7d71-49c8-900b-c466fe088027")
-		(property "Reference" "#PWR094"
-			(at 133.35 271.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 133.35 270.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 133.35 265.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.35 265.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 133.35 265.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b371ccad-b1e6-4a87-9891-7f52e330d6c2")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/2ef1ae52-eeb9-49a8-8ab0-44a0905b0f6b"
-					(reference "#PWR094")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 254 143.51 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -79332,524 +77830,6 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/2ef1ae52-eeb9-49a8-8ab0-44a0905b0f6b"
 					(reference "B4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diodes:CDBU0520-HF")
-		(at 133.35 229.87 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b3de17b0-1140-4d86-9fbf-c8c2bdf9fa59")
-		(property "Reference" "D3"
-			(at 135.89 233.6799 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CDBU0520-HF"
-			(at 127.635 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "ICs And Semiconductors SMD:SOD-523F"
-			(at 125.73 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CDBU0520-HF.pdf"
-			(at 123.825 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 133.35 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "CDBU0520-HF"
-			(at 121.92 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "Diode Schottky"
-			(at 120.015 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Diodes.SchLib"
-			(at 118.11 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "CDBU0520-HF"
-			(at 116.205 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 114.3 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 112.395 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Device" "CDBU0520-HF"
-			(at 110.49 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" "Small Outline Diode Flat Lead (SOD-523F), Body; 1.80mm L X 1mm W X 0.85mm H"
-			(at 108.585 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Voltage" "20V"
-			(at 106.68 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Power" "500mA"
-			(at 104.775 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" " "
-			(at 102.87 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "20V Surface mount Schottky Barrier Diode"
-			(at 100.965 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "COMCHIP"
-			(at 99.06 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "CDBU0520-HF"
-			(at 97.155 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "2"
-			(at 95.25 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "SOD-523F"
-			(at 93.345 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 91.44 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 89.535 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 87.63 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 85.725 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 83.82 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 81.915 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Bonding" "No"
-			(at 80.01 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 78.105 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" "1mm"
-			(at 76.2 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 74.295 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "SOD-523F"
-			(at 72.39 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CDBU0520-HF.pdf"
-			(at 70.485 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1URL" " "
-			(at 68.58 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1Description" " "
-			(at 66.675 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2URL" " "
-			(at 64.77 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2Description" " "
-			(at 62.865 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Author" "CERN DEM HF"
-			(at 60.96 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "CreateDate" "10/13/23 00:00:00"
-			(at 59.055 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate" "10/13/23 00:00:00"
-			(at 57.15 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Field1" " "
-			(at 55.245 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Database Table Name" "ICs And Semiconductors"
-			(at 53.34 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Name" "Diodes"
-			(at 51.435 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 49.53 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 47.625 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Color_1" ""
-			(at 133.35 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment_1" ""
-			(at 133.35 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Family_1" ""
-			(at 133.35 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint_1" ""
-			(at 133.35 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance_1" ""
-			(at 133.35 229.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ef44634d-0228-43d8-bfdc-0b54bfd881ec")
-		)
-		(pin "2"
-			(uuid "60d0ae05-e90f-49bf-a031-bd39aea0a5f3")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/2ef1ae52-eeb9-49a8-8ab0-44a0905b0f6b"
-					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -90702,6 +88682,83 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/2ef1ae52-eeb9-49a8-8ab0-44a0905b0f6b"
 					(reference "#PWR0138")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Regulator_Linear:LP5907MFX-2.5")
+		(at 133.35 242.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e3fbe6ca-28f9-4b5f-90af-9acc929f2a16")
+		(property "Reference" "U1"
+			(at 133.35 232.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LP5907MFX-2.5"
+			(at 133.35 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 133.35 233.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lp5907.pdf"
+			(at 133.35 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "250-mA Ultra-Low-Noise Low-IQ LDO, 2.5V, SOT-23"
+			(at 133.35 242.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "7bf33dfd-2a3a-4992-9c99-f739f8670de0")
+		)
+		(pin "4"
+			(uuid "5d5c3254-177e-42eb-93b2-fdcb61b25cfd")
+		)
+		(pin "5"
+			(uuid "740a8341-d963-4439-ba2c-f56c2a73c36d")
+		)
+		(pin "1"
+			(uuid "c03c6b61-b55a-4eaa-95d6-452eeb23989d")
+		)
+		(pin "2"
+			(uuid "b4fcae74-6bf4-4538-93d5-fbc87e31a53b")
+		)
+		(instances
+			(project ""
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/2ef1ae52-eeb9-49a8-8ab0-44a0905b0f6b"
+					(reference "U1")
 					(unit 1)
 				)
 			)
