@@ -2697,7 +2697,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -30.48) (xy 22.86 -30.48)
+						(xy 0 -30.48) (xy 0 0)
 					)
 					(stroke
 						(width 0.254)
@@ -2709,7 +2709,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -30.48) (xy 0 0)
+						(xy 0 -30.48) (xy 22.86 -30.48)
 					)
 					(stroke
 						(width 0.254)
@@ -7160,7 +7160,7 @@
 		)
 		(uuid "22dcedc4-607a-4593-97c0-78ebd7eda981")
 	)
-	(text_box "Routing note:\n- If possible, place the footprints of both the coax and triax on top of each other so that the user can choose themself which one they want to use\n- Add Vcm_Buf shield around Current_In as well as a Vcm_Buf plane below it\n- Input area should be as short and small as possible"
+	(text_box "Routing note:\n- Footprints of both the coax and triax MUST BE on top of each other (so that the user can choose themself which one they want to use)\n- Add Vcm_Buf shield around Current_In as well as a Vcm_Buf plane below it\n- Input area should be as short and small as possible"
 		(exclude_from_sim no)
 		(at 77.47 173.99 0)
 		(size 78.74 12.7)
@@ -7181,6 +7181,28 @@
 			(justify left top)
 		)
 		(uuid "8f066dd7-9baf-4af3-96b9-bb945e046dc4")
+	)
+	(text_box "Routing note:\nby USB standard, USB signals must be 90Ω differential to each other, and 45Ω each to Signal Ground\n"
+		(exclude_from_sim no)
+		(at 96.52 113.03 0)
+		(size 60.96 7.62)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 109 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 109 0 1)
+			)
+			(justify left top)
+		)
+		(uuid "e17ab852-8711-4afa-b998-fe24cadacd45")
 	)
 	(junction
 		(at 252.73 207.01)
@@ -7266,7 +7288,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 146.05) (xy 252.73 146.05)
+			(xy 245.11 149.86) (xy 252.73 149.86)
 		)
 		(stroke
 			(width 0)
@@ -7286,7 +7308,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 143.51) (xy 255.27 209.55)
+			(xy 255.27 147.32) (xy 255.27 209.55)
 		)
 		(stroke
 			(width 0)
@@ -7406,7 +7428,7 @@
 	)
 	(wire
 		(pts
-			(xy 350.52 101.6) (xy 360.68 101.6)
+			(xy 350.52 105.41) (xy 360.68 105.41)
 		)
 		(stroke
 			(width 0)
@@ -7456,7 +7478,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 143.51) (xy 255.27 143.51)
+			(xy 245.11 147.32) (xy 255.27 147.32)
 		)
 		(stroke
 			(width 0)
@@ -7586,6 +7608,16 @@
 	)
 	(wire
 		(pts
+			(xy 365.76 99.06) (xy 350.52 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3caf3bea-27ff-4269-90e9-68bb8d2f2078")
+	)
+	(wire
+		(pts
 			(xy 378.46 226.06) (xy 245.11 226.06)
 		)
 		(stroke
@@ -7596,7 +7628,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 146.05) (xy 252.73 207.01)
+			(xy 252.73 149.86) (xy 252.73 207.01)
 		)
 		(stroke
 			(width 0)
@@ -7646,6 +7678,16 @@
 	)
 	(wire
 		(pts
+			(xy 365.76 142.24) (xy 365.76 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "452e4530-6d04-4bdf-975e-6859aea83210")
+	)
+	(wire
+		(pts
 			(xy 306.07 48.26) (xy 298.45 48.26)
 		)
 		(stroke
@@ -7686,7 +7728,7 @@
 	)
 	(wire
 		(pts
-			(xy 363.22 99.06) (xy 363.22 138.43)
+			(xy 363.22 102.87) (xy 363.22 138.43)
 		)
 		(stroke
 			(width 0)
@@ -8046,7 +8088,7 @@
 	)
 	(wire
 		(pts
-			(xy 360.68 135.89) (xy 360.68 101.6)
+			(xy 360.68 135.89) (xy 360.68 105.41)
 		)
 		(stroke
 			(width 0)
@@ -8126,6 +8168,16 @@
 	)
 	(wire
 		(pts
+			(xy 245.11 142.24) (xy 365.76 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad80c752-32bf-491c-8b00-25bee0b44a42")
+	)
+	(wire
+		(pts
 			(xy 298.45 40.64) (xy 298.45 48.26)
 		)
 		(stroke
@@ -8146,7 +8198,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 151.13) (xy 247.65 151.13)
+			(xy 245.11 153.67) (xy 247.65 153.67)
 		)
 		(stroke
 			(width 0)
@@ -8386,7 +8438,7 @@
 	)
 	(wire
 		(pts
-			(xy 350.52 99.06) (xy 363.22 99.06)
+			(xy 350.52 102.87) (xy 363.22 102.87)
 		)
 		(stroke
 			(width 0)
@@ -8556,7 +8608,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 151.13) (xy 247.65 171.45)
+			(xy 247.65 153.67) (xy 247.65 171.45)
 		)
 		(stroke
 			(width 0)
@@ -17358,7 +17410,7 @@
 			(uuid "5064292b-e331-429c-9898-0e2ea582a03d")
 		)
 		(pin "MCU_SDA" bidirectional
-			(at 245.11 146.05 0)
+			(at 245.11 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17388,7 +17440,7 @@
 			(uuid "aaf19be7-8290-46f6-84e0-7808d9b31402")
 		)
 		(pin "MCU_SCL" bidirectional
-			(at 245.11 143.51 0)
+			(at 245.11 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17447,7 +17499,7 @@
 			)
 			(uuid "11917273-3e90-4a30-b737-626a43a295e2")
 		)
-		(pin "Enable{High, Medium, Low}" output
+		(pin "Enable{High, Medium, Low}" input
 			(at 245.11 130.81 0)
 			(effects
 				(font
@@ -17458,7 +17510,7 @@
 			(uuid "342cd866-7423-45b4-a67b-a6e4958daed7")
 		)
 		(pin "Vcm_Buf" output
-			(at 245.11 151.13 0)
+			(at 245.11 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17476,6 +17528,16 @@
 				(justify left)
 			)
 			(uuid "900d53eb-3d37-448b-9b31-6360838fcd51")
+		)
+		(pin "ADC_Ready" output
+			(at 245.11 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "e6430bc2-755c-477b-816d-57f044d4db63")
 		)
 		(instances
 			(project "Accurate_Eval"
@@ -17682,7 +17744,7 @@
 			(uuid "eda800a6-2570-47cc-9892-e8eb574672b9")
 		)
 		(pin "FPGA_SCL" bidirectional
-			(at 350.52 101.6 0)
+			(at 350.52 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17771,48 +17833,8 @@
 			)
 			(uuid "cbeb3a4a-8b2a-45bf-bbcb-39aa35f50cae")
 		)
-		(pin "FPGA_TX" output
-			(at 306.07 58.42 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "e6fbcf6e-a0de-42aa-9d33-b9dc49067738")
-		)
-		(pin "FPGA_RX" input
-			(at 306.07 60.96 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "975d80db-1fe1-4e9f-98c0-fd02e40685b9")
-		)
-		(pin "MCU_FPGA_TX" bidirectional
-			(at 350.52 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "9b6c919d-b74b-4250-ba2a-8776fbbe9e80")
-		)
-		(pin "MCU_FPGA_RX" bidirectional
-			(at 350.52 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "5c99b036-a072-45ce-b132-22edd0a3a1fb")
-		)
 		(pin "FPGA_SDA" bidirectional
-			(at 350.52 99.06 0)
+			(at 350.52 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17820,6 +17842,56 @@
 				(justify right)
 			)
 			(uuid "85cb6128-8621-4d88-8165-2c242765114f")
+		)
+		(pin "FPGA_FTDI_UART_TX" output
+			(at 306.07 58.42 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d1c02bde-ca29-4a55-b5df-9397799092d1")
+		)
+		(pin "FPGA_FTDI_UART_RX" input
+			(at 306.07 60.96 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "1b3cd134-7fc0-4bdc-8fbd-53a70dd386ee")
+		)
+		(pin "FPGA_MCU_UART_RX" input
+			(at 350.52 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b450b986-8bf7-4068-ade5-0eaa1d306746")
+		)
+		(pin "FPGA_MCU_UART_TX" output
+			(at 350.52 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "dee3a2f1-c2c6-41a5-a521-0a1b5c610884")
+		)
+		(pin "ADC_Ready" input
+			(at 350.52 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "97fdd8b8-61c8-435f-8d5d-eb6ad29f9ef2")
 		)
 		(instances
 			(project "Accurate_Eval"

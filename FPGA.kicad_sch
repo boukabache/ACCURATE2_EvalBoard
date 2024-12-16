@@ -2359,7 +2359,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2371,7 +2371,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2463,6 +2463,547 @@
 						(effects
 							(font
 								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diodes:PESD3V3S1UB"
+			(pin_names
+				(offset 1.27)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 3.81 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PESD3V3S1UB"
+				(at 0 -5.715 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "ICs And Semiconductors SMD:SODFL1608X65N"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3S1UB.pdf"
+				(at 0 -9.525 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "ESD protection diode (23kV)"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Ref" "Diode ESD"
+				(at 0 -13.335 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Path" "SchLib\\Diodes.SchLib"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Comment" "PESD3V3S1UB"
+				(at 0 -17.145 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Kind" "Standard"
+				(at 0 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Type" "Standard"
+				(at 0 -20.955 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Device" "PESD3V3S1UB"
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PackageDescription" "Ultra Small Outline Diode Flat Lead (SOD-523), Body; 1.2mm L X 0.8mm W X 0.65mm H, IPC Medium Density"
+				(at 0 -24.765 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Voltage" "3V3"
+				(at 0 -26.67 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Power" "330W"
+				(at 0 -28.575 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status" " "
+				(at 0 -30.48 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Part Description" "ESD protection diode (23kV)"
+				(at 0 -32.385 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "NXP SEMICONDUCTORS"
+				(at 0 -34.29 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part Number" "PESD3V3S1UB"
+				(at 0 -36.195 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Pin Count" "2"
+				(at 0 -38.1 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Case" "SOD523"
+				(at 0 -40.005 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mounted" "Yes"
+				(at 0 -41.91 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Socket" "No"
+				(at 0 -43.815 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "SMD" "Yes"
+				(at 0 -45.72 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PressFit" "No"
+				(at 0 -47.625 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense" "No"
+				(at 0 -49.53 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense Comment" " "
+				(at 0 -51.435 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Bonding" "No"
+				(at 0 -53.34 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status Comment" " "
+				(at 0 -55.245 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentHeight" "0.65mm"
+				(at 0 -57.15 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+				(at 0 -59.055 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Ref" "SODFL1608X65N"
+				(at 0 -60.96 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3S1UB.pdf"
+				(at 0 -62.865 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink1URL" " "
+				(at 0 -64.77 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink1Description" " "
+				(at 0 -66.675 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink2URL" " "
+				(at 0 -68.58 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink2Description" " "
+				(at 0 -70.485 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Author" "CERN DEM JLC"
+				(at 0 -72.39 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "CreateDate" "11/29/12 00:00:00"
+				(at 0 -74.295 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "LatestRevisionDate" "11/29/12 00:00:00"
+				(at 0 -76.2 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Field1" " "
+				(at 0 -78.105 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Database Table Name" "ICs And Semiconductors"
+				(at 0 -80.01 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Name" "Diodes"
+				(at 0 -81.915 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Library" "ICs And Semiconductors SMD"
+				(at 0 -83.82 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "License" "CC-BY-SA 4.0"
+				(at 0 -85.725 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PESD3V3S1UB_0_1"
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 -1.524) (xy 4.572 0) (xy 3.048 1.524) (xy 3.048 -1.524)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.572 1.524) (xy 4.572 -1.524)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.572 1.524) (xy 4.064 1.524)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
 							)
 						)
 					)
@@ -11111,6 +11652,1493 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "SAMTEC:SAMTEC_HTSW-103-23-L-D"
+			(pin_names
+				(offset 1.27)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 3.81 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SAMTEC_HTSW-103-23-L-D"
+				(at 0 -19.685 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "SAMTEC THD:SAMTEC_HTSW-103-23-L-D"
+				(at 0 -21.59 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\SAMTEC_HTSW-103-23-L-D.pdf"
+				(at 0 -23.495 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "6 Contacts, Pitch 2.54mm, Dual Row Through Mount Straight Header (Post Lead 5.84mm, Tail Lead 2.92mm, Insulator 2.54mm)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Family" "Header 6"
+				(at 3.81 -0.762 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Part Number" "SAMTEC_HTSW-103-23-L-D"
+				(at 0 -25.4 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Ref" "Connector 6 Male"
+				(at 0 -27.305 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Path" "SchLib\\Connectors.SchLib"
+				(at 0 -29.21 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Comment" " "
+				(at 0 -31.115 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Kind" "Standard"
+				(at 0 -33.02 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Type" "Standard"
+				(at 0 -34.925 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Device" " "
+				(at 0 -36.83 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PackageDescription" " "
+				(at 0 -38.735 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Pin Count" "6"
+				(at 0 -40.64 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Case" " "
+				(at 0 -42.545 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Path" "PcbLib\\SAMTEC THD.PcbLib"
+				(at 0 -44.45 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Ref" "SAMTEC_HTSW-103-23-L-D"
+				(at 0 -46.355 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Family_1" "Header 6"
+				(at 0 -48.26 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mounted" "Yes"
+				(at 0 -50.165 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Socket" "No"
+				(at 0 -52.07 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PressFit" "No"
+				(at 0 -53.975 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense" "No"
+				(at 0 -55.88 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense Comment" " "
+				(at 0 -57.785 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status Comment" "High Temperature"
+				(at 0 -59.69 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status" "Preferred"
+				(at 0 -61.595 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "SCEM" " "
+				(at 0 -63.5 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Part Description" "6 Contacts, Pitch 2.54mm, Dual Row Through Mount Straight Header (Post Lead 5.84mm, Tail Lead 2.92mm, Insulator 2.54mm)"
+				(at 0 -65.405 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "SAMTEC"
+				(at 0 -67.31 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part Number" "HTSW-103-23-L-D"
+				(at 0 -69.215 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentHeight" "8.38mm"
+				(at 0 -71.12 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\SAMTEC_HTSW-103-23-L-D.pdf"
+				(at 0 -73.025 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink1URL" " "
+				(at 0 -74.93 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink1Description" " "
+				(at 0 -76.835 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink2URL" " "
+				(at 0 -78.74 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink2Description" " "
+				(at 0 -80.645 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Author" "CERN DEM JLC"
+				(at 0 -82.55 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "CreateDate" "02/22/18 00:00:00"
+				(at 0 -84.455 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "LatestRevisionDate" "02/22/18 00:00:00"
+				(at 0 -86.36 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "SMD" "No"
+				(at 0 -88.265 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Database Table Name" "Connectors"
+				(at 0 -90.17 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Name" "SAMTEC"
+				(at 0 -92.075 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Library" "SAMTEC THD"
+				(at 0 -93.98 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+				(at 0 -95.885 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SAMTEC_HTSW-103-23-L-D_0_1"
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -5.08) (xy 2.54 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -7.62) (xy 2.54 -7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -10.16) (xy 2.54 -10.16)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -12.7) (xy 2.54 -12.7)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -15.24) (xy 2.54 -15.24)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 0 -17.78)
+					(end 7.62 0)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -2.54) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0.508)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -5.08) (xy 2.54 -5.08)
+					)
+					(stroke
+						(width 0.508)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -7.62) (xy 2.54 -7.62)
+					)
+					(stroke
+						(width 0.508)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -10.16) (xy 2.54 -10.16)
+					)
+					(stroke
+						(width 0.508)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -12.7) (xy 2.54 -12.7)
+					)
+					(stroke
+						(width 0.508)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -15.24) (xy 2.54 -15.24)
+					)
+					(stroke
+						(width 0.508)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -2.54 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -5.08 0)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -7.62 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -10.16 0)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -12.7 0)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -15.24 0)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SAMTEC_HTSW-103-23-L-D_0_2"
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 1.524 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -5.08) (xy 1.524 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -7.62) (xy 1.524 -7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 0 -10.16)
+					(end 7.62 0)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 -2.54) (xy 1.524 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 -5.08) (xy 1.524 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 -7.62) (xy 1.524 -7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -1.778) (xy 2.286 -1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 3.048 -2.54)
+					(mid 2.8248 -3.0788)
+					(end 2.286 -3.302)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.524 -2.54)
+					(mid 1.7472 -2.0012)
+					(end 2.286 -1.778)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -3.302)
+					(mid 1.7472 -3.0788)
+					(end 1.524 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -1.778)
+					(mid 2.8248 -2.0012)
+					(end 3.048 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -3.302) (xy 2.286 -3.302)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -4.318) (xy 2.286 -4.318)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -4.318)
+					(mid 2.8248 -4.5412)
+					(end 3.048 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.524 -5.08)
+					(mid 1.7472 -4.5412)
+					(end 2.286 -4.318)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -5.842)
+					(mid 1.7472 -5.6188)
+					(end 1.524 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 3.048 -5.08)
+					(mid 2.8248 -5.6188)
+					(end 2.286 -5.842)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -5.842) (xy 2.286 -5.842)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -6.858) (xy 2.286 -6.858)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -6.858)
+					(mid 2.8248 -7.0812)
+					(end 3.048 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -8.382)
+					(mid 1.7472 -8.1588)
+					(end 1.524 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.524 -7.62)
+					(mid 1.7472 -7.0812)
+					(end 2.286 -6.858)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -8.382) (xy 2.286 -8.382)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 -2.54) (xy 3.048 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 -5.08) (xy 3.048 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 -7.62) (xy 3.048 -7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.572 -2.54) (xy 4.572 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.572 -5.08) (xy 4.572 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.572 -7.62) (xy 4.572 -7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.334 -1.778) (xy 5.334 -1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -1.778)
+					(mid 5.8728 -2.0012)
+					(end 6.096 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.572 -2.54)
+					(mid 4.7952 -2.0012)
+					(end 5.334 -1.778)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.096 -2.54)
+					(mid 5.8728 -3.0788)
+					(end 5.334 -3.302)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -3.302)
+					(mid 4.7952 -3.0788)
+					(end 4.572 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.334 -3.302) (xy 5.334 -3.302)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.334 -4.318) (xy 5.334 -4.318)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.096 -5.08)
+					(mid 5.8728 -5.6188)
+					(end 5.334 -5.842)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -4.318)
+					(mid 5.8728 -4.5412)
+					(end 6.096 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.572 -5.08)
+					(mid 4.7952 -4.5412)
+					(end 5.334 -4.318)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -5.842)
+					(mid 4.7952 -5.6188)
+					(end 4.572 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.334 -5.842) (xy 5.334 -5.842)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.334 -6.858) (xy 5.334 -6.858)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -8.382)
+					(mid 4.7952 -8.1588)
+					(end 4.572 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.096 -7.62)
+					(mid 5.8728 -8.1588)
+					(end 5.334 -8.382)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.572 -7.62)
+					(mid 4.7952 -7.0812)
+					(end 5.334 -6.858)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -6.858)
+					(mid 5.8728 -7.0812)
+					(end 6.096 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.334 -8.382) (xy 5.334 -8.382)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.096 -2.54) (xy 6.096 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.096 -5.08) (xy 6.096 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.096 -7.62) (xy 6.096 -7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -2.54) (xy 6.096 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -5.08) (xy 6.096 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -7.62) (xy 6.096 -7.62)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -2.54 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -5.08 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -7.62 0)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -2.54 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -5.08 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -7.62 180)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.524 1.524)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "SAMTEC:SAMTEC_HTSW-105-23-L-D"
 			(pin_names
 				(offset 1.27)
@@ -12140,9 +14168,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -2.54)
-					(mid 2.8248 -3.0788)
-					(end 2.286 -3.302)
+					(start 2.286 -3.302)
+					(mid 1.7472 -3.0788)
+					(end 1.524 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12152,9 +14180,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -2.54)
-					(mid 1.7472 -2.0012)
-					(end 2.286 -1.778)
+					(start 3.048 -2.54)
+					(mid 2.8248 -3.0788)
+					(end 2.286 -3.302)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12176,9 +14204,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -3.302)
-					(mid 1.7472 -3.0788)
-					(end 1.524 -2.54)
+					(start 1.524 -2.54)
+					(mid 1.7472 -2.0012)
+					(end 2.286 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12212,21 +14240,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -5.08)
-					(mid 1.7472 -4.5412)
-					(end 2.286 -4.318)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 2.286 -4.318)
-					(mid 2.8248 -4.5412)
-					(end 3.048 -5.08)
+					(start 3.048 -5.08)
+					(mid 2.8248 -5.6188)
+					(end 2.286 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12248,9 +14264,21 @@
 					)
 				)
 				(arc
-					(start 3.048 -5.08)
-					(mid 2.8248 -5.6188)
-					(end 2.286 -5.842)
+					(start 1.524 -5.08)
+					(mid 1.7472 -4.5412)
+					(end 2.286 -4.318)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -4.318)
+					(mid 2.8248 -4.5412)
+					(end 3.048 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12284,18 +14312,6 @@
 					)
 				)
 				(arc
-					(start 3.048 -7.62)
-					(mid 2.8248 -8.1588)
-					(end 2.286 -8.382)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 1.524 -7.62)
 					(mid 1.7472 -7.0812)
 					(end 2.286 -6.858)
@@ -12308,9 +14324,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -6.858)
-					(mid 2.8248 -7.0812)
-					(end 3.048 -7.62)
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12323,6 +14339,18 @@
 					(start 2.286 -8.382)
 					(mid 1.7472 -8.1588)
 					(end 1.524 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -6.858)
+					(mid 2.8248 -7.0812)
+					(end 3.048 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12368,9 +14396,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -10.922)
-					(mid 1.7472 -10.6988)
-					(end 1.524 -10.16)
+					(start 3.048 -10.16)
+					(mid 2.8248 -10.6988)
+					(end 2.286 -10.922)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12392,9 +14420,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -10.16)
-					(mid 2.8248 -10.6988)
-					(end 2.286 -10.922)
+					(start 2.286 -10.922)
+					(mid 1.7472 -10.6988)
+					(end 1.524 -10.16)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12428,9 +14456,21 @@
 					)
 				)
 				(arc
-					(start 2.286 -13.462)
-					(mid 1.7472 -13.2388)
-					(end 1.524 -12.7)
+					(start 1.524 -12.7)
+					(mid 1.7472 -12.1612)
+					(end 2.286 -11.938)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -11.938)
+					(mid 2.8248 -12.1612)
+					(end 3.048 -12.7)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12452,21 +14492,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -12.7)
-					(mid 1.7472 -12.1612)
-					(end 2.286 -11.938)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 2.286 -11.938)
-					(mid 2.8248 -12.1612)
-					(end 3.048 -12.7)
+					(start 2.286 -13.462)
+					(mid 1.7472 -13.2388)
+					(end 1.524 -12.7)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12620,9 +14648,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -3.302)
-					(mid 4.7952 -3.0788)
-					(end 4.572 -2.54)
+					(start 5.334 -1.778)
+					(mid 5.8728 -2.0012)
+					(end 6.096 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12632,9 +14660,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -1.778)
-					(mid 5.8728 -2.0012)
-					(end 6.096 -2.54)
+					(start 4.572 -2.54)
+					(mid 4.7952 -2.0012)
+					(end 5.334 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12656,9 +14684,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -2.54)
-					(mid 4.7952 -2.0012)
-					(end 5.334 -1.778)
+					(start 5.334 -3.302)
+					(mid 4.7952 -3.0788)
+					(end 4.572 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12764,9 +14792,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -8.382)
-					(mid 4.7952 -8.1588)
-					(end 4.572 -7.62)
+					(start 6.096 -7.62)
+					(mid 5.8728 -8.1588)
+					(end 5.334 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12776,9 +14804,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -7.62)
-					(mid 5.8728 -8.1588)
-					(end 5.334 -8.382)
+					(start 5.334 -8.382)
+					(mid 4.7952 -8.1588)
+					(end 4.572 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12836,6 +14864,18 @@
 					)
 				)
 				(arc
+					(start 5.334 -10.922)
+					(mid 4.7952 -10.6988)
+					(end 4.572 -10.16)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
 					(start 4.572 -10.16)
 					(mid 4.7952 -9.6212)
 					(end 5.334 -9.398)
@@ -12851,18 +14891,6 @@
 					(start 5.334 -9.398)
 					(mid 5.8728 -9.6212)
 					(end 6.096 -10.16)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 5.334 -10.922)
-					(mid 4.7952 -10.6988)
-					(end 4.572 -10.16)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12908,9 +14936,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -13.462)
-					(mid 4.7952 -13.2388)
-					(end 4.572 -12.7)
+					(start 4.572 -12.7)
+					(mid 4.7952 -12.1612)
+					(end 5.334 -11.938)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12920,9 +14948,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -12.7)
-					(mid 4.7952 -12.1612)
-					(end 5.334 -11.938)
+					(start 5.334 -11.938)
+					(mid 5.8728 -12.1612)
+					(end 6.096 -12.7)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12944,9 +14972,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -11.938)
-					(mid 5.8728 -12.1612)
-					(end 6.096 -12.7)
+					(start 5.334 -13.462)
+					(mid 4.7952 -13.2388)
+					(end 4.572 -12.7)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -16640,6 +18668,1184 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "STELVIO-KONTEK_3131730000400_2"
+			(pin_names
+				(offset 1.27)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 2.54 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "STELVIO-KONTEK_3131730000400"
+				(at 0 -3.683 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "COMATEL THD:STELVIO-KONTEK_3131730000400"
+				(at 0 -5.588 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\STELVIO-KONTEK_3131730000400.pdf"
+				(at 0 -7.493 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Comment" " "
+				(at -2.54 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Part Number" "STELVIO-KONTEK_3131730000400"
+				(at 0 -9.398 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Ref" "Jumper Type1"
+				(at 0 -11.303 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Path" "SchLib\\Connectors.SchLib"
+				(at 0 -13.208 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Comment_1" " "
+				(at 0 -15.113 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Kind" "Accessories"
+				(at 0 -17.018 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Type" "Standard"
+				(at 0 -18.923 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PackageDescription" " "
+				(at 0 -20.828 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Pin Count" "1"
+				(at 0 -22.733 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Case" " "
+				(at 0 -24.638 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Path" "PcbLib\\COMATEL THD.PcbLib"
+				(at 0 -26.543 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Ref" "STELVIO-KONTEK_3131730000400"
+				(at 0 -28.448 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Family" "Jumper"
+				(at 0 -30.353 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mounted" "Yes"
+				(at 0 -32.258 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Socket" "No"
+				(at 0 -34.163 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "SMD" "No"
+				(at 0 -36.068 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PressFit" "No"
+				(at 0 -37.973 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense" "No"
+				(at 0 -39.878 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense Comment" " "
+				(at 0 -41.783 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status" "None"
+				(at 0 -43.688 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status Comment" " "
+				(at 0 -45.593 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "SCEM" "09.55.10.960.9"
+				(at 0 -47.498 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Device" " "
+				(at 0 -49.403 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Part Description" "Closed Insulated Black Jumper Pitch 2.54mm"
+				(at 0 -51.308 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "STELVIO-KONTEK"
+				(at 0 -53.213 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part Number" "3131730000400"
+				(at 0 -55.118 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentHeight" "6.5mm"
+				(at 0 -57.023 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\STELVIO-KONTEK_3131730000400.pdf"
+				(at 0 -58.928 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink1URL" " "
+				(at 0 -60.833 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink1Description" " "
+				(at 0 -62.738 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink2URL" " "
+				(at 0 -64.643 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink2Description" " "
+				(at 0 -66.548 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Author" "CERN DEM JLC"
+				(at 0 -68.453 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "CreateDate" "08/27/13 00:00:00"
+				(at 0 -70.358 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "LatestRevisionDate" "08/27/13 00:00:00"
+				(at 0 -72.263 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Database Table Name" "Connectors"
+				(at 0 -74.168 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Name" "STELVIO-KONTEK COMATEL"
+				(at 0 -76.073 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Library" "COMATEL THD"
+				(at 0 -77.978 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+				(at 0 -79.883 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "STELVIO-KONTEK_3131730000400_2_0_1"
+				(polyline
+					(pts
+						(xy 0 2.032) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 5.08 1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.032) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.032) (xy 0 2.032)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at 0 0 90)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+			(symbol "STELVIO-KONTEK_3131730000400_2_0_2"
+				(polyline
+					(pts
+						(xy 0 2.032) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 7.62 1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.032) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.032) (xy 0 2.032)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at 0 0 90)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "STELVIO-KONTEK_3131730000400_3"
+			(pin_names
+				(offset 1.27)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 2.54 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "STELVIO-KONTEK_3131730000400"
+				(at 0 -3.683 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "COMATEL THD:STELVIO-KONTEK_3131730000400"
+				(at 0 -5.588 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\STELVIO-KONTEK_3131730000400.pdf"
+				(at 0 -7.493 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Comment" " "
+				(at -2.54 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Part Number" "STELVIO-KONTEK_3131730000400"
+				(at 0 -9.398 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Ref" "Jumper Type1"
+				(at 0 -11.303 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Path" "SchLib\\Connectors.SchLib"
+				(at 0 -13.208 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Comment_1" " "
+				(at 0 -15.113 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Kind" "Accessories"
+				(at 0 -17.018 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Type" "Standard"
+				(at 0 -18.923 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PackageDescription" " "
+				(at 0 -20.828 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Pin Count" "1"
+				(at 0 -22.733 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Case" " "
+				(at 0 -24.638 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Path" "PcbLib\\COMATEL THD.PcbLib"
+				(at 0 -26.543 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Ref" "STELVIO-KONTEK_3131730000400"
+				(at 0 -28.448 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Family" "Jumper"
+				(at 0 -30.353 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mounted" "Yes"
+				(at 0 -32.258 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Socket" "No"
+				(at 0 -34.163 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "SMD" "No"
+				(at 0 -36.068 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PressFit" "No"
+				(at 0 -37.973 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense" "No"
+				(at 0 -39.878 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense Comment" " "
+				(at 0 -41.783 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status" "None"
+				(at 0 -43.688 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status Comment" " "
+				(at 0 -45.593 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "SCEM" "09.55.10.960.9"
+				(at 0 -47.498 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Device" " "
+				(at 0 -49.403 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Part Description" "Closed Insulated Black Jumper Pitch 2.54mm"
+				(at 0 -51.308 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "STELVIO-KONTEK"
+				(at 0 -53.213 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part Number" "3131730000400"
+				(at 0 -55.118 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentHeight" "6.5mm"
+				(at 0 -57.023 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\STELVIO-KONTEK_3131730000400.pdf"
+				(at 0 -58.928 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink1URL" " "
+				(at 0 -60.833 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink1Description" " "
+				(at 0 -62.738 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink2URL" " "
+				(at 0 -64.643 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentLink2Description" " "
+				(at 0 -66.548 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Author" "CERN DEM JLC"
+				(at 0 -68.453 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "CreateDate" "08/27/13 00:00:00"
+				(at 0 -70.358 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "LatestRevisionDate" "08/27/13 00:00:00"
+				(at 0 -72.263 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Database Table Name" "Connectors"
+				(at 0 -74.168 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Name" "STELVIO-KONTEK COMATEL"
+				(at 0 -76.073 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Library" "COMATEL THD"
+				(at 0 -77.978 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+				(at 0 -79.883 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "STELVIO-KONTEK_3131730000400_3_0_1"
+				(polyline
+					(pts
+						(xy 0 2.032) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 5.08 1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.032) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.032) (xy 0 2.032)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at 0 0 90)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+			(symbol "STELVIO-KONTEK_3131730000400_3_0_2"
+				(polyline
+					(pts
+						(xy 0 2.032) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 7.62 1.778)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.032) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 2.032) (xy 0 2.032)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at 0 0 90)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Switches:PB_C&K_KSC321JLFS"
 			(pin_names
 				(offset 1.27)
@@ -17869,6 +21075,17 @@
 		)
 		(uuid "1c20896c-fb7d-4511-ab79-3e5c263a3575")
 	)
+	(text "FTDI/MCU UART Header"
+		(exclude_from_sim no)
+		(at 66.802 234.696 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "27c444dc-823e-4ff2-8feb-8a1264930804")
+	)
 	(text "Programming Connector"
 		(exclude_from_sim no)
 		(at 147.32 189.23 0)
@@ -18010,7 +21227,7 @@
 		)
 		(uuid "50f42f13-9041-41f8-b1ea-bdf57df0dff6")
 	)
-	(text_box "Unfolding them here for semplicity"
+	(text_box "Unfolding them here for simplicity"
 		(exclude_from_sim no)
 		(at 116.84 152.4 0)
 		(size 25.4 5.08)
@@ -18031,6 +21248,12 @@
 		(uuid "cd59a5b3-7e5b-4834-91ab-105fbf89fd7e")
 	)
 	(junction
+		(at 109.22 256.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "032f6bf5-ce85-4928-a228-860adbb88a2e")
+	)
+	(junction
 		(at 237.49 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -18049,7 +21272,7 @@
 		(uuid "05f46800-7123-45ed-993a-5456729f606d")
 	)
 	(junction
-		(at 86.36 220.98)
+		(at 85.09 209.55)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "11c3a617-9b85-4123-99e2-aab78aae460a")
@@ -18079,6 +21302,18 @@
 		(uuid "288bc4ef-0533-4a29-b0be-b5e3cc85fed4")
 	)
 	(junction
+		(at 113.03 251.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "28b64df5-ebc2-40c2-80da-2c2d917d85ac")
+	)
+	(junction
+		(at 101.6 251.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2d95423c-0ade-41bb-a708-918c946eac4a")
+	)
+	(junction
 		(at 250.19 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -18103,7 +21338,7 @@
 		(uuid "4327253b-5a2c-4c2a-aab3-1504fb9ee8f1")
 	)
 	(junction
-		(at 78.74 220.98)
+		(at 77.47 209.55)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "45e61e81-6ae0-478f-94fd-17c702299235")
@@ -18205,10 +21440,40 @@
 		(uuid "7441a5d6-65dd-445d-8646-5fe6dfa9238d")
 	)
 	(junction
+		(at 109.22 273.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "798148ad-e578-4eab-a2d7-f2d341f0ef80")
+	)
+	(junction
+		(at 110.49 254)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7ed0b0a9-b471-4b7c-a5f4-e1ab829009be")
+	)
+	(junction
 		(at 250.19 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7fe798e7-0352-4ec1-8774-3c9457204dd9")
+	)
+	(junction
+		(at 118.11 261.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8099460a-1de1-40b7-bd8b-c653d6dabe08")
+	)
+	(junction
+		(at 97.79 248.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8392b4ad-1523-4a45-a921-98f9bb760ba3")
+	)
+	(junction
+		(at 118.11 256.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "83a77cf8-eef0-4026-9be4-7df63eb421b3")
 	)
 	(junction
 		(at 321.31 67.31)
@@ -18223,7 +21488,7 @@
 		(uuid "8b70c549-1691-46e5-8240-4a23bfef3786")
 	)
 	(junction
-		(at 78.74 231.14)
+		(at 77.47 219.71)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8cc75a49-dfab-454c-9301-e4a00aaca359")
@@ -18239,6 +21504,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8efc0ed1-46b6-4f65-8301-980945117075")
+	)
+	(junction
+		(at 101.6 273.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8fd255cb-862b-4b94-826d-1a3418f87b9c")
 	)
 	(junction
 		(at 200.66 222.25)
@@ -18319,6 +21590,12 @@
 		(uuid "dfdef642-305e-479d-9c50-9855a630b725")
 	)
 	(junction
+		(at 97.79 273.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e7c3bdd2-3867-4277-b61a-7d20ecb03871")
+	)
+	(junction
 		(at 331.47 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -18337,16 +21614,34 @@
 		(uuid "e9f0d9a2-614e-4c04-9440-91919709e573")
 	)
 	(junction
+		(at 105.41 248.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ea44fe3f-d1f5-49c0-a280-c6532185926e")
+	)
+	(junction
 		(at 284.48 207.01)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ed08edae-73bd-412a-aed6-e5c799f8a453")
 	)
 	(junction
+		(at 113.03 259.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ef21f2b1-d967-4d78-b600-0839afb35959")
+	)
+	(junction
 		(at 196.85 238.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f86accf4-a41d-4276-8c88-b0c949bfcb1b")
+	)
+	(junction
+		(at 105.41 273.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8a64641-0717-4493-aed0-28dea36a17dd")
 	)
 	(junction
 		(at 250.19 48.26)
@@ -18359,6 +21654,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fa0b59da-f58a-4789-af3e-a24314ae5f41")
+	)
+	(junction
+		(at 105.41 254)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fb03bfec-6164-472b-ba2e-3c02aa5acb28")
 	)
 	(junction
 		(at 308.61 134.62)
@@ -18396,6 +21697,15 @@
 		(uuid "0196bd48-e294-4298-9046-522906d6b88a")
 	)
 	(bus_entry
+		(at 67.31 259.08)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0432439e-1159-4a62-86cf-a53f58058a7a")
+	)
+	(bus_entry
 		(at 118.11 144.78)
 		(size 2.54 2.54)
 		(stroke
@@ -18412,6 +21722,15 @@
 			(type default)
 		)
 		(uuid "182abd59-caa5-49bd-b472-cc1da2b0ea5d")
+	)
+	(bus_entry
+		(at 124.46 71.12)
+		(size -2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "212e6219-cf9f-4d24-83ea-d9406bbbccc6")
 	)
 	(bus_entry
 		(at 118.11 135.89)
@@ -18441,6 +21760,15 @@
 		(uuid "5553799b-c3c4-44ed-89c4-304c85a2d18c")
 	)
 	(bus_entry
+		(at 67.31 256.54)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d3bba29-3b8e-4a10-ba60-1954ec26940a")
+	)
+	(bus_entry
 		(at 118.11 48.26)
 		(size 2.54 2.54)
 		(stroke
@@ -18448,6 +21776,15 @@
 			(type default)
 		)
 		(uuid "688c13e5-3806-464f-8d53-44bcd99ae518")
+	)
+	(bus_entry
+		(at 124.46 68.58)
+		(size -2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "913c5b01-89f4-411f-a991-cd78a29b2e4c")
 	)
 	(bus_entry
 		(at 118.11 43.18)
@@ -18505,7 +21842,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 219.71) (xy 78.74 220.98)
+			(xy 77.47 208.28) (xy 77.47 209.55)
 		)
 		(stroke
 			(width 0)
@@ -18522,6 +21859,26 @@
 			(type default)
 		)
 		(uuid "012b3685-5873-4c1a-947d-7e73ff4fee95")
+	)
+	(wire
+		(pts
+			(xy 118.11 261.62) (xy 85.09 261.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0221cd93-fee8-4ac3-b11a-77329740eda5")
+	)
+	(bus
+		(pts
+			(xy 67.31 256.54) (xy 67.31 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "026aaa5a-b1ef-4c21-8865-06d4706f8963")
 	)
 	(wire
 		(pts
@@ -18562,6 +21919,16 @@
 			(type default)
 		)
 		(uuid "0308d4c0-6163-41f0-a0fc-e1e139622b7a")
+	)
+	(wire
+		(pts
+			(xy 85.09 259.08) (xy 113.03 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "047ef2d9-4394-416b-815f-d81604c92c9f")
 	)
 	(wire
 		(pts
@@ -18645,6 +22012,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 271.78) (xy 118.11 274.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b324536-b2da-4a7d-93de-21f76e4e7674")
+	)
+	(wire
+		(pts
 			(xy 154.94 111.76) (xy 154.94 116.84)
 		)
 		(stroke
@@ -18692,6 +22069,16 @@
 			(type default)
 		)
 		(uuid "0c72a390-313e-47cc-88e2-85fe97cb7ff5")
+	)
+	(wire
+		(pts
+			(xy 101.6 273.05) (xy 105.41 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c798e8c-4c6f-4de8-a5f2-95aca6468dda")
 	)
 	(wire
 		(pts
@@ -18765,6 +22152,16 @@
 	)
 	(wire
 		(pts
+			(xy 110.49 246.38) (xy 110.49 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "141cee5c-9201-470a-a3ac-f778b9b25a62")
+	)
+	(wire
+		(pts
 			(xy 372.11 142.24) (xy 374.65 142.24)
 		)
 		(stroke
@@ -18782,6 +22179,16 @@
 			(type default)
 		)
 		(uuid "153ab897-b919-4c29-b73d-0bbf84043b59")
+	)
+	(wire
+		(pts
+			(xy 31.75 139.7) (xy 57.15 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15d83067-bbbf-4a33-b89b-d98f877cb4f6")
 	)
 	(bus
 		(pts
@@ -18802,6 +22209,16 @@
 			(type default)
 		)
 		(uuid "177bf174-c242-499f-ae22-16647294eb52")
+	)
+	(bus
+		(pts
+			(xy 124.46 82.55) (xy 127 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18691649-b419-4a3d-8498-9ebb46891d0f")
 	)
 	(wire
 		(pts
@@ -19075,6 +22492,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 271.78) (xy 101.6 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28b0e2b7-c03f-4f21-ae47-c22b0073d536")
+	)
+	(wire
+		(pts
 			(xy 331.47 38.1) (xy 331.47 39.37)
 		)
 		(stroke
@@ -19175,7 +22602,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 66.04) (xy 97.79 66.04)
+			(xy 97.79 66.04) (xy 121.92 66.04)
 		)
 		(stroke
 			(width 0)
@@ -19222,6 +22649,16 @@
 			(type default)
 		)
 		(uuid "381ae44b-0585-4d96-bf9d-5d3ef62858bf")
+	)
+	(wire
+		(pts
+			(xy 105.41 254) (xy 110.49 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3821509a-e5e2-4ea7-acb3-db0befedbabc")
 	)
 	(wire
 		(pts
@@ -19272,6 +22709,16 @@
 			(type default)
 		)
 		(uuid "3a7bb384-7fe1-4120-ad69-69c6b268ce4f")
+	)
+	(wire
+		(pts
+			(xy 110.49 254) (xy 120.65 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ae930bd-9b6a-4e05-a8e7-0fa6fa9d8b2c")
 	)
 	(wire
 		(pts
@@ -19425,7 +22872,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 226.06) (xy 115.57 226.06)
+			(xy 115.57 214.63) (xy 114.3 214.63)
 		)
 		(stroke
 			(width 0)
@@ -19505,6 +22952,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 271.78) (xy 97.79 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4eb06d54-9106-4185-96d1-90cd5fb48862")
+	)
+	(wire
+		(pts
 			(xy 321.31 38.1) (xy 331.47 38.1)
 		)
 		(stroke
@@ -19545,7 +23002,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 231.14) (xy 116.84 226.06)
+			(xy 115.57 219.71) (xy 115.57 214.63)
 		)
 		(stroke
 			(width 0)
@@ -19605,7 +23062,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 220.98) (xy 78.74 220.98)
+			(xy 85.09 209.55) (xy 77.47 209.55)
 		)
 		(stroke
 			(width 0)
@@ -19622,6 +23079,16 @@
 			(type default)
 		)
 		(uuid "55fd10e2-bc7a-4824-82fa-664684abd7ee")
+	)
+	(wire
+		(pts
+			(xy 97.79 68.58) (xy 121.92 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56890e0f-6266-4fd7-bb76-3ed9aa7f9e74")
 	)
 	(wire
 		(pts
@@ -19715,7 +23182,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 231.14) (xy 116.84 231.14)
+			(xy 77.47 219.71) (xy 115.57 219.71)
 		)
 		(stroke
 			(width 0)
@@ -19725,7 +23192,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 229.87) (xy 78.74 231.14)
+			(xy 77.47 218.44) (xy 77.47 219.71)
 		)
 		(stroke
 			(width 0)
@@ -19815,6 +23282,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 251.46) (xy 120.65 251.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67d8b6c2-5653-4774-8ed9-898108bef258")
+	)
+	(wire
+		(pts
 			(xy 289.56 212.09) (xy 307.34 212.09)
 		)
 		(stroke
@@ -19832,6 +23309,26 @@
 			(type default)
 		)
 		(uuid "6b1fe56e-989c-4444-823e-e4f3cee39f9d")
+	)
+	(wire
+		(pts
+			(xy 113.03 251.46) (xy 101.6 251.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ba7889e-7bff-4a25-8a12-0ac7f644b2e4")
+	)
+	(wire
+		(pts
+			(xy 97.79 248.92) (xy 97.79 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d0c9d8f-6450-49ff-948e-ae0a652b2797")
 	)
 	(bus
 		(pts
@@ -19872,6 +23369,16 @@
 			(type default)
 		)
 		(uuid "6fb05fd8-9188-43b4-950e-90c303c51c66")
+	)
+	(wire
+		(pts
+			(xy 105.41 273.05) (xy 109.22 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70e21d5f-6ee1-43d6-b5c6-1942cc72ef7a")
 	)
 	(polyline
 		(pts
@@ -20075,6 +23582,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 246.38) (xy 118.11 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8442239c-d571-4f98-b725-288c23d377d6")
+	)
+	(wire
+		(pts
 			(xy 196.85 219.71) (xy 171.45 219.71)
 		)
 		(stroke
@@ -20103,6 +23620,16 @@
 		)
 		(uuid "8676ad68-364c-465a-ade6-6745a535408a")
 	)
+	(bus
+		(pts
+			(xy 124.46 82.55) (xy 124.46 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86fcc07c-fb2d-4f37-9606-67056b5a0aec")
+	)
 	(wire
 		(pts
 			(xy 167.64 124.46) (xy 167.64 138.43)
@@ -20115,7 +23642,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 220.98) (xy 78.74 222.25)
+			(xy 77.47 209.55) (xy 77.47 210.82)
 		)
 		(stroke
 			(width 0)
@@ -20142,6 +23669,16 @@
 			(type default)
 		)
 		(uuid "87ed6e3d-0b9e-4988-8400-4c065636d6cc")
+	)
+	(wire
+		(pts
+			(xy 101.6 251.46) (xy 101.6 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87ff6674-88c5-4160-8c2b-68e4d378d526")
 	)
 	(wire
 		(pts
@@ -20205,23 +23742,13 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 220.98) (xy 90.17 220.98)
+			(xy 85.09 209.55) (xy 88.9 209.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "8ec38306-0a5d-4963-a134-ecb7afb9e674")
-	)
-	(wire
-		(pts
-			(xy 118.11 68.58) (xy 97.79 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f265dfb-25f8-4115-8706-32ad98fc0574")
 	)
 	(wire
 		(pts
@@ -20283,6 +23810,16 @@
 		)
 		(uuid "93036a45-144d-4518-9315-f63212f3ac7d")
 	)
+	(bus
+		(pts
+			(xy 67.31 259.08) (xy 67.31 265.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "939b163a-3f7b-44b4-b71a-5b72f9044434")
+	)
 	(wire
 		(pts
 			(xy 307.34 212.09) (xy 307.34 214.63)
@@ -20295,7 +23832,17 @@
 	)
 	(wire
 		(pts
-			(xy 377.19 40.64) (xy 345.44 40.64)
+			(xy 118.11 256.54) (xy 109.22 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94e29be0-f9cf-4e80-a441-f2375fc9338f")
+	)
+	(wire
+		(pts
+			(xy 377.19 39.37) (xy 345.44 39.37)
 		)
 		(stroke
 			(width 0)
@@ -20383,6 +23930,16 @@
 		)
 		(uuid "991c38d9-1b01-4fd1-86bf-c8cf499bd228")
 	)
+	(wire
+		(pts
+			(xy 113.03 246.38) (xy 113.03 251.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99c174d4-9a80-47e9-9680-4c26a2cc56c9")
+	)
 	(bus
 		(pts
 			(xy 118.11 138.43) (xy 118.11 144.78)
@@ -20402,6 +23959,16 @@
 			(type default)
 		)
 		(uuid "9b6416bb-d734-49c4-bde8-1e73183fb91b")
+	)
+	(wire
+		(pts
+			(xy 109.22 256.54) (xy 109.22 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bdd431b-cb6c-4907-8970-7c8cda6cf2f4")
 	)
 	(wire
 		(pts
@@ -20465,6 +24032,16 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 256.54) (xy 109.22 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f7bd3eb-6cd5-4462-b5bd-e0fb8c3ec917")
+	)
+	(wire
+		(pts
 			(xy 271.78 52.07) (xy 269.24 52.07)
 		)
 		(stroke
@@ -20513,6 +24090,16 @@
 		)
 		(uuid "a0ce80b6-ba61-4b5e-a95e-8753394e35ef")
 	)
+	(bus
+		(pts
+			(xy 69.85 267.97) (xy 87.63 267.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a100a296-3b6d-444a-b7da-7d61349eba13")
+	)
 	(wire
 		(pts
 			(xy 269.24 59.69) (xy 269.24 76.2)
@@ -20532,6 +24119,16 @@
 			(type default)
 		)
 		(uuid "a11aa75e-5d12-4d19-9d4f-30c60fcbc1a9")
+	)
+	(polyline
+		(pts
+			(xy 64.77 228.6) (xy 143.51 228.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a12efdf3-581c-4560-8cf4-a1307e6da129")
 	)
 	(wire
 		(pts
@@ -20602,6 +24199,26 @@
 			(type default)
 		)
 		(uuid "a51598dc-7314-479a-9c68-b025ff5e7357")
+	)
+	(wire
+		(pts
+			(xy 97.79 273.05) (xy 101.6 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a71deaa1-7930-4924-ba1b-36138284aad1")
+	)
+	(wire
+		(pts
+			(xy 118.11 261.62) (xy 118.11 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a89fb947-0f98-402f-8ac6-efcc3c0eb549")
 	)
 	(wire
 		(pts
@@ -20715,6 +24332,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 261.62) (xy 118.11 261.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1cbcbe5-5ee0-4b9c-8d65-8189ca90c1ef")
+	)
+	(wire
+		(pts
 			(xy 200.66 222.25) (xy 200.66 229.87)
 		)
 		(stroke
@@ -20732,6 +24359,16 @@
 			(type default)
 		)
 		(uuid "b1fbfb25-2639-4c5d-ac86-bf2d8f091ba8")
+	)
+	(bus
+		(pts
+			(xy 124.46 68.58) (xy 124.46 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b23f8f6c-2f0a-49fe-9a9f-d9cd6660fa1f")
 	)
 	(wire
 		(pts
@@ -20783,6 +24420,16 @@
 		)
 		(uuid "b7f9fb32-2981-4a0c-bd01-9a0cfaef4228")
 	)
+	(polyline
+		(pts
+			(xy 143.51 231.14) (xy 143.51 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8a71536-5105-4108-bd18-6a3c8c12dae4")
+	)
 	(wire
 		(pts
 			(xy 307.34 59.69) (xy 309.88 59.69)
@@ -20805,6 +24452,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 273.05) (xy 97.79 274.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba275ee1-dfbb-4055-ae31-f41cfb455c8e")
+	)
+	(wire
+		(pts
 			(xy 331.47 46.99) (xy 331.47 48.26)
 		)
 		(stroke
@@ -20813,9 +24470,29 @@
 		)
 		(uuid "ba49b59d-ba28-4216-84a0-8b3a7d6e678d")
 	)
+	(bus
+		(pts
+			(xy 67.31 265.43) (xy 69.85 267.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba55ece5-8e62-4e90-b225-6ad40bbe959c")
+	)
 	(wire
 		(pts
-			(xy 115.57 220.98) (xy 130.81 220.98)
+			(xy 85.09 248.92) (xy 97.79 248.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb389615-802d-4537-a8a1-373c1fa24289")
+	)
+	(wire
+		(pts
+			(xy 114.3 209.55) (xy 129.54 209.55)
 		)
 		(stroke
 			(width 0)
@@ -20855,6 +24532,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 259.08) (xy 113.03 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bef80b7e-d6c5-4f8d-8d13-7a0d893fc29d")
+	)
+	(wire
+		(pts
 			(xy 135.89 48.26) (xy 135.89 50.8)
 		)
 		(stroke
@@ -20885,7 +24572,17 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 231.14) (xy 78.74 232.41)
+			(xy 105.41 246.38) (xy 105.41 248.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1b88603-c740-448a-b202-6c18061b8e64")
+	)
+	(wire
+		(pts
+			(xy 77.47 219.71) (xy 77.47 220.98)
 		)
 		(stroke
 			(width 0)
@@ -20902,6 +24599,16 @@
 			(type default)
 		)
 		(uuid "c2384390-5a44-45a0-9e96-f1f073980055")
+	)
+	(wire
+		(pts
+			(xy 97.79 248.92) (xy 105.41 248.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c242e0b7-6c2a-414a-a4dc-818b7a85848f")
 	)
 	(wire
 		(pts
@@ -20993,6 +24700,16 @@
 		)
 		(uuid "c6654823-0570-4c90-ba8a-e8ea4df6eb86")
 	)
+	(wire
+		(pts
+			(xy 101.6 251.46) (xy 85.09 251.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6d3a0fe-58fc-4550-86bb-65b16b4ff95e")
+	)
 	(bus
 		(pts
 			(xy 118.11 144.78) (xy 118.11 147.32)
@@ -21005,13 +24722,23 @@
 	)
 	(wire
 		(pts
-			(xy 377.19 52.07) (xy 345.44 52.07)
+			(xy 377.19 50.8) (xy 345.44 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c8518b81-1352-4bb9-8e86-c0964fcbd926")
+	)
+	(wire
+		(pts
+			(xy 113.03 273.05) (xy 113.03 271.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9348559-c84b-4b5c-ab52-806df1c07183")
 	)
 	(wire
 		(pts
@@ -21082,6 +24809,16 @@
 			(type default)
 		)
 		(uuid "cc31955d-b2fa-4888-907b-ce8c552bead4")
+	)
+	(wire
+		(pts
+			(xy 105.41 271.78) (xy 105.41 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc486f93-31ee-4bf2-bae5-8cc39c52099f")
 	)
 	(wire
 		(pts
@@ -21172,6 +24909,16 @@
 			(type default)
 		)
 		(uuid "d3d70ea7-dea3-490d-bc5c-678434309629")
+	)
+	(wire
+		(pts
+			(xy 109.22 273.05) (xy 113.03 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4861237-dc32-47ff-a8e3-c8d4f95a0d7c")
 	)
 	(wire
 		(pts
@@ -21375,6 +25122,26 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 254) (xy 105.41 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2fb31c9-4577-428f-9c46-e8021cf334c3")
+	)
+	(wire
+		(pts
+			(xy 105.41 248.92) (xy 120.65 248.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e32a111c-d8db-40a2-aa75-22c855a6d5d0")
+	)
+	(wire
+		(pts
 			(xy 307.34 52.07) (xy 312.42 52.07)
 		)
 		(stroke
@@ -21425,7 +25192,7 @@
 	)
 	(wire
 		(pts
-			(xy 377.19 44.45) (xy 345.44 44.45)
+			(xy 377.19 43.18) (xy 345.44 43.18)
 		)
 		(stroke
 			(width 0)
@@ -21505,6 +25272,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 259.08) (xy 120.65 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebce7e5a-a1f9-4352-8c15-86fcc9a56256")
+	)
+	(wire
+		(pts
 			(xy 345.44 207.01) (xy 368.3 207.01)
 		)
 		(stroke
@@ -21555,7 +25332,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 226.06) (xy 86.36 220.98)
+			(xy 85.09 214.63) (xy 85.09 209.55)
 		)
 		(stroke
 			(width 0)
@@ -21625,6 +25402,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 271.78) (xy 109.22 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1663103-957c-486f-89de-9983e2887009")
+	)
+	(wire
+		(pts
 			(xy 292.1 219.71) (xy 311.15 219.71)
 		)
 		(stroke
@@ -21645,7 +25432,7 @@
 	)
 	(wire
 		(pts
-			(xy 377.19 48.26) (xy 345.44 48.26)
+			(xy 377.19 46.99) (xy 345.44 46.99)
 		)
 		(stroke
 			(width 0)
@@ -21665,13 +25452,23 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 226.06) (xy 86.36 226.06)
+			(xy 88.9 214.63) (xy 85.09 214.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f6090d3e-a183-4285-bf3e-b42044b990ba")
+	)
+	(wire
+		(pts
+			(xy 118.11 256.54) (xy 120.65 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7c6f736-63d3-4a60-b961-311575bc2bf0")
 	)
 	(wire
 		(pts
@@ -21743,6 +25540,16 @@
 		)
 		(uuid "fcb9b0fb-9a4b-4e59-af23-004e480f36d6")
 	)
+	(bus
+		(pts
+			(xy 127 85.09) (xy 144.78 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fcf44bd7-1e7e-42fe-8497-3be6b0e6b3be")
+	)
 	(wire
 		(pts
 			(xy 196.85 219.71) (xy 196.85 229.87)
@@ -21752,6 +25559,16 @@
 			(type default)
 		)
 		(uuid "fe832bcd-6349-4062-b011-81223abf4a94")
+	)
+	(wire
+		(pts
+			(xy 105.41 254) (xy 105.41 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "febb7540-e6ca-47c3-a446-3353087c0b52")
 	)
 	(wire
 		(pts
@@ -21784,6 +25601,17 @@
 			(justify right bottom)
 		)
 		(uuid "07ea5ae3-7929-4eb5-a965-ceac92917b66")
+	)
+	(label "ADC_Ready"
+		(at 207.01 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "087843f2-2387-4bdd-9eef-e0a59a5e8206")
 	)
 	(label "FPGA_PROG.SS_B"
 		(at 120.65 140.97 0)
@@ -21829,8 +25657,8 @@
 		)
 		(uuid "0dd4f596-822c-42b4-b6a4-3e24ad6b1900")
 	)
-	(label "FPGA_RX"
-		(at 345.44 52.07 0)
+	(label "FPGA_FTDI_UART_RX"
+		(at 345.44 50.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -21839,6 +25667,28 @@
 			(justify left bottom)
 		)
 		(uuid "112619c7-ba09-471b-9c08-bee3e614d0ed")
+	)
+	(label "FPGA_FTDI_UART_TX"
+		(at 85.09 259.08 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "13c9b128-c391-45b2-af69-355ecbdebb6e")
+	)
+	(label "FPGA_UART{TX RX}"
+		(at 127 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "14663307-914f-4a27-be52-b034e564a22a")
 	)
 	(label "IOB_3"
 		(at 292.1 224.79 0)
@@ -21850,6 +25700,17 @@
 			(justify left bottom)
 		)
 		(uuid "1494887c-b571-4c02-9b7f-b23d38da9561")
+	)
+	(label "FPGA_FTDI_UART_RX"
+		(at 85.09 261.62 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "14d99579-1a2d-43c6-95fb-9209200a0a18")
 	)
 	(label "IOB_23"
 		(at 353.06 227.33 0)
@@ -22026,6 +25887,17 @@
 			(justify right bottom)
 		)
 		(uuid "3511add0-2857-4e51-a4ec-4830e8184fd3")
+	)
+	(label "FPGA_UART.TX"
+		(at 118.11 66.04 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "37db64fa-3b3e-4ec8-93f5-85ffd5b856c1")
 	)
 	(label "iCE_MOSI"
 		(at 22.86 203.2 0)
@@ -22225,8 +26097,8 @@
 		)
 		(uuid "7406f279-4823-4724-856f-9322449a056e")
 	)
-	(label "MCU_FPGA_TX"
-		(at 345.44 40.64 0)
+	(label "FPGA_MCU_UART_TX"
+		(at 345.44 39.37 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -22247,6 +26119,17 @@
 		)
 		(uuid "74b2feee-a6ec-4fd7-b734-9811200f2aba")
 	)
+	(label "FPGA_UART.TX"
+		(at 69.85 254 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "76249812-8b04-437b-ac60-ed559a870380")
+	)
 	(label "Enable.Medium"
 		(at 118.11 48.26 180)
 		(fields_autoplaced yes)
@@ -22258,8 +26141,8 @@
 		)
 		(uuid "7672c4a6-77e1-45e2-a611-2e9574700ad0")
 	)
-	(label "MCU_FPGA_RX"
-		(at 345.44 44.45 0)
+	(label "FPGA_MCU_UART_RX"
+		(at 345.44 43.18 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -22279,6 +26162,17 @@
 			(justify right bottom)
 		)
 		(uuid "85515efb-bf43-4946-824a-f941bf662309")
+	)
+	(label "FPGA_UART.RX"
+		(at 118.11 68.58 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "88b6b145-8a25-411c-b729-2f27aba7f759")
 	)
 	(label "IOB_4"
 		(at 207.01 77.47 180)
@@ -22301,6 +26195,17 @@
 			(justify left bottom)
 		)
 		(uuid "9428b694-5700-45c6-9ad8-e5f1f2c7e2ff")
+	)
+	(label "FPGA_UART.RX"
+		(at 69.85 256.54 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9b77c76d-b248-4635-b52e-9c7059f4f8b4")
 	)
 	(label "iCE_MISO"
 		(at 207.01 45.72 180)
@@ -22379,8 +26284,19 @@
 		)
 		(uuid "ab619880-be38-4c6e-a0cc-40410dd532bb")
 	)
-	(label "FPGA_TX"
-		(at 345.44 48.26 0)
+	(label "ADC_Ready"
+		(at 57.15 139.7 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "abeddc14-6da5-41f7-9324-543ff5b51df0")
+	)
+	(label "FPGA_FTDI_UART_TX"
+		(at 345.44 46.99 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -22500,6 +26416,17 @@
 		)
 		(uuid "bf7eaf63-6b6d-4698-9d91-f2781f8f6555")
 	)
+	(label "FPGA_MCU_UART_TX"
+		(at 85.09 248.92 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c0cc4ee6-fd86-423d-b393-8a9b757c420e")
+	)
 	(label "IOB_22"
 		(at 353.06 232.41 0)
 		(fields_autoplaced yes)
@@ -22510,17 +26437,6 @@
 			(justify left bottom)
 		)
 		(uuid "c64d19f7-2699-424a-b7bf-4fade5f7d480")
-	)
-	(label "MCU_FPGA_TX"
-		(at 207.01 40.64 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c917864e-caab-4b67-9fe4-baeac7ebae36")
 	)
 	(label "IOB_25"
 		(at 207.01 38.1 180)
@@ -22577,6 +26493,17 @@
 		)
 		(uuid "d217ad0d-8f88-49cf-825b-e8e8a92d8366")
 	)
+	(label "FPGA_RESET"
+		(at 207.01 40.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d3850345-7063-450b-a8a0-68253985fd78")
+	)
 	(label "iCE_MISO"
 		(at 22.86 210.82 0)
 		(fields_autoplaced yes)
@@ -22599,6 +26526,17 @@
 		)
 		(uuid "d4d1b1f6-318a-47de-ae52-d69ca5be06e8")
 	)
+	(label "FPGA_MCU_UART_RX"
+		(at 85.09 251.46 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d6005f0f-3c4f-4ac8-ae92-29d0e9d048ef")
+	)
 	(label "FPGA_SDA"
 		(at 118.11 60.96 180)
 		(fields_autoplaced yes)
@@ -22611,7 +26549,7 @@
 		(uuid "da219e4a-7309-45c1-ab83-6ff7b73eb7d4")
 	)
 	(label "iCE_CLK"
-		(at 130.81 220.98 180)
+		(at 129.54 209.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -22631,17 +26569,6 @@
 			(justify left bottom)
 		)
 		(uuid "ddb97e2b-5833-4b11-8b9c-efa249b6d1dd")
-	)
-	(label "FPGA_TX"
-		(at 118.11 66.04 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "dfaead20-d601-4bdb-82a1-0e360e5720f3")
 	)
 	(label "iCE_SS_B"
 		(at 207.01 53.34 180)
@@ -22687,7 +26614,7 @@
 		)
 		(uuid "f267561e-393f-4510-b827-792dd96b2f17")
 	)
-	(label "IOB_18"
+	(label "FPGA_RESET"
 		(at 288.29 134.62 0)
 		(fields_autoplaced yes)
 		(effects
@@ -22698,27 +26625,16 @@
 		)
 		(uuid "f4a24786-9030-40fe-8ff5-62edfa53bccd")
 	)
-	(label "FPGA_RX"
-		(at 118.11 68.58 180)
+	(label "FPGA_UART{TX RX}"
+		(at 69.85 267.97 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
-		(uuid "f6f0b14c-2883-482f-a4cd-46ac4e665b09")
-	)
-	(label "MCU_FPGA_RX"
-		(at 207.01 43.18 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f9244974-29d5-42ec-8a6a-9d861bafcec2")
+		(uuid "f5e3a48e-58fc-43f1-864c-60becf2fca1f")
 	)
 	(label "IOB_16"
 		(at 353.06 229.87 0)
@@ -22764,6 +26680,18 @@
 			(justify right)
 		)
 		(uuid "2c08cd2e-3d15-4888-be27-3bf3a8a045ac")
+	)
+	(hierarchical_label "ADC_Ready"
+		(shape input)
+		(at 31.75 139.7 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2f2a8778-6719-47bc-b018-7580450cc59c")
 	)
 	(hierarchical_label "Enable{High, Medium, Low}"
 		(shape output)
@@ -22825,9 +26753,9 @@
 		)
 		(uuid "73f50552-da20-4f3e-8b7c-04114d77c217")
 	)
-	(hierarchical_label "MCU_FPGA_RX"
-		(shape bidirectional)
-		(at 377.19 44.45 0)
+	(hierarchical_label "FPGA_MCU_UART_RX"
+		(shape input)
+		(at 377.19 43.18 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -22837,9 +26765,9 @@
 		)
 		(uuid "76d96b5d-388f-47f2-8c39-43c855f850b8")
 	)
-	(hierarchical_label "MCU_FPGA_TX"
-		(shape bidirectional)
-		(at 377.19 40.64 0)
+	(hierarchical_label "FPGA_MCU_UART_TX"
+		(shape output)
+		(at 377.19 39.37 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -22873,9 +26801,9 @@
 		)
 		(uuid "91b2fbb5-d99a-488c-a71d-beb5eede073d")
 	)
-	(hierarchical_label "FPGA_TX"
+	(hierarchical_label "FPGA_FTDI_UART_TX"
 		(shape output)
-		(at 377.19 48.26 0)
+		(at 377.19 46.99 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -22921,9 +26849,9 @@
 		)
 		(uuid "bf661250-2e0e-4501-bf8f-502a3e270f9a")
 	)
-	(hierarchical_label "FPGA_RX"
+	(hierarchical_label "FPGA_FTDI_UART_RX"
 		(shape input)
-		(at 377.19 52.07 0)
+		(at 377.19 50.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -22944,6 +26872,72 @@
 			(justify right)
 		)
 		(uuid "dd8b4117-1387-4c23-83f2-1df4d20309d5")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 118.11 274.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "05bad6fe-69ff-47fa-b280-a77ccf97727d")
+		(property "Reference" "#PWR0212"
+			(at 118.11 280.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 118.11 279.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 118.11 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 118.11 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 118.11 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e7098386-682c-492d-9fd7-ec4c1ebf9181")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "#PWR0212")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Resistors SMD:R0603_2K2_1%_0.1W_100PPM")
@@ -25095,6 +29089,535 @@
 		)
 	)
 	(symbol
+		(lib_id "Diodes:PESD3V3L5UY")
+		(at 97.79 271.78 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1b83b205-40f5-478f-b5f1-30dcdc19a17e")
+		(property "Reference" "D3"
+			(at 90.17 267.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "PESD3V3L5UY"
+			(at 104.775 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:SOT65P210X110-6N"
+			(at 106.68 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 108.585 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 97.79 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "PESD3V3L5UY"
+			(at 110.49 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "PESD Array 5diodes 6pins Common anode2"
+			(at 112.395 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Diodes.SchLib"
+			(at 114.3 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "PESD3V3L5UY"
+			(at 116.205 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 118.11 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 120.015 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "PESD3V3L5UY"
+			(at 121.92 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "SOT363, SC-88, 0.65mm Pitch; 6 Pin, 1.25mm W X 2.00mm L X 1.10mm H body, IPC Medium Density"
+			(at 123.825 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "3.3V"
+			(at 125.73 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "200W"
+			(at 127.635 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 129.54 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "Fivefold ESD Protection Diode Arrays (30kV)"
+			(at 131.445 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "NEXPERIA"
+			(at 133.35 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "PESD3V3L5UY"
+			(at 135.255 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "6"
+			(at 137.16 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "SOT363"
+			(at 139.065 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 140.97 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 142.875 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 144.78 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 146.685 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 148.59 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 150.495 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 152.4 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 154.305 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.1mm"
+			(at 156.21 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 158.115 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "SOT65P210X110-6N"
+			(at 160.02 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 161.925 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 163.83 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 165.735 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 167.64 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 169.545 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM WB"
+			(at 171.45 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "07/05/21 00:00:00"
+			(at 173.355 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "07/05/21 00:00:00"
+			(at 175.26 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Field1" " "
+			(at 177.165 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 179.07 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Diodes"
+			(at 180.975 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 182.88 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 184.785 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 97.79 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 97.79 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 97.79 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 97.79 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 97.79 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c9085eef-9dc1-43e3-a273-c5d7fd2c12d6")
+		)
+		(pin "3"
+			(uuid "9632918c-777c-4aa2-a4e8-e1037055df8a")
+		)
+		(pin "4"
+			(uuid "00b7b251-2fc1-481c-94d0-4d21f8ae40cb")
+		)
+		(pin "5"
+			(uuid "559b76a7-18cd-475f-ac13-9b8140aad45e")
+		)
+		(pin "6"
+			(uuid "3ec9b20f-782b-4901-ba83-7f3bdc6ff67a")
+		)
+		(pin "2"
+			(uuid "6572247c-962b-44ab-8cdf-46d860c23bf1")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R")
 		(at 139.7 116.84 90)
 		(mirror x)
@@ -26717,6 +31240,514 @@
 		)
 	)
 	(symbol
+		(lib_id "SAMTEC:SAMTEC_HTSW-103-23-L-D")
+		(at 125.73 246.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2b6aa315-d55b-43a7-be59-d6a88ded932f")
+		(property "Reference" "J11"
+			(at 134.874 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SAMTEC_HTSW-103-23-L-D"
+			(at 125.73 268.605 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "SAMTEC THD:SAMTEC_HTSW-103-23-L-D"
+			(at 125.73 267.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\SAMTEC_HTSW-103-23-L-D.pdf"
+			(at 125.73 269.875 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 125.73 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family" "Header 6"
+			(at 129.54 247.142 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "SAMTEC_HTSW-103-23-L-D"
+			(at 125.73 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Connector 6 Male"
+			(at 125.73 273.685 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Connectors.SchLib"
+			(at 125.73 275.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" " "
+			(at 125.73 277.495 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 125.73 279.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 125.73 281.305 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" " "
+			(at 125.73 283.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" " "
+			(at 125.73 285.115 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "6"
+			(at 125.73 287.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" " "
+			(at 125.73 288.925 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\SAMTEC THD.PcbLib"
+			(at 125.73 290.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "SAMTEC_HTSW-103-23-L-D"
+			(at 125.73 292.735 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 125.73 296.545 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 125.73 298.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 125.73 300.355 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 125.73 302.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 125.73 304.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" "High Temperature"
+			(at 125.73 306.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "Preferred"
+			(at 125.73 307.975 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SCEM" " "
+			(at 125.73 309.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "6 Contacts, Pitch 2.54mm, Dual Row Through Mount Straight Header (Post Lead 5.84mm, Tail Lead 2.92mm, Insulator 2.54mm)"
+			(at 125.73 311.785 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "SAMTEC"
+			(at 125.73 313.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "HTSW-103-23-L-D"
+			(at 125.73 315.595 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "8.38mm"
+			(at 125.73 317.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\SAMTEC_HTSW-103-23-L-D.pdf"
+			(at 125.73 319.405 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 125.73 321.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 125.73 323.215 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 125.73 325.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 125.73 327.025 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 125.73 328.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "02/22/18 00:00:00"
+			(at 125.73 330.835 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "02/22/18 00:00:00"
+			(at 125.73 332.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "No"
+			(at 125.73 334.645 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Connectors"
+			(at 125.73 336.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "SAMTEC"
+			(at 125.73 338.455 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "SAMTEC THD"
+			(at 125.73 340.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 125.73 342.265 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 125.73 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 125.73 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 125.73 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 125.73 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 125.73 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "876c8e8c-95e6-4c49-aac7-813f02486326")
+		)
+		(pin "6"
+			(uuid "883b284b-d0ef-4c06-9371-462c7fc95904")
+		)
+		(pin "1"
+			(uuid "6de916a6-d02a-4f92-8a5b-a307fe45ee17")
+		)
+		(pin "5"
+			(uuid "76d87f5d-f2fe-4b32-99cb-1f92b02a725a")
+		)
+		(pin "4"
+			(uuid "afc2b4aa-82ae-4cab-ac36-500b2f08ac48")
+		)
+		(pin "3"
+			(uuid "b38c4ffb-d7fc-40a3-a8e3-4cc96765e932")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "symbol_lib:+3V3D")
 		(at 284.48 204.47 0)
 		(mirror y)
@@ -27483,6 +32514,536 @@
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
 					(reference "#PWR0200")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diodes:PESD3V3L5UY")
+		(at 113.03 271.78 90)
+		(unit 5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "474f5ad9-b41d-4c85-bbdf-1b4de80ce6c2")
+		(property "Reference" "D3"
+			(at 119.38 267.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Value" "PESD3V3L5UY"
+			(at 120.015 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:SOT65P210X110-6N"
+			(at 121.92 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 123.825 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 113.03 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "PESD3V3L5UY"
+			(at 125.73 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "PESD Array 5diodes 6pins Common anode2"
+			(at 127.635 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Diodes.SchLib"
+			(at 129.54 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "PESD3V3L5UY"
+			(at 131.445 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 133.35 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 135.255 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "PESD3V3L5UY"
+			(at 137.16 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "SOT363, SC-88, 0.65mm Pitch; 6 Pin, 1.25mm W X 2.00mm L X 1.10mm H body, IPC Medium Density"
+			(at 139.065 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "3.3V"
+			(at 140.97 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "200W"
+			(at 142.875 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 144.78 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "Fivefold ESD Protection Diode Arrays (30kV)"
+			(at 146.685 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "NEXPERIA"
+			(at 148.59 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "PESD3V3L5UY"
+			(at 150.495 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "6"
+			(at 152.4 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "SOT363"
+			(at 154.305 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 156.21 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 158.115 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 160.02 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 161.925 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 163.83 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 165.735 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 167.64 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 169.545 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.1mm"
+			(at 171.45 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 173.355 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "SOT65P210X110-6N"
+			(at 175.26 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 177.165 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 179.07 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 180.975 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 182.88 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 184.785 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM WB"
+			(at 186.69 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "07/05/21 00:00:00"
+			(at 188.595 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "07/05/21 00:00:00"
+			(at 190.5 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Field1" " "
+			(at 192.405 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 194.31 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Diodes"
+			(at 196.215 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 198.12 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 200.025 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 113.03 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 113.03 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 113.03 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 113.03 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 113.03 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f150b92e-75be-4940-ad68-d5a70e2f1fc7")
+		)
+		(pin "3"
+			(uuid "9632918c-777c-4aa2-a4e8-e1037055df8b")
+		)
+		(pin "4"
+			(uuid "00b7b251-2fc1-481c-94d0-4d21f8ae40cc")
+		)
+		(pin "5"
+			(uuid "559b76a7-18cd-475f-ac13-9b8140aad45f")
+		)
+		(pin "6"
+			(uuid "e6aa6435-fc28-43e7-bf98-0c4285418744")
+		)
+		(pin "2"
+			(uuid "6dfd9663-4f71-4408-b6c6-ef957a254ead")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "D3")
+					(unit 5)
 				)
 			)
 		)
@@ -29124,6 +34685,1001 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
 					(reference "R42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diodes:PESD3V3L5UY")
+		(at 101.6 271.78 90)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4b5fe4d5-79f2-46dc-86b9-11ba7f384540")
+		(property "Reference" "D3"
+			(at 104.14 267.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Value" "PESD3V3L5UY"
+			(at 108.585 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:SOT65P210X110-6N"
+			(at 110.49 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 112.395 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 101.6 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "PESD3V3L5UY"
+			(at 114.3 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "PESD Array 5diodes 6pins Common anode2"
+			(at 116.205 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Diodes.SchLib"
+			(at 118.11 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "PESD3V3L5UY"
+			(at 120.015 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 121.92 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 123.825 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "PESD3V3L5UY"
+			(at 125.73 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "SOT363, SC-88, 0.65mm Pitch; 6 Pin, 1.25mm W X 2.00mm L X 1.10mm H body, IPC Medium Density"
+			(at 127.635 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "3.3V"
+			(at 129.54 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "200W"
+			(at 131.445 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 133.35 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "Fivefold ESD Protection Diode Arrays (30kV)"
+			(at 135.255 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "NEXPERIA"
+			(at 137.16 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "PESD3V3L5UY"
+			(at 139.065 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "6"
+			(at 140.97 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "SOT363"
+			(at 142.875 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 144.78 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 146.685 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 148.59 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 150.495 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 152.4 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 154.305 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 156.21 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 158.115 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.1mm"
+			(at 160.02 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 161.925 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "SOT65P210X110-6N"
+			(at 163.83 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 165.735 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 167.64 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 169.545 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 171.45 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 173.355 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM WB"
+			(at 175.26 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "07/05/21 00:00:00"
+			(at 177.165 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "07/05/21 00:00:00"
+			(at 179.07 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Field1" " "
+			(at 180.975 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 182.88 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Diodes"
+			(at 184.785 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 186.69 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 188.595 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 101.6 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 101.6 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 101.6 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 101.6 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 101.6 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f150b92e-75be-4940-ad68-d5a70e2f1fc9")
+		)
+		(pin "3"
+			(uuid "0ef40246-8e12-4b52-bb67-e6882bfcc9c4")
+		)
+		(pin "4"
+			(uuid "00b7b251-2fc1-481c-94d0-4d21f8ae40ce")
+		)
+		(pin "5"
+			(uuid "559b76a7-18cd-475f-ac13-9b8140aad461")
+		)
+		(pin "6"
+			(uuid "3ec9b20f-782b-4901-ba83-7f3bdc6ff67d")
+		)
+		(pin "2"
+			(uuid "133b7c4d-c37d-4ab7-8adb-e5f55baadd9d")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "D3")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diodes:PESD3V3S1UB")
+		(at 118.11 271.78 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4c3f2e5d-5d7c-413d-9416-7a08c4b9f642")
+		(property "Reference" "D7"
+			(at 120.65 267.9699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "PESD3V3S1UB"
+			(at 123.825 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:SODFL1608X65N"
+			(at 125.73 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3S1UB.pdf"
+			(at 127.635 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "ESD protection diode (23kV)"
+			(at 129.54 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Diode ESD"
+			(at 131.445 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Diodes.SchLib"
+			(at 133.35 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "PESD3V3S1UB"
+			(at 135.255 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 137.16 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 139.065 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "PESD3V3S1UB"
+			(at 140.97 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "Ultra Small Outline Diode Flat Lead (SOD-523), Body; 1.2mm L X 0.8mm W X 0.65mm H, IPC Medium Density"
+			(at 142.875 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "3V3"
+			(at 144.78 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "330W"
+			(at 146.685 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 148.59 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "ESD protection diode (23kV)"
+			(at 150.495 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "NXP SEMICONDUCTORS"
+			(at 152.4 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "PESD3V3S1UB"
+			(at 154.305 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "2"
+			(at 156.21 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "SOD523"
+			(at 158.115 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 160.02 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 161.925 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 163.83 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 165.735 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 167.64 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 169.545 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 171.45 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 173.355 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "0.65mm"
+			(at 175.26 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 177.165 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "SODFL1608X65N"
+			(at 179.07 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3S1UB.pdf"
+			(at 180.975 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 182.88 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 184.785 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 186.69 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 188.595 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 190.5 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "11/29/12 00:00:00"
+			(at 192.405 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "11/29/12 00:00:00"
+			(at 194.31 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 198.12 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Diodes"
+			(at 200.025 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 201.93 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "CC-BY-SA 4.0"
+			(at 203.835 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Field1" " "
+			(at 196.215 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1d8a5004-5274-4971-9099-f8cb93dfaba8")
+		)
+		(pin "2"
+			(uuid "79269ca4-b749-4fb6-b527-3886af4810c7")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -32107,6 +38663,500 @@
 		)
 	)
 	(symbol
+		(lib_name "STELVIO-KONTEK_3131730000400_2")
+		(lib_id "STELVIO-KONTEK COMATEL:STELVIO-KONTEK_3131730000400")
+		(at 113.03 246.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6ee6d6d0-1178-47ce-b6df-b67b7e3313d4")
+		(property "Reference" "SW5"
+			(at 113.665 243.205 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "HARWIN_M50-1900005"
+			(at 113.03 250.063 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "COMATEL THD:STELVIO-KONTEK_3131730000400"
+			(at 113.03 251.968 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\STELVIO-KONTEK_3131730000400.pdf"
+			(at 113.03 253.873 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 113.03 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment" " "
+			(at 110.49 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "STELVIO-KONTEK_3131730000400"
+			(at 113.03 255.778 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Jumper Type1"
+			(at 113.03 257.683 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Connectors.SchLib"
+			(at 113.03 259.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Accessories"
+			(at 113.03 263.398 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 113.03 265.303 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" " "
+			(at 113.03 267.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "1"
+			(at 113.03 269.113 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" " "
+			(at 113.03 271.018 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\COMATEL THD.PcbLib"
+			(at 113.03 272.923 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "STELVIO-KONTEK_3131730000400"
+			(at 113.03 274.828 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Family" "Jumper"
+			(at 113.03 276.733 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 113.03 278.638 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 113.03 280.543 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "No"
+			(at 113.03 282.448 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 113.03 284.353 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 113.03 286.258 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 113.03 288.163 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "None"
+			(at 113.03 290.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 113.03 291.973 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SCEM" "09.55.10.960.9"
+			(at 113.03 293.878 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" " "
+			(at 113.03 295.783 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "Closed Insulated Black Jumper Pitch 2.54mm"
+			(at 113.03 297.688 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "STELVIO-KONTEK"
+			(at 113.03 299.593 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "3131730000400"
+			(at 113.03 301.498 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "6.5mm"
+			(at 113.03 303.403 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\STELVIO-KONTEK_3131730000400.pdf"
+			(at 113.03 305.308 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 113.03 307.213 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 113.03 309.118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 113.03 311.023 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 113.03 312.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 113.03 314.833 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "08/27/13 00:00:00"
+			(at 113.03 316.738 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "08/27/13 00:00:00"
+			(at 113.03 318.643 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Connectors"
+			(at 113.03 320.548 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "STELVIO-KONTEK COMATEL"
+			(at 113.03 322.453 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "COMATEL THD"
+			(at 113.03 324.358 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 113.03 326.263 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 113.03 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 113.03 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 113.03 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 113.03 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 113.03 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c610dff1-b6bd-49fe-8158-443127ed09af")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "SW5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+2V5")
 		(at 45.72 39.37 0)
 		(unit 1)
@@ -32174,7 +39224,7 @@
 	)
 	(symbol
 		(lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R")
-		(at 78.74 222.25 270)
+		(at 77.47 210.82 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32182,7 +39232,7 @@
 		(dnp no)
 		(uuid "74df1c44-839b-495b-9e4a-5929879adb6f")
 		(property "Reference" "C41"
-			(at 78.74 223.52 90)
+			(at 77.47 212.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32191,7 +39241,7 @@
 			)
 		)
 		(property "Value" "CC0603_100NF_50V_10%_X7R"
-			(at 72.517 222.25 0)
+			(at 71.247 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32201,7 +39251,7 @@
 			)
 		)
 		(property "Footprint" "Capacitors SMD:CAPC1608X87N"
-			(at 70.612 222.25 0)
+			(at 69.342 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32211,7 +39261,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 68.707 222.25 0)
+			(at 67.437 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32221,7 +39271,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 222.25 0)
+			(at 77.47 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32230,7 +39280,7 @@
 			)
 		)
 		(property "Val" "100nF"
-			(at 78.74 228.6 90)
+			(at 77.47 217.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32239,7 +39289,7 @@
 			)
 		)
 		(property "Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 66.802 222.25 0)
+			(at 65.532 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32249,7 +39299,7 @@
 			)
 		)
 		(property "Library Ref" "Capacitor - non polarized"
-			(at 64.897 222.25 0)
+			(at 63.627 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32259,7 +39309,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Capacitors.SchLib"
-			(at 62.992 222.25 0)
+			(at 61.722 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32269,7 +39319,7 @@
 			)
 		)
 		(property "Comment" "100nF"
-			(at 61.087 222.25 0)
+			(at 59.817 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32279,7 +39329,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 59.182 222.25 0)
+			(at 57.912 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32289,7 +39339,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 57.277 222.25 0)
+			(at 56.007 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32299,7 +39349,7 @@
 			)
 		)
 		(property "Pin Count" "2"
-			(at 55.372 222.25 0)
+			(at 54.102 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32309,7 +39359,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
-			(at 53.467 222.25 0)
+			(at 52.197 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32319,7 +39369,7 @@
 			)
 		)
 		(property "Footprint Ref" "CAPC1608X87N"
-			(at 51.562 222.25 0)
+			(at 50.292 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32329,7 +39379,7 @@
 			)
 		)
 		(property "PackageDescription" " "
-			(at 49.657 222.25 0)
+			(at 48.387 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32339,7 +39389,7 @@
 			)
 		)
 		(property "Status" "Preferred"
-			(at 47.752 222.25 0)
+			(at 46.482 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32349,7 +39399,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 45.847 222.25 0)
+			(at 44.577 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32359,7 +39409,7 @@
 			)
 		)
 		(property "Voltage" "50V"
-			(at 43.942 222.25 0)
+			(at 42.672 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32369,7 +39419,7 @@
 			)
 		)
 		(property "TC" "X7R"
-			(at 42.037 222.25 0)
+			(at 40.767 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32379,7 +39429,7 @@
 			)
 		)
 		(property "Tolerance" "±10%"
-			(at 40.132 222.25 0)
+			(at 38.862 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32389,7 +39439,7 @@
 			)
 		)
 		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
-			(at 38.227 222.25 0)
+			(at 36.957 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32399,7 +39449,7 @@
 			)
 		)
 		(property "Manufacturer" "GENERIC"
-			(at 36.322 222.25 0)
+			(at 35.052 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32409,7 +39459,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 34.417 222.25 0)
+			(at 33.147 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32419,7 +39469,7 @@
 			)
 		)
 		(property "Case" "0603"
-			(at 32.512 222.25 0)
+			(at 31.242 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32429,7 +39479,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 30.607 222.25 0)
+			(at 29.337 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32439,7 +39489,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 28.702 222.25 0)
+			(at 27.432 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32449,7 +39499,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 26.797 222.25 0)
+			(at 25.527 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32459,7 +39509,7 @@
 			)
 		)
 		(property "PressFit" " "
-			(at 24.892 222.25 0)
+			(at 23.622 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32469,7 +39519,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 22.987 222.25 0)
+			(at 21.717 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32479,7 +39529,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 21.082 222.25 0)
+			(at 19.812 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32489,7 +39539,7 @@
 			)
 		)
 		(property "ComponentHeight" " "
-			(at 19.177 222.25 0)
+			(at 17.907 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32499,7 +39549,7 @@
 			)
 		)
 		(property "Manufacturer1 Example" "PHYCOMP"
-			(at 17.272 222.25 0)
+			(at 16.002 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32509,7 +39559,7 @@
 			)
 		)
 		(property "Manufacturer1 Part Number" "223858615649"
-			(at 15.367 222.25 0)
+			(at 14.097 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32519,7 +39569,7 @@
 			)
 		)
 		(property "Manufacturer1 ComponentHeight" "0.87mm"
-			(at 13.462 222.25 0)
+			(at 12.192 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32529,7 +39579,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 11.557 222.25 0)
+			(at 10.287 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32539,7 +39589,7 @@
 			)
 		)
 		(property "Author" "CERN DEM JLC"
-			(at 9.652 222.25 0)
+			(at 8.382 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32549,7 +39599,7 @@
 			)
 		)
 		(property "CreateDate" "12/03/07 00:00:00"
-			(at 7.747 222.25 0)
+			(at 6.477 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32559,7 +39609,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "12/03/07 00:00:00"
-			(at 5.842 222.25 0)
+			(at 4.572 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32569,7 +39619,7 @@
 			)
 		)
 		(property "Database Table Name" "Capacitors"
-			(at 3.937 222.25 0)
+			(at 2.667 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32579,7 +39629,7 @@
 			)
 		)
 		(property "Library Name" "Capacitors SMD"
-			(at 2.032 222.25 0)
+			(at 0.762 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32589,7 +39639,7 @@
 			)
 		)
 		(property "Footprint Library" "Capacitors SMD"
-			(at 0.127 222.25 0)
+			(at -1.143 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32599,7 +39649,7 @@
 			)
 		)
 		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at -1.778 222.25 0)
+			(at -3.048 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32609,7 +39659,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 78.74 222.25 0)
+			(at 77.47 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32618,7 +39668,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 78.74 222.25 0)
+			(at 77.47 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32627,7 +39677,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 78.74 222.25 0)
+			(at 77.47 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32636,7 +39686,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 78.74 222.25 0)
+			(at 77.47 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32645,7 +39695,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 78.74 222.25 0)
+			(at 77.47 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36123,16 +43173,16 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 78.74 232.41 0)
+		(at 97.79 274.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8e0da690-255c-4101-91ef-7e9e36781756")
-		(property "Reference" "#PWR0193"
-			(at 78.74 238.76 0)
+		(uuid "8e0086b7-147a-4505-afb0-035ac803b9d4")
+		(property "Reference" "#PWR0199"
+			(at 97.79 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36141,7 +43191,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 78.74 237.49 0)
+			(at 97.79 279.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36149,7 +43199,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 232.41 0)
+			(at 97.79 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36158,7 +43208,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 232.41 0)
+			(at 97.79 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36167,7 +43217,73 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 232.41 0)
+			(at 97.79 274.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4294d7f6-052b-4611-92ea-fd9c464e24b9")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "#PWR0199")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 77.47 220.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8e0da690-255c-4101-91ef-7e9e36781756")
+		(property "Reference" "#PWR0193"
+			(at 77.47 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 77.47 226.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 77.47 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 220.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 77.47 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38307,6 +45423,536 @@
 		)
 	)
 	(symbol
+		(lib_id "Diodes:PESD3V3L5UY")
+		(at 109.22 271.78 90)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9c1f16a2-1eec-4f83-8e36-8efb5f93cf97")
+		(property "Reference" "D3"
+			(at 115.57 267.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Value" "PESD3V3L5UY"
+			(at 116.205 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:SOT65P210X110-6N"
+			(at 118.11 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 120.015 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 109.22 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "PESD3V3L5UY"
+			(at 121.92 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "PESD Array 5diodes 6pins Common anode2"
+			(at 123.825 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Diodes.SchLib"
+			(at 125.73 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "PESD3V3L5UY"
+			(at 127.635 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 129.54 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 131.445 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "PESD3V3L5UY"
+			(at 133.35 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "SOT363, SC-88, 0.65mm Pitch; 6 Pin, 1.25mm W X 2.00mm L X 1.10mm H body, IPC Medium Density"
+			(at 135.255 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "3.3V"
+			(at 137.16 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "200W"
+			(at 139.065 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 140.97 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "Fivefold ESD Protection Diode Arrays (30kV)"
+			(at 142.875 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "NEXPERIA"
+			(at 144.78 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "PESD3V3L5UY"
+			(at 146.685 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "6"
+			(at 148.59 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "SOT363"
+			(at 150.495 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 152.4 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 154.305 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 156.21 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 158.115 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 160.02 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 161.925 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 163.83 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 165.735 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.1mm"
+			(at 167.64 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 169.545 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "SOT65P210X110-6N"
+			(at 171.45 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 173.355 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 175.26 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 177.165 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 179.07 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 180.975 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM WB"
+			(at 182.88 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "07/05/21 00:00:00"
+			(at 184.785 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "07/05/21 00:00:00"
+			(at 186.69 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Field1" " "
+			(at 188.595 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 190.5 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Diodes"
+			(at 192.405 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 194.31 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 196.215 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 109.22 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 109.22 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 109.22 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 109.22 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 109.22 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f150b92e-75be-4940-ad68-d5a70e2f1fc8")
+		)
+		(pin "3"
+			(uuid "9632918c-777c-4aa2-a4e8-e1037055df8c")
+		)
+		(pin "4"
+			(uuid "00b7b251-2fc1-481c-94d0-4d21f8ae40cd")
+		)
+		(pin "5"
+			(uuid "daa930d9-827f-49d6-aac9-7bd38a866752")
+		)
+		(pin "6"
+			(uuid "3ec9b20f-782b-4901-ba83-7f3bdc6ff67c")
+		)
+		(pin "2"
+			(uuid "47397390-26f4-4c95-892c-e1dd2f40ecf6")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "D3")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 30.48 59.69 0)
 		(unit 1)
@@ -40076,7 +47722,7 @@
 	)
 	(symbol
 		(lib_id "Crystals & Oscillators:OSC_100MHZ_ABRACON_ASFL1-100.000MHZ-EC")
-		(at 95.25 218.44 0)
+		(at 93.98 207.01 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -40085,7 +47731,7 @@
 		(fields_autoplaced yes)
 		(uuid "ac2b7780-9c1b-4c77-983b-228d887ce61a")
 		(property "Reference" "OSC2"
-			(at 102.87 213.36 0)
+			(at 101.6 201.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40093,7 +47739,7 @@
 			)
 		)
 		(property "Value" "OSC_100MHZ_ABRACON_ASFL1-100.000MHZ-EC"
-			(at 95.25 233.045 0)
+			(at 93.98 221.615 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40103,7 +47749,7 @@
 			)
 		)
 		(property "Footprint" "ICs And Semiconductors SMD:OSC_ABRACON_ASFL1"
-			(at 95.25 234.95 0)
+			(at 93.98 223.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40113,7 +47759,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\OSC_ABRACON_ASFL1.pdf"
-			(at 95.25 236.855 0)
+			(at 93.98 225.425 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40123,7 +47769,7 @@
 			)
 		)
 		(property "Description" "3.3V, Stability: ±50ppm, 15pF, -20 to 70°C Tri-State HCMOS Surface Mount Oscillator, ASFL1 Series"
-			(at 95.25 218.44 0)
+			(at 93.98 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40132,7 +47778,7 @@
 			)
 		)
 		(property "Val" "100MHz"
-			(at 102.87 215.9 0)
+			(at 101.6 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40140,7 +47786,7 @@
 			)
 		)
 		(property "Part Number" "OSC_100MHZ_ABRACON_ASFL1-100.000MHZ-EC"
-			(at 95.25 238.76 0)
+			(at 93.98 227.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40150,7 +47796,7 @@
 			)
 		)
 		(property "Library Ref" "Oscillator 1OE 2GND 3OUT 4VDD"
-			(at 95.25 240.665 0)
+			(at 93.98 229.235 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40160,7 +47806,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Crystals & Oscillators.SchLib"
-			(at 95.25 242.57 0)
+			(at 93.98 231.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40170,7 +47816,7 @@
 			)
 		)
 		(property "Comment" "100MHz"
-			(at 95.25 244.475 0)
+			(at 93.98 233.045 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40180,7 +47826,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 95.25 246.38 0)
+			(at 93.98 234.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40190,7 +47836,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 95.25 248.285 0)
+			(at 93.98 236.855 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40200,7 +47846,7 @@
 			)
 		)
 		(property "Device" " "
-			(at 95.25 250.19 0)
+			(at 93.98 238.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40210,7 +47856,7 @@
 			)
 		)
 		(property "PackageDescription" "SMD Oscillator, Side Convave; 4 pins, 5.00mm x 3.20mm, ASFL1 Series"
-			(at 95.25 252.095 0)
+			(at 93.98 240.665 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40220,7 +47866,7 @@
 			)
 		)
 		(property "Status" " "
-			(at 95.25 254 0)
+			(at 93.98 242.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40230,7 +47876,7 @@
 			)
 		)
 		(property "Part Description" "3.3V, Stability: ±50ppm, 15pF, -20 to 70°C Tri-State HCMOS Surface Mount Oscillator, ASFL1 Series"
-			(at 95.25 255.905 0)
+			(at 93.98 244.475 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40240,7 +47886,7 @@
 			)
 		)
 		(property "Manufacturer" "ABRACON"
-			(at 95.25 257.81 0)
+			(at 93.98 246.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40250,7 +47896,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "ASFL1-100.000MHZ-EC"
-			(at 95.25 259.715 0)
+			(at 93.98 248.285 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40260,7 +47906,7 @@
 			)
 		)
 		(property "Pin Count" "4"
-			(at 95.25 261.62 0)
+			(at 93.98 250.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40270,7 +47916,7 @@
 			)
 		)
 		(property "Case" " "
-			(at 95.25 263.525 0)
+			(at 93.98 252.095 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40280,7 +47926,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 95.25 265.43 0)
+			(at 93.98 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40290,7 +47936,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 95.25 267.335 0)
+			(at 93.98 255.905 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40300,7 +47946,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 95.25 269.24 0)
+			(at 93.98 257.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40310,7 +47956,7 @@
 			)
 		)
 		(property "PressFit" "No"
-			(at 95.25 271.145 0)
+			(at 93.98 259.715 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40320,7 +47966,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 95.25 273.05 0)
+			(at 93.98 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40330,7 +47976,7 @@
 			)
 		)
 		(property "Bonding" "No"
-			(at 95.25 274.955 0)
+			(at 93.98 263.525 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40340,7 +47986,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 95.25 276.86 0)
+			(at 93.98 265.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40350,7 +47996,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 95.25 278.765 0)
+			(at 93.98 267.335 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40360,7 +48006,7 @@
 			)
 		)
 		(property "ComponentHeight" "1.3mm"
-			(at 95.25 280.67 0)
+			(at 93.98 269.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40370,7 +48016,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 95.25 282.575 0)
+			(at 93.98 271.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40380,7 +48026,7 @@
 			)
 		)
 		(property "Footprint Ref" "OSC_ABRACON_ASFL1"
-			(at 95.25 284.48 0)
+			(at 93.98 273.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40390,7 +48036,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\OSC_ABRACON_ASFL1.pdf"
-			(at 95.25 286.385 0)
+			(at 93.98 274.955 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40400,7 +48046,7 @@
 			)
 		)
 		(property "ComponentLink1URL" " "
-			(at 95.25 288.29 0)
+			(at 93.98 276.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40410,7 +48056,7 @@
 			)
 		)
 		(property "ComponentLink1Description" " "
-			(at 95.25 290.195 0)
+			(at 93.98 278.765 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40420,7 +48066,7 @@
 			)
 		)
 		(property "ComponentLink2URL" " "
-			(at 95.25 292.1 0)
+			(at 93.98 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40430,7 +48076,7 @@
 			)
 		)
 		(property "ComponentLink2Description" " "
-			(at 95.25 294.005 0)
+			(at 93.98 282.575 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40440,7 +48086,7 @@
 			)
 		)
 		(property "Author" "CERN DEM HF"
-			(at 95.25 295.91 0)
+			(at 93.98 284.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40450,7 +48096,7 @@
 			)
 		)
 		(property "CreateDate" "03/22/24 00:00:00"
-			(at 95.25 297.815 0)
+			(at 93.98 286.385 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40460,7 +48106,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "03/22/24 00:00:00"
-			(at 95.25 299.72 0)
+			(at 93.98 288.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40470,7 +48116,7 @@
 			)
 		)
 		(property "Database Table Name" "ICs And Semiconductors"
-			(at 95.25 301.625 0)
+			(at 93.98 290.195 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40480,7 +48126,7 @@
 			)
 		)
 		(property "Library Name" "Crystals & Oscillators"
-			(at 95.25 303.53 0)
+			(at 93.98 292.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40490,7 +48136,7 @@
 			)
 		)
 		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 95.25 305.435 0)
+			(at 93.98 294.005 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40500,7 +48146,7 @@
 			)
 		)
 		(property "License" "CC-BY-SA 4.0"
-			(at 95.25 307.34 0)
+			(at 93.98 295.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -43376,6 +51022,500 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
 					(reference "C47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "STELVIO-KONTEK_3131730000400_3")
+		(lib_id "STELVIO-KONTEK COMATEL:STELVIO-KONTEK_3131730000400")
+		(at 105.41 246.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c4c5e9ee-f90a-4d15-8692-5dfb5368a2c7")
+		(property "Reference" "SW4"
+			(at 106.045 243.205 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "HARWIN_M50-1900005"
+			(at 105.41 250.063 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "COMATEL THD:STELVIO-KONTEK_3131730000400"
+			(at 105.41 251.968 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\STELVIO-KONTEK_3131730000400.pdf"
+			(at 105.41 253.873 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 105.41 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment" " "
+			(at 102.87 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "STELVIO-KONTEK_3131730000400"
+			(at 105.41 255.778 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Jumper Type1"
+			(at 105.41 257.683 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Connectors.SchLib"
+			(at 105.41 259.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Accessories"
+			(at 105.41 263.398 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 105.41 265.303 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" " "
+			(at 105.41 267.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "1"
+			(at 105.41 269.113 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" " "
+			(at 105.41 271.018 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\COMATEL THD.PcbLib"
+			(at 105.41 272.923 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "STELVIO-KONTEK_3131730000400"
+			(at 105.41 274.828 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Family" "Jumper"
+			(at 105.41 276.733 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 105.41 278.638 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 105.41 280.543 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "No"
+			(at 105.41 282.448 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 105.41 284.353 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 105.41 286.258 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 105.41 288.163 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "None"
+			(at 105.41 290.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 105.41 291.973 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SCEM" "09.55.10.960.9"
+			(at 105.41 293.878 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" " "
+			(at 105.41 295.783 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "Closed Insulated Black Jumper Pitch 2.54mm"
+			(at 105.41 297.688 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "STELVIO-KONTEK"
+			(at 105.41 299.593 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "3131730000400"
+			(at 105.41 301.498 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "6.5mm"
+			(at 105.41 303.403 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\STELVIO-KONTEK_3131730000400.pdf"
+			(at 105.41 305.308 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 105.41 307.213 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 105.41 309.118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 105.41 311.023 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 105.41 312.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 105.41 314.833 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "08/27/13 00:00:00"
+			(at 105.41 316.738 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "08/27/13 00:00:00"
+			(at 105.41 318.643 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Connectors"
+			(at 105.41 320.548 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "STELVIO-KONTEK COMATEL"
+			(at 105.41 322.453 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "COMATEL THD"
+			(at 105.41 324.358 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 105.41 326.263 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 105.41 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 105.41 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 105.41 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 105.41 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 105.41 246.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3d9f40cb-4e25-4b4e-8c21-fe35d41cb0d1")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "SW4")
 					(unit 1)
 				)
 			)
@@ -48359,7 +56499,7 @@
 	)
 	(symbol
 		(lib_id "symbol_lib:+3V3D")
-		(at 78.74 219.71 0)
+		(at 77.47 208.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -48368,7 +56508,7 @@
 		(fields_autoplaced yes)
 		(uuid "ee8fbc6e-977a-415f-bc06-58a452104472")
 		(property "Reference" "#PWR0192"
-			(at 78.74 223.52 0)
+			(at 77.47 212.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48377,7 +56517,7 @@
 			)
 		)
 		(property "Value" "+3V3D"
-			(at 78.74 214.63 0)
+			(at 77.47 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48385,7 +56525,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 219.71 0)
+			(at 77.47 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48394,7 +56534,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 219.71 0)
+			(at 77.47 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48403,7 +56543,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 219.71 0)
+			(at 77.47 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50504,6 +58644,536 @@
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
 					(reference "R39")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diodes:PESD3V3L5UY")
+		(at 105.41 271.78 90)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f86b12ad-d8c7-4adc-9d4f-70092b4f94b9")
+		(property "Reference" "D3"
+			(at 111.76 267.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Value" "PESD3V3L5UY"
+			(at 112.395 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:SOT65P210X110-6N"
+			(at 114.3 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 116.205 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 105.41 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "PESD3V3L5UY"
+			(at 118.11 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "PESD Array 5diodes 6pins Common anode2"
+			(at 120.015 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Diodes.SchLib"
+			(at 121.92 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "PESD3V3L5UY"
+			(at 123.825 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 125.73 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 127.635 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "PESD3V3L5UY"
+			(at 129.54 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "SOT363, SC-88, 0.65mm Pitch; 6 Pin, 1.25mm W X 2.00mm L X 1.10mm H body, IPC Medium Density"
+			(at 131.445 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "3.3V"
+			(at 133.35 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "200W"
+			(at 135.255 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 137.16 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "Fivefold ESD Protection Diode Arrays (30kV)"
+			(at 139.065 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "NEXPERIA"
+			(at 140.97 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "PESD3V3L5UY"
+			(at 142.875 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "6"
+			(at 144.78 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "SOT363"
+			(at 146.685 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 148.59 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 150.495 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 152.4 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 154.305 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 156.21 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 158.115 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 160.02 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 161.925 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.1mm"
+			(at 163.83 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 165.735 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "SOT65P210X110-6N"
+			(at 167.64 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PESD3V3L5UY.pdf"
+			(at 169.545 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 171.45 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 173.355 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 175.26 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 177.165 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM WB"
+			(at 179.07 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "07/05/21 00:00:00"
+			(at 180.975 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "07/05/21 00:00:00"
+			(at 182.88 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Field1" " "
+			(at 184.785 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 186.69 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Diodes"
+			(at 188.595 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 190.5 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 192.405 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 105.41 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 105.41 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 105.41 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 105.41 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 105.41 271.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f150b92e-75be-4940-ad68-d5a70e2f1fc5")
+		)
+		(pin "3"
+			(uuid "9632918c-777c-4aa2-a4e8-e1037055df89")
+		)
+		(pin "4"
+			(uuid "0bd62672-7177-4a96-b48c-696b6daa06ba")
+		)
+		(pin "5"
+			(uuid "559b76a7-18cd-475f-ac13-9b8140aad45d")
+		)
+		(pin "6"
+			(uuid "3ec9b20f-782b-4901-ba83-7f3bdc6ff679")
+		)
+		(pin "2"
+			(uuid "05b439ad-cffb-4edc-a926-2c2990a20ee3")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "D3")
+					(unit 3)
 				)
 			)
 		)
