@@ -2661,17 +2661,6 @@
 				)
 			)
 			(symbol "GCT_USB4105-GF-A_0_1"
-				(rectangle
-					(start 0 0)
-					(end 22.86 -30.48)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
 				(polyline
 					(pts
 						(xy 0 0) (xy 22.86 0)
@@ -2682,6 +2671,17 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+				(rectangle
+					(start 0 0)
+					(end 22.86 -30.48)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
 					)
 				)
 				(circle
@@ -2697,7 +2697,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -30.48) (xy 0 0)
+						(xy 0 -30.48) (xy 22.86 -30.48)
 					)
 					(stroke
 						(width 0.254)
@@ -2709,7 +2709,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -30.48) (xy 22.86 -30.48)
+						(xy 0 -30.48) (xy 0 0)
 					)
 					(stroke
 						(width 0.254)

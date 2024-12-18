@@ -2155,7 +2155,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2167,7 +2167,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2291,7 +2291,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2303,7 +2303,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -4681,7 +4681,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Logic:ICE5LP4K-SG48I"
+		(symbol "Logic:ICE40UP5K-SG48I"
 			(pin_names
 				(offset 1.27)
 			)
@@ -4697,7 +4697,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "ICE5LP4K-SG48I"
+			(property "Value" "ICE40UP5K-SG48I"
 				(at 0 -50.165 0)
 				(effects
 					(font
@@ -4717,7 +4717,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
+			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
 				(at 0 -53.975 0)
 				(effects
 					(font
@@ -4727,7 +4727,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
 				(at 0 0 0)
 				(effects
 					(font
@@ -4736,7 +4736,7 @@
 					(hide yes)
 				)
 			)
-			(property "Part Number" "ICE5LP4K-SG48I"
+			(property "Part Number" "ICE40UP5K-SG48I"
 				(at 0 -55.88 0)
 				(effects
 					(font
@@ -4746,7 +4746,7 @@
 					(hide yes)
 				)
 			)
-			(property "Library Ref" "ICE5LP4K-SG48I"
+			(property "Library Ref" "ICE40UP5K-SG48I"
 				(at 0 -57.785 0)
 				(effects
 					(font
@@ -4766,7 +4766,7 @@
 					(hide yes)
 				)
 			)
-			(property "Comment" "ICE5LP4K-SG48I"
+			(property "Comment" "ICE40UP5K-SG48I"
 				(at 0 -61.595 0)
 				(effects
 					(font
@@ -4796,7 +4796,7 @@
 					(hide yes)
 				)
 			)
-			(property "Device" "ICE5LP4K-SG48I"
+			(property "Device" "ICE40UP5K-SG48I"
 				(at 0 -67.31 0)
 				(effects
 					(font
@@ -4826,7 +4826,7 @@
 					(hide yes)
 				)
 			)
-			(property "Part Description" "ICE40 Ultra FPGA, 3520 Logic Cells, 400 kHz data transfer speed, 48 pin QFN"
+			(property "Part Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
 				(at 0 -73.025 0)
 				(effects
 					(font
@@ -4846,7 +4846,7 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer Part Number" "ICE5LP4K-SG48I"
+			(property "Manufacturer Part Number" "ICE40UP5K-SG48I"
 				(at 0 -76.835 0)
 				(effects
 					(font
@@ -4986,7 +4986,7 @@
 					(hide yes)
 				)
 			)
-			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
+			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
 				(at 0 -103.505 0)
 				(effects
 					(font
@@ -5016,7 +5016,7 @@
 					(hide yes)
 				)
 			)
-			(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K_Pinout.xlsx"
+			(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K_Pinout.xlsx"
 				(at 0 -109.22 0)
 				(effects
 					(font
@@ -5046,7 +5046,7 @@
 					(hide yes)
 				)
 			)
-			(property "CreateDate" "10/30/23 00:00:00"
+			(property "CreateDate" "12/16/24 00:00:00"
 				(at 0 -114.935 0)
 				(effects
 					(font
@@ -5056,7 +5056,7 @@
 					(hide yes)
 				)
 			)
-			(property "LatestRevisionDate" "10/30/23 00:00:00"
+			(property "LatestRevisionDate" "12/16/24 00:00:00"
 				(at 0 -116.84 0)
 				(effects
 					(font
@@ -5106,7 +5106,7 @@
 					(hide yes)
 				)
 			)
-			(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(property "License" "CC-BY-SA 4.0"
 				(at 0 -126.365 0)
 				(effects
 					(font
@@ -5124,7 +5124,7 @@
 					)
 				)
 			)
-			(symbol "ICE5LP4K-SG48I_1_1"
+			(symbol "ICE40UP5K-SG48I_1_1"
 				(rectangle
 					(start 0 -48.26)
 					(end 25.4 0)
@@ -5420,7 +5420,7 @@
 							)
 						)
 					)
-					(number "41"
+					(number "39"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5456,7 +5456,7 @@
 							)
 						)
 					)
-					(number "39"
+					(number "41"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -5465,7 +5465,7 @@
 					)
 				)
 			)
-			(symbol "ICE5LP4K-SG48I_2_1"
+			(symbol "ICE40UP5K-SG48I_2_1"
 				(rectangle
 					(start 0 -45.72)
 					(end 25.4 0)
@@ -5788,7 +5788,7 @@
 					)
 				)
 			)
-			(symbol "ICE5LP4K-SG48I_3_1"
+			(symbol "ICE40UP5K-SG48I_3_1"
 				(rectangle
 					(start 0 -22.86)
 					(end 25.4 0)
@@ -5967,7 +5967,7 @@
 					)
 				)
 			)
-			(symbol "ICE5LP4K-SG48I_4_1"
+			(symbol "ICE40UP5K-SG48I_4_1"
 				(rectangle
 					(start 0 -17.78)
 					(end 25.4 0)
@@ -6137,7 +6137,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Logic:MT25QL128ABA1ESE-0SIT"
+		(symbol "Logic:N25Q032A13ESCA0"
 			(pin_names
 				(offset 1.27)
 			)
@@ -6152,7 +6152,7 @@
 					)
 				)
 			)
-			(property "Value" "MT25QL128ABA1ESE-0SIT"
+			(property "Value" "N25Q032A13ESCA0"
 				(at 0 -22.225 0)
 				(effects
 					(font
@@ -6162,7 +6162,7 @@
 					(hide yes)
 				)
 			)
-			(property "Footprint" "ICs And Semiconductors SMD:SOIC127P790X216-8N"
+			(property "Footprint" "ICs And Semiconductors SMD:SOIC127P600X175-8N"
 				(at 0 -24.13 0)
 				(effects
 					(font
@@ -6172,7 +6172,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\MT25QL128ABA1ESE-0SIT.pdf"
+			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\N25Q032A13ESCA0.pdf"
 				(at 0 -26.035 0)
 				(effects
 					(font
@@ -6182,7 +6182,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "32Mb, 2.7 to 3.6V, Multiple I/O Serial Flash Memory"
 				(at 0 0 0)
 				(effects
 					(font
@@ -6191,7 +6191,7 @@
 					(hide yes)
 				)
 			)
-			(property "Part Number" "MT25QL128ABA1ESE-0SIT"
+			(property "Part Number" "N25Q032A13ESCA0"
 				(at 0 -27.94 0)
 				(effects
 					(font
@@ -6201,7 +6201,7 @@
 					(hide yes)
 				)
 			)
-			(property "Library Ref" "MT25QxxxxxBA1ESE"
+			(property "Library Ref" "N25Q032A13ESCA0"
 				(at 0 -29.845 0)
 				(effects
 					(font
@@ -6221,7 +6221,7 @@
 					(hide yes)
 				)
 			)
-			(property "Comment" "MT25QL128ABA1ESE-0SIT"
+			(property "Comment" "N25Q032A13ESCA0"
 				(at 0 -33.655 0)
 				(effects
 					(font
@@ -6251,7 +6251,7 @@
 					(hide yes)
 				)
 			)
-			(property "Device" "MT25QL128ABA1ESE-0SIT"
+			(property "Device" "N25Q032A13ESCA0"
 				(at 0 -39.37 0)
 				(effects
 					(font
@@ -6261,7 +6261,7 @@
 					(hide yes)
 				)
 			)
-			(property "PackageDescription" "SOIC, 1.27mm Pitch; 8 Pin, 5.285mm W X 5.335mm L X 2.16mm H body, IPC Medium Density"
+			(property "PackageDescription" "SOIC, 1.27mm Pitch; 8 Pin - Body 4x5mm, IPC Medium Density"
 				(at 0 -41.275 0)
 				(effects
 					(font
@@ -6281,7 +6281,7 @@
 					(hide yes)
 				)
 			)
-			(property "Part Description" "128Mb (16MB), 2.7V-3.6V, Multiple I/O Serial NOR Flash Memory, with Hold# Pins, –40°C to +85°C"
+			(property "Part Description" "32Mb, 2.7 to 3.6V, Multiple I/O Serial Flash Memory"
 				(at 0 -45.085 0)
 				(effects
 					(font
@@ -6301,7 +6301,7 @@
 					(hide yes)
 				)
 			)
-			(property "Manufacturer Part Number" "MT25QL128ABA1ESE-0SIT"
+			(property "Manufacturer Part Number" "N25Q032A13ESCA0"
 				(at 0 -48.895 0)
 				(effects
 					(font
@@ -6411,7 +6411,7 @@
 					(hide yes)
 				)
 			)
-			(property "ComponentHeight" "2.16mm"
+			(property "ComponentHeight" "1.75mm"
 				(at 0 -69.85 0)
 				(effects
 					(font
@@ -6431,7 +6431,7 @@
 					(hide yes)
 				)
 			)
-			(property "Footprint Ref" "SOIC127P790X216-8N"
+			(property "Footprint Ref" "SOIC127P600X175-8N"
 				(at 0 -73.66 0)
 				(effects
 					(font
@@ -6441,7 +6441,7 @@
 					(hide yes)
 				)
 			)
-			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\MT25QL128ABA1ESE-0SIT.pdf"
+			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\N25Q032A13ESCA0.pdf"
 				(at 0 -75.565 0)
 				(effects
 					(font
@@ -6491,7 +6491,7 @@
 					(hide yes)
 				)
 			)
-			(property "Author" "CERN DEM JLC"
+			(property "Author" "CERN DEM HF"
 				(at 0 -85.09 0)
 				(effects
 					(font
@@ -6501,7 +6501,7 @@
 					(hide yes)
 				)
 			)
-			(property "CreateDate" "01/14/19 00:00:00"
+			(property "CreateDate" "12/09/24 00:00:00"
 				(at 0 -86.995 0)
 				(effects
 					(font
@@ -6511,7 +6511,7 @@
 					(hide yes)
 				)
 			)
-			(property "LatestRevisionDate" "01/14/19 00:00:00"
+			(property "LatestRevisionDate" "12/09/24 00:00:00"
 				(at 0 -88.9 0)
 				(effects
 					(font
@@ -6561,7 +6561,7 @@
 					(hide yes)
 				)
 			)
-			(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(property "License" "CC-BY-SA 4.0"
 				(at 0 -98.425 0)
 				(effects
 					(font
@@ -6579,7 +6579,7 @@
 					)
 				)
 			)
-			(symbol "MT25QL128ABA1ESE-0SIT_0_1"
+			(symbol "N25Q032A13ESCA0_0_1"
 				(rectangle
 					(start 0 -17.78)
 					(end 20.32 0)
@@ -6666,7 +6666,7 @@
 				(pin bidirectional line
 					(at -5.08 -12.7 0)
 					(length 5.08)
-					(name "~{W/}DQ2"
+					(name "~{W/}Vpp/DQ2"
 						(effects
 							(font
 								(size 1.524 1.524)
@@ -12465,18 +12465,6 @@
 					)
 				)
 				(arc
-					(start 3.048 -2.54)
-					(mid 2.8248 -3.0788)
-					(end 2.286 -3.302)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 1.524 -2.54)
 					(mid 1.7472 -2.0012)
 					(end 2.286 -1.778)
@@ -12512,6 +12500,18 @@
 						(type none)
 					)
 				)
+				(arc
+					(start 3.048 -2.54)
+					(mid 2.8248 -3.0788)
+					(end 2.286 -3.302)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(polyline
 					(pts
 						(xy 2.286 -3.302) (xy 2.286 -3.302)
@@ -12537,9 +12537,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -4.318)
-					(mid 2.8248 -4.5412)
-					(end 3.048 -5.08)
+					(start 1.524 -5.08)
+					(mid 1.7472 -4.5412)
+					(end 2.286 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12549,9 +12549,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -5.08)
-					(mid 1.7472 -4.5412)
-					(end 2.286 -4.318)
+					(start 2.286 -4.318)
+					(mid 2.8248 -4.5412)
+					(end 3.048 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12609,21 +12609,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -6.858)
-					(mid 2.8248 -7.0812)
-					(end 3.048 -7.62)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 2.286 -8.382)
-					(mid 1.7472 -8.1588)
-					(end 1.524 -7.62)
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12645,9 +12633,21 @@
 					)
 				)
 				(arc
-					(start 3.048 -7.62)
-					(mid 2.8248 -8.1588)
-					(end 2.286 -8.382)
+					(start 2.286 -8.382)
+					(mid 1.7472 -8.1588)
+					(end 1.524 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -6.858)
+					(mid 2.8248 -7.0812)
+					(end 3.048 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12753,30 +12753,6 @@
 					)
 				)
 				(arc
-					(start 5.334 -1.778)
-					(mid 5.8728 -2.0012)
-					(end 6.096 -2.54)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 4.572 -2.54)
-					(mid 4.7952 -2.0012)
-					(end 5.334 -1.778)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 6.096 -2.54)
 					(mid 5.8728 -3.0788)
 					(end 5.334 -3.302)
@@ -12792,6 +12768,30 @@
 					(start 5.334 -3.302)
 					(mid 4.7952 -3.0788)
 					(end 4.572 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -1.778)
+					(mid 5.8728 -2.0012)
+					(end 6.096 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.572 -2.54)
+					(mid 4.7952 -2.0012)
+					(end 5.334 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12837,6 +12837,18 @@
 					)
 				)
 				(arc
+					(start 5.334 -5.842)
+					(mid 4.7952 -5.6188)
+					(end 4.572 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
 					(start 5.334 -4.318)
 					(mid 5.8728 -4.5412)
 					(end 6.096 -5.08)
@@ -12852,18 +12864,6 @@
 					(start 4.572 -5.08)
 					(mid 4.7952 -4.5412)
 					(end 5.334 -4.318)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 5.334 -5.842)
-					(mid 4.7952 -5.6188)
-					(end 4.572 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12897,9 +12897,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -8.382)
-					(mid 4.7952 -8.1588)
-					(end 4.572 -7.62)
+					(start 4.572 -7.62)
+					(mid 4.7952 -7.0812)
+					(end 5.334 -6.858)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12921,9 +12921,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -7.62)
-					(mid 4.7952 -7.0812)
-					(end 5.334 -6.858)
+					(start 5.334 -8.382)
+					(mid 4.7952 -8.1588)
+					(end 4.572 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14168,18 +14168,6 @@
 					)
 				)
 				(arc
-					(start 2.286 -3.302)
-					(mid 1.7472 -3.0788)
-					(end 1.524 -2.54)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 3.048 -2.54)
 					(mid 2.8248 -3.0788)
 					(end 2.286 -3.302)
@@ -14195,6 +14183,18 @@
 					(start 2.286 -1.778)
 					(mid 2.8248 -2.0012)
 					(end 3.048 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.286 -3.302)
+					(mid 1.7472 -3.0788)
+					(end 1.524 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14240,9 +14240,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -5.08)
-					(mid 2.8248 -5.6188)
-					(end 2.286 -5.842)
+					(start 2.286 -5.842)
+					(mid 1.7472 -5.6188)
+					(end 1.524 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14252,9 +14252,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -5.842)
-					(mid 1.7472 -5.6188)
-					(end 1.524 -5.08)
+					(start 3.048 -5.08)
+					(mid 2.8248 -5.6188)
+					(end 2.286 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14336,9 +14336,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -8.382)
-					(mid 1.7472 -8.1588)
-					(end 1.524 -7.62)
+					(start 2.286 -6.858)
+					(mid 2.8248 -7.0812)
+					(end 3.048 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14348,9 +14348,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -6.858)
-					(mid 2.8248 -7.0812)
-					(end 3.048 -7.62)
+					(start 2.286 -8.382)
+					(mid 1.7472 -8.1588)
+					(end 1.524 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14396,9 +14396,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -10.16)
-					(mid 2.8248 -10.6988)
-					(end 2.286 -10.922)
+					(start 1.524 -10.16)
+					(mid 1.7472 -9.6212)
+					(end 2.286 -9.398)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14408,9 +14408,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -10.16)
-					(mid 1.7472 -9.6212)
-					(end 2.286 -9.398)
+					(start 3.048 -10.16)
+					(mid 2.8248 -10.6988)
+					(end 2.286 -10.922)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14480,9 +14480,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -12.7)
-					(mid 2.8248 -13.2388)
-					(end 2.286 -13.462)
+					(start 2.286 -13.462)
+					(mid 1.7472 -13.2388)
+					(end 1.524 -12.7)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14492,9 +14492,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -13.462)
-					(mid 1.7472 -13.2388)
-					(end 1.524 -12.7)
+					(start 3.048 -12.7)
+					(mid 2.8248 -13.2388)
+					(end 2.286 -13.462)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14660,9 +14660,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -2.54)
-					(mid 4.7952 -2.0012)
-					(end 5.334 -1.778)
+					(start 6.096 -2.54)
+					(mid 5.8728 -3.0788)
+					(end 5.334 -3.302)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14672,9 +14672,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -2.54)
-					(mid 5.8728 -3.0788)
-					(end 5.334 -3.302)
+					(start 4.572 -2.54)
+					(mid 4.7952 -2.0012)
+					(end 5.334 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14720,21 +14720,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -5.08)
-					(mid 4.7952 -4.5412)
-					(end 5.334 -4.318)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 5.334 -5.842)
-					(mid 4.7952 -5.6188)
-					(end 4.572 -5.08)
+					(start 5.334 -4.318)
+					(mid 5.8728 -4.5412)
+					(end 6.096 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14756,9 +14744,21 @@
 					)
 				)
 				(arc
-					(start 5.334 -4.318)
-					(mid 5.8728 -4.5412)
-					(end 6.096 -5.08)
+					(start 5.334 -5.842)
+					(mid 4.7952 -5.6188)
+					(end 4.572 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.572 -5.08)
+					(mid 4.7952 -4.5412)
+					(end 5.334 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14792,30 +14792,6 @@
 					)
 				)
 				(arc
-					(start 6.096 -7.62)
-					(mid 5.8728 -8.1588)
-					(end 5.334 -8.382)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 5.334 -8.382)
-					(mid 4.7952 -8.1588)
-					(end 4.572 -7.62)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 4.572 -7.62)
 					(mid 4.7952 -7.0812)
 					(end 5.334 -6.858)
@@ -14831,6 +14807,30 @@
 					(start 5.334 -6.858)
 					(mid 5.8728 -7.0812)
 					(end 6.096 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.096 -7.62)
+					(mid 5.8728 -8.1588)
+					(end 5.334 -8.382)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -8.382)
+					(mid 4.7952 -8.1588)
+					(end 4.572 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14888,9 +14888,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -9.398)
-					(mid 5.8728 -9.6212)
-					(end 6.096 -10.16)
+					(start 6.096 -10.16)
+					(mid 5.8728 -10.6988)
+					(end 5.334 -10.922)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14900,9 +14900,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -10.16)
-					(mid 5.8728 -10.6988)
-					(end 5.334 -10.922)
+					(start 5.334 -9.398)
+					(mid 5.8728 -9.6212)
+					(end 6.096 -10.16)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14936,9 +14936,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -12.7)
-					(mid 4.7952 -12.1612)
-					(end 5.334 -11.938)
+					(start 5.334 -11.938)
+					(mid 5.8728 -12.1612)
+					(end 6.096 -12.7)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14948,9 +14948,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -11.938)
-					(mid 5.8728 -12.1612)
-					(end 6.096 -12.7)
+					(start 4.572 -12.7)
+					(mid 4.7952 -12.1612)
+					(end 5.334 -11.938)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -19735,7 +19735,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 5.08 0)
+						(xy 5.08 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -19747,7 +19747,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 0 2.032)
+						(xy 5.08 2.032) (xy 5.08 0)
 					)
 					(stroke
 						(width 0.254)
@@ -19803,7 +19803,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -19815,7 +19815,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -22312,16 +22312,6 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 135.89) (xy 209.55 135.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1d8e94b1-4c08-4e18-b67d-4f3e69f902e4")
-	)
-	(wire
-		(pts
 			(xy 308.61 152.4) (xy 308.61 154.94)
 		)
 		(stroke
@@ -22612,7 +22602,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 133.35) (xy 177.8 133.35)
+			(xy 120.65 133.35) (xy 179.07 133.35)
 		)
 		(stroke
 			(width 0)
@@ -23172,7 +23162,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 146.05) (xy 148.59 146.05)
+			(xy 179.07 146.05) (xy 148.59 146.05)
 		)
 		(stroke
 			(width 0)
@@ -23412,7 +23402,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 140.97) (xy 177.8 140.97)
+			(xy 161.29 140.97) (xy 179.07 140.97)
 		)
 		(stroke
 			(width 0)
@@ -23482,7 +23472,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 138.43) (xy 177.8 138.43)
+			(xy 167.64 138.43) (xy 179.07 138.43)
 		)
 		(stroke
 			(width 0)
@@ -23782,7 +23772,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 135.89) (xy 177.8 135.89)
+			(xy 120.65 135.89) (xy 179.07 135.89)
 		)
 		(stroke
 			(width 0)
@@ -24112,7 +24102,7 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 133.35) (xy 215.9 133.35)
+			(xy 209.55 133.35) (xy 215.9 133.35)
 		)
 		(stroke
 			(width 0)
@@ -25512,7 +25502,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 143.51) (xy 154.94 143.51)
+			(xy 179.07 143.51) (xy 154.94 143.51)
 		)
 		(stroke
 			(width 0)
@@ -33049,643 +33039,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Logic:ICE5LP4K-SG48I")
-		(at 148.59 17.78 0)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "47f4133d-b100-439f-88ee-16ff352bfa00")
-		(property "Reference" "IC10"
-			(at 161.29 16.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "ICE5LP4K-SG48I"
-			(at 148.59 67.945 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "ICs And Semiconductors SMD:QFN50P700X700X100-49N-S550"
-			(at 148.59 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
-			(at 148.59 71.755 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 148.59 17.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "ICE5LP4K-SG48I"
-			(at 148.59 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "ICE5LP4K-SG48I"
-			(at 148.59 75.565 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Logic.SchLib"
-			(at 148.59 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "ICE5LP4K-SG48I"
-			(at 148.59 79.375 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 148.59 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 148.59 83.185 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Device" "ICE5LP4K-SG48I"
-			(at 148.59 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" "QFN, 0.50mm Pitch, Square; 48 Pin, 7.00mm L X 7.00mm W X 1.00mm H body (w/Thermal Tab 5.50mm X 5.40mm), IPC Medium Density"
-			(at 148.59 86.995 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" " "
-			(at 148.59 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "ICE40 Ultra FPGA, 3520 Logic Cells, 400 kHz data transfer speed, 48 pin QFN"
-			(at 148.59 90.805 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "LATTICE SEMICONDUCTOR"
-			(at 148.59 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "ICE5LP4K-SG48I"
-			(at 148.59 94.615 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "49"
-			(at 148.59 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "QFN48"
-			(at 148.59 98.425 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 148.59 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 148.59 102.235 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 148.59 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 148.59 106.045 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 148.59 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Bonding" "No"
-			(at 148.59 109.855 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 148.59 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 148.59 113.665 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" "1.00mm"
-			(at 148.59 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 148.59 117.475 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "QFN50P700X700X100-49N-S550"
-			(at 148.59 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
-			(at 148.59 121.285 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\LATTICE_Packege.pdf"
-			(at 148.59 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1Description" "Package"
-			(at 148.59 125.095 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K_Pinout.xlsx"
-			(at 148.59 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2Description" "Pinout"
-			(at 148.59 128.905 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Author" "CERN DEM HF"
-			(at 148.59 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "CreateDate" "10/30/23 00:00:00"
-			(at 148.59 132.715 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate" "10/30/23 00:00:00"
-			(at 148.59 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SCEM" " "
-			(at 148.59 136.525 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Database Table Name" "ICs And Semiconductors"
-			(at 148.59 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Name" "Logic"
-			(at 148.59 140.335 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 148.59 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 148.59 144.145 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Color_1" ""
-			(at 148.59 17.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment_1" ""
-			(at 148.59 17.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Family_1" ""
-			(at 148.59 17.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint_1" ""
-			(at 148.59 17.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance_1" ""
-			(at 148.59 17.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "23"
-			(uuid "7cae2bba-5c19-480c-87e9-12a699b36898")
-		)
-		(pin "25"
-			(uuid "be922e1f-15f7-49c9-937d-8510757419cb")
-		)
-		(pin "26"
-			(uuid "4818c7a8-dcf8-4243-a155-126d5f011b6e")
-		)
-		(pin "27"
-			(uuid "9af31f28-b2dd-4a20-b558-dfe5f7751690")
-		)
-		(pin "28"
-			(uuid "976023f5-02ae-4e80-a291-00e6adf457cb")
-		)
-		(pin "31"
-			(uuid "bee68ebf-a8ae-495f-8f08-a93a0833fb36")
-		)
-		(pin "32"
-			(uuid "ed8f2c2e-5df5-4cb2-a8c2-1901e0a30adf")
-		)
-		(pin "34"
-			(uuid "3db85ddf-3c7b-4c75-bc61-ecb4e52a405f")
-		)
-		(pin "35"
-			(uuid "ab963935-35ac-44ec-aa95-a2174f871ee0")
-		)
-		(pin "36"
-			(uuid "7600c547-7ac4-4b20-8121-c40e04826840")
-		)
-		(pin "37"
-			(uuid "c22e5e0f-8239-48dd-9642-1747df8a3a42")
-		)
-		(pin "38"
-			(uuid "686cd50c-32cd-4d86-a0fb-359cf39e4387")
-		)
-		(pin "39"
-			(uuid "d73dc9b7-64de-4809-8c54-8d257864c73c")
-		)
-		(pin "40"
-			(uuid "0c93ed6e-9095-4e25-b19f-7f5f825026e4")
-		)
-		(pin "41"
-			(uuid "c24e0f89-6157-4fe0-9c64-b672db44f806")
-		)
-		(pin "42"
-			(uuid "ade554d1-ecf3-48ca-8a64-88f41277fc87")
-		)
-		(pin "43"
-			(uuid "72da3af4-66a5-4155-8f1a-27b4fc54ed7e")
-		)
-		(pin "10"
-			(uuid "f8e4dd57-c919-4309-b099-86db66cdf0ae")
-		)
-		(pin "11"
-			(uuid "ecb3026d-a9a5-4269-811f-b47fd1105c77")
-		)
-		(pin "12"
-			(uuid "0cf1c1b8-216d-4c03-9588-069a685b3d37")
-		)
-		(pin "13"
-			(uuid "581f4fbf-1910-444b-9221-e161bdbe03db")
-		)
-		(pin "14"
-			(uuid "cc933960-7d88-42fd-a412-bdd7ae8d11c9")
-		)
-		(pin "15"
-			(uuid "4d5dd173-220c-4047-8e52-171999170b25")
-		)
-		(pin "16"
-			(uuid "79a687af-c0f2-40a4-9512-cefb36a65718")
-		)
-		(pin "17"
-			(uuid "5b6c747a-e569-4185-96ec-1296b7c45c57")
-		)
-		(pin "18"
-			(uuid "acc87193-a354-44a2-a9f0-847bfb8c5e5e")
-		)
-		(pin "19"
-			(uuid "8f6fa229-83d1-4f99-a80e-ce1897f68a20")
-		)
-		(pin "20"
-			(uuid "9a9014fa-578b-43ff-92e0-d32da26d5a41")
-		)
-		(pin "21"
-			(uuid "70392d0b-ef2c-44d6-b8fc-6fa6e8156de1")
-		)
-		(pin "6"
-			(uuid "ee9d58de-f611-4194-9d14-2370cdc2d8f5")
-		)
-		(pin "7"
-			(uuid "b99c88ae-7fba-4418-80ff-bd020cc133dc")
-		)
-		(pin "8"
-			(uuid "418272d6-3a2a-4a40-b230-0b1611695970")
-		)
-		(pin "9"
-			(uuid "5ce9e4dc-4cea-447f-be9e-0b63d7199ad2")
-		)
-		(pin "2"
-			(uuid "60d98c15-c478-42e0-8d8d-018a776fc19c")
-		)
-		(pin "3"
-			(uuid "5fd91e32-7254-4123-9e40-be42263d5488")
-		)
-		(pin "4"
-			(uuid "90ddb327-f32f-459a-bf43-a74b3297f96a")
-		)
-		(pin "44"
-			(uuid "899b9824-4295-4abb-93cc-8f57dddcc28c")
-		)
-		(pin "45"
-			(uuid "a5b03b6f-1444-46b4-9181-7d01aa10e9cd")
-		)
-		(pin "46"
-			(uuid "a1531e3f-1408-4c7b-8e99-6f38d1a05480")
-		)
-		(pin "47"
-			(uuid "2ca286be-31f3-405f-b464-71cf93d0c5f3")
-		)
-		(pin "48"
-			(uuid "d1682192-f243-490c-9383-ead4f726e4d3")
-		)
-		(pin "1"
-			(uuid "788a8c42-b2b5-41d1-94a4-ed9b397e9216")
-		)
-		(pin "22"
-			(uuid "40570de7-6a38-48a1-ac43-eac8c8afe8dd")
-		)
-		(pin "24"
-			(uuid "fcaf6259-9317-43b9-8df0-1ef3b323faa0")
-		)
-		(pin "29"
-			(uuid "f2369fc8-b49a-4e8c-bb8d-5a71ae1d4eec")
-		)
-		(pin "30"
-			(uuid "e4504a2a-e805-4cea-9bb3-e1b3455af142")
-		)
-		(pin "33"
-			(uuid "95127012-ed59-4a68-8a63-5075e8c31561")
-		)
-		(pin "49"
-			(uuid "044353e1-20b3-47b9-a6ed-2a7524598d12")
-		)
-		(pin "5"
-			(uuid "ec600425-53e5-431e-a6fa-105e5d747561")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
-					(reference "IC10")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R")
 		(at 257.81 77.47 90)
 		(mirror x)
@@ -36348,6 +35701,474 @@
 		)
 	)
 	(symbol
+		(lib_id "Logic:N25Q032A13ESCA0")
+		(at 184.15 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "645d9129-1205-497d-ad22-7ffd938355c7")
+		(property "Reference" "IC19"
+			(at 194.31 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "N25Q032A13ESCA0"
+			(at 184.15 153.035 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:SOIC127P600X175-8N"
+			(at 184.15 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\N25Q032A13ESCA0.pdf"
+			(at 184.15 156.845 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "32Mb, 2.7 to 3.6V, Multiple I/O Serial Flash Memory"
+			(at 184.15 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "N25Q032A13ESCA0"
+			(at 185.42 150.622 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "N25Q032A13ESCA0"
+			(at 185.674 150.114 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Logic.SchLib"
+			(at 184.15 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "N25Q032A13ESCA0"
+			(at 185.42 150.876 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 184.15 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 184.15 168.275 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "N25Q032A13ESCA0"
+			(at 184.15 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "SOIC, 1.27mm Pitch; 8 Pin - Body 4x5mm, IPC Medium Density"
+			(at 184.15 172.085 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 184.15 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "32Mb, 2.7 to 3.6V, Multiple I/O Serial Flash Memory"
+			(at 184.15 175.895 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "MICRON TECHNOLOGY"
+			(at 184.15 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "N25Q032A13ESCA0"
+			(at 184.15 179.705 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "8"
+			(at 184.15 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "SOIC8"
+			(at 184.15 183.515 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 184.15 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 184.15 187.325 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 184.15 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 184.15 191.135 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 184.15 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 184.15 194.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 184.15 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 184.15 198.755 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.75mm"
+			(at 184.15 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 184.15 202.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "SOIC127P600X175-8N"
+			(at 184.15 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\N25Q032A13ESCA0.pdf"
+			(at 184.15 206.375 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" " "
+			(at 184.15 208.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" " "
+			(at 184.15 210.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" " "
+			(at 184.15 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" " "
+			(at 184.15 213.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM HF"
+			(at 184.15 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/09/24 00:00:00"
+			(at 184.15 217.805 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "12/09/24 00:00:00"
+			(at 184.15 219.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SCEM" " "
+			(at 184.15 221.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 184.15 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Logic"
+			(at 184.15 225.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 184.15 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "CC-BY-SA 4.0"
+			(at 184.15 229.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "008c65a4-59d3-4ecc-8f34-0072a7b6dc52")
+		)
+		(pin "7"
+			(uuid "159f58cc-95c5-4aa7-b10c-a7bc30375566")
+		)
+		(pin "8"
+			(uuid "04dcdeeb-a8d6-4a44-9fd5-1bff6ebff264")
+		)
+		(pin "4"
+			(uuid "ff9a417d-67b7-4308-911c-73815f1ed1fb")
+		)
+		(pin "5"
+			(uuid "784c3b8e-34d9-47b6-a0bf-2154a81f4e25")
+		)
+		(pin "2"
+			(uuid "5bd2f4da-8f25-4bee-9e6e-6e0eeff853d7")
+		)
+		(pin "6"
+			(uuid "5a06da29-9df1-4c80-9572-26e9633dcb88")
+		)
+		(pin "1"
+			(uuid "0104c4e3-2df7-4157-9e25-d3296a8c6e99")
+		)
+		(instances
+			(project ""
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "IC19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "SAMTEC:SAMTEC_SSW-106-02-L-D-RA")
 		(at 316.23 204.47 0)
 		(unit 1)
@@ -38663,6 +38484,599 @@
 		)
 	)
 	(symbol
+		(lib_id "Logic:ICE40UP5K-SG48I")
+		(at 148.59 17.78 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6c8cc1f5-b861-404a-a72e-1e7fc4adbb22")
+		(property "Reference" "IC11"
+			(at 161.29 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ICE40UP5K-SG48I"
+			(at 148.59 67.945 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:QFN50P700X700X100-49N-S550"
+			(at 148.59 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
+			(at 148.59 71.755 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
+			(at 148.59 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "ICE40UP5K-SG48I"
+			(at 148.59 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "ICE40UP5K-SG48I"
+			(at 148.59 75.565 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Logic.SchLib"
+			(at 148.59 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "ICE40UP5K-SG48I"
+			(at 148.59 79.375 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 148.59 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 148.59 83.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "ICE40UP5K-SG48I"
+			(at 148.59 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "QFN, 0.50mm Pitch, Square; 48 Pin, 7.00mm L X 7.00mm W X 1.00mm H body (w/Thermal Tab 5.50mm X 5.40mm), IPC Medium Density"
+			(at 148.59 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 148.59 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
+			(at 148.59 90.805 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "LATTICE SEMICONDUCTOR"
+			(at 148.59 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "ICE40UP5K-SG48I"
+			(at 148.59 94.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "49"
+			(at 148.59 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "QFN48"
+			(at 148.59 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 148.59 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 148.59 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 148.59 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 148.59 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 148.59 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 148.59 109.855 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 148.59 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 148.59 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.00mm"
+			(at 148.59 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 148.59 117.475 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "QFN50P700X700X100-49N-S550"
+			(at 148.59 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
+			(at 148.59 121.285 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\LATTICE_Packege.pdf"
+			(at 148.59 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" "Package"
+			(at 148.59 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K_Pinout.xlsx"
+			(at 148.59 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" "Pinout"
+			(at 148.59 128.905 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM HF"
+			(at 148.59 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/16/24 00:00:00"
+			(at 148.59 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "12/16/24 00:00:00"
+			(at 148.59 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SCEM" " "
+			(at 148.59 136.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 148.59 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Logic"
+			(at 148.59 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 148.59 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "CC-BY-SA 4.0"
+			(at 148.59 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "16"
+			(uuid "ca5d7642-33c3-4ae6-b695-a437d6a5ec70")
+		)
+		(pin "7"
+			(uuid "a47a2f01-0175-4251-91d1-2480a023d3f7")
+		)
+		(pin "8"
+			(uuid "b416e188-f095-4c14-b86e-d326e108741f")
+		)
+		(pin "46"
+			(uuid "9b3b4309-95c2-45fb-b353-9482490e1269")
+		)
+		(pin "47"
+			(uuid "5691eaa2-1b72-46e7-807e-b49ae22e7e2a")
+		)
+		(pin "44"
+			(uuid "429aec14-801e-432e-823e-e5693f6a7af0")
+		)
+		(pin "48"
+			(uuid "a0327f9b-cb36-4759-8de2-8a3aaae508cf")
+		)
+		(pin "45"
+			(uuid "0f152709-732e-440f-b27f-fc47ca47454c")
+		)
+		(pin "2"
+			(uuid "78536c45-b36b-4283-85d4-1bccb75290df")
+		)
+		(pin "4"
+			(uuid "957a7f6d-31ba-4294-84bc-0932b8aa48e3")
+		)
+		(pin "3"
+			(uuid "ec4fa815-a5b5-40de-80c2-970ef35db85f")
+		)
+		(pin "29"
+			(uuid "7bfb3e5d-cff7-415b-bbc6-f59c987aef1f")
+		)
+		(pin "24"
+			(uuid "7a9d5cae-04c9-45b7-ab9b-b4d7b7885ea3")
+		)
+		(pin "5"
+			(uuid "a687ac3b-3800-42ea-aa5b-2afc029019b2")
+		)
+		(pin "30"
+			(uuid "9f21d824-b944-47eb-af43-64ddd6d0a5ab")
+		)
+		(pin "33"
+			(uuid "b9c0f30a-6365-46c4-8a94-ff9b54d8c4c9")
+		)
+		(pin "22"
+			(uuid "16d3482c-7eaf-4fff-9d56-b54c9f1f1f75")
+		)
+		(pin "1"
+			(uuid "8f61b198-a345-4790-a767-42cf891a8981")
+		)
+		(pin "49"
+			(uuid "694d9d7c-98c0-45ae-84d0-129c51d92715")
+		)
+		(pin "25"
+			(uuid "68732b89-4555-49e7-bf06-f18896a7da5e")
+		)
+		(pin "23"
+			(uuid "bdf8e885-3806-4b6b-8d1f-ec5a2e92c1d1")
+		)
+		(pin "27"
+			(uuid "f7913e3d-bb37-41db-960c-73545efda89e")
+		)
+		(pin "26"
+			(uuid "1c548784-b704-4f2e-b0fa-e3cc92465255")
+		)
+		(pin "28"
+			(uuid "e3e8e7c0-f5b4-44c4-aec4-5e08082f0d4e")
+		)
+		(pin "31"
+			(uuid "a7f94ef5-4060-4a7f-ac64-678d0e6bf800")
+		)
+		(pin "32"
+			(uuid "56d44ff2-d6bf-446d-939a-f334ee7fd44d")
+		)
+		(pin "34"
+			(uuid "d3edbfe5-0fee-485c-ad53-c237dc5ca103")
+		)
+		(pin "37"
+			(uuid "5b022691-4cb3-4b4c-a49b-27d3b1e67532")
+		)
+		(pin "35"
+			(uuid "26277fb1-40b4-473b-ac8a-fd31f5284f51")
+		)
+		(pin "36"
+			(uuid "83b92175-f584-4215-a0f2-a510b589753b")
+		)
+		(pin "43"
+			(uuid "4c4aed97-24b0-4834-8a29-410e25859dd5")
+		)
+		(pin "38"
+			(uuid "63bc3604-bad0-4a9c-8257-84411d33a075")
+		)
+		(pin "42"
+			(uuid "c3a29b07-a2af-41f8-8083-ee02f749417d")
+		)
+		(pin "39"
+			(uuid "2db60c45-ddde-4da6-a7dd-100e353daeec")
+		)
+		(pin "40"
+			(uuid "740b7773-4911-429d-9ba9-42921bfa3dc5")
+		)
+		(pin "41"
+			(uuid "79965381-7e7a-448f-b626-7320c90f654a")
+		)
+		(pin "6"
+			(uuid "f85b2843-0a03-4ea6-8721-b6543a9b0b21")
+		)
+		(pin "9"
+			(uuid "3a5a06b1-6bc7-49df-a203-d44b6bb5f802")
+		)
+		(pin "10"
+			(uuid "17e46ed4-e667-40ef-9a21-c328e7b61194")
+		)
+		(pin "11"
+			(uuid "1caec7b7-e10b-4eb4-9609-8d857d76d09b")
+		)
+		(pin "12"
+			(uuid "59a220d0-9bb7-41e3-b020-bbc519e7d9a1")
+		)
+		(pin "21"
+			(uuid "a0c6c093-37f0-4fa2-aceb-f33442c64813")
+		)
+		(pin "13"
+			(uuid "c1cd5bf4-e4be-44a0-9922-6839f342bf22")
+		)
+		(pin "20"
+			(uuid "ef78c4dc-e5c7-42f2-bbad-9e9e6b40c8ee")
+		)
+		(pin "19"
+			(uuid "9c51b0aa-dfee-4817-8aae-7d26767c7771")
+		)
+		(pin "18"
+			(uuid "e9a8ebb4-61a6-4dd2-a0b0-e18fe9432c51")
+		)
+		(pin "14"
+			(uuid "00f350c0-c629-4a4a-8be5-868bf3f7178d")
+		)
+		(pin "17"
+			(uuid "138b7224-81e5-40d4-9bd5-db141b139144")
+		)
+		(pin "15"
+			(uuid "0c1ee51e-24c8-48d6-883c-811cc69afc76")
+		)
+		(instances
+			(project ""
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "IC11")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "STELVIO-KONTEK_3131730000400_2")
 		(lib_id "STELVIO-KONTEK COMATEL:STELVIO-KONTEK_3131730000400")
 		(at 113.03 246.38 0)
@@ -40226,641 +40640,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Logic:ICE5LP4K-SG48I")
-		(at 276.86 44.45 0)
-		(unit 4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7cd6a563-938a-428c-b6ec-084f19710c9d")
-		(property "Reference" "IC10"
-			(at 289.56 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "ICE5LP4K-SG48I"
-			(at 289.56 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "ICs And Semiconductors SMD:QFN50P700X700X100-49N-S550"
-			(at 276.86 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
-			(at 276.86 98.425 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 276.86 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "ICE5LP4K-SG48I"
-			(at 276.86 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "ICE5LP4K-SG48I"
-			(at 276.86 102.235 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Logic.SchLib"
-			(at 276.86 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "ICE5LP4K-SG48I"
-			(at 276.86 106.045 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 276.86 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 276.86 109.855 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Device" "ICE5LP4K-SG48I"
-			(at 276.86 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" "QFN, 0.50mm Pitch, Square; 48 Pin, 7.00mm L X 7.00mm W X 1.00mm H body (w/Thermal Tab 5.50mm X 5.40mm), IPC Medium Density"
-			(at 276.86 113.665 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" " "
-			(at 276.86 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "ICE40 Ultra FPGA, 3520 Logic Cells, 400 kHz data transfer speed, 48 pin QFN"
-			(at 276.86 117.475 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "LATTICE SEMICONDUCTOR"
-			(at 276.86 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "ICE5LP4K-SG48I"
-			(at 276.86 121.285 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "49"
-			(at 276.86 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "QFN48"
-			(at 276.86 125.095 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 276.86 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 276.86 128.905 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 276.86 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 276.86 132.715 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 276.86 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Bonding" "No"
-			(at 276.86 136.525 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 276.86 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 276.86 140.335 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" "1.00mm"
-			(at 276.86 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 276.86 144.145 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "QFN50P700X700X100-49N-S550"
-			(at 276.86 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
-			(at 276.86 147.955 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\LATTICE_Packege.pdf"
-			(at 276.86 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1Description" "Package"
-			(at 276.86 151.765 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K_Pinout.xlsx"
-			(at 276.86 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2Description" "Pinout"
-			(at 276.86 155.575 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Author" "CERN DEM HF"
-			(at 276.86 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "CreateDate" "10/30/23 00:00:00"
-			(at 276.86 159.385 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate" "10/30/23 00:00:00"
-			(at 276.86 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SCEM" " "
-			(at 276.86 163.195 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Database Table Name" "ICs And Semiconductors"
-			(at 276.86 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Name" "Logic"
-			(at 276.86 167.005 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 276.86 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 276.86 170.815 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Color_1" ""
-			(at 276.86 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment_1" ""
-			(at 276.86 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Family_1" ""
-			(at 276.86 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint_1" ""
-			(at 276.86 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance_1" ""
-			(at 276.86 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "23"
-			(uuid "eb8aff95-6bb4-4583-8f69-eb20a7896460")
-		)
-		(pin "25"
-			(uuid "de00604d-c693-4c69-932c-45dc220e2ebe")
-		)
-		(pin "26"
-			(uuid "ad903c07-fde4-44ae-a059-bbfd90cc9331")
-		)
-		(pin "27"
-			(uuid "e7eaab47-f870-402c-9a43-29e40b8e3c60")
-		)
-		(pin "28"
-			(uuid "76de35a4-0ae8-487f-b8a5-30c6fdd97764")
-		)
-		(pin "31"
-			(uuid "c2484f44-4f48-48f8-8820-bb3136331de0")
-		)
-		(pin "32"
-			(uuid "18ef9e69-aa08-4665-8d25-983a4c5eadfe")
-		)
-		(pin "34"
-			(uuid "4fa53244-b9a7-4f83-bad0-5e60be46d9f0")
-		)
-		(pin "35"
-			(uuid "a2be3667-30a2-47c4-9f8e-e89358d593bd")
-		)
-		(pin "36"
-			(uuid "7b16d7b4-2d78-4340-8cb8-d3b1b2e44449")
-		)
-		(pin "37"
-			(uuid "01186c23-6c0b-4297-ae35-38f378174eae")
-		)
-		(pin "38"
-			(uuid "cd7f2a92-592e-4cfe-b7b5-15a236bc79d2")
-		)
-		(pin "39"
-			(uuid "354f475b-9fdb-4898-aa08-ae6281e1d6de")
-		)
-		(pin "40"
-			(uuid "833bd072-95cf-4f1f-8806-b6c6e94ed20b")
-		)
-		(pin "41"
-			(uuid "82865603-b6e6-4950-ad8f-336f9ea1f041")
-		)
-		(pin "42"
-			(uuid "f2928b24-93a9-4fb7-82c2-aed7e1007210")
-		)
-		(pin "43"
-			(uuid "dd4a2ad3-3279-4341-b2a3-eb1833a4c6ff")
-		)
-		(pin "10"
-			(uuid "fc5b679c-1dfa-416c-9060-61e60d52a0e4")
-		)
-		(pin "11"
-			(uuid "6642114b-d24e-496a-bbf7-6362d84ccc97")
-		)
-		(pin "12"
-			(uuid "01e7cb73-e5f9-4465-8d6c-12441732455e")
-		)
-		(pin "13"
-			(uuid "3eab6459-6bd2-4235-803f-96ff35fdaeb1")
-		)
-		(pin "14"
-			(uuid "8fdbfec7-0bc1-46d8-9668-bb57cab9c3af")
-		)
-		(pin "15"
-			(uuid "cc955128-b6f4-4463-837e-558d03c4e9df")
-		)
-		(pin "16"
-			(uuid "0a810991-1281-4636-9f41-3405aedabbe9")
-		)
-		(pin "17"
-			(uuid "5dcbb45e-2a4f-45a9-8007-dca8f1445523")
-		)
-		(pin "18"
-			(uuid "09957b6d-3699-47f6-8c1e-c196d52a6f47")
-		)
-		(pin "19"
-			(uuid "677d9857-d0e4-4358-981d-ef4dde563da4")
-		)
-		(pin "20"
-			(uuid "b0b8f0e8-6bdf-4778-bbd0-ef03ba9a4379")
-		)
-		(pin "21"
-			(uuid "4a1e7bdb-265b-4ffc-b2d1-ee2a257b509c")
-		)
-		(pin "6"
-			(uuid "a4018530-e2b3-46b6-898f-75c2b6ca537d")
-		)
-		(pin "7"
-			(uuid "575e6f23-3757-4fab-8ad0-648c350d856f")
-		)
-		(pin "8"
-			(uuid "ab8b7bb8-46d6-45e0-a11a-56751c28e868")
-		)
-		(pin "9"
-			(uuid "590727aa-a98b-4819-8e68-16b03f29b39d")
-		)
-		(pin "2"
-			(uuid "4f722cc6-678e-4128-b3ed-ed676bb9ffe6")
-		)
-		(pin "3"
-			(uuid "af69ce13-12ca-4625-8efc-e6b8443a756c")
-		)
-		(pin "4"
-			(uuid "46491c4a-b2f8-42e7-a2a4-c0595a44d5a7")
-		)
-		(pin "44"
-			(uuid "aafd3bd9-0ffe-4a7f-aa58-f11a067b74e7")
-		)
-		(pin "45"
-			(uuid "7987abf7-fa87-44cc-b8db-cf06cf6ef3e5")
-		)
-		(pin "46"
-			(uuid "bc05997b-a3b2-4e88-a26e-9fbdee66a077")
-		)
-		(pin "47"
-			(uuid "000342ad-05e2-41d6-8941-1f5ee70b34bd")
-		)
-		(pin "48"
-			(uuid "f1ce638a-f458-4aaf-8016-716d1749dab3")
-		)
-		(pin "1"
-			(uuid "a31cf7d1-067b-40e7-8d00-db107f42a046")
-		)
-		(pin "22"
-			(uuid "2e27d9b0-e073-4029-b450-1306ce19c588")
-		)
-		(pin "24"
-			(uuid "646b3c28-6ecb-47b3-8505-fd839aed0ae4")
-		)
-		(pin "29"
-			(uuid "b17794b8-5a80-4d40-bb23-37db2416befb")
-		)
-		(pin "30"
-			(uuid "2f287fe6-a6b1-45bc-a19e-f7f53b3a6d58")
-		)
-		(pin "33"
-			(uuid "db4b6f70-7922-4fc1-b978-28091e75b346")
-		)
-		(pin "49"
-			(uuid "2b9b88b2-e386-4555-9bff-ff5adebacf75")
-		)
-		(pin "5"
-			(uuid "28688fc7-8379-4882-af1e-fa75b780afe1")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
-					(reference "IC10")
-					(unit 4)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+2V5")
 		(at 237.49 19.05 0)
 		(unit 1)
@@ -41450,643 +41229,6 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
 					(reference "D10")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Logic:ICE5LP4K-SG48I")
-		(at 148.59 67.31 0)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "827b88bc-a331-4f19-ae70-7ffcbb256a02")
-		(property "Reference" "IC10"
-			(at 161.29 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "ICE5LP4K-SG48I"
-			(at 148.59 117.475 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "ICs And Semiconductors SMD:QFN50P700X700X100-49N-S550"
-			(at 148.59 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
-			(at 148.59 121.285 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 148.59 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "ICE5LP4K-SG48I"
-			(at 148.59 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "ICE5LP4K-SG48I"
-			(at 148.59 125.095 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Logic.SchLib"
-			(at 148.59 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "ICE5LP4K-SG48I"
-			(at 148.59 128.905 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 148.59 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 148.59 132.715 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Device" "ICE5LP4K-SG48I"
-			(at 148.59 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" "QFN, 0.50mm Pitch, Square; 48 Pin, 7.00mm L X 7.00mm W X 1.00mm H body (w/Thermal Tab 5.50mm X 5.40mm), IPC Medium Density"
-			(at 148.59 136.525 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" " "
-			(at 148.59 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "ICE40 Ultra FPGA, 3520 Logic Cells, 400 kHz data transfer speed, 48 pin QFN"
-			(at 148.59 140.335 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "LATTICE SEMICONDUCTOR"
-			(at 148.59 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "ICE5LP4K-SG48I"
-			(at 148.59 144.145 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "49"
-			(at 148.59 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "QFN48"
-			(at 148.59 147.955 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 148.59 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 148.59 151.765 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 148.59 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 148.59 155.575 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 148.59 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Bonding" "No"
-			(at 148.59 159.385 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 148.59 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 148.59 163.195 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" "1.00mm"
-			(at 148.59 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 148.59 167.005 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "QFN50P700X700X100-49N-S550"
-			(at 148.59 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
-			(at 148.59 170.815 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\LATTICE_Packege.pdf"
-			(at 148.59 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1Description" "Package"
-			(at 148.59 174.625 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K_Pinout.xlsx"
-			(at 148.59 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2Description" "Pinout"
-			(at 148.59 178.435 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Author" "CERN DEM HF"
-			(at 148.59 180.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "CreateDate" "10/30/23 00:00:00"
-			(at 148.59 182.245 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate" "10/30/23 00:00:00"
-			(at 148.59 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SCEM" " "
-			(at 148.59 186.055 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Database Table Name" "ICs And Semiconductors"
-			(at 148.59 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Name" "Logic"
-			(at 148.59 189.865 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 148.59 191.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 148.59 193.675 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Color_1" ""
-			(at 148.59 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment_1" ""
-			(at 148.59 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Family_1" ""
-			(at 148.59 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint_1" ""
-			(at 148.59 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance_1" ""
-			(at 148.59 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "23"
-			(uuid "0d0cfe12-382d-41ec-bdc9-a7f9deac4da6")
-		)
-		(pin "25"
-			(uuid "52724170-61d5-4643-bc01-52a028f9acf4")
-		)
-		(pin "26"
-			(uuid "577bb86e-0bbb-450c-8436-48883c0ed214")
-		)
-		(pin "27"
-			(uuid "8a83bdfc-f7f7-4937-ba2a-4557883a9776")
-		)
-		(pin "28"
-			(uuid "159115da-316b-4629-b4d4-a1e748c2e657")
-		)
-		(pin "31"
-			(uuid "b20b65ee-9ce4-4094-b955-ce1024f6d4a2")
-		)
-		(pin "32"
-			(uuid "7750358d-3b03-44f7-bd73-e6abf8bd9c9d")
-		)
-		(pin "34"
-			(uuid "4fa38e74-d918-4f53-a256-83f81355ca08")
-		)
-		(pin "35"
-			(uuid "9acd3b5a-676e-45c0-a699-9f0270352291")
-		)
-		(pin "36"
-			(uuid "ae552167-6991-42a7-b075-6aaf4876f063")
-		)
-		(pin "37"
-			(uuid "6e08e3fe-64b1-4037-9de1-afb40748b099")
-		)
-		(pin "38"
-			(uuid "e4463f89-ff9a-4092-b5c1-434254388859")
-		)
-		(pin "39"
-			(uuid "fdd4efc1-1bb4-4530-940e-8457607d789c")
-		)
-		(pin "40"
-			(uuid "6f0d0bef-f07f-46dd-98cb-1a694ee5df70")
-		)
-		(pin "41"
-			(uuid "e5fe0f42-f82a-4e58-8c4e-9fd46436eb82")
-		)
-		(pin "42"
-			(uuid "0710c427-59bf-4627-9328-232f37d95b9e")
-		)
-		(pin "43"
-			(uuid "a426242c-8b9b-408e-b936-e4e2f6279b8e")
-		)
-		(pin "10"
-			(uuid "2f7d1e32-4cb8-44d1-9620-cb6f0644ab28")
-		)
-		(pin "11"
-			(uuid "9c4c5a66-3e36-4f1f-92ae-9aaed0c1d3d6")
-		)
-		(pin "12"
-			(uuid "0e69c412-324f-4182-a321-86d6c31cda09")
-		)
-		(pin "13"
-			(uuid "b3c81b3e-e50c-42b6-924c-ad1f0503fc48")
-		)
-		(pin "14"
-			(uuid "59d0edf2-f917-4b18-9af0-788cd712088c")
-		)
-		(pin "15"
-			(uuid "c028ad33-ae1a-42fa-aa41-af2a0f69b358")
-		)
-		(pin "16"
-			(uuid "91d9b278-2b43-4e1c-834e-1ebb98ab23fc")
-		)
-		(pin "17"
-			(uuid "a73b0e09-4192-4720-94ea-8145d244e4ef")
-		)
-		(pin "18"
-			(uuid "14b078de-cc23-4edc-a1ed-7310ed076e2c")
-		)
-		(pin "19"
-			(uuid "3c287d9b-1c12-421b-b0f0-fabc8d77b84e")
-		)
-		(pin "20"
-			(uuid "3e92dcff-a42f-4b3c-bfb2-a2520edca95b")
-		)
-		(pin "21"
-			(uuid "ff603411-78f0-4d38-a83c-c0dd1618454d")
-		)
-		(pin "6"
-			(uuid "b9532aa0-d35d-4146-8f91-4eb647dbb6ea")
-		)
-		(pin "7"
-			(uuid "04c2c3c3-ca14-4ef1-847f-655bef68846a")
-		)
-		(pin "8"
-			(uuid "4085df3d-5a4e-4adc-a788-716474653d45")
-		)
-		(pin "9"
-			(uuid "308af35c-7d1d-4374-801d-2dcf7c855736")
-		)
-		(pin "2"
-			(uuid "7d183309-b237-4e99-a789-34d982660c2b")
-		)
-		(pin "3"
-			(uuid "d1e83918-a611-4692-ad59-f35451ee2c19")
-		)
-		(pin "4"
-			(uuid "35adfbec-8ce4-4ae6-99c2-f009219f0375")
-		)
-		(pin "44"
-			(uuid "e39a3715-4547-4759-a346-988fcdf80b87")
-		)
-		(pin "45"
-			(uuid "05707434-5d70-4d76-9c90-54ab6e58b61e")
-		)
-		(pin "46"
-			(uuid "290bf9e8-fbe2-4af2-8284-cfb7c98c3afb")
-		)
-		(pin "47"
-			(uuid "38c0ecbd-9217-4fc6-80f4-d4aa04f6325c")
-		)
-		(pin "48"
-			(uuid "4cefe26d-e3e9-4532-9f5a-e8a2947c43f3")
-		)
-		(pin "1"
-			(uuid "61740cee-5cdb-4050-a7a5-62e80baf5ad7")
-		)
-		(pin "22"
-			(uuid "d9298884-f529-4304-9b9c-51bc12e01fad")
-		)
-		(pin "24"
-			(uuid "20e02008-02db-4b02-ab93-d3a5eb29b82e")
-		)
-		(pin "29"
-			(uuid "31afc804-2cb8-4c3d-b02c-603e6de3e979")
-		)
-		(pin "30"
-			(uuid "ece7e893-48ec-4bc9-ac75-a0bf729be3fd")
-		)
-		(pin "33"
-			(uuid "21d1e0f5-8091-4775-aeb4-83d86f32051f")
-		)
-		(pin "49"
-			(uuid "65fff544-b39d-4275-bc93-b3e8fdf9cd9e")
-		)
-		(pin "5"
-			(uuid "44d03052-acec-47eb-989b-34106d40543a")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
-					(reference "IC10")
 					(unit 3)
 				)
 			)
@@ -46018,6 +45160,599 @@
 		)
 	)
 	(symbol
+		(lib_id "Logic:ICE40UP5K-SG48I")
+		(at 276.86 44.45 0)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9dad1a8d-abdd-4cf6-a8fc-5cb4329dda02")
+		(property "Reference" "IC11"
+			(at 289.56 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ICE40UP5K-SG48I"
+			(at 276.86 94.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:QFN50P700X700X100-49N-S550"
+			(at 276.86 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
+			(at 276.86 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
+			(at 276.86 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "ICE40UP5K-SG48I"
+			(at 276.86 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "ICE40UP5K-SG48I"
+			(at 276.86 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Logic.SchLib"
+			(at 276.86 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "ICE40UP5K-SG48I"
+			(at 276.86 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 276.86 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 276.86 109.855 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "ICE40UP5K-SG48I"
+			(at 276.86 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "QFN, 0.50mm Pitch, Square; 48 Pin, 7.00mm L X 7.00mm W X 1.00mm H body (w/Thermal Tab 5.50mm X 5.40mm), IPC Medium Density"
+			(at 276.86 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 276.86 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
+			(at 276.86 117.475 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "LATTICE SEMICONDUCTOR"
+			(at 276.86 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "ICE40UP5K-SG48I"
+			(at 276.86 121.285 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "49"
+			(at 276.86 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "QFN48"
+			(at 276.86 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 276.86 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 276.86 128.905 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 276.86 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 276.86 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 276.86 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 276.86 136.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 276.86 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 276.86 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.00mm"
+			(at 276.86 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 276.86 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "QFN50P700X700X100-49N-S550"
+			(at 276.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
+			(at 276.86 147.955 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\LATTICE_Packege.pdf"
+			(at 276.86 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" "Package"
+			(at 276.86 151.765 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K_Pinout.xlsx"
+			(at 276.86 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" "Pinout"
+			(at 276.86 155.575 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM HF"
+			(at 276.86 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/16/24 00:00:00"
+			(at 276.86 159.385 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "12/16/24 00:00:00"
+			(at 276.86 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SCEM" " "
+			(at 276.86 163.195 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 276.86 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Logic"
+			(at 276.86 167.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 276.86 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "CC-BY-SA 4.0"
+			(at 276.86 170.815 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "16"
+			(uuid "ca5d7642-33c3-4ae6-b695-a437d6a5ec70")
+		)
+		(pin "7"
+			(uuid "a47a2f01-0175-4251-91d1-2480a023d3f7")
+		)
+		(pin "8"
+			(uuid "b416e188-f095-4c14-b86e-d326e108741f")
+		)
+		(pin "46"
+			(uuid "9b3b4309-95c2-45fb-b353-9482490e1269")
+		)
+		(pin "47"
+			(uuid "5691eaa2-1b72-46e7-807e-b49ae22e7e2a")
+		)
+		(pin "44"
+			(uuid "429aec14-801e-432e-823e-e5693f6a7af0")
+		)
+		(pin "48"
+			(uuid "a0327f9b-cb36-4759-8de2-8a3aaae508cf")
+		)
+		(pin "45"
+			(uuid "0f152709-732e-440f-b27f-fc47ca47454c")
+		)
+		(pin "2"
+			(uuid "78536c45-b36b-4283-85d4-1bccb75290df")
+		)
+		(pin "4"
+			(uuid "957a7f6d-31ba-4294-84bc-0932b8aa48e3")
+		)
+		(pin "3"
+			(uuid "ec4fa815-a5b5-40de-80c2-970ef35db85f")
+		)
+		(pin "29"
+			(uuid "7bfb3e5d-cff7-415b-bbc6-f59c987aef1f")
+		)
+		(pin "24"
+			(uuid "7a9d5cae-04c9-45b7-ab9b-b4d7b7885ea3")
+		)
+		(pin "5"
+			(uuid "a687ac3b-3800-42ea-aa5b-2afc029019b2")
+		)
+		(pin "30"
+			(uuid "9f21d824-b944-47eb-af43-64ddd6d0a5ab")
+		)
+		(pin "33"
+			(uuid "b9c0f30a-6365-46c4-8a94-ff9b54d8c4c9")
+		)
+		(pin "22"
+			(uuid "16d3482c-7eaf-4fff-9d56-b54c9f1f1f75")
+		)
+		(pin "1"
+			(uuid "8f61b198-a345-4790-a767-42cf891a8981")
+		)
+		(pin "49"
+			(uuid "694d9d7c-98c0-45ae-84d0-129c51d92715")
+		)
+		(pin "25"
+			(uuid "68732b89-4555-49e7-bf06-f18896a7da5e")
+		)
+		(pin "23"
+			(uuid "bdf8e885-3806-4b6b-8d1f-ec5a2e92c1d1")
+		)
+		(pin "27"
+			(uuid "f7913e3d-bb37-41db-960c-73545efda89e")
+		)
+		(pin "26"
+			(uuid "1c548784-b704-4f2e-b0fa-e3cc92465255")
+		)
+		(pin "28"
+			(uuid "e3e8e7c0-f5b4-44c4-aec4-5e08082f0d4e")
+		)
+		(pin "31"
+			(uuid "a7f94ef5-4060-4a7f-ac64-678d0e6bf800")
+		)
+		(pin "32"
+			(uuid "56d44ff2-d6bf-446d-939a-f334ee7fd44d")
+		)
+		(pin "34"
+			(uuid "d3edbfe5-0fee-485c-ad53-c237dc5ca103")
+		)
+		(pin "37"
+			(uuid "5b022691-4cb3-4b4c-a49b-27d3b1e67532")
+		)
+		(pin "35"
+			(uuid "26277fb1-40b4-473b-ac8a-fd31f5284f51")
+		)
+		(pin "36"
+			(uuid "83b92175-f584-4215-a0f2-a510b589753b")
+		)
+		(pin "43"
+			(uuid "4c4aed97-24b0-4834-8a29-410e25859dd5")
+		)
+		(pin "38"
+			(uuid "63bc3604-bad0-4a9c-8257-84411d33a075")
+		)
+		(pin "42"
+			(uuid "c3a29b07-a2af-41f8-8083-ee02f749417d")
+		)
+		(pin "39"
+			(uuid "2db60c45-ddde-4da6-a7dd-100e353daeec")
+		)
+		(pin "40"
+			(uuid "740b7773-4911-429d-9ba9-42921bfa3dc5")
+		)
+		(pin "41"
+			(uuid "79965381-7e7a-448f-b626-7320c90f654a")
+		)
+		(pin "6"
+			(uuid "f85b2843-0a03-4ea6-8721-b6543a9b0b21")
+		)
+		(pin "9"
+			(uuid "3a5a06b1-6bc7-49df-a203-d44b6bb5f802")
+		)
+		(pin "10"
+			(uuid "17e46ed4-e667-40ef-9a21-c328e7b61194")
+		)
+		(pin "11"
+			(uuid "1caec7b7-e10b-4eb4-9609-8d857d76d09b")
+		)
+		(pin "12"
+			(uuid "59a220d0-9bb7-41e3-b020-bbc519e7d9a1")
+		)
+		(pin "21"
+			(uuid "a0c6c093-37f0-4fa2-aceb-f33442c64813")
+		)
+		(pin "13"
+			(uuid "c1cd5bf4-e4be-44a0-9922-6839f342bf22")
+		)
+		(pin "20"
+			(uuid "ef78c4dc-e5c7-42f2-bbad-9e9e6b40c8ee")
+		)
+		(pin "19"
+			(uuid "9c51b0aa-dfee-4817-8aae-7d26767c7771")
+		)
+		(pin "18"
+			(uuid "e9a8ebb4-61a6-4dd2-a0b0-e18fe9432c51")
+		)
+		(pin "14"
+			(uuid "00f350c0-c629-4a4a-8be5-868bf3f7178d")
+		)
+		(pin "17"
+			(uuid "138b7224-81e5-40d4-9bd5-db141b139144")
+		)
+		(pin "15"
+			(uuid "0c1ee51e-24c8-48d6-883c-811cc69afc76")
+		)
+		(instances
+			(project ""
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "IC11")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 250.19 31.75 0)
 		(unit 1)
@@ -46077,518 +45812,6 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
 					(reference "#PWR0206")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Logic:MT25QL128ABA1ESE-0SIT")
-		(at 182.88 130.81 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a33db42a-283a-4ab5-a751-9da499e493b5")
-		(property "Reference" "IC11"
-			(at 193.04 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MT25QL128ABA1ESE-0SIT"
-			(at 193.04 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "ICs And Semiconductors SMD:SOIC127P790X216-8N"
-			(at 182.88 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\MT25QL128ABA1ESE-0SIT.pdf"
-			(at 182.88 156.845 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 182.88 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "MT25QL128ABA1ESE-0SIT"
-			(at 182.88 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "MT25QxxxxxBA1ESE"
-			(at 182.88 160.655 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Logic.SchLib"
-			(at 182.88 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "MT25QL128ABA1ESE-0SIT"
-			(at 182.88 164.465 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 182.88 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 182.88 168.275 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Device" "MT25QL128ABA1ESE-0SIT"
-			(at 182.88 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" "SOIC, 1.27mm Pitch; 8 Pin, 5.285mm W X 5.335mm L X 2.16mm H body, IPC Medium Density"
-			(at 182.88 172.085 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" " "
-			(at 182.88 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "128Mb (16MB), 2.7V-3.6V, Multiple I/O Serial NOR Flash Memory, with Hold# Pins, –40°C to +85°C"
-			(at 182.88 175.895 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "MICRON TECHNOLOGY"
-			(at 182.88 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "MT25QL128ABA1ESE-0SIT"
-			(at 182.88 179.705 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "8"
-			(at 182.88 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "SOIC8"
-			(at 182.88 183.515 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 182.88 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 182.88 187.325 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 182.88 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 182.88 191.135 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 182.88 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Bonding" "No"
-			(at 182.88 194.945 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 182.88 196.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 182.88 198.755 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" "2.16mm"
-			(at 182.88 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 182.88 202.565 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "SOIC127P790X216-8N"
-			(at 182.88 204.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\MT25QL128ABA1ESE-0SIT.pdf"
-			(at 182.88 206.375 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1URL" " "
-			(at 182.88 208.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1Description" " "
-			(at 182.88 210.185 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2URL" " "
-			(at 182.88 212.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2Description" " "
-			(at 182.88 213.995 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Author" "CERN DEM JLC"
-			(at 182.88 215.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "CreateDate" "01/14/19 00:00:00"
-			(at 182.88 217.805 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate" "01/14/19 00:00:00"
-			(at 182.88 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SCEM" " "
-			(at 182.88 221.615 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Database Table Name" "ICs And Semiconductors"
-			(at 182.88 223.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Name" "Logic"
-			(at 182.88 225.425 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 182.88 227.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 182.88 229.235 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Color_1" ""
-			(at 182.88 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment_1" ""
-			(at 182.88 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Family_1" ""
-			(at 182.88 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint_1" ""
-			(at 182.88 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance_1" ""
-			(at 182.88 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b5816294-b209-435a-a42a-67cc7619e742")
-		)
-		(pin "2"
-			(uuid "8f617008-e89e-4c02-993a-058c1f6b600e")
-		)
-		(pin "3"
-			(uuid "dabec6af-ae17-469d-9aa6-a40befe8778d")
-		)
-		(pin "4"
-			(uuid "81dd8591-f247-4fdd-85bb-2391dbd7e2d7")
-		)
-		(pin "5"
-			(uuid "c34833a7-a5c2-4371-a5f2-42ebcb18bc36")
-		)
-		(pin "6"
-			(uuid "e473752d-dbaf-4be1-aa7f-b23df86b77c3")
-		)
-		(pin "7"
-			(uuid "9bbe7d0f-ddf4-41e8-83a9-a54b4aa4ac94")
-		)
-		(pin "8"
-			(uuid "2fe0b82f-c6fd-4b93-bba2-6799db1f6838")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
-					(reference "IC11")
 					(unit 1)
 				)
 			)
@@ -50466,6 +49689,599 @@
 		)
 	)
 	(symbol
+		(lib_id "Logic:ICE40UP5K-SG48I")
+		(at 67.31 33.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b7d01c98-bab2-438f-a578-d1e205291e29")
+		(property "Reference" "IC11"
+			(at 80.01 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ICE40UP5K-SG48I"
+			(at 67.31 83.185 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:QFN50P700X700X100-49N-S550"
+			(at 67.31 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
+			(at 67.31 86.995 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
+			(at 67.31 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "ICE40UP5K-SG48I"
+			(at 67.31 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "ICE40UP5K-SG48I"
+			(at 67.31 90.805 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Logic.SchLib"
+			(at 67.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "ICE40UP5K-SG48I"
+			(at 67.31 94.615 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 67.31 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 67.31 98.425 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "ICE40UP5K-SG48I"
+			(at 67.31 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "QFN, 0.50mm Pitch, Square; 48 Pin, 7.00mm L X 7.00mm W X 1.00mm H body (w/Thermal Tab 5.50mm X 5.40mm), IPC Medium Density"
+			(at 67.31 102.235 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 67.31 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
+			(at 67.31 106.045 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "LATTICE SEMICONDUCTOR"
+			(at 67.31 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "ICE40UP5K-SG48I"
+			(at 67.31 109.855 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "49"
+			(at 67.31 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "QFN48"
+			(at 67.31 113.665 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 67.31 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 67.31 117.475 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 67.31 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 67.31 121.285 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 67.31 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 67.31 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 67.31 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 67.31 128.905 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.00mm"
+			(at 67.31 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 67.31 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "QFN50P700X700X100-49N-S550"
+			(at 67.31 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
+			(at 67.31 136.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\LATTICE_Packege.pdf"
+			(at 67.31 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" "Package"
+			(at 67.31 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K_Pinout.xlsx"
+			(at 67.31 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" "Pinout"
+			(at 67.31 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM HF"
+			(at 67.31 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/16/24 00:00:00"
+			(at 67.31 147.955 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "12/16/24 00:00:00"
+			(at 67.31 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SCEM" " "
+			(at 67.31 151.765 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 67.31 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Logic"
+			(at 67.31 155.575 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 67.31 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "CC-BY-SA 4.0"
+			(at 67.31 159.385 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "16"
+			(uuid "ca5d7642-33c3-4ae6-b695-a437d6a5ec70")
+		)
+		(pin "7"
+			(uuid "a47a2f01-0175-4251-91d1-2480a023d3f7")
+		)
+		(pin "8"
+			(uuid "b416e188-f095-4c14-b86e-d326e108741f")
+		)
+		(pin "46"
+			(uuid "9b3b4309-95c2-45fb-b353-9482490e1269")
+		)
+		(pin "47"
+			(uuid "5691eaa2-1b72-46e7-807e-b49ae22e7e2a")
+		)
+		(pin "44"
+			(uuid "429aec14-801e-432e-823e-e5693f6a7af0")
+		)
+		(pin "48"
+			(uuid "a0327f9b-cb36-4759-8de2-8a3aaae508cf")
+		)
+		(pin "45"
+			(uuid "0f152709-732e-440f-b27f-fc47ca47454c")
+		)
+		(pin "2"
+			(uuid "78536c45-b36b-4283-85d4-1bccb75290df")
+		)
+		(pin "4"
+			(uuid "957a7f6d-31ba-4294-84bc-0932b8aa48e3")
+		)
+		(pin "3"
+			(uuid "ec4fa815-a5b5-40de-80c2-970ef35db85f")
+		)
+		(pin "29"
+			(uuid "7bfb3e5d-cff7-415b-bbc6-f59c987aef1f")
+		)
+		(pin "24"
+			(uuid "7a9d5cae-04c9-45b7-ab9b-b4d7b7885ea3")
+		)
+		(pin "5"
+			(uuid "a687ac3b-3800-42ea-aa5b-2afc029019b2")
+		)
+		(pin "30"
+			(uuid "9f21d824-b944-47eb-af43-64ddd6d0a5ab")
+		)
+		(pin "33"
+			(uuid "b9c0f30a-6365-46c4-8a94-ff9b54d8c4c9")
+		)
+		(pin "22"
+			(uuid "16d3482c-7eaf-4fff-9d56-b54c9f1f1f75")
+		)
+		(pin "1"
+			(uuid "8f61b198-a345-4790-a767-42cf891a8981")
+		)
+		(pin "49"
+			(uuid "694d9d7c-98c0-45ae-84d0-129c51d92715")
+		)
+		(pin "25"
+			(uuid "68732b89-4555-49e7-bf06-f18896a7da5e")
+		)
+		(pin "23"
+			(uuid "bdf8e885-3806-4b6b-8d1f-ec5a2e92c1d1")
+		)
+		(pin "27"
+			(uuid "f7913e3d-bb37-41db-960c-73545efda89e")
+		)
+		(pin "26"
+			(uuid "1c548784-b704-4f2e-b0fa-e3cc92465255")
+		)
+		(pin "28"
+			(uuid "e3e8e7c0-f5b4-44c4-aec4-5e08082f0d4e")
+		)
+		(pin "31"
+			(uuid "a7f94ef5-4060-4a7f-ac64-678d0e6bf800")
+		)
+		(pin "32"
+			(uuid "56d44ff2-d6bf-446d-939a-f334ee7fd44d")
+		)
+		(pin "34"
+			(uuid "d3edbfe5-0fee-485c-ad53-c237dc5ca103")
+		)
+		(pin "37"
+			(uuid "5b022691-4cb3-4b4c-a49b-27d3b1e67532")
+		)
+		(pin "35"
+			(uuid "26277fb1-40b4-473b-ac8a-fd31f5284f51")
+		)
+		(pin "36"
+			(uuid "83b92175-f584-4215-a0f2-a510b589753b")
+		)
+		(pin "43"
+			(uuid "4c4aed97-24b0-4834-8a29-410e25859dd5")
+		)
+		(pin "38"
+			(uuid "63bc3604-bad0-4a9c-8257-84411d33a075")
+		)
+		(pin "42"
+			(uuid "c3a29b07-a2af-41f8-8083-ee02f749417d")
+		)
+		(pin "39"
+			(uuid "2db60c45-ddde-4da6-a7dd-100e353daeec")
+		)
+		(pin "40"
+			(uuid "740b7773-4911-429d-9ba9-42921bfa3dc5")
+		)
+		(pin "41"
+			(uuid "79965381-7e7a-448f-b626-7320c90f654a")
+		)
+		(pin "6"
+			(uuid "f85b2843-0a03-4ea6-8721-b6543a9b0b21")
+		)
+		(pin "9"
+			(uuid "3a5a06b1-6bc7-49df-a203-d44b6bb5f802")
+		)
+		(pin "10"
+			(uuid "17e46ed4-e667-40ef-9a21-c328e7b61194")
+		)
+		(pin "11"
+			(uuid "1caec7b7-e10b-4eb4-9609-8d857d76d09b")
+		)
+		(pin "12"
+			(uuid "59a220d0-9bb7-41e3-b020-bbc519e7d9a1")
+		)
+		(pin "21"
+			(uuid "a0c6c093-37f0-4fa2-aceb-f33442c64813")
+		)
+		(pin "13"
+			(uuid "c1cd5bf4-e4be-44a0-9922-6839f342bf22")
+		)
+		(pin "20"
+			(uuid "ef78c4dc-e5c7-42f2-bbad-9e9e6b40c8ee")
+		)
+		(pin "19"
+			(uuid "9c51b0aa-dfee-4817-8aae-7d26767c7771")
+		)
+		(pin "18"
+			(uuid "e9a8ebb4-61a6-4dd2-a0b0-e18fe9432c51")
+		)
+		(pin "14"
+			(uuid "00f350c0-c629-4a4a-8be5-868bf3f7178d")
+		)
+		(pin "17"
+			(uuid "138b7224-81e5-40d4-9bd5-db141b139144")
+		)
+		(pin "15"
+			(uuid "0c1ee51e-24c8-48d6-883c-811cc69afc76")
+		)
+		(instances
+			(project ""
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "IC11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 213.36 81.28 0)
 		(unit 1)
@@ -51023,6 +50839,599 @@
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
 					(reference "C47")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Logic:ICE40UP5K-SG48I")
+		(at 148.59 67.31 0)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c3b6f700-0f06-451b-9e15-816ff9124583")
+		(property "Reference" "IC11"
+			(at 161.29 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ICE40UP5K-SG48I"
+			(at 148.59 117.475 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "ICs And Semiconductors SMD:QFN50P700X700X100-49N-S550"
+			(at 148.59 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
+			(at 148.59 121.285 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
+			(at 148.59 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Part Number" "ICE40UP5K-SG48I"
+			(at 148.59 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "ICE40UP5K-SG48I"
+			(at 148.59 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Logic.SchLib"
+			(at 148.59 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "ICE40UP5K-SG48I"
+			(at 148.59 128.905 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 148.59 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 148.59 132.715 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Device" "ICE40UP5K-SG48I"
+			(at 148.59 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" "QFN, 0.50mm Pitch, Square; 48 Pin, 7.00mm L X 7.00mm W X 1.00mm H body (w/Thermal Tab 5.50mm X 5.40mm), IPC Medium Density"
+			(at 148.59 136.525 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" " "
+			(at 148.59 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "ICE40 Ultra FPGA, 5280 Logic Cells, 400 kHz Data Transfer Speed, 48 pin QFN"
+			(at 148.59 140.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "LATTICE SEMICONDUCTOR"
+			(at 148.59 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "ICE40UP5K-SG48I"
+			(at 148.59 144.145 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "49"
+			(at 148.59 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "QFN48"
+			(at 148.59 147.955 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 148.59 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 148.59 151.765 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 148.59 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 148.59 155.575 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 148.59 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Bonding" "No"
+			(at 148.59 159.385 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 148.59 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 148.59 163.195 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" "1.00mm"
+			(at 148.59 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
+			(at 148.59 167.005 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "QFN50P700X700X100-49N-S550"
+			(at 148.59 168.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K.pdf"
+			(at 148.59 170.815 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\LATTICE_Packege.pdf"
+			(at 148.59 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink1Description" "Package"
+			(at 148.59 174.625 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE40UP5K_Pinout.xlsx"
+			(at 148.59 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentLink2Description" "Pinout"
+			(at 148.59 178.435 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM HF"
+			(at 148.59 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/16/24 00:00:00"
+			(at 148.59 182.245 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "12/16/24 00:00:00"
+			(at 148.59 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SCEM" " "
+			(at 148.59 186.055 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "ICs And Semiconductors"
+			(at 148.59 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Logic"
+			(at 148.59 189.865 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "ICs And Semiconductors SMD"
+			(at 148.59 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "CC-BY-SA 4.0"
+			(at 148.59 193.675 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "16"
+			(uuid "ca5d7642-33c3-4ae6-b695-a437d6a5ec70")
+		)
+		(pin "7"
+			(uuid "a47a2f01-0175-4251-91d1-2480a023d3f7")
+		)
+		(pin "8"
+			(uuid "b416e188-f095-4c14-b86e-d326e108741f")
+		)
+		(pin "46"
+			(uuid "9b3b4309-95c2-45fb-b353-9482490e1269")
+		)
+		(pin "47"
+			(uuid "5691eaa2-1b72-46e7-807e-b49ae22e7e2a")
+		)
+		(pin "44"
+			(uuid "429aec14-801e-432e-823e-e5693f6a7af0")
+		)
+		(pin "48"
+			(uuid "a0327f9b-cb36-4759-8de2-8a3aaae508cf")
+		)
+		(pin "45"
+			(uuid "0f152709-732e-440f-b27f-fc47ca47454c")
+		)
+		(pin "2"
+			(uuid "78536c45-b36b-4283-85d4-1bccb75290df")
+		)
+		(pin "4"
+			(uuid "957a7f6d-31ba-4294-84bc-0932b8aa48e3")
+		)
+		(pin "3"
+			(uuid "ec4fa815-a5b5-40de-80c2-970ef35db85f")
+		)
+		(pin "29"
+			(uuid "7bfb3e5d-cff7-415b-bbc6-f59c987aef1f")
+		)
+		(pin "24"
+			(uuid "7a9d5cae-04c9-45b7-ab9b-b4d7b7885ea3")
+		)
+		(pin "5"
+			(uuid "a687ac3b-3800-42ea-aa5b-2afc029019b2")
+		)
+		(pin "30"
+			(uuid "9f21d824-b944-47eb-af43-64ddd6d0a5ab")
+		)
+		(pin "33"
+			(uuid "b9c0f30a-6365-46c4-8a94-ff9b54d8c4c9")
+		)
+		(pin "22"
+			(uuid "16d3482c-7eaf-4fff-9d56-b54c9f1f1f75")
+		)
+		(pin "1"
+			(uuid "8f61b198-a345-4790-a767-42cf891a8981")
+		)
+		(pin "49"
+			(uuid "694d9d7c-98c0-45ae-84d0-129c51d92715")
+		)
+		(pin "25"
+			(uuid "68732b89-4555-49e7-bf06-f18896a7da5e")
+		)
+		(pin "23"
+			(uuid "bdf8e885-3806-4b6b-8d1f-ec5a2e92c1d1")
+		)
+		(pin "27"
+			(uuid "f7913e3d-bb37-41db-960c-73545efda89e")
+		)
+		(pin "26"
+			(uuid "1c548784-b704-4f2e-b0fa-e3cc92465255")
+		)
+		(pin "28"
+			(uuid "e3e8e7c0-f5b4-44c4-aec4-5e08082f0d4e")
+		)
+		(pin "31"
+			(uuid "a7f94ef5-4060-4a7f-ac64-678d0e6bf800")
+		)
+		(pin "32"
+			(uuid "56d44ff2-d6bf-446d-939a-f334ee7fd44d")
+		)
+		(pin "34"
+			(uuid "d3edbfe5-0fee-485c-ad53-c237dc5ca103")
+		)
+		(pin "37"
+			(uuid "5b022691-4cb3-4b4c-a49b-27d3b1e67532")
+		)
+		(pin "35"
+			(uuid "26277fb1-40b4-473b-ac8a-fd31f5284f51")
+		)
+		(pin "36"
+			(uuid "83b92175-f584-4215-a0f2-a510b589753b")
+		)
+		(pin "43"
+			(uuid "4c4aed97-24b0-4834-8a29-410e25859dd5")
+		)
+		(pin "38"
+			(uuid "63bc3604-bad0-4a9c-8257-84411d33a075")
+		)
+		(pin "42"
+			(uuid "c3a29b07-a2af-41f8-8083-ee02f749417d")
+		)
+		(pin "39"
+			(uuid "2db60c45-ddde-4da6-a7dd-100e353daeec")
+		)
+		(pin "40"
+			(uuid "740b7773-4911-429d-9ba9-42921bfa3dc5")
+		)
+		(pin "41"
+			(uuid "79965381-7e7a-448f-b626-7320c90f654a")
+		)
+		(pin "6"
+			(uuid "f85b2843-0a03-4ea6-8721-b6543a9b0b21")
+		)
+		(pin "9"
+			(uuid "3a5a06b1-6bc7-49df-a203-d44b6bb5f802")
+		)
+		(pin "10"
+			(uuid "17e46ed4-e667-40ef-9a21-c328e7b61194")
+		)
+		(pin "11"
+			(uuid "1caec7b7-e10b-4eb4-9609-8d857d76d09b")
+		)
+		(pin "12"
+			(uuid "59a220d0-9bb7-41e3-b020-bbc519e7d9a1")
+		)
+		(pin "21"
+			(uuid "a0c6c093-37f0-4fa2-aceb-f33442c64813")
+		)
+		(pin "13"
+			(uuid "c1cd5bf4-e4be-44a0-9922-6839f342bf22")
+		)
+		(pin "20"
+			(uuid "ef78c4dc-e5c7-42f2-bbad-9e9e6b40c8ee")
+		)
+		(pin "19"
+			(uuid "9c51b0aa-dfee-4817-8aae-7d26767c7771")
+		)
+		(pin "18"
+			(uuid "e9a8ebb4-61a6-4dd2-a0b0-e18fe9432c51")
+		)
+		(pin "14"
+			(uuid "00f350c0-c629-4a4a-8be5-868bf3f7178d")
+		)
+		(pin "17"
+			(uuid "138b7224-81e5-40d4-9bd5-db141b139144")
+		)
+		(pin "15"
+			(uuid "0c1ee51e-24c8-48d6-883c-811cc69afc76")
+		)
+		(instances
+			(project ""
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "IC11")
+					(unit 3)
 				)
 			)
 		)
@@ -53174,642 +53583,6 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
 					(reference "#PWR0209")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Logic:ICE5LP4K-SG48I")
-		(at 67.31 33.02 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d9a4a4b6-ff09-4f82-b541-4c41efa6c0fd")
-		(property "Reference" "IC10"
-			(at 80.01 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "ICE5LP4K-SG48I"
-			(at 67.31 83.185 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "ICs And Semiconductors SMD:QFN50P700X700X100-49N-S550"
-			(at 67.31 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
-			(at 67.31 86.995 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 67.31 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Part Number" "ICE5LP4K-SG48I"
-			(at 67.31 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "ICE5LP4K-SG48I"
-			(at 67.31 90.805 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Logic.SchLib"
-			(at 67.31 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "ICE5LP4K-SG48I"
-			(at 67.31 94.615 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 67.31 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 67.31 98.425 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Device" "ICE5LP4K-SG48I"
-			(at 67.31 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" "QFN, 0.50mm Pitch, Square; 48 Pin, 7.00mm L X 7.00mm W X 1.00mm H body (w/Thermal Tab 5.50mm X 5.40mm), IPC Medium Density"
-			(at 67.31 102.235 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status" " "
-			(at 67.31 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "ICE40 Ultra FPGA, 3520 Logic Cells, 400 kHz data transfer speed, 48 pin QFN"
-			(at 67.31 106.045 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "LATTICE SEMICONDUCTOR"
-			(at 67.31 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "ICE5LP4K-SG48I"
-			(at 67.31 109.855 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "49"
-			(at 67.31 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "QFN48"
-			(at 67.31 113.665 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 67.31 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 67.31 117.475 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 67.31 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 67.31 121.285 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 67.31 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Bonding" "No"
-			(at 67.31 125.095 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 67.31 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 67.31 128.905 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" "1.00mm"
-			(at 67.31 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 67.31 132.715 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "QFN50P700X700X100-49N-S550"
-			(at 67.31 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K.pdf"
-			(at 67.31 136.525 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\LATTICE_Packege.pdf"
-			(at 67.31 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink1Description" "Package"
-			(at 67.31 140.335 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2URL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\ICE5LP4K_Pinout.xlsx"
-			(at 67.31 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentLink2Description" "Pinout"
-			(at 67.31 144.145 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Author" "CERN DEM HF"
-			(at 67.31 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "CreateDate" "10/30/23 00:00:00"
-			(at 67.31 147.955 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "LatestRevisionDate" "10/30/23 00:00:00"
-			(at 67.31 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SCEM" " "
-			(at 67.31 151.765 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Database Table Name" "ICs And Semiconductors"
-			(at 67.31 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Name" "Logic"
-			(at 67.31 155.575 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 67.31 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 67.31 159.385 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Color_1" ""
-			(at 67.31 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Comment_1" ""
-			(at 67.31 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Family_1" ""
-			(at 67.31 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint_1" ""
-			(at 67.31 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance_1" ""
-			(at 67.31 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "23"
-			(uuid "56ef3e24-cc96-477e-a55e-c2eb3f76ad0e")
-		)
-		(pin "25"
-			(uuid "9bd5a3d4-9771-40cb-9541-57653fb78292")
-		)
-		(pin "26"
-			(uuid "90f9cd2e-1d54-4928-a2c9-6d9357ca6d53")
-		)
-		(pin "27"
-			(uuid "aafb2c35-9577-4691-a05c-dc123528243b")
-		)
-		(pin "28"
-			(uuid "51770c6c-80a0-43fc-9b86-0f377925d600")
-		)
-		(pin "31"
-			(uuid "5cfecb3c-a0dc-4788-86be-a0d59a6c8348")
-		)
-		(pin "32"
-			(uuid "c4a8b9b7-e35e-4c63-8d0a-dc6ec9e718d7")
-		)
-		(pin "34"
-			(uuid "929b4caf-2428-4e90-8a8d-4fb3c7845691")
-		)
-		(pin "35"
-			(uuid "421c7a85-0ba7-43ca-8783-7f2c21e16b71")
-		)
-		(pin "36"
-			(uuid "60abe8a2-0c5a-4bd0-a652-a12a416a217e")
-		)
-		(pin "37"
-			(uuid "68591c7f-329b-42c5-903a-ef7db67f5ab1")
-		)
-		(pin "38"
-			(uuid "2b054066-27c5-45de-a5bd-180eae5f2e4e")
-		)
-		(pin "39"
-			(uuid "660cdab1-712c-449c-a147-1fc72af176bc")
-		)
-		(pin "40"
-			(uuid "31253b59-d11c-41d4-b8dd-2f905e8bd203")
-		)
-		(pin "41"
-			(uuid "e0405e8c-8f84-466c-8167-1e4912361f0b")
-		)
-		(pin "42"
-			(uuid "27c129cd-79c4-4b18-948e-463ac4bf65c0")
-		)
-		(pin "43"
-			(uuid "1ec37631-97ea-48ad-a53f-8e4217c80fab")
-		)
-		(pin "10"
-			(uuid "33d46255-3e4b-419a-b0c1-6720321f5060")
-		)
-		(pin "11"
-			(uuid "ab6beb1f-e7eb-4f05-80d0-61690946ee38")
-		)
-		(pin "12"
-			(uuid "3ae0c8bd-4acb-452a-a7ff-e9396ba2594c")
-		)
-		(pin "13"
-			(uuid "507249e2-b1e5-41f7-95e1-5e569999d2ca")
-		)
-		(pin "14"
-			(uuid "b2618e07-1d78-4970-a831-b539c8d54ccf")
-		)
-		(pin "15"
-			(uuid "80207ef0-1628-4f08-b6e2-1f8b4eefe534")
-		)
-		(pin "16"
-			(uuid "074668aa-3c51-405d-b7ac-05b790c16c7c")
-		)
-		(pin "17"
-			(uuid "4130172c-64d6-4aed-98d3-6549ae02481a")
-		)
-		(pin "18"
-			(uuid "e97cbd9b-ebaf-4320-a516-7db39e3a2e13")
-		)
-		(pin "19"
-			(uuid "75dfee03-5d72-4c3c-9ac3-6e90f8e301b6")
-		)
-		(pin "20"
-			(uuid "15b74564-79ca-4292-bfa6-9205c5c84a1a")
-		)
-		(pin "21"
-			(uuid "d45f0763-e840-4f12-b3a3-51393682ad73")
-		)
-		(pin "6"
-			(uuid "ad6afca6-718c-41b2-a530-94034c6695c2")
-		)
-		(pin "7"
-			(uuid "1b0f275d-268d-4d52-9ac4-87cb633e3660")
-		)
-		(pin "8"
-			(uuid "0ab5b701-4469-4766-9497-405295bf6cac")
-		)
-		(pin "9"
-			(uuid "f65b79a2-cefa-42e0-b8b3-f1e565de8da1")
-		)
-		(pin "2"
-			(uuid "adf2fd8c-5172-4e6c-a610-2a10233bbcfe")
-		)
-		(pin "3"
-			(uuid "f354888b-06b6-432a-bba6-bfaac4f2b7e1")
-		)
-		(pin "4"
-			(uuid "3827cef4-20cd-4dd7-97c2-dd979fa01628")
-		)
-		(pin "44"
-			(uuid "36801399-22fe-4ac8-9dfc-ae3b33367523")
-		)
-		(pin "45"
-			(uuid "794a800e-b84a-45a6-8c96-b6246823db9d")
-		)
-		(pin "46"
-			(uuid "ebb7ff10-e60e-4b1a-8151-0dc52e4ed670")
-		)
-		(pin "47"
-			(uuid "d4cc358d-7366-4682-a226-facee8d4742a")
-		)
-		(pin "48"
-			(uuid "19991221-cf28-4d86-9bb9-46680912ad47")
-		)
-		(pin "1"
-			(uuid "87a7ccb9-b2d9-4834-9b88-afc8b9ebbe0e")
-		)
-		(pin "22"
-			(uuid "3eb44e2f-ac56-415a-8060-8b8fc087c1b3")
-		)
-		(pin "24"
-			(uuid "54174460-8449-4319-8f16-94decf2364b8")
-		)
-		(pin "29"
-			(uuid "24a017cf-0b9c-409c-b345-020389a5ad12")
-		)
-		(pin "30"
-			(uuid "7beeb2b9-fed9-48e8-8c41-a11c4cb65891")
-		)
-		(pin "33"
-			(uuid "7ce78881-5bac-4aac-8412-9794f31a0043")
-		)
-		(pin "49"
-			(uuid "e113eae9-bf96-452e-9650-f32ec8f27a60")
-		)
-		(pin "5"
-			(uuid "c18895ff-e2d7-4d84-a8e1-6594593f54fc")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
-					(reference "IC10")
 					(unit 1)
 				)
 			)
