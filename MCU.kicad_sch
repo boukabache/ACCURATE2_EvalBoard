@@ -11,7 +11,7 @@
 		(company "CERN")
 		(comment 1 "CROME")
 		(comment 3 "RP-IL")
-		(comment 6 "Håkon Liverud")
+		(comment 6 "Liverud, Consani")
 		(comment 7 "2023-10-06")
 	)
 	(lib_symbols
@@ -3680,7 +3680,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3692,7 +3692,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3748,7 +3748,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3760,7 +3760,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3816,7 +3816,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3828,7 +3828,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3952,7 +3952,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3964,7 +3964,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -21582,7 +21582,7 @@
 		)
 		(uuid "7d428048-3124-4621-bcab-fbe534255daf")
 	)
-	(text_box "Routing note:\nplace BTN1 (PB4) rightmost, then BTN2 and BTN3 leftmost\n"
+	(text_box "Routing note:\n- REV2: Place BTN1 (PB4) rightmost, then BTN2 and BTN3 leftmost\n"
 		(exclude_from_sim no)
 		(at 360.68 124.46 0)
 		(size 43.18 8.89)

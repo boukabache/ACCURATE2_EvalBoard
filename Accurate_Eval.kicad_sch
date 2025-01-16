@@ -11,7 +11,7 @@
 		(company "CERN")
 		(comment 1 "CROME")
 		(comment 3 "RP-IL")
-		(comment 6 "Håkon Liverud")
+		(comment 6 "Liverud, Consani")
 		(comment 7 "2023-10-18")
 	)
 	(lib_symbols
@@ -2661,6 +2661,17 @@
 				)
 			)
 			(symbol "GCT_USB4105-GF-A_0_1"
+				(rectangle
+					(start 0 0)
+					(end 22.86 -30.48)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
 				(polyline
 					(pts
 						(xy 0 0) (xy 22.86 0)
@@ -2671,17 +2682,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(rectangle
-					(start 0 0)
-					(end 22.86 -30.48)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type background)
 					)
 				)
 				(circle
@@ -7160,7 +7160,7 @@
 		)
 		(uuid "22dcedc4-607a-4593-97c0-78ebd7eda981")
 	)
-	(text_box "Routing note:\n- Footprints of both the coax and triax MUST BE on top of each other (so that the user can choose themself which one they want to use)\n- Add Vcm_Buf shield around Current_In as well as a Vcm_Buf plane below it\n- Input area should be as short and small as possible"
+	(text_box "Routing note:\n- REV2: Footprints of both the coax and triax MUST BE on top of each other (so that the user can choose themself which one they want to use)\n- Add Vcm_Buf shield around Current_In as well as a Vcm_Buf plane below it\n- Input area should be as short and small as possible"
 		(exclude_from_sim no)
 		(at 77.47 173.99 0)
 		(size 78.74 12.7)
@@ -7182,7 +7182,7 @@
 		)
 		(uuid "8f066dd7-9baf-4af3-96b9-bb945e046dc4")
 	)
-	(text_box "Routing note:\nby USB standard, USB signals must be 90Ω differential to each other, and 45Ω each to Signal Ground\n"
+	(text_box "Routing note:\n- REV2: by USB standard, USB signals must be 90Ω differential to each other, and 45Ω each to Signal Ground\n"
 		(exclude_from_sim no)
 		(at 96.52 113.03 0)
 		(size 60.96 7.62)
