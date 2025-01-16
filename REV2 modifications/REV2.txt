@@ -1,0 +1,40 @@
+# List of modifications
+
+## MCU
+- Rename RESET to nRESET_MCU
+- Place a 330 ohm resistor in line to reset to avoid shorts in case multiple external devices disagree (e.g: programmer and FTDI chip). E.g: [https://cdn-shop.adafruit.com/product-files/2843/Arduino-Zero-schematic.pdf](https://cdn-shop.adafruit.com/product-files/2843/Arduino-Zero-schematic.pdf)
+- (marked as unmounted and set to 10nF to match arduino zero) remove C1 capacitor for the DTR reset to work properly.
+- Reset logic between FTDI chip and MCU
+
+## FPGA
+- Use a single uart bus + jumper for connection to either MCU or FTDI (2 Extra pin must be found (1 for adc int, 1 because pmod connector wrongly contains the fpga reset pin))
+- Reset pin (IOB_18) is also connected to PMOD
+- Use UltraPlus ice FPGA (UP5K : [https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40UltraPlus](https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40UltraPlus))
+- Remove ICE programming option
+- Use spi flash proper timings: N25Q032A13ESCA0F
+- Use bus alias for FPGA programming signals. Would allow for more readability and avoid cases such as the extra iCE_CRESET being used only for naming a net, and not indicating connection to some other place in the schematic
+- FPGA CDONE missing LED
+- Cap around ICE_CRESET header as in [https://www.latticesemi.com/view_document?document_id=50946](https://www.latticesemi.com/view_document?document_id=50946) ?
+
+## ADC
+- Connect RDY pin to FPGA
+- Define proper low pass input from OTA output
+- Use Vcm_buf instead of Vcm as input (risk of oscillation if capacitance is added, ..)
+- Use more reasonable value for input common mode decoupling cap. Currently it is very large (220nF).
+
+## ACCURATE
+- Remove 10uF cap from Vcm
+- Add 10uF cap to Vcmd
+- Vcm of ACCURATE must be connected to DAC Vcm (check with sarath). Vcm_buf is still used for ADC (really?), guard ring
+- LAYOUT Check layout decoupling caps Vc+, Vcmd
+- LAYOUT Put solder mask on input lines
+
+## Miscellanea
+- LAYOUT Buttons on the physical board read, from left to right 3 - 2 - 1. The order should be ascending instead.
+- Rename power page to power+USB. The name makes it very unclear that the FTDI chip is also present.
+- Use 2.5V voltage generator instead of transistor. C.f Gaël's comment. It's been successfully implemented on the EMC control board. [https://edms.cern.ch/ui/file/3073080/1/EDA-04937-V1-0_sch.pdf](https://edms.cern.ch/ui/file/3073080/1/EDA-04937-V1-0_sch.pdf)
+- LAYOUT Input connector should using double implementation, as per v1 board comments: simplify input, reduce sensitive track length.
+- LAYOUT By the USB standard, USB signals must be 90Ω differential to each other / 45Ω each to Signal Ground
+- Connect USB Shield to GND through 0 ohm resistor.
+- DAC_I2C net is badly named, as also carries sht41 signals. Rename to DAC_SHT_I2C?
+- 1.2V LED circuit does not need a gate resistor. Remove it.
