@@ -136,10 +136,10 @@ void sendToFPGA(uint8_t address, uint32_t value) {
 
     Serial1.write(address); // 1 byte address
 
-    Serial1.write(value & 0xFF); // LSB
-    Serial1.write((value >> 8) & 0xFF);
-    Serial1.write((value >> 16) & 0xFF);
     Serial1.write((value >> 24) & 0xFF); // MSB
+    Serial1.write((value >> 16) & 0xFF);
+    Serial1.write((value >> 8) & 0xFF);
+    Serial1.write(value & 0xFF); // LSB
 
     // As of now just print to serial in case of error
     fpgaCheckResponse();
