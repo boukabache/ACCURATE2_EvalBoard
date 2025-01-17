@@ -54,7 +54,7 @@
 #define FPGA_UART_START_BYTE_TX 0xDD /** Start byte for the UART communication when tx*/
 /** @} */
 
-const uint8_t FPGA_CURRENT_ADDRESS = 0xDD; // WTF is this?
+const uint8_t FPGA_CURRENT_ADDRESS = 0xDD; // BAD NAMING It's the start byte for the UART communication
 
 
 /**

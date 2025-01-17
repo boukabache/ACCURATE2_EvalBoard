@@ -268,8 +268,7 @@ String getOutputString(struct rawDataFPGA rawData) {
                 String(rawData.cp1EndInterval) + "," +
                 String(rawData.tempSht41) + "," +
                 String(rawData.humidSht41) + "," +
-                btnLedStatus.status
-                + "," + timestamp;
+                btnLedStatus.status;
     } else {
         // Calculate the time intervals
         float startIntervalTime = (rawData.cp1StartInterval + 1) * 1/ACCURATE_CLK;
@@ -293,8 +292,7 @@ String getOutputString(struct rawDataFPGA rawData) {
                 String(endIntervalTime) + "," +
                 String(temp) + "," +
                 String(humidity) + "," +
-                btnLedStatus.status
-                + "," + timestamp;
+                btnLedStatus.status;
     }
     return message;
 }
