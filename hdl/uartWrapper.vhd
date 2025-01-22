@@ -75,15 +75,14 @@ begin
     rst_n <= '0' when rst = '1' else
              '1';
 
-    txMessageLength <= 1 when allowRespondToRxxDI = '1' else
-                       txMessageLengthG;
+    txMessageLength <= txMessageLengthG; -- Always send a full message lenght, even if it's just a 2B ack
 
     rxStatusVector <= rxMessageInvalidxDI & rxHeaderError & rxTransactionTimeout & rxError;
     -- If we can respond to rx request, set the lowest word to current status.
     txMessage <= txMessagexDI when allowRespondToRxxDI = '0' else
-                 txMessagexDI(txMessageLengthG * uartBusWidthG - 1 downto uartBusWidthG) &
-                 std_logic_vector(resize(unsigned(rxStatusVector),
-                                         uartBusWidthG));
+                 txMessagexDI(txMessageLengthG * uartBusWidthG - 1 downto uartBusWidthG*2) &
+                 std_logic_vector(resize(unsigned(rxStatusVector), uartBusWidthG)) &
+                 rxMessageHeaderG;
 
     txSendMessage <= txSendMessagexDI when allowRespondToRxxDI = '0' else
                      '1' when (((rxMessageInvalidxDI = '1') or
