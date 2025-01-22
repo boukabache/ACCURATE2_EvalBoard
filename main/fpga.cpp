@@ -142,7 +142,14 @@ void sendToFPGA(uint8_t address, uint32_t value) {
     Serial1.write(value & 0xFF); // LSB
 
     // As of now just print to serial in case of error
-    fpgaCheckResponse();
+    if (address != FPGA_UART_MANAGEMENT_ADDR) {
+        fpgaCheckResponse();
+    } else {
+        // Clear the buffer if I am not sending a parameter
+        while (Serial1.available()) {
+            Serial1.read();
+        }
+    }
 }
 
 void fpgaUpdateAllParam() {
@@ -183,14 +190,11 @@ void fpgaUpdateAllParam() {
 
 bool fpgaCheckResponse() {
     // FIXME: use of magic numbers
-    char response[31];
-    // Read the payload
-    Serial1.readBytes(response, 31);
+    char response[30] = {0};
 
-    // Print the response for debugging
-    for (int i = 0; i < 31; i++) {
-        Serial.print(response[i], HEX);
-        Serial.print(" ");
+    // Read the payload
+    if (Serial1.find((char) FPGA_CURRENT_ADDRESS)) {
+        Serial1.readBytes(response, 30);
     }
 
     // Clear the rest of the serial buffer, if not already empty.
@@ -199,19 +203,18 @@ bool fpgaCheckResponse() {
     }
 
     // Check if the response is ack
-    if (response[0] == 0x00) { // TODO: check if is response[0] or response[5]
+    if (response[0] == 0x00) {
         return true;
+    } else if (response[0] == 0x01) {
+        Serial.println("Write error: Generic error");
+    } else if (response[0] == 0x02) {
+        Serial.println("Write error: Transaction timeout");
+    } else if (response[0] == 0x04) {
+        Serial.println("Write error: Header error");
+    } else if (response[0] == 0x08) {
+        Serial.println("Write error: Message invalid");
     } else {
-        if (response[0] == 0x01) {
-            Serial.println("Write error: Generic error");
-        } else if (response[0] == 0x02) {
-            Serial.println("Write error: Transaction timeout");
-        } else if (response[0] == 0x04) {
-            Serial.println("Write error: Header error");
-        } else if (response[0] == 0x08) {
-            Serial.println("Write error: Message invalid");
-        } else {
-            Serial.println("Write error: Unknown error");
-        }
+        Serial.println("Write error: Unknown error");
     }
+    return false;
 }
