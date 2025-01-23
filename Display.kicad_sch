@@ -6,13 +6,12 @@
 	(paper "A4")
 	(title_block
 		(title "ACCURATE 2 Evaluation Board")
-		(date "2023-10-06")
+		(date "2025-01-22")
 		(rev "A")
 		(company "CERN")
 		(comment 1 "CROME")
 		(comment 3 "RP-IL")
 		(comment 6 "Håkon Liverud")
-		(comment 7 "2023-10-06")
 	)
 	(lib_symbols
 		(symbol "Capacitors SMD:CC0603_1UF_25V_10%_X7R"

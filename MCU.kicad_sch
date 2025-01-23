@@ -6,13 +6,12 @@
 	(paper "A3")
 	(title_block
 		(title "ACCURATE 2 Evaluation Board")
-		(date "2023-10-06")
+		(date "2025-01-22")
 		(rev "A")
 		(company "CERN")
 		(comment 1 "CROME")
 		(comment 3 "RP-IL")
 		(comment 6 "Liverud, Consani")
-		(comment 7 "2023-10-06")
 	)
 	(lib_symbols
 		(symbol "Capacitors SMD:CC0603_100NF_50V_10%_X7R"
@@ -3884,7 +3883,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3896,7 +3895,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -21530,7 +21529,7 @@
 		)
 		(uuid "b1340a67-aa44-4a07-812d-4eaa169a6f10")
 	)
-	(text "TO CHECK:"
+	(text "MCU Reset:"
 		(exclude_from_sim no)
 		(at 82.55 218.44 0)
 		(effects

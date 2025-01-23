@@ -589,7 +589,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "CERN_OHL_left.kicad_wks",
-    "plot_directory": "PDF/",
+    "plot_directory": "pdf/",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",

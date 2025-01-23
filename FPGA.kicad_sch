@@ -6,13 +6,12 @@
 	(paper "A3")
 	(title_block
 		(title "ACCURATE 2 Evaluation Board")
-		(date "2023-10-06")
+		(date "2025-01-22")
 		(rev "A")
 		(company "CERN")
 		(comment 1 "CROME")
 		(comment 3 "RP-IL")
 		(comment 6 "Liverud, Consani")
-		(comment 7 "2023-10-06")
 	)
 	(lib_symbols
 		(symbol "Capacitors SMD:CC0603_100NF_50V_10%_X7R"
@@ -2155,7 +2154,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2167,7 +2166,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2291,7 +2290,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2303,7 +2302,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2359,7 +2358,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2371,7 +2370,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2427,7 +2426,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2439,7 +2438,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -11106,6 +11105,552 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Resistors SMD:R0603_330R_1%_0.1W_100PPM"
+			(pin_names
+				(offset 1.27)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 3.81 1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R0603_330R_1%_0.1W_100PPM"
+				(at 0 -4.953 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "Resistors SMD:RESC1608X55N"
+				(at 0 -6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+				(at 0 -8.763 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Tolerance" "±1%"
+				(at 3.81 0 0)
+				(effects
+					(font
+						(size 0.635 0.635)
+					)
+				)
+			)
+			(property "Val" "330"
+				(at 3.81 -1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Part Number" "R0603_330R_1%_0.1W_100PPM"
+				(at 0 -10.668 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Ref" "Resistor - 1%"
+				(at 0 -12.573 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Path" "SchLib\\Resistors.SchLib"
+				(at 0 -14.478 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Comment" "330"
+				(at 0 -16.383 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Kind" "Standard"
+				(at 0 -18.288 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Component Type" "Standard"
+				(at 0 -20.193 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PackageDescription" " "
+				(at 0 -22.098 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Pin Count" "2"
+				(at 0 -24.003 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
+				(at 0 -25.908 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Ref" "RESC1608X55N"
+				(at 0 -27.813 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status" "Preferred"
+				(at 0 -29.718 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Power" "0.1W"
+				(at 0 -31.623 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "TC" "±100ppm/°C"
+				(at 0 -33.528 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Voltage" " "
+				(at 0 -35.433 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Tolerance_1" "±1%"
+				(at 0 -37.338 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Part Description" "General Purpose Thick Film Chip Resistor"
+				(at 0 -39.243 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "GENERIC"
+				(at 0 -41.148 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part Number" "R0603_330R_1%_0.1W_100PPM"
+				(at 0 -43.053 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Case" "0603"
+				(at 0 -44.958 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "PressFit" "No"
+				(at 0 -46.863 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Mounted" "Yes"
+				(at 0 -48.768 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense Comment" " "
+				(at 0 -50.673 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Sense" "No"
+				(at 0 -52.578 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Status Comment" " "
+				(at 0 -54.483 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Socket" "No"
+				(at 0 -56.388 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "SMD" "Yes"
+				(at 0 -58.293 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ComponentHeight" " "
+				(at 0 -60.198 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer1 Example" "NIC COMPONENT"
+				(at 0 -62.103 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer1 Part Number" "NRC06F3300TRF"
+				(at 0 -64.008 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer1 ComponentHeight" "0.55mm"
+				(at 0 -65.913 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+				(at 0 -67.818 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Author" "CERN DEM JLC"
+				(at 0 -69.723 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "CreateDate" "12/03/07 00:00:00"
+				(at 0 -71.628 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "LatestRevisionDate" "03/13/08 00:00:00"
+				(at 0 -73.533 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Database Table Name" "Resistors"
+				(at 0 -75.438 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Library Name" "Resistors SMD"
+				(at 0 -77.343 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Footprint Library" "Resistors SMD"
+				(at 0 -79.248 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+				(at 0 -81.153 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R0603_330R_1%_0.1W_100PPM_0_1"
+				(polyline
+					(pts
+						(xy 1.524 0.762) (xy 1.524 -0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 -0.762) (xy 6.096 -0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.096 0.762) (xy 1.524 0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.096 -0.762) (xy 6.096 0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 1.524)
+					(name "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 1.524)
+					(name "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Resistors SMD:R0603_4K7_1%_0.1W_100PPM"
 			(pin_names
 				(offset 1.27)
@@ -12465,6 +13010,18 @@
 					)
 				)
 				(arc
+					(start 2.286 -1.778)
+					(mid 2.8248 -2.0012)
+					(end 3.048 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
 					(start 2.286 -3.302)
 					(mid 1.7472 -3.0788)
 					(end 1.524 -2.54)
@@ -12480,18 +13037,6 @@
 					(start 1.524 -2.54)
 					(mid 1.7472 -2.0012)
 					(end 2.286 -1.778)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 2.286 -1.778)
-					(mid 2.8248 -2.0012)
-					(end 3.048 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12537,9 +13082,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -5.08)
-					(mid 2.8248 -5.6188)
-					(end 2.286 -5.842)
+					(start 2.286 -4.318)
+					(mid 2.8248 -4.5412)
+					(end 3.048 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12561,9 +13106,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -4.318)
-					(mid 2.8248 -4.5412)
-					(end 3.048 -5.08)
+					(start 1.524 -5.08)
+					(mid 1.7472 -4.5412)
+					(end 2.286 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12573,9 +13118,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -5.08)
-					(mid 1.7472 -4.5412)
-					(end 2.286 -4.318)
+					(start 3.048 -5.08)
+					(mid 2.8248 -5.6188)
+					(end 2.286 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12609,21 +13154,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -7.62)
-					(mid 2.8248 -8.1588)
-					(end 2.286 -8.382)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 2.286 -6.858)
-					(mid 2.8248 -7.0812)
-					(end 3.048 -7.62)
+					(start 1.524 -7.62)
+					(mid 1.7472 -7.0812)
+					(end 2.286 -6.858)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12645,9 +13178,21 @@
 					)
 				)
 				(arc
-					(start 1.524 -7.62)
-					(mid 1.7472 -7.0812)
-					(end 2.286 -6.858)
+					(start 2.286 -6.858)
+					(mid 2.8248 -7.0812)
+					(end 3.048 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12825,9 +13370,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -5.08)
-					(mid 4.7952 -4.5412)
-					(end 5.334 -4.318)
+					(start 5.334 -4.318)
+					(mid 5.8728 -4.5412)
+					(end 6.096 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12849,9 +13394,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -4.318)
-					(mid 5.8728 -4.5412)
-					(end 6.096 -5.08)
+					(start 5.334 -5.842)
+					(mid 4.7952 -5.6188)
+					(end 4.572 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12861,9 +13406,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -5.842)
-					(mid 4.7952 -5.6188)
-					(end 4.572 -5.08)
+					(start 4.572 -5.08)
+					(mid 4.7952 -4.5412)
+					(end 5.334 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12897,18 +13442,6 @@
 					)
 				)
 				(arc
-					(start 5.334 -6.858)
-					(mid 5.8728 -7.0812)
-					(end 6.096 -7.62)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 5.334 -8.382)
 					(mid 4.7952 -8.1588)
 					(end 4.572 -7.62)
@@ -12921,9 +13454,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -7.62)
-					(mid 4.7952 -7.0812)
-					(end 5.334 -6.858)
+					(start 5.334 -6.858)
+					(mid 5.8728 -7.0812)
+					(end 6.096 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -12936,6 +13469,18 @@
 					(start 6.096 -7.62)
 					(mid 5.8728 -8.1588)
 					(end 5.334 -8.382)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.572 -7.62)
+					(mid 4.7952 -7.0812)
+					(end 5.334 -6.858)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14168,9 +14713,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -1.778)
-					(mid 2.8248 -2.0012)
-					(end 3.048 -2.54)
+					(start 1.524 -2.54)
+					(mid 1.7472 -2.0012)
+					(end 2.286 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14180,9 +14725,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -2.54)
-					(mid 1.7472 -2.0012)
-					(end 2.286 -1.778)
+					(start 2.286 -1.778)
+					(mid 2.8248 -2.0012)
+					(end 3.048 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14240,9 +14785,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -5.08)
-					(mid 1.7472 -4.5412)
-					(end 2.286 -4.318)
+					(start 3.048 -5.08)
+					(mid 2.8248 -5.6188)
+					(end 2.286 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14264,9 +14809,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -5.08)
-					(mid 2.8248 -5.6188)
-					(end 2.286 -5.842)
+					(start 1.524 -5.08)
+					(mid 1.7472 -4.5412)
+					(end 2.286 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14312,18 +14857,6 @@
 					)
 				)
 				(arc
-					(start 2.286 -8.382)
-					(mid 1.7472 -8.1588)
-					(end 1.524 -7.62)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 2.286 -6.858)
 					(mid 2.8248 -7.0812)
 					(end 3.048 -7.62)
@@ -14336,9 +14869,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -7.62)
-					(mid 2.8248 -8.1588)
-					(end 2.286 -8.382)
+					(start 1.524 -7.62)
+					(mid 1.7472 -7.0812)
+					(end 2.286 -6.858)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14348,9 +14881,21 @@
 					)
 				)
 				(arc
-					(start 1.524 -7.62)
-					(mid 1.7472 -7.0812)
-					(end 2.286 -6.858)
+					(start 2.286 -8.382)
+					(mid 1.7472 -8.1588)
+					(end 1.524 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14375,18 +14920,6 @@
 					(pts
 						(xy 2.286 -9.398) (xy 2.286 -9.398)
 					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 3.048 -10.16)
-					(mid 2.8248 -10.6988)
-					(end 2.286 -10.922)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14423,6 +14956,18 @@
 					(start 2.286 -9.398)
 					(mid 2.8248 -9.6212)
 					(end 3.048 -10.16)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 3.048 -10.16)
+					(mid 2.8248 -10.6988)
+					(end 2.286 -10.922)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14468,9 +15013,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -12.7)
-					(mid 2.8248 -13.2388)
-					(end 2.286 -13.462)
+					(start 2.286 -13.462)
+					(mid 1.7472 -13.2388)
+					(end 1.524 -12.7)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14492,9 +15037,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -13.462)
-					(mid 1.7472 -13.2388)
-					(end 1.524 -12.7)
+					(start 3.048 -12.7)
+					(mid 2.8248 -13.2388)
+					(end 2.286 -13.462)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14648,18 +15193,6 @@
 					)
 				)
 				(arc
-					(start 6.096 -2.54)
-					(mid 5.8728 -3.0788)
-					(end 5.334 -3.302)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 5.334 -1.778)
 					(mid 5.8728 -2.0012)
 					(end 6.096 -2.54)
@@ -14695,6 +15228,18 @@
 						(type none)
 					)
 				)
+				(arc
+					(start 6.096 -2.54)
+					(mid 5.8728 -3.0788)
+					(end 5.334 -3.302)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(polyline
 					(pts
 						(xy 5.334 -3.302) (xy 5.334 -3.302)
@@ -14720,18 +15265,6 @@
 					)
 				)
 				(arc
-					(start 5.334 -4.318)
-					(mid 5.8728 -4.5412)
-					(end 6.096 -5.08)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 6.096 -5.08)
 					(mid 5.8728 -5.6188)
 					(end 5.334 -5.842)
@@ -14747,6 +15280,18 @@
 					(start 5.334 -5.842)
 					(mid 4.7952 -5.6188)
 					(end 4.572 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -4.318)
+					(mid 5.8728 -4.5412)
+					(end 6.096 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14792,9 +15337,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -7.62)
-					(mid 4.7952 -7.0812)
-					(end 5.334 -6.858)
+					(start 5.334 -6.858)
+					(mid 5.8728 -7.0812)
+					(end 6.096 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14816,9 +15361,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -7.62)
-					(mid 5.8728 -8.1588)
-					(end 5.334 -8.382)
+					(start 4.572 -7.62)
+					(mid 4.7952 -7.0812)
+					(end 5.334 -6.858)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14828,9 +15373,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -6.858)
-					(mid 5.8728 -7.0812)
-					(end 6.096 -7.62)
+					(start 6.096 -7.62)
+					(mid 5.8728 -8.1588)
+					(end 5.334 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14876,9 +15421,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -9.398)
-					(mid 5.8728 -9.6212)
-					(end 6.096 -10.16)
+					(start 4.572 -10.16)
+					(mid 4.7952 -9.6212)
+					(end 5.334 -9.398)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14888,9 +15433,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -10.16)
-					(mid 4.7952 -9.6212)
-					(end 5.334 -9.398)
+					(start 5.334 -9.398)
+					(mid 5.8728 -9.6212)
+					(end 6.096 -10.16)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14936,9 +15481,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -12.7)
-					(mid 4.7952 -12.1612)
-					(end 5.334 -11.938)
+					(start 5.334 -13.462)
+					(mid 4.7952 -13.2388)
+					(end 4.572 -12.7)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14960,9 +15505,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -12.7)
-					(mid 5.8728 -13.2388)
-					(end 5.334 -13.462)
+					(start 4.572 -12.7)
+					(mid 4.7952 -12.1612)
+					(end 5.334 -11.938)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -14972,9 +15517,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -13.462)
-					(mid 4.7952 -13.2388)
-					(end 4.572 -12.7)
+					(start 6.096 -12.7)
+					(mid 5.8728 -13.2388)
+					(end 5.334 -13.462)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -19735,7 +20280,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 5.08 0)
+						(xy 5.08 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -19747,7 +20292,7 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 2.032) (xy 0 2.032)
+						(xy 5.08 2.032) (xy 5.08 0)
 					)
 					(stroke
 						(width 0.254)
@@ -19803,7 +20348,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -19815,7 +20360,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -21290,7 +21835,7 @@
 		(uuid "1625e6cf-2c4b-4070-a0d3-c508f8e621f6")
 	)
 	(junction
-		(at 167.64 138.43)
+		(at 190.5 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "222325db-264f-4942-9d5e-3486410ae5cd")
@@ -21332,7 +21877,7 @@
 		(uuid "429ea250-d367-4a73-a7f6-a55fbc030c0c")
 	)
 	(junction
-		(at 161.29 111.76)
+		(at 184.15 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4327253b-5a2c-4c2a-aab3-1504fb9ee8f1")
@@ -21356,13 +21901,13 @@
 		(uuid "46d6d4a3-0fd7-4c89-85b8-05bf56e847e7")
 	)
 	(junction
-		(at 215.9 133.35)
+		(at 238.76 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "49f20c96-0247-4d9b-962a-3d175ff64a26")
 	)
 	(junction
-		(at 148.59 111.76)
+		(at 171.45 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "534e62c8-b248-4de9-82ce-96250fa6685a")
@@ -21386,7 +21931,7 @@
 		(uuid "59f63376-2482-411e-98b4-05ab9819d3fc")
 	)
 	(junction
-		(at 215.9 143.51)
+		(at 238.76 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5a57486b-3e3c-4ca7-91f6-97cd1d6d35df")
@@ -21404,7 +21949,7 @@
 		(uuid "60670e30-5565-4832-a5d9-61f2353112c9")
 	)
 	(junction
-		(at 139.7 111.76)
+		(at 162.56 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6069a729-4e6e-4d18-8b31-a0a8d5d50010")
@@ -21428,13 +21973,13 @@
 		(uuid "6b12bee0-d35f-4ddf-9378-6ab98126481e")
 	)
 	(junction
-		(at 161.29 140.97)
+		(at 184.15 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7200280e-036c-4c73-baba-9a768bacc245")
 	)
 	(junction
-		(at 154.94 111.76)
+		(at 177.8 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7441a5d6-65dd-445d-8646-5fe6dfa9238d")
@@ -22028,7 +22573,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 111.76) (xy 154.94 116.84)
+			(xy 177.8 111.76) (xy 177.8 116.84)
 		)
 		(stroke
 			(width 0)
@@ -22118,7 +22663,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 116.84) (xy 148.59 111.76)
+			(xy 171.45 116.84) (xy 171.45 111.76)
 		)
 		(stroke
 			(width 0)
@@ -22368,7 +22913,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 138.43) (xy 167.64 138.43)
+			(xy 120.65 138.43) (xy 190.5 138.43)
 		)
 		(stroke
 			(width 0)
@@ -22618,7 +23163,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 133.35) (xy 179.07 133.35)
+			(xy 120.65 133.35) (xy 201.93 133.35)
 		)
 		(stroke
 			(width 0)
@@ -22638,7 +23183,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 111.76) (xy 161.29 111.76)
+			(xy 177.8 111.76) (xy 184.15 111.76)
 		)
 		(stroke
 			(width 0)
@@ -22838,7 +23383,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 143.51) (xy 215.9 148.59)
+			(xy 238.76 143.51) (xy 238.76 148.59)
 		)
 		(stroke
 			(width 0)
@@ -22868,7 +23413,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 143.51) (xy 215.9 142.24)
+			(xy 238.76 143.51) (xy 238.76 142.24)
 		)
 		(stroke
 			(width 0)
@@ -22988,7 +23533,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 111.76) (xy 161.29 116.84)
+			(xy 184.15 111.76) (xy 184.15 116.84)
 		)
 		(stroke
 			(width 0)
@@ -23118,7 +23663,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 147.32) (xy 138.43 147.32)
+			(xy 120.65 147.32) (xy 139.7 147.32)
 		)
 		(stroke
 			(width 0)
@@ -23178,7 +23723,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 146.05) (xy 148.59 146.05)
+			(xy 201.93 146.05) (xy 171.45 146.05)
 		)
 		(stroke
 			(width 0)
@@ -23228,7 +23773,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 135.89) (xy 209.55 143.51)
+			(xy 232.41 135.89) (xy 232.41 143.51)
 		)
 		(stroke
 			(width 0)
@@ -23308,7 +23853,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 143.51) (xy 215.9 143.51)
+			(xy 232.41 143.51) (xy 238.76 143.51)
 		)
 		(stroke
 			(width 0)
@@ -23418,7 +23963,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 140.97) (xy 179.07 140.97)
+			(xy 184.15 140.97) (xy 201.93 140.97)
 		)
 		(stroke
 			(width 0)
@@ -23478,7 +24023,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 149.86) (xy 138.43 149.86)
+			(xy 120.65 149.86) (xy 139.7 149.86)
 		)
 		(stroke
 			(width 0)
@@ -23488,7 +24033,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 138.43) (xy 179.07 138.43)
+			(xy 190.5 138.43) (xy 201.93 138.43)
 		)
 		(stroke
 			(width 0)
@@ -23548,7 +24093,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 140.97) (xy 161.29 140.97)
+			(xy 120.65 140.97) (xy 184.15 140.97)
 		)
 		(stroke
 			(width 0)
@@ -23558,7 +24103,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 124.46) (xy 148.59 146.05)
+			(xy 171.45 124.46) (xy 171.45 146.05)
 		)
 		(stroke
 			(width 0)
@@ -23578,7 +24123,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 111.76) (xy 167.64 116.84)
+			(xy 190.5 111.76) (xy 190.5 116.84)
 		)
 		(stroke
 			(width 0)
@@ -23638,7 +24183,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 124.46) (xy 167.64 138.43)
+			(xy 190.5 124.46) (xy 190.5 138.43)
 		)
 		(stroke
 			(width 0)
@@ -23658,7 +24203,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 124.46) (xy 154.94 143.51)
+			(xy 177.8 124.46) (xy 177.8 143.51)
 		)
 		(stroke
 			(width 0)
@@ -23788,7 +24333,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 135.89) (xy 179.07 135.89)
+			(xy 120.65 135.89) (xy 201.93 135.89)
 		)
 		(stroke
 			(width 0)
@@ -23798,7 +24343,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 111.76) (xy 167.64 111.76)
+			(xy 184.15 111.76) (xy 190.5 111.76)
 		)
 		(stroke
 			(width 0)
@@ -23858,7 +24403,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 106.68) (xy 139.7 111.76)
+			(xy 162.56 106.68) (xy 162.56 111.76)
 		)
 		(stroke
 			(width 0)
@@ -23878,7 +24423,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 111.76) (xy 154.94 111.76)
+			(xy 171.45 111.76) (xy 177.8 111.76)
 		)
 		(stroke
 			(width 0)
@@ -23956,6 +24501,16 @@
 		)
 		(uuid "99ef4785-ad71-4090-a156-689f1b73c8af")
 	)
+	(wire
+		(pts
+			(xy 218.44 77.47) (xy 218.44 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a469005-c1c5-4e1b-835d-a701823505c5")
+	)
 	(bus
 		(pts
 			(xy 118.11 133.35) (xy 118.11 135.89)
@@ -24018,7 +24573,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 133.35) (xy 215.9 134.62)
+			(xy 238.76 133.35) (xy 238.76 134.62)
 		)
 		(stroke
 			(width 0)
@@ -24118,7 +24673,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 133.35) (xy 215.9 133.35)
+			(xy 232.41 133.35) (xy 238.76 133.35)
 		)
 		(stroke
 			(width 0)
@@ -24158,7 +24713,7 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 60.96) (xy 218.44 63.5)
+			(xy 218.44 60.96) (xy 218.44 62.23)
 		)
 		(stroke
 			(width 0)
@@ -24388,7 +24943,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 111.76) (xy 139.7 116.84)
+			(xy 162.56 111.76) (xy 162.56 116.84)
 		)
 		(stroke
 			(width 0)
@@ -24605,16 +25160,6 @@
 			(type default)
 		)
 		(uuid "c220775b-78b9-4fa7-bc81-21804c5065e9")
-	)
-	(wire
-		(pts
-			(xy 218.44 78.74) (xy 218.44 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2384390-5a44-45a0-9e96-f1f073980055")
 	)
 	(wire
 		(pts
@@ -24838,7 +25383,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 111.76) (xy 148.59 111.76)
+			(xy 162.56 111.76) (xy 171.45 111.76)
 		)
 		(stroke
 			(width 0)
@@ -24958,7 +25503,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 124.46) (xy 161.29 140.97)
+			(xy 184.15 124.46) (xy 184.15 140.97)
 		)
 		(stroke
 			(width 0)
@@ -25078,7 +25623,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 130.81) (xy 215.9 133.35)
+			(xy 238.76 130.81) (xy 238.76 133.35)
 		)
 		(stroke
 			(width 0)
@@ -25098,7 +25643,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 124.46) (xy 139.7 125.73)
+			(xy 162.56 124.46) (xy 162.56 125.73)
 		)
 		(stroke
 			(width 0)
@@ -25125,6 +25670,16 @@
 			(type default)
 		)
 		(uuid "e0fb444a-ab89-441e-b964-494927f60957")
+	)
+	(wire
+		(pts
+			(xy 218.44 86.36) (xy 218.44 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e149a072-622c-4a8c-a5ff-82b5fe01ce5f")
 	)
 	(wire
 		(pts
@@ -25538,7 +26093,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 143.51) (xy 154.94 143.51)
+			(xy 201.93 143.51) (xy 177.8 143.51)
 		)
 		(stroke
 			(width 0)
@@ -29645,7 +30200,7 @@
 	)
 	(symbol
 		(lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R")
-		(at 139.7 116.84 90)
+		(at 162.56 116.84 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -29654,7 +30209,7 @@
 		(dnp no)
 		(uuid "1bb13148-5a61-46a9-b3c9-2fccd0f0c334")
 		(property "Reference" "C42"
-			(at 143.51 118.11 90)
+			(at 166.37 118.11 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29663,144 +30218,6 @@
 			)
 		)
 		(property "Value" "CC0603_100NF_50V_10%_X7R"
-			(at 145.923 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Capacitors SMD:CAPC1608X87N"
-			(at 147.828 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 149.733 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 139.7 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Val" "100nF"
-			(at 146.05 123.19 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 151.638 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "Capacitor - non polarized"
-			(at 153.543 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Capacitors.SchLib"
-			(at 155.448 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "100nF"
-			(at 157.353 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 159.258 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 161.163 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "2"
-			(at 163.068 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
-			(at 164.973 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "CAPC1608X87N"
-			(at 166.878 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" " "
 			(at 168.783 116.84 0)
 			(effects
 				(font
@@ -29810,7 +30227,7 @@
 				(hide yes)
 			)
 		)
-		(property "Status" "Preferred"
+		(property "Footprint" "Capacitors SMD:CAPC1608X87N"
 			(at 170.688 116.84 0)
 			(effects
 				(font
@@ -29820,7 +30237,7 @@
 				(hide yes)
 			)
 		)
-		(property "Status Comment" " "
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
 			(at 172.593 116.84 0)
 			(effects
 				(font
@@ -29830,7 +30247,25 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "50V"
+		(property "Description" ""
+			(at 162.56 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Val" "100nF"
+			(at 168.91 123.19 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Part Number" "CC0603_100NF_50V_10%_X7R"
 			(at 174.498 116.84 0)
 			(effects
 				(font
@@ -29840,7 +30275,7 @@
 				(hide yes)
 			)
 		)
-		(property "TC" "X7R"
+		(property "Library Ref" "Capacitor - non polarized"
 			(at 176.403 116.84 0)
 			(effects
 				(font
@@ -29850,7 +30285,7 @@
 				(hide yes)
 			)
 		)
-		(property "Tolerance" "±10%"
+		(property "Library Path" "SchLib\\Capacitors.SchLib"
 			(at 178.308 116.84 0)
 			(effects
 				(font
@@ -29860,7 +30295,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
+		(property "Comment" "100nF"
 			(at 180.213 116.84 0)
 			(effects
 				(font
@@ -29870,7 +30305,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "GENERIC"
+		(property "Component Kind" "Standard"
 			(at 182.118 116.84 0)
 			(effects
 				(font
@@ -29880,7 +30315,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CC0603_100NF_50V_10%_X7R"
+		(property "Component Type" "Standard"
 			(at 184.023 116.84 0)
 			(effects
 				(font
@@ -29890,7 +30325,7 @@
 				(hide yes)
 			)
 		)
-		(property "Case" "0603"
+		(property "Pin Count" "2"
 			(at 185.928 116.84 0)
 			(effects
 				(font
@@ -29900,7 +30335,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mounted" "Yes"
+		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
 			(at 187.833 116.84 0)
 			(effects
 				(font
@@ -29910,7 +30345,7 @@
 				(hide yes)
 			)
 		)
-		(property "Socket" "No"
+		(property "Footprint Ref" "CAPC1608X87N"
 			(at 189.738 116.84 0)
 			(effects
 				(font
@@ -29920,7 +30355,7 @@
 				(hide yes)
 			)
 		)
-		(property "SMD" "Yes"
+		(property "PackageDescription" " "
 			(at 191.643 116.84 0)
 			(effects
 				(font
@@ -29930,7 +30365,7 @@
 				(hide yes)
 			)
 		)
-		(property "PressFit" " "
+		(property "Status" "Preferred"
 			(at 193.548 116.84 0)
 			(effects
 				(font
@@ -29940,7 +30375,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sense" "No"
+		(property "Status Comment" " "
 			(at 195.453 116.84 0)
 			(effects
 				(font
@@ -29950,7 +30385,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sense Comment" " "
+		(property "Voltage" "50V"
 			(at 197.358 116.84 0)
 			(effects
 				(font
@@ -29960,7 +30395,7 @@
 				(hide yes)
 			)
 		)
-		(property "ComponentHeight" " "
+		(property "TC" "X7R"
 			(at 199.263 116.84 0)
 			(effects
 				(font
@@ -29970,7 +30405,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Example" "PHYCOMP"
+		(property "Tolerance" "±10%"
 			(at 201.168 116.84 0)
 			(effects
 				(font
@@ -29980,7 +30415,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Part Number" "223858615649"
+		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
 			(at 203.073 116.84 0)
 			(effects
 				(font
@@ -29990,7 +30425,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 ComponentHeight" "0.87mm"
+		(property "Manufacturer" "GENERIC"
 			(at 204.978 116.84 0)
 			(effects
 				(font
@@ -30000,7 +30435,7 @@
 				(hide yes)
 			)
 		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
+		(property "Manufacturer Part Number" "CC0603_100NF_50V_10%_X7R"
 			(at 206.883 116.84 0)
 			(effects
 				(font
@@ -30010,7 +30445,7 @@
 				(hide yes)
 			)
 		)
-		(property "Author" "CERN DEM JLC"
+		(property "Case" "0603"
 			(at 208.788 116.84 0)
 			(effects
 				(font
@@ -30020,7 +30455,7 @@
 				(hide yes)
 			)
 		)
-		(property "CreateDate" "12/03/07 00:00:00"
+		(property "Mounted" "Yes"
 			(at 210.693 116.84 0)
 			(effects
 				(font
@@ -30030,7 +30465,7 @@
 				(hide yes)
 			)
 		)
-		(property "LatestRevisionDate" "12/03/07 00:00:00"
+		(property "Socket" "No"
 			(at 212.598 116.84 0)
 			(effects
 				(font
@@ -30040,7 +30475,7 @@
 				(hide yes)
 			)
 		)
-		(property "Database Table Name" "Capacitors"
+		(property "SMD" "Yes"
 			(at 214.503 116.84 0)
 			(effects
 				(font
@@ -30050,7 +30485,7 @@
 				(hide yes)
 			)
 		)
-		(property "Library Name" "Capacitors SMD"
+		(property "PressFit" " "
 			(at 216.408 116.84 0)
 			(effects
 				(font
@@ -30060,7 +30495,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint Library" "Capacitors SMD"
+		(property "Sense" "No"
 			(at 218.313 116.84 0)
 			(effects
 				(font
@@ -30070,7 +30505,7 @@
 				(hide yes)
 			)
 		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+		(property "Sense Comment" " "
 			(at 220.218 116.84 0)
 			(effects
 				(font
@@ -30080,8 +30515,128 @@
 				(hide yes)
 			)
 		)
+		(property "ComponentHeight" " "
+			(at 222.123 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Example" "PHYCOMP"
+			(at 224.028 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Part Number" "223858615649"
+			(at 225.933 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 ComponentHeight" "0.87mm"
+			(at 227.838 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
+			(at 229.743 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 231.648 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/03/07 00:00:00"
+			(at 233.553 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "12/03/07 00:00:00"
+			(at 235.458 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Capacitors"
+			(at 237.363 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Capacitors SMD"
+			(at 239.268 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "Capacitors SMD"
+			(at 241.173 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 243.078 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(property "Color_1" ""
-			(at 139.7 116.84 0)
+			(at 162.56 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30090,7 +30645,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 139.7 116.84 0)
+			(at 162.56 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30099,7 +30654,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 139.7 116.84 0)
+			(at 162.56 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30108,7 +30663,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 139.7 116.84 0)
+			(at 162.56 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30117,7 +30672,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 139.7 116.84 0)
+			(at 162.56 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32413,7 +32968,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 215.9 148.59 0)
+		(at 238.76 148.59 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -32422,7 +32977,7 @@
 		(fields_autoplaced yes)
 		(uuid "3e323515-d6cd-447f-98c3-d1be7835ab1b")
 		(property "Reference" "#PWR0203"
-			(at 215.9 154.94 0)
+			(at 238.76 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32431,7 +32986,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 215.9 153.67 0)
+			(at 238.76 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32439,7 +32994,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 215.9 148.59 0)
+			(at 238.76 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32448,7 +33003,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 215.9 148.59 0)
+			(at 238.76 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32457,7 +33012,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 215.9 148.59 0)
+			(at 238.76 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35670,6 +36225,513 @@
 		)
 	)
 	(symbol
+		(lib_id "Resistors SMD:R0603_330R_1%_0.1W_100PPM")
+		(at 218.44 78.74 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5ea65722-2367-4a59-8475-d92cd9ab5531")
+		(property "Reference" "R61"
+			(at 223.52 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R0603_330R_1%_0.1W_100PPM"
+			(at 223.393 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Resistors SMD:RESC1608X55N"
+			(at 225.298 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+			(at 227.203 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 218.44 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "±1%"
+			(at 255.778 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Val" "330"
+			(at 223.52 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Part Number" "R0603_330R_1%_0.1W_100PPM"
+			(at 229.108 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Resistor - 1%"
+			(at 231.013 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Resistors.SchLib"
+			(at 232.918 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "330"
+			(at 234.823 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 236.728 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 238.633 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" " "
+			(at 240.538 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "2"
+			(at 242.443 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
+			(at 244.348 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "RESC1608X55N"
+			(at 246.253 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "Preferred"
+			(at 248.158 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "0.1W"
+			(at 250.063 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "TC" "±100ppm/°C"
+			(at 251.968 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" " "
+			(at 253.873 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "General Purpose Thick Film Chip Resistor"
+			(at 257.683 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "GENERIC"
+			(at 259.588 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "R0603_330R_1%_0.1W_100PPM"
+			(at 261.493 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Case" "0603"
+			(at 263.398 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PressFit" "No"
+			(at 265.303 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mounted" "Yes"
+			(at 267.208 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense Comment" " "
+			(at 269.113 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Sense" "No"
+			(at 271.018 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status Comment" " "
+			(at 272.923 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Socket" "No"
+			(at 274.828 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "SMD" "Yes"
+			(at 276.733 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "ComponentHeight" " "
+			(at 278.638 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Example" "NIC COMPONENT"
+			(at 280.543 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Part Number" "NRC06F3300TRF"
+			(at 282.448 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 ComponentHeight" "0.55mm"
+			(at 284.353 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+			(at 286.258 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 288.163 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/03/07 00:00:00"
+			(at 290.068 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "03/13/08 00:00:00"
+			(at 291.973 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Resistors"
+			(at 293.878 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Resistors SMD"
+			(at 295.783 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "Resistors SMD"
+			(at 297.688 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 299.593 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Color_1" ""
+			(at 218.44 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Comment_1" ""
+			(at 218.44 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Family_1" ""
+			(at 218.44 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint_1" ""
+			(at 218.44 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance_1" ""
+			(at 218.44 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c1f11c44-78d4-4515-a98f-5a001e709eeb")
+		)
+		(pin "2"
+			(uuid "00a9fe63-d0ae-46a7-ba9e-3dd3af3378fc")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/f04f6572-561e-44c2-9bbc-f778f673769c"
+					(reference "R61")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 251.46 49.53 0)
 		(mirror y)
@@ -35738,7 +36800,7 @@
 	)
 	(symbol
 		(lib_id "Logic:N25Q032A13ESCA0")
-		(at 184.15 130.81 0)
+		(at 207.01 130.81 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -35746,7 +36808,7 @@
 		(dnp no)
 		(uuid "645d9129-1205-497d-ad22-7ffd938355c7")
 		(property "Reference" "IC19"
-			(at 194.31 128.27 0)
+			(at 217.17 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35754,7 +36816,7 @@
 			)
 		)
 		(property "Value" "N25Q032A13ESCA0"
-			(at 184.15 153.035 0)
+			(at 207.01 153.035 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35764,7 +36826,7 @@
 			)
 		)
 		(property "Footprint" "ICs And Semiconductors SMD:SOIC127P600X175-8N"
-			(at 184.15 154.94 0)
+			(at 207.01 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35774,7 +36836,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\N25Q032A13ESCA0.pdf"
-			(at 184.15 156.845 0)
+			(at 207.01 156.845 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35784,7 +36846,7 @@
 			)
 		)
 		(property "Description" "32Mb, 2.7 to 3.6V, Multiple I/O Serial Flash Memory"
-			(at 184.15 130.81 0)
+			(at 207.01 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35793,7 +36855,7 @@
 			)
 		)
 		(property "Part Number" "N25Q032A13ESCA0"
-			(at 185.42 150.622 0)
+			(at 208.28 150.622 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35803,7 +36865,7 @@
 			)
 		)
 		(property "Library Ref" "N25Q032A13ESCA0"
-			(at 185.674 150.114 0)
+			(at 208.534 150.114 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35813,7 +36875,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Logic.SchLib"
-			(at 184.15 162.56 0)
+			(at 207.01 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35823,7 +36885,7 @@
 			)
 		)
 		(property "Comment" "N25Q032A13ESCA0"
-			(at 185.42 150.876 0)
+			(at 208.28 150.876 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35832,7 +36894,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 184.15 166.37 0)
+			(at 207.01 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35842,7 +36904,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 184.15 168.275 0)
+			(at 207.01 168.275 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35852,7 +36914,7 @@
 			)
 		)
 		(property "Device" "N25Q032A13ESCA0"
-			(at 184.15 170.18 0)
+			(at 207.01 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35862,7 +36924,7 @@
 			)
 		)
 		(property "PackageDescription" "SOIC, 1.27mm Pitch; 8 Pin - Body 4x5mm, IPC Medium Density"
-			(at 184.15 172.085 0)
+			(at 207.01 172.085 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35872,7 +36934,7 @@
 			)
 		)
 		(property "Status" " "
-			(at 184.15 173.99 0)
+			(at 207.01 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35882,7 +36944,7 @@
 			)
 		)
 		(property "Part Description" "32Mb, 2.7 to 3.6V, Multiple I/O Serial Flash Memory"
-			(at 184.15 175.895 0)
+			(at 207.01 175.895 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35892,7 +36954,7 @@
 			)
 		)
 		(property "Manufacturer" "MICRON TECHNOLOGY"
-			(at 184.15 177.8 0)
+			(at 207.01 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35902,7 +36964,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "N25Q032A13ESCA0"
-			(at 184.15 179.705 0)
+			(at 207.01 179.705 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35912,7 +36974,7 @@
 			)
 		)
 		(property "Pin Count" "8"
-			(at 184.15 181.61 0)
+			(at 207.01 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35922,7 +36984,7 @@
 			)
 		)
 		(property "Case" "SOIC8"
-			(at 184.15 183.515 0)
+			(at 207.01 183.515 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35932,7 +36994,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 184.15 185.42 0)
+			(at 207.01 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35942,7 +37004,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 184.15 187.325 0)
+			(at 207.01 187.325 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35952,7 +37014,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 184.15 189.23 0)
+			(at 207.01 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35962,7 +37024,7 @@
 			)
 		)
 		(property "PressFit" "No"
-			(at 184.15 191.135 0)
+			(at 207.01 191.135 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35972,7 +37034,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 184.15 193.04 0)
+			(at 207.01 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35982,7 +37044,7 @@
 			)
 		)
 		(property "Bonding" "No"
-			(at 184.15 194.945 0)
+			(at 207.01 194.945 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35992,7 +37054,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 184.15 196.85 0)
+			(at 207.01 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36002,7 +37064,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 184.15 198.755 0)
+			(at 207.01 198.755 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36012,7 +37074,7 @@
 			)
 		)
 		(property "ComponentHeight" "1.75mm"
-			(at 184.15 200.66 0)
+			(at 207.01 200.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36022,7 +37084,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\ICs And Semiconductors SMD.PcbLib"
-			(at 184.15 202.565 0)
+			(at 207.01 202.565 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36032,7 +37094,7 @@
 			)
 		)
 		(property "Footprint Ref" "SOIC127P600X175-8N"
-			(at 184.15 204.47 0)
+			(at 207.01 204.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36042,7 +37104,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\N25Q032A13ESCA0.pdf"
-			(at 184.15 206.375 0)
+			(at 207.01 206.375 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36052,7 +37114,7 @@
 			)
 		)
 		(property "ComponentLink1URL" " "
-			(at 184.15 208.28 0)
+			(at 207.01 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36062,7 +37124,7 @@
 			)
 		)
 		(property "ComponentLink1Description" " "
-			(at 184.15 210.185 0)
+			(at 207.01 210.185 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36072,7 +37134,7 @@
 			)
 		)
 		(property "ComponentLink2URL" " "
-			(at 184.15 212.09 0)
+			(at 207.01 212.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36082,7 +37144,7 @@
 			)
 		)
 		(property "ComponentLink2Description" " "
-			(at 184.15 213.995 0)
+			(at 207.01 213.995 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36092,7 +37154,7 @@
 			)
 		)
 		(property "Author" "CERN DEM HF"
-			(at 184.15 215.9 0)
+			(at 207.01 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36102,7 +37164,7 @@
 			)
 		)
 		(property "CreateDate" "12/09/24 00:00:00"
-			(at 184.15 217.805 0)
+			(at 207.01 217.805 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36112,7 +37174,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "12/09/24 00:00:00"
-			(at 184.15 219.71 0)
+			(at 207.01 219.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36122,7 +37184,7 @@
 			)
 		)
 		(property "SCEM" " "
-			(at 184.15 221.615 0)
+			(at 207.01 221.615 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36132,7 +37194,7 @@
 			)
 		)
 		(property "Database Table Name" "ICs And Semiconductors"
-			(at 184.15 223.52 0)
+			(at 207.01 223.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36142,7 +37204,7 @@
 			)
 		)
 		(property "Library Name" "Logic"
-			(at 184.15 225.425 0)
+			(at 207.01 225.425 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36152,7 +37214,7 @@
 			)
 		)
 		(property "Footprint Library" "ICs And Semiconductors SMD"
-			(at 184.15 227.33 0)
+			(at 207.01 227.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36162,7 +37224,7 @@
 			)
 		)
 		(property "License" "CC-BY-SA 4.0"
-			(at 184.15 229.235 0)
+			(at 207.01 229.235 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -41834,7 +42896,7 @@
 	)
 	(symbol
 		(lib_id "Resistors SMD:R0603_10K_1%_0.1W_100PPM")
-		(at 167.64 124.46 90)
+		(at 190.5 124.46 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -41842,7 +42904,7 @@
 		(dnp no)
 		(uuid "89713e0c-6883-4f86-a489-e123ac6cb47a")
 		(property "Reference" "R40"
-			(at 168.91 119.38 90)
+			(at 191.77 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -41851,154 +42913,6 @@
 			)
 		)
 		(property "Value" "R0603_10K_1%_0.1W_100PPM"
-			(at 172.593 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistors SMD:RESC1608X55N"
-			(at 174.498 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
-			(at 176.403 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 167.64 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "±1%"
-			(at 204.978 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Val" "10k"
-			(at 168.91 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Part Number" "R0603_10K_1%_0.1W_100PPM"
-			(at 178.308 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "Resistor - 1%"
-			(at 180.213 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Resistors.SchLib"
-			(at 182.118 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "10k"
-			(at 184.023 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 185.928 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 187.833 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" " "
-			(at 189.738 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "2"
-			(at 191.643 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
-			(at 193.548 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "RESC1608X55N"
 			(at 195.453 124.46 0)
 			(effects
 				(font
@@ -42008,7 +42922,7 @@
 				(hide yes)
 			)
 		)
-		(property "Status" "Preferred"
+		(property "Footprint" "Resistors SMD:RESC1608X55N"
 			(at 197.358 124.46 0)
 			(effects
 				(font
@@ -42018,7 +42932,7 @@
 				(hide yes)
 			)
 		)
-		(property "Power" "0.1W"
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
 			(at 199.263 124.46 0)
 			(effects
 				(font
@@ -42028,137 +42942,16 @@
 				(hide yes)
 			)
 		)
-		(property "TC" "±100ppm/°C"
-			(at 201.168 124.46 0)
+		(property "Description" ""
+			(at 190.5 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Voltage" " "
-			(at 203.073 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "General Purpose Thick Film Chip Resistor"
-			(at 206.883 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "GENERIC"
-			(at 208.788 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "R0603_10K_1%_0.1W_100PPM"
-			(at 210.693 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "0603"
-			(at 212.598 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 214.503 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 216.408 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 218.313 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 220.218 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 222.123 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 224.028 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 225.933 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" " "
+		(property "Tolerance" "±1%"
 			(at 227.838 124.46 0)
 			(effects
 				(font
@@ -42168,7 +42961,156 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Example" "NIC COMPONENT"
+		(property "Val" "10k"
+			(at 191.77 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Part Number" "R0603_10K_1%_0.1W_100PPM"
+			(at 201.168 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Resistor - 1%"
+			(at 203.073 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Resistors.SchLib"
+			(at 204.978 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "10k"
+			(at 206.883 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 208.788 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 210.693 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" " "
+			(at 212.598 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "2"
+			(at 214.503 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
+			(at 216.408 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "RESC1608X55N"
+			(at 218.313 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "Preferred"
+			(at 220.218 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "0.1W"
+			(at 222.123 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "TC" "±100ppm/°C"
+			(at 224.028 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" " "
+			(at 225.933 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "General Purpose Thick Film Chip Resistor"
 			(at 229.743 124.46 0)
 			(effects
 				(font
@@ -42178,7 +43120,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Part Number" "NRC06F1002TRF"
+		(property "Manufacturer" "GENERIC"
 			(at 231.648 124.46 0)
 			(effects
 				(font
@@ -42188,7 +43130,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 ComponentHeight" "0.55mm"
+		(property "Manufacturer Part Number" "R0603_10K_1%_0.1W_100PPM"
 			(at 233.553 124.46 0)
 			(effects
 				(font
@@ -42198,7 +43140,7 @@
 				(hide yes)
 			)
 		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+		(property "Case" "0603"
 			(at 235.458 124.46 0)
 			(effects
 				(font
@@ -42208,7 +43150,7 @@
 				(hide yes)
 			)
 		)
-		(property "Author" "CERN DEM JLC"
+		(property "PressFit" "No"
 			(at 237.363 124.46 0)
 			(effects
 				(font
@@ -42218,7 +43160,7 @@
 				(hide yes)
 			)
 		)
-		(property "CreateDate" "12/03/07 00:00:00"
+		(property "Mounted" "Yes"
 			(at 239.268 124.46 0)
 			(effects
 				(font
@@ -42228,7 +43170,7 @@
 				(hide yes)
 			)
 		)
-		(property "LatestRevisionDate" "03/13/08 00:00:00"
+		(property "Sense Comment" " "
 			(at 241.173 124.46 0)
 			(effects
 				(font
@@ -42238,7 +43180,7 @@
 				(hide yes)
 			)
 		)
-		(property "Database Table Name" "Resistors"
+		(property "Sense" "No"
 			(at 243.078 124.46 0)
 			(effects
 				(font
@@ -42248,7 +43190,7 @@
 				(hide yes)
 			)
 		)
-		(property "Library Name" "Resistors SMD"
+		(property "Status Comment" " "
 			(at 244.983 124.46 0)
 			(effects
 				(font
@@ -42258,7 +43200,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint Library" "Resistors SMD"
+		(property "Socket" "No"
 			(at 246.888 124.46 0)
 			(effects
 				(font
@@ -42268,7 +43210,7 @@
 				(hide yes)
 			)
 		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+		(property "SMD" "Yes"
 			(at 248.793 124.46 0)
 			(effects
 				(font
@@ -42278,8 +43220,128 @@
 				(hide yes)
 			)
 		)
+		(property "ComponentHeight" " "
+			(at 250.698 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Example" "NIC COMPONENT"
+			(at 252.603 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Part Number" "NRC06F1002TRF"
+			(at 254.508 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 ComponentHeight" "0.55mm"
+			(at 256.413 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+			(at 258.318 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 260.223 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/03/07 00:00:00"
+			(at 262.128 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "03/13/08 00:00:00"
+			(at 264.033 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Resistors"
+			(at 265.938 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Resistors SMD"
+			(at 267.843 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "Resistors SMD"
+			(at 269.748 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 271.653 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(property "Color_1" ""
-			(at 167.64 124.46 0)
+			(at 190.5 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42288,7 +43350,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 167.64 124.46 0)
+			(at 190.5 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42297,7 +43359,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 167.64 124.46 0)
+			(at 190.5 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42306,7 +43368,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 167.64 124.46 0)
+			(at 190.5 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42315,7 +43377,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 167.64 124.46 0)
+			(at 190.5 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42341,7 +43403,7 @@
 	(symbol
 		(lib_name "R0603_10K_1%_0.1W_100PPM_1")
 		(lib_id "Resistors SMD:R0603_10K_1%_0.1W_100PPM")
-		(at 154.94 124.46 90)
+		(at 177.8 124.46 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -42349,7 +43411,7 @@
 		(dnp no)
 		(uuid "8cab2503-6955-4b48-aa5b-f420e64d69ed")
 		(property "Reference" "R38"
-			(at 156.21 119.38 90)
+			(at 179.07 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42358,154 +43420,6 @@
 			)
 		)
 		(property "Value" "R0603_10K_1%_0.1W_100PPM"
-			(at 159.893 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistors SMD:RESC1608X55N"
-			(at 161.798 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
-			(at 163.703 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 154.94 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "±1%"
-			(at 192.278 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Val" "10k"
-			(at 156.21 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Part Number" "R0603_10K_1%_0.1W_100PPM"
-			(at 165.608 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "Resistor - 1%"
-			(at 167.513 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Resistors.SchLib"
-			(at 169.418 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "10k"
-			(at 171.323 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 173.228 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 175.133 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" " "
-			(at 177.038 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "2"
-			(at 178.943 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
-			(at 180.848 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "RESC1608X55N"
 			(at 182.753 124.46 0)
 			(effects
 				(font
@@ -42515,7 +43429,7 @@
 				(hide yes)
 			)
 		)
-		(property "Status" "Preferred"
+		(property "Footprint" "Resistors SMD:RESC1608X55N"
 			(at 184.658 124.46 0)
 			(effects
 				(font
@@ -42525,7 +43439,7 @@
 				(hide yes)
 			)
 		)
-		(property "Power" "0.1W"
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
 			(at 186.563 124.46 0)
 			(effects
 				(font
@@ -42535,137 +43449,16 @@
 				(hide yes)
 			)
 		)
-		(property "TC" "±100ppm/°C"
-			(at 188.468 124.46 0)
+		(property "Description" ""
+			(at 177.8 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Voltage" " "
-			(at 190.373 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "General Purpose Thick Film Chip Resistor"
-			(at 194.183 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "GENERIC"
-			(at 196.088 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "R0603_10K_1%_0.1W_100PPM"
-			(at 197.993 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "0603"
-			(at 199.898 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 201.803 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 203.708 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 205.613 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 207.518 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 209.423 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 211.328 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 213.233 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" " "
+		(property "Tolerance" "±1%"
 			(at 215.138 124.46 0)
 			(effects
 				(font
@@ -42675,7 +43468,156 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Example" "NIC COMPONENT"
+		(property "Val" "10k"
+			(at 179.07 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Part Number" "R0603_10K_1%_0.1W_100PPM"
+			(at 188.468 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Resistor - 1%"
+			(at 190.373 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Resistors.SchLib"
+			(at 192.278 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "10k"
+			(at 194.183 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 196.088 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 197.993 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" " "
+			(at 199.898 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "2"
+			(at 201.803 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
+			(at 203.708 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "RESC1608X55N"
+			(at 205.613 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "Preferred"
+			(at 207.518 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "0.1W"
+			(at 209.423 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "TC" "±100ppm/°C"
+			(at 211.328 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" " "
+			(at 213.233 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "General Purpose Thick Film Chip Resistor"
 			(at 217.043 124.46 0)
 			(effects
 				(font
@@ -42685,7 +43627,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Part Number" "NRC06F1002TRF"
+		(property "Manufacturer" "GENERIC"
 			(at 218.948 124.46 0)
 			(effects
 				(font
@@ -42695,7 +43637,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 ComponentHeight" "0.55mm"
+		(property "Manufacturer Part Number" "R0603_10K_1%_0.1W_100PPM"
 			(at 220.853 124.46 0)
 			(effects
 				(font
@@ -42705,7 +43647,7 @@
 				(hide yes)
 			)
 		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+		(property "Case" "0603"
 			(at 222.758 124.46 0)
 			(effects
 				(font
@@ -42715,7 +43657,7 @@
 				(hide yes)
 			)
 		)
-		(property "Author" "CERN DEM JLC"
+		(property "PressFit" "No"
 			(at 224.663 124.46 0)
 			(effects
 				(font
@@ -42725,7 +43667,7 @@
 				(hide yes)
 			)
 		)
-		(property "CreateDate" "12/03/07 00:00:00"
+		(property "Mounted" "Yes"
 			(at 226.568 124.46 0)
 			(effects
 				(font
@@ -42735,7 +43677,7 @@
 				(hide yes)
 			)
 		)
-		(property "LatestRevisionDate" "03/13/08 00:00:00"
+		(property "Sense Comment" " "
 			(at 228.473 124.46 0)
 			(effects
 				(font
@@ -42745,7 +43687,7 @@
 				(hide yes)
 			)
 		)
-		(property "Database Table Name" "Resistors"
+		(property "Sense" "No"
 			(at 230.378 124.46 0)
 			(effects
 				(font
@@ -42755,7 +43697,7 @@
 				(hide yes)
 			)
 		)
-		(property "Library Name" "Resistors SMD"
+		(property "Status Comment" " "
 			(at 232.283 124.46 0)
 			(effects
 				(font
@@ -42765,7 +43707,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint Library" "Resistors SMD"
+		(property "Socket" "No"
 			(at 234.188 124.46 0)
 			(effects
 				(font
@@ -42775,7 +43717,7 @@
 				(hide yes)
 			)
 		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+		(property "SMD" "Yes"
 			(at 236.093 124.46 0)
 			(effects
 				(font
@@ -42785,8 +43727,128 @@
 				(hide yes)
 			)
 		)
+		(property "ComponentHeight" " "
+			(at 237.998 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Example" "NIC COMPONENT"
+			(at 239.903 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Part Number" "NRC06F1002TRF"
+			(at 241.808 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 ComponentHeight" "0.55mm"
+			(at 243.713 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+			(at 245.618 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 247.523 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/03/07 00:00:00"
+			(at 249.428 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "03/13/08 00:00:00"
+			(at 251.333 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Resistors"
+			(at 253.238 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Resistors SMD"
+			(at 255.143 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "Resistors SMD"
+			(at 257.048 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 258.953 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(property "Color_1" ""
-			(at 154.94 124.46 0)
+			(at 177.8 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42795,7 +43857,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 154.94 124.46 0)
+			(at 177.8 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42804,7 +43866,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 154.94 124.46 0)
+			(at 177.8 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42813,7 +43875,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 154.94 124.46 0)
+			(at 177.8 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42822,7 +43884,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 154.94 124.46 0)
+			(at 177.8 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44039,7 +45101,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 139.7 125.73 0)
+		(at 162.56 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -44048,7 +45110,7 @@
 		(fields_autoplaced yes)
 		(uuid "92c78e3e-6c91-4337-8d31-e70da57a7cbc")
 		(property "Reference" "#PWR0198"
-			(at 139.7 132.08 0)
+			(at 162.56 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44057,7 +45119,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 139.7 130.81 0)
+			(at 162.56 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44065,7 +45127,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 139.7 125.73 0)
+			(at 162.56 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44074,7 +45136,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 125.73 0)
+			(at 162.56 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44083,7 +45145,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 139.7 125.73 0)
+			(at 162.56 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44105,7 +45167,7 @@
 	)
 	(symbol
 		(lib_id "Capacitors SMD:CC0603_100NF_50V_10%_X7R")
-		(at 215.9 134.62 90)
+		(at 238.76 134.62 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -44114,7 +45176,7 @@
 		(dnp no)
 		(uuid "97adbd9a-f236-41cb-9d9a-9bc1cd978079")
 		(property "Reference" "C43"
-			(at 219.71 135.89 90)
+			(at 242.57 135.89 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44123,144 +45185,6 @@
 			)
 		)
 		(property "Value" "CC0603_100NF_50V_10%_X7R"
-			(at 222.123 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Capacitors SMD:CAPC1608X87N"
-			(at 224.028 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
-			(at 225.933 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 215.9 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Val" "100nF"
-			(at 222.25 140.97 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Part Number" "CC0603_100NF_50V_10%_X7R"
-			(at 227.838 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "Capacitor - non polarized"
-			(at 229.743 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Capacitors.SchLib"
-			(at 231.648 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "100nF"
-			(at 233.553 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 235.458 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 237.363 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "2"
-			(at 239.268 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
-			(at 241.173 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "CAPC1608X87N"
-			(at 243.078 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" " "
 			(at 244.983 134.62 0)
 			(effects
 				(font
@@ -44270,7 +45194,7 @@
 				(hide yes)
 			)
 		)
-		(property "Status" "Preferred"
+		(property "Footprint" "Capacitors SMD:CAPC1608X87N"
 			(at 246.888 134.62 0)
 			(effects
 				(font
@@ -44280,7 +45204,7 @@
 				(hide yes)
 			)
 		)
-		(property "Status Comment" " "
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
 			(at 248.793 134.62 0)
 			(effects
 				(font
@@ -44290,7 +45214,25 @@
 				(hide yes)
 			)
 		)
-		(property "Voltage" "50V"
+		(property "Description" ""
+			(at 238.76 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Val" "100nF"
+			(at 245.11 140.97 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Part Number" "CC0603_100NF_50V_10%_X7R"
 			(at 250.698 134.62 0)
 			(effects
 				(font
@@ -44300,7 +45242,7 @@
 				(hide yes)
 			)
 		)
-		(property "TC" "X7R"
+		(property "Library Ref" "Capacitor - non polarized"
 			(at 252.603 134.62 0)
 			(effects
 				(font
@@ -44310,7 +45252,7 @@
 				(hide yes)
 			)
 		)
-		(property "Tolerance" "±10%"
+		(property "Library Path" "SchLib\\Capacitors.SchLib"
 			(at 254.508 134.62 0)
 			(effects
 				(font
@@ -44320,7 +45262,7 @@
 				(hide yes)
 			)
 		)
-		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
+		(property "Comment" "100nF"
 			(at 256.413 134.62 0)
 			(effects
 				(font
@@ -44330,7 +45272,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "GENERIC"
+		(property "Component Kind" "Standard"
 			(at 258.318 134.62 0)
 			(effects
 				(font
@@ -44340,7 +45282,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "CC0603_100NF_50V_10%_X7R"
+		(property "Component Type" "Standard"
 			(at 260.223 134.62 0)
 			(effects
 				(font
@@ -44350,7 +45292,7 @@
 				(hide yes)
 			)
 		)
-		(property "Case" "0603"
+		(property "Pin Count" "2"
 			(at 262.128 134.62 0)
 			(effects
 				(font
@@ -44360,7 +45302,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mounted" "Yes"
+		(property "Footprint Path" "PcbLib\\Capacitors SMD.PcbLib"
 			(at 264.033 134.62 0)
 			(effects
 				(font
@@ -44370,7 +45312,7 @@
 				(hide yes)
 			)
 		)
-		(property "Socket" "No"
+		(property "Footprint Ref" "CAPC1608X87N"
 			(at 265.938 134.62 0)
 			(effects
 				(font
@@ -44380,7 +45322,7 @@
 				(hide yes)
 			)
 		)
-		(property "SMD" "Yes"
+		(property "PackageDescription" " "
 			(at 267.843 134.62 0)
 			(effects
 				(font
@@ -44390,7 +45332,7 @@
 				(hide yes)
 			)
 		)
-		(property "PressFit" " "
+		(property "Status" "Preferred"
 			(at 269.748 134.62 0)
 			(effects
 				(font
@@ -44400,7 +45342,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sense" "No"
+		(property "Status Comment" " "
 			(at 271.653 134.62 0)
 			(effects
 				(font
@@ -44410,7 +45352,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sense Comment" " "
+		(property "Voltage" "50V"
 			(at 273.558 134.62 0)
 			(effects
 				(font
@@ -44420,7 +45362,7 @@
 				(hide yes)
 			)
 		)
-		(property "ComponentHeight" " "
+		(property "TC" "X7R"
 			(at 275.463 134.62 0)
 			(effects
 				(font
@@ -44430,7 +45372,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Example" "PHYCOMP"
+		(property "Tolerance" "±10%"
 			(at 277.368 134.62 0)
 			(effects
 				(font
@@ -44440,7 +45382,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Part Number" "223858615649"
+		(property "Part Description" "SMD Multilayer Chip Ceramic Capacitor"
 			(at 279.273 134.62 0)
 			(effects
 				(font
@@ -44450,7 +45392,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 ComponentHeight" "0.87mm"
+		(property "Manufacturer" "GENERIC"
 			(at 281.178 134.62 0)
 			(effects
 				(font
@@ -44460,7 +45402,7 @@
 				(hide yes)
 			)
 		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
+		(property "Manufacturer Part Number" "CC0603_100NF_50V_10%_X7R"
 			(at 283.083 134.62 0)
 			(effects
 				(font
@@ -44470,7 +45412,7 @@
 				(hide yes)
 			)
 		)
-		(property "Author" "CERN DEM JLC"
+		(property "Case" "0603"
 			(at 284.988 134.62 0)
 			(effects
 				(font
@@ -44480,7 +45422,7 @@
 				(hide yes)
 			)
 		)
-		(property "CreateDate" "12/03/07 00:00:00"
+		(property "Mounted" "Yes"
 			(at 286.893 134.62 0)
 			(effects
 				(font
@@ -44490,7 +45432,7 @@
 				(hide yes)
 			)
 		)
-		(property "LatestRevisionDate" "12/03/07 00:00:00"
+		(property "Socket" "No"
 			(at 288.798 134.62 0)
 			(effects
 				(font
@@ -44500,7 +45442,7 @@
 				(hide yes)
 			)
 		)
-		(property "Database Table Name" "Capacitors"
+		(property "SMD" "Yes"
 			(at 290.703 134.62 0)
 			(effects
 				(font
@@ -44510,7 +45452,7 @@
 				(hide yes)
 			)
 		)
-		(property "Library Name" "Capacitors SMD"
+		(property "PressFit" " "
 			(at 292.608 134.62 0)
 			(effects
 				(font
@@ -44520,7 +45462,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint Library" "Capacitors SMD"
+		(property "Sense" "No"
 			(at 294.513 134.62 0)
 			(effects
 				(font
@@ -44530,7 +45472,7 @@
 				(hide yes)
 			)
 		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+		(property "Sense Comment" " "
 			(at 296.418 134.62 0)
 			(effects
 				(font
@@ -44540,8 +45482,128 @@
 				(hide yes)
 			)
 		)
+		(property "ComponentHeight" " "
+			(at 298.323 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Example" "PHYCOMP"
+			(at 300.228 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Part Number" "223858615649"
+			(at 302.133 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 ComponentHeight" "0.87mm"
+			(at 304.038 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\CC0603_X7R_PHYCOMP.pdf"
+			(at 305.943 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 307.848 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/03/07 00:00:00"
+			(at 309.753 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "12/03/07 00:00:00"
+			(at 311.658 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Capacitors"
+			(at 313.563 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Capacitors SMD"
+			(at 315.468 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "Capacitors SMD"
+			(at 317.373 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 319.278 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(property "Color_1" ""
-			(at 215.9 134.62 0)
+			(at 238.76 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44550,7 +45612,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 215.9 134.62 0)
+			(at 238.76 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44559,7 +45621,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 215.9 134.62 0)
+			(at 238.76 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44568,7 +45630,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 215.9 134.62 0)
+			(at 238.76 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44577,7 +45639,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 215.9 134.62 0)
+			(at 238.76 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50881,7 +51943,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 218.44 81.28 0)
+		(at 218.44 87.63 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -50889,7 +51951,7 @@
 		(dnp no)
 		(uuid "bc106b37-4c22-4559-a924-0e85c6fba9e8")
 		(property "Reference" "#PWR054"
-			(at 218.44 87.63 0)
+			(at 218.44 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50898,7 +51960,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 218.44 86.36 0)
+			(at 218.44 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50906,7 +51968,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 218.44 81.28 0)
+			(at 218.44 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50915,7 +51977,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 218.44 81.28 0)
+			(at 218.44 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50924,7 +51986,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 218.44 81.28 0)
+			(at 218.44 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54188,7 +55250,7 @@
 	)
 	(symbol
 		(lib_id "symbol_lib:+3V3D")
-		(at 215.9 130.81 0)
+		(at 238.76 130.81 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -54197,7 +55259,7 @@
 		(fields_autoplaced yes)
 		(uuid "db078df4-cf87-42fd-9b46-2858ab0dfb4a")
 		(property "Reference" "#PWR0202"
-			(at 215.9 134.62 0)
+			(at 238.76 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54206,7 +55268,7 @@
 			)
 		)
 		(property "Value" "+3V3D"
-			(at 215.9 125.73 0)
+			(at 238.76 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54214,7 +55276,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 215.9 130.81 0)
+			(at 238.76 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54223,7 +55285,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 215.9 130.81 0)
+			(at 238.76 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54232,7 +55294,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 215.9 130.81 0)
+			(at 238.76 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56347,7 +57409,7 @@
 	)
 	(symbol
 		(lib_id "Switches:PB_C&K_KSC321JLFS")
-		(at 218.44 63.5 270)
+		(at 218.44 62.23 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -56355,7 +57417,7 @@
 		(dnp no)
 		(uuid "ed2dbd14-2b77-43e8-acc6-01653010c905")
 		(property "Reference" "PB5"
-			(at 223.52 71.5293 90)
+			(at 223.52 70.2593 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56364,7 +57426,7 @@
 			)
 		)
 		(property "Value" "PB_C&K_KSC321JLFS"
-			(at 214.503 63.5 0)
+			(at 214.503 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56374,7 +57436,7 @@
 			)
 		)
 		(property "Footprint" "Switches:PB_C&K_KSC321J"
-			(at 212.598 63.5 0)
+			(at 212.598 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56384,7 +57446,7 @@
 			)
 		)
 		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PB_C&K_KSC321JLFS.pdf"
-			(at 210.693 63.5 0)
+			(at 210.693 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56394,7 +57456,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 218.44 63.5 0)
+			(at 218.44 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56403,7 +57465,7 @@
 			)
 		)
 		(property "Family" "Push Button"
-			(at 187.833 63.5 0)
+			(at 187.833 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56413,7 +57475,7 @@
 			)
 		)
 		(property "Part Number" "PB_C&K_KSC321JLFS"
-			(at 208.788 63.5 0)
+			(at 208.788 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56423,7 +57485,7 @@
 			)
 		)
 		(property "Library Ref" "PB SPST 12NO-34NO"
-			(at 206.883 63.5 0)
+			(at 206.883 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56433,7 +57495,7 @@
 			)
 		)
 		(property "Library Path" "SchLib\\Switches.SchLib"
-			(at 204.978 63.5 0)
+			(at 204.978 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56443,7 +57505,7 @@
 			)
 		)
 		(property "Comment" " "
-			(at 203.073 63.5 0)
+			(at 203.073 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56453,7 +57515,7 @@
 			)
 		)
 		(property "Component Kind" "Standard"
-			(at 201.168 63.5 0)
+			(at 201.168 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56463,7 +57525,7 @@
 			)
 		)
 		(property "Component Type" "Standard"
-			(at 199.263 63.5 0)
+			(at 199.263 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56473,7 +57535,7 @@
 			)
 		)
 		(property "Pin Count" "4"
-			(at 197.358 63.5 0)
+			(at 197.358 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56483,7 +57545,7 @@
 			)
 		)
 		(property "Case" " "
-			(at 195.453 63.5 0)
+			(at 195.453 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56493,7 +57555,7 @@
 			)
 		)
 		(property "Footprint Path" "PcbLib\\Switches.PcbLib"
-			(at 193.548 63.5 0)
+			(at 193.548 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56503,7 +57565,7 @@
 			)
 		)
 		(property "Footprint Ref" "PB_C&K_KSC321J"
-			(at 191.643 63.5 0)
+			(at 191.643 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56513,7 +57575,7 @@
 			)
 		)
 		(property "PackageDescription" "Body 6.2x6.2mm, Surface Mount Sealed Tact Momentary Pushbutton Switch, C&K KSC3 Series"
-			(at 189.738 63.5 0)
+			(at 189.738 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56523,7 +57585,7 @@
 			)
 		)
 		(property "Mounted" "Yes"
-			(at 185.928 63.5 0)
+			(at 185.928 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56533,7 +57595,7 @@
 			)
 		)
 		(property "Socket" "No"
-			(at 184.023 63.5 0)
+			(at 184.023 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56543,7 +57605,7 @@
 			)
 		)
 		(property "SMD" "Yes"
-			(at 182.118 63.5 0)
+			(at 182.118 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56553,7 +57615,7 @@
 			)
 		)
 		(property "PressFit" "No"
-			(at 180.213 63.5 0)
+			(at 180.213 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56563,7 +57625,7 @@
 			)
 		)
 		(property "Sense" "No"
-			(at 178.308 63.5 0)
+			(at 178.308 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56573,7 +57635,7 @@
 			)
 		)
 		(property "Sense Comment" " "
-			(at 176.403 63.5 0)
+			(at 176.403 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56583,7 +57645,7 @@
 			)
 		)
 		(property "Status" "None"
-			(at 174.498 63.5 0)
+			(at 174.498 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56593,7 +57655,7 @@
 			)
 		)
 		(property "Status Comment" " "
-			(at 172.593 63.5 0)
+			(at 172.593 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56603,7 +57665,7 @@
 			)
 		)
 		(property "SCEM" " "
-			(at 170.688 63.5 0)
+			(at 170.688 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56613,7 +57675,7 @@
 			)
 		)
 		(property "Part Description" "32VDC 50mA SPST-NO Surface Mount Sealed Tact Momentary Pushbutton Switch, 2 Newtons Force"
-			(at 168.783 63.5 0)
+			(at 168.783 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56623,7 +57685,7 @@
 			)
 		)
 		(property "Manufacturer" "C&K"
-			(at 166.878 63.5 0)
+			(at 166.878 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56633,7 +57695,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "KSC321JLFS"
-			(at 164.973 63.5 0)
+			(at 164.973 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56643,7 +57705,7 @@
 			)
 		)
 		(property "ComponentHeight" "3.47mm"
-			(at 163.068 63.5 0)
+			(at 163.068 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56653,7 +57715,7 @@
 			)
 		)
 		(property "Manufacturer1 Example" " "
-			(at 161.163 63.5 0)
+			(at 161.163 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56663,7 +57725,7 @@
 			)
 		)
 		(property "Manufacturer1 Part Number" " "
-			(at 159.258 63.5 0)
+			(at 159.258 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56673,7 +57735,7 @@
 			)
 		)
 		(property "Manufacturer1 ComponentHeight" " "
-			(at 157.353 63.5 0)
+			(at 157.353 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56683,7 +57745,7 @@
 			)
 		)
 		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\PB_C&K_KSC321JLFS.pdf"
-			(at 155.448 63.5 0)
+			(at 155.448 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56693,7 +57755,7 @@
 			)
 		)
 		(property "ComponentLink1URL" " "
-			(at 153.543 63.5 0)
+			(at 153.543 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56703,7 +57765,7 @@
 			)
 		)
 		(property "ComponentLink1Description" " "
-			(at 151.638 63.5 0)
+			(at 151.638 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56713,7 +57775,7 @@
 			)
 		)
 		(property "ComponentLink2URL" " "
-			(at 149.733 63.5 0)
+			(at 149.733 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56723,7 +57785,7 @@
 			)
 		)
 		(property "ComponentLink2Description" " "
-			(at 147.828 63.5 0)
+			(at 147.828 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56733,7 +57795,7 @@
 			)
 		)
 		(property "Author" "CERN DEM MR"
-			(at 145.923 63.5 0)
+			(at 145.923 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56743,7 +57805,7 @@
 			)
 		)
 		(property "CreateDate" "07/05/19 00:00:00"
-			(at 144.018 63.5 0)
+			(at 144.018 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56753,7 +57815,7 @@
 			)
 		)
 		(property "LatestRevisionDate" "07/05/19 00:00:00"
-			(at 142.113 63.5 0)
+			(at 142.113 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56763,7 +57825,7 @@
 			)
 		)
 		(property "Database Table Name" "Eletro-mechanical"
-			(at 140.208 63.5 0)
+			(at 140.208 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56773,7 +57835,7 @@
 			)
 		)
 		(property "Library Name" "Switches"
-			(at 138.303 63.5 0)
+			(at 138.303 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56783,7 +57845,7 @@
 			)
 		)
 		(property "Footprint Library" "Switches"
-			(at 136.398 63.5 0)
+			(at 136.398 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56793,7 +57855,7 @@
 			)
 		)
 		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
-			(at 134.493 63.5 0)
+			(at 134.493 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56803,7 +57865,7 @@
 			)
 		)
 		(property "Color_1" ""
-			(at 218.44 63.5 0)
+			(at 218.44 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56812,7 +57874,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 218.44 63.5 0)
+			(at 218.44 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56821,7 +57883,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 218.44 63.5 0)
+			(at 218.44 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56830,7 +57892,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 218.44 63.5 0)
+			(at 218.44 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56839,7 +57901,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 218.44 63.5 0)
+			(at 218.44 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56937,7 +57999,7 @@
 	(symbol
 		(lib_name "R0603_10K_1%_0.1W_100PPM_2")
 		(lib_id "Resistors SMD:R0603_10K_1%_0.1W_100PPM")
-		(at 148.59 124.46 90)
+		(at 171.45 124.46 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -56945,7 +58007,7 @@
 		(dnp no)
 		(uuid "ef077a0c-0a69-458d-94a0-9f9856213d0a")
 		(property "Reference" "R37"
-			(at 149.86 119.38 90)
+			(at 172.72 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56954,154 +58016,6 @@
 			)
 		)
 		(property "Value" "R0603_10K_1%_0.1W_100PPM"
-			(at 153.543 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistors SMD:RESC1608X55N"
-			(at 155.448 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
-			(at 157.353 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 148.59 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "±1%"
-			(at 185.928 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Val" "10k"
-			(at 149.86 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Part Number" "R0603_10K_1%_0.1W_100PPM"
-			(at 159.258 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "Resistor - 1%"
-			(at 161.163 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Resistors.SchLib"
-			(at 163.068 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "10k"
-			(at 164.973 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 166.878 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 168.783 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" " "
-			(at 170.688 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "2"
-			(at 172.593 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
-			(at 174.498 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "RESC1608X55N"
 			(at 176.403 124.46 0)
 			(effects
 				(font
@@ -57111,7 +58025,7 @@
 				(hide yes)
 			)
 		)
-		(property "Status" "Preferred"
+		(property "Footprint" "Resistors SMD:RESC1608X55N"
 			(at 178.308 124.46 0)
 			(effects
 				(font
@@ -57121,7 +58035,7 @@
 				(hide yes)
 			)
 		)
-		(property "Power" "0.1W"
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
 			(at 180.213 124.46 0)
 			(effects
 				(font
@@ -57131,137 +58045,16 @@
 				(hide yes)
 			)
 		)
-		(property "TC" "±100ppm/°C"
-			(at 182.118 124.46 0)
+		(property "Description" ""
+			(at 171.45 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Voltage" " "
-			(at 184.023 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "General Purpose Thick Film Chip Resistor"
-			(at 187.833 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "GENERIC"
-			(at 189.738 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "R0603_10K_1%_0.1W_100PPM"
-			(at 191.643 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "0603"
-			(at 193.548 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 195.453 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 197.358 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 199.263 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 201.168 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 203.073 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 204.978 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 206.883 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" " "
+		(property "Tolerance" "±1%"
 			(at 208.788 124.46 0)
 			(effects
 				(font
@@ -57271,7 +58064,156 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Example" "NIC COMPONENT"
+		(property "Val" "10k"
+			(at 172.72 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Part Number" "R0603_10K_1%_0.1W_100PPM"
+			(at 182.118 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Resistor - 1%"
+			(at 184.023 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Resistors.SchLib"
+			(at 185.928 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "10k"
+			(at 187.833 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 189.738 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 191.643 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" " "
+			(at 193.548 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "2"
+			(at 195.453 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
+			(at 197.358 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "RESC1608X55N"
+			(at 199.263 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "Preferred"
+			(at 201.168 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "0.1W"
+			(at 203.073 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "TC" "±100ppm/°C"
+			(at 204.978 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" " "
+			(at 206.883 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "General Purpose Thick Film Chip Resistor"
 			(at 210.693 124.46 0)
 			(effects
 				(font
@@ -57281,7 +58223,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Part Number" "NRC06F1002TRF"
+		(property "Manufacturer" "GENERIC"
 			(at 212.598 124.46 0)
 			(effects
 				(font
@@ -57291,7 +58233,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 ComponentHeight" "0.55mm"
+		(property "Manufacturer Part Number" "R0603_10K_1%_0.1W_100PPM"
 			(at 214.503 124.46 0)
 			(effects
 				(font
@@ -57301,7 +58243,7 @@
 				(hide yes)
 			)
 		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+		(property "Case" "0603"
 			(at 216.408 124.46 0)
 			(effects
 				(font
@@ -57311,7 +58253,7 @@
 				(hide yes)
 			)
 		)
-		(property "Author" "CERN DEM JLC"
+		(property "PressFit" "No"
 			(at 218.313 124.46 0)
 			(effects
 				(font
@@ -57321,7 +58263,7 @@
 				(hide yes)
 			)
 		)
-		(property "CreateDate" "12/03/07 00:00:00"
+		(property "Mounted" "Yes"
 			(at 220.218 124.46 0)
 			(effects
 				(font
@@ -57331,7 +58273,7 @@
 				(hide yes)
 			)
 		)
-		(property "LatestRevisionDate" "03/13/08 00:00:00"
+		(property "Sense Comment" " "
 			(at 222.123 124.46 0)
 			(effects
 				(font
@@ -57341,7 +58283,7 @@
 				(hide yes)
 			)
 		)
-		(property "Database Table Name" "Resistors"
+		(property "Sense" "No"
 			(at 224.028 124.46 0)
 			(effects
 				(font
@@ -57351,7 +58293,7 @@
 				(hide yes)
 			)
 		)
-		(property "Library Name" "Resistors SMD"
+		(property "Status Comment" " "
 			(at 225.933 124.46 0)
 			(effects
 				(font
@@ -57361,7 +58303,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint Library" "Resistors SMD"
+		(property "Socket" "No"
 			(at 227.838 124.46 0)
 			(effects
 				(font
@@ -57371,7 +58313,7 @@
 				(hide yes)
 			)
 		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+		(property "SMD" "Yes"
 			(at 229.743 124.46 0)
 			(effects
 				(font
@@ -57381,8 +58323,128 @@
 				(hide yes)
 			)
 		)
+		(property "ComponentHeight" " "
+			(at 231.648 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Example" "NIC COMPONENT"
+			(at 233.553 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Part Number" "NRC06F1002TRF"
+			(at 235.458 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 ComponentHeight" "0.55mm"
+			(at 237.363 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+			(at 239.268 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 241.173 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/03/07 00:00:00"
+			(at 243.078 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "03/13/08 00:00:00"
+			(at 244.983 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Resistors"
+			(at 246.888 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Resistors SMD"
+			(at 248.793 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "Resistors SMD"
+			(at 250.698 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 252.603 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(property "Color_1" ""
-			(at 148.59 124.46 0)
+			(at 171.45 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57391,7 +58453,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 148.59 124.46 0)
+			(at 171.45 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57400,7 +58462,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 148.59 124.46 0)
+			(at 171.45 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57409,7 +58471,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 148.59 124.46 0)
+			(at 171.45 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57418,7 +58480,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 148.59 124.46 0)
+			(at 171.45 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58515,7 +59577,7 @@
 	(symbol
 		(lib_name "R0603_10K_1%_0.1W_100PPM_3")
 		(lib_id "Resistors SMD:R0603_10K_1%_0.1W_100PPM")
-		(at 161.29 124.46 90)
+		(at 184.15 124.46 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -58523,7 +59585,7 @@
 		(dnp no)
 		(uuid "f708f1c3-dd6c-4219-b1d1-82ec71268bee")
 		(property "Reference" "R39"
-			(at 162.56 119.38 90)
+			(at 185.42 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58532,154 +59594,6 @@
 			)
 		)
 		(property "Value" "R0603_10K_1%_0.1W_100PPM"
-			(at 166.243 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Resistors SMD:RESC1608X55N"
-			(at 168.148 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
-			(at 170.053 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 161.29 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Tolerance" "±1%"
-			(at 198.628 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Val" "10k"
-			(at 162.56 121.92 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Part Number" "R0603_10K_1%_0.1W_100PPM"
-			(at 171.958 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Ref" "Resistor - 1%"
-			(at 173.863 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Library Path" "SchLib\\Resistors.SchLib"
-			(at 175.768 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Comment" "10k"
-			(at 177.673 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Kind" "Standard"
-			(at 179.578 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Component Type" "Standard"
-			(at 181.483 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PackageDescription" " "
-			(at 183.388 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Pin Count" "2"
-			(at 185.293 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
-			(at 187.198 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint Ref" "RESC1608X55N"
 			(at 189.103 124.46 0)
 			(effects
 				(font
@@ -58689,7 +59603,7 @@
 				(hide yes)
 			)
 		)
-		(property "Status" "Preferred"
+		(property "Footprint" "Resistors SMD:RESC1608X55N"
 			(at 191.008 124.46 0)
 			(effects
 				(font
@@ -58699,7 +59613,7 @@
 				(hide yes)
 			)
 		)
-		(property "Power" "0.1W"
+		(property "Datasheet" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
 			(at 192.913 124.46 0)
 			(effects
 				(font
@@ -58709,137 +59623,16 @@
 				(hide yes)
 			)
 		)
-		(property "TC" "±100ppm/°C"
-			(at 194.818 124.46 0)
+		(property "Description" ""
+			(at 184.15 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
-		(property "Voltage" " "
-			(at 196.723 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Part Description" "General Purpose Thick Film Chip Resistor"
-			(at 200.533 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" "GENERIC"
-			(at 202.438 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "R0603_10K_1%_0.1W_100PPM"
-			(at 204.343 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Case" "0603"
-			(at 206.248 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "PressFit" "No"
-			(at 208.153 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mounted" "Yes"
-			(at 210.058 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense Comment" " "
-			(at 211.963 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Sense" "No"
-			(at 213.868 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Status Comment" " "
-			(at 215.773 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Socket" "No"
-			(at 217.678 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "SMD" "Yes"
-			(at 219.583 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "ComponentHeight" " "
+		(property "Tolerance" "±1%"
 			(at 221.488 124.46 0)
 			(effects
 				(font
@@ -58849,7 +59642,156 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Example" "NIC COMPONENT"
+		(property "Val" "10k"
+			(at 185.42 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Part Number" "R0603_10K_1%_0.1W_100PPM"
+			(at 194.818 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Ref" "Resistor - 1%"
+			(at 196.723 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Path" "SchLib\\Resistors.SchLib"
+			(at 198.628 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Comment" "10k"
+			(at 200.533 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Kind" "Standard"
+			(at 202.438 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Component Type" "Standard"
+			(at 204.343 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "PackageDescription" " "
+			(at 206.248 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Pin Count" "2"
+			(at 208.153 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Path" "PcbLib\\Resistors SMD.PcbLib"
+			(at 210.058 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Ref" "RESC1608X55N"
+			(at 211.963 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Status" "Preferred"
+			(at 213.868 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Power" "0.1W"
+			(at 215.773 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "TC" "±100ppm/°C"
+			(at 217.678 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Voltage" " "
+			(at 219.583 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Part Description" "General Purpose Thick Film Chip Resistor"
 			(at 223.393 124.46 0)
 			(effects
 				(font
@@ -58859,7 +59801,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 Part Number" "NRC06F1002TRF"
+		(property "Manufacturer" "GENERIC"
 			(at 225.298 124.46 0)
 			(effects
 				(font
@@ -58869,7 +59811,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer1 ComponentHeight" "0.55mm"
+		(property "Manufacturer Part Number" "R0603_10K_1%_0.1W_100PPM"
 			(at 227.203 124.46 0)
 			(effects
 				(font
@@ -58879,7 +59821,7 @@
 				(hide yes)
 			)
 		)
-		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+		(property "Case" "0603"
 			(at 229.108 124.46 0)
 			(effects
 				(font
@@ -58889,7 +59831,7 @@
 				(hide yes)
 			)
 		)
-		(property "Author" "CERN DEM JLC"
+		(property "PressFit" "No"
 			(at 231.013 124.46 0)
 			(effects
 				(font
@@ -58899,7 +59841,7 @@
 				(hide yes)
 			)
 		)
-		(property "CreateDate" "12/03/07 00:00:00"
+		(property "Mounted" "Yes"
 			(at 232.918 124.46 0)
 			(effects
 				(font
@@ -58909,7 +59851,7 @@
 				(hide yes)
 			)
 		)
-		(property "LatestRevisionDate" "03/13/08 00:00:00"
+		(property "Sense Comment" " "
 			(at 234.823 124.46 0)
 			(effects
 				(font
@@ -58919,7 +59861,7 @@
 				(hide yes)
 			)
 		)
-		(property "Database Table Name" "Resistors"
+		(property "Sense" "No"
 			(at 236.728 124.46 0)
 			(effects
 				(font
@@ -58929,7 +59871,7 @@
 				(hide yes)
 			)
 		)
-		(property "Library Name" "Resistors SMD"
+		(property "Status Comment" " "
 			(at 238.633 124.46 0)
 			(effects
 				(font
@@ -58939,7 +59881,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint Library" "Resistors SMD"
+		(property "Socket" "No"
 			(at 240.538 124.46 0)
 			(effects
 				(font
@@ -58949,7 +59891,7 @@
 				(hide yes)
 			)
 		)
-		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+		(property "SMD" "Yes"
 			(at 242.443 124.46 0)
 			(effects
 				(font
@@ -58959,8 +59901,128 @@
 				(hide yes)
 			)
 		)
+		(property "ComponentHeight" " "
+			(at 244.348 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Example" "NIC COMPONENT"
+			(at 246.253 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 Part Number" "NRC06F1002TRF"
+			(at 248.158 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer1 ComponentHeight" "0.55mm"
+			(at 250.063 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "HelpURL" "\\\\cern.ch\\dfs\\Applications\\Altium\\Datasheets\\R0603_NIC_NRC.pdf"
+			(at 251.968 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Author" "CERN DEM JLC"
+			(at 253.873 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "CreateDate" "12/03/07 00:00:00"
+			(at 255.778 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "LatestRevisionDate" "03/13/08 00:00:00"
+			(at 257.683 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Database Table Name" "Resistors"
+			(at 259.588 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Library Name" "Resistors SMD"
+			(at 261.493 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint Library" "Resistors SMD"
+			(at 263.398 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "License" "This work is licensed under the Creative Commons CC-BY-SA 4.0 License. To the extent that circuit schematics that use Licensed Material can be considered to be ‘Adapted Material’, then the copyright holder waives article 3.b of the license with respect to these schematics."
+			(at 265.303 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 		(property "Color_1" ""
-			(at 161.29 124.46 0)
+			(at 184.15 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58969,7 +60031,7 @@
 			)
 		)
 		(property "Comment_1" ""
-			(at 161.29 124.46 0)
+			(at 184.15 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58978,7 +60040,7 @@
 			)
 		)
 		(property "Family_1" ""
-			(at 161.29 124.46 0)
+			(at 184.15 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58987,7 +60049,7 @@
 			)
 		)
 		(property "Footprint_1" ""
-			(at 161.29 124.46 0)
+			(at 184.15 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58996,7 +60058,7 @@
 			)
 		)
 		(property "Tolerance_1" ""
-			(at 161.29 124.46 0)
+			(at 184.15 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -60182,7 +61244,7 @@
 	)
 	(symbol
 		(lib_id "symbol_lib:+3V3D")
-		(at 139.7 106.68 0)
+		(at 162.56 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -60190,7 +61252,7 @@
 		(dnp no)
 		(uuid "fb4bf746-2584-4628-bb62-655726c7d41c")
 		(property "Reference" "#PWR0197"
-			(at 139.7 110.49 0)
+			(at 162.56 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -60199,7 +61261,7 @@
 			)
 		)
 		(property "Value" "+3V3D"
-			(at 139.7 102.87 0)
+			(at 162.56 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -60207,7 +61269,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 139.7 106.68 0)
+			(at 162.56 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -60216,7 +61278,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 139.7 106.68 0)
+			(at 162.56 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -60225,7 +61287,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 139.7 106.68 0)
+			(at 162.56 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
