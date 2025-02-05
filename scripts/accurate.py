@@ -1,8 +1,14 @@
-# Script that receive from serial port the voltageChangeIntervalxDO value
-# from the FPGA and calculate the correspective current.
-# The communication format is the following:
-# 1B of header (0xDD) + 6B of data (coming from LSB to MSB)
-# Of the 48 bits of data, the first 39 are used. The rest is just zero padding.
+# Script that interface with ACCURATE2 evaluation board's FPGA.
+# The communication format is the following (total 31B):
+# - 1B of header (0xDD) 
+# - 6B: chargeRaw
+# - 4B: cp1Count
+# - 4B: cp2Count
+# - 4B: cp3Count
+# - 4B: cp1StartIntervalRaw
+# - 4B: cp1EndIntervalRaw
+# - 2B: temperatureRaw
+# - 2B: humidityRaw
 
 import typer
 import serial
@@ -136,7 +142,6 @@ def get_current(
     timestamps = []
     instantaneous_currents = []
     average_currents = []
-    previous_current = 0
     # Initialize the console
     console = Console()
     # Initialize and write header to file
@@ -154,29 +159,37 @@ def get_current(
                 while True:
                     # Check header
                     header = ser.read()
-                    if header[0] != 0xDD:
+                    if header[0] != 0xDD: # TODO: check if [0] is needed
                         continue
 
                     # Read data
-                    ser_data = ser.read(6)
-                    ser_data_temp = ser.read(2)
-                    ser_data_hum = ser.read(2)
+                    chargeRaw = ser.read(6)
+                    cp1CountRaw = ser.read(4)
+                    cp2CountRaw = ser.read(4)
+                    cp3CountRaw = ser.read(4)
+                    cp1StartIntervalRaw = ser.read(4)
+                    cp1EndIntervalRaw = ser.read(4)
+                    tempRaw = ser.read(2)
+                    humRaw = ser.read(2)
                     # Extract data
-                    data = int.from_bytes(ser_data, byteorder='little')
-                    raw_temperature = int.from_bytes(ser_data_temp, byteorder='little')
-                    raw_humidity = int.from_bytes(ser_data_hum, byteorder='little')
+                    chargeLsb = int.from_bytes(chargeRaw, byteorder='little')
+                    cp1Count = int.from_bytes(cp1CountRaw, byteorder='little')
+                    cp2Count = int.from_bytes(cp2CountRaw, byteorder='little')
+                    cp3Count = int.from_bytes(cp3CountRaw, byteorder='little')
+                    cp1StartInterval = int.from_bytes(cp1StartIntervalRaw, byteorder='little')
+                    cp1EndInterval = int.from_bytes(cp1EndIntervalRaw, byteorder='little')
+                    tempSht41 = int.from_bytes(tempRaw, byteorder='little')
+                    humSht41 = int.from_bytes(humRaw, byteorder='little')
 
-                    # Save the previous current measurement
-                    previous_current =  femto_current
 
                     # Instantaneous current
-                    charge = data * lsb
-                    atto_current = charge / (period * 1e-3)
-                    femto_current = atto_current * 1e-3
-                    # Temperature
-                    temperature = -45 + 175 * raw_temperature / 65535.0
-                    # Humidity
-                    humidity = -6 + 125 * raw_humidity / 65535.0
+                    charge = chargeLsb * lsb
+                    attoCurrent = charge / (period * 1e-3)
+                    femtoCurrent = attoCurrent * 1e-3
+                    # Temperature (formula from the SHT41 datasheet)
+                    temperature = -45 + 175 * tempSht41 / 65535.0
+                    # Humidity (formula from the SHT41 datasheet)
+                    humidity = -6 + 125 * humSht41 / 65535.0
                     # Crop humidity values to the range of 0% to 100%
                     if (humidity > 100): humidity = 100
                     if (humidity < 0): humidity = 0
@@ -185,7 +198,7 @@ def get_current(
                     # reset the average current as it is likely a new measurement.
                     # TODO: implement this logic
                     
-                    femto_current_avg += femto_current
+                    femto_current_avg += femtoCurrent
                     count += 1
                     # Format current
                     scale_factor, unit = format_current(femto_current)
