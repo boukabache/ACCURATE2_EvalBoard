@@ -23,10 +23,18 @@ from rich.live import Live
 from rich.text import Text
 
 # For plotting
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 # For Keithley control
 import pyvisa
+
+# For data manipulation
+import numpy as np
+
+# Exiting the script by closing the plot window
+import sys
 
 
 app = typer.Typer(
@@ -136,8 +144,8 @@ def get_current(
     '''
 
     # Initialize variables
-    femto_current_avg = 0
-    femto_current = 0
+    femtoCurrentSum = 0
+    femtoCurrent = 0
     count = 0
     timestamps = []
     instantaneous_currents = []
@@ -153,13 +161,18 @@ def get_current(
             f.write("\nStart time: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n")
             f.write("-----------------------------")
 
+    if plot:
+        plt.ion()  # Turn on interactive mode
+        fig = plt.figure()
+        fig.canvas.mpl_connect('close_event', onClose)
+
     with serial.Serial(port, baudrate, timeout=1) as ser:
         try:
             with Live(console=console, refresh_per_second=4) as live:
                 while True:
                     # Check header
                     header = ser.read()
-                    if header[0] != 0xDD: # TODO: check if [0] is needed
+                    if header[0] != 0xDD: # [0] is needed to access the byte value
                         continue
 
                     # Read data
@@ -198,30 +211,31 @@ def get_current(
                     # reset the average current as it is likely a new measurement.
                     # TODO: implement this logic
                     
-                    femto_current_avg += femtoCurrent
+                    femtoCurrentSum += femtoCurrent
                     count += 1
                     # Format current
-                    scale_factor, unit = format_current(femto_current)
+                    scale_factor, unit = format_current(femtoCurrent)
 
                     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
+
+                    ser_data = header + chargeRaw + cp1CountRaw + cp2CountRaw + cp3CountRaw + cp1StartIntervalRaw + cp1EndIntervalRaw + tempRaw + humRaw
 
                     # Log to file in CSV format
                     if log is not None:
                         with open(log, "a") as f:
-                            f.write(f"\n{timestamp}, {femto_current:.2f}, {femto_current_avg/count:.2f}")
+                            f.write(f"\n{timestamp}, {femtoCurrent:.2f}, {femtoCurrentSum/count:.2f}")
                             if verbose:
-                                f.write(f", 0x{ser_data.hex()}, {data}")
+                                f.write(f", {ser_data.hex()}")
 
                     # Create a text object with the current values
                     text = Text()
                     text.append("Live data:", style="bold")
-                    text.append(f"\nInstantaneous current: {femto_current*scale_factor:.2f} {unit}")
-                    text.append(f" - Average current: {(femto_current_avg*scale_factor/count):.2f} {unit} ({count})")
+                    text.append(f"\nInstantaneous current: {femtoCurrent*scale_factor:.2f} {unit}")
+                    text.append(f" - Average current: {(femtoCurrentSum*scale_factor/count):.2f} {unit} ({count})")
                     text.append(f"\nTemperature: {temperature:.2f} °C - Humidity: {humidity:.2f} %")
                     if verbose:
                         text.append(f"\nDebug Data:", style="bold dim")
                         text.append(f"\nSerial data: 0x{ser_data.hex()} - ", style="dim")
-                        text.append(f"Integer representation: {data}", style="dim")
                     # Update the live display with the new text
                     live.update(text)
 
@@ -230,19 +244,18 @@ def get_current(
                     if plot:
                         # Append current values to the lists
                         timestamps.append(timestamp)
-                        instantaneous_currents.append(femto_current)
-                        average_currents.append(femto_current_avg)
+                        instantaneous_currents.append(femtoCurrent)
+                        average_currents.append(femtoCurrentSum/count)
 
-                        # plt.ion()  # Turn on interactive mode
-                        plt.plot(timestamps, instantaneous_currents*scale_factor, 'o', markersize=2, color='red', label='Instantaneous current')
-                        plt.plot(timestamps, average_currents*scale_factor/count, 'o', markersize=2, color='blue', label='Average current')
-                        # plt.xticks([]) # Do not print x-axis values
+                        plt.clf()
+                        plt.plot(timestamps, np.array(instantaneous_currents)*scale_factor, 'o', markersize=2, color='red', label='Instantaneous current')
+                        # plt.plot(timestamps, np.array(average_currents)*scale_factor, 'o', markersize=2, color='blue', label='Average current')
+                        plt.xticks([]) # Do not print x-axis values
                         plt.xlabel('Time [s]')
                         plt.ylabel(f'Current [{unit}]')
                         plt.legend()
-                        # plt.draw()
+                        plt.draw()
                         plt.pause(0.001)
-                        # plt.clf()  # Clear the current figure
 
         except KeyboardInterrupt:
             # Ctrl+C pressed, exit
@@ -354,6 +367,9 @@ def format_current(femto_current):
         return 1e-6, "nA"
     else:
         return 1e-9, "uA"
+    
+def onClose(event):
+    sys.exit(0)
     
 
 
