@@ -109,6 +109,8 @@ To program the registers, the user must write to the FPGA's UART interface. The 
 | 0x15 | disableCP2 | Disable CP2 | std_logic |
 | 0x16 | disableCP3 | Disable CP3 | std_logic |
 | 0x17 | singlyCPActivation | Singly CP Activation | std_logic |
+|||||
+| 0x18 | uartManagement | UART communication, if 1 (default) allow stream of data | std_logic |
 
 
 ## Scripts
