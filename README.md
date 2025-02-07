@@ -17,54 +17,104 @@ This project is developed for the ACCURATE 2 ASIC evaluation board, designed to 
 ### Via Arduino IDE
 1. **Board Installation**: This project utilize a custom board package for the SAMD21 microcontroller. Add the following URL to the Arduino IDE's Additional Board Manager URLs.
     ```
-    https://cernbox.cern.ch/remote.php/dav/public-files/PXj6KpQSCivVYCh/package_accurate_2_eval_index.json
+    https://cernbox.cern.ch/remote.php/dav/public-files/ftS6QooPZSoccNb/package_accurate_2_eval_index.json
     ```
     Then, install the `accurate_2a_eval` AND `Arduino SAMD` board package through the Arduino IDE's Board Manager.
 2. **Library Installation**: Install the following libraries through the Arduino IDE's Library Manager.
     - Adafruit SSD1306
     - TimeLib
+    - Vrekrer SCPI parser
 
 ### Via Arduino CLI
 Execute the following commands to install all the dependencies required by this project.
 ```bash
-arduino-cli --additional-urls https://cernbox.cern.ch/remote.php/dav/public-files/PXj6KpQSCivVYCh/package_accurate_2_eval_index.json core install accurate_2a_eval:samd 
+arduino-cli --additional-urls https://cernbox.cern.ch/remote.php/dav/public-files/ftS6QooPZSoccNb/package_accurate_2_eval_index.json core install accurate_2a_eval:samd 
 arduino-cli core install arduino:samd 
 arduino-cli lib install "Adafruit SSD1306" 
 arduino-cli lib install Time
+arduino-cli lib install "Vrekrer SCPI parser"
 ```
+
+> **Warning**: The `Vrekrer SCPI parser` library is not downloaded by Arduino in its latest version. Please modify the following lines of code as follow, at the bottom of  `Vrekrer_scpi_parser.h` file in the `src` folder of the library.
+> ```cpp
+> #ifndef VREKRER_SCPI_PARSER_NO_IMPL
+> #include "Vrekrer_scpi_arrays_code.h"
+> #include "Vrekrer_scpi_parser_code.h"
+> #include "Vrekrer_scpi_parser_special_code.h"
+> #endif // VREKRER_SCPI_PARSER_NO_IMPL
 
 ## Serial Communication
-The Arduino communicates with the connected computer through the USB serial port. The serial communication is used for sending the measured data to the computer for visualization and analysis. The serial port is configured at a baud rate of 9600 bps.
+The Arduino communicates with the connected computer through the USB serial port. The serial communication is used for sending the measured data to the computer for visualization and analysis. The serial port is configured at a baud rate of 9600 bps, 8 data bits, no parity, 1 stop bit.
 
-The serial communication is also used to send commands to the Arduino for controlling the operation of the ACCURATE 2 ASIC and setting configurations variables. The commands are sent as a string with the following format, and a reply from Arduino is always expected:
-```
-<command><address[optional]><value[optional]>
-```
-- `<command>`: The command to be executed. The available commands are:
-    - `SET`: Set a configuration variable. Adress and value are required.
-    - `DEF`: Reset a configuration variable to its default value. Address is required.
-    - `RAW`: Enable or disable raw data output. Value is required.
+Depending if the raw data mode is enabled or not, the data sent by Arduino is formatted as follows:
+- **Raw Data Mode Enabled**:
+    ```
+    <charge>,<cp1Count>,<cp2Count>,<cp3Count>,<cp1StartInterval>,<cp1EndInterval>,<tempSht41>,<humidSht41>,<btnLedStatus>,<timestamp>
+    ```
+- **Raw Data Mode Disabled**:
+    ```
+    <currentInFemtoAmpere>,<cp1Count>,<cp2Count>,<cp3Count>,<startIntervalTime>,<endIntervalTime>,<temperature>,<humidity>,<btnLedStatus>,<timestamp>
+    ```
 
-- `<address>`: The address of the configuration variable to be set or reset. The available addresses are: from `0x00` to `0xFF`.
+The serial communication is also used to send commands to the Arduino for controlling the operation of the ACCURATE 2 ASIC and setting configurations variables. The commands are sent in a SCPI-like format, and the command tree is as follow:
+```
+Command tree with only SCPI Required Commands and IEEE Mandated Commands:
+WARNING: Not all the commands are implemented in the Arduino code
+STATus
+    :OPERation
+        :CONDition?
+        :ENABle
+        [:EVENt]?
+    :QUEStionable
+        :CONDition?
+        :ENABle
+        [:EVENt]?
+    :PRESet
+SYSTem
+    :ERRor
+        [:NEXT]?
+    :VERSion?
+*CLS
+*ESE
+*ESE?
+*ESR?
+*IDN?
+*OPC
+*OPC?
+*RST
+*SRE
+*SRE?
+*STB
+*TST?
+*WAI
 
-- `<value>`: The value to be set for the configuration variable. The value is a 9 digit float or a 10 digit integer.
-
-### Example
-To set the configuration variable at address `0x01` to the value `1.23456789`, the following command should be sent:
-```
-SET011.23456789
-```
-To reset the configuration variable at address `0x01` to its default value, the following command should be sent:
-```
-DEF01
-```
-To enable raw data output, the following command should be sent:
-```
-RAW1
-```
-Vice versa, to disable raw data output, the following command should be sent:
-```
-RAW0
+Custom commands to operate the Evaluation Board:
+CONFigure
+    :DAC
+        :VOLTage A|B|C|D|E|F|G|H ,<voltage>
+        :VOLTage? A|B|C|D|E|F|G|H
+    :ACCUrate
+        :CHARGE
+        :CHARGE?
+        :COOLdown
+        :COOLdown?
+        :RESET
+        :RESET?
+        :TCHARGE
+        :TCHARGE?
+        :TINJection
+        :TINJection?
+        :DISABLE
+        :DISABLE?
+        :SINGLY
+        :SINGLY?
+    :SERIal
+        :STREAM ON|OFF
+        :STREAM?
+        :RAW ON|OFF
+        :RAW?
+        :LOG ON|OFF
+        :LOG?
 ```
 
 ## File Structure
@@ -74,6 +124,7 @@ RAW0
 - `dac7578.h`, `dac7578.cpp`: DAC7578 control and communication functions.
 - `ssd1306.h`, `ssd1306.cpp`: SSD1306 OLED display functions.
 - `sht41.h`, `sht41.cpp`: SHT41 sensor reading and processing functions.
+- `scpiInterface.h`, `scpiInterface.cpp`: SCPI command parsing and execution functions.
 
 ## Contributing
 Contributions to this project are welcome. Please follow the standard fork-and-pull request workflow. Ensure that your code adheres to the project's coding standards and include adequate documentation.
@@ -83,6 +134,7 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE.md)
 
 ## Authors
 - Håkon Liverud, CERN HSE-RP-IL
+- Mattia Consani, CERN HSE-RP-IL
 
 ## Contact
-For any queries or contributions, please contact [haakon.liverud@cern.ch](mailto:haakon.liverud@cern.ch).
+For any queries or contributions, please contact CERN HSE-RP-IL section.
