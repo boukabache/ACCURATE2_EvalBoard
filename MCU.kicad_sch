@@ -3679,7 +3679,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3691,7 +3691,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3747,7 +3747,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -3759,7 +3759,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -21625,6 +21625,26 @@
 		)
 		(uuid "d6606efc-a5d3-4d73-bd82-2c887e5fde6c")
 	)
+	(text_box "Maximum V_{f} is 2.3V\n5 - 2.3 = 2.7V / 1kOhm -> around 3mA"
+		(exclude_from_sim no)
+		(at 352.552 208.534 0)
+		(size 44.704 7.366)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "f5d8d730-4142-4705-ac72-eb986423ba58")
+	)
 	(junction
 		(at 35.56 240.03)
 		(diameter 0)
@@ -27278,72 +27298,6 @@
 		)
 	)
 	(symbol
-		(lib_id "symbol_lib:+3V3D")
-		(at 353.06 198.12 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0b62534e-4ada-4440-ba45-0259bc5fc540")
-		(property "Reference" "#PWR0175"
-			(at 353.06 201.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3D"
-			(at 353.06 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 353.06 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 353.06 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 353.06 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e1f0cdba-d58d-4d69-8c58-5fbf8aba5df5")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "#PWR0175")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Resistors SMD:R0603_1K_1%_0.1W_100PPM")
 		(at 80.01 177.8 270)
 		(unit 1)
@@ -31583,7 +31537,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4058927a-5d0e-4edf-b8b9-25d7bb3bfe75")
 		(property "Reference" "#PWR0173"
 			(at 353.06 171.45 0)
@@ -31594,12 +31547,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3V3D"
-			(at 353.06 162.56 0)
+		(property "Value" "+5V"
+			(at 351.536 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -37045,6 +36999,72 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
 					(reference "R22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "symbol_lib:+3V3D")
+		(at 353.06 198.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6a5a8ad8-841b-491f-8227-a68ce42322dc")
+		(property "Reference" "#PWR0175"
+			(at 353.06 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 351.536 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 353.06 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 353.06 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 353.06 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "de769dde-7fcc-4556-a579-5800f5b29b2a")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
+					(reference "#PWR0175")
 					(unit 1)
 				)
 			)
@@ -49079,72 +49099,6 @@
 		)
 	)
 	(symbol
-		(lib_id "symbol_lib:+3V3D")
-		(at 353.06 184.15 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cbd847bc-b05e-4553-8751-7d411604130d")
-		(property "Reference" "#PWR0174"
-			(at 353.06 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3D"
-			(at 353.06 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 353.06 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 353.06 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 353.06 184.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c26f5b04-20e6-4d74-b7e5-3b33a4d4b2a9")
-		)
-		(instances
-			(project "Accurate_Eval"
-				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
-					(reference "#PWR0174")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Switches:PB_C&K_KSC321JLFS")
 		(at 363.22 97.79 270)
 		(unit 1)
@@ -50171,6 +50125,72 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "symbol_lib:+3V3D")
+		(at 353.06 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dca7eba1-c4b9-4db3-b273-ea4a52358d81")
+		(property "Reference" "#PWR0174"
+			(at 353.06 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 351.536 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 353.06 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 353.06 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 353.06 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7de5839e-1baf-47d7-aa63-30610264f711")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537/bd41ea46-a9de-4499-b959-ad1671fa0c75"
+					(reference "#PWR0174")
 					(unit 1)
 				)
 			)

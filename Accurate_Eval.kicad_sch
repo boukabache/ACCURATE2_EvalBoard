@@ -503,7 +503,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.016) (xy 4.064 1.524)
+						(xy 4.572 1.016) (xy 4.572 -1.016)
 					)
 					(stroke
 						(width 0.254)
@@ -515,7 +515,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.016) (xy 4.572 -1.016)
+						(xy 4.572 1.016) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -2660,17 +2660,6 @@
 				)
 			)
 			(symbol "GCT_USB4105-GF-A_0_1"
-				(rectangle
-					(start 0 0)
-					(end 22.86 -30.48)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
 				(polyline
 					(pts
 						(xy 0 0) (xy 22.86 0)
@@ -2681,6 +2670,17 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+				(rectangle
+					(start 0 0)
+					(end 22.86 -30.48)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
 					)
 				)
 				(circle
@@ -2696,7 +2696,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -30.48) (xy 22.86 -30.48)
+						(xy 0 -30.48) (xy 0 0)
 					)
 					(stroke
 						(width 0.254)
@@ -2708,7 +2708,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -30.48) (xy 0 0)
+						(xy 0 -30.48) (xy 22.86 -30.48)
 					)
 					(stroke
 						(width 0.254)
@@ -6875,6 +6875,16 @@
 	)
 	(wire
 		(pts
+			(xy 300.99 43.18) (xy 306.07 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1eb40a9b-8dcd-4a89-a60c-e0e259cee635")
+	)
+	(wire
+		(pts
 			(xy 62.23 168.91) (xy 72.39 168.91)
 		)
 		(stroke
@@ -6985,7 +6995,7 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 40.64) (xy 300.99 45.72)
+			(xy 295.91 40.64) (xy 295.91 48.26)
 		)
 		(stroke
 			(width 0)
@@ -7115,7 +7125,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 48.26) (xy 298.45 48.26)
+			(xy 306.07 50.8) (xy 293.37 50.8)
 		)
 		(stroke
 			(width 0)
@@ -7335,13 +7345,23 @@
 	)
 	(wire
 		(pts
-			(xy 303.53 43.18) (xy 303.53 40.64)
+			(xy 298.45 45.72) (xy 298.45 40.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "766401c7-cf5c-410b-b0a0-9e2a7dfa239e")
+	)
+	(wire
+		(pts
+			(xy 300.99 40.64) (xy 300.99 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76c9e3b7-4866-45f8-bb20-c202ef33df60")
 	)
 	(wire
 		(pts
@@ -7595,7 +7615,7 @@
 	)
 	(wire
 		(pts
-			(xy 298.45 40.64) (xy 298.45 48.26)
+			(xy 293.37 40.64) (xy 293.37 50.8)
 		)
 		(stroke
 			(width 0)
@@ -7605,7 +7625,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 43.18) (xy 303.53 43.18)
+			(xy 306.07 45.72) (xy 298.45 45.72)
 		)
 		(stroke
 			(width 0)
@@ -7865,7 +7885,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 50.8) (xy 295.91 50.8)
+			(xy 306.07 53.34) (xy 290.83 53.34)
 		)
 		(stroke
 			(width 0)
@@ -7905,7 +7925,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 45.72) (xy 300.99 45.72)
+			(xy 306.07 48.26) (xy 295.91 48.26)
 		)
 		(stroke
 			(width 0)
@@ -8035,7 +8055,7 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 40.64) (xy 295.91 50.8)
+			(xy 290.83 40.64) (xy 290.83 53.34)
 		)
 		(stroke
 			(width 0)
@@ -9648,6 +9668,72 @@
 			(project "Accurate_Eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537"
 					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "symbol_lib:+3V3D")
+		(at 300.99 40.64 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "42a8f13e-3c04-44c9-b0a5-71b1d56d5456")
+		(property "Reference" "#PWR0232"
+			(at 300.99 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 300.99 35.56 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 300.99 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 300.99 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 300.99 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5557f5a4-05ad-4e8d-90dd-4704fc094783")
+		)
+		(instances
+			(project "Accurate_Eval"
+				(path "/d3b6a045-fd77-42ad-b330-1b1925488537"
+					(reference "#PWR0232")
 					(unit 1)
 				)
 			)
@@ -11475,7 +11561,7 @@
 	)
 	(symbol
 		(lib_id "power:+2V5")
-		(at 298.45 40.64 0)
+		(at 293.37 40.64 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11484,7 +11570,7 @@
 		(dnp no)
 		(uuid "711c8d5e-0a60-4bd0-a9af-749c33b11377")
 		(property "Reference" "#PWR024"
-			(at 298.45 44.45 0)
+			(at 293.37 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11493,7 +11579,7 @@
 			)
 		)
 		(property "Value" "+2V5"
-			(at 298.45 34.29 90)
+			(at 293.37 34.798 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11501,7 +11587,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 298.45 40.64 0)
+			(at 293.37 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11510,7 +11596,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 298.45 40.64 0)
+			(at 293.37 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11519,7 +11605,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 298.45 40.64 0)
+			(at 293.37 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12279,7 +12365,7 @@
 	)
 	(symbol
 		(lib_id "symbol_lib:+3V3D")
-		(at 303.53 40.64 0)
+		(at 298.45 40.64 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12288,7 +12374,7 @@
 		(dnp no)
 		(uuid "825a2682-9572-4bca-9b5a-af0e32c926c6")
 		(property "Reference" "#PWR027"
-			(at 303.53 44.45 0)
+			(at 298.45 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12297,7 +12383,7 @@
 			)
 		)
 		(property "Value" "+3V3D"
-			(at 303.53 34.29 90)
+			(at 298.45 34.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12305,7 +12391,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 303.53 40.64 0)
+			(at 298.45 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12314,7 +12400,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 303.53 40.64 0)
+			(at 298.45 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12323,7 +12409,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 303.53 40.64 0)
+			(at 298.45 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14493,7 +14579,7 @@
 	)
 	(symbol
 		(lib_id "power:+1V2")
-		(at 295.91 40.64 0)
+		(at 290.83 40.64 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -14502,7 +14588,7 @@
 		(dnp no)
 		(uuid "bf2bd4df-5631-49ba-8caa-1f608a635fab")
 		(property "Reference" "#PWR023"
-			(at 295.91 44.45 0)
+			(at 290.83 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14511,7 +14597,7 @@
 			)
 		)
 		(property "Value" "+1V2"
-			(at 295.91 34.29 90)
+			(at 290.83 34.798 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14519,7 +14605,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 295.91 40.64 0)
+			(at 290.83 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14528,7 +14614,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 295.91 40.64 0)
+			(at 290.83 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14537,7 +14623,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 295.91 40.64 0)
+			(at 290.83 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15182,7 +15268,7 @@
 	)
 	(symbol
 		(lib_id "symbol_lib:+3V3A")
-		(at 300.99 40.64 0)
+		(at 295.91 40.64 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15191,7 +15277,7 @@
 		(dnp no)
 		(uuid "d59f0f51-3aa4-41bb-92be-a7e6ef9b33a3")
 		(property "Reference" "#PWR025"
-			(at 300.99 44.45 0)
+			(at 295.91 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15200,7 +15286,7 @@
 			)
 		)
 		(property "Value" "+3V3A"
-			(at 300.99 34.29 90)
+			(at 295.91 34.29 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15208,7 +15294,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 300.99 40.64 0)
+			(at 295.91 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15217,7 +15303,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 300.99 40.64 0)
+			(at 295.91 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15226,7 +15312,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 300.99 40.64 0)
+			(at 295.91 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16665,7 +16751,7 @@
 			(uuid "b4eec27f-721d-4c60-84fb-72ff5d7a2cc2")
 		)
 		(pin "+3V3A" passive
-			(at 306.07 45.72 180)
+			(at 306.07 48.26 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16675,7 +16761,7 @@
 			(uuid "34340f85-8986-40a7-9b04-1ed71ef5e86e")
 		)
 		(pin "+1V2" passive
-			(at 306.07 50.8 180)
+			(at 306.07 53.34 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16685,7 +16771,7 @@
 			(uuid "1516b65f-e87c-4503-b79f-cbbf0652c05a")
 		)
 		(pin "+3V3D" passive
-			(at 306.07 43.18 180)
+			(at 306.07 45.72 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16695,7 +16781,7 @@
 			(uuid "4535bbd1-fa7f-4e6e-af77-964c6ac22c72")
 		)
 		(pin "+2V5" passive
-			(at 306.07 48.26 180)
+			(at 306.07 50.8 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16793,6 +16879,16 @@
 				(justify right)
 			)
 			(uuid "97fdd8b8-61c8-435f-8d5d-eb6ad29f9ef2")
+		)
+		(pin "+5V" passive
+			(at 306.07 43.18 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "809d0b7d-2669-4a21-8bb1-87b5d2df4bb7")
 		)
 		(instances
 			(project "Accurate_Eval"
