@@ -43,6 +43,9 @@ arduino-cli lib install "Vrekrer SCPI parser"
 > #include "Vrekrer_scpi_parser_special_code.h"
 > #endif // VREKRER_SCPI_PARSER_NO_IMPL
 
+### Via Zipped Board Package
+A zipped version of the board package is provided in the root directory of this repository. Please refer to the Arduino documentation on how to use it based on your specific system.
+
 ## Serial Communication
 The Arduino communicates with the connected computer through the USB serial port. The serial communication is used for sending the measured data to the computer for visualization and analysis. The serial port is configured at a baud rate of 9600 bps, 8 data bits, no parity, 1 stop bit.
 
@@ -117,7 +120,7 @@ CONFigure
         :LOG?
 ```
 
-## File Structure
+## Structure
 - `main.ino`: Main Arduino sketch file.
 - `config.h`: Configuration settings and pin definitions.
 - `fpga.h`, `fpga.cpp`: FPGA interface and control functions.
@@ -125,6 +128,8 @@ CONFigure
 - `ssd1306.h`, `ssd1306.cpp`: SSD1306 OLED display functions.
 - `sht41.h`, `sht41.cpp`: SHT41 sensor reading and processing functions.
 - `scpiInterface.h`, `scpiInterface.cpp`: SCPI command parsing and execution functions.
+- `./board_variant`: Contains the modified variant files for the SAMD21 microcontroller.
+- `./compiled`: Contains the pre-compiled binary files for the project. Current version: v1.3
 
 ## Contributing
 Contributions to this project are welcome. Please follow the standard fork-and-pull request workflow. Ensure that your code adheres to the project's coding standards and include adequate documentation.
