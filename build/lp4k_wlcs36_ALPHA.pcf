@@ -1,4 +1,4 @@
-# Constraint file for iCE40 Ultra, mounted on the Evaluation Board REV1
+# Constraint file for iCE40 Ultra, mounted on the ALPHA project board
 # iCE5LP4k chip, SG48 package
 # See the following for the format reference:
 # https://github.com/YosysHQ/nextpnr/blob/master/docs/ice40.md
