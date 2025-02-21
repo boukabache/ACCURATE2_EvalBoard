@@ -11,6 +11,6 @@ build/log.txt
 # Wave crap
 *.vcd
 
-hardware.json
-hardware.bin
-hardware.asc
+build/hardware.json
+build/hardware.bin
+build/hardware.asc

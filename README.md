@@ -68,6 +68,8 @@ make prog
 
 For quickly getting started using the evaluation board, a Command Line Interface (CLI) is provided. The CLI allows the user to interact with the FPGA via UART interface without the need of any dedicated software. See the [CLI documentation](#command-line-interface) for more information.
 
+Also, an already compiled bitstream is provided in the root directory of the repository. The bitstream is named `hardware.bin` and can be programmed into the FPGA's flash using the `iceprog hardware.bin` command.
+
 
 ## Serial output
 As soon as the board is powered up the FPGA will start to stream on the UART bus the measurements coming from ACCURATE.
