@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20240812)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.99")
+	(generator_version "9.0")
 	(uuid "ebc0b5e6-d2e2-444f-9478-d73cb4abd45a")
 	(paper "A3")
 	(title_block
@@ -8659,7 +8659,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -8671,7 +8671,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -8795,7 +8795,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -8807,7 +8807,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -8863,7 +8863,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -8875,7 +8875,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -8931,7 +8931,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.572 -1.524)
+						(xy 4.572 1.524) (xy 4.064 1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -8943,7 +8943,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.572 1.524) (xy 4.064 1.524)
+						(xy 4.572 1.524) (xy 4.572 -1.524)
 					)
 					(stroke
 						(width 0.254)
@@ -20543,7 +20543,7 @@
 			(symbol "LM8272MMX_1_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 10.16 -5.08)
+						(xy 0 0) (xy 0 -10.16)
 					)
 					(stroke
 						(width 0.254)
@@ -20555,7 +20555,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -10.16)
+						(xy 0 0) (xy 10.16 -5.08)
 					)
 					(stroke
 						(width 0.254)
@@ -21059,7 +21059,7 @@
 			(symbol "LM8272MMX_2_2"
 				(polyline
 					(pts
-						(xy 0 0) (xy 10.16 -5.08)
+						(xy 0 0) (xy 0 -10.16)
 					)
 					(stroke
 						(width 0.254)
@@ -21071,7 +21071,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -10.16)
+						(xy 0 0) (xy 10.16 -5.08)
 					)
 					(stroke
 						(width 0.254)
@@ -23129,9 +23129,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -3.302)
-					(mid 1.7472 -3.0788)
-					(end 1.524 -2.54)
+					(start 2.286 -1.778)
+					(mid 2.8248 -2.0012)
+					(end 3.048 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23141,9 +23141,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -1.778)
-					(mid 2.8248 -2.0012)
-					(end 3.048 -2.54)
+					(start 2.286 -3.302)
+					(mid 1.7472 -3.0788)
+					(end 1.524 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23189,9 +23189,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -4.318)
-					(mid 2.8248 -4.5412)
-					(end 3.048 -5.08)
+					(start 1.524 -5.08)
+					(mid 1.7472 -4.5412)
+					(end 2.286 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23201,9 +23201,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -5.08)
-					(mid 1.7472 -4.5412)
-					(end 2.286 -4.318)
+					(start 2.286 -4.318)
+					(mid 2.8248 -4.5412)
+					(end 3.048 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23285,9 +23285,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -7.62)
-					(mid 2.8248 -8.1588)
-					(end 2.286 -8.382)
+					(start 2.286 -8.382)
+					(mid 1.7472 -8.1588)
+					(end 1.524 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23297,9 +23297,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -8.382)
-					(mid 1.7472 -8.1588)
-					(end 1.524 -7.62)
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23405,9 +23405,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -2.54)
-					(mid 5.8728 -3.0788)
-					(end 5.334 -3.302)
+					(start 4.572 -2.54)
+					(mid 4.7952 -2.0012)
+					(end 5.334 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23417,9 +23417,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -2.54)
-					(mid 4.7952 -2.0012)
-					(end 5.334 -1.778)
+					(start 5.334 -1.778)
+					(mid 5.8728 -2.0012)
+					(end 6.096 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23441,9 +23441,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -1.778)
-					(mid 5.8728 -2.0012)
-					(end 6.096 -2.54)
+					(start 6.096 -2.54)
+					(mid 5.8728 -3.0788)
+					(end 5.334 -3.302)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23477,9 +23477,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -5.842)
-					(mid 4.7952 -5.6188)
-					(end 4.572 -5.08)
+					(start 4.572 -5.08)
+					(mid 4.7952 -4.5412)
+					(end 5.334 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23501,9 +23501,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -5.08)
-					(mid 5.8728 -5.6188)
-					(end 5.334 -5.842)
+					(start 5.334 -5.842)
+					(mid 4.7952 -5.6188)
+					(end 4.572 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23513,9 +23513,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -5.08)
-					(mid 4.7952 -4.5412)
-					(end 5.334 -4.318)
+					(start 6.096 -5.08)
+					(mid 5.8728 -5.6188)
+					(end 5.334 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -23549,30 +23549,6 @@
 					)
 				)
 				(arc
-					(start 5.334 -8.382)
-					(mid 4.7952 -8.1588)
-					(end 4.572 -7.62)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 6.096 -7.62)
-					(mid 5.8728 -8.1588)
-					(end 5.334 -8.382)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 4.572 -7.62)
 					(mid 4.7952 -7.0812)
 					(end 5.334 -6.858)
@@ -23588,6 +23564,30 @@
 					(start 5.334 -6.858)
 					(mid 5.8728 -7.0812)
 					(end 6.096 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 5.334 -8.382)
+					(mid 4.7952 -8.1588)
+					(end 4.572 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.096 -7.62)
+					(mid 5.8728 -8.1588)
+					(end 5.334 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24604,18 +24604,6 @@
 					)
 				)
 				(arc
-					(start 2.286 -3.302)
-					(mid 1.7472 -3.0788)
-					(end 1.524 -2.54)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 1.524 -2.54)
 					(mid 1.7472 -2.0012)
 					(end 2.286 -1.778)
@@ -24628,9 +24616,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -2.54)
-					(mid 2.8248 -3.0788)
-					(end 2.286 -3.302)
+					(start 2.286 -1.778)
+					(mid 2.8248 -2.0012)
+					(end 3.048 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24640,9 +24628,21 @@
 					)
 				)
 				(arc
-					(start 2.286 -1.778)
-					(mid 2.8248 -2.0012)
-					(end 3.048 -2.54)
+					(start 2.286 -3.302)
+					(mid 1.7472 -3.0788)
+					(end 1.524 -2.54)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 3.048 -2.54)
+					(mid 2.8248 -3.0788)
+					(end 2.286 -3.302)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24676,9 +24676,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -4.318)
-					(mid 2.8248 -4.5412)
-					(end 3.048 -5.08)
+					(start 1.524 -5.08)
+					(mid 1.7472 -4.5412)
+					(end 2.286 -4.318)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24688,9 +24688,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -5.08)
-					(mid 2.8248 -5.6188)
-					(end 2.286 -5.842)
+					(start 2.286 -4.318)
+					(mid 2.8248 -4.5412)
+					(end 3.048 -5.08)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24712,9 +24712,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -5.08)
-					(mid 1.7472 -4.5412)
-					(end 2.286 -4.318)
+					(start 3.048 -5.08)
+					(mid 2.8248 -5.6188)
+					(end 2.286 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24748,9 +24748,9 @@
 					)
 				)
 				(arc
-					(start 3.048 -7.62)
-					(mid 2.8248 -8.1588)
-					(end 2.286 -8.382)
+					(start 1.524 -7.62)
+					(mid 1.7472 -7.0812)
+					(end 2.286 -6.858)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24760,9 +24760,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -7.62)
-					(mid 1.7472 -7.0812)
-					(end 2.286 -6.858)
+					(start 2.286 -6.858)
+					(mid 2.8248 -7.0812)
+					(end 3.048 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24784,9 +24784,9 @@
 					)
 				)
 				(arc
-					(start 2.286 -6.858)
-					(mid 2.8248 -7.0812)
-					(end 3.048 -7.62)
+					(start 3.048 -7.62)
+					(mid 2.8248 -8.1588)
+					(end 2.286 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24892,9 +24892,9 @@
 					)
 				)
 				(arc
-					(start 5.334 -3.302)
-					(mid 4.7952 -3.0788)
-					(end 4.572 -2.54)
+					(start 4.572 -2.54)
+					(mid 4.7952 -2.0012)
+					(end 5.334 -1.778)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24916,9 +24916,9 @@
 					)
 				)
 				(arc
-					(start 4.572 -2.54)
-					(mid 4.7952 -2.0012)
-					(end 5.334 -1.778)
+					(start 5.334 -3.302)
+					(mid 4.7952 -3.0788)
+					(end 4.572 -2.54)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -24976,18 +24976,6 @@
 					)
 				)
 				(arc
-					(start 6.096 -5.08)
-					(mid 5.8728 -5.6188)
-					(end 5.334 -5.842)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 5.334 -4.318)
 					(mid 5.8728 -4.5412)
 					(end 6.096 -5.08)
@@ -25003,6 +24991,18 @@
 					(start 5.334 -5.842)
 					(mid 4.7952 -5.6188)
 					(end 4.572 -5.08)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.096 -5.08)
+					(mid 5.8728 -5.6188)
+					(end 5.334 -5.842)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -25036,18 +25036,6 @@
 					)
 				)
 				(arc
-					(start 5.334 -6.858)
-					(mid 5.8728 -7.0812)
-					(end 6.096 -7.62)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
 					(start 4.572 -7.62)
 					(mid 4.7952 -7.0812)
 					(end 5.334 -6.858)
@@ -25060,9 +25048,9 @@
 					)
 				)
 				(arc
-					(start 6.096 -7.62)
-					(mid 5.8728 -8.1588)
-					(end 5.334 -8.382)
+					(start 5.334 -6.858)
+					(mid 5.8728 -7.0812)
+					(end 6.096 -7.62)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -25075,6 +25063,18 @@
 					(start 5.334 -8.382)
 					(mid 4.7952 -8.1588)
 					(end 4.572 -7.62)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.096 -7.62)
+					(mid 5.8728 -8.1588)
+					(end 5.334 -8.382)
 					(stroke
 						(width 0.254)
 						(type solid)
@@ -25824,7 +25824,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -25836,7 +25836,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -26413,7 +26413,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -26425,7 +26425,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -27591,7 +27591,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 7.62 0)
+						(xy 7.62 2.032) (xy 0 2.032)
 					)
 					(stroke
 						(width 0.254)
@@ -27603,7 +27603,7 @@
 				)
 				(polyline
 					(pts
-						(xy 7.62 2.032) (xy 0 2.032)
+						(xy 7.62 2.032) (xy 7.62 0)
 					)
 					(stroke
 						(width 0.254)
@@ -28249,7 +28249,8 @@
 			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "GND"
 						(effects
 							(font
@@ -28370,7 +28371,8 @@
 			(symbol "+3V3A_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "+3V3A"
 						(effects
 							(font
@@ -28491,7 +28493,8 @@
 			(symbol "+3V3D_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0) hide
+					(length 0)
+					(hide yes)
 					(name "+3V3D"
 						(effects
 							(font
@@ -34022,7 +34025,6 @@
 	)
 	(label "Vcmd"
 		(at 401.32 149.86 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34033,7 +34035,6 @@
 	)
 	(label "A1_Vth1"
 		(at 143.51 137.16 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34044,7 +34045,6 @@
 	)
 	(label "A1_Vbias3"
 		(at 306.07 152.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34055,7 +34055,6 @@
 	)
 	(label "DAC_SHT_SDA"
 		(at 16.51 127 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34066,7 +34065,6 @@
 	)
 	(label "Enable.Low"
 		(at 196.85 152.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34077,7 +34075,6 @@
 	)
 	(label "Enable{High, Medium, Low}"
 		(at 71.12 83.82 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34088,7 +34085,6 @@
 	)
 	(label "A1_Vth4"
 		(at 196.85 129.54 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34099,7 +34095,6 @@
 	)
 	(label "FPGA_SDA"
 		(at 71.12 49.53 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34110,7 +34105,6 @@
 	)
 	(label "Current_In"
 		(at 71.12 72.39 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34121,7 +34115,6 @@
 	)
 	(label "Vcm_Buf"
 		(at 327.66 27.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34132,7 +34125,6 @@
 	)
 	(label "NC_NetIC12-4"
 		(at 273.05 157.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34143,7 +34135,6 @@
 	)
 	(label "Comp4"
 		(at 406.4 134.62 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34154,7 +34145,6 @@
 	)
 	(label "Vcmd"
 		(at 196.85 170.18 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34165,7 +34155,6 @@
 	)
 	(label "A1_Vth3"
 		(at 143.51 127 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34176,7 +34165,6 @@
 	)
 	(label "MCU_SDA"
 		(at 71.12 57.15 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34187,7 +34175,6 @@
 	)
 	(label "ADC_SDA"
 		(at 396.24 226.06 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34198,7 +34185,6 @@
 	)
 	(label "Vcm_Buf"
 		(at 224.79 241.3 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34209,7 +34195,6 @@
 	)
 	(label "DAC_SHT_SDA"
 		(at 99.06 45.72 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34220,7 +34205,6 @@
 	)
 	(label "OTA_Out_Buf"
 		(at 295.91 226.06 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34231,7 +34215,6 @@
 	)
 	(label "FPGA_SCL"
 		(at 71.12 53.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34242,7 +34225,6 @@
 	)
 	(label "OTA_Out"
 		(at 243.84 228.6 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34253,7 +34235,6 @@
 	)
 	(label "ACCURATE_RESET"
 		(at 71.12 80.01 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34264,7 +34245,6 @@
 	)
 	(label "NC_NetIC12-12"
 		(at 406.4 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34275,7 +34255,6 @@
 	)
 	(label "A1_Vcharge+_buf"
 		(at 90.17 241.3 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34286,7 +34265,6 @@
 	)
 	(label "Comp4"
 		(at 273.05 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34297,7 +34275,6 @@
 	)
 	(label "DAC_SHT_SDA"
 		(at 259.08 39.37 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34308,7 +34285,6 @@
 	)
 	(label "FPGA_CLK"
 		(at 406.4 160.02 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34319,7 +34295,6 @@
 	)
 	(label "Vcm_Buf"
 		(at 186.69 102.87 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34330,7 +34305,6 @@
 	)
 	(label "ADC_SCL"
 		(at 172.72 43.18 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34341,7 +34315,6 @@
 	)
 	(label "MCU_SDA"
 		(at 187.96 50.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34352,7 +34325,6 @@
 	)
 	(label "ADC_SCL"
 		(at 396.24 228.6 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34363,7 +34335,6 @@
 	)
 	(label "3V_REF"
 		(at 20.32 157.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34374,7 +34345,6 @@
 	)
 	(label "DAC_SHT_SCL"
 		(at 259.08 41.91 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34385,7 +34355,6 @@
 	)
 	(label "Current_In"
 		(at 196.85 124.46 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34396,7 +34365,6 @@
 	)
 	(label "A1_Vth1"
 		(at 306.07 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34407,7 +34375,6 @@
 	)
 	(label "MCU_SCL"
 		(at 114.3 48.26 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34418,7 +34385,6 @@
 	)
 	(label "FPGA_SCL"
 		(at 114.3 38.1 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34429,7 +34395,6 @@
 	)
 	(label "Vcm_Buf"
 		(at 406.4 154.94 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34440,7 +34405,6 @@
 	)
 	(label "Comp1"
 		(at 273.05 137.16 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34451,7 +34415,6 @@
 	)
 	(label "ADC_Ready"
 		(at 398.78 236.22 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34462,7 +34425,6 @@
 	)
 	(label "OTA1_Out"
 		(at 406.4 124.46 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34473,7 +34435,6 @@
 	)
 	(label "A1_Vbias3"
 		(at 196.85 147.32 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34484,7 +34445,6 @@
 	)
 	(label "A1_Vbias1"
 		(at 196.85 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34495,7 +34455,6 @@
 	)
 	(label "ADC_SDA"
 		(at 172.72 45.72 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34506,7 +34465,6 @@
 	)
 	(label "Comp[1..4]"
 		(at 311.15 114.3 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34517,7 +34475,6 @@
 	)
 	(label "Vcm"
 		(at 160.02 243.84 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34528,7 +34485,6 @@
 	)
 	(label "ADC_Ready"
 		(at 327.66 31.75 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34539,7 +34495,6 @@
 	)
 	(label "Vcm_Buf"
 		(at 314.96 233.68 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34550,7 +34505,6 @@
 	)
 	(label "Comp3"
 		(at 406.4 137.16 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34561,7 +34515,6 @@
 	)
 	(label "Comp[1..4]"
 		(at 327.66 35.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34572,7 +34525,6 @@
 	)
 	(label "NC_NetIC12-4"
 		(at 306.07 129.54 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34583,7 +34535,6 @@
 	)
 	(label "Comp1"
 		(at 406.4 142.24 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34594,7 +34545,6 @@
 	)
 	(label "ACCURATE_RESET"
 		(at 196.85 162.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34605,7 +34555,6 @@
 	)
 	(label "Vcmd"
 		(at 156.21 241.3 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34616,7 +34565,6 @@
 	)
 	(label "3V3_REF"
 		(at 406.4 167.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34627,7 +34575,6 @@
 	)
 	(label "FPGA_SCL"
 		(at 187.96 38.1 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34638,7 +34585,6 @@
 	)
 	(label "3V_REF"
 		(at 71.12 68.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34649,7 +34595,6 @@
 	)
 	(label "Vcmd"
 		(at 306.07 170.18 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34660,7 +34605,6 @@
 	)
 	(label "A1_Vbias1"
 		(at 143.51 142.24 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34671,7 +34615,6 @@
 	)
 	(label "Enable{High, Medium, Low}"
 		(at 147.32 135.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34682,7 +34625,6 @@
 	)
 	(label "Enable.Medium"
 		(at 196.85 154.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34693,7 +34635,6 @@
 	)
 	(label "Vcm"
 		(at 93.98 243.84 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34704,7 +34645,6 @@
 	)
 	(label "DAC_SHT_SCL"
 		(at 99.06 43.18 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34715,7 +34655,6 @@
 	)
 	(label "Vcm"
 		(at 143.51 139.7 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34726,7 +34665,6 @@
 	)
 	(label "Vcm"
 		(at 273.05 147.32 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34737,7 +34675,6 @@
 	)
 	(label "ACCURATE_RESET"
 		(at 306.07 175.26 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34748,7 +34685,6 @@
 	)
 	(label "OTA1_Out"
 		(at 273.05 119.38 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34759,7 +34695,6 @@
 	)
 	(label "A1_Vth4"
 		(at 143.51 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34770,7 +34705,6 @@
 	)
 	(label "OTA_Out"
 		(at 273.05 124.46 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34781,7 +34715,6 @@
 	)
 	(label "A1_Vth3"
 		(at 196.85 132.08 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34792,7 +34725,6 @@
 	)
 	(label "A1_Vbias3"
 		(at 143.51 124.46 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34803,7 +34735,6 @@
 	)
 	(label "DAC_SHT_SCL"
 		(at 16.51 124.46 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34814,7 +34745,6 @@
 	)
 	(label "A1_Vth2"
 		(at 143.51 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34825,7 +34755,6 @@
 	)
 	(label "FPGA_SDA"
 		(at 114.3 40.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34836,7 +34765,6 @@
 	)
 	(label "A1_Vth2"
 		(at 306.07 139.7 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34847,7 +34775,6 @@
 	)
 	(label "Enable.Medium"
 		(at 306.07 160.02 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34858,7 +34785,6 @@
 	)
 	(label "A1_Vth1"
 		(at 196.85 137.16 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34869,7 +34795,6 @@
 	)
 	(label "Current_In"
 		(at 306.07 124.46 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34880,7 +34805,6 @@
 	)
 	(label "A1_Vth1"
 		(at 196.85 144.78 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34891,7 +34815,6 @@
 	)
 	(label "FPGA_CLK"
 		(at 71.12 76.2 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34902,7 +34825,6 @@
 	)
 	(label "Vcmd"
 		(at 267.97 152.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34913,7 +34835,6 @@
 	)
 	(label "A1_Vth3"
 		(at 306.07 137.16 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34924,7 +34845,6 @@
 	)
 	(label "A1_Vcharge+_buf"
 		(at 196.85 167.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34935,7 +34855,6 @@
 	)
 	(label "A1_Vth1"
 		(at 306.07 149.86 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34946,7 +34865,6 @@
 	)
 	(label "A1_Vth2"
 		(at 196.85 134.62 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34957,7 +34875,6 @@
 	)
 	(label "MCU_SCL"
 		(at 71.12 60.96 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34968,7 +34885,6 @@
 	)
 	(label "Enable.High"
 		(at 306.07 157.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34979,7 +34895,6 @@
 	)
 	(label "A1_Vbias1"
 		(at 306.07 147.32 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -34990,7 +34905,6 @@
 	)
 	(label "A1_Vcharge+"
 		(at 16.51 243.84 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35001,7 +34915,6 @@
 	)
 	(label "Comp2"
 		(at 273.05 134.62 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35012,7 +34925,6 @@
 	)
 	(label "MCU_SCL"
 		(at 187.96 48.26 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35023,7 +34935,6 @@
 	)
 	(label "A1_Vcharge+"
 		(at 143.51 134.62 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35034,7 +34945,6 @@
 	)
 	(label "FPGA_SDA"
 		(at 187.96 40.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35045,7 +34955,6 @@
 	)
 	(label "Enable.High"
 		(at 196.85 157.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35056,7 +34965,6 @@
 	)
 	(label "Comp3"
 		(at 273.05 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35067,7 +34975,6 @@
 	)
 	(label "3V3_REF"
 		(at 71.12 64.77 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35078,7 +34985,6 @@
 	)
 	(label "FPGA_CLK"
 		(at 273.05 142.24 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35089,7 +34995,6 @@
 	)
 	(label "3V3_REF"
 		(at 275.59 170.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35100,7 +35005,6 @@
 	)
 	(label "MCU_SDA"
 		(at 114.3 50.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35111,7 +35015,6 @@
 	)
 	(label "A1_Vcharge+_buf"
 		(at 306.07 167.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35122,7 +35025,6 @@
 	)
 	(label "A1_Vth4"
 		(at 306.07 134.62 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35133,7 +35035,6 @@
 	)
 	(label "NC_NetIC12-12"
 		(at 273.05 162.56 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35144,7 +35045,6 @@
 	)
 	(label "Comp2"
 		(at 406.4 139.7 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35155,7 +35055,6 @@
 	)
 	(label "Enable.Low"
 		(at 306.07 162.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35167,7 +35066,6 @@
 	(hierarchical_label "ADC_Ready"
 		(shape output)
 		(at 351.79 31.75 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35179,7 +35077,6 @@
 	(hierarchical_label "Current_In"
 		(shape input)
 		(at 44.45 72.39 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35191,7 +35088,6 @@
 	(hierarchical_label "Vcm_Buf"
 		(shape output)
 		(at 351.79 27.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35203,7 +35099,6 @@
 	(hierarchical_label "MCU_SCL"
 		(shape bidirectional)
 		(at 44.45 60.96 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35215,7 +35110,6 @@
 	(hierarchical_label "3V_REF"
 		(shape input)
 		(at 44.45 68.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35227,7 +35121,6 @@
 	(hierarchical_label "3V3_REF"
 		(shape input)
 		(at 44.45 64.77 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35239,7 +35132,6 @@
 	(hierarchical_label "MCU_SDA"
 		(shape bidirectional)
 		(at 44.45 57.15 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35251,7 +35143,6 @@
 	(hierarchical_label "Enable{High, Medium, Low}"
 		(shape input)
 		(at 44.45 83.82 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35263,7 +35154,6 @@
 	(hierarchical_label "+3V3A"
 		(shape passive)
 		(at 44.45 30.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35275,7 +35165,6 @@
 	(hierarchical_label "ACCURATE_RESET"
 		(shape input)
 		(at 44.45 80.01 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35287,7 +35176,6 @@
 	(hierarchical_label "GND"
 		(shape passive)
 		(at 44.45 34.29 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35299,7 +35187,6 @@
 	(hierarchical_label "FPGA_CLK"
 		(shape input)
 		(at 44.45 76.2 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35311,7 +35198,6 @@
 	(hierarchical_label "FPGA_SDA"
 		(shape bidirectional)
 		(at 44.45 49.53 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35323,7 +35209,6 @@
 	(hierarchical_label "+3V3D"
 		(shape passive)
 		(at 44.45 26.67 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35335,7 +35220,6 @@
 	(hierarchical_label "Comp[1..4]"
 		(shape output)
 		(at 351.79 35.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35347,7 +35231,6 @@
 	(hierarchical_label "FPGA_SCL"
 		(shape bidirectional)
 		(at 44.45 53.34 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
