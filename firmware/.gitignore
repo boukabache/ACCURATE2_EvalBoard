@@ -1,0 +1,47 @@
+# Ignore vscode folder
+**/.vscode/
+
+# Ignore build directories
+**/build/
+**/bin/
+**/obj/
+**/out/
+
+# Ignore compiled object files
+*.o
+*.obj
+*.elf
+*.hex
+# *.bin
+*.map
+*.lst
+
+# Ignore dependency files
+*.d
+*.dep
+
+# Ignore temporary files
+*.tmp
+*.log
+*.bak
+*.swp
+
+# Ignore generated libraries
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Ignore other common build artifacts
+*.exe
+*.app
+*.pdb
+*.ilk
+*.idb
+*.ds_store
+
+# Other stuff
+*.out
+*.s
+*.res

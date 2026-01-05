@@ -1,0 +1,98 @@
+# Copyright (c) 2014-2017 Arduino LLC.  All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+# ACCURATE 2A Evaluation Board (Programming Port)
+# ---------------------------------------
+accurate_2A_eval_prog.name=ACCURATE 2A Evaluation Board (Programming Port)
+accurate_2A_eval_prog.vid.0=0x03eb
+accurate_2A_eval_prog.pid.0=0x2157
+accurate_2A_eval_prog.upload_port.0.vid=0x03eb
+accurate_2A_eval_prog.upload_port.0.pid=0x2157
+accurate_2A_eval_prog.upload_port.1.board=arduino_zero_edbg
+
+accurate_2A_eval_prog.upload.tool=openocd
+accurate_2A_eval_prog.upload.tool.default=openocd
+accurate_2A_eval_prog.upload.tool.network=arduino_ota
+accurate_2A_eval_prog.upload.protocol=sam-ba
+accurate_2A_eval_prog.upload.maximum_size=262144
+accurate_2A_eval_prog.upload.maximum_data_size=32768
+accurate_2A_eval_prog.upload.use_1200bps_touch=false
+accurate_2A_eval_prog.upload.wait_for_upload_port=false
+accurate_2A_eval_prog.upload.native_usb=false
+accurate_2A_eval_prog.build.mcu=cortex-m0plus
+accurate_2A_eval_prog.build.f_cpu=48000000L
+accurate_2A_eval_prog.build.usb_product="ACCURATE 2A Evaluation Board"
+accurate_2A_eval_prog.build.usb_manufacturer="CERN"
+accurate_2A_eval_prog.build.board=ACCURATE_2A_EVAL
+accurate_2A_eval_prog.build.core=arduino
+accurate_2A_eval_prog.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags}
+accurate_2A_eval_prog.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+accurate_2A_eval_prog.build.openocdscript=openocd_scripts/arduino_zero.cfg
+accurate_2A_eval_prog.build.variant=accurate_2a_eval
+accurate_2A_eval_prog.build.variant_system_lib=
+accurate_2A_eval_prog.build.vid=0x2341
+accurate_2A_eval_prog.build.pid=0x804d
+accurate_2A_eval_prog.bootloader.tool=openocd
+accurate_2A_eval_prog.bootloader.tool.default=openocd
+accurate_2A_eval_prog.bootloader.file=accurate_2A_eval/samd21_sam_ba.bin
+
+# ACCURATE 2A Evaluation Board (Native USB Port)
+# --------------------------------------
+accurate_2A_eval_native.name=ACCURATE 2A Evaluation Board (Native USB Port)
+accurate_2A_eval_native.vid.0=0x2341
+accurate_2A_eval_native.pid.0=0x804d
+accurate_2A_eval_native.vid.1=0x2341
+accurate_2A_eval_native.pid.1=0x004d
+accurate_2A_eval_native.vid.2=0x2341
+accurate_2A_eval_native.pid.2=0x824d
+accurate_2A_eval_native.vid.3=0x2341
+accurate_2A_eval_native.pid.3=0x024d
+accurate_2A_eval_native.upload_port.0.vid=0x0403
+accurate_2A_eval_native.upload_port.0.pid=0x6010
+accurate_2A_eval_native.upload_port.1.vid=0x2341
+accurate_2A_eval_native.upload_port.1.pid=0x004d
+accurate_2A_eval_native.upload_port.2.vid=0x2341
+accurate_2A_eval_native.upload_port.2.pid=0x824d
+accurate_2A_eval_native.upload_port.3.vid=0x2341
+accurate_2A_eval_native.upload_port.3.pid=0x024d
+accurate_2A_eval_native.upload_port.4.board=arduino_zero_native
+
+
+accurate_2A_eval_native.upload.tool=bossac
+accurate_2A_eval_native.upload.tool.default=bossac
+accurate_2A_eval_native.upload.tool.network=arduino_ota
+accurate_2A_eval_native.upload.protocol=sam-ba
+accurate_2A_eval_native.upload.maximum_size=262144
+accurate_2A_eval_native.upload.maximum_data_size=32768
+accurate_2A_eval_native.upload.use_1200bps_touch=false
+accurate_2A_eval_native.upload.wait_for_upload_port=false
+accurate_2A_eval_native.upload.native_usb=true
+accurate_2A_eval_native.build.mcu=cortex-m0plus
+accurate_2A_eval_native.build.f_cpu=48000000L
+accurate_2A_eval_native.build.usb_product="ACCURATE 2A Evaluation Board"
+accurate_2A_eval_native.build.usb_manufacturer="CERN"
+accurate_2A_eval_native.build.board=ACCURATE_2A_EVAL
+accurate_2A_eval_native.build.core=arduino
+accurate_2A_eval_native.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags}
+accurate_2A_eval_native.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+accurate_2A_eval_native.build.openocdscript=openocd_scripts/arduino_zero.cfg
+accurate_2A_eval_native.build.variant=accurate_2a_eval
+accurate_2A_eval_native.build.variant_system_lib=
+accurate_2A_eval_native.build.vid=0x2341
+accurate_2A_eval_native.build.pid=0x804d
+accurate_2A_eval_native.bootloader.tool=openocd
+accurate_2A_eval_native.bootloader.tool.default=openocd
+accurate_2A_eval_native.bootloader.file=accurate_2A_eval/samd21_sam_ba.bin
