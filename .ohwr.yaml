@@ -1,0 +1,17 @@
+name: ACCURATE 2A Evaluation Board
+description: README.md
+website: https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_pcb
+licenses:
+  - CERN-OHL-P-2.0
+  - GPL-3.0-or-later
+version: 1.0.0
+universities:
+  - CERN
+images:
+  - https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_pcb/-/raw/feature/rename-and-reorg/manufacturing_outputs/assets/EvalBoard.png
+documentation: https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_pcb/-/wikis/home
+tags:
+  - 'ASIC'
+  - 'FPGA'
+  - 'Measurements'
+  - 'CERN'
