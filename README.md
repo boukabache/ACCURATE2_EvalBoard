@@ -52,6 +52,11 @@ To get the board running from scratch, follow this sequence:
 *   **Dr. Sarath Mohanan** (Review) - CERN HSE-RP-IL
 *   **Gael Ducos** (Review) - CERN HSE-RP-IL
 
+
+## Acknowledgement
+The development of this project was supported by funding from the **CERN KT CVC Programme**.
+We sincerely thank the programme for enabling this work.
+
 ## License
 This project operates under a mixed-license model to suit hardware and software components:
 
