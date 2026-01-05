@@ -27,8 +27,12 @@ This project is licensed under the CERN Open Hardware Licence Version 2 - Permis
 
 ## Authors
 * [Håkon Liverud](haakon.liverud@cern.ch), CERN HSE-RP-IL - Schematics and software
-* [Clyde Laforge](clyde.laforge@cern.ch), CERN HSE-RP-IL - Review and guidance
-* [Sarath Mohanan](sarath.mohanan@cern.ch), CERN HSE-RP-IL - Review and guidance
-* [Hamza Boukabache](hamza.boukabache@cern.ch), CERN HSE-RP-IL - Review and guidance
+* [Mattia Consani](Mattia.Consani), CERN HSE-RP-IL - Schematics and software 
+* [Clyde Laforge](clyde.laforge@cern.ch), CERN HSE-RP-IL - software, Review and guidance
+* [Dr. Sarath Mohanan](sarath.mohanan@cern.ch), CERN HSE-RP-IL - Review and guidance
 * [Gael Ducos](gael.ducos@cern.ch), CERN HSE-RP-IL - Review and guidance
-* CERN BE-CEM-EPR - Routing
+* [Dr. Hamza Boukabache](hamza.boukabache@cern.ch), CERN HSE-RP-IL, Project Lead, Review and guidance
+
+## Acknowledgement
+The development of this project was supported by funding from the CERN KT CVC Programme. 
+We sincerely thank the programme for enabling this work.
