@@ -1,0 +1,16 @@
+# MacOS crap
+.DS_Store
+
+# Log crap
+build/log.txt
+*.log
+
+# GHDL crap
+*.cf
+
+# Wave crap
+*.vcd
+
+build/hardware.json
+build/hardware.bin
+build/hardware.asc

@@ -1,0 +1,141 @@
+rule:
+  global:
+    indent_size: 4
+    comment_line_ends_group: false
+  group:
+    # Disable horizontal alignment:
+    alignment:
+      disable: true
+    # Disable case checking for labels (DISCUSS)
+    case::label:
+      disable: true
+    # Disable case checking for names (-> they can use CamelCase)
+    case::name:
+      disable: true
+    # Let the developer chose when whitelines should be inserted (e.g: after if clause)
+    blank_line:
+      disable: true
+  # Do not enforce too strong requirements for multiline arrays
+  concurrent_012:
+    disable: true
+  # Disable indentation for comments
+  # FIXME when https://github.com/jeremiah-c-leary/vhdl-style-guide/issues/883 is resolved
+  comment_010:
+    disable: true
+  comment_100:
+    exceptions:
+      - "--*"
+      - "--!"
+      - "---"
+    patterns:
+      - "--!"
+  # Allow when statements on single lines
+  conditional_waveforms_001:
+    allow_single_line: true
+  conditional_waveforms_100:
+    number_of_spaces: '>= 1'
+  # Align multiline array on the left
+  #constant_012:
+  #  align_left: true
+  #  align_paren: false
+  # Disable indentation of multiline constants
+  constant_014:
+    disable: true
+  # Do not force line return for array declarations
+  constant_016:
+    disable: true
+  function_019:
+    ignore_single_line: true
+    last_close_paren: remove_new_line
+  # Generate labels must be uppercase
+  generate_005:
+    case: upper
+  # end generate labels must be uppercase
+  generate_012:
+    case: upper
+  # Allow "then" to be on its own line in if statements (FIXME?)
+  if_036:
+    disable: true
+  # Force use of direct instantiation method
+  instantiation_034:
+    method: 'entity'
+  # "use" clause must be on same indentation level as "library"
+  library_008:
+    indent_size: 0
+  # Do not check indentation of comments above use statements (FIXME?)
+  library_009:
+    indent_size: 0
+  # Do not check case of package name in use statements (FIXME?)
+  use_clause_501:
+    disable: true
+  # Do not reserve spaces for "inout" alignment in ports
+  port_007:
+    spaces_before: 1
+    spaces_after: 2
+  # Do not reserve spaces for "inout" alignment in ports
+  port_008:
+    spaces_before: 1
+    spaces_after: 1
+  # Do not force usage of either lower or upper case in port names
+  port_010:
+    disable: true
+  # Do not prohibit default values for ports. This may be used for cosim (FIXME?)
+  port_012:
+    disable: true
+  # Do not check presence of "is" keyword for processes (DISCUSS)
+  process_012:
+    disable: true
+  # Disable forcing case of signal names to lower or upper case
+  signal_004:
+    disable: true
+  # Allow initial values for signals (used for cosimulation, FIXME?)
+  signal_007:
+    disable: true
+  # Maximum 4 signals declarations per line is allowed
+  signal_015:
+     consecutive : 4
+  # Do not force type identifier to use lower or upper case
+  type_004:
+    disable: true
+  # Allow usage of initial value for variables
+  variable_007:
+    disable: true
+  # Downgrade number of spaces after open parenthesis to warning. Useful for alignement in complex multiline assignations
+  whitespace_005:
+    severity: Warning
+  # Downgrade number of spaces after closing parenthesis to warning. Useful for alignement in complex multiline assignations
+  whitespace_006:
+    severity: Warning
+
+  # This should be enabled, but it ignores the value of number_of_spaces
+  whitespace_100:
+    disable: True
+    number_of_spaces: '>=1'
+  # Horizontal alignment
+  # Since all alignment rules have been disabled in the global section, manually turn
+  # the ones we want back on.
+  concurrent_003:
+    disable: False
+    severity: Warning
+  constant_012:
+    disable: False
+  if_009:
+    disable: False
+  process_020:
+    disable: False
+  selected_assignment_400:
+    disable: False
+  # Downgrade check of indentation of multiline sequential statements (useful in complex assignations)
+  sequential_004:
+    disable: False
+    severity: Warning
+  sequential_402:
+    disable: False
+  signal_400:
+    disable: False
+  variable_assignment_004:
+    disable : True
+  variable_assignment_007:
+    disable : True
+  variable_assignment_401:
+    disable: False
