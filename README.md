@@ -11,6 +11,10 @@ The system incorporates:
 
 **For full details, documentation, and usage guides, please visit the [Project Wiki](https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_pcb/-/wikis/home).**
 
+<div align="center">
+    <img src="./manufacturing_outputs/assets/EvalBoard.png" alt="Board photo" width="600">
+</div>
+
 ---
 
 ## Repository Structure
