@@ -16891,7 +16891,7 @@
 			(uuid "809d0b7d-2669-4a21-8bb1-87b5d2df4bb7")
 		)
 		(instances
-			(project "Accurate_Eval"
+			(project "accurate2_eval"
 				(path "/d3b6a045-fd77-42ad-b330-1b1925488537"
 					(page "4")
 				)
