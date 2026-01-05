@@ -8,7 +8,6 @@ This repository contains the KiCad design files for the ACCURATE 2A Evaluation B
 
 ### See the **[wiki](https://ohwr.org/project/accurate2-eval/wikis/home)** for more information, software and usage. ###
 
-![Block Design](./assets/BlockDesign.png)
 
 ## Project Features
 - **Schematics**: Schematics for the ACCURATE2 ASIC evaluation board, FPGA, MCU, and peripheral components.
