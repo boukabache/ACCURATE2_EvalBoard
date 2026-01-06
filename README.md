@@ -9,7 +9,7 @@ The system incorporates:
 *   **Firmware**: Arduino-based C++ code running on the SAMD21 MCU to orchestrate operations and communicate via USB.
 *   **Software**: An Avalonia-based GUI (cross-platform) for real-time monitoring and data analysis on a host computer.
 
-**For full details, documentation, and usage guides, please visit the [Project Wiki](https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_pcb/-/wikis/home).**
+**For full details, documentation, and usage guides, please visit the [Project Wiki](https://github.com/boukabache/ACCURATE2_EvalBoard/wiki).**
 
 <div align="center">
     <img src="./manufacturing_outputs/assets/EvalBoard.png" alt="Board photo" width="600">
