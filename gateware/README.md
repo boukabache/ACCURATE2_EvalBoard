@@ -5,7 +5,7 @@
 This repo contains the VHDL code for the ACCURATE2 Evaluation Board.
 A ready to use Makefile is provided to compile the code, generate the bitstream and program the FPGA.
 
-The FPGA used is a Lattice iCE40 iCE5LP4k chip (SG48 package) mounted on a custom board. More informations abount the custom board, including schematics PCB layout and BOM, can be found [here](https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_pcb). The code is written entirely in VHDL and compiled with the open source [`oss-cad-suite`](https://github.com/YosysHQ/oss-cad-suite-build?tab=readme-ov-file) toolchain. No proprietary tools or IPs are used.
+The FPGA used is a Lattice iCE40 iCE5LP4k chip (SG48 package) mounted on a custom board. More informations abount the custom board, including schematics PCB layout and BOM, can be found [here](https://github.com/boukabache/ACCURATE2_EvalBoard). The code is written entirely in VHDL and compiled with the open source [`oss-cad-suite`](https://github.com/YosysHQ/oss-cad-suite-build?tab=readme-ov-file) toolchain. No proprietary tools or IPs are used.
 
 ### A brief explanation of the logic of the design:
 - **PLL**: Takes the clock coming from an external 100MHz oscillator and generates a 20MHz clock. The input clock is also forwarded to the output port as well.
@@ -35,7 +35,7 @@ Install the `oss-cad-suite`, following the [installation instructions](https://g
 
 Clone the repository:
 ```bash
-git clone https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_rtl.git
+git clone https://github.com/boukabache/ACCURATE2_EvalBoard.git
 ```
 ---
 
