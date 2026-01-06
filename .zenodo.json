@@ -1,0 +1,53 @@
+{
+    "title": "ACCURATE 2A Evaluation Board",
+    "description": "The ACCURATE 2A Evaluation Board is a development kit designed to facilitate the use and implementation of the CERN-developed ACCURATE 2A state-of-the-art ultra-low current measurement ASIC. It enables current measurement down to the femtoampere range using charge injection or an ADC. The board integrates an Arduino-compatible Microchip SAMD21 microcontroller and a Lattice iCE40 Ultra FPGA for flexible control and measurement.<br><br><b>Licenses:</b><br>This project operates under a mixed-license model:<br><ul><li><b>Hardware (Schematics, Layout):</b> CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P)</li><li><b>Software / Firmware / Gateware:</b> GNU General Public License v3.0 (GPL-3.0-or-later)</li></ul>",
+    "creators": [
+        {
+            "name": "Boukabache, Hamza",
+            "affiliation": "CERN"
+        },
+        {
+            "name": "Liverud, Håkon",
+            "affiliation": "CERN"
+        },
+        {
+            "name": "Consani, Mattia",
+            "affiliation": "CERN"
+        },
+        {
+            "name": "Laforge, Clyde",
+            "affiliation": "CERN"
+        },
+        {
+            "name": "Mohanan, Sarath",
+            "affiliation": "CERN"
+        },
+        {
+            "name": "Ducos, Gael",
+            "affiliation": "CERN"
+        }
+    ],
+    "access_right": "open",
+    "license": "OHL-P-v2, GPL-3.0",
+    "upload_type": "Software, Gateware, Hardware",
+    "keywords": [
+        "ASIC",
+        "FPGA",
+        "CERN",
+        "Open Hardware",
+        "sub-femtoampere Ultra-low current measurement",
+        "Instrumentation",
+        "Arduino",
+        "Lattice iCE40",
+        "Hardware",
+        "Firmware",
+        "Gateware",
+        "Software"
+    ],
+    "related_identifiers": [
+        {
+            "relation": "isSupplementTo",
+            "identifier": "https://github.com/boukabache/ACCURATE2_EvalBoard"
+        }
+    ]
+}
