@@ -12,7 +12,7 @@ The project is made using Visual Studio 2022.
 - **Data Export**: Export sensor data to CSV files for external use.
 
 ## App Installation
-1. Go to [releases](https://gitlab.cern.ch/AIGROUP-crome-support/accurate2_eval_gui_avalonia/-/releases) and download the executable for your machine.
+1. Go to [releases](https://github.com/boukabache/ACCURATE2_EvalBoard/releases) and download the executable for your machine.
 
 ### Windows
 2. Run the .exe file
@@ -86,7 +86,7 @@ This will create a .rpm file in bin>Release>net8.0>linux-x64.
 Contributions to the Accurate2 Eval GUI are welcome. Please fork the repository and submit a pull request with your changes.
 
 ## License
-This project is licensed under the [GNU General Public License v3.0](LICENSE.md).
+This project is licensed under the [GNU General Public License v3.0](LICENSE_SOFTWARE.md).
 
 ## Contact
 For any queries or contributions, please contact [haakon.liverud@cern.ch](mailto:haakon.liverud@cern.ch).

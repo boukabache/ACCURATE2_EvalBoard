@@ -64,8 +64,8 @@ We sincerely thank the programme for enabling this work.
 ## License
 This project operates under a mixed-license model to suit hardware and software components:
 
-*   **Hardware (Schematics, Layout)**: [CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P)](LICENSE.md)
-*   **Software / Firmware / Gateware**: [GNU General Public License v3.0](LICENSE.md)
+*   **Hardware (Schematics, Layout)**: [CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P)](LICENSE_HARDWARE.md)
+*   **Software / Firmware / Gateware**: [GNU General Public License v3.0](software/LICENSE_SOFTWARE.md)
 
 ## Contact
 For any queries or contributions, please contact the CERN HSE-RP-IL section.
