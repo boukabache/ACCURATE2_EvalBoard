@@ -135,7 +135,7 @@ CONFigure
 Contributions to this project are welcome. Please follow the standard fork-and-pull request workflow. Ensure that your code adheres to the project's coding standards and include adequate documentation.
 
 ## License
-This project is licensed under the [GNU General Public License v3.0](LICENSE.md).
+This project is licensed under the [GNU General Public License v3.0](LICENSE_FIRMWARE.md).
 
 ## Authors
 - Håkon Liverud, CERN HSE-RP-IL
