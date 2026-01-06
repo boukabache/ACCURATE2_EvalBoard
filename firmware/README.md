@@ -17,7 +17,7 @@ This project is developed for the ACCURATE 2 ASIC evaluation board, designed to 
 ### Via Arduino IDE
 1. **Board Installation**: This project utilize a custom board package for the SAMD21 microcontroller. Add the following URL to the Arduino IDE's Additional Board Manager URLs.
     ```
-    https://cernbox.cern.ch/remote.php/dav/public-files/ftS6QooPZSoccNb/package_accurate_2_eval_index.json
+    https://github.com/boukabache/ACCURATE2_EvalBoard/blob/master/firmware/package_accurate_2_eval_index.json
     ```
     Then, install the `accurate_2a_eval` AND `Arduino SAMD` board package through the Arduino IDE's Board Manager.
 2. **Library Installation**: Install the following libraries through the Arduino IDE's Library Manager.
@@ -28,7 +28,7 @@ This project is developed for the ACCURATE 2 ASIC evaluation board, designed to 
 ### Via Arduino CLI
 Execute the following commands to install all the dependencies required by this project.
 ```bash
-arduino-cli --additional-urls https://cernbox.cern.ch/remote.php/dav/public-files/ftS6QooPZSoccNb/package_accurate_2_eval_index.json core install accurate_2a_eval:samd 
+arduino-cli --additional-urls https://github.com/boukabache/ACCURATE2_EvalBoard/blob/master/firmware/package_accurate_2_eval_index.json core install accurate_2a_eval:samd 
 arduino-cli core install arduino:samd 
 arduino-cli lib install "Adafruit SSD1306" 
 arduino-cli lib install Time
