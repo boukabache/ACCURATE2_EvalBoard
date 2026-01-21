@@ -47,7 +47,7 @@ accurate_2A_eval_prog.build.vid=0x2341
 accurate_2A_eval_prog.build.pid=0x804d
 accurate_2A_eval_prog.bootloader.tool=openocd
 accurate_2A_eval_prog.bootloader.tool.default=openocd
-accurate_2A_eval_prog.bootloader.file=accurate_2A_eval/samd21_sam_ba.bin
+accurate_2A_eval_prog.bootloader.file=accurate_2a_eval/samd21_sam_ba.bin
 
 # ACCURATE 2A Evaluation Board (Native USB Port)
 # --------------------------------------
@@ -95,4 +95,4 @@ accurate_2A_eval_native.build.vid=0x2341
 accurate_2A_eval_native.build.pid=0x804d
 accurate_2A_eval_native.bootloader.tool=openocd
 accurate_2A_eval_native.bootloader.tool.default=openocd
-accurate_2A_eval_native.bootloader.file=accurate_2A_eval/samd21_sam_ba.bin
+accurate_2A_eval_native.bootloader.file=accurate_2a_eval/samd21_sam_ba.bin
