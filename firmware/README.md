@@ -22,6 +22,7 @@ This project is developed for the ACCURATE 2 ASIC evaluation board, designed to 
     Then, install the `accurate_2a_eval` AND `Arduino SAMD` board package through the Arduino IDE's Board Manager.
 2. **Library Installation**: Install the following libraries through the Arduino IDE's Library Manager.
     - Adafruit SSD1306
+    * Adafruit RTCLib
     - TimeLib
     - Vrekrer SCPI parser
 
