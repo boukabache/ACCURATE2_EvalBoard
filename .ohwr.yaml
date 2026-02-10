@@ -1,5 +1,5 @@
 name: ACCURATE 2A Evaluation Board
-description: README.md
+description: https://github.com/boukabache/ACCURATE2_EvalBoard/wiki
 website: https://github.com/boukabache/ACCURATE2_EvalBoard
 licenses:
   - CERN-OHL-P-2.0
@@ -11,7 +11,10 @@ images:
   - https://github.com/boukabache/ACCURATE2_EvalBoard/raw/master/manufacturing_outputs/assets/EvalBoard.png
 documentation: https://github.com/boukabache/ACCURATE2_EvalBoard/wiki
 tags:
+  - 'Amplifier'
+  - 'Gateware'
+  - 'Microcontroller'
+  - 'TRL7'
   - 'ASIC'
-  - 'FPGA'
-  - 'Measurements'
-  - 'CERN'
+  - 'Low Noise'
+  - 'Signal Conditioning'
