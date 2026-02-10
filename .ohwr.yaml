@@ -1,15 +1,15 @@
-name: ACCURATE 2A Evaluation Board
-description: https://github.com/boukabache/ACCURATE2_EvalBoard/wiki
-website: https://github.com/boukabache/ACCURATE2_EvalBoard
+name: 'ACCURATE 2A Evaluation Board'
+description: 'https://github.com/boukabache/ACCURATE2_EvalBoard/wiki'
+website: 'https://github.com/boukabache/ACCURATE2_EvalBoard'
 licenses:
-  - CERN-OHL-P-2.0
-  - GPL-3.0-or-later
+  - 'CERN-OHL-P-2.0'
+  - 'GPL-3.0-or-later'
 version: 1.0.0
 universities:
-  - CERN
+  - 'CERN'
 images:
-  - https://github.com/boukabache/ACCURATE2_EvalBoard/raw/master/manufacturing_outputs/assets/EvalBoard.png
-documentation: https://github.com/boukabache/ACCURATE2_EvalBoard/wiki
+  - 'https://github.com/boukabache/ACCURATE2_EvalBoard/raw/master/manufacturing_outputs/assets/EvalBoard.png'
+documentation: 'https://github.com/boukabache/ACCURATE2_EvalBoard/wiki'
 tags:
   - 'Amplifier'
   - 'Gateware'
