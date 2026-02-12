@@ -8,9 +8,3 @@ version: 1.0.0
 images:
   - 'https://github.com/boukabache/ACCURATE2_EvalBoard/raw/master/manufacturing_outputs/assets/EvalBoard.png'
 documentation: 'https://github.com/boukabache/ACCURATE2_EvalBoard/wiki'
-tags:
-  - 'ASIC'
-  - 'Gateware'
-  - 'Low Noise'
-  - 'Signal Conditioning'
-  - 'TRL7'
