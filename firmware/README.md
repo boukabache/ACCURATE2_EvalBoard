@@ -53,11 +53,11 @@ The Arduino communicates with the connected computer through the USB serial port
 Depending if the raw data mode is enabled or not, the data sent by Arduino is formatted as follows:
 - **Raw Data Mode Enabled**:
     ```
-    <charge>,<cp1Count>,<cp2Count>,<cp3Count>,<cp1StartInterval>,<cp1EndInterval>,<tempSht41>,<humidSht41>,<btnLedStatus>,<timestamp>
+    <charge>,<cp1Count>,<cp2Count>,<cp3Count>,<cp1StartInterval>,<cp1EndInterval>,<tempSht41>,<humidSht41>,<btnLedStatus>
     ```
 - **Raw Data Mode Disabled**:
     ```
-    <currentInFemtoAmpere>,<cp1Count>,<cp2Count>,<cp3Count>,<startIntervalTime>,<endIntervalTime>,<temperature>,<humidity>,<btnLedStatus>,<timestamp>
+    <currentInFemtoAmpere>,<cp1Count>,<cp2Count>,<cp3Count>,<startIntervalTime>,<endIntervalTime>,<temperature>,<humidity>,<btnLedStatus>
     ```
 
 The serial communication is also used to send commands to the Arduino for controlling the operation of the ACCURATE 2 ASIC and setting configurations variables. The commands are sent in a SCPI-like format, and the command tree is as follow:
