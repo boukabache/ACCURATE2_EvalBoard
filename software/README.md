@@ -11,27 +11,6 @@ The project is made using Visual Studio 2022.
 - **USB Device Integration**: Connect and disconnect to USB devices with ease.
 - **Data Export**: Export sensor data to CSV files for external use.
 
-## App Installation
-1. Go to [releases](https://github.com/boukabache/ACCURATE2_EvalBoard/releases) and download the executable for your machine.
-
-### Windows
-2. Run the .exe file
-
-### Mac
-2. Unzip the file.
-3. Open a terminal in the same folder as the .app file and run
-```
-xattr -cr "ACCURATE 2A Evaluation Software.app"
- ```
-
- 4. Open the file.
-
- ### Linux
- 2. Open a terminal in the same folder as the file and run
-
-```
-rpm -i "ACCURATE 2A Evaluation Software.rpm"
- ```
 
 ## Project Installation
 To install the Accurate2 Eval GUI, clone this repository and open it with Visual Studio 2022 or above. Make sure to install all necessary NuGet packages.
@@ -81,6 +60,28 @@ dotnet msbuild -t:CreateRpm -p:RuntimeIdentifier=linux-x64 -property:Configurati
 ```
 
 This will create a .rpm file in bin>Release>net8.0>linux-x64.
+
+## App Installation
+1. Go to [releases](https://github.com/boukabache/ACCURATE2_EvalBoard/releases) and download the executable for your machine.
+
+### Windows
+2. Run the .exe file
+
+### Mac
+2. Unzip the file.
+3. Open a terminal in the same folder as the .app file and run
+```
+xattr -cr "ACCURATE 2A Evaluation Software.app"
+ ```
+
+ 4. Open the file.
+
+ ### Linux
+ 2. Open a terminal in the same folder as the file and run
+
+```
+rpm -i "ACCURATE 2A Evaluation Software.rpm"
+ ```
 
 ## Contributing
 Contributions to the Accurate2 Eval GUI are welcome. Please fork the repository and submit a pull request with your changes.
